@@ -1,0 +1,68 @@
+name: Validate
+
+# The gate. Every push and every pull request, on any branch.
+#
+# Two jobs on purpose, because the checks have different dependency stories.
+# `structure` runs on a bare checkout with no `npm install` at all, which is the
+# same guarantee validate.js is written to hold, and it finishes in seconds.
+# `browser` needs Chromium, so it is slower and installs one package.
+#
+# Both jobs run in parallel and required checks bind to the commit SHA rather
+# than the branch, so once they are green on a working branch, fast-forwarding
+# main to that same commit is accepted straight away.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  structure:
+    name: Structure and offline tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No `npm install`. validate.js and the offline tests are dependency-free
+      # by design, and running them on a bare checkout is what proves that stays
+      # true.
+      - name: Structure, capture wiring, reproducibility, Canvas round trip
+        run: node scripts/run-tests.js offline
+
+  browser:
+    name: Browser contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Default cache location on purpose. run-tests.js asks playwright-core for
+      # its own executablePath rather than assuming a directory layout, and falls
+      # back to scanning for both chrome-linux and chrome-linux64. Pinning a
+      # custom path is what breaks when Playwright renames a directory.
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      # --strict turns a missing browser into a failure, and also refuses to pass
+      # on an empty suite. Without it a broken install would skip every test and
+      # this job would report green having verified nothing at all.
+      - name: Modal focus, scroll lock, deck, capture round trip
+        run: node scripts/run-tests.js browser --strict

@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+
+# Canvas downloads. Student work must never be committed: these folders carry
+# real names and real writing, and this repo is public because GitHub Pages
+# serves it.
+submissions/
+submissions.zip
+*_submissions/
+responses.csv
+exceptions.csv

@@ -1,0 +1,26 @@
+{
+  "name": "becurrent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BeCurrent, a static Current Events lesson platform built around a weekly issue and an eight-module learning path.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node scripts/run-tests.js offline",
+    "test:offline": "node scripts/run-tests.js offline",
+    "test:browser": "node scripts/run-tests.js browser",
+    "test:all": "node scripts/run-tests.js all",
+    "validate": "node scripts/validate.js",
+    "build:weeks": "node scripts/build-weeks.js",
+    "check:weeks": "node scripts/build-weeks.js --check",
+    "parse:canvas": "node scripts/parse-canvas-submissions.js",
+    "serve": "node scripts/serve-local.js",
+    "hooks:install": "git config core.hooksPath .githooks && echo \"pre-push hook active: npm test runs before every push\"",
+    "prepare": "git config core.hooksPath .githooks || true"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

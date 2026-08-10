@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# Runs the offline suite before anything leaves the machine.
+#
+# Offline only, deliberately. It finishes in about five seconds, which is the
+# difference between a hook you keep and a hook you start bypassing. The browser
+# contracts are slower and CI runs them on every push anyway, so this hook's job
+# is to catch the structural break before you have to learn about it from a red
+# badge.
+#
+# Installed by `npm run hooks:install`, or automatically by `npm install`, both
+# of which set core.hooksPath to this directory.
+#
+# To push past it once, when you know what you are doing:
+#   git push --no-verify
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-push: node not found, skipping checks" >&2
+  exit 0
+fi
+
+echo "pre-push: running offline checks..."
+
+if ! node "$(git rev-parse --show-toplevel)/scripts/run-tests.js" offline; then
+  echo "" >&2
+  echo "pre-push: checks failed, push aborted." >&2
+  echo "Fix the failures above, or push with --no-verify to override." >&2
+  exit 1
+fi
+
+exit 0

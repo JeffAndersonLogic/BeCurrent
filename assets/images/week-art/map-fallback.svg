@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Placeholder map graphic">
+  <!-- Width and height are required, not optional. A viewBox alone leaves the
+       intrinsic size undefined, and an <img> holding one gets stretched by its
+       container until the picture is letterboxed off-screen. -->
+  <rect width="960" height="540" fill="#F4F2ED"/>
+  <g stroke="#1F5673" stroke-width="1" opacity=".22" fill="none">
+    <path d="M0 90h960M0 180h960M0 270h960M0 360h960M0 450h960"/>
+    <path d="M120 0v540M240 0v540M360 0v540M480 0v540M600 0v540M720 0v540M840 0v540"/>
+  </g>
+  <circle cx="480" cy="270" r="120" fill="none" stroke="#171B1F" stroke-width="4" opacity=".5"/>
+  <path d="M360 270h240M480 150v240" stroke="#171B1F" stroke-width="3" opacity=".35"/>
+  <path d="M480 150c-52 34-52 206 0 240M480 150c52 34 52 206 0 240" fill="none" stroke="#171B1F" stroke-width="3" opacity=".35"/>
+  <circle cx="612" cy="216" r="15" fill="#B22222"/>
+  <text x="480" y="466" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#3C444C">No map published for this module yet</text>
+</svg>

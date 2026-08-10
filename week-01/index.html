@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BeCurrent | Week 01</title>
+<link rel="stylesheet" href="../assets/css/becurrent.css">
+<style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+</head>
+<body>
+<div class="site-shell">
+
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand-mini" href="../index.html" aria-label="Return to the BeCurrent home page">
+        <span class="mark-be">Be</span><span class="mark-c">C</span><span>urrent</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="#targets">Targets</a>
+        <a href="#modules">Modules</a>
+        <a href="#background">Background</a>
+        <a href="#submit">Submit</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <h1 class="logo-title">Be<span class="hero-c">C</span>urrent</h1>
+    <p class="dateline" id="week-dateline"></p>
+    <p class="hero-copy">
+      <strong id="week-title"></strong>
+      <span id="week-subtitle"></span>
+    </p>
+    <div class="quick-nav">
+      <a class="btn" href="#modules">Open Modules</a>
+      <a class="btn secondary" href="#background">Background</a>
+      <a class="btn secondary" href="#submit">Submit My Work</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="flow">
+      <div class="section-header">
+        <div class="eyebrow">Classroom Flow</div>
+        <h2>Three moves, every week.</h2>
+      </div>
+      <article class="card">
+        <div class="week-roadmap">
+          <div class="roadmap-step"><strong>1. Get the Story</strong>Locate it on a map, then read the week's brief and answer its three questions.</div>
+          <div class="roadmap-step"><strong>2. Interrogate It</strong>Compare the coverage, check the sources, and sort the claims from the evidence.</div>
+          <div class="roadmap-step"><strong>3. Take a Position</strong>Deliberate, then complete the checkpoint and submit through Canvas.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="targets">
+      <div class="section-header">
+        <div class="eyebrow">Learning Focus</div>
+        <h2>Learning Targets &amp; Success Criteria</h2>
+        <p>These stay on the page so you know what you are learning and how success is measured.</p>
+      </div>
+      <div id="inline-targets"></div>
+    </section>
+
+    <section class="section" id="modules">
+      <div class="section-header">
+        <div class="eyebrow">The Eight Modules</div>
+        <h2>Work them in order.</h2>
+        <p>Most open in a focused pop-out. Your writing saves as you type, on this device.</p>
+      </div>
+      <div class="module-grid" id="module-grid"></div>
+    </section>
+
+    <section class="dark-panel" id="background">
+      <div class="section-header">
+        <div class="eyebrow">Module 03, Content Delivery</div>
+        <h2 id="background-section-title"></h2>
+        <p id="background-intro"></p>
+      </div>
+      <div class="background-grid" id="background-grid"></div>
+    </section>
+
+    <section class="section" id="submit">
+      <div class="section-header">
+        <div class="eyebrow">Turn It In</div>
+        <h2>Collect everything, then paste it into Canvas.</h2>
+        <p>This gathers every answer you have written on this device, including the three from the brief.</p>
+      </div>
+      <div class="gather-panel" id="gather-panel"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">BeCurrent</div>
+      <p id="footer-week-label"></p>
+      <p>Read it. Check it. Then decide.</p>
+    </div>
+  </footer>
+</div>
+
+<div class="pop-modal" id="pop-modal" role="dialog" aria-modal="true">
+  <div class="pop-panel">
+    <div class="pop-header">
+      <div>
+        <div class="eyebrow" id="pop-eyebrow">Module</div>
+        <h2 id="pop-title">Module</h2>
+      </div>
+      <button class="btn quiet" type="button" onclick="closeModule()">Close</button>
+    </div>
+    <div class="pop-body" id="pop-body"></div>
+  </div>
+</div>
+
+<div class="background-modal" id="background-modal" role="dialog" aria-modal="true">
+  <div class="background-panel">
+    <div class="pop-header">
+      <div>
+        <div class="eyebrow">Background</div>
+        <h2 id="background-title"></h2>
+      </div>
+      <button class="btn quiet" type="button" onclick="closeBackgroundCard()">Close</button>
+    </div>
+    <div class="background-body">
+      <div class="card-rule" aria-hidden="true"></div>
+      <figure class="background-figure" id="background-figure" hidden>
+        <img id="background-img" alt="">
+        <figcaption id="background-caption"></figcaption>
+      </figure>
+      <ul id="background-bullets"></ul>
+      <div class="deck-controls" id="deck-controls"></div>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <figure>
+    <button class="btn quiet" type="button" onclick="closeLightbox()">Close</button>
+    <img id="lightbox-img" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<script src="../assets/data/week-01.js"></script>
+<script src="../assets/js/becurrent-week-renderer-v1.js"></script>
+</body>
+</html>

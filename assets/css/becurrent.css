@@ -1,0 +1,377 @@
+/* =========================================================
+   BECURRENT OFFICIAL STYLE SYSTEM
+
+   Newsroom, not archive. BeHistorical is bronze and parchment; this is
+   newsprint, ink, and one signal accent. The two courses should never be
+   mistaken for each other at a glance.
+
+   The polarity rule is carried over from BeHistorical deliberately, because the
+   reasoning is about rooms and eyes rather than about history:
+
+     1. A lamp projector can only add light. In a lit classroom a dark
+        background degrades to washed-out grey; a light one puts the lumens to
+        work. Reverse this only if the room is dark or the display is a flat panel.
+     2. Light-on-dark causes halation for the roughly one in three people with
+        some astigmatism.
+     3. Dark text on light is read measurably faster and more accurately, and
+        the advantage grows as characters get smaller.
+
+   So every surface a student READS is light. Dark surfaces are for surfaces
+   students SCAN: the nav, the background-card grid, the footer.
+   ========================================================= */
+:root{
+  /* Ink and paper */
+  --ink:#14171A;
+  --ink-soft:#3C444C;
+  --newsprint:#F4F2ED;
+  --clean-paper:#FFFEFB;
+  --paper-line:rgba(20,23,26,.14);
+
+  /* Slate, for the surfaces that get scanned */
+  --slate-900:#171B1F;
+  --slate-800:#232A31;
+  --slate-700:#333C45;
+  --slate-500:#5C6873;
+
+  /* One signal accent, plus a cool counterpart for the second series */
+  --signal:#B22222;
+  --signal-deep:#8A1A1A;
+  --signal-tint:rgba(178,34,34,.10);
+  --cool:#1F5673;
+  --cool-tint:rgba(31,86,115,.10);
+
+  --shadow:0 20px 60px rgba(20,23,26,.16);
+  --soft-shadow:0 10px 26px rgba(20,23,26,.10);
+  --radius:14px;
+
+  --sans:"Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--newsprint);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.65;
+}
+a{color:var(--cool)}
+img{max-width:100%;display:block}
+.site-shell{min-height:100vh;display:flex;flex-direction:column}
+main{flex:1}
+
+/* ── Masthead ──────────────────────────────────────────────────────────────── */
+.topbar{
+  position:sticky; top:0; z-index:30;
+  background:var(--slate-900);
+  border-bottom:3px solid var(--signal);
+}
+.nav{
+  width:min(1160px,92vw); margin:auto;
+  min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:22px;
+}
+.brand-mini{
+  display:flex; align-items:baseline; gap:2px; text-decoration:none;
+  font-family:var(--sans);
+  font-weight:800; letter-spacing:-.01em; font-size:1.18rem;
+  color:var(--clean-paper);
+}
+.brand-mini .mark-be{opacity:.72;font-weight:600}
+.brand-mini .mark-c{color:var(--signal);}
+.nav-links{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
+.nav-links a{
+  font-family:var(--sans);
+  text-transform:uppercase; letter-spacing:.1em; font-size:.68rem; font-weight:700;
+  text-decoration:none; color:rgba(255,254,251,.74);
+}
+.nav-links a:hover{color:var(--clean-paper)}
+
+/* ── Hero / dateline ───────────────────────────────────────────────────────── */
+.hero{
+  width:min(1160px,92vw); margin:30px auto 24px;
+  padding:36px 30px 34px;
+  background:var(--clean-paper);
+  border:1px solid var(--paper-line);
+  border-top:5px solid var(--signal);
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+}
+.logo-title{
+  margin:0; font-family:var(--sans); font-weight:800;
+  font-size:clamp(2.1rem,6vw,3.4rem); letter-spacing:-.02em; line-height:1.02;
+  color:var(--slate-900);
+}
+.logo-title .hero-c{color:var(--signal)}
+.dateline{
+  margin:14px 0 0; font-family:var(--sans); font-size:.72rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
+  padding-bottom:12px; border-bottom:1px solid var(--paper-line);
+}
+.hero-copy{margin:16px 0 0;font-size:1.14rem}
+.hero-copy strong{display:block;font-family:var(--sans);font-size:1.32rem;line-height:1.25;color:var(--slate-900)}
+.hero-copy span{color:var(--ink-soft)}
+.quick-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--sans); font-weight:700; font-size:.82rem;
+  letter-spacing:.03em;
+  padding:10px 18px; border-radius:8px; cursor:pointer;
+  text-decoration:none; border:1px solid var(--signal);
+  background:var(--signal); color:var(--clean-paper);
+}
+.btn:hover{background:var(--signal-deep);border-color:var(--signal-deep)}
+.btn.secondary{background:transparent;color:var(--signal-deep)}
+.btn.secondary:hover{background:var(--signal-tint);color:var(--signal-deep)}
+.btn.quiet{background:transparent;border-color:var(--paper-line);color:var(--ink-soft)}
+.btn.quiet:hover{background:rgba(20,23,26,.05);color:var(--ink)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,
+textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--cool); outline-offset:2px;
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────────── */
+.section{width:min(1160px,92vw);margin:0 auto 34px;padding:0}
+.section-header{margin:0 0 20px}
+.eyebrow{
+  font-family:var(--sans); font-size:.68rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.16em; color:var(--signal-deep);
+}
+.section-header h2{
+  margin:6px 0 8px; font-family:var(--sans); font-weight:800;
+  font-size:clamp(1.4rem,3vw,2rem); letter-spacing:-.015em; color:var(--slate-900);
+}
+.section-header p{margin:0;color:var(--ink-soft);max-width:70ch}
+.card{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-radius:var(--radius); padding:24px; box-shadow:var(--soft-shadow);
+}
+.card h3{margin:0 0 14px;font-family:var(--sans);font-size:1.06rem;color:var(--slate-900)}
+
+/* ── Classroom Flow ────────────────────────────────────────────────────────── */
+.week-roadmap{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.roadmap-step{
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-left:4px solid var(--signal);
+  border-radius:10px; padding:14px 16px; font-size:.95rem;
+}
+.roadmap-step strong{
+  display:block; font-family:var(--sans); font-size:.72rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--signal-deep); margin-bottom:6px;
+}
+
+/* ── Learning targets ──────────────────────────────────────────────────────── */
+.target-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.target-item{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-radius:10px; padding:14px 16px;
+}
+.target-item .skill-chip{
+  display:inline-block; font-family:var(--sans); font-size:.64rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em;
+  background:var(--cool-tint); color:var(--cool);
+  padding:3px 8px; border-radius:999px; margin-bottom:8px;
+}
+
+/* ── Module grid ───────────────────────────────────────────────────────────── */
+.module-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.module-card{
+  position:relative; text-align:left; width:100%;
+  background:var(--clean-paper); color:var(--ink);
+  border:1px solid var(--paper-line); border-top:4px solid var(--signal);
+  border-radius:var(--radius); padding:20px 18px 18px;
+  cursor:pointer; font:inherit; box-shadow:var(--soft-shadow);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.module-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.module-card .module-num{
+  font-family:var(--mono); font-size:.7rem; font-weight:700;
+  letter-spacing:.08em; color:var(--signal-deep);
+}
+.module-card h3{margin:8px 0 6px;font-family:var(--sans);font-size:1.04rem;color:var(--slate-900)}
+.module-card p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+.module-card .module-kind{
+  display:inline-block; margin-top:12px; font-family:var(--sans);
+  font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--slate-500);
+}
+
+/* ── Background cards: the one dark grid, because they are scanned ─────────── */
+.dark-panel{
+  background:var(--slate-900); color:var(--clean-paper);
+  border-radius:var(--radius); padding:30px 26px; margin-bottom:34px;
+  width:min(1160px,92vw); margin-left:auto; margin-right:auto;
+}
+.dark-panel .eyebrow{color:#E8A0A0}
+.dark-panel .section-header h2{color:var(--clean-paper)}
+.dark-panel .section-header p{color:rgba(255,254,251,.72)}
+.background-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.background-card{
+  text-align:left; width:100%; font:inherit; cursor:pointer;
+  background:var(--slate-800); color:var(--clean-paper);
+  border:1px solid var(--slate-700); border-radius:12px; padding:18px;
+}
+.background-card:hover{border-color:var(--signal);background:var(--slate-700)}
+.background-card h3{margin:0 0 6px;font-family:var(--sans);font-size:1rem;color:var(--clean-paper)}
+.background-card p{margin:0;font-size:.86rem;color:rgba(255,254,251,.7)}
+
+/* ── Modals ────────────────────────────────────────────────────────────────── */
+.pop-modal,.background-modal,.lightbox{
+  position:fixed; inset:0; z-index:60;
+  background:rgba(20,23,26,.72);
+  display:none; align-items:flex-start; justify-content:center;
+  padding:24px; overflow-y:auto;
+}
+.pop-modal.show,.background-modal.show,.lightbox.show{display:flex}
+.pop-panel,.background-panel{
+  background:var(--clean-paper); color:var(--ink);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  width:min(880px,100%); margin:auto;
+}
+.pop-header{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:18px;
+  padding:20px 24px; border-bottom:1px solid var(--paper-line);
+  position:sticky; top:0; background:var(--clean-paper); border-radius:var(--radius) var(--radius) 0 0;
+}
+.pop-header h2{margin:4px 0 0;font-family:var(--sans);font-size:1.24rem;color:var(--slate-900)}
+.pop-body{padding:24px}
+.pop-body h4{
+  margin:22px 0 8px; font-family:var(--sans); font-size:.72rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+}
+.pop-body h4:first-child{margin-top:0}
+.pop-body p{margin:0 0 12px}
+.module-frame{width:100%;height:78vh;border:1px solid var(--paper-line);border-radius:10px}
+
+/* The background card: paper under ink, per the polarity rule above. Headings
+   must move with the panel. A signal-red heading on newsprint is fine at 5.9:1,
+   but a pale one would leave the title unreadable with every check still green. */
+.background-panel{width:min(940px,100%)}
+.background-body{padding:26px}
+.background-body h2{margin:0 0 4px;font-family:var(--sans);font-size:1.5rem;color:var(--slate-900)}
+.background-body .card-rule{height:3px;background:var(--signal);width:64px;margin:12px 0 18px}
+.background-body ul{margin:0;padding-left:1.1rem}
+.background-body li{margin-bottom:10px}
+.background-body strong{color:var(--signal-deep)}
+.background-figure{background:var(--slate-900);border-radius:10px;padding:12px;margin:0 0 18px}
+.background-figure img{border-radius:6px;margin:auto}
+.background-figure figcaption{
+  font-family:var(--sans); font-size:.74rem; color:rgba(255,254,251,.72);
+  margin-top:10px; text-align:center;
+}
+.deck-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid var(--paper-line)}
+.deck-counter{font-family:var(--mono);font-size:.76rem;color:var(--ink-soft)}
+
+/* ── Lightbox ──────────────────────────────────────────────────────────────── */
+.lightbox figure{margin:auto;max-width:min(1100px,100%)}
+.lightbox img{border-radius:10px;margin:auto}
+.lightbox figcaption{
+  color:var(--clean-paper); font-family:var(--sans); font-size:.84rem;
+  text-align:center; margin-top:12px;
+}
+.enlargeable{cursor:zoom-in;border:1px solid var(--paper-line);border-radius:8px;background:none;padding:0;width:100%}
+
+/* ── Work capture ──────────────────────────────────────────────────────────── */
+.prompt-block{
+  background:var(--signal-tint); border-left:4px solid var(--signal);
+  border-radius:0 10px 10px 0; padding:14px 16px; margin:0 0 14px;
+}
+.prompt-block .prompt-label{
+  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+  display:block; margin-bottom:6px;
+}
+.work-area{
+  width:100%; min-height:150px; padding:12px 14px;
+  font-family:var(--serif); font-size:1rem; line-height:1.6; color:var(--ink);
+  background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
+  resize:vertical;
+}
+.confidence{margin:14px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.confidence .confidence-label{
+  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft);
+}
+.confidence button{
+  font-family:var(--sans); font-size:.82rem; font-weight:700;
+  width:34px; height:34px; border-radius:50%; cursor:pointer;
+  border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
+}
+.confidence button[aria-pressed="true"]{background:var(--cool);border-color:var(--cool);color:var(--clean-paper)}
+
+/* ── Outlet comparison table ───────────────────────────────────────────────── */
+.outlet-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0 0 18px}
+.outlet{background:var(--newsprint);border:1px solid var(--paper-line);border-radius:10px;padding:16px}
+.outlet .outlet-name{
+  font-family:var(--sans); font-size:.68rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--cool); margin-bottom:8px;
+}
+.outlet .outlet-headline{font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--slate-900);margin:0 0 8px}
+.outlet .outlet-lede{margin:0;font-size:.92rem;color:var(--ink-soft)}
+
+/* ── Claim sorting ─────────────────────────────────────────────────────────── */
+.statement-list{display:grid;gap:10px;margin:0 0 18px;padding:0;list-style:none}
+.statement{
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-left:4px solid var(--slate-500); border-radius:0 8px 8px 0; padding:12px 14px;
+}
+.statement .statement-num{font-family:var(--mono);font-size:.7rem;color:var(--slate-500);margin-right:8px}
+
+/* ── Checklist ─────────────────────────────────────────────────────────────── */
+.step-list{margin:0 0 18px;padding-left:1.2rem}
+.step-list li{margin-bottom:8px}
+
+/* ── Gather panel ──────────────────────────────────────────────────────────── */
+.gather-panel{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--cool); border-radius:var(--radius);
+  padding:24px; box-shadow:var(--soft-shadow);
+}
+.gather-output{
+  width:100%; min-height:200px; margin-top:14px; padding:12px;
+  font-family:var(--mono); font-size:.78rem; line-height:1.5;
+  background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
+}
+.gather-status{font-family:var(--sans);font-size:.86rem;font-weight:700;margin:12px 0 0}
+.gather-status.short{color:var(--signal-deep)}
+.gather-status.complete{color:#1B6E3C}
+
+/* ── Footer ────────────────────────────────────────────────────────────────── */
+.footer{
+  background:var(--slate-900); color:rgba(255,254,251,.72);
+  padding:30px 0; margin-top:20px; border-top:3px solid var(--signal);
+}
+.footer-inner{width:min(1160px,92vw);margin:auto}
+.footer-brand{font-family:var(--sans);font-weight:800;font-size:1.1rem;color:var(--clean-paper)}
+.footer p{margin:6px 0 0;font-size:.88rem}
+
+/* ── Week index cards ──────────────────────────────────────────────────────── */
+.week-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.week-card{
+  display:block; text-decoration:none; color:var(--ink);
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--signal); border-radius:var(--radius);
+  padding:20px 18px; box-shadow:var(--soft-shadow);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.week-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.week-card .week-num{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--signal-deep)}
+.week-card h3{margin:8px 0 6px;font-family:var(--sans);font-size:1.06rem;color:var(--slate-900)}
+.week-card p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+.week-card.upcoming{opacity:.6;border-top-color:var(--slate-500);cursor:default}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding:26px 20px}
+  .dark-panel{padding:22px 18px}
+  .pop-body,.background-body{padding:18px}
+}
+
+@media print{
+  .topbar,.quick-nav,.module-grid,.gather-panel,.footer{display:none}
+  body{background:#fff}
+}
