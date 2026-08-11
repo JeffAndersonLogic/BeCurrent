@@ -58,6 +58,20 @@ const BLOCK_3 = {
   subtitle: 'What the app counts, and what it does with the count',
   skillTags: ['Cause and Effect', 'Hypotheses'],
 
+  // Video. Optional, and often the primary path rather than the alternative one.
+  //
+  //   videos: [
+  //     { title:    'CNN10 for October 14',
+  //       url:      'https://...',          // required, a real link you supply
+  //       prompt:   'Watch for who is quoted and who is not.',
+  //       source:   'CNN10',                 // optional, shown as a label
+  //       duration: '10:00',                 // optional
+  //       captions: true }                   // set false only if genuinely absent
+  //   ]
+  //
+  // Empty means the block renders no video section at all, not an empty one.
+  videos: [],
+
   support: [
     { label: 'Before You Read',
       body: 'In Block 1 you built a chain. Almost everybody had a box in the middle where the app '
@@ -212,6 +226,20 @@ const BLOCK_4 = {
   subtitle: 'Reading a privacy policy as a primary source',
   skillTags: ['Generalizing from Evidence', 'Sourcing'],
 
+  // Video. Optional, and often the primary path rather than the alternative one.
+  //
+  //   videos: [
+  //     { title:    'CNN10 for October 14',
+  //       url:      'https://...',          // required, a real link you supply
+  //       prompt:   'Watch for who is quoted and who is not.',
+  //       source:   'CNN10',                 // optional, shown as a label
+  //       duration: '10:00',                 // optional
+  //       captions: true }                   // set false only if genuinely absent
+  //   ]
+  //
+  // Empty means the block renders no video section at all, not an empty one.
+  videos: [],
+
   support: [
     { label: 'Before You Read',
       body: 'In Block 1 a lot of chains said the company <em>sells your data</em>. I told you that was '
@@ -360,6 +388,20 @@ const BLOCK_5 = {
   deck: 'I told you on the first day I would ask you a hard question at the end. Here it is.',
   subtitle: 'You, the company, or the government',
   skillTags: ['Synthesizing Patterns', 'Generalizing from Evidence'],
+
+  // Video. Optional, and often the primary path rather than the alternative one.
+  //
+  //   videos: [
+  //     { title:    'CNN10 for October 14',
+  //       url:      'https://...',          // required, a real link you supply
+  //       prompt:   'Watch for who is quoted and who is not.',
+  //       source:   'CNN10',                 // optional, shown as a label
+  //       duration: '10:00',                 // optional
+  //       captions: true }                   // set false only if genuinely absent
+  //   ]
+  //
+  // Empty means the block renders no video section at all, not an empty one.
+  videos: [],
 
   support: [
     { label: 'Before You Read',

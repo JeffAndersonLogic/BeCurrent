@@ -340,6 +340,27 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 .gather-status.short{color:var(--signal-deep)}
 .gather-status.complete{color:#1B6E3C}
 
+
+/* ── Video ─────────────────────────────────────────────────────────────────────
+   An optional resource, and for this room's IEP/504 load often the primary path
+   rather than the alternative one. Styled as a peer of the module grid, not as a
+   footnote under it, because a student who needs the video should not read the
+   layout as "the real work is elsewhere". */
+.video-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.video-card{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--cool); border-radius:var(--radius);
+  padding:20px 18px; box-shadow:var(--soft-shadow);
+  display:flex; flex-direction:column; gap:10px;
+}
+.video-card h3{margin:0;font-family:var(--sans);font-size:1.06rem;color:var(--slate-900)}
+.video-card .video-meta{
+  margin:0; font-family:var(--sans); font-size:.74rem; font-weight:700;
+  letter-spacing:.04em; color:var(--cool);
+}
+.video-card .prompt-block{margin:0}
+.video-card .btn{align-self:flex-start;margin-top:auto}
+
 /* ── Footer ────────────────────────────────────────────────────────────────── */
 .footer{
   background:var(--slate-900); color:rgba(255,254,251,.72);

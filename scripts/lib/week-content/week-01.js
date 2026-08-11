@@ -43,6 +43,20 @@ module.exports = {
     { skill: 'Corroboration', criteria: 'I can describe the lateral reading steps I took, not just the conclusion I reached.' }
   ],
 
+  // Video. Optional, and often the primary path rather than the alternative one.
+  //
+  //   videos: [
+  //     { title:    'CNN10 for October 14',
+  //       url:      'https://...',          // required, a real link you supply
+  //       prompt:   'Watch for who is quoted and who is not.',
+  //       source:   'CNN10',                 // optional, shown as a label
+  //       duration: '10:00',                 // optional
+  //       captions: true }                   // set false only if genuinely absent
+  //   ]
+  //
+  // Empty means the block renders no video section at all, not an empty one.
+  videos: [],
+
   // ── Module 01 ───────────────────────────────────────────────────────────────
   where: {
     intro: 'Every story happens somewhere, and the where is usually doing more work than the headline admits. '

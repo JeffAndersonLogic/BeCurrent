@@ -35,6 +35,7 @@ const SUITES = {
   offline: [
     ['scripts/validate.js', 'structure, capture wiring, image integrity'],
     ['scripts/test/weeks-reproducible.test.js', 'generated weeks match their content modules'],
+    ['scripts/test/video-block.test.js', 'video path through a brief, both states'],
     ['scripts/test/canvas-paragraphs.test.js', 'Canvas blank-line round trip, both course sentinels'],
     ['scripts/test/canvas-zip.test.js', 'zip reader + CLI/browser CSV parity']
   ],

@@ -353,6 +353,50 @@ function weekDirs() {
         parsed.responses.some(r => r.response === typed && !r.flags.includes('EDITED')),
         `${parsed.responses.length} responses, ${parsed.exceptions.length} exceptions`);
 
+      // ── Video: the two states, on a real page ─────────────────────────────
+      //
+      // The container ships in the shell whether or not a lesson has clips, so the
+      // failure to guard against is an empty section sitting under the content and
+      // reading to a student as something that failed to load.
+      check('with no clips the video section is hidden, not empty',
+        await page.evaluate(() => {
+          const el = document.getElementById('video-clips');
+          return !!el && el.hidden && el.innerHTML.trim() === '';
+        }));
+
+      const shown = await page.evaluate(() => {
+        window.BECURRENT_WEEK.videos = [{
+          title: 'How the feed decides', url: 'https://example.test/clip',
+          prompt: 'Watch for who is counted.', source: 'CNN10', duration: '10:00'
+        }];
+        renderVideos();
+        const el = document.getElementById('video-clips');
+        const a = el.querySelector('.video-card a');
+        return {
+          hidden: el.hidden,
+          heading: (el.querySelector('.video-card h3') || {}).textContent,
+          hasPrompt: el.textContent.includes('Watch for who is counted.'),
+          introduces: el.textContent.includes('Video for this lesson'),
+          target: a && a.target,
+          rel: a && a.getAttribute('rel')
+        };
+      });
+      check('adding clips reveals the section', shown.hidden === false);
+      check('and it introduces itself rather than appearing bare', shown.introduces);
+      check('the card is headed by the clip title', shown.heading === 'How the feed decides',
+        shown.heading);
+      check('the guiding question is on the card', shown.hasPrompt);
+      check('the link opens in a new tab, isolated from this one',
+        shown.target === '_blank' && /noopener/.test(shown.rel || ''), `${shown.target} ${shown.rel}`);
+
+      check('removing the clips hides it again, leaving no gap',
+        await page.evaluate(() => {
+          window.BECURRENT_WEEK.videos = [];
+          renderVideos();
+          const el = document.getElementById('video-clips');
+          return el.hidden && el.innerHTML.trim() === '';
+        }));
+
       check('no uncaught page errors', consoleErrors.length === 0,
         consoleErrors.slice(0, 2).join(' | ') || 'none');
 

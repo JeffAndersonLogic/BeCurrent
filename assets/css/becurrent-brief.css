@@ -142,6 +142,26 @@ img{max-width:100%;display:block}
 }
 .be-ready p{margin:0;font-size:1rem}
 
+
+/* ── Video path through the reading ────────────────────────────────────────────
+   Sits high on the page on purpose. A student who needs the video should not have
+   to scroll past a thousand words of prose to find out it exists, and the cool
+   border matches the support cards so it reads as help rather than as an aside. */
+.brief-video-strip{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0 0 26px}
+.brief-video{
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-left:4px solid var(--cool); border-radius:0 10px 10px 0;
+  padding:14px 16px;
+}
+.brief-video-label{
+  display:block; margin-bottom:6px;
+  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
+}
+.brief-video-title{margin:0 0 4px;font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--slate-900)}
+.brief-video-meta{margin:0 0 8px;font-family:var(--sans);font-size:.74rem;color:var(--ink-soft)}
+.brief-video-prompt{margin:0 0 12px;font-size:.93rem}
+
 /* ── Road not taken ────────────────────────────────────────────────────────────
    Visually distinct from a numbered section because it does a different job: the
    numbered sections trace what happened, this one names what could have. It

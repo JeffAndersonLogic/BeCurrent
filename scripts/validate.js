@@ -460,6 +460,68 @@ codeCarriers.forEach(file => {
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
 
+// ── Video ─────────────────────────────────────────────────────────────────────
+//
+// Whether a lesson has video, and how much, is a teaching decision. Two things
+// about it are not, and both fail silently:
+//
+//   1. A clip with no url is a card a student clicks that goes nowhere.
+//   2. A lesson that DEFINES clips but whose shell has no #video-clips container
+//      renders them nowhere at all. The page looks fine and the video is gone,
+//      which for this room's IEP/504 load is the most expensive silent failure
+//      available.
+section('Video');
+let clipCount = 0;
+
+function checkClips(clips, file, where) {
+  (clips || []).forEach((v, i) => {
+    clipCount++;
+    assert(!!(v && v.url), file,
+      `${where} clip ${i + 1} has no url. A clip card with no link goes nowhere.`);
+    assert(!!(v && v.title), file,
+      `${where} clip ${i + 1} has no title. A clip card is headed by its own title.`);
+  });
+}
+
+// Week content, and the shell that has to be able to show it.
+weekDirs.forEach(dir => {
+  const nn = dir.slice(-2);
+  const contentFile = path.join(ROOT, 'scripts', 'lib', 'week-content', `week-${nn}.js`);
+  if (!fs.existsSync(contentFile)) return;
+  let week = null;
+  try { week = require(contentFile); } catch (e) { err(contentFile, 'content module not loadable'); return; }
+
+  checkClips(week.videos, contentFile, 'week');
+
+  if ((week.videos || []).length) {
+    const shell = path.join(ROOT, dir, 'index.html');
+    const src = read(shell) || '';
+    assert(src.includes('id="video-clips"'), shell,
+      'this lesson defines video clips, but the shell has no #video-clips container, '
+      + 'so they render nowhere.');
+  }
+});
+
+// Unit blocks.
+(() => {
+  const dir = path.join(ROOT, 'scripts', 'lib', 'unit-content');
+  if (!fs.existsSync(dir)) return;
+  glob(dir, /\.js$/).forEach(f => {
+    let unit = null;
+    try { unit = require(f); } catch (e) { err(f, 'unit content not loadable'); return; }
+    (unit.blocks || []).forEach(b => checkClips(b.videos, f, `${b.block || 'block'}`));
+  });
+})();
+
+// The renderer must hide the container rather than leave it empty. An empty
+// section reads to a student as something that failed to load.
+if (rendSrc) {
+  assert(rendSrc.includes('function renderVideos'), RENDERER, 'missing renderVideos()');
+  assert(/host\.hidden = true/.test(rendSrc), RENDERER,
+    'renderVideos must hide the container when there are no clips, not leave it empty');
+}
+done(`${clipCount} clip${clipCount === 1 ? '' : 's'} defined, container wiring checked`);
+
 // ── Favicon ───────────────────────────────────────────────────────────────────
 //
 // Every student-facing page links it, so no page falls back to the browser's

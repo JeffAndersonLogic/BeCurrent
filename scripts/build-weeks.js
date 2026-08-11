@@ -138,6 +138,10 @@ function renderShell(week) {
       <div class="background-grid" id="background-grid"></div>
     </section>
 
+    <!-- Video. Kept in the shell whether or not this lesson has clips: the
+         renderer sets hidden on it, so an empty one leaves no gap. -->
+    <section class="section" id="video-clips" hidden></section>
+
     <section class="section" id="submit">
       <div class="section-header">
         <div class="eyebrow">Turn It In</div>

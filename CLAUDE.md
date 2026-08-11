@@ -348,5 +348,52 @@ Honest list, so nobody assumes coverage that does not exist:
 6. **No unit page.** The Social Media briefs are standalone URLs; nothing ties the
    five blocks together yet.
 7. **No AI coach.** Deliberate, see above. BeCurrent needs its own bot first.
-8. **No video anywhere.** The single largest gap for this room's IEP/504 load, and
-   the reason to port BeHistorical's self-hiding video block next.
+8. **No clips are configured yet.** The video mechanism is built and tested, but
+   every `videos` array is empty because the URLs have to be real ones you supply.
+   Nothing was invented to fill them.
+
+## Video
+
+Video is an **optional resource and a first-class one.** With this room's IEP/504
+load it is frequently the primary path rather than the alternative, so a lesson may
+be mostly video on a day when that is the right call.
+
+Two places carry clips, and both take the same shape:
+
+- **A lesson**, via `videos` in the week content module. Renders a self-introducing
+  section on the week page.
+- **A Brief**, via `videos` on the week or the block. Renders a strip **above the
+  prose**, because a student who needs the video should not have to scroll past a
+  thousand words to discover it exists.
+
+```js
+videos: [
+  { title:    'CNN10 for October 14',
+    url:      'https://...',        // required
+    prompt:   'Watch for who is quoted and who is not.',
+    source:   'CNN10',              // optional label
+    duration: '10:00',              // optional
+    captions: true }                // set false only if genuinely absent
+]
+```
+
+**The block introduces itself when clips exist and hides entirely when they do
+not.** An empty container leaves a gap that reads as something failing to load, so
+the container stays in the shell and the renderer sets `hidden` on it.
+
+**A clip card is headed by its own title**, never by the words "Video Clip".
+
+**Clips open in a new tab, never embedded.** An embed puts a third-party iframe on a
+page students use for schoolwork; a link does the same teaching job and sends
+nothing until the student chooses to go. Every link carries
+`rel="noopener noreferrer"`.
+
+**The `prompt` is the guiding question**, and it is what makes a clip usable as
+assigned work rather than filler. Not enforced, because that is a teaching call, but
+do not skip it.
+
+What the gate does enforce, because both fail silently:
+- a clip with no `url` is a card that goes nowhere
+- a lesson that defines clips but whose shell has no `#video-clips` container
+  renders them nowhere at all, with the page still looking fine
+

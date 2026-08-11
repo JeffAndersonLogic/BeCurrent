@@ -57,6 +57,29 @@ function coachIntercept(aiUrl) {
 `;
 }
 
+// A video path through the reading, for students who need one. Placed directly
+// under the support strip rather than at the end, because a student who needs the
+// video should not have to scroll past 1,000 words of prose to discover it exists.
+// Omitted entirely when the block has no clips.
+function videoStrip(videos) {
+  if (!videos || !videos.length) return '';
+  const cards = videos.map(v => {
+    const meta = [v.source, v.duration].filter(Boolean).join(' · ');
+    return `      <div class="brief-video">
+        <span class="brief-video-label">Watch instead</span>
+        <p class="brief-video-title">${esc(v.title)}</p>
+        ${meta ? `<p class="brief-video-meta">${esc(meta)}</p>` : ''}
+        ${v.prompt ? `<p class="brief-video-prompt">${esc(v.prompt)}</p>` : ''}
+        <a class="btn secondary" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Open the video</a>
+      </div>`;
+  }).join('\n');
+  return `  <div class="brief-video-strip">
+${cards}
+  </div>
+
+`;
+}
+
 function builderSection(aiUrl) {
   if (!aiUrl) return '';
   return `<section class="builder-section">
@@ -185,7 +208,7 @@ ${supportCards}
 ${terms}
   </div>
 
-${sections}
+${videoStrip(block.videos)}${sections}
 ${roadNotTaken}
 
   <div class="be-ready">

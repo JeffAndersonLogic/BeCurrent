@@ -744,6 +744,55 @@ function renderBackgroundSection() {
   wireDeckControls();
 }
 
+// ── Video ─────────────────────────────────────────────────────────────────────
+//
+// Video is an OPTIONAL resource and a first-class one. With this room's IEP/504
+// load it is often the difference between a student meeting the content and not,
+// so a lesson may be mostly video on a day when that is the right call.
+//
+// Two rules carried from BeHistorical, both learned the hard way:
+//
+//   1. The block INTRODUCES ITSELF when clips exist and HIDES ENTIRELY when they
+//      do not. An empty container leaves a gap under the content that reads as
+//      something failing to load.
+//   2. A clip card is headed by ITS OWN TITLE, never by the words "Video Clip".
+//
+// Clips open in a new tab rather than embedding. An embed would put a third-party
+// iframe on a page students use for schoolwork; a link does the same teaching job
+// and sends nothing until the student chooses to go.
+function renderVideos() {
+  const host = byId('video-clips');
+  if (!host) return;
+
+  const videos = (W && W.videos) || [];
+  if (!videos.length) { host.innerHTML = ''; host.hidden = true; return; }
+  host.hidden = false;
+
+  const cards = videos.map(v => {
+    const meta = [v.source, v.duration].filter(Boolean).join(' · ');
+    return `
+      <article class="video-card">
+        <h3>${esc(v.title)}</h3>
+        ${meta ? `<p class="video-meta">${esc(meta)}${v.captions === false ? '' : ' · Captions available'}</p>` : ''}
+        ${v.prompt ? `<div class="prompt-block">
+          <span class="prompt-label">Watch for</span>
+          <p>${esc(v.prompt)}</p>
+        </div>` : ''}
+        <a class="btn" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Open the video</a>
+      </article>`;
+  }).join('');
+
+  host.innerHTML = `
+    <div class="section-header">
+      <div class="eyebrow">Watch Instead, or Watch Again</div>
+      <h2>Video for this lesson</h2>
+      <p>These cover the same ground as the reading. Use them instead of it, or after it
+        for another pass. Read the "watch for" line before you start rather than trying
+        to write down everything.</p>
+    </div>
+    <div class="video-grid">${cards}</div>`;
+}
+
 function renderGatherPanel() {
   const host = byId('gather-panel');
   if (!host) return;
@@ -775,6 +824,7 @@ function renderWeek() {
   renderTargets();
   renderModuleGrid();
   renderBackgroundSection();
+  renderVideos();
   renderGatherPanel();
   renderFooter();
 }
