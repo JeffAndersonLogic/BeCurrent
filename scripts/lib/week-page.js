@@ -85,6 +85,7 @@ ${confidenceRow(id)}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Brief | ${esc(m.week)} | BeCurrent</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/becurrent-brief.css">
 <style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
@@ -170,6 +171,7 @@ function renderWrapper(week, briefFile) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Brief Capture Wrapper | ${esc(m.week)}</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <style>
   html, body { margin:0; padding:0; width:100%; height:100%; background:#171B1F; overflow:hidden; }
   iframe { width:100%; height:100vh; border:0; display:block; }

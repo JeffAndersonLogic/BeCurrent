@@ -404,6 +404,23 @@ studentPages.forEach(file => {
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
 
+// ── Favicon ───────────────────────────────────────────────────────────────────
+//
+// Every student-facing page links it, so no page falls back to the browser's
+// unprompted /favicon.ico request. That request goes to the DOMAIN root, which on
+// a project Pages site belongs to a different repo entirely and can never be
+// satisfied from here, so an explicit link is the only fix rather than a nicety.
+section('Favicon');
+const FAVICON = path.join(ROOT, 'assets', 'favicon.svg');
+assert(fs.existsSync(FAVICON), FAVICON, 'assets/favicon.svg is missing');
+studentPages.filter(f => f.endsWith('.html')).forEach(file => {
+  const src = read(file);
+  if (!src) return;
+  assert(/<link rel="icon" href="[^"]*assets\/favicon\.svg" type="image\/svg\+xml">/.test(src), file,
+    'no favicon link. Every student-facing page must link assets/favicon.svg.');
+});
+done(`linked on ${studentPages.filter(f => f.endsWith('.html')).length} pages`);
+
 // ── Image integrity ──────────────────────────────────────────────────────────
 //
 // A text file named .jpg renders as a broken frame, which reads to a student as

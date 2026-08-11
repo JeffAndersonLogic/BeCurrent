@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="BeCurrent">
+  <!-- The masthead mark, reduced to the one letter that carries it.
+       Drawn as a stroked arc rather than a <text> element on purpose: a favicon
+       renders in contexts with no guarantee of any particular font, and a text
+       glyph that falls back to a default face stops being the brand mark.
+       Width and height are set explicitly, per the image contract in CLAUDE.md.
+       Signal red ground with a newsprint C, which is the strongest pairing in the
+       palette and stays legible at 16px against light or dark browser chrome. -->
+  <rect width="64" height="64" rx="13" fill="#B22222"/>
+  <path d="M42.9 19 A17 17 0 1 0 42.9 45"
+        fill="none" stroke="#FFFEFB" stroke-width="9" stroke-linecap="round"/>
+</svg>
