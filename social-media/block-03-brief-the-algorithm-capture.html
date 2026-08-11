@@ -15,24 +15,12 @@
 <script>
 (function () {
   'use strict';
-  var AI_URL = "https://student.magicschool.ai/s/login?joinCode=REPLACE_ME";
-
   function wireBriefCapture() {
     var frame = document.getElementById('brief-frame');
     var doc;
     try { doc = frame.contentDocument; } catch (e) { return; }
     if (!doc) return;
 
-    doc.addEventListener('click', function (event) {
-      var el = event.target;
-      while (el && el !== doc.body && !(el.tagName === 'BUTTON' || el.tagName === 'A')) el = el.parentNode;
-      if (!el || el === doc.body) return;
-      var label = (el.textContent || '').trim().toLowerCase();
-      if (label === 'open ai coach' || label === 'open magicschool') {
-        event.preventDefault();
-        window.open(AI_URL, '_blank', 'noopener');
-      }
-    }, true);
 
     // Escape and the arrow keys cannot cross a document boundary, so a student
     // typing inside the brief could not close the modal that holds it. Forward the

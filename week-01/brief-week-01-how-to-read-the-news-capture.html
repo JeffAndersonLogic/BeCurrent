@@ -15,23 +15,22 @@
 <script>
 (function () {
   'use strict';
-  var AI_URL = "https://student.magicschool.ai/s/login?joinCode=czwb9Q";
-
   function wireBriefCapture() {
     var frame = document.getElementById('brief-frame');
     var doc;
     try { doc = frame.contentDocument; } catch (e) { return; }
     if (!doc) return;
 
-    doc.addEventListener('click', function (event) {
-      var el = event.target;
-      while (el && el !== doc.body && !(el.tagName === 'BUTTON' || el.tagName === 'A')) el = el.parentNode;
-      if (!el || el === doc.body) return;
-      var label = (el.textContent || '').trim().toLowerCase();
-      if (label === 'open ai coach' || label === 'open magicschool') {
-        event.preventDefault();
-        window.open(AI_URL, '_blank', 'noopener');
-      }
+
+    // Escape cannot cross a document boundary, so a student typing inside the brief
+    // could not close the modal holding it. Forward the key the parent's modal
+    // contract listens for.
+    doc.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      try {
+        window.parent.document.dispatchEvent(
+          new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      } catch (e) { /* cross-origin, nothing to forward to */ }
     }, true);
   }
 

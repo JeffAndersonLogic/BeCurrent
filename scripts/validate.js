@@ -285,17 +285,19 @@ done('capture block writes it, renderer reads it, prefix pinned in both');
 
 // ── Week shells ───────────────────────────────────────────────────────────────
 //
-// Every id the renderer writes into. A shell missing one fails silently: that
-// section is simply blank on the page.
+// Only the ids WITHOUT which a student loses work or gets stranded. The earlier
+// version required all 26 ids the renderer can write into, which meant a shell
+// could not omit the background deck or the lightbox even on a day that has
+// neither — a code of daily conduct rather than a contract.
+//
+// A missing decorative id leaves a blank section, which is visible and fixable.
+// A missing id from this list is not: no #pop-body and every module opens empty,
+// no #gather-panel and there is no route to Canvas at all.
 const REQUIRED_IDS = [
-  'week-dateline', 'week-title', 'week-subtitle', 'inline-targets', 'module-grid',
-  'background', 'background-section-title', 'background-intro', 'background-grid',
-  'gather-panel', 'footer-week-label',
-  'pop-modal', 'pop-eyebrow', 'pop-title', 'pop-body',
-  'background-modal', 'background-title', 'background-bullets',
-  'background-figure', 'background-img', 'background-caption', 'deck-controls',
-  'lightbox', 'lightbox-img', 'lightbox-caption',
-  'modules'
+  'module-grid',    // no modules render without it
+  'gather-panel',   // the only route to Canvas
+  'pop-modal',      // every module opens into it
+  'pop-body'
 ];
 
 section('Week shells');
@@ -318,13 +320,14 @@ weekDirs.forEach(dir => {
 
   assert(src.includes('assets/css/becurrent.css'), file, 'system stylesheet not linked');
 
-  // Three fixed roadmap steps, never customized per week.
-  const steps = (src.match(/class="roadmap-step"/g) || []).length;
-  assert(steps === 3, file, `Classroom Flow must have exactly 3 roadmap steps, found ${steps}`);
-  assert(src.includes('class="week-roadmap"'), file, 'missing the .week-roadmap container');
+  // How many roadmap steps a page shows, and whether it shows one at all, is a
+  // teaching decision. Not asserted.
 
-  // Both dialogs must declare themselves to assistive tech.
+  // Any dialog the page DOES have must declare itself to assistive tech. Absence
+  // is fine; a dialog that traps a screen-reader user without announcing itself is
+  // not, and that is invisible unless you are using a screen reader.
   ['pop-modal', 'background-modal', 'lightbox'].forEach(id => {
+    if (!src.includes(`id="${id}"`)) return;
     const tag = (src.match(new RegExp(`<div class="[^"]*" id="${id}"[^>]*>`)) || [])[0] || '';
     assert(/role="dialog"/.test(tag), file, `#${id} must carry role="dialog"`);
     assert(/aria-modal="true"/.test(tag), file, `#${id} must carry aria-modal="true"`);
@@ -333,30 +336,19 @@ weekDirs.forEach(dir => {
 done(`${weekDirs.length} shell${weekDirs.length === 1 ? '' : 's'}, ${REQUIRED_IDS.length} required ids each`);
 
 // ── Brief structure ───────────────────────────────────────────────────────────
+//
+// Four blocks, not twenty-two. A Brief without a vocabulary strip, a callout, or a
+// BeReady takeaway is a Brief that did not need one — that is a writing decision.
+// What is asserted is the frame a student needs to read and submit at all.
+//
+// The AI coach builder is deliberately NOT here. It is optional and currently
+// absent from every brief; see scripts/lib/brief-capture-block.js.
 section('Brief structure');
 const BRIEF_BLOCKS = [
-  ['class="module-header"', 'module header'],
-  ['class="module-badge"', 'Module 02 badge'],
-  ['class="brief-title-band"', 'title band'],
-  ['class="brief-title"', 'h1 title'],
-  ['class="brief-deck"', 'deck subtitle'],
-  ['class="skill-tags"', 'skill tag row'],
-  ['class="brief-body"', 'reading body'],
-  ['class="support-strip"', 'support strip'],
-  ['class="support-card"', 'support cards'],
-  ['class="vocab-strip"', 'vocabulary strip'],
-  ['class="term-chip"', 'key term chips'],
-  ['class="section-number"', 'section watermark'],
-  ['class="section-label"', 'section eyebrow'],
-  ['class="section-heading"', 'section heading'],
-  ['class="reading-text"', 'reading paragraphs'],
-  ['class="callout"', 'at least one callout'],
-  ['class="be-ready"', 'BeReady takeaway strip'],
-  ['class="check-section"', 'check section'],
-  ['class="builder-section"', 'AI coach prompt builder'],
-  ['id="ai-output"', 'coach prompt output'],
-  ['class="page-footer-note"', 'submission note'],
-  ['class="module-footer"', 'footer navigation']
+  ['class="brief-title"', 'an h1 title'],
+  ['class="brief-body"', 'a reading body'],
+  ['class="check-section"', 'a check section, or the questions have nowhere to live'],
+  ['class="page-footer-note"', 'the submission note telling students where work goes']
 ];
 briefFiles.forEach(file => {
   const src = read(file);
@@ -369,7 +361,7 @@ briefFiles.forEach(file => {
   assert(!/class="(cs|qi|mf|rt)"/.test(src), file,
     'abbreviated CSS class names are prohibited, use the canonical full names');
 });
-done(`${BRIEF_BLOCKS.length} required blocks per brief`);
+done(`${BRIEF_BLOCKS.length} load-bearing blocks per brief`);
 
 // ── Capture wrappers ──────────────────────────────────────────────────────────
 //
@@ -383,10 +375,23 @@ briefFiles.forEach(file => {
 
   const wsrc = read(wrapper);
   assert(/id="brief-frame"/.test(wsrc), wrapper, 'wrapper has no #brief-frame iframe');
-  assert(wsrc.includes('open ai coach'), wrapper,
-    'the wrapper must intercept the AI coach click by label, or the button is dead');
   assert(wsrc.includes(path.basename(file)), wrapper,
     `wrapper iframe does not point at ${path.basename(file)}`);
+
+  // Escape cannot cross a document boundary. Without this forwarder a student
+  // typing inside the brief cannot close the modal that holds it, and no offline
+  // check other than this one can see that.
+  assert(wsrc.includes("event.key !== 'Escape'"), wrapper,
+    'wrapper must forward Escape to the parent, or the brief traps the student');
+
+  // The coach interceptor is required only when a coach exists. A brief renders
+  // that button with no onclick of its own, so a URL with no interceptor is a dead
+  // button — but no URL and no interceptor is correct.
+  const briefSrc = read(file) || '';
+  if (briefSrc.includes('id="ai-output"')) {
+    assert(wsrc.includes('open ai coach'), wrapper,
+      'this brief renders a coach button, so its wrapper must intercept the click');
+  }
 });
 
 weekDirs.forEach(dir => {
@@ -434,6 +439,24 @@ studentPages.forEach(file => {
     'no XMLHttpRequest on a student page: student writing must never be sent anywhere');
   assert(!/docs\.google\.com\/forms/.test(src), file,
     'Google Forms are not a capture channel in this course');
+});
+
+// No other course's join code, ever. The AP World MagicSchool room was carried in
+// here by the initial port; it is a different bot for a different class, and a
+// student-facing link into it is a link into the wrong room. When BeCurrent has its
+// own bot, set aiCoachUrl in the content module — a joinCode belongs in exactly one
+// place, never pasted across repos.
+const codeCarriers = studentPages.concat([
+  path.join(ROOT, 'scripts', 'lib', 'week-content', 'week-01.js')
+], fs.existsSync(path.join(ROOT, 'scripts', 'lib', 'unit-content'))
+  ? glob(path.join(ROOT, 'scripts', 'lib', 'unit-content'), /\.js$/) : []);
+
+codeCarriers.forEach(file => {
+  const src = read(file);
+  if (!src) return;
+  assert(!/joinCode=[A-Za-z0-9]+/.test(src), file,
+    'a MagicSchool joinCode is hardcoded here. BeCurrent has no bot yet, and the '
+    + 'AP World code must never be carried into this repo.');
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
 

@@ -34,6 +34,46 @@ function esc(s) {
 // is how a key term is found on the page, and stripping it loses teaching.
 function raw(s) { return String(s == null ? '' : s); }
 
+// The coach prompt builder, only when there is a coach to send the prompt to.
+// Rendering the buttons with no URL behind them is the dead-button failure the
+// capture wrapper exists to prevent, so the whole section is omitted instead.
+// The coach click interceptor, emitted only when a coach exists. The brief renders
+// that button with no onclick of its own, so without this the button is dead — and
+// with no coach at all, the button is not rendered either, so neither is this.
+function coachIntercept(aiUrl) {
+  if (!aiUrl) return '';
+  return `    var AI_URL = ${JSON.stringify(aiUrl)};
+
+    doc.addEventListener('click', function (event) {
+      var el = event.target;
+      while (el && el !== doc.body && !(el.tagName === 'BUTTON' || el.tagName === 'A')) el = el.parentNode;
+      if (!el || el === doc.body) return;
+      var label = (el.textContent || '').trim().toLowerCase();
+      if (label === 'open ai coach') {
+        event.preventDefault();
+        window.open(AI_URL, '_blank', 'noopener');
+      }
+    }, true);
+`;
+}
+
+function builderSection(aiUrl) {
+  if (!aiUrl) return '';
+  return `<section class="builder-section">
+  <h2>Build Your AI Coach Prompt</h2>
+  <p>This builds a prompt out of what you wrote above. The coach asks you questions rather than handing you answers, and nothing here is submitted, your work reaches your teacher through Canvas only.</p>
+  <div class="builder-actions">
+    <button class="btn" type="button" onclick="buildAiPrompt()">Build My Prompt</button>
+    <button class="btn secondary" type="button" onclick="copyAiPrompt()">Copy Prompt</button>
+    <button class="btn secondary" type="button" onclick="openAiCoach()">Open AI Coach</button>
+  </div>
+  <label class="visually-hidden" for="ai-output">Your generated coach prompt</label>
+  <textarea id="ai-output" readonly placeholder="Click Build My Prompt."></textarea>
+</section>
+
+`;
+}
+
 function confidenceRow(id) {
   const buttons = [1, 2, 3, 4, 5].map(n =>
     `        <button type="button" data-conf="${n}" aria-pressed="false" aria-label="Confidence ${n} of 5">${n}</button>`
@@ -160,19 +200,7 @@ ${roadNotTaken}
 ${questionItems}
 </section>
 
-<section class="builder-section">
-  <h2>Build Your AI Coach Prompt</h2>
-  <p>This builds a prompt out of what you wrote above. The coach asks you questions rather than handing you answers, and nothing here is submitted, your work reaches your teacher through Canvas only.</p>
-  <div class="builder-actions">
-    <button class="btn" type="button" onclick="buildAiPrompt()">Build My Prompt</button>
-    <button class="btn secondary" type="button" onclick="copyAiPrompt()">Copy Prompt</button>
-    <button class="btn secondary" type="button" onclick="openAiCoach()">Open AI Coach</button>
-  </div>
-  <label class="visually-hidden" for="ai-output">Your generated coach prompt</label>
-  <textarea id="ai-output" readonly placeholder="Click Build My Prompt."></textarea>
-</section>
-
-<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
+${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
 
 <nav class="module-footer">
   <a href="../index.html" target="_top">&larr; BeCurrent home</a>
@@ -209,25 +237,13 @@ function renderUnitWrapper(unit, block, briefFile) {
 <script>
 (function () {
   'use strict';
-  var AI_URL = ${JSON.stringify(m.aiCoachUrl)};
-
   function wireBriefCapture() {
     var frame = document.getElementById('brief-frame');
     var doc;
     try { doc = frame.contentDocument; } catch (e) { return; }
     if (!doc) return;
 
-    doc.addEventListener('click', function (event) {
-      var el = event.target;
-      while (el && el !== doc.body && !(el.tagName === 'BUTTON' || el.tagName === 'A')) el = el.parentNode;
-      if (!el || el === doc.body) return;
-      var label = (el.textContent || '').trim().toLowerCase();
-      if (label === 'open ai coach' || label === 'open magicschool') {
-        event.preventDefault();
-        window.open(AI_URL, '_blank', 'noopener');
-      }
-    }, true);
-
+${coachIntercept(m.aiCoachUrl)}
     // Escape and the arrow keys cannot cross a document boundary, so a student
     // typing inside the brief could not close the modal that holds it. Forward the
     // keys the parent's modal contract listens for.

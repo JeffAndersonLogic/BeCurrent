@@ -11,6 +11,21 @@
 
 ## The Gate
 
+**The gate is hard on plumbing and silent on pedagogy.** That split is the rule that
+governs every other rule in this file.
+
+Enforced, because each one fails *silently* and costs a student their work:
+the capture block and its storage key, the record footer the parser reads, nothing
+leaving the device, links resolving, images being real, generated files reproducing,
+and no other course's join code.
+
+Not enforced, because they are teaching decisions: how many modules a lesson shows,
+in what order, how many questions a brief carries, whether a page has a roadmap.
+
+BeHistorical needed the second kind of rule because 77 hand-authored readings drift.
+BeCurrent does not, and a course whose units get built in response to the news
+cannot afford a build gate with opinions about lesson shape.
+
 The contracts below are enforced by machine, not by memory.
 
 - `npm test`, the gate. Runs `validate.js` plus three dependency-free tests in
@@ -127,9 +142,14 @@ is about the difference between what was reported and what was made up; a fake
 example passed off as real would be the worst possible lesson. Real weeks carry
 real links.
 
-## 8-Module Structure Standard
+## The Module Set
 
-Every week page must display exactly **8 modules** in this fixed order:
+The modules are a **toolkit, not a checklist.** A block uses the ones it needs.
+Sometimes all of them, often two or three. Nothing enforces a count or an order,
+because how a lesson is shaped is a teaching decision and the build gate has no
+business having an opinion about it.
+
+The eight that exist:
 
 | # | ID | Title | Delivery |
 |---|----|-------|----------|
@@ -142,31 +162,53 @@ Every week page must display exactly **8 modules** in this fixed order:
 | 07 | `deliberation` | The Deliberation | external link, or a placeholder |
 | 08 | `checkpoint` | Checkpoint | `renderCheckpoint()` |
 
-**Rules:**
-- Module 03 is always a jump link, never a pop-out modal.
-- Module 09 does not exist. Eight, no more, no fewer, and `validate.js` fails on
-  a count or order change.
-- Module 07 is an external link when `deliberation.url` exists, and renders a
-  "coming soon" placeholder when it does not.
-- The eight modules are the *pedagogy*, not decoration. Each targets one of the
-  five questions in the Week 01 brief.
+**What the gate does enforce**, because each one fails silently:
+- Every module has exactly **one** delivery mode. A module with none is a card a
+  student clicks and nothing happens; a module with two is undefined behaviour.
+- Every `render:` target resolves to a function that actually exists.
+- No module id is defined twice, because the second silently shadows the first.
 
-## Classroom Flow Standard
+**What it does not enforce:** how many modules a lesson shows, in what order, or
+which ones. Add a ninth if a unit needs one.
 
-Every week page shows the same three-card flow inside `.week-roadmap`. The three
-steps are fixed, never customized per week: **Get the Story**, **Interrogate It**,
-**Take a Position**. `validate.js` requires exactly three `.roadmap-step` divs.
+## Classroom Flow
+
+Week pages show a three-card flow inside `.week-roadmap`: **Get the Story**,
+**Interrogate It**,
+**Take a Position**. Not enforced, and not required on a page that does not want one.
 
 ## Brief Standard
 
-Every brief follows the Week 01 structure exactly, in this order: `module-header`,
-`brief-title-band`, `brief-body` (support strip, vocab strip, numbered sections
-each with at least one callout, `be-ready`), `check-section` with **exactly three**
-`question-item` blocks, the AI coach prompt builder, `page-footer-note`,
-`module-footer`, and then the capture block.
+A brief is a reading with questions under it. Four things are required, because
+without them a student cannot read it or cannot submit it: an `h1.brief-title`, a
+`.brief-body`, a `.check-section`, and the `.page-footer-note` that says where work
+goes. Everything else, the support strip, vocabulary chips, callouts, the BeReady
+takeaway, how many questions, is a writing decision.
 
 Use the canonical full class names. Abbreviated ones (`.cs`, `.qi`, `.mf`) are
 prohibited and `validate.js` rejects them.
+
+### Two flavours
+
+`scripts/lib/week-page.js` renders the week-01 orientation reading.
+`scripts/lib/unit-brief-page.js` renders unit blocks and adds two things: START
+HERE / PUSH FURTHER cards on every question, and a required road-not-taken section.
+They are separate files on purpose: week-01 is pinned byte-for-byte by the
+reproducibility test, and generalising one renderer to do both risks moving a byte
+in a page that is already right.
+
+### The AI coach is optional and currently absent
+
+BeCurrent will use its own MagicSchool bot, one per unit, and it will not be the AP
+World bot. Until that bot exists `aiCoachUrl` is empty in every content module, and
+the coach code, buttons and output box are all omitted rather than shipped pointing
+at another course's room.
+
+Set `aiCoachUrl` and the whole thing returns, including the wrapper's click
+interception. `validate.js` enforces the pairing in both directions: a brief that
+renders a coach button must have a wrapper that catches it, and **no file may
+contain a `joinCode`**, because a join code belongs in one place and is never
+pasted across repos.
 
 ### The capture block is load-bearing
 
@@ -292,8 +334,8 @@ old offset and fails a page that scrolls fine.
 
 Honest list, so nobody assumes coverage that does not exist:
 
-1. **The browser suite covers one week and one path.** It does not yet cover the
-   deliberation placeholder, a week with no brief published, or mobile layout.
+1. **The browser suite covers one week and one path.** It does not cover the unit
+   briefs, a lesson with only two modules, or mobile layout.
 2. **No Skills Lens.** BeHistorical's `teacher/skills-lens.html` is the in-browser
    analysis surface. The CLI parser works here today; the drop-a-zip UI does not
    exist yet. `teacher/` is an empty placeholder.
@@ -302,4 +344,9 @@ Honest list, so nobody assumes coverage that does not exist:
    that exists. Replace it with a BeCurrent one once week 01 has been through Canvas
    for real, and keep both.
 5. **No real map artwork.** Week 01 has no map because the orientation week has no
-   single place. A real week needs a real map in the `where` slot.
+   single place. A real lesson needs a real map in the `where` slot.
+6. **No unit page.** The Social Media briefs are standalone URLs; nothing ties the
+   five blocks together yet.
+7. **No AI coach.** Deliberate, see above. BeCurrent needs its own bot first.
+8. **No video anywhere.** The single largest gap for this room's IEP/504 load, and
+   the reason to port BeHistorical's self-hiding video block next.

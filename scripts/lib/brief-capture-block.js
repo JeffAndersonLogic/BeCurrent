@@ -21,10 +21,67 @@
 const STORAGE_PREFIX = 'becurrent-brief-';
 
 /**
- * @param {string} weekKey  e.g. 'w01'
- * @param {number} count    how many questions the brief carries
- * @param {string} aiUrl    the AI coach join URL
+ * The AI coach is OPTIONAL and is currently absent from every BeCurrent brief.
+ *
+ * BeCurrent will eventually use a custom MagicSchool chatbot per unit, and it will
+ * be a different bot from the AP World one. Until that bot exists there is no URL
+ * to point at, so the coach code, the buttons and the output box are all omitted
+ * rather than shipped pointing at another course's room. Pass an `aiUrl` and the
+ * whole thing comes back.
+ *
+ * @param {string}  weekKey  e.g. 'w01' or 'sm-b3'
+ * @param {number}  count    how many questions the brief carries
+ * @param {?string} aiUrl    the coach URL, or falsy for no coach at all
  */
+// The coach half of the block, emitted only when a URL exists.
+function coachBlock(aiUrl) {
+  if (!aiUrl) {
+    return `  // No AI coach on this brief. BeCurrent's custom chatbot does not exist
+  // yet, and a button pointing at another course's room is worse than no button.
+`;
+  }
+  return `  // ── AI coach prompt builder ────────────────────────────────────────────────
+  //
+  // Not a capture channel and never has been. It builds a prompt the student
+  // pastes into the coach; nothing here reaches the teacher.
+  var AI_URL = ${JSON.stringify(aiUrl)};
+
+  window.buildAiPrompt = function () {
+    var out = document.getElementById('ai-output');
+    if (!out) return;
+    var title = document.querySelector('.brief-title');
+    var lines = [
+      'I am a high school Current Events student working on this week\\'s brief:',
+      title ? title.textContent.trim() : '',
+      '',
+      'Here is what I wrote, and where I am unsure. Ask me questions rather than',
+      'giving me the answer, and push me to name my evidence.',
+      ''
+    ];
+    IDS.forEach(function (id, i) {
+      var prompt = document.getElementById('question-' + id);
+      var area = document.getElementById('answer-' + id);
+      var conf = (state[id] && state[id].confidence) || 'not rated';
+      lines.push('Question ' + (i + 1) + ': ' + (prompt ? prompt.textContent.trim() : ''));
+      lines.push('My answer: ' + ((area && area.value.trim()) || '(blank)'));
+      lines.push('My confidence, 1 to 5: ' + conf);
+      lines.push('');
+    });
+    out.value = lines.join('\\n');
+  };
+
+  window.copyAiPrompt = function () {
+    var out = document.getElementById('ai-output');
+    if (!out) return;
+    if (!out.value) window.buildAiPrompt();
+    out.select();
+    try { navigator.clipboard.writeText(out.value); } catch (e) { document.execCommand('copy'); }
+  };
+
+  window.openAiCoach = function () { window.open(AI_URL, '_blank', 'noopener'); };
+`;
+}
+
 function captureBlock(weekKey, count, aiUrl) {
   const key = STORAGE_PREFIX + weekKey;
   const ids = [];
@@ -101,46 +158,7 @@ function captureBlock(weekKey, count, aiUrl) {
     paint();
   });
 
-  // ── AI coach prompt builder ────────────────────────────────────────────────
-  //
-  // Not a capture channel and never has been. It builds a prompt the student
-  // pastes into the coach; nothing here reaches the teacher.
-  var AI_URL = ${JSON.stringify(aiUrl)};
-
-  window.buildAiPrompt = function () {
-    var out = document.getElementById('ai-output');
-    if (!out) return;
-    var title = document.querySelector('.brief-title');
-    var lines = [
-      'I am a high school Current Events student working on this week\\'s brief:',
-      title ? title.textContent.trim() : '',
-      '',
-      'Here is what I wrote, and where I am unsure. Ask me questions rather than',
-      'giving me the answer, and push me to name my evidence.',
-      ''
-    ];
-    IDS.forEach(function (id, i) {
-      var prompt = document.getElementById('question-' + id);
-      var area = document.getElementById('answer-' + id);
-      var conf = (state[id] && state[id].confidence) || 'not rated';
-      lines.push('Question ' + (i + 1) + ': ' + (prompt ? prompt.textContent.trim() : ''));
-      lines.push('My answer: ' + ((area && area.value.trim()) || '(blank)'));
-      lines.push('My confidence, 1 to 5: ' + conf);
-      lines.push('');
-    });
-    out.value = lines.join('\\n');
-  };
-
-  window.copyAiPrompt = function () {
-    var out = document.getElementById('ai-output');
-    if (!out) return;
-    if (!out.value) window.buildAiPrompt();
-    out.select();
-    try { navigator.clipboard.writeText(out.value); } catch (e) { document.execCommand('copy'); }
-  };
-
-  window.openAiCoach = function () { window.open(AI_URL, '_blank', 'noopener'); };
-}());
+${coachBlock(aiUrl)}}());
 </${''}script>`;
 }
 

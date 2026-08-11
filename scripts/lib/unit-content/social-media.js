@@ -33,7 +33,9 @@ const UNIT = {
   unit: 'Social Media',
   unitKey: 'social-media',
   course: 'CURRENT EVENTS',
-  aiCoachUrl: 'https://student.magicschool.ai/s/login?joinCode=REPLACE_ME',
+  // aiCoachUrl: set this once BeCurrent has its own MagicSchool bot. Leaving it
+  // unset omits the coach section from every brief in this unit.
+  aiCoachUrl: '',
   canvasSubmissionNote: 'Organize your thinking here, then submit your final work in Canvas.',
   competencies: {
     1: 'Cause and effect',

@@ -170,18 +170,6 @@
       </div>
 </section>
 
-<section class="builder-section">
-  <h2>Build Your AI Coach Prompt</h2>
-  <p>This builds a prompt out of what you wrote above. The coach asks you questions rather than handing you answers, and nothing here is submitted, your work reaches your teacher through Canvas only.</p>
-  <div class="builder-actions">
-    <button class="btn" type="button" onclick="buildAiPrompt()">Build My Prompt</button>
-    <button class="btn secondary" type="button" onclick="copyAiPrompt()">Copy Prompt</button>
-    <button class="btn secondary" type="button" onclick="openAiCoach()">Open AI Coach</button>
-  </div>
-  <label class="visually-hidden" for="ai-output">Your generated coach prompt</label>
-  <textarea id="ai-output" readonly placeholder="Click Build My Prompt."></textarea>
-</section>
-
 <p class="page-footer-note">Organize your thinking here, then submit your final work in Canvas.</p>
 
 <nav class="module-footer">
@@ -260,45 +248,8 @@
     paint();
   });
 
-  // ── AI coach prompt builder ────────────────────────────────────────────────
-  //
-  // Not a capture channel and never has been. It builds a prompt the student
-  // pastes into the coach; nothing here reaches the teacher.
-  var AI_URL = "https://student.magicschool.ai/s/login?joinCode=czwb9Q";
-
-  window.buildAiPrompt = function () {
-    var out = document.getElementById('ai-output');
-    if (!out) return;
-    var title = document.querySelector('.brief-title');
-    var lines = [
-      'I am a high school Current Events student working on this week\'s brief:',
-      title ? title.textContent.trim() : '',
-      '',
-      'Here is what I wrote, and where I am unsure. Ask me questions rather than',
-      'giving me the answer, and push me to name my evidence.',
-      ''
-    ];
-    IDS.forEach(function (id, i) {
-      var prompt = document.getElementById('question-' + id);
-      var area = document.getElementById('answer-' + id);
-      var conf = (state[id] && state[id].confidence) || 'not rated';
-      lines.push('Question ' + (i + 1) + ': ' + (prompt ? prompt.textContent.trim() : ''));
-      lines.push('My answer: ' + ((area && area.value.trim()) || '(blank)'));
-      lines.push('My confidence, 1 to 5: ' + conf);
-      lines.push('');
-    });
-    out.value = lines.join('\n');
-  };
-
-  window.copyAiPrompt = function () {
-    var out = document.getElementById('ai-output');
-    if (!out) return;
-    if (!out.value) window.buildAiPrompt();
-    out.select();
-    try { navigator.clipboard.writeText(out.value); } catch (e) { document.execCommand('copy'); }
-  };
-
-  window.openAiCoach = function () { window.open(AI_URL, '_blank', 'noopener'); };
+  // No AI coach on this brief. BeCurrent's custom chatbot does not exist
+  // yet, and a button pointing at another course's room is worse than no button.
 }());
 </script>
 </body>

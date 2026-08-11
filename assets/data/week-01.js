@@ -10,7 +10,7 @@ window.BECURRENT_WEEK = {
     "dateRange": "August 10 to August 14, 2026",
     "title": "How to Read the News",
     "subtitle": "The five questions you will ask about every story this year",
-    "aiCoachUrl": "https://student.magicschool.ai/s/login?joinCode=czwb9Q",
+    "aiCoachUrl": "",
     "canvasSubmissionNote": "Organize your thinking here, then submit your final work in Canvas."
   },
   "learningTargets": [
