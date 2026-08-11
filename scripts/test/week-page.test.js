@@ -291,6 +291,20 @@ function weekDirs() {
           doc.querySelector('#confidence-q1 button[data-conf="3"]').click();
         }, briefAnswer);
 
+        // Wait for the write to actually land before reading it. The brief's input
+        // handler runs in a different document from this page, so reading the key
+        // immediately after dispatching the event is a race: it passed four runs in
+        // five and failed the fifth with all three assertions below reporting an
+        // empty record, which looks exactly like a broken capture block. Waiting on
+        // the observable result removes the race instead of hiding it behind a sleep.
+        await page.waitForFunction(answer => {
+          const key = 'becurrent-brief-' + window.BECURRENT_WEEK.meta.weekKey;
+          try {
+            const s = JSON.parse(localStorage.getItem(key) || '{}');
+            return !!(s.q1 && s.q1.answer === answer && s.q1.confidence === '3');
+          } catch (e) { return false; }
+        }, briefAnswer, { timeout: 5000 });
+
         // The whole reason the capture block exists: this key is the only channel
         // from the brief to the Gather panel.
         const stored = await page.evaluate(() => {

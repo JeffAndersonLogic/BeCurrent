@@ -4,6 +4,8 @@
 /**
  * Every generated file still reproduces exactly from its content module.
  *
+ * Both builders: weeks (the orientation reading) and units (theme blocks).
+ *
  * This is the check that makes the generated content model actually hold. Without
  * it, a hand-edit to a generated week survives review, ships, appears to work,
  * and is then silently reverted by the next rebuild, weeks later, for no visible
@@ -23,17 +25,18 @@ const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
 
 console.log('\n  Generated weeks reproduce from their content modules\n');
 
-const run = spawnSync(process.execPath, ['scripts/build-weeks.js', '--check'], {
-  cwd: ROOT, encoding: 'utf8'
-});
+let failed = false;
+for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js']) {
+  const run = spawnSync(process.execPath, [builder, '--check'], { cwd: ROOT, encoding: 'utf8' });
+  const out = (run.stdout || '') + (run.stderr || '');
+  process.stdout.write(out.split('\n').map(l => l ? '  ' + l : l).join('\n'));
+  if (run.status !== 0) failed = true;
+}
 
-const out = (run.stdout || '') + (run.stderr || '');
-process.stdout.write(out.split('\n').map(l => l ? '  ' + l : l).join('\n'));
-
-if (run.status !== 0) {
+if (failed) {
   console.log(`\n  ${R}FAIL${X}  a generated file does not match its content module`);
   console.log(`  ${D}These files are generated. Edit scripts/lib/week-content/, then run:${X}`);
-  console.log(`  ${D}  npm run build:weeks${X}\n`);
+  console.log(`  ${D}  npm run build:weeks  &&  npm run build:units${X}\n`);
   process.exit(1);
 }
 

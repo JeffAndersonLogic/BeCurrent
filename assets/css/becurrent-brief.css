@@ -142,6 +142,52 @@ img{max-width:100%;display:block}
 }
 .be-ready p{margin:0;font-size:1rem}
 
+/* ── Road not taken ────────────────────────────────────────────────────────────
+   Visually distinct from a numbered section because it does a different job: the
+   numbered sections trace what happened, this one names what could have. It
+   carries no section-number watermark for the same reason — it is not a step in
+   the chain. */
+.road-not-taken{
+  background:var(--newsprint);
+  border:1px solid var(--paper-line);
+  border-left:4px solid var(--slate-500);
+  border-radius:0 12px 12px 0;
+  padding:20px 22px;
+  margin:0 0 30px;
+}
+.road-not-taken .section-label{color:var(--slate-500)}
+.road-not-taken .section-heading{font-size:1.18rem;margin-bottom:10px}
+.road-not-taken .reading-text:last-child{margin-bottom:0}
+
+/* ── Two-tier task cards ───────────────────────────────────────────────────────
+   START HERE and PUSH FURTHER are deliberately the same width and weight. The
+   student picks; nobody is assigned a tier. Making one of them look like the
+   lesser option would undo the point, so they share every style but the label
+   colour. */
+.tier-strip{
+  display:grid; gap:10px; margin:12px 0 14px;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+}
+.tier{
+  background:var(--newsprint);
+  border:1px solid var(--paper-line);
+  border-top:3px solid var(--cool);
+  border-radius:8px;
+  padding:12px 14px;
+}
+.tier:last-child{border-top-color:var(--signal)}
+.tier-label{
+  display:block; margin-bottom:5px;
+  font-family:var(--sans); font-size:.64rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.11em; color:var(--cool);
+}
+.tier:last-child .tier-label{color:var(--signal-deep)}
+.tier p{margin:0;font-size:.93rem;line-height:1.5}
+
+/* The confidence anchor was .66rem at .7 opacity, which measures 4.18:1 and is
+   below the 4.5:1 minimum. Full opacity at a readable size instead. */
+.confidence-label.tier-anchor{opacity:1;font-size:.68rem;color:var(--ink-soft)}
+
 /* ── Check section ─────────────────────────────────────────────────────────── */
 .check-section{
   width:min(820px,92vw); margin:26px auto 0;
