@@ -345,12 +345,51 @@ Honest list, so nobody assumes coverage that does not exist:
    for real, and keep both.
 5. **No real map artwork.** Week 01 has no map because the orientation week has no
    single place. A real lesson needs a real map in the `where` slot.
-6. **No unit page.** The Social Media briefs are standalone URLs; nothing ties the
-   five blocks together yet.
+6. **One unit only.** Social Media exists; the midterms unit does not.
 7. **No AI coach.** Deliberate, see above. BeCurrent needs its own bot first.
 8. **No clips are configured yet.** The video mechanism is built and tested, but
    every `videos` array is empty because the URLs have to be real ones you supply.
    Nothing was invented to fill them.
+
+## Units and Blocks
+
+A **unit** is a theme that runs several blocks. A **block** is one 90-minute class
+meeting. Content lives in `scripts/lib/unit-content/<unit>.js`, and
+`scripts/build-units.js` emits:
+
+```
+<unit>/index.html                       the map of the whole arc
+<unit>/block-NN-brief-<slug>.html       a Brief, only for blocks that carry one
+<unit>/block-NN-brief-<slug>-capture.html
+```
+
+**Not every block has a Brief, and that is the point.** Social Media Block 1 is a
+slide deck and a paper trace, Block 2 is a film. A block with no `sections` gets no
+Brief, and its card on the unit page says "Done on paper in class. Nothing to open
+here." rather than showing a dead link.
+
+The unit page is a **map, not a lesson container**. It puts the terminal question at
+the top, because the Block 1 script announces it on day one and returns to it two
+weeks later, and a student chewing on it for two weeks argues better than one who
+meets it cold.
+
+### The front door is its own builder
+
+`scripts/build-index.js` emits `index.html`, because it is the one page that must
+know about both units and weeks. Generating it from inside `build-weeks.js` meant it
+could not see a unit, so the first unit page shipped orphaned and reachable only by
+typing the URL. `validate.js` now fails if a unit page is not linked from the front
+door.
+
+### Do not name the film
+
+Block 2's title is deliberately vague, and this is load-bearing. From the Block 1
+teaching script: *"the second they know the title, half the room looks it up, reads
+that it's a documentary about social media being bad, and walks into Block 2 already
+knowing what they're supposed to conclude. The withholding is what keeps Block 2 from
+becoming another warning."* A unit page that listed the title would undo that on day
+one.
+
 
 ## Video
 

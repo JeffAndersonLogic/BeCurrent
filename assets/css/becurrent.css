@@ -370,6 +370,95 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 .footer-brand{font-family:var(--sans);font-weight:800;font-size:1.1rem;color:var(--clean-paper)}
 .footer p{margin:6px 0 0;font-size:.88rem}
 
+
+
+/* ── Unit cards on the front door ──────────────────────────────────────────────
+   Deliberately larger and warmer than the week cards below them, because units are
+   the spine of the course and the orientation week is scaffolding. The card shows
+   the unit's terminal question rather than a summary: it is the most interesting
+   sentence in the unit and it does the recruiting. */
+.unit-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.unit-card{
+  display:flex; flex-direction:column; gap:8px;
+  text-decoration:none; color:var(--ink);
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:5px solid var(--signal); border-radius:var(--radius);
+  padding:22px 20px; box-shadow:var(--soft-shadow);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.unit-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.unit-card .unit-kicker{
+  font-family:var(--mono); font-size:.7rem; font-weight:700;
+  letter-spacing:.06em; color:var(--signal-deep);
+}
+.unit-card h3{
+  margin:0; font-family:var(--sans); font-weight:800;
+  font-size:1.3rem; letter-spacing:-.015em; color:var(--slate-900);
+}
+.unit-card p{margin:0;font-size:.98rem;color:var(--ink-soft);font-style:italic}
+.unit-card .unit-meta{
+  margin-top:auto; padding-top:6px;
+  font-family:var(--sans); font-size:.72rem; font-weight:700; color:var(--slate-500);
+}
+
+/* ── Unit page ─────────────────────────────────────────────────────────────────
+   The blocks are numbered because they are genuinely a sequence: the chain drawn in
+   Block 1 is what Block 4 checks against a real document. The connecting rule down
+   the left is drawn for the same reason, and it stops before the last card so the
+   arc reads as finished rather than cut off. */
+.terminal-question{border-top:4px solid var(--cool)}
+.terminal-question-text{
+  margin:0 0 12px; font-family:var(--sans); font-weight:700;
+  font-size:clamp(1.15rem,2.6vw,1.5rem); line-height:1.32; color:var(--slate-900);
+  text-wrap:balance;
+}
+.terminal-question-note{margin:0;font-size:.95rem;color:var(--ink-soft)}
+
+.block-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.block-card{
+  position:relative;
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-left:4px solid var(--signal); border-radius:0 var(--radius) var(--radius) 0;
+  padding:20px 22px; box-shadow:var(--soft-shadow);
+}
+.block-card .block-num{
+  font-family:var(--mono); font-size:.72rem; font-weight:700;
+  letter-spacing:.08em; color:var(--signal-deep);
+}
+.block-card h3{
+  margin:6px 0 4px; font-family:var(--sans); font-weight:800;
+  font-size:1.22rem; letter-spacing:-.01em; color:var(--slate-900);
+}
+.block-card h3 em{font-style:normal;color:var(--signal)}
+.block-card .block-sub{margin:0 0 10px;font-style:italic;color:var(--ink-soft)}
+.block-card .block-inclass{margin:0 0 12px;font-size:.96rem}
+.block-card .block-onpaper{
+  margin:0; font-family:var(--sans); font-size:.84rem; font-weight:700;
+  color:var(--slate-500);
+}
+.block-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+
+.competency-tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.competency-tag{
+  font-family:var(--sans); font-size:.62rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.08em;
+  background:var(--cool-tint); color:var(--cool);
+  padding:3px 8px; border-radius:999px; cursor:help;
+}
+
+.competency-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.competency{
+  display:flex; gap:12px; align-items:baseline;
+  font-size:.98rem; color:var(--ink);
+}
+.competency-n{
+  flex:0 0 auto; width:1.7rem; height:1.7rem; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--cool-tint); color:var(--cool);
+  font-family:var(--sans); font-size:.78rem; font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+
 /* ── Week index cards ──────────────────────────────────────────────────────── */
 .week-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .week-card{

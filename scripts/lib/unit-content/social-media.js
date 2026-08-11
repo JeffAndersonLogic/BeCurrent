@@ -37,6 +37,16 @@ const UNIT = {
   // unset omits the coach section from every brief in this unit.
   aiCoachUrl: '',
   canvasSubmissionNote: 'Organize your thinking here, then submit your final work in Canvas.',
+  blocks: 5,
+  overview: 'We are going to figure out how social media actually works. The machine. The '
+    + 'business. Not whether it is good or bad for you, and nobody is going to ask you to delete '
+    + 'anything. By the end you should be able to explain how the thing works, out loud, to an '
+    + 'adult, which is more than most adults can do.',
+  // Announced on day one and returned to at the end, exactly as the Block 1 script
+  // does it. Putting it on the unit page is the point: students should be chewing
+  // on it for two weeks before they have to answer it.
+  terminalQuestion: 'Who should get to decide what a platform is allowed to do to your '
+    + 'attention: you, the company, or the government?',
   competencies: {
     1: 'Cause and effect',
     2: 'Fallacies and propaganda',
@@ -44,6 +54,47 @@ const UNIT = {
     4: 'Hypotheses',
     5: 'Generalizing from evidence'
   }
+};
+
+// ── Block 1 ───────────────────────────────────────────────────────────────────
+// Taught from the slide deck with a paper trace. No Brief, and no site artifact at
+// all: the reasoning lives in boxes and arrows on paper, which is deliberate. Per
+// the teaching script, "devices turn a trace into copy-paste from a search result."
+const BLOCK_1 = {
+  n: 1,
+  block: 'Block 1',
+  title: 'Where the Money Comes From',
+  subtitle: 'Follow the money backwards, one step at a time',
+  inClass: 'You list the apps you opened today that did not charge you, then build a chain of '
+    + 'boxes and arrows from opening an app to a company getting paid. Paper, not devices. '
+    + 'Nobody presents; you walk the room and read four other chains instead.',
+  onPaper: true,
+  competencies: [1, 5]
+};
+
+// ── Block 2 ───────────────────────────────────────────────────────────────────
+// The film is deliberately NOT NAMED here, and this is load-bearing rather than an
+// oversight. From the Block 1 teaching script: "the second they know the title, half
+// the room looks it up, reads that it's a documentary about social media being bad,
+// and walks into Block 2 already knowing what they're supposed to conclude. The
+// withholding is what keeps Block 2 from becoming another warning."
+//
+// A unit page that listed the title would undo that on day one. Add the name here
+// only after the unit has run, if at all.
+const BLOCK_2 = {
+  n: 2,
+  block: 'Block 2',
+  title: 'Somebody Made a Film About This',
+  subtitle: 'Your job is not to agree with it',
+  inClass: 'We watch it. Your job is to do to the film exactly what you did to your app in '
+    + 'Block 1: take it apart, find out how it works, see where the money is.',
+  onPaper: true,
+  competencies: [2],
+
+  // Names that must not appear on any student-facing page in this unit until the
+  // block has been taught. validate.js fails the build if one does. Remove the entry
+  // once the film has been shown and naming it no longer costs anything.
+  withholdTitles: ['The Social Dilemma']
 };
 
 // ── Block 3 ───────────────────────────────────────────────────────────────────
@@ -57,6 +108,9 @@ const BLOCK_3 = {
   deck: 'Almost every chain in the room had a box where the app watches what you do. Today you open it.',
   subtitle: 'What the app counts, and what it does with the count',
   skillTags: ['Cause and Effect', 'Hypotheses'],
+  inClass: 'We open the box almost every chain had in the middle. Read the Brief, then predict '
+    + 'what the app counts about you before we check.',
+  competencies: [1, 4],
 
   // Video. Optional, and often the primary path rather than the alternative one.
   //
@@ -225,6 +279,9 @@ const BLOCK_4 = {
   deck: 'Half this room wrote "they sell my data." Today we read the document and find out.',
   subtitle: 'Reading a privacy policy as a primary source',
   skillTags: ['Generalizing from Evidence', 'Sourcing'],
+  inClass: 'You check the chain you drew in Block 1 against the company\'s own privacy policy. '
+    + 'Bring a device for this one, because the document is the assignment.',
+  competencies: [2, 5],
 
   // Video. Optional, and often the primary path rather than the alternative one.
   //
@@ -388,6 +445,9 @@ const BLOCK_5 = {
   deck: 'I told you on the first day I would ask you a hard question at the end. Here it is.',
   subtitle: 'You, the company, or the government',
   skillTags: ['Synthesizing Patterns', 'Generalizing from Evidence'],
+  inClass: 'The question from day one, argued properly. You state the strongest version of a '
+    + 'position you do not hold, then take your own.',
+  competencies: [3, 4, 5],
 
   // Video. Optional, and often the primary path rather than the alternative one.
   //
@@ -544,4 +604,4 @@ const BLOCK_5 = {
   ]
 };
 
-module.exports = { meta: UNIT, blocks: [BLOCK_3, BLOCK_4, BLOCK_5] };
+module.exports = { meta: UNIT, blocks: [BLOCK_1, BLOCK_2, BLOCK_3, BLOCK_4, BLOCK_5] };

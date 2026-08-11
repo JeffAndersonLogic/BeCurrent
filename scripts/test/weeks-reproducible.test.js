@@ -26,7 +26,7 @@ const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
 console.log('\n  Generated weeks reproduce from their content modules\n');
 
 let failed = false;
-for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js']) {
+for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js', 'scripts/build-index.js']) {
   const run = spawnSync(process.execPath, [builder, '--check'], { cwd: ROOT, encoding: 'utf8' });
   const out = (run.stdout || '') + (run.stderr || '');
   process.stdout.write(out.split('\n').map(l => l ? '  ' + l : l).join('\n'));
@@ -36,7 +36,7 @@ for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js']) {
 if (failed) {
   console.log(`\n  ${R}FAIL${X}  a generated file does not match its content module`);
   console.log(`  ${D}These files are generated. Edit scripts/lib/week-content/, then run:${X}`);
-  console.log(`  ${D}  npm run build:weeks  &&  npm run build:units${X}\n`);
+  console.log(`  ${D}  npm run build:weeks && npm run build:units && npm run build:index${X}\n`);
   process.exit(1);
 }
 

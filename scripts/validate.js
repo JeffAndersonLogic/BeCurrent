@@ -460,6 +460,67 @@ codeCarriers.forEach(file => {
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
 
+// ── Unit pages ────────────────────────────────────────────────────────────────
+//
+// A unit page is the only map of its arc, so two ways of losing it matter and
+// neither is visible on the page itself:
+//
+//   1. The unit page exists but nothing links to it, so it is reachable only by
+//      typing the URL. That is how the first version shipped.
+//   2. A block card links a Brief that was never generated, which is a 404 for a
+//      student who missed that block and came looking for the reading.
+section('Unit pages');
+const frontDoor = read(path.join(ROOT, 'index.html')) || '';
+unitDirs.forEach(key => {
+  const page = path.join(ROOT, key, 'index.html');
+  if (!assert(fs.existsSync(page), page, 'unit has no index.html mapping its blocks')) return;
+
+  assert(frontDoor.includes(`href="${key}/index.html"`), path.join(ROOT, 'index.html'),
+    `nothing on the front door links ${key}/index.html, so the unit is orphaned`);
+
+  const src = read(page) || '';
+  // Every Brief link on the card list has to resolve. The generic link check would
+  // catch a typo; this catches a block that lost its Brief while keeping its card.
+  (src.match(/href="(block-\d{2}-brief-[^"]+)"/g) || []).forEach(hit => {
+    const target = hit.replace(/^href="|"$/g, '');
+    assert(fs.existsSync(path.join(ROOT, key, target)), page,
+      `block card links ${target}, which was not generated`);
+  });
+
+  assert(/class="block-card"/.test(src), page, 'unit page lists no blocks');
+
+  // A block may declare `withholdTitles`: names that must not appear on any
+  // student-facing page in the unit. Social Media Block 2 uses it for the film.
+  //
+  // This is a teaching contract, not plumbing, and it is in the gate anyway because
+  // breaking it is invisible and irreversible: the damage happens the moment a
+  // student reads the title, and no amount of fixing the page afterwards puts the
+  // surprise back. From the Block 1 script, on why the withholding matters, "the
+  // second they know the title, half the room looks it up, reads that it's a
+  // documentary about social media being bad, and walks into Block 2 already knowing
+  // what they're supposed to conclude."
+  const unitMod = (() => {
+    const dir = path.join(ROOT, 'scripts', 'lib', 'unit-content');
+    const hit = glob(dir, /\.js$/).find(f => {
+      try { return require(f).meta.unitKey === key; } catch (e) { return false; }
+    });
+    try { return hit ? require(hit) : null; } catch (e) { return null; }
+  })();
+
+  (unitMod ? unitMod.blocks || [] : []).forEach(b => {
+    (b.withholdTitles || []).forEach(title => {
+      glob(path.join(ROOT, key), /\.html$/).concat([path.join(ROOT, 'index.html')])
+        .forEach(f => {
+          const body = read(f) || '';
+          assert(!new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(body), f,
+            `"${title}" is withheld until ${b.block} has been taught, and it appears here. `
+            + 'A student who reads it walks in already knowing what to conclude.');
+        });
+    });
+  });
+});
+done(`${unitDirs.length} unit page${unitDirs.length === 1 ? '' : 's'}, linked from the front door`);
+
 // ── Video ─────────────────────────────────────────────────────────────────────
 //
 // Whether a lesson has video, and how much, is a teaching decision. Two things

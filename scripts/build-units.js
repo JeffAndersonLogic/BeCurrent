@@ -12,6 +12,9 @@
  * This is deliberately separate from build-weeks.js. Weeks and units are different
  * shapes and sharing one builder would mean one of them bending.
  *
+ * Emits, per unit: an index.html mapping the whole arc, and a Brief plus capture
+ * wrapper for each block that carries one.
+ *
  *   node scripts/build-units.js            write the files
  *   node scripts/build-units.js --check    fail on drift, write nothing
  */
@@ -20,6 +23,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { renderUnitBrief, renderUnitWrapper } = require('./lib/unit-brief-page');
+const { renderUnitPage, briefFileFor } = require('./lib/unit-page');
 
 const ROOT = path.resolve(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'scripts', 'lib', 'unit-content');
@@ -63,9 +67,15 @@ files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
   const dir = unit.meta.unitKey;
 
+  // The unit page is the map of the whole arc and always exists.
+  emit(path.join(dir, 'index.html'), renderUnitPage(unit));
+
+  // A Brief only for the blocks that carry one. Block 1 is a slide deck and a paper
+  // trace, Block 2 is a film; generating an empty reading for either would put a
+  // dead card on the unit page.
   (unit.blocks || []).forEach(block => {
-    const nn = String(block.n).padStart(2, '0');
-    const briefFile = `block-${nn}-brief-${block.slug || slugify(block.block)}.html`;
+    if (!(block.sections && block.sections.length)) return;
+    const briefFile = briefFileFor(block);
     emit(path.join(dir, briefFile), renderUnitBrief(unit, block));
     emit(path.join(dir, briefFile.replace(/\.html$/, '-capture.html')),
       renderUnitWrapper(unit, block, briefFile));

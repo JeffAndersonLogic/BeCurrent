@@ -7,6 +7,9 @@
  * One content module in scripts/lib/week-content/ is the single source of truth
  * for a week. This script emits four files from it:
  *
+ * The front door is NOT emitted here: it has to know about units too, so it lives
+ * in scripts/build-index.js.
+ *
  *   week-NN/index.html                       the lesson shell
  *   week-NN/brief-week-NN-<slug>.html        the generated brief
  *   week-NN/brief-week-NN-<slug>-capture.html  the iframe wrapper
@@ -252,103 +255,6 @@ function renderDataFile(week, briefFile) {
     + `window.BECURRENT_WEEK = ${JSON.stringify(payload, null, 2)};\n`;
 }
 
-// ── The student entry point ───────────────────────────────────────────────────
-//
-// Generated from the content modules rather than hand-maintained, because a
-// hand-maintained index of 36 weeks is a page that goes stale and then quietly
-// misleads students about what is published. Add a content module and the front
-// door updates itself.
-function renderIndex(weeks) {
-  const cards = weeks.map(w => {
-    const nn = String(w.meta.weekNumber).padStart(2, '0');
-    return `        <a class="week-card" href="week-${nn}/index.html">
-          <span class="week-num">Week ${nn} &middot; ${esc(w.meta.dateRange)}</span>
-          <h3>${esc(w.meta.title)}</h3>
-          <p>${esc(w.meta.subtitle)}</p>
-        </a>`;
-  }).join('\n');
-
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BeCurrent | Current Events</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/becurrent.css">
-</head>
-<body>
-<div class="site-shell">
-
-  <header class="topbar">
-    <nav class="nav">
-      <a class="brand-mini" href="index.html" aria-label="BeCurrent home">
-        <span class="mark-be">Be</span><span class="mark-c">C</span><span>urrent</span>
-      </a>
-      <div class="nav-links">
-        <a href="#weeks">Weeks</a>
-        <a href="#how">How This Works</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero" id="top">
-    <h1 class="logo-title">Be<span class="hero-c">C</span>urrent</h1>
-    <p class="dateline">Current Events &middot; Mr. Anderson</p>
-    <p class="hero-copy">
-      <strong>Read it. Check it. Then decide.</strong>
-      <span>A week at a time, with the same eight moves every week.</span>
-    </p>
-    <div class="quick-nav">
-      <a class="btn" href="#weeks">This Week</a>
-      <a class="btn secondary" href="#how">How This Works</a>
-    </div>
-  </section>
-
-  <main>
-    <section class="section" id="weeks">
-      <div class="section-header">
-        <div class="eyebrow">The Weeks</div>
-        <h2>Pick your week.</h2>
-        <p>Each week is one story, worked eight ways.</p>
-      </div>
-      <div class="week-grid">
-${cards}
-      </div>
-    </section>
-
-    <section class="section" id="how">
-      <div class="section-header">
-        <div class="eyebrow">How This Works</div>
-        <h2>Eight modules, every week, in order.</h2>
-      </div>
-      <article class="card">
-        <div class="week-roadmap">
-          <div class="roadmap-step"><strong>1. Get the Story</strong>Where in the World, then The Brief and its three questions.</div>
-          <div class="roadmap-step"><strong>2. Interrogate It</strong>Background, Coverage Compare, Source Check, Claim &amp; Evidence.</div>
-          <div class="roadmap-step"><strong>3. Take a Position</strong>The Deliberation, then the Checkpoint, then submit in Canvas.</div>
-        </div>
-        <p style="margin:18px 0 0;color:var(--ink-soft)">
-          Your writing saves on the device you typed it on. Nothing is submitted from these
-          pages: use <strong>Gather All My Work</strong> at the bottom of a week, then paste
-          into Canvas.
-        </p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">BeCurrent</div>
-      <p>Read it. Check it. Then decide.</p>
-    </div>
-  </footer>
-</div>
-</body>
-</html>
-`;
-}
-
 // ── Build ─────────────────────────────────────────────────────────────────────
 
 function contentFiles() {
@@ -381,8 +287,6 @@ if (!files.length) {
   process.exit(1);
 }
 
-const weeks = [];
-
 files.forEach(file => {
   const week = require(path.join(CONTENT_DIR, file));
   const m = week.meta;
@@ -394,10 +298,8 @@ files.forEach(file => {
   emit(path.join(dir, briefFile), renderBrief(week));
   emit(path.join(dir, briefFile.replace(/\.html$/, '-capture.html')), renderWrapper(week, briefFile));
   emit(path.join('assets', 'data', `week-${nn}.js`), renderDataFile(week, briefFile));
-  weeks.push(week);
 });
 
-emit('index.html', renderIndex(weeks));
 
 if (CHECK) {
   if (drift.length) {
