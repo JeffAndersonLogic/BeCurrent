@@ -89,6 +89,7 @@ ${actionRow}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BeCurrent | ${esc(m.unit)}</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="../assets/css/becurrent.css">
 <style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
@@ -98,7 +99,7 @@ ${actionRow}
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="../index.html" aria-label="Return to the BeCurrent home page">
-        <span class="mark-be">Be</span><span class="mark-c">C</span><span>urrent</span>
+        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4889" height="810">
       </a>
       <div class="nav-links">
         <a href="../index.html">Home</a>
@@ -161,7 +162,7 @@ ${competencyList}
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">BeCurrent</div>
+      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4889" height="810"></div>
       <p>${esc(m.unit)} &middot; ${esc(String(withBriefs))} of ${esc(String(blocks.length))} blocks have a Brief. The rest happen on paper.</p>
       <p>Read it. Check it. Then decide.</p>
     </div>

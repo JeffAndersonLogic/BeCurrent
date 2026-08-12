@@ -71,6 +71,7 @@ function renderIndex(units, weeks) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BeCurrent | Current Events</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="assets/css/becurrent.css">
 </head>
 <body>
@@ -79,7 +80,7 @@ function renderIndex(units, weeks) {
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="index.html" aria-label="BeCurrent home">
-        <span class="mark-be">Be</span><span class="mark-c">C</span><span>urrent</span>
+        <img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4889" height="810">
       </a>
       <div class="nav-links">
 ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? '        <a href="#weeks">Weeks</a>\n' : ''}        <a href="#how">How This Works</a>
@@ -88,7 +89,7 @@ ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? ' 
   </header>
 
   <section class="hero" id="top">
-    <h1 class="logo-title">Be<span class="hero-c">C</span>urrent</h1>
+    <h1 class="hero-wordmark"><img src="assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="4889" height="810"></h1>
     <p class="dateline">Current Problems, Issues &amp; Events &middot; Mr. Anderson</p>
     <p class="hero-copy">
       <strong>Read it. Check it. Then decide.</strong>
@@ -144,7 +145,7 @@ ${weekCards}
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">BeCurrent</div>
+      <div class="footer-brand"><img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4889" height="810"></div>
       <p>Read it. Check it. Then decide.</p>
     </div>
   </footer>

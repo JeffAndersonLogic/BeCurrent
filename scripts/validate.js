@@ -600,6 +600,52 @@ studentPages.filter(f => f.endsWith('.html')).forEach(file => {
 });
 done(`linked on ${studentPages.filter(f => f.endsWith('.html')).length} pages`);
 
+// ── The brand file ───────────────────────────────────────────────────────────
+//
+// becurrent-brand.css is the only file that defines a token, and every page has
+// to link it. Both halves of that fail quietly enough to be worth a check.
+//
+// A page that links becurrent.css and forgets the brand file resolves every
+// custom property to nothing: no palette, no faces, a page that is technically
+// complete and looks like a 1996 term paper. Nothing else in this suite would
+// notice, because every id, block and capture wire is still exactly where it
+// should be.
+//
+// A second :root in a component stylesheet is the quieter one. It works, so it
+// survives, and the course ends up with two reds that agree until the day one of
+// them is edited. That is the same failure as two copies of the capture block,
+// in a place nobody thinks to look.
+section('The brand file');
+const BRAND = path.join(ROOT, 'assets', 'css', 'becurrent-brand.css');
+assert(fs.existsSync(BRAND), BRAND, 'assets/css/becurrent-brand.css is missing');
+
+const brandSrc = read(BRAND) || '';
+['--signal', '--signal-deep', '--slate-900', '--display', '--serif', '--sans'].forEach(token => {
+  assert(brandSrc.includes(`${token}:`), BRAND, `the brand file defines no ${token}`);
+});
+
+// Only pages that carry a component stylesheet. A capture wrapper is a bare
+// iframe host with no stylesheet of any kind, and requiring one there would be
+// asking it to download three fonts to render nothing.
+let brandLinked = 0;
+studentPages.filter(f => f.endsWith('.html')).forEach(file => {
+  const src = read(file);
+  if (!src) return;
+  if (!/becurrent(-brief)?\.css/.test(src)) return;
+  brandLinked += 1;
+  assert(/<link rel="stylesheet" href="[^"]*assets\/css\/becurrent-brand\.css">/.test(src), file,
+    'no brand stylesheet. Every page that links a component stylesheet must link '
+    + 'assets/css/becurrent-brand.css first, or every colour and face on it resolves to nothing.');
+});
+
+['becurrent.css', 'becurrent-brief.css'].forEach(name => {
+  const file = path.join(ROOT, 'assets', 'css', name);
+  const src = read(file) || '';
+  assert(!/--[a-z0-9-]+\s*:/.test(src.replace(/\/\*[\s\S]*?\*\//g, '')), file,
+    `${name} defines a custom property. Tokens live only in becurrent-brand.css.`);
+});
+done(`${brandLinked} pages linked, tokens defined once`);
+
 // ── Image integrity ──────────────────────────────────────────────────────────
 //
 // A text file named .jpg renders as a broken frame, which reads to a student as

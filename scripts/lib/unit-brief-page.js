@@ -177,6 +177,7 @@ ${confidenceRow(id)}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Brief | ${esc(m.unit)} ${esc(block.block)} | BeCurrent</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="../assets/css/becurrent-brief.css">
 <style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
@@ -251,7 +252,12 @@ function renderUnitWrapper(unit, block, briefFile) {
 <title>Brief Capture Wrapper | ${esc(m.unit)} ${esc(block.block)}</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <style>
-  html, body { margin:0; padding:0; width:100%; height:100%; background:#171B1F; overflow:hidden; }
+  /* --slate-900, as a literal. This wrapper links no stylesheet on purpose:
+     it is a bare iframe host, and pulling in the brand file would make it
+     download three fonts to render nothing. The one cost is that this value
+     has to be kept in step with becurrent-brand.css by hand. It is only ever
+     seen for the instant before the brief paints. */
+  html, body { margin:0; padding:0; width:100%; height:100%; background:#16181B; overflow:hidden; }
   iframe { width:100%; height:100vh; border:0; display:block; }
 </style>
 </head>

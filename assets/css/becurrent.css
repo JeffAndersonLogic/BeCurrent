@@ -1,6 +1,10 @@
 /* =========================================================
    BECURRENT OFFICIAL STYLE SYSTEM
 
+   The palette and the faces are in becurrent-brand.css, which every page links
+   first and which explains where each value came from. This file is components
+   only, and it defines no tokens of its own.
+
    Newsroom, not archive. BeHistorical is bronze and parchment; this is
    newsprint, ink, and one signal accent. The two courses should never be
    mistaken for each other at a glance.
@@ -19,35 +23,6 @@
    So every surface a student READS is light. Dark surfaces are for surfaces
    students SCAN: the nav, the background-card grid, the footer.
    ========================================================= */
-:root{
-  /* Ink and paper */
-  --ink:#14171A;
-  --ink-soft:#3C444C;
-  --newsprint:#F4F2ED;
-  --clean-paper:#FFFEFB;
-  --paper-line:rgba(20,23,26,.14);
-
-  /* Slate, for the surfaces that get scanned */
-  --slate-900:#171B1F;
-  --slate-800:#232A31;
-  --slate-700:#333C45;
-  --slate-500:#5C6873;
-
-  /* One signal accent, plus a cool counterpart for the second series */
-  --signal:#B22222;
-  --signal-deep:#8A1A1A;
-  --signal-tint:rgba(178,34,34,.10);
-  --cool:#1F5673;
-  --cool-tint:rgba(31,86,115,.10);
-
-  --shadow:0 20px 60px rgba(20,23,26,.16);
-  --soft-shadow:0 10px 26px rgba(20,23,26,.10);
-  --radius:14px;
-
-  --sans:"Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
-  --mono:ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -73,14 +48,13 @@ main{flex:1}
   width:min(1160px,92vw); margin:auto;
   min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:22px;
 }
-.brand-mini{
-  display:flex; align-items:baseline; gap:2px; text-decoration:none;
-  font-family:var(--sans);
-  font-weight:800; letter-spacing:-.01em; font-size:1.18rem;
-  color:var(--clean-paper);
-}
-.brand-mini .mark-be{opacity:.72;font-weight:600}
-.brand-mini .mark-c{color:var(--signal);}
+/* The masthead brand is the wordmark file itself, not type set to look like it.
+   Two reasons it is an <img> and not styled text: the mark's small caps are
+   drawn outlines rather than a font feature Playfair actually has, so type
+   would only ever approximate it, and an <img> of a committed file cannot
+   drift away from the logo the way a hand-tuned span can. */
+.brand-mini{display:flex;align-items:center;text-decoration:none}
+.brand-mini img{height:21px;width:auto}
 .nav-links{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
 .nav-links a{
   font-family:var(--sans);
@@ -99,19 +73,26 @@ main{flex:1}
   box-shadow:var(--shadow);
   border-radius:var(--radius);
 }
+/* The hero on the front door and on a week page is the wordmark, in ink on
+   paper. Capped in px as well as in vw so it stops growing before it starts
+   competing with the week's actual headline underneath it. */
+.hero-wordmark{margin:0 0 2px}
+.hero-wordmark img{width:min(360px,62vw);height:auto}
+
+/* A unit page puts the unit's own name here instead, so this stays type. The
+   logo's face, at a size well clear of the 20px floor. */
 .logo-title{
-  margin:0; font-family:var(--sans); font-weight:800;
-  font-size:clamp(2.1rem,6vw,3.4rem); letter-spacing:-.02em; line-height:1.02;
+  margin:0; font-family:var(--display); font-weight:700;
+  font-size:clamp(2.1rem,6vw,3.4rem); letter-spacing:-.005em; line-height:1.06;
   color:var(--slate-900);
 }
-.logo-title .hero-c{color:var(--signal)}
 .dateline{
   margin:14px 0 0; font-family:var(--sans); font-size:.72rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
   padding-bottom:12px; border-bottom:1px solid var(--paper-line);
 }
 .hero-copy{margin:16px 0 0;font-size:1.14rem}
-.hero-copy strong{display:block;font-family:var(--sans);font-size:1.32rem;line-height:1.25;color:var(--slate-900)}
+.hero-copy strong{display:block;font-family:var(--display);font-weight:700;font-size:1.4rem;line-height:1.22;color:var(--slate-900)}
 .hero-copy span{color:var(--ink-soft)}
 .quick-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 
@@ -142,8 +123,8 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   text-transform:uppercase; letter-spacing:.16em; color:var(--signal-deep);
 }
 .section-header h2{
-  margin:6px 0 8px; font-family:var(--sans); font-weight:800;
-  font-size:clamp(1.4rem,3vw,2rem); letter-spacing:-.015em; color:var(--slate-900);
+  margin:6px 0 8px; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.45rem,3vw,2rem); letter-spacing:-.005em; color:var(--slate-900);
 }
 .section-header p{margin:0;color:var(--ink-soft);max-width:70ch}
 .card{
@@ -206,7 +187,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   border-radius:var(--radius); padding:30px 26px; margin-bottom:34px;
   width:min(1160px,92vw); margin-left:auto; margin-right:auto;
 }
-.dark-panel .eyebrow{color:#E8A0A0}
+.dark-panel .eyebrow{color:var(--signal-pale)}
 .dark-panel .section-header h2{color:var(--clean-paper)}
 .dark-panel .section-header p{color:rgba(255,254,251,.72)}
 .background-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -237,7 +218,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   padding:20px 24px; border-bottom:1px solid var(--paper-line);
   position:sticky; top:0; background:var(--clean-paper); border-radius:var(--radius) var(--radius) 0 0;
 }
-.pop-header h2{margin:4px 0 0;font-family:var(--sans);font-size:1.24rem;color:var(--slate-900)}
+.pop-header h2{margin:4px 0 0;font-family:var(--display);font-weight:700;font-size:1.3rem;color:var(--slate-900)}
 .pop-body{padding:24px}
 .pop-body h4{
   margin:22px 0 8px; font-family:var(--sans); font-size:.72rem; font-weight:800;
@@ -252,7 +233,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
    but a pale one would leave the title unreadable with every check still green. */
 .background-panel{width:min(940px,100%)}
 .background-body{padding:26px}
-.background-body h2{margin:0 0 4px;font-family:var(--sans);font-size:1.5rem;color:var(--slate-900)}
+.background-body h2{margin:0 0 4px;font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--slate-900)}
 .background-body .card-rule{height:3px;background:var(--signal);width:64px;margin:12px 0 18px}
 .background-body ul{margin:0;padding-left:1.1rem}
 .background-body li{margin-bottom:10px}
@@ -367,7 +348,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   padding:30px 0; margin-top:20px; border-top:3px solid var(--signal);
 }
 .footer-inner{width:min(1160px,92vw);margin:auto}
-.footer-brand{font-family:var(--sans);font-weight:800;font-size:1.1rem;color:var(--clean-paper)}
+.footer-brand img{height:19px;width:auto}
 .footer p{margin:6px 0 0;font-size:.88rem}
 
 
@@ -392,8 +373,8 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   letter-spacing:.06em; color:var(--signal-deep);
 }
 .unit-card h3{
-  margin:0; font-family:var(--sans); font-weight:800;
-  font-size:1.3rem; letter-spacing:-.015em; color:var(--slate-900);
+  margin:0; font-family:var(--display); font-weight:700;
+  font-size:1.34rem; letter-spacing:-.005em; color:var(--slate-900);
 }
 .unit-card p{margin:0;font-size:.98rem;color:var(--ink-soft);font-style:italic}
 .unit-card .unit-meta{
@@ -408,8 +389,8 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
    arc reads as finished rather than cut off. */
 .terminal-question{border-top:4px solid var(--cool)}
 .terminal-question-text{
-  margin:0 0 12px; font-family:var(--sans); font-weight:700;
-  font-size:clamp(1.15rem,2.6vw,1.5rem); line-height:1.32; color:var(--slate-900);
+  margin:0 0 12px; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.25rem,2.6vw,1.5rem); line-height:1.34; color:var(--slate-900);
   text-wrap:balance;
 }
 .terminal-question-note{margin:0;font-size:.95rem;color:var(--ink-soft)}
@@ -426,8 +407,8 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   letter-spacing:.08em; color:var(--signal-deep);
 }
 .block-card h3{
-  margin:6px 0 4px; font-family:var(--sans); font-weight:800;
-  font-size:1.22rem; letter-spacing:-.01em; color:var(--slate-900);
+  margin:6px 0 4px; font-family:var(--display); font-weight:700;
+  font-size:1.3rem; letter-spacing:-.005em; color:var(--slate-900);
 }
 .block-card h3 em{font-style:normal;color:var(--signal)}
 .block-card .block-sub{margin:0 0 10px;font-style:italic;color:var(--ink-soft)}

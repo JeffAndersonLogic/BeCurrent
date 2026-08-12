@@ -78,6 +78,20 @@ Nothing on any page makes a network call with student writing in it. `validate.j
 fails the build on a `<form action>`, a `fetch()`, or an `XMLHttpRequest` anywhere a
 student can reach.
 
+## The look
+
+The logo is `assets/images/brand/becurrent-logo.svg`, and the site is built off
+it: `--signal` and `--slate-900` are sampled from the mark, and the headings are
+set in the face the mark is drawn in. `assets/css/becurrent-brand.css` is the one
+file that defines a colour or a face, and its header explains where each value
+came from and which red is allowed where. Fonts are self-hosted in
+`assets/fonts/`, because no student-facing page in this repo makes a third-party
+request.
+
+`python3 scripts/brand/build-wordmark.py` redraws the logo, the two wordmarks and
+the favicon from the vendored Playfair Display. It needs `fonttools` and is off
+the test path on purpose; the four SVGs are committed.
+
 ## Deploying
 
 GitHub Pages serves `main`, so what is on `main` is what students have. Push to a
@@ -86,7 +100,7 @@ working branch, let Validate go green, then fast-forward `main` to that commit.
 
 ## Status
 
-Week 01 is complete and both suites are green: 168 structural checks and 32 browser
+Week 01 is complete and both suites are green: 316 structural checks and 39 browser
 assertions. Weeks 02 to 36 are unwritten and the teacher-facing Skills Lens has not
 been built. The full list of known gaps is at the bottom of `CLAUDE.md` under "What
 is missing", so nobody has to guess what is covered.

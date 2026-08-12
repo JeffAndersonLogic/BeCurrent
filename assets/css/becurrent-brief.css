@@ -8,24 +8,11 @@
 
    Newsprint under ink throughout. See the polarity note in becurrent.css for
    why every reading surface in this course is light.
+
+   The palette and the faces come from becurrent-brand.css, which a brief links
+   ahead of this file. Nothing here defines a token, so the brief inside the
+   iframe and the week page around it cannot end up two different reds.
    ========================================================= */
-:root{
-  --ink:#14171A;
-  --ink-soft:#3C444C;
-  --newsprint:#F4F2ED;
-  --clean-paper:#FFFEFB;
-  --paper-line:rgba(20,23,26,.14);
-  --slate-900:#171B1F;
-  --slate-500:#5C6873;
-  --signal:#B22222;
-  --signal-deep:#8A1A1A;
-  --signal-tint:rgba(178,34,34,.10);
-  --cool:#1F5673;
-  --cool-tint:rgba(31,86,115,.10);
-  --sans:"Source Sans 3","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-}
 *{box-sizing:border-box}
 body{
   margin:0; background:var(--newsprint); color:var(--ink);
@@ -41,10 +28,10 @@ img{max-width:100%;display:block}
 .module-header .inner{width:min(820px,92vw);margin:auto}
 .module-header .module-badge{
   font-family:var(--mono); font-size:.7rem; font-weight:700;
-  letter-spacing:.1em; color:#E8A0A0;
+  letter-spacing:.1em; color:var(--signal-pale);
 }
 .module-header .module-name{
-  margin:4px 0 2px; font-family:var(--sans); font-weight:800; font-size:1.24rem;
+  margin:4px 0 2px; font-family:var(--display); font-weight:700; font-size:1.3rem;
 }
 .module-header .module-subtitle{
   margin:0; font-family:var(--sans); font-size:.78rem; color:rgba(255,254,251,.68);
@@ -62,8 +49,8 @@ img{max-width:100%;display:block}
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
 }
 .brief-title{
-  margin:10px 0 8px; font-family:var(--sans); font-weight:800;
-  font-size:clamp(1.7rem,4.6vw,2.5rem); line-height:1.12; letter-spacing:-.02em;
+  margin:10px 0 8px; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.75rem,4.6vw,2.5rem); line-height:1.14; letter-spacing:-.005em;
   color:var(--slate-900);
 }
 .brief-title em{font-style:normal;color:var(--signal)}
@@ -106,16 +93,16 @@ img{max-width:100%;display:block}
 .section{position:relative;margin:0 0 30px;padding-top:8px}
 .section-number{
   position:absolute; top:-6px; right:0;
-  font-family:var(--sans); font-weight:800; font-size:3.4rem;
-  color:rgba(20,23,26,.06); line-height:1; pointer-events:none;
+  font-family:var(--display); font-weight:700; font-size:3.6rem;
+  color:rgba(20,23,26,.07); line-height:1; pointer-events:none;
 }
 .section-label{
   font-family:var(--sans); font-size:.66rem; font-weight:800;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
 }
 .section-heading{
-  margin:6px 0 12px; font-family:var(--sans); font-weight:800;
-  font-size:1.34rem; letter-spacing:-.01em; color:var(--slate-900);
+  margin:6px 0 12px; font-family:var(--display); font-weight:700;
+  font-size:1.36rem; letter-spacing:-.005em; color:var(--slate-900);
 }
 .reading-text{margin:0 0 14px}
 .kt{font-weight:700;color:var(--signal-deep)}
@@ -176,7 +163,7 @@ img{max-width:100%;display:block}
   margin:0 0 30px;
 }
 .road-not-taken .section-label{color:var(--slate-500)}
-.road-not-taken .section-heading{font-size:1.18rem;margin-bottom:10px}
+.road-not-taken .section-heading{font-size:1.26rem;margin-bottom:10px}
 .road-not-taken .reading-text:last-child{margin-bottom:0}
 
 /* ── Two-tier task cards ───────────────────────────────────────────────────────
@@ -214,7 +201,7 @@ img{max-width:100%;display:block}
   background:var(--clean-paper); border:1px solid var(--paper-line);
   border-top:4px solid var(--cool); border-radius:14px; padding:26px 28px;
 }
-.check-section > h2{margin:0 0 6px;font-family:var(--sans);font-size:1.24rem;color:var(--slate-900)}
+.check-section > h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.3rem;color:var(--slate-900)}
 .check-section > p{margin:0 0 20px;color:var(--ink-soft);font-size:.95rem}
 .question-item{border-top:1px solid var(--paper-line);padding:18px 0 0;margin-top:18px}
 .question-item:first-of-type{border-top:0;margin-top:0;padding-top:0}
@@ -250,7 +237,7 @@ img{max-width:100%;display:block}
   background:var(--clean-paper); border:1px solid var(--paper-line);
   border-top:4px solid var(--signal); border-radius:14px; padding:26px 28px;
 }
-.builder-section h2{margin:0 0 6px;font-family:var(--sans);font-size:1.18rem;color:var(--slate-900)}
+.builder-section h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.26rem;color:var(--slate-900)}
 .builder-section p{margin:0 0 16px;color:var(--ink-soft);font-size:.95rem}
 .builder-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 #ai-output{

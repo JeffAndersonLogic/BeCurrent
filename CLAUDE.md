@@ -97,6 +97,10 @@ push. That keeps the record of what it would have caught.
 - `node scripts/serve-local.js`, serve the repo locally. The briefs load through
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
+- `python3 scripts/brand/build-wordmark.py`, redraw the logo, the two wordmarks
+  and the favicon from the vendored Playfair Display. Needs
+  `pip install fonttools brotli`, and is off the test path on purpose. See "The
+  Mark, the Palette, and the Faces" below.
 
 The student entry point is `index.html`, and it is generated. Student work reaches
 the teacher through **Canvas only**.
@@ -270,6 +274,74 @@ This repo is **public**, because GitHub Pages serves it. Therefore:
   container until the picture is letterboxed off-screen. `validate.js` enforces it.
 - **Never commit a placeholder image file.** `validate.js` checks magic bytes; a
   text file named `.jpg` fails the build.
+
+## The Mark, the Palette, and the Faces
+
+**`assets/css/becurrent-brand.css` is the only file that defines a token.** Every
+page links it first, and `becurrent.css` and `becurrent-brief.css` are components
+only. Before this split the two stylesheets each carried their own `:root`, which
+is two answers to "what red is this course" waiting to disagree.
+
+### The mark
+
+The logo is BeCurrent set in a high-contrast masthead serif: a full-size B, a
+full-size red C breaking the cap line, small caps for the rest, paper on a
+near-black plate. Four files, all outlined paths rather than `<text>`:
+
+```
+assets/images/brand/becurrent-logo.svg           the plate, 10:3, for Canvas or a slide
+assets/images/brand/becurrent-wordmark.svg       paper + red, for dark grounds
+assets/images/brand/becurrent-wordmark-ink.svg   ink + red, for light grounds
+assets/favicon.svg                               the C alone, for a browser tab
+```
+
+They are paths because an SVG loaded through an `<img>` cannot reach a webfont,
+and a `<text>` element that falls back to whatever serif the machine has stops
+being the brand mark. The masthead, the hero and the footer all use one of these
+files rather than type styled to resemble it, so the lockups cannot drift.
+
+`scripts/brand/build-wordmark.py` regenerates all four. It needs
+`pip install fonttools brotli` and is **deliberately off the test path**, because
+`validate.js` has to stay runnable on a bare checkout with no install at all. The
+outputs are committed; nothing in the build or the gate calls it. It exists so the
+mark can be redrawn rather than only inherited.
+
+### The palette comes off the mark
+
+`--signal` `#D62B1F` and `--slate-900` `#16181B` are sampled from the logo. The
+one rule that matters:
+
+- **`--signal` draws things**: rules, borders, button grounds, and display type
+  20px and up, where the bar is 3:1 and it clears it everywhere.
+- **`--signal-deep` is the red that body-size words are set in**, every eyebrow,
+  chip and key term. `--signal` on newsprint is 4.44:1 and fails.
+
+The button is the tight one: `--clean-paper` on `--signal` is 4.93:1 against a
+4.5 bar. Move either token and rerun the numbers rather than eyeballing it. The
+full table, with the reasoning, is at the top of `becurrent-brand.css`.
+
+### Three faces, self-hosted
+
+`assets/fonts/`, latin variable woff2, OFL, licences committed alongside them.
+Self-hosted because a student-facing page in this repo makes no third-party
+request, and a webfont `<link>` to someone else's CDN is exactly that.
+
+| token | face | job |
+|---|---|---|
+| `--display` | Playfair Display | the logo's own face. Headings 20px and up. |
+| `--serif` | Source Serif 4 | everything students read at length. |
+| `--sans` | Source Sans 3 | labels, eyebrows, buttons, counters, chips. |
+
+**The 20px floor on `--display` is load-bearing.** Playfair is a Didone: its thin
+strokes are genuinely thin, and below about 20px on a projector in a lit room they
+break up and the heading turns to lace. Module cards and week cards stayed in
+`--sans` for that reason. Where a heading sat just under the line it was raised
+past it rather than fudged under it.
+
+Before this, `--sans` and `--serif` named "Source Sans 3" and "Source Serif 4"
+with nothing loading them, so the whole course was rendering in Helvetica and
+Georgia. Keep the stacks honest: the first name in each must be a face the repo
+ships.
 
 ## Polarity
 
