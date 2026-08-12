@@ -377,6 +377,17 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-size:1.34rem; letter-spacing:-.005em; color:var(--slate-900);
 }
 .unit-card p{margin:0;font-size:.98rem;color:var(--ink-soft);font-style:italic}
+/* A unit that has not been written yet, and the second half of the block anatomy.
+   Not an <a>, because a card that looks clickable and is not is worse than one
+   that says so. The cool border rather than the signal one is the tell: signal
+   means there is something here. */
+.unit-card.planned{
+  border-top-color:var(--cool);
+  box-shadow:none; background:var(--newsprint);
+}
+.unit-card.planned:hover{transform:none;box-shadow:none}
+.unit-card.planned .unit-kicker{color:var(--cool)}
+
 .unit-card .unit-meta{
   margin-top:auto; padding-top:6px;
   font-family:var(--sans); font-size:.72rem; font-weight:700; color:var(--slate-500);
@@ -438,6 +449,34 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   background:var(--cool-tint); color:var(--cool);
   font-family:var(--sans); font-size:.78rem; font-weight:800;
   font-variant-numeric:tabular-nums;
+}
+
+/* ── The Desk: beats and rotation ──────────────────────────────────────────────
+   A beat card leads with its question, not its scope, because "bring a local
+   story" is a scavenger hunt and the question is the part that makes it an
+   assignment. The question is therefore the largest thing on the card and the
+   scope is a label above it. */
+/* Two by two rather than auto-fit. Four cards carrying a paragraph each land as
+   three-and-a-stray at most desktop widths, which reads as one beat being an
+   afterthought. The four beats are peers. */
+.beat-grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:720px){.beat-grid{grid-template-columns:1fr 1fr}}
+.beat-card{border-top:4px solid var(--signal);display:flex;flex-direction:column;gap:8px}
+.beat-card .eyebrow{font-size:.72rem}
+.beat-scope{margin:0;font-family:var(--sans);font-size:.78rem;color:var(--slate-500)}
+.beat-question{
+  margin:4px 0 0; font-family:var(--display); font-weight:700;
+  font-size:1.3rem; line-height:1.3; color:var(--slate-900); text-wrap:balance;
+}
+.beat-note{margin:0;font-size:.94rem;color:var(--ink-soft)}
+
+.rotation-card{margin-top:16px;border-top:4px solid var(--cool)}
+.rotation-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.rotation-chip{
+  font-family:var(--sans); font-size:.7rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em;
+  background:var(--cool-tint); color:var(--cool);
+  padding:6px 12px; border-radius:999px;
 }
 
 /* ── Week index cards ──────────────────────────────────────────────────────── */

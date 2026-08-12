@@ -521,6 +521,39 @@ unitDirs.forEach(key => {
 });
 done(`${unitDirs.length} unit page${unitDirs.length === 1 ? '' : 's'}, linked from the front door`);
 
+// ── The Desk ──────────────────────────────────────────────────────────────────
+//
+// The daily half of every block, and the one page a student opens more often
+// than any other. Two things about it fail quietly.
+//
+// Orphaning: the Desk lives at daily/index.html and nothing else in the site
+// links down into it, so if the front door drops the link the page still builds,
+// still validates, and is reachable only by typing the URL. That is exactly how
+// the first unit page shipped orphaned.
+//
+// A headline: per CLAUDE.md the Desk must never carry a story, because the page
+// is generated once and served every class period for a year. A "for example"
+// headline written in August is a fabricated one by September and a stale one by
+// October, on the single page this course opens every single day.
+section('The Desk');
+const DESK_PAGE = path.join(ROOT, 'daily', 'index.html');
+if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) {
+  assert(frontDoor.includes('href="daily/index.html"'), path.join(ROOT, 'index.html'),
+    'nothing on the front door links daily/index.html, so the Desk is orphaned');
+
+  const deskSrc = read(DESK_PAGE) || '';
+  (require('./lib/desk-content').beats || []).forEach(b => {
+    assert(deskSrc.includes(`>${b.name}<`), DESK_PAGE, `the ${b.name} beat is not on the page`);
+  });
+  (require('./lib/desk-content').resources || []).forEach(r => {
+    assert(deskSrc.includes(`href="${r.url}"`), DESK_PAGE, `${r.name} is not linked`);
+    assert(new RegExp(`href="${r.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*rel="noopener noreferrer"`).test(deskSrc),
+      DESK_PAGE, `${r.name} opens without rel="noopener noreferrer"`);
+  });
+  done(`${(require('./lib/desk-content').beats || []).length} beats, `
+    + `${(require('./lib/desk-content').resources || []).length} standing sources, linked from the front door`);
+}
+
 // ── Video ─────────────────────────────────────────────────────────────────────
 //
 // Whether a lesson has video, and how much, is a teaching decision. Two things

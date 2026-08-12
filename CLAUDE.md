@@ -90,6 +90,9 @@ push. That keeps the record of what it would have caught.
   modal open/close path, the deck, or the Gather panel.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
+- `node scripts/build-desk.js`, rebuild `daily/index.html`, the Desk, from
+  `scripts/lib/desk-content.js`. `--check` fails on drift. See "The Block Has Two
+  Halves" below for why the daily half is one page and the units are not.
 - `node scripts/parse-canvas-submissions.js <dir>`, turn an unzipped Canvas
   "Download Submissions" folder into `responses.csv` (one row per student per
   module response) and `exceptions.csv`. Reads and writes local files only, never
@@ -104,6 +107,41 @@ push. That keeps the record of what it would have caught.
 
 The student entry point is `index.html`, and it is generated. Student work reaches
 the teacher through **Canvas only**.
+
+## The Block Has Two Halves
+
+**This is the shape of the course, and every other decision follows from it.** One
+class meeting is a 90-minute block, and it runs in two halves:
+
+| | The Desk | The Unit |
+|---|---|---|
+| when | first ~25 minutes, **every** class | the remaining ~65, for weeks at a time |
+| what | today's news, four beats | one theme, traced backwards |
+| built as | a **protocol**, one generated page | **content**, one module per unit |
+| lives in | `scripts/lib/desk-content.js` → `daily/` | `scripts/lib/unit-content/` → `<unit>/` |
+
+**The two halves are built differently on purpose, and confusing them is the
+failure mode to avoid.** There are about 180 class periods in a year. Nobody
+authors 180 daily pages, and a teacher three days behind on authoring has a dead
+link in front of thirty students. So the daily half says nothing that expires:
+the Desk carries the beats, the routine and the standing sources, and what changes
+daily is what the students bring to it.
+
+That is also why **the Desk has no headline on it, ever.** See "Do not fabricate
+reporting" below. A page generated once and served every class period for a year
+cannot carry an example story: written in August it is fabricated, and by October
+it is stale, on the one page this course opens every single day. `validate.js`
+checks the Desk is linked from the front door and that its beats and sources are
+intact, because an orphaned Desk still builds and still validates.
+
+**The units are the spine**: six across the year, listed in `SPINE` in
+`scripts/build-index.js`. A unit appears on the front door whether or not it has
+been written, because a front door showing only the finished one would say the
+course is one unit long. A unit leaves the "planned" state by getting a content
+module, and nothing has to be pruned by hand when it does.
+
+**The orientation week is the method**, not a third content type. Week 01 teaches
+the five questions that the Desk then asks every day and every unit reuses.
 
 ## The Content Model
 
@@ -417,9 +455,15 @@ Honest list, so nobody assumes coverage that does not exist:
    for real, and keep both.
 5. **No real map artwork.** Week 01 has no map because the orientation week has no
    single place. A real lesson needs a real map in the `where` slot.
-6. **One unit only.** Social Media exists; the midterms unit does not.
-7. **No AI coach.** Deliberate, see above. BeCurrent needs its own bot first.
-8. **No clips are configured yet.** The video mechanism is built and tested, but
+6. **One unit of six.** Social Media exists. War in Iran, War in Ukraine, Midterm
+   Elections, Artificial Intelligence and Immigration are on the front door as
+   planned cards and have no content modules yet.
+7. **The News Log does not exist.** The Desk says the graded artifact is one log a
+   week, and nothing generates one. Until it does, the daily half is oral only and
+   nothing from it reaches Canvas. This is the next real decision: whether the log
+   is a week in `week-content/` reusing the brief machinery, or something smaller.
+8. **No AI coach.** Deliberate, see above. BeCurrent needs its own bot first.
+9. **No clips are configured yet.** The video mechanism is built and tested, but
    every `videos` array is empty because the URLs have to be real ones you supply.
    Nothing was invented to fill them.
 
