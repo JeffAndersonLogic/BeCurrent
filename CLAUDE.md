@@ -134,6 +134,33 @@ it is stale, on the one page this course opens every single day. `validate.js`
 checks the Desk is linked from the front door and that its beats and sources are
 intact, because an orphaned Desk still builds and still validates.
 
+### Nobody speaks to the room
+
+**This is a hard constraint, set by the teacher, on the basis of this room's IEP
+and 504 load. It is not a preference and it does not get revisited by a future
+edit.** No student presents, reports out, shares out, or is called on. Ever.
+
+An earlier Desk ran an oral board and it is gone. The replacement is deliberately
+not "write more instead", because several of the same students are limited in
+written output and that trade just swaps one barrier for another. The daily unit
+of work is a **dispatch**: four short fields, about thirty words, filed privately,
+and filable by typing, by dictation, or on a paper card. The teacher does all the
+talking, reading three or four dispatches aloud with **names removed**.
+
+Three properties hold it up, and breaking any one puts the barrier back:
+
+1. A dispatch is never shown with a name unless that student asks.
+2. The teacher voices the discussion, daily. An expert think-aloud is worth more
+   to a struggling reader than a peer summary, and it is the failure-tolerant
+   mode on a bad day.
+3. Everyone files. Not volunteers, not a rotation of four.
+
+`validate.js` enforces this, because it is the textbook silent regression: an oral
+step reads as a sensible edit to anyone who was not in the conversation, breaks
+nothing technically, and is discovered by a student being asked to present. The
+gate fails if `meta.promise` leaves the page, or if a routine step or the daily
+accountability line uses presenting language.
+
 **The units are the spine**: six across the year, listed in `SPINE` in
 `scripts/build-index.js`. A unit appears on the front door whether or not it has
 been written, because a front door showing only the finished one would say the

@@ -451,6 +451,64 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-variant-numeric:tabular-nums;
 }
 
+/* ── The Desk: the promise, the dispatch, the rules ────────────────────────────
+   The promise is the first thing under the hero and the largest single sentence
+   on the page. A student who is worried about being called on is not reading
+   anything else until that is answered, and the students who need the answer
+   most are the ones who will not raise a hand to ask. */
+.promise-card{border-top:4px solid var(--signal);background:var(--clean-paper)}
+.promise-text{
+  margin:8px 0 0; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.3rem,2.8vw,1.6rem); line-height:1.32; color:var(--slate-900);
+  text-wrap:balance;
+}
+
+/* The four fields of a dispatch. Numbered because filing them in order is the
+   sourcing habit: outlet and date before what happened, every time. */
+.dispatch-card{border-top:4px solid var(--signal)}
+.field-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.field{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--paper-line)}
+.field:first-child{border-top:0;padding-top:0}
+.field-n{
+  flex:0 0 auto; width:1.7rem; height:1.7rem; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--signal-tint); color:var(--signal-deep);
+  font-family:var(--sans); font-size:.78rem; font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+.field div{display:flex;flex-direction:column;gap:3px}
+.field-label{
+  margin:0; font-family:var(--sans); font-size:.68rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+}
+.field-ask{margin:0;font-family:var(--display);font-weight:700;font-size:1.06rem;line-height:1.3}
+.field-stem{margin:0;font-size:.93rem;font-style:italic;color:var(--ink-soft)}
+
+.tier-strip{display:grid;gap:12px;margin-top:20px;grid-template-columns:1fr}
+@media (min-width:660px){.tier-strip{grid-template-columns:1fr 1fr}}
+.tier-strip .tier{
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-left:4px solid var(--cool); border-radius:0 10px 10px 0; padding:14px 16px;
+}
+.tier-strip .tier-label{
+  display:block; font-family:var(--sans); font-size:.64rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--cool); margin-bottom:6px;
+}
+.tier-strip .tier p{margin:0;font-size:.95rem}
+.ways{margin:6px 0 0;padding-left:1.1rem}
+.ways li{margin-bottom:4px;font-size:.95rem}
+
+/* The rules exist so a student can rely on them, so they are on the page in the
+   student's own words rather than only in the content module's header. */
+.rules-card{margin-top:16px;border-top:4px solid var(--cool)}
+.rule-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.rule{display:flex;flex-direction:column;gap:2px}
+.rule-text{
+  margin:0; font-family:var(--display); font-weight:700;
+  font-size:1.1rem; line-height:1.3; color:var(--slate-900);
+}
+.rule-why{margin:0;font-size:.93rem;color:var(--ink-soft)}
+
 /* ── The Desk: beats and rotation ──────────────────────────────────────────────
    A beat card leads with its question, not its scope, because "bring a local
    story" is a scavenger hunt and the question is the part that makes it an

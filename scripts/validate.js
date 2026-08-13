@@ -542,7 +542,33 @@ if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) 
     'nothing on the front door links daily/index.html, so the Desk is orphaned');
 
   const deskSrc = read(DESK_PAGE) || '';
-  (require('./lib/desk-content').beats || []).forEach(b => {
+  const desk = require('./lib/desk-content');
+
+  // Nobody speaks to the room. This is a hard constraint set by the teacher on
+  // the basis of the room's IEP and 504 load, and it is exactly the kind of rule
+  // that regresses quietly: an oral step reads as a perfectly sensible edit to
+  // anyone who was not in the conversation, breaks nothing technically, and is
+  // discovered by a student being asked to present.
+  //
+  // The promise is checked because it is the only part of this a student can
+  // see. A page that quietly stopped promising it is a page they cannot rely on.
+  const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  assert(!!desk.meta.promise && deskSrc.includes(escHtml(desk.meta.promise)), DESK_PAGE,
+    'the Desk must carry meta.promise on the page. It is the one place a student '
+    + 'can read that they will never be made to present.');
+
+  const SPEAKING = /\b(present to the class|presentation|report out|share out|out loud to the class|oral report|call on you|called on)\b/i;
+  [['meta.deck', desk.meta.deck],
+    ...(desk.routine || []).flatMap((s, i) => [[`routine[${i}].what`, s.what], [`routine[${i}].why`, s.why]]),
+    ['accountability.daily', (desk.accountability || {}).daily]
+  ].forEach(([where, text]) => {
+    assert(!SPEAKING.test(String(text || '')), path.join(ROOT, 'scripts', 'lib', 'desk-content.js'),
+      `${where} asks a student to speak to the room. The daily half is filed, never spoken; `
+      + 'see the header of desk-content.js before changing this.');
+  });
+
+  (desk.beats || []).forEach(b => {
     assert(deskSrc.includes(`>${b.name}<`), DESK_PAGE, `the ${b.name} beat is not on the page`);
   });
   (require('./lib/desk-content').resources || []).forEach(r => {
