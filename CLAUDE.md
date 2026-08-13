@@ -100,8 +100,8 @@ push. That keeps the record of what it would have caught.
 - `node scripts/serve-local.js`, serve the repo locally. The briefs load through
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
-- `python3 scripts/brand/build-wordmark.py`, redraw the logo, the two wordmarks
-  and the favicon from the vendored Playfair Display. Needs
+- `python3 scripts/brand/build-wordmark.py`, redraw the plate, both wordmarks and
+  the favicon from the vendored Barlow Condensed. Needs
   `pip install fonttools brotli`, and is off the test path on purpose. See "The
   Mark, the Palette, and the Faces" below.
 
@@ -354,50 +354,72 @@ is two answers to "what red is this course" waiting to disagree.
 
 ### The mark
 
-**The current wordmark is out of date and known to be.** It is BeCurrent set in
-outlined Playfair Display, drawn back when Playfair was the heading face. The
-headings are Poppins now, so the mark and the type no longer agree. A replacement
-is coming; until it lands the mismatch is deliberate and documented rather than
-accidental.
-
-Four files, all outlined paths rather than `<text>`:
+BECURRENT in a heavy condensed oblique gothic, two-tone: BE in a neutral,
+CURRENT in red. Four files, all outlined paths rather than `<text>`:
 
 ```
-assets/images/brand/becurrent-logo.svg           the plate, 10:3, for Canvas or a slide
-assets/images/brand/becurrent-wordmark.svg       paper + red, for dark grounds
-assets/images/brand/becurrent-wordmark-ink.svg   ink + red, for light grounds
-assets/favicon.svg                               the C alone, for a browser tab
+assets/images/brand/becurrent-logo.svg           the plate, 10:3, with the tagline
+assets/images/brand/becurrent-wordmark.svg       BE paper + CURRENT red, dark grounds
+assets/images/brand/becurrent-wordmark-ink.svg   BE ink + CURRENT red, light grounds
+assets/favicon.svg                               the red C, for a browser tab
 ```
 
 They are paths because an SVG loaded through an `<img>` cannot reach a webfont,
-and a `<text>` element that falls back to whatever serif the machine has stops
-being the brand mark. The masthead, the hero and the footer all use one of these
+and a `<text>` element that falls back to whatever the machine has stops being
+the brand mark. The masthead, the hero and the footer all render one of these
 files rather than type styled to resemble it, so the lockups cannot drift.
 
-`scripts/brand/build-wordmark.py` regenerates all four from the vendored Playfair.
-It needs `pip install fonttools brotli` and is **deliberately off the test path**,
-because `validate.js` has to stay runnable on a bare checkout with no install at
-all. Playfair stays vendored only because that script reads it; nothing on a page
-uses it. When the new mark arrives, both can go.
+**The current files are a reproduction.** The supplied artwork arrived as a
+raster, so `scripts/brand/build-wordmark.py` redraws it from Barlow Condensed 900
+Italic, the closest free face. If the original vector or the real font name turns
+up, change `SRC` and the constants at the top of that script and rerun. Nothing
+else in the repo needs to know.
 
-**Replacing the mark is not a file swap.** Four files are derived from one
-drawing, plus the favicon, plus `--signal` and `--slate-900`, which are sampled
-from it. Dropping a new SVG into `assets/images/brand/` updates one of those and
-silently leaves five wrong.
+**Two deliberate departures from the supplied artwork**, both because they only
+show up once the mark is in use:
+
+- **No drop shadow.** The masthead renders the mark 21px tall, where a shadow is
+  not a shadow but a grey smear along one edge, and it is the first thing to turn
+  to mud on a projector.
+- **BE is not white on a light ground.** In the supplied art BE is white on white
+  and holds together only because the shadow keeps its edge. Every reading surface
+  here is newsprint, so that version would vanish on the hero. Two colourways
+  instead, red constant in both. What carries over is the two-tone split, not the
+  specific white.
+
+**The tagline is in the plate only.** At masthead size it is four illegible
+pixels, and the front door already prints the course name in the dateline right
+under the mark.
+
+`scripts/brand/build-wordmark.py` regenerates all four. It needs
+`pip install fonttools brotli` and is **deliberately off the test path**, because
+`validate.js` has to stay runnable on a bare checkout with no install at all. The
+outputs are committed; nothing in the build or the gate calls it.
+
+**Replacing the mark is not a file swap.** Four files come from one drawing, plus
+`--signal` sampled from it, plus the `width`/`height` on every `<img>` that
+renders it. The last one is enforced: `validate.js` reads the wordmark's own
+dimensions and fails if any lockup disagrees, because redrawing the mark changed
+its ratio from 4889x810 to 4101x716 and ten hardcoded pairs across four
+generators had to move with it.
 
 ### The palette comes off the mark
 
-`--signal` `#D62B1F` and `--slate-900` `#16181B` are sampled from the logo. The
-one rule that matters:
+`--signal` `#D5211A` is sampled from the mark. `--slate-900` `#16181B` is **not**:
+the artwork arrived on white with no plate, so that token is the site's existing
+scan surface, kept because nothing in the new mark argues against it. It is what
+the generated plate is drawn on.
+
+The one rule that matters:
 
 - **`--signal` draws things**: rules, borders, button grounds, and display type
   20px and up, where the bar is 3:1 and it clears it everywhere.
 - **`--signal-deep` is the red that body-size words are set in**, every eyebrow,
-  chip and key term. `--signal` on newsprint is 4.44:1 and fails.
+  chip and key term.
 
-The button is the tight one: `--clean-paper` on `--signal` is 4.93:1 against a
-4.5 bar. Move either token and rerun the numbers rather than eyeballing it. The
-full table, with the reasoning, is at the top of `becurrent-brand.css`.
+The button carries the least slack: `--clean-paper` on `--signal` is 5.13:1
+against a 4.5 bar. Move either token and rerun the numbers rather than eyeballing
+it. The full table is at the top of `becurrent-brand.css`.
 
 ### Two faces, three roles, self-hosted
 

@@ -1,167 +1,185 @@
 #!/usr/bin/env python3
 """Outline the BeCurrent wordmark into SVG paths.
 
-Writes assets/images/brand/*.svg and assets/favicon.svg from the vendored
-Playfair Display in assets/fonts/. Run it from the repository root:
+Writes assets/images/brand/*.svg and assets/favicon.svg. Run from the repo root:
 
     pip install fonttools brotli
     python3 scripts/brand/build-wordmark.py
 
-Why the mark is paths and not <text>: an SVG loaded through an <img> cannot
-reach a webfont, and a <text> element that falls back to whatever serif the
-machine has stops being the brand mark. Outlines render identically on a
-Chromebook, a projector, and a browser tab, which is the whole point of a logo.
+── What this is a reproduction OF ──────────────────────────────────────────────
 
-Why it is Python and off the test path: reading a woff2 needs fontTools and
-brotli, and `validate.js` has to stay runnable on a bare checkout with no
-install at all. The four SVGs are committed, so nothing in the build or the
-gate depends on this file. It exists so the mark can be redrawn rather than
-only inherited: change a constant below, rerun it, and the whole set moves
-together.
+The supplied artwork is BECURRENT in a heavy condensed oblique gothic: BE in
+white, CURRENT in red, a drop shadow under both, and CURRENT EVENTS in light
+tracked caps beneath. It arrived as a raster, so this file redraws it from
+Barlow Condensed 900 Italic, which is the closest free face to it. If the
+original vector or the real font name turns up, change SRC and the constants
+below and rerun; nothing else in the repo needs to know.
 
-The construction, so the numbers mean something:
+Two deliberate departures from the supplied artwork, both for reasons that only
+show up once the mark is in use:
 
-  * Playfair Display, the variable weight axis instanced twice. It is a
-    high-contrast masthead serif, which is the face the supplied artwork is
-    set in and the reason the site's headings now match the logo.
-  * The full caps B and C are wght 700. The small caps are separate glyphs
-    scaled to 0.72 of cap height and instanced at wght 800, because scaling a
-    700 capital down thins its stems next to a full-size one. The compensation
-    is what keeps the stroke weight even across the word.
-  * The red C is drawn at 1.10, so it breaks the cap line above and the
-    baseline below. That overshoot is the mark's only piece of drama and it is
-    deliberate: it is what makes "Current" the word you read first.
+  1. NO DROP SHADOW. The masthead renders this 21px tall. A shadow at that size
+     is not a shadow, it is a grey smear along one edge, and it is the first
+     thing to turn to mud on a projector. Flat also matches every other surface
+     in this system.
+
+  2. BE IS NOT WHITE ON A LIGHT GROUND. In the supplied art BE is white on white
+     and survives only because the shadow holds its edge. Every reading surface
+     in this course is newsprint, so that version of the mark would vanish on
+     the hero. There are two colourways instead: paper for dark grounds, ink for
+     light, red constant in both. The two-tone split the mark is built on is
+     what carries over, not the specific white.
+
+The tagline is in the plate only. At masthead size it would be four illegible
+pixels, and the front door already prints the course name in the dateline
+directly under the mark, so putting it in the wordmark would say it twice.
+
+── Why paths and not <text> ────────────────────────────────────────────────────
+
+An SVG loaded through an <img> cannot reach a webfont, and a <text> element that
+falls back to whatever the machine has stops being the brand mark. Outlines
+render identically on a Chromebook, a projector, and a browser tab.
+
+Deliberately off the test path: reading a woff2 needs fontTools and brotli, and
+validate.js has to stay runnable on a bare checkout. The SVGs are committed, so
+nothing in the build or the gate depends on this file. It exists so the mark can
+be redrawn rather than only inherited.
 """
 import os
 from fontTools.ttLib import TTFont
-from fontTools.varLib import instancer
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.misc.transform import Transform
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SRC = os.path.join(ROOT, 'assets', 'fonts', 'playfair-display-latin-wght-normal.woff2')
+FONTS = os.path.join(ROOT, 'assets', 'fonts')
+SRC = os.path.join(FONTS, 'barlow-condensed-latin-900-italic.woff2')
+TAG_SRC = os.path.join(FONTS, 'lato-latin-400-normal.woff2')
 OUT = os.path.join(ROOT, 'assets', 'images', 'brand')
 
-CAP_W = 700     # weight of the full caps
-SC_W = 800      # weight of the small caps, compensating for being scaled down
-SC = 0.72       # small-cap height, as a fraction of cap height
-CSCALE = 1.10   # the red C, relative to the B
-TRACK = 6       # letterspacing, per mille of the em
+TRACK = -18       # wordmark letterspacing, per mille of the em. The mark is tight.
+TAG_TRACK = 300   # the tagline is the opposite: wide, light, quiet.
+TAG_SIZE = 0.20   # tagline cap height, as a fraction of the wordmark's
+TAG_GAP = 0.34    # space between the two lines, same units
 
-RED = '#D62B1F'      # --signal
-PAPER = '#FFFFFF'    # the wordmark on a dark ground
-INK = '#14171A'      # --ink, the wordmark on a light ground
+RED = '#D5211A'      # --signal, sampled from the supplied artwork
+PAPER = '#FFFFFF'    # BE on a dark ground
+INK = '#14171A'      # BE on a light ground
 PLATE = '#16181B'    # --slate-900
-
-# B  E(sc)  C(red)  U R R E N T(sc)
-RUN = [('B', 1.0, 'w'), ('E', SC, 'sc'), ('C', CSCALE, 'r'),
-       ('U', SC, 'sc'), ('R', SC, 'sc'), ('R', SC, 'sc'),
-       ('E', SC, 'sc'), ('N', SC, 'sc'), ('T', SC, 'sc')]
-
-HEAD = """<!-- The BeCurrent wordmark. Generated by scripts/brand/build-wordmark.py:
-     Playfair Display, full caps at wght 700 with small caps scaled to {sc} of cap
-     height at wght 800, and the C at {c} so it breaks the cap line. Converted to
-     paths on purpose, because an SVG in an <img> cannot load a webfont.
-     Width and height are set explicitly, per the image contract in CLAUDE.md. -->
-""".format(sc=SC, c=CSCALE)
+TAG_ON_PLATE = '#B9C0C7'
 
 
-def instance(weight):
-    return instancer.instantiateVariableFont(TTFont(SRC), {'wght': weight}, inplace=True)
-
-
-def draw(font, ch, scale, dx):
+def run(font, text, scale, dx, track):
+    """Outline a string. Returns (path data, advance width, bounds)."""
     glyphs = font.getGlyphSet()
-    name = font.getBestCmap()[ord(ch)]
-    # Font space is y-up and SVG is y-down, so the y scale is negated and the
-    # baseline lands on y=0.
-    t = Transform(scale, 0, 0, -scale, dx, 0)
-    pen = SVGPathPen(glyphs, ntos=lambda v: f'{v:.1f}')
-    glyphs[name].draw(TransformPen(pen, t))
-    bounds = BoundsPen(glyphs)
-    glyphs[name].draw(TransformPen(bounds, t))
-    return pen.getCommands(), glyphs[name].width * scale, bounds.bounds
-
-
-def build():
-    caps, smalls = instance(CAP_W), instance(SC_W)
-    x = 0.0
-    white, red, box = [], [], [1e9, 1e9, -1e9, -1e9]
-    for ch, scale, kind in RUN:
-        d, advance, b = draw(smalls if kind == 'sc' else caps, ch, scale, x)
-        (red if kind == 'r' else white).append(d)
-        if b:
-            box = [min(box[0], b[0]), min(box[1], b[1]),
-                   max(box[2], b[2]), max(box[3], b[3])]
-        x += advance + TRACK * scale
-    return white, red, box
+    cmap = font.getBestCmap()
+    upem = font['head'].unitsPerEm
+    parts, x = [], dx
+    box = [1e9, 1e9, -1e9, -1e9]
+    for ch in text:
+        if ch == ' ':
+            x += upem * 0.26 * scale + track / 1000.0 * upem * scale
+            continue
+        name = cmap[ord(ch)]
+        # Font space is y-up, SVG is y-down, so the y scale is negated and the
+        # baseline lands on y=0.
+        t = Transform(scale, 0, 0, -scale, x, 0)
+        pen = SVGPathPen(glyphs, ntos=lambda v: f'{v:.1f}')
+        glyphs[name].draw(TransformPen(pen, t))
+        parts.append(pen.getCommands())
+        bp = BoundsPen(glyphs)
+        glyphs[name].draw(TransformPen(bp, t))
+        if bp.bounds:
+            box = [min(box[0], bp.bounds[0]), min(box[1], bp.bounds[1]),
+                   max(box[2], bp.bounds[2]), max(box[3], bp.bounds[3])]
+        x += glyphs[name].width * scale + track / 1000.0 * upem * scale
+    return ' '.join(parts), x - dx, box
 
 
 def write(name, body):
-    path = os.path.join(OUT, name) if name != 'favicon.svg' else \
-        os.path.join(ROOT, 'assets', name)
+    path = os.path.join(ROOT, 'assets', name) if name == 'favicon.svg' \
+        else os.path.join(OUT, name)
     with open(path, 'w') as fh:
         fh.write(body)
     print(f'  {os.path.relpath(path, ROOT)}  {len(body)} bytes')
 
 
-white, red, box = build()
+mark = TTFont(SRC)
+tagfont = TTFont(TAG_SRC)
+os.makedirs(OUT, exist_ok=True)
+
+# ── The wordmark: BE in the neutral, CURRENT in red, set as one tight line ────
+be_d, be_w, be_box = run(mark, 'BE', 1.0, 0, TRACK)
+cur_d, cur_w, cur_box = run(mark, 'CURRENT', 1.0, be_w, TRACK)
+
+box = [min(be_box[0], cur_box[0]), min(be_box[1], cur_box[1]),
+       max(be_box[2], cur_box[2]), max(be_box[3], cur_box[3])]
 W, H = box[2] - box[0], box[3] - box[1]
 shift = f'translate({-box[0]:.1f} {-box[1]:.1f})'
 
+HEAD = f"""<!-- The BeCurrent wordmark. Generated by scripts/brand/build-wordmark.py:
+     Barlow Condensed 900 Italic, outlined. Two colourways exist because BE is
+     the neutral half of a two-tone mark and cannot be white on a light ground.
+     Width and height are set explicitly, per the image contract in CLAUDE.md. -->
+"""
 
-def marks(letters, accent):
-    return (f'<g transform="{shift}">'
-            f'<path fill="{letters}" d="{" ".join(white)}"/>'
-            f'<path fill="{accent}" d="{" ".join(red)}"/></g>')
 
-
-def wordmark(letters, accent):
+def wordmark(neutral):
     return (f'{HEAD}<svg xmlns="http://www.w3.org/2000/svg" width="{W:.0f}" '
             f'height="{H:.0f}" viewBox="0 0 {W:.1f} {H:.1f}" role="img" '
-            f'aria-label="BeCurrent">{marks(letters, accent)}</svg>\n')
+            f'aria-label="BeCurrent">'
+            f'<g transform="{shift}">'
+            f'<path fill="{neutral}" d="{be_d}"/>'
+            f'<path fill="{RED}" d="{cur_d}"/></g></svg>\n')
 
 
-os.makedirs(OUT, exist_ok=True)
 print(f'wordmark {W:.0f} x {H:.0f}, ratio {W / H:.2f}')
+write('becurrent-wordmark.svg', wordmark(PAPER))
+write('becurrent-wordmark-ink.svg', wordmark(INK))
 
-# The wordmark alone, for a masthead or a footer. Two colourways rather than one
-# recoloured by CSS: an SVG in an <img> cannot see the page's custom properties,
-# and inlining the mark into every page to make currentColor work would put ten
-# kilobytes of path data in the markup of every lesson.
-write('becurrent-wordmark.svg', wordmark(PAPER, RED))
-write('becurrent-wordmark-ink.svg', wordmark(INK, RED))
+# ── The plate: the shareable logo, and the only lockup carrying the tagline ───
+tag_scale = (H * TAG_SIZE) / (tagfont['head'].unitsPerEm * 0.72)
+tag_d, tag_w, tag_box = run(tagfont, 'CURRENT EVENTS', tag_scale, 0, TAG_TRACK)
 
-# The plate, matching the supplied artwork: 10:3, with the mark at 72% of the
-# width. This is the shareable logo, the one to hand to Canvas or a slide.
 PW, PH = 2000, 600
-mw = PW * 0.72
-s = mw / W
-plate = (f'{HEAD}<svg xmlns="http://www.w3.org/2000/svg" width="{PW}" '
-         f'height="{PH}" viewBox="0 0 {PW} {PH}" role="img" aria-label="BeCurrent">'
+block_h = H + H * TAG_GAP + (tag_box[3] - tag_box[1] if tag_box[2] > tag_box[0] else 0)
+s = (PW * 0.76) / W
+if block_h * s > PH * 0.72:
+    s = (PH * 0.72) / block_h
+mx = (PW - W * s) / 2
+my = (PH - block_h * s) / 2
+
+plate = (f'{HEAD}<svg xmlns="http://www.w3.org/2000/svg" width="{PW}" height="{PH}" '
+         f'viewBox="0 0 {PW} {PH}" role="img" aria-label="BeCurrent, Current Events">'
          f'<rect width="{PW}" height="{PH}" rx="40" fill="{PLATE}"/>'
-         f'<g transform="translate({(PW - mw) / 2:.1f} {(PH - H * s) / 2:.1f}) '
-         f'scale({s:.4f})">{marks(PAPER, RED)}</g></svg>\n')
+         f'<g transform="translate({mx:.1f} {my:.1f}) scale({s:.4f})">'
+         f'<g transform="{shift}">'
+         f'<path fill="{PAPER}" d="{be_d}"/>'
+         f'<path fill="{RED}" d="{cur_d}"/></g>'
+         # The tagline sits centred under the wordmark, a line of quiet caps
+         # against a very loud one.
+         f'<g transform="translate({(W - tag_w) / 2 - tag_box[0]:.1f} '
+         f'{H * (1 + TAG_GAP) - tag_box[1] - (tag_box[3] - tag_box[1]):.1f})">'
+         f'<path fill="{TAG_ON_PLATE}" d="{tag_d}"/></g>'
+         f'</g></svg>\n')
 write('becurrent-logo.svg', plate)
 
-# The favicon: the one letter that carries the mark, at the size a browser tab
-# actually gives you. Red ground under a paper C, which is the strongest pairing
-# in the palette and stays legible at 16px against light or dark browser chrome.
-# Drawn at wght 900 rather than the wordmark's 700, because Playfair's hairlines
-# are the first thing to disappear at 16px and a C whose thin side has vanished
-# reads as a bracket.
-cfont = instance(900)
-d, advance, b = draw(cfont, 'C', 1.0, 0)
-cw, ch = b[2] - b[0], b[3] - b[1]
+# ── The favicon: the one letter the mark can be reduced to ───────────────────
+#
+# The red C, which is where the mark changes colour and the only letter that
+# reads as BeCurrent rather than as a generic slab. Paper on red, which is the
+# strongest pairing in the palette and holds at 16px against light or dark
+# browser chrome.
+c_d, c_w, c_box = run(mark, 'C', 1.0, 0, 0)
+cw, ch = c_box[2] - c_box[0], c_box[3] - c_box[1]
 fs = 40.0 / ch
-icon = (f'<!-- The BeCurrent mark reduced to its one letter. Generated by\n'
-        f'     scripts/brand/build-wordmark.py, the same C outline as the wordmark. -->\n'
+icon = ('<!-- The BeCurrent mark reduced to its one letter. Generated by\n'
+        '     scripts/brand/build-wordmark.py, the same C outline as the wordmark. -->\n'
         f'<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" '
         f'viewBox="0 0 64 64" role="img" aria-label="BeCurrent">'
         f'<rect width="64" height="64" rx="13" fill="{RED}"/>'
-        f'<g transform="translate({32 - cw * fs / 2 - b[0] * fs:.1f} '
-        f'{32 - ch * fs / 2 - b[1] * fs:.1f}) scale({fs:.4f})">'
-        f'<path fill="{PAPER}" d="{d}"/></g></svg>\n')
+        f'<g transform="translate({32 - cw * fs / 2 - c_box[0] * fs:.1f} '
+        f'{32 - ch * fs / 2 - c_box[1] * fs:.1f}) scale({fs:.4f})">'
+        f'<path fill="{PAPER}" d="{c_d}"/></g></svg>\n')
 write('favicon.svg', icon)

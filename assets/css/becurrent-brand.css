@@ -8,39 +8,43 @@
 
    ── Everything here comes off the logo ──────────────────────────────────────
 
-   The mark is BeCurrent set in a high-contrast masthead serif: a full-size B, a
-   full-size C in red breaking the cap line, and small caps for the rest, in
-   paper on a near-black plate. Three colours and one voice. So:
+   The mark is BECURRENT in a heavy condensed oblique gothic, two-tone: BE in a
+   neutral, CURRENT in red. So:
 
-     --signal     #D62B1F   the red, sampled from the mark
-     --slate-900  #16181B   the plate, sampled from the mark
-     --clean-paper / --newsprint   the letters, warmed for a reading surface
+     --signal     #D5211A   the red, sampled from the mark
+     --slate-900  #16181B   the plate the mark is set on
 
-   The mark's letters are pure #FFFFFF, and the reading surfaces are not. That
-   is deliberate rather than a mismatch: a logo is looked at for a second and
-   wants maximum separation, while a page is read for ten minutes and a warm
-   white is easier on the eye under a projector lamp. The wordmark files keep
-   pure white; the pages keep newsprint.
+   --slate-900 is NOT sampled from the supplied artwork, which arrived on white
+   with no plate at all. It is the site's existing scan surface, kept because
+   nothing in the new mark argues against it, and it is what the generated logo
+   plate uses. If a plate colour ever comes with the artwork, this is the token
+   to change.
+
+   The mark's BE is pure #FFFFFF and the reading surfaces are not. That is
+   deliberate rather than a mismatch: a logo is looked at for a second and wants
+   maximum separation, while a page is read for ten minutes and a warm white is
+   easier under a projector lamp. The wordmark files keep pure white; the pages
+   keep newsprint. And on a light ground BE is ink, not white, or the neutral
+   half of the mark disappears.
 
    ── Where the red can and cannot go ─────────────────────────────────────────
 
    The logo red is a display colour, and the numbers say where it can go:
 
-     --clean-paper on --signal      4.93:1   passes at any size, so buttons use it
-     --signal on --clean-paper      4.93:1   passes, but see below
-     --signal on --newsprint        4.44:1   FAILS at body size
-     --signal-deep on --newsprint   6.56:1   comfortable on either ground
-     --signal on --slate-900        3.58:1   large display only, as in the mark
+     --clean-paper on --signal      5.13:1   passes at any size, so buttons use it
+     --signal on --newsprint        4.62:1   passes, but see below
+     --signal-deep on --newsprint   6.80:1   comfortable on either ground
+     --signal on --slate-900        3.44:1   large display only, as in the mark
 
    So: --signal draws rules, borders, button grounds, and display type 20px and
    up, where 3:1 is the bar and it clears it everywhere. --signal-deep is the
    red that body-size words are set in, including every eyebrow, chip and key
    term. The two are one hue apart and swapping them looks like a nicety, which
-   is how an eyebrow ends up at 4.4:1 with every structural check still green.
+   is how an eyebrow ends up under 4.5:1 with every structural check still green.
 
-   Note how narrow the button's margin is: 4.93:1 against a 4.5 bar. Darkening
-   --clean-paper or lightening --signal by a hair puts every button on the site
-   under. If either moves, rerun the numbers rather than eyeballing it.
+   The button carries the least slack at 5.13:1 against a 4.5 bar. Darkening
+   --clean-paper or lightening --signal puts every button on the site at risk,
+   so if either moves, rerun the numbers rather than eyeballing it.
 
    ── The faces ───────────────────────────────────────────────────────────────
 
@@ -124,8 +128,8 @@
   --clean-paper:#FFFEFB;
   --paper-line:rgba(20,23,26,.14);
 
-  /* Slate, for the surfaces that get scanned. 900 is the logo plate exactly;
-     the rest are the same hue opened up in even steps. */
+  /* Slate, for the surfaces that get scanned. 900 is the ground the generated
+     logo plate is drawn on; the rest are the same hue opened up in even steps. */
   --slate-900:#16181B;
   --slate-800:#21252A;
   --slate-700:#313841;
@@ -134,10 +138,10 @@
   /* The signal. --signal is the logo red and draws things; --signal-deep is the
      same hue darkened until words set in it clear 4.5:1 on both light grounds;
      --signal-pale is the same hue lifted for the dark panels. */
-  --signal:#D62B1F;
-  --signal-deep:#A81E14;
+  --signal:#D5211A;
+  --signal-deep:#A61810;
   --signal-pale:#F0A79E;
-  --signal-tint:rgba(214,43,31,.10);
+  --signal-tint:rgba(213,33,26,.10);
 
   /* The cool counterpart. Not in the logo, and it stays for two jobs the logo
      red cannot do: separating a second series from the first in Coverage

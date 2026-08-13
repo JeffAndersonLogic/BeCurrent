@@ -702,6 +702,48 @@ studentPages.filter(f => f.endsWith('.html')).forEach(file => {
 });
 done(`${brandLinked} pages linked, tokens defined once`);
 
+// ── The wordmark lockups ─────────────────────────────────────────────────────
+//
+// Every page renders the wordmark as an <img> with explicit width and height,
+// and those numbers have to match the file. If they drift the browser reserves
+// the wrong box and the mark is letterboxed or stretched inside it, which looks
+// like a rendering bug rather than a stale attribute.
+//
+// This is not hypothetical: redrawing the mark changed its aspect ratio from
+// 4889x810 to 4101x716, and the ten hardcoded pairs across four generators had
+// to move with it. Nothing else would have caught that.
+section('Wordmark lockups');
+const MARKS = ['becurrent-wordmark.svg', 'becurrent-wordmark-ink.svg'];
+const markDims = {};
+MARKS.forEach(name => {
+  const full = path.join(ROOT, 'assets', 'images', 'brand', name);
+  const src = read(full);
+  if (!assert(!!src, full, 'wordmark file is missing')) return;
+  const w = (src.match(/<svg[^>]*\swidth="([\d.]+)"/) || [])[1];
+  const h = (src.match(/<svg[^>]*\sheight="([\d.]+)"/) || [])[1];
+  assert(!!w && !!h, full, 'wordmark has no intrinsic width and height');
+  markDims[name] = { w, h };
+});
+
+let lockups = 0;
+studentPages.filter(f => f.endsWith('.html')).forEach(file => {
+  const src = read(file) || '';
+  MARKS.forEach(name => {
+    const dims = markDims[name];
+    if (!dims) return;
+    const re = new RegExp(`<img[^>]*brand/${name.replace('.', '\\.')}"[^>]*>`, 'g');
+    (src.match(re) || []).forEach(tag => {
+      lockups += 1;
+      const w = (tag.match(/\swidth="(\d+)"/) || [])[1];
+      const h = (tag.match(/\sheight="(\d+)"/) || [])[1];
+      assert(w === dims.w && h === dims.h, file,
+        `${name} is rendered at ${w}x${h} but the file is ${dims.w}x${dims.h}. `
+        + 'The <img> dimensions must match the mark, or the browser reserves the wrong box.');
+    });
+  });
+});
+done(`${lockups} lockups, all matching the mark's own dimensions`);
+
 // ── Image integrity ──────────────────────────────────────────────────────────
 //
 // A text file named .jpg renders as a broken frame, which reads to a student as

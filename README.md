@@ -104,13 +104,15 @@ where. `--signal` and `--slate-900` are sampled from the logo. Headings are
 Poppins, body text is Lato, both self-hosted in `assets/fonts/`, because no
 student-facing page in this repo makes a third-party request.
 
-The wordmark in `assets/images/brand/` is out of date and known to be: it is
-drawn in Playfair, which was the heading face before Poppins. A replacement is
-pending.
+The mark is BECURRENT in a heavy condensed oblique gothic, two-tone: BE in a
+neutral, CURRENT in red. Two colourways, because BE cannot be white on a light
+ground without disappearing.
 
-`python3 scripts/brand/build-wordmark.py` redraws the logo, the two wordmarks and
-the favicon from the vendored Playfair Display. It needs `fonttools` and is off
-the test path on purpose; the four SVGs are committed.
+`python3 scripts/brand/build-wordmark.py` redraws the plate, both wordmarks and
+the favicon. It needs `fonttools` and is off the test path on purpose; the four
+SVGs are committed. The current files are a reproduction from Barlow Condensed
+900 Italic, because the artwork arrived as a raster; see `CLAUDE.md` for the two
+deliberate departures from it.
 
 ## Deploying
 

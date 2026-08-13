@@ -118,7 +118,7 @@ function renderIndex(units, weeks) {
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="index.html" aria-label="BeCurrent home">
-        <img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4889" height="810">
+        <img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4101" height="716">
       </a>
       <div class="nav-links">
         <a href="#block">The Block</a>
@@ -129,7 +129,7 @@ ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? ' 
   </header>
 
   <section class="hero" id="top">
-    <h1 class="hero-wordmark"><img src="assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="4889" height="810"></h1>
+    <h1 class="hero-wordmark"><img src="assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="4101" height="716"></h1>
     <p class="dateline">Current Problems, Issues &amp; Events &middot; Mr. Anderson</p>
     <p class="hero-copy">
       <strong>Read it. Check it. Then decide.</strong>
@@ -217,7 +217,7 @@ ${weekCards}
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand"><img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4889" height="810"></div>
+      <div class="footer-brand"><img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="4101" height="716"></div>
       <p>Read it. Check it. Then decide.</p>
     </div>
   </footer>
