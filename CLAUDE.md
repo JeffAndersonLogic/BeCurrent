@@ -354,9 +354,13 @@ is two answers to "what red is this course" waiting to disagree.
 
 ### The mark
 
-The logo is BeCurrent set in a high-contrast masthead serif: a full-size B, a
-full-size red C breaking the cap line, small caps for the rest, paper on a
-near-black plate. Four files, all outlined paths rather than `<text>`:
+**The current wordmark is out of date and known to be.** It is BeCurrent set in
+outlined Playfair Display, drawn back when Playfair was the heading face. The
+headings are Poppins now, so the mark and the type no longer agree. A replacement
+is coming; until it lands the mismatch is deliberate and documented rather than
+accidental.
+
+Four files, all outlined paths rather than `<text>`:
 
 ```
 assets/images/brand/becurrent-logo.svg           the plate, 10:3, for Canvas or a slide
@@ -370,11 +374,16 @@ and a `<text>` element that falls back to whatever serif the machine has stops
 being the brand mark. The masthead, the hero and the footer all use one of these
 files rather than type styled to resemble it, so the lockups cannot drift.
 
-`scripts/brand/build-wordmark.py` regenerates all four. It needs
-`pip install fonttools brotli` and is **deliberately off the test path**, because
-`validate.js` has to stay runnable on a bare checkout with no install at all. The
-outputs are committed; nothing in the build or the gate calls it. It exists so the
-mark can be redrawn rather than only inherited.
+`scripts/brand/build-wordmark.py` regenerates all four from the vendored Playfair.
+It needs `pip install fonttools brotli` and is **deliberately off the test path**,
+because `validate.js` has to stay runnable on a bare checkout with no install at
+all. Playfair stays vendored only because that script reads it; nothing on a page
+uses it. When the new mark arrives, both can go.
+
+**Replacing the mark is not a file swap.** Four files are derived from one
+drawing, plus the favicon, plus `--signal` and `--slate-900`, which are sampled
+from it. Dropping a new SVG into `assets/images/brand/` updates one of those and
+silently leaves five wrong.
 
 ### The palette comes off the mark
 
@@ -390,28 +399,32 @@ The button is the tight one: `--clean-paper` on `--signal` is 4.93:1 against a
 4.5 bar. Move either token and rerun the numbers rather than eyeballing it. The
 full table, with the reasoning, is at the top of `becurrent-brand.css`.
 
-### Three faces, self-hosted
+### Two faces, three roles, self-hosted
 
-`assets/fonts/`, latin variable woff2, OFL, licences committed alongside them.
-Self-hosted because a student-facing page in this repo makes no third-party
-request, and a webfont `<link>` to someone else's CDN is exactly that.
+`assets/fonts/`, latin woff2, OFL, licences committed alongside them. Self-hosted
+because a student-facing page in this repo makes no third-party request, and a
+webfont `<link>` to someone else's CDN is exactly that.
 
 | token | face | job |
 |---|---|---|
-| `--display` | Playfair Display | the logo's own face. Headings 20px and up. |
-| `--serif` | Source Serif 4 | everything students read at length. |
-| `--sans` | Source Sans 3 | labels, eyebrows, buttons, counters, chips. |
+| `--display` | Poppins | every heading, at any size |
+| `--body` | Lato | everything students read at length |
+| `--ui` | Lato | labels, eyebrows, buttons, counters, chips |
 
-**The 20px floor on `--display` is load-bearing.** Playfair is a Didone: its thin
-strokes are genuinely thin, and below about 20px on a projector in a lit room they
-break up and the heading turns to lace. Module cards and week cards stayed in
-`--sans` for that reason. Where a heading sat just under the line it was raised
-past it rather than fudged under it.
+`--body` and `--ui` are the same face today and stay two tokens, because they are
+two jobs. One token means you cannot change one without the other.
 
-Before this, `--sans` and `--serif` named "Source Sans 3" and "Source Serif 4"
-with nothing loading them, so the whole course was rendering in Helvetica and
-Georgia. Keep the stacks honest: the first name in each must be a face the repo
-ships.
+**Only the shipped weights exist.** Poppins at 600 and 700, Lato at 400 and 700
+with italics. These are static faces, not variable ones, so a weight that is not
+in that list is *synthesised* rather than substituted: the browser smears the
+nearest weight and you get a slightly swollen version of the right font, which is
+hard to name when you see it. Every `font-weight:800` was changed to 700 for that
+reason. Add the file before you add the weight.
+
+**There is no minimum size on `--display`.** There used to be, because the old
+face was Playfair, a Didone whose hairlines broke up below about 20px on a
+projector. Poppins has even stroke weight and nothing to lose, so every heading
+is the heading face now, including the card titles that were stranded before.
 
 ## Polarity
 

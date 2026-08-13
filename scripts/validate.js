@@ -676,7 +676,7 @@ const BRAND = path.join(ROOT, 'assets', 'css', 'becurrent-brand.css');
 assert(fs.existsSync(BRAND), BRAND, 'assets/css/becurrent-brand.css is missing');
 
 const brandSrc = read(BRAND) || '';
-['--signal', '--signal-deep', '--slate-900', '--display', '--serif', '--sans'].forEach(token => {
+['--signal', '--signal-deep', '--slate-900', '--display', '--body', '--ui'].forEach(token => {
   assert(brandSrc.includes(`${token}:`), BRAND, `the brand file defines no ${token}`);
 });
 

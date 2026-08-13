@@ -29,7 +29,7 @@
 }
 body{
   margin:0; background:var(--newsprint); color:var(--ink);
-  font-family:var(--serif); font-size:17px; line-height:1.7;
+  font-family:var(--body); font-size:17px; line-height:1.7;
 }
 img{max-width:100%;display:block}
 
@@ -47,7 +47,7 @@ img{max-width:100%;display:block}
   margin:4px 0 2px; font-family:var(--display); font-weight:700; font-size:1.3rem;
 }
 .module-header .module-subtitle{
-  margin:0; font-family:var(--sans); font-size:.78rem; color:rgba(255,254,251,.68);
+  margin:0; font-family:var(--ui); font-size:.78rem; color:rgba(255,254,251,.68);
 }
 
 /* ── Title band ────────────────────────────────────────────────────────────── */
@@ -58,7 +58,7 @@ img{max-width:100%;display:block}
   border-radius:14px 14px 0 0;
 }
 .brief-eyebrow{
-  font-family:var(--sans); font-size:.68rem; font-weight:800;
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
 }
 .brief-title{
@@ -70,7 +70,7 @@ img{max-width:100%;display:block}
 .brief-deck{margin:0;font-style:italic;font-size:1.1rem;color:var(--ink-soft)}
 .skill-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .skill-tag{
-  font-family:var(--sans); font-size:.64rem; font-weight:800;
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
   background:var(--cool-tint); color:var(--cool);
   padding:4px 10px; border-radius:999px;
@@ -89,7 +89,7 @@ img{max-width:100%;display:block}
   border-left:4px solid var(--cool); border-radius:0 10px 10px 0; padding:14px 16px;
 }
 .support-card .support-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
   display:block; margin-bottom:6px;
 }
@@ -97,7 +97,7 @@ img{max-width:100%;display:block}
 
 .vocab-strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
 .term-chip{
-  font-family:var(--sans); font-size:.74rem; font-weight:700;
+  font-family:var(--ui); font-size:.74rem; font-weight:700;
   background:var(--signal-tint); color:var(--signal-deep);
   border:1px solid rgba(178,34,34,.24);
   padding:5px 12px; border-radius:999px;
@@ -110,7 +110,7 @@ img{max-width:100%;display:block}
   color:rgba(20,23,26,.07); line-height:1; pointer-events:none;
 }
 .section-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
 }
 .section-heading{
@@ -125,7 +125,7 @@ img{max-width:100%;display:block}
   border-radius:0 10px 10px 0; padding:14px 16px; margin:18px 0;
 }
 .callout .callout-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
   display:block; margin-bottom:6px;
 }
@@ -136,7 +136,7 @@ img{max-width:100%;display:block}
   border-radius:12px; padding:20px 22px; margin:26px 0 0;
 }
 .be-ready .be-ready-label{
-  font-family:var(--sans); font-size:.68rem; font-weight:800;
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:#E8A0A0;
   display:block; margin-bottom:8px;
 }
@@ -155,11 +155,11 @@ img{max-width:100%;display:block}
 }
 .brief-video-label{
   display:block; margin-bottom:6px;
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
 }
-.brief-video-title{margin:0 0 4px;font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--slate-900)}
-.brief-video-meta{margin:0 0 8px;font-family:var(--sans);font-size:.74rem;color:var(--ink-soft)}
+.brief-video-title{margin:0 0 4px;font-family:var(--ui);font-weight:700;font-size:1rem;color:var(--slate-900)}
+.brief-video-meta{margin:0 0 8px;font-family:var(--ui);font-size:.74rem;color:var(--ink-soft)}
 .brief-video-prompt{margin:0 0 12px;font-size:.93rem}
 
 /* ── Road not taken ────────────────────────────────────────────────────────────
@@ -198,7 +198,7 @@ img{max-width:100%;display:block}
 .tier:last-child{border-top-color:var(--signal)}
 .tier-label{
   display:block; margin-bottom:5px;
-  font-family:var(--sans); font-size:.64rem; font-weight:800;
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.11em; color:var(--cool);
 }
 .tier:last-child .tier-label{color:var(--signal-deep)}
@@ -220,7 +220,7 @@ img{max-width:100%;display:block}
 .question-item:first-of-type{border-top:0;margin-top:0;padding-top:0}
 .q-num{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--slate-500)}
 .q-skill{
-  font-family:var(--sans); font-size:.62rem; font-weight:800;
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
   background:var(--cool-tint); color:var(--cool);
   padding:3px 8px; border-radius:999px; margin-left:8px;
@@ -228,17 +228,17 @@ img{max-width:100%;display:block}
 .q-text{margin:10px 0 10px;font-weight:700;color:var(--slate-900)}
 .q-textarea{
   width:100%; min-height:130px; padding:12px 14px;
-  font-family:var(--serif); font-size:1rem; line-height:1.6; color:var(--ink);
+  font-family:var(--body); font-size:1rem; line-height:1.6; color:var(--ink);
   background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
   resize:vertical;
 }
 .q-confidence{margin:12px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .q-confidence .confidence-label{
-  font-family:var(--sans); font-size:.64rem; font-weight:800;
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft);
 }
 .q-confidence button{
-  font-family:var(--sans); font-size:.8rem; font-weight:700;
+  font-family:var(--ui); font-size:.8rem; font-weight:700;
   width:32px; height:32px; border-radius:50%; cursor:pointer;
   border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
 }
@@ -261,7 +261,7 @@ img{max-width:100%;display:block}
 
 .btn{
   display:inline-flex; align-items:center; gap:8px;
-  font-family:var(--sans); font-weight:700; font-size:.82rem; letter-spacing:.03em;
+  font-family:var(--ui); font-weight:700; font-size:.82rem; letter-spacing:.03em;
   padding:10px 18px; border-radius:8px; cursor:pointer; text-decoration:none;
   border:1px solid var(--signal); background:var(--signal); color:var(--clean-paper);
 }
@@ -275,7 +275,7 @@ img{max-width:100%;display:block}
 /* ── Footers ───────────────────────────────────────────────────────────────── */
 .page-footer-note{
   width:min(820px,92vw); margin:22px auto 0;
-  font-family:var(--sans); font-size:.84rem; color:var(--ink-soft);
+  font-family:var(--ui); font-size:.84rem; color:var(--ink-soft);
   background:var(--signal-tint); border-left:4px solid var(--signal);
   border-radius:0 8px 8px 0; padding:12px 16px;
 }
@@ -285,7 +285,7 @@ img{max-width:100%;display:block}
   padding-top:18px; border-top:1px solid var(--paper-line);
 }
 .module-footer a{
-  font-family:var(--sans); font-size:.78rem; font-weight:700;
+  font-family:var(--ui); font-size:.78rem; font-weight:700;
   text-decoration:none; color:var(--cool);
   /* 24px minimum hit area, per WCAG 2.2 SC 2.5.8. These two links are how a
      student gets out of a brief, so they are worth being easy to hit. */

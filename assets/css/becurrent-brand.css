@@ -44,54 +44,76 @@
 
    ── The faces ───────────────────────────────────────────────────────────────
 
-   Three, self-hosted from assets/fonts/ as latin variable woff2. Self-hosted
-   because a student-facing page in this repo makes no third-party request, and
-   a webfont <link> to someone else's CDN is exactly that. Variable because one
-   38KB file covers every weight the site asks for.
+   Two families, three roles, self-hosted from assets/fonts/. Self-hosted because
+   a student-facing page in this repo makes no third-party request, and a webfont
+   <link> to someone else's CDN is exactly that.
 
-     --display  Playfair Display   the logo's own face. Headings 20px and up.
-     --serif    Source Serif 4     everything students read at length.
-     --sans     Source Sans 3      labels, eyebrows, buttons, counters, chips.
+     --display  Poppins   every heading, at any size.
+     --body     Lato      everything students read at length.
+     --ui       Lato      labels, eyebrows, buttons, counters, chips.
 
-   The 20px floor on --display is load-bearing. Playfair is a Didone: its thin
-   strokes are genuinely thin, and below about 20px on a projector in a lit room
-   they break up and the heading turns to lace. Anything smaller than that stays
-   in --sans, which is why module cards and week cards did not move.
+   --body and --ui are the same face today and are still two tokens, because they
+   are two jobs: one is read for ten minutes, the other is scanned in a glance.
+   One token means you cannot change one without the other.
 
-   Before this file, --sans and --serif named "Source Sans 3" and "Source Serif
-   4" with nothing loading them, so every page in the course was actually
-   rendering in Helvetica and Georgia. The stacks are now honest: the first name
-   in each is a face the page ships.
+   ONLY THE SHIPPED WEIGHTS EXIST. Poppins is here at 600 and 700, Lato at 400
+   and 700 with italics. Both are static faces, not variable ones, so asking for
+   a weight that is not in that list does not fall back gracefully: the browser
+   synthesises it by smearing the nearest one, which looks like a slightly
+   swollen version of the right font and is the kind of wrong that is hard to
+   name when you see it. Every font-weight:800 in this project was changed to 700
+   for exactly that reason. Add the file before you add the weight.
+
+   There is no minimum size on --display any more. The previous face was Playfair,
+   a Didone whose thin strokes broke up below about 20px on a projector, so small
+   headings had to live in the label face. Poppins is a geometric sans with even
+   stroke weight and no hairlines to lose, so every heading is now the heading
+   face, including the card titles that were stranded before.
+
    ========================================================= */
 
 /* ── Faces ─────────────────────────────────────────────────────────────────── */
 @font-face{
-  font-family:"Playfair Display";
+  font-family:"Poppins";
   font-style:normal;
-  font-weight:400 900;
+  font-weight:600;
   font-display:swap;
-  src:url("../fonts/playfair-display-latin-wght-normal.woff2") format("woff2-variations");
+  src:url("../fonts/poppins-latin-600-normal.woff2") format("woff2");
 }
 @font-face{
-  font-family:"Source Serif 4";
+  font-family:"Poppins";
   font-style:normal;
-  font-weight:200 900;
+  font-weight:700;
   font-display:swap;
-  src:url("../fonts/source-serif-4-latin-wght-normal.woff2") format("woff2-variations");
+  src:url("../fonts/poppins-latin-700-normal.woff2") format("woff2");
 }
 @font-face{
-  font-family:"Source Serif 4";
+  font-family:"Lato";
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url("../fonts/lato-latin-400-normal.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Lato";
   font-style:italic;
-  font-weight:200 900;
+  font-weight:400;
   font-display:swap;
-  src:url("../fonts/source-serif-4-latin-wght-italic.woff2") format("woff2-variations");
+  src:url("../fonts/lato-latin-400-italic.woff2") format("woff2");
 }
 @font-face{
-  font-family:"Source Sans 3";
+  font-family:"Lato";
   font-style:normal;
-  font-weight:200 900;
+  font-weight:700;
   font-display:swap;
-  src:url("../fonts/source-sans-3-latin-wght-normal.woff2") format("woff2-variations");
+  src:url("../fonts/lato-latin-700-normal.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Lato";
+  font-style:italic;
+  font-weight:700;
+  font-display:swap;
+  src:url("../fonts/lato-latin-700-italic.woff2") format("woff2");
 }
 
 :root{
@@ -128,8 +150,12 @@
   --soft-shadow:0 10px 26px rgba(20,23,26,.10);
   --radius:14px;
 
-  --display:"Playfair Display",Georgia,"Times New Roman",serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --sans:"Source Sans 3","Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* Three roles, two families. --body and --ui are the same face today and are
+     still separate tokens, because they are separate jobs: one is read at
+     length, the other is scanned as a label. Collapsing them means you cannot
+     change one without the other. */
+  --display:"Poppins","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --ui:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
 }

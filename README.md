@@ -98,13 +98,15 @@ student can reach.
 
 ## The look
 
-The logo is `assets/images/brand/becurrent-logo.svg`, and the site is built off
-it: `--signal` and `--slate-900` are sampled from the mark, and the headings are
-set in the face the mark is drawn in. `assets/css/becurrent-brand.css` is the one
-file that defines a colour or a face, and its header explains where each value
-came from and which red is allowed where. Fonts are self-hosted in
-`assets/fonts/`, because no student-facing page in this repo makes a third-party
-request.
+`assets/css/becurrent-brand.css` is the one file that defines a colour or a face,
+and its header explains where each value came from and which red is allowed
+where. `--signal` and `--slate-900` are sampled from the logo. Headings are
+Poppins, body text is Lato, both self-hosted in `assets/fonts/`, because no
+student-facing page in this repo makes a third-party request.
+
+The wordmark in `assets/images/brand/` is out of date and known to be: it is
+drawn in Playfair, which was the heading face before Poppins. A replacement is
+pending.
 
 `python3 scripts/brand/build-wordmark.py` redraws the logo, the two wordmarks and
 the favicon from the vendored Playfair Display. It needs `fonttools` and is off

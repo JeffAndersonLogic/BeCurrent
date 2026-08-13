@@ -149,7 +149,7 @@ function renderWhere() {
          <img src="${esc(d.mapUrl)}" alt="${esc(d.mapCaption || '')}"
            onerror="this.onerror=null;this.src='../assets/images/week-art/map-fallback.svg'">
        </button>
-       <p style="font-family:var(--sans);font-size:.78rem;color:var(--ink-soft);margin:8px 0 18px">
+       <p style="font-family:var(--ui);font-size:.78rem;color:var(--ink-soft);margin:8px 0 18px">
          ${esc(d.mapCaption || '')}</p>`
     : '';
 
@@ -169,7 +169,7 @@ function renderBrief() {
     <p>${esc(d.deck || '')}</p>
     <iframe class="module-frame" src="${esc(d.embedUrl)}"
       title="The Brief, ${esc((W.meta && W.meta.week) || '')}"></iframe>
-    <p style="font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);margin-top:12px">
+    <p style="font-family:var(--ui);font-size:.82rem;color:var(--ink-soft);margin-top:12px">
       Your three answers save inside the brief and are collected by
       <strong>Gather All My Work</strong> at the bottom of this page.</p>`;
 }
@@ -182,7 +182,7 @@ function renderCoverage() {
       <p class="outlet-headline">${esc(o.headline)}</p>
       <p class="outlet-lede">${esc(o.lede)}</p>
       ${o.url ? `<p style="margin:10px 0 0"><a href="${esc(o.url)}" target="_blank" rel="noopener noreferrer"
-        style="font-family:var(--sans);font-size:.76rem;font-weight:700">Read it in full</a></p>` : ''}
+        style="font-family:var(--ui);font-size:.76rem;font-weight:700">Read it in full</a></p>` : ''}
     </div>`).join('');
 
   return `
