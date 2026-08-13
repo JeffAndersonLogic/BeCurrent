@@ -25,6 +25,25 @@
    ========================================================= */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
+/* Motion is a preference the student already expressed in their OS, and this
+   course has no business overriding it. Smooth scrolling and the card lift are
+   pleasant defaults and a genuine problem for a vestibular disorder, which sits
+   squarely inside the accommodation load this room carries. Honour the setting
+   rather than making anyone ask.
+
+   Note this has to kill scroll-behavior too, not just transitions: the renderer
+   calls scrollIntoView in several places and a smooth scroll is the movement
+   most likely to be the problem. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
 body{
   margin:0;
   background:var(--newsprint);
@@ -53,13 +72,17 @@ main{flex:1}
    drawn outlines rather than a font feature Playfair actually has, so type
    would only ever approximate it, and an <img> of a committed file cannot
    drift away from the logo the way a hand-tuned span can. */
-.brand-mini{display:flex;align-items:center;text-decoration:none}
+.brand-mini{display:flex;align-items:center;text-decoration:none;min-height:24px}
 .brand-mini img{height:21px;width:auto}
 .nav-links{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
 .nav-links a{
   font-family:var(--sans);
   text-transform:uppercase; letter-spacing:.1em; font-size:.68rem; font-weight:700;
   text-decoration:none; color:rgba(255,254,251,.74);
+  /* Padded to clear 24px, per WCAG 2.2 SC 2.5.8. The text is small on purpose,
+     the hit area does not have to be: an 18px-tall link is a miss on a phone
+     held one-handed, and this nav is the only way back to the front door. */
+  display:inline-flex; align-items:center; min-height:24px; padding:3px 2px;
 }
 .nav-links a:hover{color:var(--clean-paper)}
 

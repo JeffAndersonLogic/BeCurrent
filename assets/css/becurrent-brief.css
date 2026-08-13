@@ -14,6 +14,19 @@
    iframe and the week page around it cannot end up two different reds.
    ========================================================= */
 *{box-sizing:border-box}
+
+/* Same motion contract as the rest of the site. A brief opens inside an iframe,
+   which does NOT inherit the parent document's media queries, so this cannot be
+   left to becurrent.css. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
 body{
   margin:0; background:var(--newsprint); color:var(--ink);
   font-family:var(--serif); font-size:17px; line-height:1.7;
@@ -274,6 +287,9 @@ img{max-width:100%;display:block}
 .module-footer a{
   font-family:var(--sans); font-size:.78rem; font-weight:700;
   text-decoration:none; color:var(--cool);
+  /* 24px minimum hit area, per WCAG 2.2 SC 2.5.8. These two links are how a
+     student gets out of a brief, so they are worth being easy to hit. */
+  display:inline-flex; align-items:center; min-height:24px; padding:2px 0;
 }
 .module-footer a:hover{color:var(--signal-deep)}
 
