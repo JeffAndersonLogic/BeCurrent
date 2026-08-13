@@ -6,26 +6,34 @@
    component rules live in becurrent.css and becurrent-brief.css; nothing but
    this file defines what the colours and the faces are.
 
-   ── Everything here comes off the logo ──────────────────────────────────────
+   ── One family, two courses ─────────────────────────────────────────────────
 
-   The mark is BECURRENT in a heavy condensed oblique gothic, two-tone: BE in a
-   neutral, CURRENT in red. So:
+   BeCurrent and BeHistorical are taught by the same teacher out of the same
+   method, so they share a type family and are separated by colour. The three
+   faces below are BeHistorical's three faces. What tells the two apart at a
+   glance is the palette: BeHistorical is bronze on parchment, BeCurrent is
+   RED AND BLACK.
 
-     --signal     #D5211A   the red, sampled from the mark
-     --slate-900  #16181B   the plate the mark is set on
+   That split is deliberate and it is the cheap half to get right. Type
+   communicates "same course system"; colour communicates "different course".
+   Reversing it, different faces and a shared palette, would say the opposite of
+   what is true.
 
-   --slate-900 is NOT sampled from the supplied artwork, which arrived on white
-   with no plate at all. It is the site's existing scan surface, kept because
-   nothing in the new mark argues against it, and it is what the generated logo
-   plate uses. If a plate colour ever comes with the artwork, this is the token
-   to change.
+   ── Red and black ───────────────────────────────────────────────────────────
 
-   The mark's BE is pure #FFFFFF and the reading surfaces are not. That is
-   deliberate rather than a mismatch: a logo is looked at for a second and wants
-   maximum separation, while a page is read for ten minutes and a warm white is
-   easier under a projector lamp. The wordmark files keep pure white; the pages
-   keep newsprint. And on a light ground BE is ink, not white, or the neutral
-   half of the mark disappears.
+   Two colours and the paper they sit on. There is no third accent, and that is
+   a constraint rather than an omission: a scheme with a spare colour in it ends
+   up using the spare colour for whatever needs distinguishing next, and a year
+   later nothing means anything. Where a second series has to be told apart from
+   the first, the second one is BLACK. Where something needs emphasis, it is RED.
+
+     --signal      #D5211A   the red, and the only red
+     --signal-deep #A61810   the same red, darkened to be legible at body size
+     --black-900   #111111   the ground for every surface students scan
+     --ink         #141414   the ink every surface students read is set in
+
+   The neutrals are true neutrals, with no blue in them, because a slate grey
+   next to a warm red reads as a third colour whether or not it was meant to.
 
    ── Where the red can and cannot go ─────────────────────────────────────────
 
@@ -34,7 +42,7 @@
      --clean-paper on --signal      5.13:1   passes at any size, so buttons use it
      --signal on --newsprint        4.62:1   passes, but see below
      --signal-deep on --newsprint   6.80:1   comfortable on either ground
-     --signal on --slate-900        3.44:1   large display only, as in the mark
+     --signal on --black-900        3.65:1   large display only, as in the mark
 
    So: --signal draws rules, borders, button grounds, and display type 20px and
    up, where 3:1 is the bar and it clears it everywhere. --signal-deep is the
@@ -46,120 +54,124 @@
    --clean-paper or lightening --signal puts every button on the site at risk,
    so if either moves, rerun the numbers rather than eyeballing it.
 
+   ── The focus ring is its own token ─────────────────────────────────────────
+
+   --focus is INK, not red, and it has a paper counterpart for dark grounds. In a
+   two-colour scheme the accent is already drawn on nearly every card border, so
+   a red focus ring would be a ring the student has to work out is a ring. The
+   one thing a focus indicator must never be is ambiguous, so it is the colour
+   that is not the accent, on both polarities.
+
    ── The faces ───────────────────────────────────────────────────────────────
 
-   Two families, three roles, self-hosted from assets/fonts/. Self-hosted because
-   a student-facing page in this repo makes no third-party request, and a webfont
-   <link> to someone else's CDN is exactly that.
+   Three roles, self-hosted from assets/fonts/. Self-hosted because a
+   student-facing page in this repo makes no third-party request, and a webfont
+   <link> to someone else's CDN is exactly that. BeHistorical loads these three
+   from Google; that is the one thing about them not carried over.
 
-     --display  Poppins   every heading, at any size.
-     --body     Lato      everything students read at length.
-     --ui       Lato      labels, eyebrows, buttons, counters, chips.
+     --display  Cinzel             every heading. Caps-only Roman, so headings
+                                   set in it are set in caps by the face itself.
+     --body     Libre Baskerville  everything students read at length.
+     --ui       Montserrat         labels, eyebrows, buttons, counters, chips.
 
-   --body and --ui are the same face today and are still two tokens, because they
-   are two jobs: one is read for ten minutes, the other is scanned in a glance.
-   One token means you cannot change one without the other.
+   ONLY THE SHIPPED WEIGHTS EXIST, and that means something different per face.
+   Cinzel and Montserrat are here as VARIABLE fonts covering 400-900 and 100-900,
+   so any weight in range is genuinely drawn. Libre Baskerville is STATIC at 400
+   and 700 with italics, so a font-weight:500 or :800 on body text is not a
+   fallback, it is the browser smearing the nearest weight into a fake one, which
+   looks like a slightly swollen version of the right font and is hard to name
+   when you see it. Add the file before you add the weight.
 
-   ONLY THE SHIPPED WEIGHTS EXIST. Poppins is here at 600 and 700, Lato at 400
-   and 700 with italics. Both are static faces, not variable ones, so asking for
-   a weight that is not in that list does not fall back gracefully: the browser
-   synthesises it by smearing the nearest one, which looks like a slightly
-   swollen version of the right font and is the kind of wrong that is hard to
-   name when you see it. Every font-weight:800 in this project was changed to 700
-   for exactly that reason. Add the file before you add the weight.
-
-   There is no minimum size on --display any more. The previous face was Playfair,
-   a Didone whose thin strokes broke up below about 20px on a projector, so small
-   headings had to live in the label face. Poppins is a geometric sans with even
-   stroke weight and no hairlines to lose, so every heading is now the heading
-   face, including the card titles that were stranded before.
+   --display has a floor. Cinzel is a high-contrast inscriptional Roman whose
+   thin strokes break up on a projector below about 17px, and it is caps-only,
+   which is slow to read in quantity. It is for headings and nothing smaller;
+   anything under that is --ui. This is the one thing Poppins allowed that Cinzel
+   does not.
 
    ========================================================= */
 
 /* ── Faces ─────────────────────────────────────────────────────────────────── */
 @font-face{
-  font-family:"Poppins";
+  font-family:"Cinzel";
   font-style:normal;
-  font-weight:600;
+  font-weight:400 900;
   font-display:swap;
-  src:url("../fonts/poppins-latin-600-normal.woff2") format("woff2");
+  src:url("../fonts/cinzel-latin-wght-normal.woff2") format("woff2-variations");
 }
 @font-face{
-  font-family:"Poppins";
+  font-family:"Montserrat";
   font-style:normal;
-  font-weight:700;
+  font-weight:100 900;
   font-display:swap;
-  src:url("../fonts/poppins-latin-700-normal.woff2") format("woff2");
+  src:url("../fonts/montserrat-latin-wght-normal.woff2") format("woff2-variations");
 }
 @font-face{
-  font-family:"Lato";
+  font-family:"Libre Baskerville";
   font-style:normal;
   font-weight:400;
   font-display:swap;
-  src:url("../fonts/lato-latin-400-normal.woff2") format("woff2");
+  src:url("../fonts/libre-baskerville-latin-400-normal.woff2") format("woff2");
 }
 @font-face{
-  font-family:"Lato";
+  font-family:"Libre Baskerville";
   font-style:italic;
   font-weight:400;
   font-display:swap;
-  src:url("../fonts/lato-latin-400-italic.woff2") format("woff2");
+  src:url("../fonts/libre-baskerville-latin-400-italic.woff2") format("woff2");
 }
 @font-face{
-  font-family:"Lato";
+  font-family:"Libre Baskerville";
   font-style:normal;
   font-weight:700;
   font-display:swap;
-  src:url("../fonts/lato-latin-700-normal.woff2") format("woff2");
+  src:url("../fonts/libre-baskerville-latin-700-normal.woff2") format("woff2");
 }
 @font-face{
-  font-family:"Lato";
+  font-family:"Libre Baskerville";
   font-style:italic;
   font-weight:700;
   font-display:swap;
-  src:url("../fonts/lato-latin-700-italic.woff2") format("woff2");
+  src:url("../fonts/libre-baskerville-latin-700-italic.woff2") format("woff2");
 }
 
 :root{
-  /* Ink and paper. Every surface a student reads. */
-  --ink:#14171A;
-  --ink-soft:#3C444C;
+  /* Ink and paper. Every surface a student reads. Neutral black rather than a
+     blue-black, so the red never picks up a second hue to sit against. */
+  --ink:#141414;
+  --ink-soft:#454545;
+  --ink-tint:rgba(20,20,20,.07);
   --newsprint:#F4F2ED;
   --clean-paper:#FFFEFB;
-  --paper-line:rgba(20,23,26,.14);
+  --paper-line:rgba(20,20,20,.14);
 
-  /* Slate, for the surfaces that get scanned. 900 is the ground the generated
-     logo plate is drawn on; the rest are the same hue opened up in even steps. */
-  --slate-900:#16181B;
-  --slate-800:#21252A;
-  --slate-700:#313841;
-  --slate-500:#5B6672;
+  /* Black, for the surfaces that get scanned. 900 is the ground the generated
+     logo plate is drawn on; the rest are the same neutral opened up in steps. */
+  --black-900:#111111;
+  --black-800:#1D1D1D;
+  --black-700:#2C2C2C;
+  --black-500:#5A5A5A;
 
-  /* The signal. --signal is the logo red and draws things; --signal-deep is the
-     same hue darkened until words set in it clear 4.5:1 on both light grounds;
+  /* The signal, and the only colour on the site that is not black or paper.
+     --signal is the logo red and draws things; --signal-deep is the same hue
+     darkened until words set in it clear 4.5:1 on both light grounds;
      --signal-pale is the same hue lifted for the dark panels. */
   --signal:#D5211A;
   --signal-deep:#A61810;
   --signal-pale:#F0A79E;
   --signal-tint:rgba(213,33,26,.10);
 
-  /* The cool counterpart. Not in the logo, and it stays for two jobs the logo
-     red cannot do: separating a second series from the first in Coverage
-     Compare, and drawing a focus ring that cannot be mistaken for the accent
-     already on every border in the page. */
-  --cool:#1F5673;
-  --cool-tint:rgba(31,86,115,.10);
+  /* The focus ring, in both polarities. Never the accent: see above. */
+  --focus:#141414;
+  --focus-invert:#FFFEFB;
 
-  --shadow:0 20px 60px rgba(20,23,26,.16);
-  --soft-shadow:0 10px 26px rgba(20,23,26,.10);
+  --shadow:0 20px 60px rgba(0,0,0,.16);
+  --soft-shadow:0 10px 26px rgba(0,0,0,.10);
   --radius:14px;
 
-  /* Three roles, two families. --body and --ui are the same face today and are
-     still separate tokens, because they are separate jobs: one is read at
-     length, the other is scanned as a label. Collapsing them means you cannot
-     change one without the other. */
-  --display:"Poppins","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --body:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --ui:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* Three roles, three faces, matching BeHistorical. --display is caps-only and
+     has a size floor; see the note above before setting a small heading in it. */
+  --display:"Cinzel","Trajan Pro","Times New Roman",Georgia,serif;
+  --body:"Libre Baskerville",Georgia,serif;
+  --ui:"Montserrat","Inter",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
 }

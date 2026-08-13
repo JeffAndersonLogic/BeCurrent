@@ -676,8 +676,44 @@ const BRAND = path.join(ROOT, 'assets', 'css', 'becurrent-brand.css');
 assert(fs.existsSync(BRAND), BRAND, 'assets/css/becurrent-brand.css is missing');
 
 const brandSrc = read(BRAND) || '';
-['--signal', '--signal-deep', '--slate-900', '--display', '--body', '--ui'].forEach(token => {
-  assert(brandSrc.includes(`${token}:`), BRAND, `the brand file defines no ${token}`);
+['--signal', '--signal-deep', '--black-900', '--ink', '--focus', '--display', '--body', '--ui']
+  .forEach(token => {
+    assert(new RegExp(`${token}\\s*:`).test(brandSrc), BRAND,
+      `the brand file defines no ${token}`);
+  });
+
+// Every token a component asks for has to exist. An undefined custom property
+// does not fall back to anything: `color: var(--gone)` inherits, and
+// `border-top: 4px solid var(--gone)` draws the border in currentColor. Both
+// render as a page that looks broadly right, which is why removing a token and
+// leaving one component still asking for it survives a visual check.
+//
+// This is the check the red-and-black recolour needed. --cool was referenced in
+// 35 places across two stylesheets; missing one would have left a lone teal rule
+// resolving to whatever the surrounding text colour happened to be.
+const defined = new Set((brandSrc.match(/(--[a-z0-9-]+)\s*:/g) || [])
+  .map(m => m.replace(/\s*:$/, '')));
+['becurrent.css', 'becurrent-brief.css'].forEach(name => {
+  const file = path.join(ROOT, 'assets', 'css', name);
+  const src = (read(file) || '').replace(/\/\*[\s\S]*?\*\//g, '');
+  const used = new Set((src.match(/var\(\s*(--[a-z0-9-]+)/g) || [])
+    .map(m => m.replace(/^var\(\s*/, '')));
+  [...used].sort().forEach(token => {
+    assert(defined.has(token), file,
+      `${name} uses ${token}, which becurrent-brand.css does not define. `
+      + 'An undefined custom property does not fall back, it resolves to nothing.');
+  });
+});
+
+// The same failure one layer down. A @font-face pointing at a file that is not
+// there is silent: the browser drops to the next family in the stack and the
+// page renders in Georgia or Arial, correctly, in the wrong typeface.
+(brandSrc.match(/url\("([^"]+\.woff2)"\)/g) || []).forEach(m => {
+  const rel = m.replace(/^url\("/, '').replace(/"\)$/, '');
+  const full = path.resolve(path.dirname(BRAND), rel);
+  assert(fs.existsSync(full), BRAND,
+    `@font-face points at ${rel}, which does not exist. A missing face does not `
+    + 'error, it falls back to a system font and the page is simply the wrong type.');
 });
 
 // Only pages that carry a component stylesheet. A capture wrapper is a bare
@@ -709,9 +745,10 @@ done(`${brandLinked} pages linked, tokens defined once`);
 // the wrong box and the mark is letterboxed or stretched inside it, which looks
 // like a rendering bug rather than a stale attribute.
 //
-// This is not hypothetical: redrawing the mark changed its aspect ratio from
-// 4889x810 to 4101x716, and the ten hardcoded pairs across four generators had
-// to move with it. Nothing else would have caught that.
+// This is not hypothetical, and it has happened on every redraw: 4889x810, then
+// 4101x716, then 7101x733 when the mark moved to Cinzel. Each time, ten
+// hardcoded pairs across four generators had to move with it, and nothing else
+// in this suite would have caught a single one.
 section('Wordmark lockups');
 const MARKS = ['becurrent-wordmark.svg', 'becurrent-wordmark-ink.svg'];
 const markDims = {};

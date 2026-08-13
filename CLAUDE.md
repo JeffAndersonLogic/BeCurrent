@@ -101,7 +101,7 @@ push. That keeps the record of what it would have caught.
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
 - `python3 scripts/brand/build-wordmark.py`, redraw the plate, both wordmarks and
-  the favicon from the vendored Barlow Condensed. Needs
+  the favicon from the vendored Cinzel. Needs
   `pip install fonttools brotli`, and is off the test path on purpose. See "The
   Mark, the Palette, and the Faces" below.
 
@@ -354,8 +354,8 @@ is two answers to "what red is this course" waiting to disagree.
 
 ### The mark
 
-BECURRENT in a heavy condensed oblique gothic, two-tone: BE in a neutral,
-CURRENT in red. Four files, all outlined paths rather than `<text>`:
+BECURRENT set in **Cinzel**, tracked wide, two-tone: BE in a neutral, CURRENT in
+red. Four files, all outlined paths rather than `<text>`:
 
 ```
 assets/images/brand/becurrent-logo.svg           the plate, 10:3, with the tagline
@@ -369,23 +369,19 @@ and a `<text>` element that falls back to whatever the machine has stops being
 the brand mark. The masthead, the hero and the footer all render one of these
 files rather than type styled to resemble it, so the lockups cannot drift.
 
-**The current files are a reproduction.** The supplied artwork arrived as a
-raster, so `scripts/brand/build-wordmark.py` redraws it from Barlow Condensed 900
-Italic, the closest free face. If the original vector or the real font name turns
-up, change `SRC` and the constants at the top of that script and rerun. Nothing
-else in the repo needs to know.
+**The mark is in the same face as BeHistorical's titles, and that is the point.**
+See "One family, two courses" below. Cinzel is an inscriptional Roman with no
+real lowercase, so the mark is caps and the tracking is opened up rather than
+closed: a Trajan-descended face set tight looks like a mistake.
 
-**Two deliberate departures from the supplied artwork**, both because they only
-show up once the mark is in use:
+**Two properties that are about how the mark gets used, not how it was drawn:**
 
 - **No drop shadow.** The masthead renders the mark 21px tall, where a shadow is
   not a shadow but a grey smear along one edge, and it is the first thing to turn
   to mud on a projector.
-- **BE is not white on a light ground.** In the supplied art BE is white on white
-  and holds together only because the shadow keeps its edge. Every reading surface
-  here is newsprint, so that version would vanish on the hero. Two colourways
-  instead, red constant in both. What carries over is the two-tone split, not the
-  specific white.
+- **BE is not white on a light ground.** Every reading surface here is newsprint,
+  so a white BE would vanish on the hero. Two colourways instead, red constant in
+  both. What carries over is the two-tone split, not one specific white.
 
 **The tagline is in the plate only.** At masthead size it is four illegible
 pixels, and the front door already prints the course name in the dateline right
@@ -399,54 +395,88 @@ outputs are committed; nothing in the build or the gate calls it.
 **Replacing the mark is not a file swap.** Four files come from one drawing, plus
 `--signal` sampled from it, plus the `width`/`height` on every `<img>` that
 renders it. The last one is enforced: `validate.js` reads the wordmark's own
-dimensions and fails if any lockup disagrees, because redrawing the mark changed
-its ratio from 4889x810 to 4101x716 and ten hardcoded pairs across four
-generators had to move with it.
+dimensions and fails if any lockup disagrees. This has bitten on every redraw so
+far, 4889x810 then 4101x716 then 7101x733, and each time ten hardcoded pairs
+across four generators had to move with it.
 
-### The palette comes off the mark
+### One family, two courses
 
-`--signal` `#D5211A` is sampled from the mark. `--slate-900` `#16181B` is **not**:
-the artwork arrived on white with no plate, so that token is the site's existing
-scan surface, kept because nothing in the new mark argues against it. It is what
-the generated plate is drawn on.
+BeCurrent and BeHistorical are the same method taught by the same teacher, so
+they **share a type family and are separated by colour**. The three faces below
+are BeHistorical's three faces. BeHistorical is bronze on parchment; BeCurrent is
+**red and black** on newsprint.
 
-The one rule that matters:
+That split is deliberate and it is the cheap half to get right: type says "same
+course system", colour says "different course". Reversing it, different faces on
+a shared palette, would say the opposite of what is true. If the two ever need to
+diverge further, move the colour, not the type.
 
+### Red and black
+
+Two colours and the paper they sit on. There is no third accent, and its absence
+is a constraint rather than an omission: a scheme with a spare colour in it ends
+up using the spare for whatever needs distinguishing next, and a year later
+nothing means anything.
+
+- **Where a second series has to be told apart from the first, the second one is
+  black.** The teal `--cool` that used to do that job is gone; every one of its
+  35 uses is now ink or a neutral grey.
 - **`--signal` draws things**: rules, borders, button grounds, and display type
   20px and up, where the bar is 3:1 and it clears it everywhere.
 - **`--signal-deep` is the red that body-size words are set in**, every eyebrow,
   chip and key term.
+- **The neutrals are true neutrals.** `--black-900` `#111111` and the ramp under
+  it carry no blue, because a slate grey next to a warm red reads as a third
+  colour whether or not it was meant to. `--signal` `#D5211A` is sampled from the
+  mark; the black is not, since the artwork arrived with no plate.
 
 The button carries the least slack: `--clean-paper` on `--signal` is 5.13:1
 against a 4.5 bar. Move either token and rerun the numbers rather than eyeballing
 it. The full table is at the top of `becurrent-brand.css`.
 
-### Two faces, three roles, self-hosted
+**The focus ring is its own token and is never the accent.** `--focus` is ink,
+`--focus-invert` is paper for the dark bands. With red already on nearly every
+card border, a red ring would be a ring the student has to work out is a ring.
+
+### Three faces, three roles, self-hosted
 
 `assets/fonts/`, latin woff2, OFL, licences committed alongside them. Self-hosted
 because a student-facing page in this repo makes no third-party request, and a
-webfont `<link>` to someone else's CDN is exactly that.
+webfont `<link>` to someone else's CDN is exactly that. BeHistorical loads these
+same three from Google; that is the one thing about them not carried over.
 
 | token | face | job |
 |---|---|---|
-| `--display` | Poppins | every heading, at any size |
-| `--body` | Lato | everything students read at length |
-| `--ui` | Lato | labels, eyebrows, buttons, counters, chips |
+| `--display` | Cinzel | headings and names of things |
+| `--body` | Libre Baskerville | everything students read at length |
+| `--ui` | Montserrat | labels, eyebrows, buttons, counters, chips |
 
-`--body` and `--ui` are the same face today and stay two tokens, because they are
-two jobs. One token means you cannot change one without the other.
+**Cinzel is caps-only, so `--display` is for names, not sentences.** A short title
+in caps is a title; a whole question in caps is shouting, and it is measurably
+slower to read. Anything with a verb in it, the terminal question, a beat
+question, a house rule, a dispatch field, an outlet headline, is set in `--body`
+bold instead. It also has a size floor: Cinzel's thin strokes break up on a
+projector below about 17px, and under that the label face is `--ui`.
 
-**Only the shipped weights exist.** Poppins at 600 and 700, Lato at 400 and 700
-with italics. These are static faces, not variable ones, so a weight that is not
-in that list is *synthesised* rather than substituted: the browser smears the
-nearest weight and you get a slightly swollen version of the right font, which is
-hard to name when you see it. Every `font-weight:800` was changed to 700 for that
-reason. Add the file before you add the weight.
+**Only the shipped weights exist, and that means different things per face.**
+Cinzel and Montserrat are here as **variable** fonts covering 400-900 and 100-900,
+so any weight in range is genuinely drawn. Libre Baskerville is **static** at 400
+and 700 with italics, so a `font-weight:500` or `:800` on body text is not a
+fallback, it is the browser smearing the nearest weight into a fake one, which
+looks like a slightly swollen version of the right font and is hard to name when
+you see it. Add the file before you add the weight.
 
-**There is no minimum size on `--display`.** There used to be, because the old
-face was Playfair, a Didone whose hairlines broke up below about 20px on a
-projector. Poppins has even stroke weight and nothing to lose, so every heading
-is the heading face now, including the card titles that were stranded before.
+**Body text is 16px at 1.7**, the same setting BeHistorical uses, because it is
+the same face. Libre Baskerville has a very large x-height for its point size: at
+the 17px the previous sans wanted, it sets noticeably bigger rather than the same
+size in a different face.
+
+`validate.js` covers two failures here that are otherwise silent. A component
+stylesheet asking for a token the brand file does not define resolves to
+*nothing*, not to a fallback, so `color:var(--gone)` inherits and a border draws
+in currentColor; and a `@font-face` pointing at a missing file drops to Georgia
+or Arial and renders correctly in the wrong typeface. Both look broadly right on
+screen, which is why they are checked rather than eyeballed.
 
 ## Polarity
 

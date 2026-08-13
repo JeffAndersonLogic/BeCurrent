@@ -6,29 +6,30 @@ Writes assets/images/brand/*.svg and assets/favicon.svg. Run from the repo root:
     pip install fonttools brotli
     python3 scripts/brand/build-wordmark.py
 
-── What this is a reproduction OF ──────────────────────────────────────────────
+── What the mark is ────────────────────────────────────────────────────────────
 
-The supplied artwork is BECURRENT in a heavy condensed oblique gothic: BE in
-white, CURRENT in red, a drop shadow under both, and CURRENT EVENTS in light
-tracked caps beneath. It arrived as a raster, so this file redraws it from
-Barlow Condensed 900 Italic, which is the closest free face to it. If the
-original vector or the real font name turns up, change SRC and the constants
-below and rerun; nothing else in the repo needs to know.
+BECURRENT set in Cinzel, tracked wide, two-tone: BE in the neutral, CURRENT in
+red. Cinzel is BeHistorical's display face, and that is the point. The two
+courses are taught by the same teacher out of the same method, so they are one
+family: same face, different colour. BeHistorical is bronze on parchment and
+BeCurrent is red on black, which is the half of the identity that has to tell
+them apart at a glance.
 
-Two deliberate departures from the supplied artwork, both for reasons that only
-show up once the mark is in use:
+Cinzel is an inscriptional Roman with no lowercase to speak of, so the mark is
+set in caps and the tracking is opened up rather than closed. A Trajan-descended
+face set tight looks like a mistake; set wide it looks like what it is.
+
+Two properties carried over from the earlier condensed-gothic mark, both because
+they are about how the mark gets used rather than how it was drawn:
 
   1. NO DROP SHADOW. The masthead renders this 21px tall. A shadow at that size
      is not a shadow, it is a grey smear along one edge, and it is the first
-     thing to turn to mud on a projector. Flat also matches every other surface
-     in this system.
+     thing to turn to mud on a projector.
 
-  2. BE IS NOT WHITE ON A LIGHT GROUND. In the supplied art BE is white on white
-     and survives only because the shadow holds its edge. Every reading surface
-     in this course is newsprint, so that version of the mark would vanish on
-     the hero. There are two colourways instead: paper for dark grounds, ink for
-     light, red constant in both. The two-tone split the mark is built on is
-     what carries over, not the specific white.
+  2. BE IS NOT WHITE ON A LIGHT GROUND. Every reading surface in this course is
+     newsprint, so a white BE would vanish on the hero. There are two colourways
+     instead: paper for dark grounds, ink for light, red constant in both. The
+     two-tone split is what the mark is built on, not one specific white.
 
 The tagline is in the plate only. At masthead size it would be four illegible
 pixels, and the front door already prints the course name in the dateline
@@ -47,6 +48,7 @@ be redrawn rather than only inherited.
 """
 import os
 from fontTools.ttLib import TTFont
+from fontTools.varLib import instancer
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.transformPen import TransformPen
@@ -54,20 +56,32 @@ from fontTools.misc.transform import Transform
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FONTS = os.path.join(ROOT, 'assets', 'fonts')
-SRC = os.path.join(FONTS, 'barlow-condensed-latin-900-italic.woff2')
-TAG_SRC = os.path.join(FONTS, 'lato-latin-400-normal.woff2')
+SRC = os.path.join(FONTS, 'cinzel-latin-wght-normal.woff2')
+TAG_SRC = os.path.join(FONTS, 'montserrat-latin-wght-normal.woff2')
 OUT = os.path.join(ROOT, 'assets', 'images', 'brand')
 
-TRACK = -18       # wordmark letterspacing, per mille of the em. The mark is tight.
-TAG_TRACK = 300   # the tagline is the opposite: wide, light, quiet.
-TAG_SIZE = 0.20   # tagline cap height, as a fraction of the wordmark's
-TAG_GAP = 0.34    # space between the two lines, same units
+MARK_WGHT = 900   # Cinzel's heaviest. A wordmark is looked at, not read.
+TAG_WGHT = 500
 
-RED = '#D5211A'      # --signal, sampled from the supplied artwork
+TRACK = 34        # wordmark letterspacing, per mille of the em. Roman caps want air.
+TAG_TRACK = 320   # the tagline is wider still, and light: quiet under a loud line.
+TAG_SIZE = 0.26   # tagline cap height, as a fraction of the wordmark's
+TAG_GAP = 0.60    # space between the two lines, same units
+
+RED = '#D5211A'      # --signal
 PAPER = '#FFFFFF'    # BE on a dark ground
-INK = '#14171A'      # BE on a light ground
-PLATE = '#16181B'    # --slate-900
-TAG_ON_PLATE = '#B9C0C7'
+INK = '#141414'      # BE on a light ground
+PLATE = '#111111'    # --black-900
+TAG_ON_PLATE = '#BDBDBD'
+
+
+def load(path, wght):
+    """Open a variable woff2 and pin its weight axis, so the outlines are the
+    weight we asked for rather than the axis default."""
+    font = TTFont(path)
+    if 'fvar' in font:
+        font = instancer.instantiateVariableFont(font, {'wght': wght})
+    return font
 
 
 def run(font, text, scale, dx, track):
@@ -105,11 +119,11 @@ def write(name, body):
     print(f'  {os.path.relpath(path, ROOT)}  {len(body)} bytes')
 
 
-mark = TTFont(SRC)
-tagfont = TTFont(TAG_SRC)
+mark = load(SRC, MARK_WGHT)
+tagfont = load(TAG_SRC, TAG_WGHT)
 os.makedirs(OUT, exist_ok=True)
 
-# ── The wordmark: BE in the neutral, CURRENT in red, set as one tight line ────
+# ── The wordmark: BE in the neutral, CURRENT in red, set as one tracked line ──
 be_d, be_w, be_box = run(mark, 'BE', 1.0, 0, TRACK)
 cur_d, cur_w, cur_box = run(mark, 'CURRENT', 1.0, be_w, TRACK)
 
@@ -119,8 +133,9 @@ W, H = box[2] - box[0], box[3] - box[1]
 shift = f'translate({-box[0]:.1f} {-box[1]:.1f})'
 
 HEAD = f"""<!-- The BeCurrent wordmark. Generated by scripts/brand/build-wordmark.py:
-     Barlow Condensed 900 Italic, outlined. Two colourways exist because BE is
-     the neutral half of a two-tone mark and cannot be white on a light ground.
+     Cinzel 900, outlined. Cinzel is BeHistorical's display face; the colour is
+     what separates the two courses. Two colourways exist because BE is the
+     neutral half of a two-tone mark and cannot be white on a light ground.
      Width and height are set explicitly, per the image contract in CLAUDE.md. -->
 """
 
@@ -168,12 +183,12 @@ write('becurrent-logo.svg', plate)
 # ── The favicon: the one letter the mark can be reduced to ───────────────────
 #
 # The red C, which is where the mark changes colour and the only letter that
-# reads as BeCurrent rather than as a generic slab. Paper on red, which is the
+# reads as BeCurrent rather than as a generic capital. Paper on red, which is the
 # strongest pairing in the palette and holds at 16px against light or dark
 # browser chrome.
 c_d, c_w, c_box = run(mark, 'C', 1.0, 0, 0)
 cw, ch = c_box[2] - c_box[0], c_box[3] - c_box[1]
-fs = 40.0 / ch
+fs = 38.0 / ch
 icon = ('<!-- The BeCurrent mark reduced to its one letter. Generated by\n'
         '     scripts/brand/build-wordmark.py, the same C outline as the wordmark. -->\n'
         f'<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" '

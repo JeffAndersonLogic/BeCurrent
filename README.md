@@ -100,19 +100,26 @@ student can reach.
 
 `assets/css/becurrent-brand.css` is the one file that defines a colour or a face,
 and its header explains where each value came from and which red is allowed
-where. `--signal` and `--slate-900` are sampled from the logo. Headings are
-Poppins, body text is Lato, both self-hosted in `assets/fonts/`, because no
-student-facing page in this repo makes a third-party request.
+where.
 
-The mark is BECURRENT in a heavy condensed oblique gothic, two-tone: BE in a
-neutral, CURRENT in red. Two colourways, because BE cannot be white on a light
-ground without disappearing.
+**Red and black, in BeHistorical's type.** The two courses are the same method
+taught by the same teacher, so they share a type family and are told apart by
+colour: BeHistorical is bronze on parchment, this is red and black on newsprint.
+Headings are Cinzel, body text is Libre Baskerville, labels are Montserrat, all
+three self-hosted in `assets/fonts/` because no student-facing page in this repo
+makes a third-party request.
+
+There is no third accent. Where a second series has to be distinguished from the
+first, the second one is black. The focus ring is ink, never the accent, because
+red is already on nearly every card border.
+
+The mark is BECURRENT set in Cinzel, tracked wide, two-tone: BE in a neutral,
+CURRENT in red. Two colourways, because BE cannot be white on a light ground
+without disappearing.
 
 `python3 scripts/brand/build-wordmark.py` redraws the plate, both wordmarks and
 the favicon. It needs `fonttools` and is off the test path on purpose; the four
-SVGs are committed. The current files are a reproduction from Barlow Condensed
-900 Italic, because the artwork arrived as a raster; see `CLAUDE.md` for the two
-deliberate departures from it.
+SVGs are committed.
 
 ## Deploying
 
@@ -122,7 +129,7 @@ working branch, let Validate go green, then fast-forward `main` to that commit.
 
 ## Status
 
-Both suites are green: 345 structural checks and 39 browser assertions. The Desk,
+Both suites are green: 414 structural checks and 39 browser assertions. The Desk,
 the orientation week and the Social Media unit are complete. The other five units
 are on the front door as planned cards with no content modules yet, and the weekly
 News Log the Desk promises has not been built, so nothing from the daily half

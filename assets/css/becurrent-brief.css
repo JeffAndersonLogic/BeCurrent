@@ -29,13 +29,13 @@
 }
 body{
   margin:0; background:var(--newsprint); color:var(--ink);
-  font-family:var(--body); font-size:17px; line-height:1.7;
+  font-family:var(--body); font-size:16px; line-height:1.75;
 }
 img{max-width:100%;display:block}
 
 /* ── Module header ─────────────────────────────────────────────────────────── */
 .module-header{
-  background:var(--slate-900); color:var(--clean-paper);
+  background:var(--black-900); color:var(--clean-paper);
   padding:18px 0; border-bottom:3px solid var(--signal);
 }
 .module-header .inner{width:min(820px,92vw);margin:auto}
@@ -44,7 +44,8 @@ img{max-width:100%;display:block}
   letter-spacing:.1em; color:var(--signal-pale);
 }
 .module-header .module-name{
-  margin:4px 0 2px; font-family:var(--display); font-weight:700; font-size:1.3rem;
+  margin:4px 0 2px; font-family:var(--display); font-weight:700; font-size:1.28rem;
+  letter-spacing:.03em; line-height:1.2;
 }
 .module-header .module-subtitle{
   margin:0; font-family:var(--ui); font-size:.78rem; color:rgba(255,254,251,.68);
@@ -63,8 +64,8 @@ img{max-width:100%;display:block}
 }
 .brief-title{
   margin:10px 0 8px; font-family:var(--display); font-weight:700;
-  font-size:clamp(1.75rem,4.6vw,2.5rem); line-height:1.14; letter-spacing:-.005em;
-  color:var(--slate-900);
+  font-size:clamp(1.6rem,4.2vw,2.25rem); line-height:1.2; letter-spacing:.02em;
+  color:var(--black-900);
 }
 .brief-title em{font-style:normal;color:var(--signal)}
 .brief-deck{margin:0;font-style:italic;font-size:1.1rem;color:var(--ink-soft)}
@@ -72,7 +73,7 @@ img{max-width:100%;display:block}
 .skill-tag{
   font-family:var(--ui); font-size:.64rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
-  background:var(--cool-tint); color:var(--cool);
+  background:var(--ink-tint); color:var(--ink);
   padding:4px 10px; border-radius:999px;
 }
 
@@ -86,11 +87,11 @@ img{max-width:100%;display:block}
 .support-strip{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:22px 0}
 .support-card{
   background:var(--newsprint); border:1px solid var(--paper-line);
-  border-left:4px solid var(--cool); border-radius:0 10px 10px 0; padding:14px 16px;
+  border-left:4px solid var(--ink); border-radius:0 10px 10px 0; padding:14px 16px;
 }
 .support-card .support-label{
   font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
+  text-transform:uppercase; letter-spacing:.12em; color:var(--ink);
   display:block; margin-bottom:6px;
 }
 .support-card p{margin:0;font-size:.94rem}
@@ -99,7 +100,7 @@ img{max-width:100%;display:block}
 .term-chip{
   font-family:var(--ui); font-size:.74rem; font-weight:700;
   background:var(--signal-tint); color:var(--signal-deep);
-  border:1px solid rgba(178,34,34,.24);
+  border:1px solid rgba(213,33,26,.24);
   padding:5px 12px; border-radius:999px;
 }
 
@@ -107,7 +108,7 @@ img{max-width:100%;display:block}
 .section-number{
   position:absolute; top:-6px; right:0;
   font-family:var(--display); font-weight:700; font-size:3.6rem;
-  color:rgba(20,23,26,.07); line-height:1; pointer-events:none;
+  color:var(--ink-tint); line-height:1; pointer-events:none;
 }
 .section-label{
   font-family:var(--ui); font-size:.66rem; font-weight:700;
@@ -115,29 +116,29 @@ img{max-width:100%;display:block}
 }
 .section-heading{
   margin:6px 0 12px; font-family:var(--display); font-weight:700;
-  font-size:1.36rem; letter-spacing:-.005em; color:var(--slate-900);
+  font-size:1.3rem; letter-spacing:.025em; line-height:1.24; color:var(--black-900);
 }
 .reading-text{margin:0 0 14px}
 .kt{font-weight:700;color:var(--signal-deep)}
 
 .callout{
-  background:var(--cool-tint); border-left:4px solid var(--cool);
+  background:var(--ink-tint); border-left:4px solid var(--ink);
   border-radius:0 10px 10px 0; padding:14px 16px; margin:18px 0;
 }
 .callout .callout-label{
   font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
+  text-transform:uppercase; letter-spacing:.12em; color:var(--ink);
   display:block; margin-bottom:6px;
 }
 .callout p{margin:0;font-size:.96rem}
 
 .be-ready{
-  background:var(--slate-900); color:var(--clean-paper);
+  background:var(--black-900); color:var(--clean-paper);
   border-radius:12px; padding:20px 22px; margin:26px 0 0;
 }
 .be-ready .be-ready-label{
   font-family:var(--ui); font-size:.68rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:#E8A0A0;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-pale);
   display:block; margin-bottom:8px;
 }
 .be-ready p{margin:0;font-size:1rem}
@@ -145,20 +146,20 @@ img{max-width:100%;display:block}
 
 /* ── Video path through the reading ────────────────────────────────────────────
    Sits high on the page on purpose. A student who needs the video should not have
-   to scroll past a thousand words of prose to find out it exists, and the cool
+   to scroll past a thousand words of prose to find out it exists, and the black
    border matches the support cards so it reads as help rather than as an aside. */
 .brief-video-strip{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0 0 26px}
 .brief-video{
   background:var(--newsprint); border:1px solid var(--paper-line);
-  border-left:4px solid var(--cool); border-radius:0 10px 10px 0;
+  border-left:4px solid var(--ink); border-radius:0 10px 10px 0;
   padding:14px 16px;
 }
 .brief-video-label{
   display:block; margin-bottom:6px;
   font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
+  text-transform:uppercase; letter-spacing:.12em; color:var(--ink);
 }
-.brief-video-title{margin:0 0 4px;font-family:var(--ui);font-weight:700;font-size:1rem;color:var(--slate-900)}
+.brief-video-title{margin:0 0 4px;font-family:var(--ui);font-weight:700;font-size:1rem;color:var(--black-900)}
 .brief-video-meta{margin:0 0 8px;font-family:var(--ui);font-size:.74rem;color:var(--ink-soft)}
 .brief-video-prompt{margin:0 0 12px;font-size:.93rem}
 
@@ -170,12 +171,12 @@ img{max-width:100%;display:block}
 .road-not-taken{
   background:var(--newsprint);
   border:1px solid var(--paper-line);
-  border-left:4px solid var(--slate-500);
+  border-left:4px solid var(--black-500);
   border-radius:0 12px 12px 0;
   padding:20px 22px;
   margin:0 0 30px;
 }
-.road-not-taken .section-label{color:var(--slate-500)}
+.road-not-taken .section-label{color:var(--black-500)}
 .road-not-taken .section-heading{font-size:1.26rem;margin-bottom:10px}
 .road-not-taken .reading-text:last-child{margin-bottom:0}
 
@@ -191,7 +192,7 @@ img{max-width:100%;display:block}
 .tier{
   background:var(--newsprint);
   border:1px solid var(--paper-line);
-  border-top:3px solid var(--cool);
+  border-top:3px solid var(--ink);
   border-radius:8px;
   padding:12px 14px;
 }
@@ -199,7 +200,7 @@ img{max-width:100%;display:block}
 .tier-label{
   display:block; margin-bottom:5px;
   font-family:var(--ui); font-size:.64rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.11em; color:var(--cool);
+  text-transform:uppercase; letter-spacing:.11em; color:var(--ink);
 }
 .tier:last-child .tier-label{color:var(--signal-deep)}
 .tier p{margin:0;font-size:.93rem;line-height:1.5}
@@ -212,20 +213,20 @@ img{max-width:100%;display:block}
 .check-section{
   width:min(820px,92vw); margin:26px auto 0;
   background:var(--clean-paper); border:1px solid var(--paper-line);
-  border-top:4px solid var(--cool); border-radius:14px; padding:26px 28px;
+  border-top:4px solid var(--ink); border-radius:14px; padding:26px 28px;
 }
-.check-section > h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.3rem;color:var(--slate-900)}
+.check-section > h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.26rem;letter-spacing:.025em;line-height:1.24;color:var(--black-900)}
 .check-section > p{margin:0 0 20px;color:var(--ink-soft);font-size:.95rem}
 .question-item{border-top:1px solid var(--paper-line);padding:18px 0 0;margin-top:18px}
 .question-item:first-of-type{border-top:0;margin-top:0;padding-top:0}
-.q-num{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--slate-500)}
+.q-num{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--black-500)}
 .q-skill{
   font-family:var(--ui); font-size:.62rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
-  background:var(--cool-tint); color:var(--cool);
+  background:var(--ink-tint); color:var(--ink);
   padding:3px 8px; border-radius:999px; margin-left:8px;
 }
-.q-text{margin:10px 0 10px;font-weight:700;color:var(--slate-900)}
+.q-text{margin:10px 0 10px;font-family:var(--body);font-weight:700;color:var(--black-900)}
 .q-textarea{
   width:100%; min-height:130px; padding:12px 14px;
   font-family:var(--body); font-size:1rem; line-height:1.6; color:var(--ink);
@@ -242,7 +243,7 @@ img{max-width:100%;display:block}
   width:32px; height:32px; border-radius:50%; cursor:pointer;
   border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
 }
-.q-confidence button[aria-pressed="true"]{background:var(--cool);border-color:var(--cool);color:var(--clean-paper)}
+.q-confidence button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--clean-paper)}
 
 /* ── Builder ───────────────────────────────────────────────────────────────── */
 .builder-section{
@@ -250,7 +251,7 @@ img{max-width:100%;display:block}
   background:var(--clean-paper); border:1px solid var(--paper-line);
   border-top:4px solid var(--signal); border-radius:14px; padding:26px 28px;
 }
-.builder-section h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.26rem;color:var(--slate-900)}
+.builder-section h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:.025em;line-height:1.24;color:var(--black-900)}
 .builder-section p{margin:0 0 16px;color:var(--ink-soft);font-size:.95rem}
 .builder-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 #ai-output{
@@ -269,8 +270,12 @@ img{max-width:100%;display:block}
 .btn.secondary{background:transparent;color:var(--signal-deep)}
 .btn.secondary:hover{background:var(--signal-tint)}
 .btn:focus-visible,a:focus-visible,button:focus-visible,textarea:focus-visible{
-  outline:3px solid var(--cool); outline-offset:2px;
+  outline:3px solid var(--focus); outline-offset:2px;
 }
+/* The ring is ink, which is invisible on the one dark band a brief has. Same
+   rule as the week page: the indicator inverts with the surface, and it is
+   never the accent on either. */
+.module-header :focus-visible,.be-ready :focus-visible{outline-color:var(--focus-invert)}
 
 /* ── Footers ───────────────────────────────────────────────────────────────── */
 .page-footer-note{
@@ -286,15 +291,14 @@ img{max-width:100%;display:block}
 }
 .module-footer a{
   font-family:var(--ui); font-size:.78rem; font-weight:700;
-  text-decoration:none; color:var(--cool);
+  text-decoration:none; color:var(--signal-deep);
   /* 24px minimum hit area, per WCAG 2.2 SC 2.5.8. These two links are how a
      student gets out of a brief, so they are worth being easy to hit. */
   display:inline-flex; align-items:center; min-height:24px; padding:2px 0;
 }
-.module-footer a:hover{color:var(--signal-deep)}
+.module-footer a:hover{color:var(--ink)}
 
 @media (max-width:640px){
-  body{font-size:16px}
   .brief-title-band,.brief-body,.check-section,.builder-section{padding-left:18px;padding-right:18px}
   .section-number{display:none}
 }
