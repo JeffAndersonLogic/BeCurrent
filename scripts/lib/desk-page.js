@@ -8,15 +8,14 @@
  * header of scripts/lib/desk-content.js for why the daily half of a block is
  * built this way and the unit half is not.
  *
- * The page answers five questions, in the order a student standing in the
- * doorway needs them: am I going to be made to talk, what happens in the next
- * twenty-five minutes, what exactly am I filing, what is my beat for, and what
- * am I actually graded on.
+ * The page answers four questions, in the order a student standing in the
+ * doorway needs them: what happens in the next twenty-five minutes, what exactly
+ * am I filing, what is my beat for, and what am I actually graded on.
  *
- * The promise comes first and is the largest thing under the title. A student
- * who is worried about being called on is not reading the rest of the page until
- * that worry is answered, and the students who need the answer most are the ones
- * who will not raise a hand to ask for it.
+ * Note what is absent. The page says nothing about nobody presenting. That is
+ * enforced in the design and in validate.js, and stating it here would turn an
+ * ordinary absence into an announcement, which draws attention to exactly the
+ * students it was meant to protect.
  */
 
 function esc(s) {
@@ -126,13 +125,6 @@ function renderDeskPage(desk) {
   </section>
 
   <main>
-    ${m.promise ? `<section class="section">
-      <article class="card promise-card">
-        <div class="eyebrow">The promise</div>
-        <p class="promise-text">${esc(m.promise)}</p>
-      </article>
-    </section>` : ''}
-
     <section class="section" id="routine">
       <div class="section-header">
         <div class="eyebrow">The first ${esc(String(totalMinutes))} minutes</div>
@@ -169,7 +161,7 @@ ${ways}
       </article>
 
       <article class="card rules-card">
-        <h3>How this works, so you can count on it</h3>
+        <h3>House rules</h3>
         <ul class="rule-list">
 ${rules}
         </ul>

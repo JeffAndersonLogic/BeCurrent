@@ -155,10 +155,15 @@ Three properties hold it up, and breaking any one puts the barrier back:
    mode on a bad day.
 3. Everyone files. Not volunteers, not a rotation of four.
 
-`validate.js` enforces this, because it is the textbook silent regression: an oral
-step reads as a sensible edit to anyone who was not in the conversation, breaks
-nothing technically, and is discovered by a student being asked to present. The
-gate fails if `meta.promise` leaves the page, or if a routine step or the daily
+**It is enforced, and it is not announced.** An earlier Desk printed a promise to
+students that they would never present. That is gone: saying it out loud turns an
+ordinary absence into a special accommodation and points at exactly the students
+it was meant to protect. Nobody presenting is simply how the class runs.
+
+`validate.js` enforces the constraint instead, because it is the textbook silent
+regression: an oral step reads as a sensible edit to anyone who was not in the
+conversation, breaks nothing technically, and is discovered by a student being
+asked to present. The gate fails if a routine step, the deck, or the daily
 accountability line uses presenting language.
 
 **The units are the spine**: six across the year, listed in `SPINE` in

@@ -451,19 +451,8 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-variant-numeric:tabular-nums;
 }
 
-/* ── The Desk: the promise, the dispatch, the rules ────────────────────────────
-   The promise is the first thing under the hero and the largest single sentence
-   on the page. A student who is worried about being called on is not reading
-   anything else until that is answered, and the students who need the answer
-   most are the ones who will not raise a hand to ask. */
-.promise-card{border-top:4px solid var(--signal);background:var(--clean-paper)}
-.promise-text{
-  margin:8px 0 0; font-family:var(--display); font-weight:700;
-  font-size:clamp(1.3rem,2.8vw,1.6rem); line-height:1.32; color:var(--slate-900);
-  text-wrap:balance;
-}
-
-/* The four fields of a dispatch. Numbered because filing them in order is the
+/* ── The Desk: the dispatch and the house rules ────────────────────────────────
+   The four fields of a dispatch. Numbered because filing them in order is the
    sourcing habit: outlet and date before what happened, every time. */
 .dispatch-card{border-top:4px solid var(--signal)}
 .field-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}

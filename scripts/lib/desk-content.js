@@ -76,11 +76,7 @@ const DESK = {
     title: 'The Desk',
     deck: 'The first twenty-five minutes of every class. Watch it, file one dispatch, '
       + 'then read the front page we just built.',
-    minutes: 25,
-    // The promise the page makes in the student's own words, at the top, because
-    // the students who need to hear it are the ones who will not ask.
-    promise: 'You will never be asked to present to the class. Not once, not on a '
-      + 'good day, not as a volunteer opportunity. Everything here is filed, not spoken.'
+    minutes: 25
   },
 
   // ── The routine ─────────────────────────────────────────────────────────────
@@ -246,13 +242,19 @@ const DESK = {
       + 'finding out on Friday that Tuesday was lost.'
   },
 
-  // ── The rules that make it work ─────────────────────────────────────────────
+  // ── House rules ─────────────────────────────────────────────────────────────
   //
-  // On the page in the students' own words, not only in this file's header. A
-  // promise a student cannot see is a promise they cannot rely on.
+  // The operating facts a student needs in order to file without asking: what
+  // happens to what they write, how long it is meant to take, and what is
+  // optional.
+  //
+  // What is deliberately NOT here is any announcement that nobody presents.
+  // Nobody presenting is simply how this class runs, and a page that makes a
+  // point of promising it turns an ordinary absence into a special
+  // accommodation, which draws attention to exactly the students it was meant
+  // to protect. The constraint is enforced in the design and in validate.js. It
+  // is not advertised to the room.
   rules: [
-    { rule: 'You are never called on to present.',
-      why: 'Not as a volunteer, not on a good day, not "just this once".' },
     { rule: 'Your name is never on the board unless you put it there.',
       why: 'Dispatches are read aloud with names removed. You can ask to be named.' },
     { rule: 'Thirty words is the whole job.',

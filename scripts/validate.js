@@ -550,14 +550,11 @@ if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) 
   // anyone who was not in the conversation, breaks nothing technically, and is
   // discovered by a student being asked to present.
   //
-  // The promise is checked because it is the only part of this a student can
-  // see. A page that quietly stopped promising it is a page they cannot rely on.
-  const escHtml = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  assert(!!desk.meta.promise && deskSrc.includes(escHtml(desk.meta.promise)), DESK_PAGE,
-    'the Desk must carry meta.promise on the page. It is the one place a student '
-    + 'can read that they will never be made to present.');
-
+  // Enforced here and NOT announced on the page. An earlier version required the
+  // page to promise students they would never present, which turned an ordinary
+  // absence into a special accommodation and pointed at exactly the students it
+  // was meant to protect. The design carries the constraint; the room does not
+  // need to be told about it.
   const SPEAKING = /\b(present to the class|presentation|report out|share out|out loud to the class|oral report|call on you|called on)\b/i;
   [['meta.deck', desk.meta.deck],
     ...(desk.routine || []).flatMap((s, i) => [[`routine[${i}].what`, s.what], [`routine[${i}].why`, s.why]]),
