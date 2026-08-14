@@ -121,6 +121,7 @@ function renderIndex(units, weeks) {
         <img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450">
       </a>
       <div class="nav-links">
+        <a href="announcements.html">Today</a>
         <a href="#block">The Block</a>
         <a href="daily/index.html">The Desk</a>
 ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? '        <a href="#weeks">Method</a>\n' : ''}        <a href="#how">How This Works</a>
@@ -136,7 +137,8 @@ ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? ' 
       <span>We start with something in today's news and trace it back to where it started.</span>
     </p>
     <div class="quick-nav">
-      <a class="btn" href="daily/index.html">Today at the Desk</a>
+      <a class="btn" href="announcements.html">Today</a>
+      <a class="btn secondary" href="daily/index.html">The Desk</a>
       <a class="btn secondary" href="#units">The Units</a>
       <a class="btn secondary" href="#how">How This Works</a>
     </div>

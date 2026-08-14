@@ -105,6 +105,11 @@ push. That keeps the record of what it would have caught.
   surfaces, one grammar" in `docs/CANVAS-CAPTURE.md`.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
+- `node scripts/build-announcements.js`, rebuild the TODAY board from
+  `assets/data/announcements-schedule.js`, pulling each day's learning targets and
+  success criteria out of that topic's content module. Writes the generated
+  `assets/data/announcements.js`; never edit that by hand. `--check` fails on drift,
+  which is what the offline suite runs. See `docs/TODAY-BOARD.md`.
 - `node scripts/build-lesson-plans.js`, write one lesson plan per unit into
   `docs/lesson-plans/` from that unit's content module. `--check` fails on drift,
   which is what the offline suite runs. It is generated because a hand-kept plan
@@ -198,6 +203,38 @@ module, and nothing has to be pruned by hand when it does.
 
 **The orientation week is the method**, not a third content type. Week 01 teaches
 the five questions that the Desk then asks every day and every unit reuses.
+
+## The TODAY Board
+
+`announcements.html` is the projector surface, the counterpart of BeHistorical's
+Today board. Read `docs/TODAY-BOARD.md` before touching it.
+
+**The board is generated, and that is the whole point.** It is the most projected
+surface in the course, and a board typed by hand is a second copy of the
+curriculum with nothing able to say when the two disagree. Both surfaces look
+right on their own; the failure is discovered by a student who worked to the
+target on the screen and was assessed against a different one. So every target
+and criterion on it is lifted out of a unit content module, and `--check` is in
+the offline suite.
+
+You edit `assets/data/announcements-schedule.js`, which is a list of dates and
+topic codes. A code is a unit's `meta.code` plus the topic number, so Social Media
+Topic 3 is `SM3`. **Two units sharing a code is fatal at build time** rather than
+a warning, because the second would silently win and project one unit's targets
+under another's name; `validate.js` catches the other half, a unit with no code.
+
+**Homework is the one thing you write.** The course data has none, and a generator
+that invented an assignment would be inventing work.
+
+**The Desk panel is standing, not per day**, built from `desk-content.js` because
+the Desk opens all 180 class periods. Like the Desk page it carries no story, for
+the reason under "Do not fabricate reporting": a page generated once and projected
+all year cannot hold a headline that was written in August.
+
+**The board is checked for orphaning**, the same way the Desk and the unit pages
+are. It sits at the repo root and nothing else links down into it, so a front door
+that drops the link leaves a board that still builds and still validates and can
+only be found by typing the URL.
 
 ## The Content Model
 

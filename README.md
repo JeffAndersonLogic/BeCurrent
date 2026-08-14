@@ -24,6 +24,13 @@ students have to argue. Six across the year. `scripts/lib/unit-content/`.
 You need both. The daily half without the units is a news feed; the units without
 the daily half are a history class.
 
+## The board
+
+`announcements.html` is the classroom screen: today's topic, the Desk routine, the
+learning targets, the success criteria, homework, and what is coming up. It is
+generated from the course data, so it cannot say something the lesson does not.
+See `docs/TODAY-BOARD.md`.
+
 ## The modules
 
 A unit topic draws on the same eight modules, in whatever order it needs, because

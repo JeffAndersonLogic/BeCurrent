@@ -32,6 +32,11 @@
 const UNIT = {
   unit: 'Social Media',
   unitKey: 'social-media',
+  // The code the announcements schedule points a day at: SM3 is this unit's
+  // Topic 3. Short because it gets typed once per class day for a year. It must
+  // be unique across units; build-announcements.js fails loudly if two clash,
+  // because the second one would silently win and project the wrong targets.
+  code: 'SM',
   course: 'CURRENT EVENTS',
   // aiCoachUrl: set this once BeCurrent has its own MagicSchool bot. Leaving it
   // unset omits the coach section from every brief in this unit.

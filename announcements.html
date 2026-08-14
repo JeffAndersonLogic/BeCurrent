@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today | BeCurrent</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/becurrent-brand.css">
+  <link rel="stylesheet" href="assets/css/becurrent-announcements.css">
+</head>
+<body>
+  <div class="board" id="board">
+    <div class="timing-bar"><div class="timing-fill" id="timing-fill"></div></div>
+
+    <header class="masthead">
+      <a class="masthead-brand" href="index.html" title="Back to the BeCurrent home page">
+        <img src="assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450">
+        <span class="masthead-course" id="masthead-course">Current Events</span>
+      </a>
+      <div class="masthead-clock">
+        <div class="clock-time" id="clock-time">&nbsp;</div>
+        <div class="clock-date" id="clock-date">&nbsp;</div>
+      </div>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite"></main>
+
+    <footer class="board-foot">
+      <div class="dots" id="dots"></div>
+      <div class="foot-meta">
+        <span class="paused-flag" id="paused-flag">Paused</span>
+        <span id="foot-room"></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Starts hidden. It appears only once someone drives the board, so a
+       class watching the projector never sees it. -->
+  <div class="help-hint is-hidden" id="help-hint">Press <strong>H</strong> for controls</div>
+
+  <div class="help-overlay" id="help-overlay" role="dialog" aria-label="Today board controls">
+    <div class="help-card">
+      <h2>Board Controls</h2>
+      <dl>
+        <dt>Space</dt><dd>Pause or resume the rotation</dd>
+        <dt>&#8592; &#8594;</dt><dd>Previous or next panel</dd>
+        <dt>F</dt><dd>Full screen, use this before class starts</dd>
+        <dt>R</dt><dd>Reload, picks up a rebuilt announcements file</dd>
+        <dt>H or ?</dt><dd>Open and close this card</dd>
+        <dt>Esc</dt><dd>Close this card</dd>
+      </dl>
+      <p>Everything on this board is generated. Edit <code>assets/data/announcements-schedule.js</code>, then run <code>node scripts/build-announcements.js</code>. The targets and criteria come out of the course data, so the board cannot say something the lesson does not. The board rebuilds itself when the date rolls over, so it can stay up overnight.</p>
+    </div>
+  </div>
+
+  <script src="assets/data/announcements.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---------------------------------------------------------------
+       Data, with a shape that survives a half-finished edit. Any
+       missing list becomes an empty list rather than a broken board.
+       --------------------------------------------------------------- */
+    var RAW = window.BECURRENT_ANNOUNCEMENTS || null;
+    var DATA = {
+      settings: (RAW && RAW.settings) || {},
+      days: (RAW && Array.isArray(RAW.days)) ? RAW.days : [],
+      assessments: (RAW && Array.isArray(RAW.assessments)) ? RAW.assessments : [],
+      reminders: (RAW && Array.isArray(RAW.reminders)) ? RAW.reminders : [],
+      desk: (RAW && RAW.desk) || null
+    };
+
+    var SLIDE_MS = Math.max(4, Number(DATA.settings.slideSeconds) || 15) * 1000;
+    var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+
+    /* ---------------------------------------------------------------
+       Dates. Everything is anchored at local noon so a timezone offset
+       can never push a due date onto the wrong calendar day.
+       --------------------------------------------------------------- */
+    function parseYMD(value) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || '').trim());
+      if (!m) return null;
+      var d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12, 0, 0, 0);
+      return isNaN(d.getTime()) ? null : d;
+    }
+    function todayNoon() {
+      var n = new Date();
+      return new Date(n.getFullYear(), n.getMonth(), n.getDate(), 12, 0, 0, 0);
+    }
+    function todayKey() {
+      var n = new Date();
+      var mm = String(n.getMonth() + 1).padStart(2, '0');
+      var dd = String(n.getDate()).padStart(2, '0');
+      return n.getFullYear() + '-' + mm + '-' + dd;
+    }
+    function daysUntil(date) {
+      return Math.round((date - todayNoon()) / 86400000);
+    }
+
+    /* ---------------------------------------------------------------
+       Small DOM helpers. Text always goes in through textContent, so a
+       stray angle bracket in an announcement stays an angle bracket.
+       --------------------------------------------------------------- */
+    function el(tag, className, text) {
+      var node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined && text !== null && text !== '') node.textContent = text;
+      return node;
+    }
+    function has(value) {
+      return typeof value === 'string' && value.trim() !== '';
+    }
+    function eyebrow(text) {
+      return el('div', 'slide-eyebrow', text);
+    }
+    function slide(extraClass) {
+      return el('section', 'slide' + (extraClass ? ' ' + extraClass : ''));
+    }
+
+    /* ---------------------------------------------------------------
+       Slide builders
+       --------------------------------------------------------------- */
+    function buildTitleCard(day, now) {
+      var s = slide('slide-title-card');
+      s.appendChild(eyebrow(DATA.settings.courseName || 'Current Events'));
+
+      var mark = document.createElement('img');
+      mark.className = 'title-card-mark';
+      mark.src = 'assets/images/brand/becurrent-wordmark-ink.svg';
+      mark.alt = 'BeCurrent';
+      mark.setAttribute('width', '1102');
+      mark.setAttribute('height', '450');
+      s.appendChild(mark);
+
+      s.appendChild(el('div', 'title-card-day',
+        WEEKDAYS[now.getDay()] + ', ' + MONTHS[now.getMonth()] + ' ' + now.getDate()));
+
+      s.appendChild(el('h1', 'title-card-topic',
+        (day && has(day.topic)) ? day.topic : 'Welcome to class'));
+
+      if (day && has(day.unit)) s.appendChild(el('div', 'title-card-unit', day.unit));
+      if (day && has(day.subtitle)) s.appendChild(el('div', 'title-card-subtitle', day.subtitle));
+      return s;
+    }
+
+    function buildPanelSlide(label, heading, text, chips) {
+      var s = slide();
+      s.appendChild(eyebrow(label));
+      s.appendChild(el('h2', 'slide-title', heading));
+
+      var panel = el('div', 'panel');
+      panel.appendChild(el('p', 'panel-text', text));
+
+      var list = (chips || []).filter(function (c) { return c && has(c.text); });
+      if (list.length) {
+        var foot = el('div', 'panel-foot');
+        list.forEach(function (c) {
+          foot.appendChild(el('span', 'chip ' + (c.style || 'quiet'), c.text));
+        });
+        panel.appendChild(foot);
+      }
+      s.appendChild(panel);
+      return s;
+    }
+
+    // The Desk runs the first 25 minutes of EVERY class, so it is a standing
+    // slide built from the Desk's own content rather than typed per day. It
+    // carries the routine and never a story: this board is generated once and
+    // projected all year, and a headline written in August is stale by October.
+    function buildDeskSlide(desk) {
+      var steps = (desk.routine || []).filter(function (s) { return has(s.name); });
+      if (!steps.length) return null;
+
+      var s = slide();
+      s.appendChild(eyebrow('First ' + (desk.minutes || 25) + ' minutes, every class'));
+      s.appendChild(el('h2', 'slide-title', desk.title || 'The Desk'));
+
+      var grid = el('div', 'desk-grid');
+      steps.forEach(function (step, i) {
+        var card = el('div', 'desk-card');
+        card.appendChild(el('div', 'desk-step',
+          'Step ' + (i + 1) + (step.minutes ? ' · ' + step.minutes + ' min' : '')));
+        card.appendChild(el('div', 'desk-name', step.name));
+        if (has(step.what)) card.appendChild(el('div', 'desk-what', step.what));
+        grid.appendChild(card);
+      });
+      s.appendChild(grid);
+      return s;
+    }
+
+    function buildAgendaSlide(day) {
+      var steps = (day.agenda || []).filter(has);
+      if (!steps.length) return null;
+
+      var s = slide();
+      s.appendChild(eyebrow("Today's Agenda"));
+      s.appendChild(el('h2', 'slide-title', has(day.topic) ? day.topic : 'The Plan'));
+
+      var list = el('ol', 'agenda-list' + (steps.length > 5 ? ' is-long' : ''));
+      steps.forEach(function (step, i) {
+        var item = el('li', 'agenda-item');
+        item.appendChild(el('span', 'agenda-num', String(i + 1).padStart(2, '0')));
+        item.appendChild(el('span', 'agenda-text', step));
+        list.appendChild(item);
+      });
+      s.appendChild(list);
+      return s;
+    }
+
+    // Targets and criteria accept either a plain string or { text, label }.
+    // The generated file uses the object form to carry the skill name.
+    function normalizeEntries(list) {
+      return (list || []).map(function (entry) {
+        if (has(entry)) return { text: entry.trim(), label: '' };
+        if (entry && has(entry.text)) {
+          return { text: entry.text.trim(), label: has(entry.label) ? entry.label.trim() : '' };
+        }
+        return null;
+      }).filter(Boolean);
+    }
+
+    // These slides carry curriculum prose, which varies from one line to a
+    // paragraph, so the type steps down as the slide fills rather than
+    // letting a long day overflow the bottom of the screen.
+    function densityClass(entries) {
+      var chars = entries.reduce(function (sum, e) { return sum + e.text.length; }, 0);
+      if (chars > 430 || entries.length > 4) return ' is-tight';
+      if (chars > 240 || entries.length > 3) return ' is-dense';
+      return '';
+    }
+
+    // Homework is one string or a list of them. Two assignments tonight are
+    // two lines, never one sentence a student has to unpick.
+    function buildHomeworkSlide(day) {
+      var items = (Array.isArray(day.homework) ? day.homework : [day.homework])
+        .map(function (entry) {
+          if (has(entry)) return { text: entry.trim(), due: '' };
+          if (entry && has(entry.text)) {
+            return { text: entry.text.trim(), due: has(entry.due) ? entry.due.trim() : '' };
+          }
+          return null;
+        })
+        .filter(Boolean);
+      if (!items.length) return null;
+
+      // A single assignment keeps the big panel treatment.
+      if (items.length === 1) {
+        var due = items[0].due || day.homeworkDue;
+        return buildPanelSlide('Tonight', 'Homework', items[0].text, [
+          has(due) ? { text: 'Due ' + due, style: 'solid' }
+                   : { text: 'Write it down', style: 'quiet' }
+        ]);
+      }
+
+      // Several get numbered, because how many there are is the thing a
+      // student most needs to carry out of the room.
+      var s = slide();
+      s.appendChild(eyebrow('Tonight'));
+      s.appendChild(el('h2', 'slide-title', 'Homework'));
+
+      var list = el('ol', 'homework-list' + (items.length > 3 ? ' is-dense' : ''));
+      items.forEach(function (entry, i) {
+        var item = el('li', 'homework-item');
+        item.appendChild(el('span', 'homework-num', String(i + 1)));
+        var body = el('div', 'homework-body');
+        body.appendChild(el('span', 'homework-text', entry.text));
+        var due = entry.due || (i === 0 ? day.homeworkDue : '');
+        if (has(due)) body.appendChild(el('span', 'chip solid homework-due', 'Due ' + due));
+        item.appendChild(body);
+        list.appendChild(item);
+      });
+      s.appendChild(list);
+      return s;
+    }
+
+    // Learning targets are a set, not a sequence, so they carry a rule rather
+    // than the numbering the agenda uses.
+    function buildTargetsSlide(day) {
+      var targets = normalizeEntries(day.learningTargets);
+      if (!targets.length) return null;
+
+      var s = slide();
+      s.appendChild(eyebrow('Learning Targets'));
+      s.appendChild(el('h2', 'slide-title', 'What you are learning'));
+
+      var list = el('ul', 'target-list' + densityClass(targets));
+      targets.forEach(function (entry) {
+        var item = el('li', 'target-item');
+        var body = el('span', 'target-body');
+        if (entry.label) body.appendChild(el('span', 'entry-label', entry.label));
+        body.appendChild(el('span', 'target-text', entry.text));
+        item.appendChild(body);
+        list.appendChild(item);
+      });
+      s.appendChild(list);
+      return s;
+    }
+
+    // Success criteria are things a student ticks off, so they get checkboxes.
+    // The mark is drawn in CSS, no glyph and no font dependency.
+    function buildCriteriaSlide(day) {
+      var criteria = normalizeEntries(day.successCriteria);
+      if (!criteria.length) return null;
+
+      var s = slide();
+      s.appendChild(eyebrow('Success Criteria'));
+      s.appendChild(el('h2', 'slide-title', 'You have got it when'));
+
+      var list = el('ul', 'criteria-list' + densityClass(criteria));
+      criteria.forEach(function (entry) {
+        var item = el('li', 'criteria-item');
+        item.appendChild(el('span', 'criteria-mark'));
+        var body = el('span', 'criteria-body');
+        if (entry.label) body.appendChild(el('span', 'entry-label', entry.label));
+        body.appendChild(el('span', 'criteria-text', entry.text));
+        item.appendChild(body);
+        list.appendChild(item);
+      });
+      s.appendChild(list);
+      return s;
+    }
+
+    // A topic taught across two class days is one row, not two. 'Aug 10 & 11'
+    // reads as one thing coming up, which is what it is.
+    function formatDateGroup(dates) {
+      if (dates.length === 1) {
+        return MONTHS[dates[0].getMonth()].slice(0, 3) + ' ' + dates[0].getDate();
+      }
+      var sameMonth = dates.every(function (d) { return d.getMonth() === dates[0].getMonth(); });
+      if (sameMonth) {
+        return MONTHS[dates[0].getMonth()].slice(0, 3) + ' ' +
+               dates.map(function (d) { return d.getDate(); }).join(' & ');
+      }
+      return dates.map(function (d) {
+        return MONTHS[d.getMonth()].slice(0, 3) + ' ' + d.getDate();
+      }).join(' & ');
+    }
+
+    // Upcoming topics build themselves out of the day entries already filed,
+    // so a week typed on Sunday populates this slide with no extra work.
+    function buildAheadSlide(days) {
+      var s = slide();
+      s.appendChild(eyebrow('Looking Ahead'));
+      s.appendChild(el('h2', 'slide-title', 'Coming Up'));
+
+      var list = el('ul', 'ahead-list');
+      days.forEach(function (entry) {
+        var item = el('li', 'ahead-item');
+
+        var when = el('div', 'ahead-when');
+        when.appendChild(el('div', 'ahead-weekday', entry.dates.map(function (d) {
+          return WEEKDAYS[d.getDay()].slice(0, 3);
+        }).join(' & ')));
+        when.appendChild(el('div', 'ahead-daynum', formatDateGroup(entry.dates)));
+        item.appendChild(when);
+
+        var body = el('div', 'ahead-body');
+        body.appendChild(el('div', 'ahead-topic', entry.topic));
+        if (has(entry.unit)) body.appendChild(el('div', 'ahead-unit', entry.unit));
+        item.appendChild(body);
+
+        list.appendChild(item);
+      });
+      s.appendChild(list);
+      return s;
+    }
+
+    function countdownFor(days) {
+      if (days === 0) return { text: 'Today', style: 'alarm solid', row: 'is-urgent' };
+      if (days === 1) return { text: 'Tomorrow', style: 'alarm solid', row: 'is-urgent' };
+      if (days <= 3) return { text: days + ' Days', style: 'solid', row: 'is-soon' };
+      return { text: days + ' Days', style: 'quiet', row: '' };
+    }
+
+    function buildDueSlide(items, pageIndex, pageCount, label, heading) {
+      var s = slide();
+      s.appendChild(eyebrow(pageCount > 1
+        ? label + ', ' + (pageIndex + 1) + ' of ' + pageCount
+        : label));
+      s.appendChild(el('h2', 'slide-title', heading));
+
+      var list = el('ul', 'due-list');
+      items.forEach(function (entry) {
+        // Work you have announced but not dated still belongs on the board,
+        // so students know it is coming.
+        var count = entry.tbd
+          ? { text: 'Date TBD', style: 'quiet', row: '' }
+          : countdownFor(entry.days);
+        var row = el('li', 'due-item' + (count.row ? ' ' + count.row : ''));
+
+        var when = el('div', 'due-when');
+        if (entry.tbd) {
+          when.appendChild(el('div', 'due-tbd', 'TBD'));
+        } else {
+          when.appendChild(el('div', 'due-weekday', WEEKDAYS[entry.date.getDay()].slice(0, 3)));
+          when.appendChild(el('div', 'due-daynum', String(entry.date.getDate())));
+          when.appendChild(el('div', 'due-month', MONTHS[entry.date.getMonth()].slice(0, 3)));
+        }
+        row.appendChild(when);
+
+        var body = el('div', 'due-body');
+        body.appendChild(el('div', 'due-title', entry.title));
+        if (has(entry.detail)) body.appendChild(el('div', 'due-detail', entry.detail));
+        row.appendChild(body);
+
+        var right = el('div', 'due-count');
+        if (has(entry.tag)) {
+          var assessment = /^(test|quiz|exam)$/i.test(entry.tag.trim());
+          right.appendChild(el('span', 'chip ' + (assessment ? 'alarm' : 'quiet'), entry.tag));
+        }
+        right.appendChild(el('span', 'chip ' + count.style, count.text));
+        row.appendChild(right);
+
+        list.appendChild(row);
+      });
+      s.appendChild(list);
+      return s;
+    }
+
+    function buildRemindersSlide(reminders) {
+      var s = slide();
+      s.appendChild(eyebrow('Standing Notes'));
+      s.appendChild(el('h2', 'slide-title', 'Reminders'));
+
+      var grid = el('div', 'reminder-grid');
+      reminders.forEach(function (r) {
+        var card = el('div', 'reminder-card');
+        if (has(r.title)) card.appendChild(el('div', 'reminder-title', r.title));
+        if (has(r.detail)) card.appendChild(el('div', 'reminder-detail', r.detail));
+        grid.appendChild(card);
+      });
+      s.appendChild(grid);
+      return s;
+    }
+
+    function buildMessageSlide(label, heading, note, codePath) {
+      var s = slide();
+      s.appendChild(eyebrow(label));
+      s.appendChild(el('h2', 'slide-title', heading));
+      var p = el('p', 'state-note');
+      p.appendChild(document.createTextNode(note + ' '));
+      if (codePath) p.appendChild(el('code', null, codePath));
+      s.appendChild(p);
+      return s;
+    }
+
+    /* ---------------------------------------------------------------
+       Assemble the deck for whatever day it is right now.
+       --------------------------------------------------------------- */
+    function buildDeck() {
+      var slides = [];
+      var now = new Date();
+      var key = todayKey();
+
+      if (!RAW) {
+        slides.push(buildMessageSlide(
+          'Board Not Loaded', 'No announcements file',
+          'The board could not read its content file. Build it with node scripts/build-announcements.js, which writes',
+          'assets/data/announcements.js'));
+        return slides;
+      }
+
+      var day = null;
+      for (var i = 0; i < DATA.days.length; i++) {
+        if (String(DATA.days[i] && DATA.days[i].date).trim() === key) { day = DATA.days[i]; break; }
+      }
+
+      // Today first: the topic, then the routine that opens every class, then
+      // what you are learning, then how you know you have learned it, then what
+      // leaves the room with you.
+      slides.push(buildTitleCard(day, now));
+
+      if (DATA.desk) {
+        var deskSlide = buildDeskSlide(DATA.desk);
+        if (deskSlide) slides.push(deskSlide);
+      }
+
+      if (day) {
+        if (has(day.note)) {
+          slides.push(buildPanelSlide('Heads Up', 'Before Anything Else', day.note, []));
+        }
+        if (has(day.doNow)) {
+          slides.push(buildPanelSlide('Bell Ringer', 'Do Now', day.doNow, [
+            { text: 'Start the moment you sit down', style: 'quiet' }
+          ]));
+        }
+
+        var targets = buildTargetsSlide(day);
+        if (targets) slides.push(targets);
+
+        var criteria = buildCriteriaSlide(day);
+        if (criteria) slides.push(criteria);
+
+        var agenda = buildAgendaSlide(day);
+        if (agenda) slides.push(agenda);
+
+        var homework = buildHomeworkSlide(day);
+        if (homework) slides.push(homework);
+      } else if (DATA.days.length) {
+        slides.push(buildMessageSlide(
+          'No Entry For Today', 'Check the board up front',
+          'There is no entry filed for this date. Add one to',
+          'assets/data/announcements-schedule.js'));
+      }
+
+      // Then what is ahead: the next topics, then anything dated.
+      var future = DATA.days
+        .map(function (entry) {
+          var date = parseYMD(entry && entry.date);
+          if (!date || !has(entry.topic)) return null;
+          return { date: date, days: daysUntil(date), topic: entry.topic, unit: entry.unit };
+        })
+        .filter(function (entry) { return entry && entry.days > 0; })
+        .sort(function (a, b) { return a.date - b.date; });
+
+      // Collapse a topic that runs across consecutive class days into one row.
+      var ahead = [];
+      future.forEach(function (entry) {
+        var last = ahead[ahead.length - 1];
+        if (last && last.topic === entry.topic) last.dates.push(entry.date);
+        else ahead.push({ topic: entry.topic, unit: entry.unit, dates: [entry.date] });
+      });
+      ahead = ahead.slice(0, 4);
+
+      if (ahead.length) slides.push(buildAheadSlide(ahead));
+
+      var assessments = DATA.assessments
+        .map(function (entry) {
+          if (!entry || !has(entry.title)) return null;
+          var date = parseYMD(entry.date);
+          return {
+            date: date,
+            tbd: !date,
+            days: date ? daysUntil(date) : Infinity,
+            title: entry.title,
+            detail: entry.detail,
+            tag: entry.type
+          };
+        })
+        .filter(function (entry) { return entry && entry.days >= 0; })
+        .sort(function (a, b) { return a.days - b.days; });
+
+      if (assessments.length) {
+        var PER_SLIDE = 4;
+        var pages = Math.ceil(assessments.length / PER_SLIDE);
+        for (var p = 0; p < pages; p++) {
+          slides.push(buildDueSlide(
+            assessments.slice(p * PER_SLIDE, (p + 1) * PER_SLIDE), p, pages,
+            'Put It On Your Calendar', 'Quizzes and Exams'));
+        }
+      }
+
+      var reminders = DATA.reminders.filter(function (r) {
+        return r && (has(r.title) || has(r.detail));
+      });
+      if (reminders.length) slides.push(buildRemindersSlide(reminders));
+
+      if (!slides.length) {
+        slides.push(buildMessageSlide(
+          'Nothing Filed', 'The board is empty',
+          'Add a day, a due date, or a reminder to',
+          'assets/data/announcements-schedule.js'));
+      }
+      return slides;
+    }
+
+    /* ---------------------------------------------------------------
+       Player
+       --------------------------------------------------------------- */
+    // Two ways to read the same board.
+    //
+    //   Board mode  a projector kiosk: one panel at a time, auto advancing.
+    //   Page mode   a phone or a laptop: every panel stacked on one
+    //               scrollable page, no timer, nothing to wait for.
+    //
+    // The stylesheet does the layout half of this at the same breakpoint.
+    // Here it only stops the clock, so a student reading on a phone is never
+    // scrolled out from under.
+    var PAGE_MODE = window.matchMedia('(max-width: 900px)');
+    function isPageMode() { return PAGE_MODE.matches; }
+
+    var board = document.getElementById('board');
+    var stage = document.getElementById('stage');
+    var dotsWrap = document.getElementById('dots');
+    var fill = document.getElementById('timing-fill');
+    var slides = [];
+    var dots = [];
+    var index = 0;
+    var elapsed = 0;
+    var lastFrame = 0;
+    var paused = false;
+    var builtFor = '';
+
+    function render() {
+      builtFor = todayKey();
+      slides = buildDeck();
+      stage.textContent = '';
+      dotsWrap.textContent = '';
+      dots = [];
+
+      slides.forEach(function (node, i) {
+        stage.appendChild(node);
+        var dot = el('button', 'dot');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Go to panel ' + (i + 1));
+        dot.addEventListener('click', function () { goTo(i); });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      });
+
+      index = 0;
+      elapsed = 0;
+      show(0);
+    }
+
+    function show(i) {
+      slides.forEach(function (node, n) { node.classList.toggle('is-active', n === i); });
+      dots.forEach(function (dot, n) { dot.classList.toggle('is-active', n === i); });
+      index = i;
+    }
+
+    function goTo(i) {
+      if (!slides.length) return;
+      elapsed = 0;
+      show((i + slides.length) % slides.length);
+    }
+
+    function step(delta) {
+      goTo(index + delta);
+    }
+
+    function tick(stamp) {
+      if (!lastFrame) lastFrame = stamp;
+      var dt = stamp - lastFrame;
+      lastFrame = stamp;
+
+      // Page mode shows everything at once, so there is nothing to advance.
+      if (isPageMode()) {
+        elapsed = 0;
+        requestAnimationFrame(tick);
+        return;
+      }
+
+      if (!paused && slides.length > 1) {
+        elapsed += dt;
+        if (elapsed >= SLIDE_MS) step(1);
+      }
+      var pct = slides.length > 1 ? Math.min(100, (elapsed / SLIDE_MS) * 100) : 100;
+      fill.style.width = pct + '%';
+      requestAnimationFrame(tick);
+    }
+
+    function setPaused(next) {
+      paused = next;
+      board.classList.toggle('is-paused', paused);
+    }
+
+    /* ---------------------------------------------------------------
+       Masthead clock, and the date rollover that lets the board run
+       overnight without anyone touching it.
+       --------------------------------------------------------------- */
+    var clockTime = document.getElementById('clock-time');
+    var clockDate = document.getElementById('clock-date');
+
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours();
+      var suffix = hours >= 12 ? 'PM' : 'AM';
+      var display = hours % 12 === 0 ? 12 : hours % 12;
+      clockTime.textContent = display + ':' + String(now.getMinutes()).padStart(2, '0') + ' ' + suffix;
+      clockDate.textContent = WEEKDAYS[now.getDay()] + ', ' +
+        MONTHS[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+
+      if (todayKey() !== builtFor) render();
+    }
+
+    // Blank unless the schedule fills them in, so nothing personal projects
+    // on the screen by default.
+    var room = [DATA.settings.teacherName, DATA.settings.roomName]
+      .filter(has).join('  ·  ');
+    document.getElementById('foot-room').textContent = room;
+
+    if (has(DATA.settings.courseName)) {
+      document.getElementById('masthead-course').textContent = DATA.settings.courseName;
+    }
+
+    /* ---------------------------------------------------------------
+       Keyboard, help card, and the idle cursor hide
+       --------------------------------------------------------------- */
+    var overlay = document.getElementById('help-overlay');
+    var hint = document.getElementById('help-hint');
+
+    function toggleHelp(force) {
+      var open = typeof force === 'boolean' ? force : !overlay.classList.contains('is-open');
+      overlay.classList.toggle('is-open', open);
+      setPaused(open ? true : false);
+    }
+
+    document.addEventListener('keydown', function (event) {
+      // In page mode the arrows belong to the scrollbar, not to us.
+      if (isPageMode()) return;
+      switch (event.key) {
+        case ' ': case 'Spacebar':
+          event.preventDefault(); setPaused(!paused); break;
+        case 'ArrowRight': case 'PageDown':
+          event.preventDefault(); step(1); break;
+        case 'ArrowLeft': case 'PageUp':
+          event.preventDefault(); step(-1); break;
+        case 'f': case 'F':
+          if (document.fullscreenElement) document.exitFullscreen();
+          else if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen().catch(function () {});
+          }
+          break;
+        case 'r': case 'R':
+          window.location.reload(); break;
+        case 'h': case 'H': case '?':
+          toggleHelp(); break;
+        case 'Escape':
+          if (overlay.classList.contains('is-open')) toggleHelp(false);
+          break;
+      }
+    });
+
+    overlay.addEventListener('click', function () { toggleHelp(false); });
+
+    // The controls hint is for whoever is driving the board, so it appears
+    // only once someone touches the mouse or a key. A class watching the
+    // screen never sees it, and it is meaningless in page mode anyway.
+    var idleTimer = null;
+    function wake() {
+      if (isPageMode()) return;
+      document.body.classList.remove('is-idle');
+      hint.classList.remove('is-hidden');
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () {
+        document.body.classList.add('is-idle');
+        hint.classList.add('is-hidden');
+      }, 5000);
+    }
+    ['mousemove', 'mousedown', 'keydown'].forEach(function (name) {
+      document.addEventListener(name, wake, { passive: true });
+    });
+
+    /* ---------------------------------------------------------------
+       Start
+       --------------------------------------------------------------- */
+    // Rotating a phone, or dragging a window across the breakpoint, swaps the
+    // two readings cleanly rather than leaving a half-played slideshow.
+    var onModeChange = function () {
+      document.body.classList.remove('is-idle');
+      hint.classList.add('is-hidden');
+      clearTimeout(idleTimer);
+      setPaused(false);
+      goTo(0);
+      if (isPageMode()) window.scrollTo(0, 0);
+    };
+    if (PAGE_MODE.addEventListener) PAGE_MODE.addEventListener('change', onModeChange);
+    else if (PAGE_MODE.addListener) PAGE_MODE.addListener(onModeChange);
+
+    render();
+    updateClock();
+    setInterval(updateClock, 1000);
+    requestAnimationFrame(tick);
+  })();
+  </script>
+</body>
+</html>
