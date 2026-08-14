@@ -105,6 +105,11 @@ push. That keeps the record of what it would have caught.
   surfaces, one grammar" in `docs/CANVAS-CAPTURE.md`.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
+- `node scripts/build-canvas-events.js`, write the paste-ready Canvas calendar
+  events and assignment bodies for every unit into `docs/canvas/`. `--check` fails
+  on drift, which is what the offline suite runs. Canvas has no version control of
+  its own, so the repo is the source of truth for what gets pasted in. See
+  `docs/canvas/CANVAS-BUILD-GUIDE.md`.
 - `node scripts/build-announcements.js`, rebuild the TODAY board from
   `assets/data/announcements-schedule.js`, pulling each day's learning targets and
   success criteria out of that topic's content module. Writes the generated
@@ -235,6 +240,43 @@ all year cannot hold a headline that was written in August.
 are. It sits at the repo root and nothing else links down into it, so a front door
 that drops the link leaves a board that still builds and still validates and can
 only be found by typing the URL.
+
+## Canvas
+
+BeCurrent is **its own Canvas course**, separate from AP World, and every object in
+it carries the `CE` prefix. Read `docs/canvas/CANVAS-BUILD-GUIDE.md` before
+building any of it.
+
+**Canvas never duplicates the lesson engine.** A calendar event says what today is
+about, what a student should be able to do by the end, where the lesson lives, and
+which assignment to submit. If a student can read the whole Brief inside Canvas,
+the event was built wrong.
+
+**Both paste documents are generated**, from the same unit content the site and the
+board read: `docs/canvas/<unit>-calendar-events.md` and
+`docs/canvas/<unit>-assignments.md`. Every cell is machine-derived, including
+OVERVIEW, because a BeCurrent topic overview is already written to the student in
+second person. Edit a target in the content module and it reaches the page, the
+board, the lesson plan and the Canvas paste by rebuilding. Never edit a target
+inside Canvas: the surfaces then disagree, they all look right on their own, and
+the student graded against the one they were not shown is the only one who finds
+out.
+
+**A topic with no Brief gets no assignment.** Social Media Topics 1 and 2 are done
+on paper. A Canvas assignment nobody can submit to is a gradebook row that reads as
+missing work for the whole class until someone excuses it by hand.
+
+**The assignment link is never hand-typed.** It comes from the RCE course-links
+panel, which attaches four data attributes tied to the assignment's internal ID. A
+hand-typed link is blue, underlined, clickable, and resolves to nothing for anyone
+whose enrollment differs from yours, so the failure is invisible from the teacher's
+own account. The generator emits `[INSERT ASSIGNMENT LINK]` and `validate.js` fails
+if that placeholder ever disappears.
+
+`validate.js` also checks that **every BeCurrent URL inside those documents points
+at a file that exists**. That is the half drift cannot see: the rename from
+`block-NN` to `topic-NN` would otherwise have left a Canvas event with a blue
+underlined 404 in front of thirty students, with every other check green.
 
 ## The Content Model
 

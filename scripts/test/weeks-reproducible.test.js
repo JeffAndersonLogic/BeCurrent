@@ -29,7 +29,7 @@ console.log('\n  Generated weeks reproduce from their content modules\n');
 let failed = false;
 for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js',
   'scripts/build-desk.js', 'scripts/build-index.js', 'scripts/build-lesson-plans.js',
-  'scripts/build-announcements.js']) {
+  'scripts/build-announcements.js', 'scripts/build-canvas-events.js']) {
   const run = spawnSync(process.execPath, [builder, '--check'], { cwd: ROOT, encoding: 'utf8' });
   const out = (run.stdout || '') + (run.stderr || '');
   process.stdout.write(out.split('\n').map(l => l ? '  ' + l : l).join('\n'));

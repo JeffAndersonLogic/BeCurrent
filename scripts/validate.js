@@ -780,6 +780,85 @@ section('The TODAY board');
   }
 }
 
+// ── Canvas paste documents ────────────────────────────────────────────────────
+//
+// Canvas is outside this repository and has no version control of its own, so
+// the generated docs in docs/canvas/ are the only record of what was pasted in.
+// The drift check in the offline suite proves they still match the course data.
+// This proves the other half, which drift cannot see: that every BeCurrent URL
+// inside them points at a file that actually exists.
+//
+// That failure is the reason this check exists. The unit's Briefs were renamed
+// from block-NN to topic-NN in this repo, and a Canvas event carrying the old
+// path would still be a blue underlined clickable link, in front of thirty
+// students, resolving to a 404. Nothing on the Canvas side would report it, and
+// nothing on this side would either, because a generated markdown file is not a
+// page anything else links to.
+section('Canvas paste documents');
+{
+  const CANVAS_DIR = path.join(ROOT, 'docs', 'canvas');
+  if (!fs.existsSync(CANVAS_DIR)) {
+    done('no docs/canvas yet, nothing to check');
+  } else {
+    const SITE = 'https://jeffandersonlogic.github.io/BeCurrent';
+    const docs = glob(CANVAS_DIR, /\.md$/);
+    let urls = 0;
+
+    docs.forEach(file => {
+      const src = read(file) || '';
+
+      // Every link into the live site must resolve to a real path on disk.
+      //
+      // These URLs sit in markdown as well as in HTML, so the match has to stop
+      // at a backtick and shed trailing sentence punctuation; otherwise a URL
+      // written inside `code` at the end of a sentence is reported as a missing
+      // file called "index.html`." and the check cries wolf on its first run.
+      // A trailing slash is a directory reference, which is a real thing to link.
+      for (const hit of src.matchAll(new RegExp(`${SITE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/([^"'\`\\s)>]+)`, 'g'))) {
+        urls++;
+        const rel = hit[1].split(/[?#]/)[0].replace(/[.,;:]+$/, '');
+        if (!rel) continue;
+        assert(fs.existsSync(path.join(ROOT, rel)), file,
+          `points at ${rel}, which does not exist in this repo. A Canvas link to a `
+          + 'renamed or deleted file is a 404 that still looks like a working link.');
+      }
+
+      // The placeholder must survive into the doc. A generator that started
+      // emitting a real href here would be emitting a hand-typed Canvas link,
+      // which renders fine and resolves to nothing for anyone whose enrollment
+      // differs from the teacher's; see Section 5 of CANVAS-BUILD-GUIDE.md.
+      if (/-calendar-events\.md$/.test(file)) {
+        assert(src.includes('[INSERT ASSIGNMENT LINK]'), file,
+          'has no [INSERT ASSIGNMENT LINK] placeholder. Assignment links must come from '
+          + 'the Canvas course-links panel, never hand-typed.');
+      }
+    });
+
+    // A withheld title must not reach Canvas either. The repo check covers
+    // student-facing pages; these documents are pasted at students by hand, so
+    // they are the one route around it.
+    unitDirs.forEach(key => {
+      const file = path.join(ROOT, 'scripts', 'lib', 'unit-content', `${key}.js`);
+      if (!fs.existsSync(file)) return;
+      let unit;
+      try { unit = require(file); } catch (e) { return; }
+      (unit.topics || []).forEach(t => {
+        (t.withholdTitles || []).forEach(title => {
+          docs.forEach(doc => {
+            const src = read(doc) || '';
+            assert(!src.includes(title), doc,
+              `"${title}" is withheld until ${t.topic} has been taught, and it appears in a `
+              + 'document that gets pasted into Canvas.');
+          });
+        });
+      });
+    });
+
+    done(`${docs.length} Canvas document${docs.length === 1 ? '' : 's'}, `
+      + `${urls} site link${urls === 1 ? '' : 's'} resolving to real files`);
+  }
+}
+
 // ── Video ─────────────────────────────────────────────────────────────────────
 //
 // Whether a lesson has video, and how much, is a teaching decision. Two things
