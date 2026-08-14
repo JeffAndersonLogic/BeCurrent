@@ -100,10 +100,11 @@ push. That keeps the record of what it would have caught.
 - `node scripts/serve-local.js`, serve the repo locally. The briefs load through
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
-- `python3 scripts/brand/build-wordmark.py`, redraw the plate, both wordmarks and
-  the favicon from the vendored fonts. Needs
-  `pip install fonttools brotli`, and is off the test path on purpose. See "The
-  Mark, the Palette, and the Faces" below.
+- `python3 scripts/brand/build-wordmark.py`, derive the plate, both wordmarks and
+  the favicon from `assets/images/brand/becurrent-mark-source.svg`, the supplied
+  artwork. Trims and recolours; never redraws. Needs
+  `pip install fonttools brotli svgelements`, and is off the test path on
+  purpose. See "The Mark, the Palette, and the Faces" below.
 
 The student entry point is `index.html`, and it is generated. Student work reaches
 the teacher through **Canvas only**.
@@ -354,70 +355,66 @@ is two answers to "what red is this course" waiting to disagree.
 
 ### The mark
 
-**Be**, an oversized red **C**, then **URRENT**, set as one line with the word
-crossing in front of the C. The C is the C of "Current" and it is also the logo:
-drawn at 2.4x the word's cap height, sitting behind it, with URRENT emerging from
-its aperture. Four files, all outlined paths rather than `<text>`:
+**The artwork is a real file and it is the source of truth.**
+`assets/images/brand/becurrent-mark-source.svg` is the supplied vector.
+Everything else in the brand folder is derived from it by
+`scripts/brand/build-wordmark.py`, which does three things and only three: trim,
+recolour, compose. **It never redraws.** Every earlier mark in this repo was a
+reproduction built from fonts, because the artwork had only ever arrived as a
+raster; all of that code is gone.
+
+**Do not hand-edit the four outputs.** Edit the source, or the script.
+
+The mark is **Be**, an oversized red **C**, then **URRENT**, with the word
+crossing in front of the C. The C is the C of "Current" and it is also the logo.
 
 ```
+assets/images/brand/becurrent-mark-source.svg    THE ARTWORK, 1500x1500
 assets/images/brand/becurrent-logo.svg           the plate, 10:3, with the tagline
 assets/images/brand/becurrent-wordmark.svg       word in paper, dark grounds
 assets/images/brand/becurrent-wordmark-ink.svg   word in ink, light grounds
 assets/favicon.svg                               the red C, for a browser tab
 ```
 
-They are paths because an SVG loaded through an `<img>` cannot reach a webfont,
-and a `<text>` element that falls back to whatever the machine has stops being
-the brand mark. The masthead, the hero and the footer all render one of these
-files rather than type styled to resemble it, so the lockups cannot drift.
+**Three things stop the source being usable as-is**, and they are why a build
+step exists at all rather than four copies of one file:
 
-**The word is Libre Baskerville 700; only the C is Cinzel 900.** Cinzel is the
-display face and would have been the obvious choice for all of it, except that
-**Cinzel has no true lowercase**: its lowercase codepoints are small capitals, so
-"Be" comes out as "BE" with a small E. The mark needs a round lowercase e, so the
-word is set in the family's text face. Both faces are BeHistorical's, so the mark
-is still inside the shared family, which is the part that matters.
+1. **The canvas is mostly empty.** The artwork sits in a band about 1102x450 in
+   the middle of a 1500x1500 square, roughly a fifth of the height. An `<img>`
+   renders the whole canvas, so used untrimmed the mark comes out a fifth of the
+   size its `height` asks for, floating in space. Trimming is what makes the
+   ratio 2.45 rather than 1.
+2. **The word is black.** On the masthead and the footer, both near-black bands,
+   a black word is invisible and only the red C survives, which reads as a
+   rendering fault rather than a logo. Hence two colourways. The **only**
+   difference between them is the word's fill; the red never moves.
+3. **There is no tagline in it.** The plate needs one, so it is set in Montserrat
+   and exists in the plate alone. At masthead size it is four illegible pixels,
+   and the front door already prints the course name in the dateline right under
+   the mark. In the plate it clears the **C's descender**, not the word's
+   baseline: the C overhangs the line by more than a cap height at each end, and
+   measuring from the baseline runs the tagline straight through it.
 
-The C is a deliberate exception, and it stops there. It is not a letter in the
-running word, it is a graphic element at two and a half times the size of one, so
-taking it from another member of the family costs nothing and buys weight: Libre
-Baskerville tops out at 700 and its C is visibly thinner than the artwork's, while
-Cinzel at 900 matches. **Do not extend the mixing to the word.** Two different B
-weights side by side was tried and it shows.
-
-**This lockup has a legibility floor and it is 40px, not 21px.** The shape is
-4.1:1 where the previous wordmark was 9.7:1, and at a fixed height a squarer
-lockup gives the word less than half the width. At 21px, the old masthead size,
-the C swallows URRENT and the mark is a red blob. The masthead is now 38px and the
-footer 30px for exactly this reason. If a future lockup gets squarer still,
-re-measure rather than assuming these heights carry over.
-
-**Two properties that are about how the mark gets used, not how it was drawn:**
-
-- **No drop shadow.** At masthead size a shadow is not a shadow but a grey smear
-  along one edge, and it is the first thing to turn to mud on a projector.
-- **The word is not white on a light ground.** Every reading surface here is
-  newsprint, so a white word would vanish on the hero. Two colourways instead, red
-  constant in both. What carries over is the two-tone split, not one specific white.
-
-**The tagline is in the plate only.** At masthead size it is four illegible
-pixels, and the front door already prints the course name in the dateline right
-under the mark. In the plate it clears the **C's descender**, not the word's
-baseline: the C overhangs the line by more than half a cap height at each end, and
-measuring from the baseline puts the tagline straight through it.
+**The lockup has a legibility floor and it is not 21px.** It is 2.45:1 and the
+word's cap height is only about a third of the mark's total height, because of
+that overhang. At 21px, the height the first BeCurrent masthead used, the cap
+height is under 7px and the word is unreadable. **The masthead is 38px and the
+footer 30px for that reason.** If the artwork is ever redrawn, measure this again
+rather than assuming the heights carry over.
 
 `scripts/brand/build-wordmark.py` regenerates all four. It needs
-`pip install fonttools brotli` and is **deliberately off the test path**, because
-`validate.js` has to stay runnable on a bare checkout with no install at all. The
-outputs are committed; nothing in the build or the gate calls it.
+`pip install fonttools brotli svgelements` and is **deliberately off the test
+path**, because `validate.js` has to stay runnable on a bare checkout with no
+install at all. The outputs are committed; nothing in the build or the gate calls
+it.
 
-**Replacing the mark is not a file swap.** Four files come from one drawing, plus
+**Replacing the artwork is not a file swap.** Four outputs come from it, plus
 `--signal` sampled from it, plus the `width`/`height` on every `<img>` that
-renders it, plus the masthead and footer heights if the ratio moves much. The
+renders it, plus the masthead and footer heights if the ratio moves. The
 dimensions are enforced: `validate.js` reads the wordmark's own size and fails if
-any lockup disagrees. This has bitten on every redraw, 4889x810 then 4101x716 then
-7101x733 then 7563x1848, and each time ten hardcoded pairs across four generators
-had to move with it.
+any lockup disagrees. That check has fired on every redraw, 4889x810 then
+4101x716 then 7101x733 then 7563x1848 and now 1102x450, and each time ten
+hardcoded pairs across four generators had to move with it.
 
 ### One family, two courses
 
@@ -447,10 +444,14 @@ nothing means anything.
   chip and key term.
 - **The neutrals are true neutrals.** `--black-900` `#111111` and the ramp under
   it carry no blue, because a slate grey next to a warm red reads as a third
-  colour whether or not it was meant to. `--signal` `#D5211A` is sampled from the
-  mark; the black is not, since the artwork arrived with no plate.
+  colour whether or not it was meant to. `--signal` `#CE1400` is taken straight
+  out of the artwork file; the black is not, since the artwork has no plate.
+  Until the real vector arrived the red was sampled off a *picture* of the logo
+  and was a little lighter and bluer, `#D5211A`. Everything downstream of it,
+  `--signal-deep`, `--signal-pale`, `--signal-tint`, was re-derived and the whole
+  contrast table at the top of `becurrent-brand.css` was recomputed.
 
-The button carries the least slack: `--clean-paper` on `--signal` is 5.13:1
+The button carries the least slack: `--clean-paper` on `--signal` is 5.59:1
 against a 4.5 bar. Move either token and rerun the numbers rather than eyeballing
 it. The full table is at the top of `becurrent-brand.css`.
 

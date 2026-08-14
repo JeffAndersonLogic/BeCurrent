@@ -99,7 +99,7 @@ function renderDeskPage(desk) {
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="../index.html" aria-label="Return to the BeCurrent home page">
-        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7563" height="1848">
+        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450">
       </a>
       <div class="nav-links">
         <a href="../index.html">Home</a>
@@ -225,7 +225,7 @@ ${resources}
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7563" height="1848"></div>
+      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450"></div>
       <p>The Desk &middot; the daily half of every block. The other half is the unit.</p>
       <p>Read it. Check it. Then decide.</p>
     </div>

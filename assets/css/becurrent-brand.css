@@ -27,8 +27,8 @@
    later nothing means anything. Where a second series has to be told apart from
    the first, the second one is BLACK. Where something needs emphasis, it is RED.
 
-     --signal      #D5211A   the red, and the only red
-     --signal-deep #A61810   the same red, darkened to be legible at body size
+     --signal      #CE1400   the red, and the only red, from the artwork
+     --signal-deep #A31000   the same red, darkened to be legible at body size
      --black-900   #111111   the ground for every surface students scan
      --ink         #141414   the ink every surface students read is set in
 
@@ -39,10 +39,10 @@
 
    The logo red is a display colour, and the numbers say where it can go:
 
-     --clean-paper on --signal      5.13:1   passes at any size, so buttons use it
-     --signal on --newsprint        4.62:1   passes, but see below
-     --signal-deep on --newsprint   6.80:1   comfortable on either ground
-     --signal on --black-900        3.65:1   large display only, as in the mark
+     --clean-paper on --signal      5.59:1   passes at any size, so buttons use it
+     --signal on --newsprint        5.04:1   passes, but see below
+     --signal-deep on --newsprint   7.13:1   comfortable on either ground
+     --signal on --black-900        3.35:1   large display only, as in the mark
 
    So: --signal draws rules, borders, button grounds, and display type 20px and
    up, where 3:1 is the bar and it clears it everywhere. --signal-deep is the
@@ -50,9 +50,15 @@
    term. The two are one hue apart and swapping them looks like a nicety, which
    is how an eyebrow ends up under 4.5:1 with every structural check still green.
 
-   The button carries the least slack at 5.13:1 against a 4.5 bar. Darkening
+   The button carries the least slack at 5.59:1 against a 4.5 bar. Darkening
    --clean-paper or lightening --signal puts every button on the site at risk,
    so if either moves, rerun the numbers rather than eyeballing it.
+
+   These numbers moved when the real artwork arrived. Until then the red was
+   sampled off a picture of the logo rather than the logo itself, and came out a
+   little lighter and bluer than the file: D5211A against the artwork's CE1400.
+   Every ratio on the light grounds improved; the one on --black-900 fell from
+   3.65 to 3.35, which still clears the 3:1 bar display-size red is held to.
 
    ── The focus ring is its own token ─────────────────────────────────────────
 
@@ -154,11 +160,12 @@
   /* The signal, and the only colour on the site that is not black or paper.
      --signal is the logo red and draws things; --signal-deep is the same hue
      darkened until words set in it clear 4.5:1 on both light grounds;
-     --signal-pale is the same hue lifted for the dark panels. */
-  --signal:#D5211A;
-  --signal-deep:#A61810;
-  --signal-pale:#F0A79E;
-  --signal-tint:rgba(213,33,26,.10);
+     --signal-pale is the same hue lifted for the dark panels. All three are the
+     artwork's red or a derivation of it; not one of them is eyeballed. */
+  --signal:#CE1400;
+  --signal-deep:#A31000;
+  --signal-pale:#E9958C;
+  --signal-tint:rgba(206,20,0,.10);
 
   /* The focus ring, in both polarities. Never the accent: see above. */
   --focus:#141414;

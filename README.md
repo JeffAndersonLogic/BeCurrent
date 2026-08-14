@@ -114,15 +114,16 @@ first, the second one is black. The focus ring is ink, never the accent, because
 red is already on nearly every card border.
 
 The mark is **Be**, an oversized red **C**, then **URRENT**, with the word
-crossing in front of the C. The word is Libre Baskerville 700 and only the C is
-Cinzel 900, because Cinzel's lowercase codepoints are small capitals and the mark
-needs a round lowercase e. Two colourways, because the word cannot be white on a
-light ground without disappearing. It is unreadable below about 40px tall, which
-is why the masthead and footer are sized the way they are.
+crossing in front of the C. `assets/images/brand/becurrent-mark-source.svg` is
+the supplied artwork and the source of truth; the four lockups are derived from
+it by trimming, recolouring and composing, never by redrawing. Two colourways,
+because the word is black in the artwork and would vanish on the dark bands. It
+is unreadable below about 38px tall, which is why the masthead and footer are
+sized the way they are.
 
-`python3 scripts/brand/build-wordmark.py` redraws the plate, both wordmarks and
-the favicon. It needs `fonttools` and is off the test path on purpose; the four
-SVGs are committed.
+`python3 scripts/brand/build-wordmark.py` regenerates all four. It needs
+`fonttools brotli svgelements` and is off the test path on purpose; the outputs
+are committed.
 
 ## Deploying
 
@@ -132,7 +133,7 @@ working branch, let Validate go green, then fast-forward `main` to that commit.
 
 ## Status
 
-Both suites are green: 414 structural checks and 39 browser assertions. The Desk,
+Both suites are green: 416 structural checks and 39 browser assertions. The Desk,
 the orientation week and the Social Media unit are complete. The other five units
 are on the front door as planned cards with no content modules yet, and the weekly
 News Log the Desk promises has not been built, so nothing from the daily half

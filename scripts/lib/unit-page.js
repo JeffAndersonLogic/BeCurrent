@@ -99,7 +99,7 @@ ${actionRow}
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="../index.html" aria-label="Return to the BeCurrent home page">
-        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7563" height="1848">
+        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450">
       </a>
       <div class="nav-links">
         <a href="../index.html">Home</a>
@@ -162,7 +162,7 @@ ${competencyList}
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7563" height="1848"></div>
+      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450"></div>
       <p>${esc(m.unit)} &middot; ${esc(String(withBriefs))} of ${esc(String(blocks.length))} blocks have a Brief. The rest happen on paper.</p>
       <p>Read it. Check it. Then decide.</p>
     </div>

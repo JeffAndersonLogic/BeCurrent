@@ -100,7 +100,7 @@ img{max-width:100%;display:block}
 .term-chip{
   font-family:var(--ui); font-size:.74rem; font-weight:700;
   background:var(--signal-tint); color:var(--signal-deep);
-  border:1px solid rgba(213,33,26,.24);
+  border:1px solid rgba(206,20,0,.24);
   padding:5px 12px; border-radius:999px;
 }
 
