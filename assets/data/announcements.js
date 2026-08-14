@@ -179,29 +179,29 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "Reading a privacy policy as a primary source",
       "learningTargets": [
         {
-          "text": "I can read a privacy policy as a primary source and say who wrote it, when, and who it protects.",
+          "text": "I can explain the difference between a primary source and somebody else's summary of one, and say why a company's own privacy policy is the primary source here.",
           "label": "Sourcing"
         },
         {
-          "text": "I can find what a long legal document says about one question without reading it front to back.",
+          "text": "I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.",
           "label": "Sourcing"
         },
         {
-          "text": "I can check a claim I already made against the document, and change it when the evidence says so.",
-          "label": "Generalizing from Evidence"
+          "text": "I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.",
+          "label": "Sourcing"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can quote an exact sentence from a real policy and say what it does and does not claim.",
+          "text": "I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.",
           "label": "Sourcing"
         },
         {
-          "text": "I can name the author, the date it was last updated, and who the document protects.",
-          "label": "Sourcing"
+          "text": "I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.",
+          "label": "Generalizing from Evidence"
         },
         {
-          "text": "I can point at the sentence that decides a box in my Topic 1 chain, and redraw the box if it was wrong.",
+          "text": "I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.",
           "label": "Generalizing from Evidence"
         }
       ],
@@ -215,29 +215,29 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "You, the company, or the government",
       "learningTargets": [
         {
-          "text": "I can state the strongest version of a position I do not hold.",
+          "text": "I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.",
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can use an earlier fight over a new medium to predict something about this one.",
-          "label": "Generalizing from Evidence"
+          "text": "I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.",
+          "label": "Hypotheses"
         },
         {
-          "text": "I can name the evidence that would change my mind.",
-          "label": "Hypotheses"
+          "text": "I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.",
+          "label": "Generalizing from Evidence"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can make the best case for a side I disagree with in three or four sentences, with its tradeoff named.",
+          "text": "I can state the position I did not pick well enough that somebody who holds it would say I got it right.",
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can say what happened with comic books, television, music lyrics, or video games, and what it predicts here.",
-          "label": "Generalizing from Evidence"
+          "text": "I can answer the hardest question against my own position, rather than restating why I am right.",
+          "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can state one thing a person could actually go and find out that would move my position.",
+          "text": "I can name what would change my mind, specifically enough that somebody could go looking for it.",
           "label": "Hypotheses"
         }
       ],

@@ -365,22 +365,35 @@ const TOPIC_4 = {
     + 'is a primary source: free, in your pocket, and the document the company can actually be held '
     + 'to. You will search it rather than read it, and find out what it does and does not say.',
 
+  // The three targets are Parts One, Two and Four: what a primary source is, how to
+  // read one that does not want to be read, and how to source it. Part Three is the
+  // substantive finding, and it belongs in the criteria, because "what is actually
+  // being sold" is evidence of understanding rather than a move to practise.
+  //
+  // Criterion 1 is The Standard from Part Four stated as a performance: a quote,
+  // from a named document, with a date. The topic declares that binding on the rest
+  // of the course, so it should be something a student is measured against rather
+  // than a line in the reading.
   learningTargets: [
     { skill: 'Sourcing',
-      target: 'I can read a privacy policy as a primary source and say who wrote it, when, and who it protects.' },
+      target: 'I can explain the difference between a primary source and somebody else\'s summary of one, and say why a company\'s own privacy policy is the primary source here.' },
     { skill: 'Sourcing',
-      target: 'I can find what a long legal document says about one question without reading it front to back.' },
-    { skill: 'Generalizing from Evidence',
-      target: 'I can check a claim I already made against the document, and change it when the evidence says so.' }
+      target: 'I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.' },
+    { skill: 'Sourcing',
+      target: 'I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.' }
   ],
 
+  // Criterion 3 is the Watch For, which is the sharpest idea in the topic: a
+  // sentence can be completely true and still not mean what you hoped, and telling
+  // those apart is the whole skill. Nothing in the three questions asks for it
+  // directly, which is exactly why it belongs here.
   successCriteria: [
     { skill: 'Sourcing',
-      criteria: 'I can quote an exact sentence from a real policy and say what it does and does not claim.' },
-    { skill: 'Sourcing',
-      criteria: 'I can name the author, the date it was last updated, and who the document protects.' },
+      criteria: 'I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.' },
     { skill: 'Generalizing from Evidence',
-      criteria: 'I can point at the sentence that decides a box in my Topic 1 chain, and redraw the box if it was wrong.' }
+      criteria: 'I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.' },
+    { skill: 'Generalizing from Evidence',
+      criteria: 'I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.' }
   ],
 
   competencies: [2, 5],
@@ -556,22 +569,36 @@ const TOPIC_5 = {
     + 'box, and read the company\'s own document, so today is a real argument instead of opinions. '
     + 'You will not be graded on which side you land.',
 
+  // Three targets for the three moves the topic teaches: map the argument, find the
+  // tradeoff, use a precedent. The tradeoff is its own target rather than a clause
+  // inside another one because the topic states the rule outright, "an answer with
+  // no tradeoff in it is not finished", and a rule that governs every answer is
+  // worth naming on its own.
+  //
+  // The precedent target names the move, what is the same and what is different,
+  // rather than asking for a prediction. The topic is explicit that the four earlier
+  // fights do NOT tell you the answer, so a target reading "predict something about
+  // this one" asks for the one thing the reading says the history cannot give.
   learningTargets: [
     { skill: 'Synthesizing Patterns',
-      target: 'I can state the strongest version of a position I do not hold.' },
-    { skill: 'Generalizing from Evidence',
-      target: 'I can use an earlier fight over a new medium to predict something about this one.' },
+      target: 'I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.' },
     { skill: 'Hypotheses',
-      target: 'I can name the evidence that would change my mind.' }
+      target: 'I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.' },
+    { skill: 'Generalizing from Evidence',
+      target: 'I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.' }
   ],
 
+  // Criterion 2 is the one that does the work. Every position in the topic carries a
+  // "hardest question", and a student who states the other side well and then never
+  // turns that question on their own position has done half the assignment. None of
+  // the three questions asks for it, which is why it belongs here.
   successCriteria: [
     { skill: 'Synthesizing Patterns',
-      criteria: 'I can make the best case for a side I disagree with in three or four sentences, with its tradeoff named.' },
-    { skill: 'Generalizing from Evidence',
-      criteria: 'I can say what happened with comic books, television, music lyrics, or video games, and what it predicts here.' },
+      criteria: 'I can state the position I did not pick well enough that somebody who holds it would say I got it right.' },
+    { skill: 'Synthesizing Patterns',
+      criteria: 'I can answer the hardest question against my own position, rather than restating why I am right.' },
     { skill: 'Hypotheses',
-      criteria: 'I can state one thing a person could actually go and find out that would move my position.' }
+      criteria: 'I can name what would change my mind, specifically enough that somebody could go looking for it.' }
   ],
 
   competencies: [3, 4, 5],

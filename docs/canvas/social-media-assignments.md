@@ -117,9 +117,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can quote an exact sentence from a real policy and say what it does and does not claim.</li>
-    <li>I can name the author, the date it was last updated, and who the document protects.</li>
-    <li>I can point at the sentence that decides a box in my Topic 1 chain, and redraw the box if it was wrong.</li>
+    <li>I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.</li>
+    <li>I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.</li>
+    <li>I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">The whole Social Media unit, if you missed a topic</a></p>
@@ -167,9 +167,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can make the best case for a side I disagree with in three or four sentences, with its tradeoff named.</li>
-    <li>I can say what happened with comic books, television, music lyrics, or video games, and what it predicts here.</li>
-    <li>I can state one thing a person could actually go and find out that would move my position.</li>
+    <li>I can state the position I did not pick well enough that somebody who holds it would say I got it right.</li>
+    <li>I can answer the hardest question against my own position, rather than restating why I am right.</li>
+    <li>I can name what would change my mind, specifically enough that somebody could go looking for it.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">The whole Social Media unit, if you missed a topic</a></p>

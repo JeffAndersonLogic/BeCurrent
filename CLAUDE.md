@@ -106,10 +106,14 @@ push. That keeps the record of what it would have caught.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
 - `node scripts/build-canvas-events.js`, write the paste-ready Canvas calendar
-  events and assignment bodies for every unit into `docs/canvas/`. `--check` fails
-  on drift, which is what the offline suite runs. Canvas has no version control of
-  its own, so the repo is the source of truth for what gets pasted in. See
-  `docs/canvas/CANVAS-BUILD-GUIDE.md`.
+  events and assignment bodies for every unit into `docs/canvas/`, in two flavours:
+  a `.md` to review in the repo and a `.html` to open beside Canvas and press a
+  button in. `--check` fails on drift, which is what the offline suite runs. Canvas
+  has no version control of its own, so the repo is the source of truth for what
+  gets pasted in. See `docs/canvas/CANVAS-BUILD-GUIDE.md`.
+- `node scripts/test/canvas-events.test.js`, prove the two flavours carry the same
+  tables byte for byte and that nothing withheld leaks into either. In the offline
+  suite.
 - `node scripts/build-announcements.js`, rebuild the TODAY board from
   `assets/data/announcements-schedule.js`, pulling each day's learning targets and
   success criteria out of that topic's content module. Writes the generated
@@ -242,6 +246,42 @@ that drops the link leaves a board that still builds and still validates and can
 only be found by typing the URL.
 
 ## Canvas
+
+### Two flavours, one set of tables
+
+`build-canvas-events.js` writes `<unit>-calendar-events.md` and
+`<unit>-calendar-events.html`. Neither builds a table of its own: `eventTable()`
+builds each one once and both flavours render the same string, because two builders
+would mean the code fence and the copy button could hand you two different events
+with nothing able to say which was right. `scripts/test/canvas-events.test.js`
+asserts they stay byte-identical.
+
+The HTML is the one to actually use: a preview of each event, the raw markup in a
+textarea, and a copy button. It is deliberately **self-contained**, no stylesheet
+link, no webfont, no third-party script, palette inlined as literals, because it
+gets opened as a bare file on a desktop or a classroom machine that has never seen
+this repo. The textarea is not decoration: `navigator.clipboard` needs a secure
+context and this file is opened over `file://` as often as not, so the button is
+the convenience and selecting the field is the path that always works.
+
+Two things the preview must never do, both of which make it lie about what gets
+pasted: restyle the row labels (`BeCurrent Link` is mixed case in the markup, and
+`text-transform:uppercase` renders it `BECURRENT LINK`), or set the table in the
+page's own serif when Canvas will use its own sans.
+
+### The generator refuses, rather than warning
+
+Two kinds of content must never reach a student through these documents, and both
+fail silently: the file builds, the table renders, and the damage happens in a
+classroom rather than in a diff. So `audit()` runs over the generated text and a
+failure **refuses the write entirely**. Writing the file and exiting non-zero would
+leave a document on disk carrying the exact string the check exists to keep out, one
+copy-paste from the calendar.
+
+- **A withheld title.** Topic 2's film is unnamed on purpose; an overview is exactly
+  where that leaks.
+- **AP framing.** These get pasted where students read them, so the rule that
+  governs student-facing pages governs them too.
 
 BeCurrent is **its own Canvas course**, separate from AP World, and every object in
 it carries the `CE` prefix. Read `docs/canvas/CANVAS-BUILD-GUIDE.md` before

@@ -212,15 +212,15 @@ Half this room wrote that the company sells your data. I told you that was mostl
 
 ### Learning targets
 
-1. **Sourcing.** I can read a privacy policy as a primary source and say who wrote it, when, and who it protects.
-2. **Sourcing.** I can find what a long legal document says about one question without reading it front to back.
-3. **Generalizing from Evidence.** I can check a claim I already made against the document, and change it when the evidence says so.
+1. **Sourcing.** I can explain the difference between a primary source and somebody else's summary of one, and say why a company's own privacy policy is the primary source here.
+2. **Sourcing.** I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.
+3. **Sourcing.** I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.
 
 ### Success criteria
 
-1. **Sourcing.** I can quote an exact sentence from a real policy and say what it does and does not claim.
-2. **Sourcing.** I can name the author, the date it was last updated, and who the document protects.
-3. **Generalizing from Evidence.** I can point at the sentence that decides a box in my Topic 1 chain, and redraw the box if it was wrong.
+1. **Sourcing.** I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.
+2. **Generalizing from Evidence.** I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.
+3. **Generalizing from Evidence.** I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.
 
 ### What happens in class
 
@@ -278,15 +278,15 @@ On the first day I told you I would ask you a hard question at the end, and this
 
 ### Learning targets
 
-1. **Synthesizing Patterns.** I can state the strongest version of a position I do not hold.
-2. **Generalizing from Evidence.** I can use an earlier fight over a new medium to predict something about this one.
-3. **Hypotheses.** I can name the evidence that would change my mind.
+1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.
+2. **Hypotheses.** I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.
+3. **Generalizing from Evidence.** I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.
 
 ### Success criteria
 
-1. **Synthesizing Patterns.** I can make the best case for a side I disagree with in three or four sentences, with its tradeoff named.
-2. **Generalizing from Evidence.** I can say what happened with comic books, television, music lyrics, or video games, and what it predicts here.
-3. **Hypotheses.** I can state one thing a person could actually go and find out that would move my position.
+1. **Synthesizing Patterns.** I can state the position I did not pick well enough that somebody who holds it would say I got it right.
+2. **Synthesizing Patterns.** I can answer the hardest question against my own position, rather than restating why I am right.
+3. **Hypotheses.** I can name what would change my mind, specifically enough that somebody could go looking for it.
 
 ### What happens in class
 
