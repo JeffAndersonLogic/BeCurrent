@@ -94,6 +94,20 @@
    anything under that is --ui. This is the one thing Poppins allowed that Cinzel
    does not.
 
+   ONE REVIEWED EXCEPTION, and it is a teacher's call rather than a typographic
+   one: the eyebrow labels on the Brief's shaded boxes are Cinzel, at 13.8px. They
+   name the boxes a student is meant to stop at (Before You Read, The Standard,
+   The Road Not Taken, BeReady) and setting them in the course's display face is
+   what makes those boxes read as landmarks rather than as more layout.
+
+   Two things pay for going under the floor. They are set at .86rem rather than
+   the .66rem the --ui eyebrows use, which is the largest a label can be without
+   out-shouting the .section-heading above it, and the uppercase transform is
+   dropped so Cinzel's small capitals do the work instead of five caps in a row of
+   hairline strokes. Verify on the classroom projector before a term starts. If
+   they break up there, the fix is to put these back to --ui and leave the rest
+   alone, not to shrink the headings to match.
+
    ========================================================= */
 
 /* ── Faces ─────────────────────────────────────────────────────────────────── */

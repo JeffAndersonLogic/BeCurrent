@@ -146,9 +146,10 @@ module.exports = {
         + 'list what each chose to lead with. The list is more informative than the verdict.'
       ],
       callouts: [
-        { label: 'AP Skill Parallel',
-          body: 'This is the same muscle as point of view in a history document. You are asking what the author\'s '
-            + 'position lets them see clearly, and what it lets them leave out.' }
+        { label: 'Skill Focus',
+          body: 'This is the same muscle as point of view in any document, a memo, a court filing, a press '
+            + 'release. You are asking what the writer\'s position lets them see clearly, and what it lets them '
+            + 'leave out.' }
       ]
     },
     {

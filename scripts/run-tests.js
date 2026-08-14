@@ -40,7 +40,8 @@ const SUITES = {
     ['scripts/test/canvas-zip.test.js', 'zip reader + CLI/browser CSV parity']
   ],
   browser: [
-    ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip']
+    ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip'],
+    ['scripts/test/brief-gather.test.js', 'the brief\'s own route to Canvas: formatting, footer, parser round trip']
   ]
 };
 

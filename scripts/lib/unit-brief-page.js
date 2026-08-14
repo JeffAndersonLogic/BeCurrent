@@ -22,7 +22,7 @@
  * reach Canvas by exactly one code path in this repo.
  */
 
-const { captureBlock } = require('./brief-capture-block');
+const { captureBlock, CONFIDENCE_WORDS } = require('./brief-capture-block');
 
 function esc(s) {
   return String(s == null ? '' : s)
@@ -97,15 +97,52 @@ function builderSection(aiUrl) {
 `;
 }
 
+/**
+ * The confidence scale. Each button carries its own word.
+ *
+ * It used to read "Confidence", five bare numerals, then "1 lost, 5 could teach
+ * it" off to the right, which asks the student to hold a legend in their head
+ * while they choose. The word is now on the thing being pressed. The row keeps a
+ * hidden name because dropping the visible label would otherwise leave five
+ * buttons announced with no idea what they are a scale of.
+ *
+ * `data-conf` and `aria-pressed` are untouched: they are what
+ * scripts/lib/brief-capture-block.js reads, and the words come from the same
+ * table it writes into the Canvas paste.
+ */
 function confidenceRow(id) {
   const buttons = [1, 2, 3, 4, 5].map(n =>
-    `        <button type="button" data-conf="${n}" aria-pressed="false" aria-label="Confidence ${n} of 5">${n}</button>`
+    `        <button type="button" data-conf="${n}" aria-pressed="false"
+          aria-label="Confidence ${n} of 5, ${esc(CONFIDENCE_WORDS[n])}"><span class="conf-num">${n}</span><span class="conf-word">${esc(CONFIDENCE_WORDS[n])}</span></button>`
   ).join('\n');
-  return `      <div class="q-confidence" id="confidence-${id}">
-        <span class="confidence-label">Confidence</span>
+  return `      <div class="q-confidence" id="confidence-${id}" role="group" aria-label="How well do you understand your own answer to question ${id.replace(/\D/g, '')}?">
 ${buttons}
-        <span class="confidence-label tier-anchor">1 lost, 5 could teach it</span>
       </div>`;
+}
+
+/**
+ * Gather All My Work, on the Brief.
+ *
+ * For a unit block this is the only route to Canvas: the block card on the unit
+ * page opens the Brief directly, and there is no week page with a Gather panel
+ * behind it. The buttons carry the same labels the week page uses, so the two
+ * surfaces are one habit rather than two.
+ */
+function gatherSection() {
+  return `<section class="gather-section">
+  <h2>Gather All My Work</h2>
+  <p>Your answers save in this browser on this device only. Gather them here, copy them, and paste them into the Canvas assignment, which is where your graded work goes.</p>
+  <div class="gather-actions">
+    <button class="btn" type="button" onclick="gatherBriefWork()">Gather All My Work</button>
+    <button class="btn secondary" type="button" onclick="copyBriefWork()">Copy to Clipboard</button>
+  </div>
+  <p class="gather-status" id="brief-gather-status" role="status"></p>
+  <div class="gather-output" id="brief-gather-output" tabindex="0">
+    <p class="gather-placeholder">Press <strong>Gather All My Work</strong>, then <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
+  </div>
+</section>
+
+`;
 }
 
 function renderUnitBrief(unit, block) {
@@ -213,18 +250,18 @@ ${videoStrip(block.videos)}${sections}
 ${roadNotTaken}
 
   <div class="be-ready">
-    <span class="be-ready-label">BeReady: 10-Second Takeaway</span>
+    <span class="be-ready-label">BeReady: 10-second takeaway</span>
     <p>${raw(block.takeaway)}</p>
   </div>
 </div>
 
 <section class="check-section">
   <h2>Check Your Understanding</h2>
-  <p>Answer in full sentences. Every question has two cards under it, and both are real answers &mdash; pick the one you want. Rate your confidence honestly, a 2 tells your teacher more than a dishonest 5.</p>
+  <p>Answer in full sentences. Every question has two cards under it, and both are real answers &mdash; pick the one you want. Rate your confidence honestly, a Shaky tells your teacher more than a dishonest Could teach it.</p>
 ${questionItems}
 </section>
 
-${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
+${gatherSection()}${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
 
 <nav class="module-footer">
   <a href="../index.html" target="_top">&larr; BeCurrent home</a>

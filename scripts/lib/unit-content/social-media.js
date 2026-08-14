@@ -177,10 +177,10 @@ const BLOCK_3 = {
         + 'It is a decision a company made, and other decisions were available.'
       ],
       callouts: [
-        { label: 'AP Skill Parallel',
+        { label: 'Skill Focus',
           body: 'This is causation. Two things happened at once: ranking solved a problem for users, and '
             + 'ranking made more money. When two causes point the same direction, it is hard to tell which '
-            + 'one was doing the work. Historians run into this constantly.' }
+            + 'one was doing the work. Anyone who investigates anything runs into this constantly.' }
       ]
     },
     {
@@ -557,7 +557,7 @@ const BLOCK_5 = {
         + 'it were sincere either way.'
       ],
       callouts: [
-        { label: 'AP Skill Parallel',
+        { label: 'Skill Focus',
           body: 'Using a precedent well means naming what is the same <em>and</em> what is different. Social '
             + 'media is not a comic book: it is personalized, it is always with you, and it responds to you. '
             + 'Any argument from precedent has to survive those three differences.' }

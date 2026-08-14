@@ -15,9 +15,10 @@
 governs every other rule in this file.
 
 Enforced, because each one fails *silently* and costs a student their work:
-the capture block and its storage key, the record footer the parser reads, nothing
-leaving the device, links resolving, images being real, generated files reproducing,
-and no other course's join code.
+the capture block and its storage key, the record footer the parser reads, the Gather
+panel that carries it, one writer of the record grammar, nothing leaving the device,
+links resolving, images being real, generated files reproducing, no other course's
+join code, and no AP framing in a course that is not an AP course.
 
 Not enforced, because they are teaching decisions: how many modules a lesson shows,
 in what order, how many questions a brief carries, whether a page has a roadmap.
@@ -32,8 +33,11 @@ The contracts below are enforced by machine, not by memory.
   about a second. This is what the pre-push hook and CI both run, and it is the
   only command you need to remember.
 - `npm run test:browser`, the Chromium contracts. Needs `npm i playwright-core`.
-  32 assertions on one week: modal focus, the scroll lock, the deck, the brief's
-  capture key, and the record footer read back by the real parser.
+  Two files. `week-page.test.js` is 39 assertions on one week: modal focus, the
+  scroll lock, the deck, the brief's capture key, and the record footer read back by
+  the real parser. `brief-gather.test.js` is 28 on a unit block brief: the confidence
+  words, the paste's bold/italic shape, and the footer through the real parser in
+  both clipboard flavours.
 - `npm run test:all`, both suites.
 - `npm run hooks:install`, point git at `.githooks/` so `npm test` runs before
   every push. `npm install` does this automatically. Override once with
@@ -88,6 +92,17 @@ push. That keeps the record of what it would have caught.
 - `node scripts/test/week-page.test.js`, drive a real week page in Chromium and
   assert the modal, deck, capture and footer contracts. Run it when touching any
   modal open/close path, the deck, or the Gather panel.
+- `node scripts/test/brief-gather.test.js`, drive a real **unit block** brief in
+  Chromium and assert its own route to Canvas: the confidence words are on the
+  buttons, the paste comes out with the question bold and the response italic, and
+  the footer round-trips through the real parser in both clipboard flavours. It runs
+  against a unit block rather than week 01 because that is the case with no other
+  route. Run it when touching the gather panel, the confidence scale, or the record
+  grammar.
+- `node scripts/build-canvas-record.js`, inline `scripts/lib/canvas-record-block.js`
+  into the week renderer between its sentinels. `--check` fails on drift, which is
+  what `validate.js` runs. Never hand-edit between the sentinels. See "Two gather
+  surfaces, one grammar" in `docs/CANVAS-CAPTURE.md`.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
 - `node scripts/build-desk.js`, rebuild `daily/index.html`, the Desk, from
@@ -208,6 +223,41 @@ run `npm run build:weeks`, then `npm test`. Nothing else.
 behaviour, then rebuild every existing week and confirm not one byte moved. That is
 the step that catches escaping bugs.
 
+### This is not an AP course
+
+**BeCurrent is an elective and it runs 9th through 12th grade in one room**, with a
+wide spread of reading and writing levels in it. AP framing does two wrong things at
+once: it is untrue of this course, and it tells a struggling 9th grader that the work
+is pitched at somebody else.
+
+The **skill names stay**: Sourcing, Framing, Causation, Corroboration, Generalizing
+from Evidence. Those are what the course teaches and they belong to nobody. What went
+is the framing that pointed at another course: the callout label is `Skill Focus`, not
+`AP Skill Parallel`, and no callout explains a move by saying what historians do with
+it.
+
+`validate.js` fails on a standalone `AP` or `Advanced Placement` in any student-facing
+page, week module, unit module or the Desk. It is checked rather than trusted because
+the port from BeHistorical already carried it in once, as three `AP Skill Parallel`
+callouts, and that route is open again every time a lesson is adapted across.
+
+### The confidence scale is one scale
+
+**The word is on the button.** Five buttons reading `1 Lost`, `2 Shaky`,
+`3 Getting it`, `4 Solid`, `5 Could teach it`. It used to be the label "Confidence",
+five bare numerals, and the anchor "1 lost, 5 could teach it" off to the right, which
+asks a student to hold a legend in their head and look back and forth to use it.
+
+The words live in `CONFIDENCE_WORDS` in `scripts/lib/brief-capture-block.js` and are
+rendered by three surfaces: both brief renderers and the module pop-outs in the week
+renderer. They are also what the Canvas paste prints, because a button that says
+"Getting it" and a submission that says "3" is a scale the teacher cannot read back.
+
+`data-conf` and `aria-pressed` are the contract and did not move: the capture block
+reads them. The row carries a hidden name via `role="group"`, because dropping the
+visible label would otherwise leave five buttons announced with no idea what they are
+a scale of. Under 560px the words drop out and the row falls back to five circles.
+
 ### Do not fabricate reporting
 
 Week 01's outlets and statements are **constructed teaching examples** and say so
@@ -254,11 +304,20 @@ Week pages show a three-card flow inside `.week-roadmap`: **Get the Story**,
 
 ## Brief Standard
 
-A brief is a reading with questions under it. Four things are required, because
+A brief is a reading with questions under it. Five things are required, because
 without them a student cannot read it or cannot submit it: an `h1.brief-title`, a
-`.brief-body`, a `.check-section`, and the `.page-footer-note` that says where work
-goes. Everything else, the support strip, vocabulary chips, callouts, the BeReady
-takeaway, how many questions, is a writing decision.
+`.brief-body`, a `.check-section`, the `.page-footer-note` that says where work goes,
+and the `.gather-section` that is the route to Canvas. Everything else, the support
+strip, vocabulary chips, callouts, the BeReady takeaway, how many questions, is a
+writing decision.
+
+**The eyebrow labels on the shaded boxes are Cinzel**, and they are the one reviewed
+exception to the `--display` size floor. They are set at .86rem with the uppercase
+transform dropped, so Cinzel's small capitals do the work: `BeReady: 10-second
+takeaway` renders as B and R in full caps with the rest in small caps, and
+`The Standard` as a cap-and-small-cap phrase. The rationale and the projector caveat
+are at the top of `becurrent-brand.css`. The plain `.section-label` over a numbered
+section is not a box and stays `--ui`.
 
 Use the canonical full class names. Abbreviated ones (`.cs`, `.qi`, `.mf`) are
 prohibited and `validate.js` rejects them.
@@ -305,11 +364,30 @@ Never hand-edit the block inside a generated brief. Change the lib and rebuild.
 
 ## The Canvas Record Footer
 
-Read `docs/CANVAS-CAPTURE.md` before touching the Gather panel or the footer. The
-renderer emits it and one parser reads it, so a change to either breaks the other.
-A wrong `expected` count reports complete submissions as incomplete, which is worse
-than no count at all, so the denominator comes from `expectedCaptureCount()` and
-never from a literal.
+Read `docs/CANVAS-CAPTURE.md` before touching a Gather panel or the footer. A wrong
+`expected` count reports complete submissions as incomplete, which is worse than no
+count at all, so the denominator is always computed and never a literal.
+
+**Two surfaces gather, and one grammar serves both.** The week page's panel collects
+every module slot; the Brief's own panel, at the end of its questions, collects that
+brief. The second is not a convenience: a unit block Brief is opened straight off the
+unit page with no week shell behind it, so its panel is the **only** route those
+answers have to Canvas. Every Social Media block answer used to be written to
+`localStorage` and stranded there, with every structural check green.
+
+Because `canvas-parse-core.js` is one parser, the grammar is one file,
+`scripts/lib/canvas-record-block.js`, inlined into the renderer by
+`build-canvas-record.js` and into every brief by `brief-capture-block.js`.
+`validate.js` fails on drift in either. **Do not add a second writer.** Two copies
+would mean two answers to "did this student edit their work" depending on which
+button the student pressed.
+
+Three things about the Brief's paste look cosmetic and are not. The per-question
+heading must be the footer's `lab` verbatim, because that is how the parser finds
+each response. The confidence line must sit above `My response:`, because everything
+below that marker is hashed. And a blank answer must emit nothing, because a
+placeholder there hashes as writing and gets the student accused of editing work they
+never wrote. `docs/CANVAS-CAPTURE.md` has the full shape.
 
 **The parser is shared with BeHistorical on purpose.** `scripts/lib/canvas-parse-core.js`
 uses the same `#BHV|` and `#BHR|` machine grammar, so one tool answers "did this
@@ -563,8 +641,9 @@ old offset and fails a page that scrolls fine.
 
 Honest list, so nobody assumes coverage that does not exist:
 
-1. **The browser suite covers one week and one path.** It does not cover the unit
-   briefs, a lesson with only two modules, or mobile layout.
+1. **The browser suite covers one week and one unit block.** `brief-gather.test.js`
+   added the unit brief path. Still uncovered: a lesson with only two modules, and
+   mobile layout, including the confidence row's fallback to circles under 560px.
 2. **No Skills Lens.** BeHistorical's `teacher/skills-lens.html` is the in-browser
    analysis surface. The CLI parser works here today; the drop-a-zip UI does not
    exist yet. `teacher/` is an empty placeholder.

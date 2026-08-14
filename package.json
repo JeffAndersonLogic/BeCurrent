@@ -17,6 +17,8 @@
     "build:units": "node scripts/build-units.js",
     "build:desk": "node scripts/build-desk.js",
     "build:index": "node scripts/build-index.js",
+    "build:record": "node scripts/build-canvas-record.js",
+    "check:record": "node scripts/build-canvas-record.js --check",
     "check:weeks": "node scripts/build-weeks.js --check",
     "check:units": "node scripts/build-units.js --check",
     "check:desk": "node scripts/build-desk.js --check",

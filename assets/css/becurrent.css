@@ -314,17 +314,27 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
   resize:vertical;
 }
-.confidence{margin:14px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.confidence .confidence-label{
-  font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft);
-}
+/* The confidence scale, module pop-out flavour. Deliberately identical to
+   .q-confidence in becurrent-brief.css: a student meets both inside one lesson, so
+   the scale has to look like one scale. The word is on the button rather than in a
+   legend to the right of the row; see the note over .q-confidence for why. */
+.confidence{margin:14px 0 0;display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
 .confidence button{
-  font-family:var(--ui); font-size:.82rem; font-weight:700;
-  width:34px; height:34px; border-radius:50%; cursor:pointer;
-  border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:2px; min-width:78px; padding:7px 10px; cursor:pointer;
+  border:1px solid var(--paper-line); border-radius:9px;
+  background:var(--clean-paper); color:var(--ink-soft);
+}
+.confidence .conf-num{font-family:var(--ui);font-size:.86rem;font-weight:700;line-height:1}
+.confidence .conf-word{
+  font-family:var(--ui); font-size:.64rem; font-weight:700; line-height:1.15;
+  text-transform:uppercase; letter-spacing:.06em; text-align:center;
 }
 .confidence button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--clean-paper)}
+@media (max-width:560px){
+  .confidence .conf-word{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .confidence button{min-width:0;width:36px;height:36px;border-radius:50%;padding:0}
+}
 
 /* ── Outlet comparison table ───────────────────────────────────────────────── */
 .outlet-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0 0 18px}

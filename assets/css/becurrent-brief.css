@@ -84,15 +84,41 @@ img{max-width:100%;display:block}
   border:1px solid var(--paper-line); border-top:0;
   padding:8px 28px 34px;
 }
+/* ── The shaded-box eyebrows ───────────────────────────────────────────────────
+   Before You Read, Reading Target, The Standard, Watch For, Skill Focus, The Road
+   Not Taken, Start Here, Push Further, BeReady. Every one of them names a box the
+   student is meant to stop at, so they are set in the course display face rather
+   than in the label face, which is what makes those boxes read as landmarks
+   instead of as more layout.
+
+   Two departures from the --ui eyebrows they replace, and both are load-bearing.
+   .86rem rather than .66rem, because Cinzel's thin strokes need the size and this
+   is as large as a label goes before it competes with the .section-heading above
+   it; see the reviewed exception to the --display floor in becurrent-brand.css.
+   And NO text-transform, because Cinzel's lowercase codepoints are small capitals:
+   left alone, "The Standard" sets as a cap-and-small-cap phrase, while uppercasing
+   it gives five hairline caps in a row. That is also why BeReady can render as
+   B-e-R-eady, with the two capitals doing the naming.
+
+   The plain .section-label on a numbered section stays --ui. Those are not boxes,
+   they are the running eyebrow over the prose, and they carry a 3.6rem Cinzel
+   numeral beside them already. */
+.support-card .support-label,
+.callout .callout-label,
+.road-not-taken .section-label,
+.tier-label,
+.be-ready .be-ready-label{
+  font-family:var(--display); font-weight:700;
+  font-size:.86rem; letter-spacing:.045em; text-transform:none;
+}
+
 .support-strip{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:22px 0}
 .support-card{
   background:var(--newsprint); border:1px solid var(--paper-line);
   border-left:4px solid var(--ink); border-radius:0 10px 10px 0; padding:14px 16px;
 }
 .support-card .support-label{
-  font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--ink);
-  display:block; margin-bottom:6px;
+  color:var(--ink); display:block; margin-bottom:6px;
 }
 .support-card p{margin:0;font-size:.94rem}
 
@@ -126,9 +152,7 @@ img{max-width:100%;display:block}
   border-radius:0 10px 10px 0; padding:14px 16px; margin:18px 0;
 }
 .callout .callout-label{
-  font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--ink);
-  display:block; margin-bottom:6px;
+  color:var(--ink); display:block; margin-bottom:6px;
 }
 .callout p{margin:0;font-size:.96rem}
 
@@ -137,9 +161,7 @@ img{max-width:100%;display:block}
   border-radius:12px; padding:20px 22px; margin:26px 0 0;
 }
 .be-ready .be-ready-label{
-  font-family:var(--ui); font-size:.68rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-pale);
-  display:block; margin-bottom:8px;
+  color:var(--signal-pale); display:block; margin-bottom:8px;
 }
 .be-ready p{margin:0;font-size:1rem}
 
@@ -198,16 +220,42 @@ img{max-width:100%;display:block}
 }
 .tier:last-child{border-top-color:var(--signal)}
 .tier-label{
-  display:block; margin-bottom:5px;
-  font-family:var(--ui); font-size:.64rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.11em; color:var(--ink);
+  display:block; margin-bottom:5px; color:var(--ink);
 }
 .tier:last-child .tier-label{color:var(--signal-deep)}
 .tier p{margin:0;font-size:.93rem;line-height:1.5}
 
-/* The confidence anchor was .66rem at .7 opacity, which measures 4.18:1 and is
-   below the 4.5:1 minimum. Full opacity at a readable size instead. */
-.confidence-label.tier-anchor{opacity:1;font-size:.68rem;color:var(--ink-soft)}
+/* ── The confidence scale ──────────────────────────────────────────────────────
+   The word is on the button. This used to be the label "Confidence", five bare
+   numerals, and the anchor "1 lost, 5 could teach it" off to the right, which asks
+   a student to hold a legend in their head and look back and forth to use it. The
+   two labels are gone and the row carries a hidden name instead, so the buttons are
+   still announced as a scale.
+
+   The buttons are pills rather than 32px circles because they now have to hold a
+   phrase. The numeral stays, in --ui, so a teacher can still say "put a 3" out
+   loud, and the aria-label carries both. Below 560px the words drop out with
+   .conf-word and the row falls back to five circles, because five pills wrapping
+   over three lines is worse than the legend it replaced. */
+.q-confidence{margin:14px 0 0;display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.q-confidence button{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:2px; min-width:78px; padding:7px 10px; cursor:pointer;
+  border:1px solid var(--paper-line); border-radius:9px;
+  background:var(--clean-paper); color:var(--ink-soft);
+}
+.q-confidence .conf-num{font-family:var(--ui);font-size:.86rem;font-weight:700;line-height:1}
+.q-confidence .conf-word{
+  font-family:var(--ui); font-size:.64rem; font-weight:700; line-height:1.15;
+  text-transform:uppercase; letter-spacing:.06em; text-align:center;
+}
+.q-confidence button[aria-pressed="true"]{
+  background:var(--ink); border-color:var(--ink); color:var(--clean-paper);
+}
+@media (max-width:560px){
+  .q-confidence .conf-word{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .q-confidence button{min-width:0;width:36px;height:36px;border-radius:50%;padding:0}
+}
 
 /* ── Check section ─────────────────────────────────────────────────────────── */
 .check-section{
@@ -233,17 +281,43 @@ img{max-width:100%;display:block}
   background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
   resize:vertical;
 }
-.q-confidence{margin:12px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.q-confidence .confidence-label{
-  font-family:var(--ui); font-size:.64rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft);
+
+/* ── Gather All My Work ────────────────────────────────────────────────────────
+   The route to Canvas, and for a unit block Brief it is the ONLY route: those are
+   opened straight off the unit page with no week shell and no Gather panel behind
+   them. The top rule is --signal for that reason, the same weight the AI coach
+   builder gets, because this is the step that decides whether the work counts.
+
+   The output is a div and not a textarea, deliberately. A textarea can only ever
+   show plain text, and the whole point of this paste is that the question comes
+   through bold and the student's own writing italic. Showing it rendered also means
+   a manual Ctrl-C copies the formatted version when the clipboard API is blocked,
+   which it is on some managed devices. */
+.gather-section{
+  width:min(820px,92vw); margin:26px auto 0;
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--signal); border-radius:14px; padding:26px 28px;
 }
-.q-confidence button{
-  font-family:var(--ui); font-size:.8rem; font-weight:700;
-  width:32px; height:32px; border-radius:50%; cursor:pointer;
-  border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
+.gather-section h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:.025em;line-height:1.24;color:var(--black-900)}
+.gather-section > p{margin:0 0 16px;color:var(--ink-soft);font-size:.95rem}
+.gather-actions{display:flex;gap:10px;flex-wrap:wrap}
+.gather-status{
+  font-family:var(--ui); font-size:.86rem; font-weight:700;
+  color:var(--signal-deep); margin:14px 0 0; min-height:1.2em;
 }
-.q-confidence button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--clean-paper)}
+.gather-output{
+  margin-top:12px; max-height:24rem; overflow-y:auto;
+  background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
+  padding:16px 18px; font-size:.92rem; line-height:1.55; color:var(--ink);
+}
+.gather-output h2{font-size:1.05rem;margin:0 0 8px}
+.gather-output h3{
+  margin:16px 0 6px; font-family:var(--display); font-weight:700;
+  font-size:.94rem; letter-spacing:.04em; color:var(--black-900);
+}
+.gather-output p{margin:0 0 8px}
+.gather-output hr{border:0;border-top:1px solid var(--paper-line);margin:14px 0}
+.gather-placeholder{color:var(--ink-soft)}
 
 /* ── Builder ───────────────────────────────────────────────────────────────── */
 .builder-section{

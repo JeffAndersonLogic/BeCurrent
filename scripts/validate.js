@@ -20,6 +20,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -185,7 +186,7 @@ if (rendSrc && parserSrc) {
 
   // The sentinel is the one token that differs between the two courses, so the
   // parser has to accept both and the renderer has to emit this course's.
-  assert(/BC_RECORD_OPEN = '--- BECURRENT RECORD/.test(rendSrc), RENDERER,
+  assert(/BC_RECORD_OPEN = ["']--- BECURRENT RECORD/.test(rendSrc), RENDERER,
     'renderer must open the footer with the BECURRENT sentinel');
   assert(/RE_SENTINEL = \/---\\s\*\(\?:BECURRENT\|BEHISTORICAL\) RECORD\//.test(parserSrc), PARSER,
     'parser must accept both course sentinels, or one course stops parsing');
@@ -193,16 +194,92 @@ if (rendSrc && parserSrc) {
   // The denominator. A hard-coded 8 would report a week with no brief yet as
   // three responses short, which is worse than no count at all.
   assert(rendSrc.includes('function expectedCaptureCount'), RENDERER, 'missing expectedCaptureCount()');
-  assert(/\|expected='\s*\+\s*expectedCaptureCount\(\)/.test(rendSrc), RENDERER,
-    'the footer must declare expected= from expectedCaptureCount(), never a literal');
+  assert(/expected:\s*expectedCaptureCount\(\)/.test(rendSrc), RENDERER,
+    'the footer must declare expected from expectedCaptureCount(), never a literal');
 
   // Paragraph structure is the one corruption the hash cannot catch, because the
   // hash normalizes whitespace on purpose. So the response must go out as
   // sibling <p> elements and never as <br>.
-  assert(rendSrc.includes('function paragraphsHtml'), RENDERER, 'missing paragraphsHtml()');
+  assert(rendSrc.includes('function bcParagraphsHtml'), RENDERER, 'missing bcParagraphsHtml()');
   assert(/split\(\/\\n\{2,\}\//.test(rendSrc), RENDERER,
-    'paragraphsHtml must split on blank lines so a blank line survives Canvas');
+    'bcParagraphsHtml must split on blank lines so a blank line survives Canvas');
   done('shared machine grammar, per-course sentinel, computed denominator, paragraph split');
+}
+
+// ── One writer of the record grammar ─────────────────────────────────────────
+//
+// Two surfaces build a paste now: the week page's Gather panel and the Brief's own,
+// which for a unit block is the ONLY route its answers have to Canvas. Both have to
+// write the footer one parser reads, so the grammar lives in
+// scripts/lib/canvas-record-block.js and is inlined into both.
+//
+// Two copies would mean two answers to "did this student edit their work" depending
+// on which button the student pressed, with nothing able to say which had drifted.
+// That is the failure that lost BeHistorical's capture block twice, so it is
+// asserted here rather than trusted to a comment.
+section('One record-grammar writer');
+{
+  const { recordBlockSource } = require('./lib/canvas-record-block');
+  const shared = recordBlockSource('');
+
+  const drift = spawnSync(process.execPath,
+    [path.join(ROOT, 'scripts', 'build-canvas-record.js'), '--check'],
+    { cwd: ROOT, encoding: 'utf8' });
+  assert(drift.status === 0, RENDERER,
+    'the inlined record block has drifted from scripts/lib/canvas-record-block.js. '
+    + 'Run: node scripts/build-canvas-record.js');
+
+  // And the briefs carry the same source. Asserting only the renderer would leave
+  // the half-contract, which is the dangerous half.
+  const { captureBlock: cb } = require('./lib/brief-capture-block');
+  assert(cb('w00', 1, '').includes(recordBlockSource('  ')),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    'the emitted capture block does not carry the shared record grammar');
+
+  // The Brief's denominator is its own question count, and it must be computed the
+  // same way the week page computes its own: never a literal.
+  assert(/expected:\s*IDS\.length/.test(cb('w00', 3, '')),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    "the brief footer must declare expected from IDS.length, never a literal");
+
+  // The shared block is the thing both surfaces now depend on for the tokens the
+  // parser matches, so it has to carry them itself rather than assume a caller does.
+  const SHARED_TOKENS = ["'#BHV|v='", "'#BHR|i='", 'BECURRENT RECORD', 'function bcHash'];
+  SHARED_TOKENS.forEach(token => {
+    assert(shared.includes(token), path.join(ROOT, 'scripts/lib/canvas-record-block.js'),
+      `the shared record block is missing ${token}`);
+  });
+  done('one grammar, inlined into the renderer and into every brief');
+}
+
+// ── Gather All My Work, on the brief ─────────────────────────────────────────
+//
+// A unit block Brief is opened straight off the unit page with no week shell around
+// it, so its own Gather panel is the only route those answers have to Canvas. A
+// brief that renders the buttons but carries no handler behind them is the dead
+// button failure, and one that carries the handler but no buttons is unreachable
+// work. Both directions are asserted, per brief, below in the capture-block pass.
+section('Brief gather panel');
+{
+  const { captureBlock: cb } = require('./lib/brief-capture-block');
+  const emitted = cb('w00', 3, '');
+  ['gatherBriefWork', 'copyBriefWork'].forEach(fn => {
+    assert(emitted.includes('window.' + fn + ' ='),
+      path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+      `the capture block must define ${fn}()`);
+  });
+
+  // Both clipboard flavours. text/html is the only thing that carries the bold
+  // question and the italic response into Canvas; text/plain is what the record
+  // footer has to survive in, and what a locked-down device falls back to.
+  assert(emitted.includes("'text/html'") && emitted.includes("'text/plain'"),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    'the copy must write both text/html and text/plain, or Canvas loses the formatting');
+  assert(emitted.includes("bcParagraphsHtml(r.text, 'em')"),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    "the student's response must be emitted in italics, so the teacher can tell it "
+    + 'from the prompt above it');
+  done('gather and copy defined, both clipboard flavours, response in italics');
 }
 
 // ── The brief capture block ───────────────────────────────────────────────────
@@ -264,6 +341,31 @@ briefFiles.forEach(file => {
     assert(src.includes(`id="question-q${i}"`), file, `missing prompt id="question-q${i}"`);
     assert(src.includes(`id="confidence-q${i}"`), file, `missing confidence row id="confidence-q${i}"`);
   }
+
+  // The Gather panel, both halves. The buttons with no handler is a dead button; the
+  // handler with no ids to write into is work the student can never retrieve. A unit
+  // block Brief has no other route to Canvas at all, so a missing panel there is
+  // lost work rather than an inconvenience.
+  assert(src.includes('onclick="gatherBriefWork()"'), file,
+    'no Gather All My Work button. For a unit block brief this is the only route to Canvas.');
+  assert(src.includes('onclick="copyBriefWork()"'), file, 'no Copy to Clipboard button');
+  assert(src.includes('id="brief-gather-output"'), file,
+    'the gather buttons have nowhere to write: missing #brief-gather-output');
+  assert(src.includes('id="brief-gather-status"'), file,
+    'missing #brief-gather-status, so a short gather cannot tell the student');
+
+  // The output has to be a div, not a textarea. A textarea can only ever hold plain
+  // text, which loses the bold question and the italic response the whole paste is
+  // shaped around, and it also loses the rendered selection that a manual Ctrl-C
+  // depends on where the clipboard API is blocked.
+  assert(!/<textarea[^>]*id="brief-gather-output"/.test(src), file,
+    '#brief-gather-output must be a div, not a textarea, or the formatting is lost');
+
+  // Every confidence button carries its word. The number alone is the legend-in-your-
+  // head version this replaced, and the word is also what the Canvas paste prints.
+  const pills = (src.match(/class="conf-word"/g) || []).length;
+  assert(pills === count * 5, file,
+    `expected ${count * 5} labelled confidence buttons, found ${pills}`);
 });
 done(`${briefFiles.length} brief${briefFiles.length === 1 ? '' : 's'} carrying an identical capture block`);
 
@@ -459,6 +561,39 @@ codeCarriers.forEach(file => {
     + 'AP World code must never be carried into this repo.');
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
+
+// ── This is not an AP course ─────────────────────────────────────────────────
+//
+// BeCurrent is an elective that runs 9th through 12th grade in one room, with a wide
+// spread of reading and writing levels in it. AP framing does two wrong things at
+// once: it is factually untrue of this course, and it tells a struggling 9th grader
+// that the work is pitched at somebody else.
+//
+// It is checked rather than trusted because the port from BeHistorical carried it in
+// once already, as 'AP Skill Parallel' callouts on three briefs, and the same route
+// is open every time a lesson is adapted across from that repo. The skill NAMES stay
+// — Sourcing, Framing, Causation, Corroboration are what this course teaches, and
+// they belong to nobody.
+//
+// The word boundary matters: 'AP' as a standalone word, not 'APPLE' or 'gap'.
+section('Not an AP course');
+const AP_CARRIERS = studentPages.concat(
+  glob(path.join(ROOT, 'scripts', 'lib', 'week-content'), /\.js$/),
+  fs.existsSync(path.join(ROOT, 'scripts', 'lib', 'unit-content'))
+    ? glob(path.join(ROOT, 'scripts', 'lib', 'unit-content'), /\.js$/) : [],
+  [path.join(ROOT, 'scripts', 'lib', 'desk-content.js')]
+);
+
+AP_CARRIERS.forEach(file => {
+  const src = read(file);
+  if (!src) return;
+  const hit = src.match(/\bAP\b(?!\s*World MagicSchool)|Advanced Placement/);
+  assert(!hit, file,
+    `"${hit ? hit[0] : ''}" appears here. BeCurrent is not an AP course: it is a 9-12 `
+    + 'elective with a mixed skill range in one room. Name the skill instead, the way '
+    + "'Skill Focus' does.");
+});
+done(`${AP_CARRIERS.length} files carry no AP framing`);
 
 // ── Unit pages ────────────────────────────────────────────────────────────────
 //
