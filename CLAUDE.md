@@ -101,7 +101,7 @@ push. That keeps the record of what it would have caught.
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
 - `python3 scripts/brand/build-wordmark.py`, redraw the plate, both wordmarks and
-  the favicon from the vendored Cinzel. Needs
+  the favicon from the vendored fonts. Needs
   `pip install fonttools brotli`, and is off the test path on purpose. See "The
   Mark, the Palette, and the Faces" below.
 
@@ -354,13 +354,15 @@ is two answers to "what red is this course" waiting to disagree.
 
 ### The mark
 
-BECURRENT set in **Cinzel**, tracked wide, two-tone: BE in a neutral, CURRENT in
-red. Four files, all outlined paths rather than `<text>`:
+**Be**, an oversized red **C**, then **URRENT**, set as one line with the word
+crossing in front of the C. The C is the C of "Current" and it is also the logo:
+drawn at 2.4x the word's cap height, sitting behind it, with URRENT emerging from
+its aperture. Four files, all outlined paths rather than `<text>`:
 
 ```
 assets/images/brand/becurrent-logo.svg           the plate, 10:3, with the tagline
-assets/images/brand/becurrent-wordmark.svg       BE paper + CURRENT red, dark grounds
-assets/images/brand/becurrent-wordmark-ink.svg   BE ink + CURRENT red, light grounds
+assets/images/brand/becurrent-wordmark.svg       word in paper, dark grounds
+assets/images/brand/becurrent-wordmark-ink.svg   word in ink, light grounds
 assets/favicon.svg                               the red C, for a browser tab
 ```
 
@@ -369,23 +371,40 @@ and a `<text>` element that falls back to whatever the machine has stops being
 the brand mark. The masthead, the hero and the footer all render one of these
 files rather than type styled to resemble it, so the lockups cannot drift.
 
-**The mark is in the same face as BeHistorical's titles, and that is the point.**
-See "One family, two courses" below. Cinzel is an inscriptional Roman with no
-real lowercase, so the mark is caps and the tracking is opened up rather than
-closed: a Trajan-descended face set tight looks like a mistake.
+**The word is Libre Baskerville 700; only the C is Cinzel 900.** Cinzel is the
+display face and would have been the obvious choice for all of it, except that
+**Cinzel has no true lowercase**: its lowercase codepoints are small capitals, so
+"Be" comes out as "BE" with a small E. The mark needs a round lowercase e, so the
+word is set in the family's text face. Both faces are BeHistorical's, so the mark
+is still inside the shared family, which is the part that matters.
+
+The C is a deliberate exception, and it stops there. It is not a letter in the
+running word, it is a graphic element at two and a half times the size of one, so
+taking it from another member of the family costs nothing and buys weight: Libre
+Baskerville tops out at 700 and its C is visibly thinner than the artwork's, while
+Cinzel at 900 matches. **Do not extend the mixing to the word.** Two different B
+weights side by side was tried and it shows.
+
+**This lockup has a legibility floor and it is 40px, not 21px.** The shape is
+4.1:1 where the previous wordmark was 9.7:1, and at a fixed height a squarer
+lockup gives the word less than half the width. At 21px, the old masthead size,
+the C swallows URRENT and the mark is a red blob. The masthead is now 38px and the
+footer 30px for exactly this reason. If a future lockup gets squarer still,
+re-measure rather than assuming these heights carry over.
 
 **Two properties that are about how the mark gets used, not how it was drawn:**
 
-- **No drop shadow.** The masthead renders the mark 21px tall, where a shadow is
-  not a shadow but a grey smear along one edge, and it is the first thing to turn
-  to mud on a projector.
-- **BE is not white on a light ground.** Every reading surface here is newsprint,
-  so a white BE would vanish on the hero. Two colourways instead, red constant in
-  both. What carries over is the two-tone split, not one specific white.
+- **No drop shadow.** At masthead size a shadow is not a shadow but a grey smear
+  along one edge, and it is the first thing to turn to mud on a projector.
+- **The word is not white on a light ground.** Every reading surface here is
+  newsprint, so a white word would vanish on the hero. Two colourways instead, red
+  constant in both. What carries over is the two-tone split, not one specific white.
 
 **The tagline is in the plate only.** At masthead size it is four illegible
 pixels, and the front door already prints the course name in the dateline right
-under the mark.
+under the mark. In the plate it clears the **C's descender**, not the word's
+baseline: the C overhangs the line by more than half a cap height at each end, and
+measuring from the baseline puts the tagline straight through it.
 
 `scripts/brand/build-wordmark.py` regenerates all four. It needs
 `pip install fonttools brotli` and is **deliberately off the test path**, because
@@ -394,10 +413,11 @@ outputs are committed; nothing in the build or the gate calls it.
 
 **Replacing the mark is not a file swap.** Four files come from one drawing, plus
 `--signal` sampled from it, plus the `width`/`height` on every `<img>` that
-renders it. The last one is enforced: `validate.js` reads the wordmark's own
-dimensions and fails if any lockup disagrees. This has bitten on every redraw so
-far, 4889x810 then 4101x716 then 7101x733, and each time ten hardcoded pairs
-across four generators had to move with it.
+renders it, plus the masthead and footer heights if the ratio moves much. The
+dimensions are enforced: `validate.js` reads the wordmark's own size and fails if
+any lockup disagrees. This has bitten on every redraw, 4889x810 then 4101x716 then
+7101x733 then 7563x1848, and each time ten hardcoded pairs across four generators
+had to move with it.
 
 ### One family, two courses
 
@@ -451,7 +471,8 @@ same three from Google; that is the one thing about them not carried over.
 | `--body` | Libre Baskerville | everything students read at length |
 | `--ui` | Montserrat | labels, eyebrows, buttons, counters, chips |
 
-**Cinzel is caps-only, so `--display` is for names, not sentences.** A short title
+**Cinzel is effectively caps-only** (its lowercase codepoints are small capitals),
+**so `--display` is for names, not sentences.** A short title
 in caps is a title; a whole question in caps is shouting, and it is measurably
 slower to read. Anything with a verb in it, the terminal question, a beat
 question, a house rule, a dispatch field, an outlet headline, is set in `--body`

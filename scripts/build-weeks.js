@@ -74,7 +74,7 @@ function renderShell(week) {
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="../index.html" aria-label="Return to the BeCurrent home page">
-        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7101" height="733">
+        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7563" height="1848">
       </a>
       <div class="nav-links">
         <a href="../index.html">Home</a>
@@ -87,7 +87,7 @@ function renderShell(week) {
   </header>
 
   <section class="hero" id="top">
-    <h1 class="hero-wordmark"><img src="../assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="7101" height="733"></h1>
+    <h1 class="hero-wordmark"><img src="../assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="7563" height="1848"></h1>
     <p class="dateline" id="week-dateline"></p>
     <p class="hero-copy">
       <strong id="week-title"></strong>
@@ -158,7 +158,7 @@ function renderShell(week) {
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7101" height="733"></div>
+      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="7563" height="1848"></div>
       <p id="footer-week-label"></p>
       <p>Read it. Check it. Then decide.</p>
     </div>

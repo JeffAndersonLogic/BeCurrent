@@ -71,7 +71,7 @@ main{flex:1}
 }
 .nav{
   width:min(1160px,92vw); margin:auto;
-  min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:22px;
+  min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:22px;
 }
 /* The masthead brand is the wordmark file itself, not type set to look like it.
    Two reasons it is an <img> and not styled text: the mark's tracking and its
@@ -79,7 +79,11 @@ main{flex:1}
    <img> of a committed file cannot drift away from the logo the way a
    hand-tuned span can. */
 .brand-mini{display:flex;align-items:center;text-decoration:none;min-height:24px}
-.brand-mini img{height:21px;width:auto}
+/* 38px, not the 21px the old mark used. The interlocking-C lockup is 4.1:1 where
+   the previous wordmark was 9.7:1, so at a fixed height it gives the word less
+   than half the width. At 21px the C swallows "URRENT" and the mark is a red
+   blob. 40px is the measured floor; 38 clears it inside a 64px nav. */
+.brand-mini img{height:38px;width:auto}
 .nav-links{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
 .nav-links a{
   font-family:var(--ui);
@@ -106,7 +110,7 @@ main{flex:1}
    paper. Capped in px as well as in vw so it stops growing before it starts
    competing with the week's actual headline underneath it. */
 .hero-wordmark{margin:0 0 2px}
-.hero-wordmark img{width:min(360px,62vw);height:auto}
+.hero-wordmark img{width:min(330px,58vw);height:auto}
 
 /* A unit page puts the unit's own name here instead, so this stays type. The
    display face, well clear of the size floor in becurrent-brand.css. Cinzel is
@@ -386,7 +390,8 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   padding:30px 0; margin-top:20px; border-top:3px solid var(--signal);
 }
 .footer-inner{width:min(1160px,92vw);margin:auto}
-.footer-brand img{height:19px;width:auto}
+/* Same floor as the masthead, scaled for a quieter band. */
+.footer-brand img{height:30px;width:auto}
 .footer p{margin:6px 0 0;font-size:.88rem}
 
 
@@ -584,7 +589,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
      about 200px of a 390px screen, which left the nav links wrapping into two
      ragged rows beside it. Below 640px the brand takes its own row and the
      links sit under it, left aligned, rather than competing for one line. */
-  .nav{flex-direction:column;align-items:flex-start;gap:10px;padding:10px 0}
+  .nav{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0}
   .nav-links{justify-content:flex-start;gap:14px}
   .hero{padding:26px 20px}
   .dark-panel{padding:22px 18px}

@@ -113,9 +113,12 @@ There is no third accent. Where a second series has to be distinguished from the
 first, the second one is black. The focus ring is ink, never the accent, because
 red is already on nearly every card border.
 
-The mark is BECURRENT set in Cinzel, tracked wide, two-tone: BE in a neutral,
-CURRENT in red. Two colourways, because BE cannot be white on a light ground
-without disappearing.
+The mark is **Be**, an oversized red **C**, then **URRENT**, with the word
+crossing in front of the C. The word is Libre Baskerville 700 and only the C is
+Cinzel 900, because Cinzel's lowercase codepoints are small capitals and the mark
+needs a round lowercase e. Two colourways, because the word cannot be white on a
+light ground without disappearing. It is unreadable below about 40px tall, which
+is why the masthead and footer are sized the way they are.
 
 `python3 scripts/brand/build-wordmark.py` redraws the plate, both wordmarks and
 the favicon. It needs `fonttools` and is off the test path on purpose; the four
