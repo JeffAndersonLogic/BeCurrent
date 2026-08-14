@@ -105,6 +105,14 @@ push. That keeps the record of what it would have caught.
   surfaces, one grammar" in `docs/CANVAS-CAPTURE.md`.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
+- `node scripts/build-lesson-plans.js`, write one lesson plan per unit into
+  `docs/lesson-plans/` from that unit's content module. `--check` fails on drift,
+  which is what the offline suite runs. It is generated because a hand-kept plan
+  beside a course that gets rebuilt in response to the news goes wrong quietly: it
+  still opens, it still prints, and nothing says its targets stopped matching the
+  ones the students were shown. It is the page a substitute folder, a department
+  binder, and an IEP or 504 meeting all want, and none of them can open a
+  JavaScript module.
 - `node scripts/build-desk.js`, rebuild `daily/index.html`, the Desk, from
   `scripts/lib/desk-content.js`. `--check` fails on drift. See "The Block Has Two
   Halves" below for why the daily half is one page and the units are not.
