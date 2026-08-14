@@ -5,9 +5,9 @@
  * Gather All My Work on the Brief, driven in a real browser.
  *
  * This runs against a UNIT BLOCK brief, not week 01, and that choice is the point.
- * A block card on a unit page opens its Brief directly: there is no week shell
+ * A topic card on a unit page opens its Brief directly: there is no week shell
  * behind it and no Gather panel on any page above it, so this panel is the ONLY
- * route those answers have to Canvas. Before it existed, every Social Media block
+ * route those answers have to Canvas. Before it existed, every Social Media topic
  * answer was written into localStorage and stranded there, with every structural
  * check green.
  *
@@ -80,16 +80,16 @@ function serve() {
   });
 }
 
-// The first unit brief there is, found rather than named, so adding a block or
+// The first unit brief there is, found rather than named, so adding a topic or
 // renaming one cannot leave this test quietly running against nothing.
 function firstUnitBrief() {
   const units = fs.readdirSync(ROOT).filter(d => {
     if (!fs.statSync(path.join(ROOT, d)).isDirectory()) return false;
-    return fs.readdirSync(path.join(ROOT, d)).some(f => /^block-\d{2}-brief-.*[^e]\.html$/.test(f));
+    return fs.readdirSync(path.join(ROOT, d)).some(f => /^topic-\d{2}-brief-.*[^e]\.html$/.test(f));
   });
   for (const unit of units) {
     const brief = fs.readdirSync(path.join(ROOT, unit))
-      .filter(f => /^block-\d{2}-brief-.*\.html$/.test(f) && !f.endsWith('-capture.html'))
+      .filter(f => /^topic-\d{2}-brief-.*\.html$/.test(f) && !f.endsWith('-capture.html'))
       .sort()[0];
     if (brief) return `/${unit}/${brief}`;
   }
@@ -113,7 +113,7 @@ function firstUnitBrief() {
   page.on('pageerror', e => pageErrors.push(e.message));
 
   try {
-    console.log(`\n${C}${W}Gather All My Work, on a unit block brief${X}`);
+    console.log(`\n${C}${W}Gather All My Work, on a unit topic brief${X}`);
     console.log(`${D}  ${briefPath}${X}`);
 
     await page.goto(base + briefPath, { waitUntil: 'domcontentloaded' });
