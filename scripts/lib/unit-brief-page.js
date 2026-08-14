@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * The Brief, unit/block flavour.
+ * The Brief, unit/topic flavour.
  *
  * Separate from week-page.js on purpose. That file renders the week-01 orientation
  * reading and is pinned byte-for-byte by the reproducibility test; generalising it
@@ -60,7 +60,7 @@ function coachIntercept(aiUrl) {
 // A video path through the reading, for students who need one. Placed directly
 // under the support strip rather than at the end, because a student who needs the
 // video should not have to scroll past 1,000 words of prose to discover it exists.
-// Omitted entirely when the block has no clips.
+// Omitted entirely when the topic has no clips.
 function videoStrip(videos) {
   if (!videos || !videos.length) return '';
   const cards = videos.map(v => {
@@ -107,7 +107,7 @@ function builderSection(aiUrl) {
  * buttons announced with no idea what they are a scale of.
  *
  * `data-conf` and `aria-pressed` are untouched: they are what
- * scripts/lib/brief-capture-block.js reads, and the words come from the same
+ * scripts/lib/brief-capture-topic.js reads, and the words come from the same
  * table it writes into the Canvas paste.
  */
 function confidenceRow(id) {
@@ -123,7 +123,7 @@ ${buttons}
 /**
  * Gather All My Work, on the Brief.
  *
- * For a unit block this is the only route to Canvas: the block card on the unit
+ * For a unit topic this is the only route to Canvas: the topic card on the unit
  * page opens the Brief directly, and there is no week page with a Gather panel
  * behind it. The buttons carry the same labels the week page uses, so the two
  * surfaces are one habit rather than two.
@@ -145,17 +145,17 @@ function gatherSection() {
 `;
 }
 
-function renderUnitBrief(unit, block) {
+function renderUnitBrief(unit, topic) {
   const m = unit.meta;
-  const key = block.key;
-  const questions = block.questions || [];
+  const key = topic.key;
+  const questions = topic.questions || [];
 
-  const supportCards = (block.support || []).map(c => `      <div class="support-card">
+  const supportCards = (topic.support || []).map(c => `      <div class="support-card">
         <span class="support-label">${esc(c.label)}</span>
         <p>${raw(c.body)}</p>
       </div>`).join('\n');
 
-  const terms = (block.terms || []).map(t =>
+  const terms = (topic.terms || []).map(t =>
     `      <span class="term-chip">${esc(t)}</span>`).join('\n');
 
   const section = (s, i) => {
@@ -174,9 +174,9 @@ ${callouts}
     </div>`;
   };
 
-  const sections = (block.sections || []).map(section).join('\n');
+  const sections = (topic.sections || []).map(section).join('\n');
 
-  const rnt = block.roadNotTaken;
+  const rnt = topic.roadNotTaken;
   const roadNotTaken = rnt ? `
   <div class="road-not-taken">
     <div class="section-label">${esc(rnt.label)}</div>
@@ -212,7 +212,7 @@ ${confidenceRow(id)}
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Brief | ${esc(m.unit)} ${esc(block.block)} | BeCurrent</title>
+<title>The Brief | ${esc(m.unit)} ${esc(topic.topic)} | BeCurrent</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="../assets/css/becurrent-brief.css">
@@ -222,18 +222,18 @@ ${confidenceRow(id)}
 
 <header class="module-header">
   <div class="inner">
-    <div class="module-badge">${esc(block.block)}</div>
+    <div class="module-badge">${esc(topic.topic)}</div>
     <p class="module-name">The Brief</p>
     <p class="module-subtitle">${esc(m.unit)} &middot; ${esc(m.course)}</p>
   </div>
 </header>
 
 <div class="brief-title-band">
-  <div class="brief-eyebrow">${esc(block.eyebrow)}</div>
-  <h1 class="brief-title">${raw(block.title)}</h1>
-  <p class="brief-deck">${esc(block.deck)}</p>
+  <div class="brief-eyebrow">${esc(topic.eyebrow)}</div>
+  <h1 class="brief-title">${raw(topic.title)}</h1>
+  <p class="brief-deck">${esc(topic.deck)}</p>
   <div class="skill-tags">
-${(block.skillTags || []).map(t => `    <span class="skill-tag">${esc(t)}</span>`).join('\n')}
+${(topic.skillTags || []).map(t => `    <span class="skill-tag">${esc(t)}</span>`).join('\n')}
   </div>
 </div>
 
@@ -246,12 +246,12 @@ ${supportCards}
 ${terms}
   </div>
 
-${videoStrip(block.videos)}${sections}
+${videoStrip(topic.videos)}${sections}
 ${roadNotTaken}
 
   <div class="be-ready">
     <span class="be-ready-label">BeReady: 10-second takeaway</span>
-    <p>${raw(block.takeaway)}</p>
+    <p>${raw(topic.takeaway)}</p>
   </div>
 </div>
 
@@ -279,14 +279,14 @@ ${captureBlock(key, questions.length, m.aiCoachUrl)}
  * because the brief renders that button with no onclick of its own and relies on
  * the interception. A wrapper without it is a dead button.
  */
-function renderUnitWrapper(unit, block, briefFile) {
+function renderUnitWrapper(unit, topic, briefFile) {
   const m = unit.meta;
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brief Capture Wrapper | ${esc(m.unit)} ${esc(block.block)}</title>
+<title>Brief Capture Wrapper | ${esc(m.unit)} ${esc(topic.topic)}</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <style>
   /* --black-900, as a literal. This wrapper links no stylesheet on purpose:
@@ -299,7 +299,7 @@ function renderUnitWrapper(unit, block, briefFile) {
 </style>
 </head>
 <body>
-<iframe id="brief-frame" src="${esc(briefFile)}" title="The Brief, ${esc(m.unit)} ${esc(block.block)}"></iframe>
+<iframe id="brief-frame" src="${esc(briefFile)}" title="The Brief, ${esc(m.unit)} ${esc(topic.topic)}"></iframe>
 <script>
 (function () {
   'use strict';

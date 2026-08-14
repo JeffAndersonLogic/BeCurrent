@@ -75,7 +75,7 @@ done(`${weekDirs.length} week${weekDirs.length === 1 ? '' : 's'} (${weekDirs.joi
 
 // ── The module set ────────────────────────────────────────────────────────────
 //
-// The modules are a TOOLKIT, not a checklist. A block uses the ones it needs, and
+// The modules are a TOOLKIT, not a checklist. A lesson uses the ones it needs, and
 // how many modules a lesson shows on a given day is a teaching decision that this
 // file has no business enforcing. An earlier version asserted "exactly 8, in this
 // order" and that was a code of daily conduct wearing a build gate's clothes.
@@ -209,7 +209,7 @@ if (rendSrc && parserSrc) {
 // ── One writer of the record grammar ─────────────────────────────────────────
 //
 // Two surfaces build a paste now: the week page's Gather panel and the Brief's own,
-// which for a unit block is the ONLY route its answers have to Canvas. Both have to
+// which for a unit topic is the ONLY route its answers have to Canvas. Both have to
 // write the footer one parser reads, so the grammar lives in
 // scripts/lib/canvas-record-block.js and is inlined into both.
 //
@@ -254,7 +254,7 @@ section('One record-grammar writer');
 
 // ── Gather All My Work, on the brief ─────────────────────────────────────────
 //
-// A unit block Brief is opened straight off the unit page with no week shell around
+// A unit topic Brief is opened straight off the unit page with no week shell around
 // it, so its own Gather panel is the only route those answers have to Canvas. A
 // brief that renders the buttons but carries no handler behind them is the dead
 // button failure, and one that carries the handler but no buttons is unreachable
@@ -298,12 +298,12 @@ weekDirs.forEach(dir => {
     .forEach(f => weekBriefFiles.push(f));
 });
 
-// Unit briefs. A unit carries a Brief only for the blocks that need a reading, so
-// there is deliberately no expected count here: Social Media has none for Block 1
-// (a slide deck and a paper trace) or Block 2 (a film).
+// Unit briefs. A unit carries a Brief only for the topics that need a reading, so
+// there is deliberately no expected count here: Social Media has none for Topic 1
+// (a slide deck and a paper trace) or Topic 2 (a film).
 const unitBriefFiles = [];
 unitDirs.forEach(dir => {
-  glob(path.join(ROOT, dir), /^block-\d{2}-brief-.*\.html$/)
+  glob(path.join(ROOT, dir), /^topic-\d{2}-brief-.*\.html$/)
     .filter(f => !f.endsWith('-capture.html'))
     .forEach(f => unitBriefFiles.push(f));
 });
@@ -344,10 +344,10 @@ briefFiles.forEach(file => {
 
   // The Gather panel, both halves. The buttons with no handler is a dead button; the
   // handler with no ids to write into is work the student can never retrieve. A unit
-  // block Brief has no other route to Canvas at all, so a missing panel there is
+  // topic Brief has no other route to Canvas at all, so a missing panel there is
   // lost work rather than an inconvenience.
   assert(src.includes('onclick="gatherBriefWork()"'), file,
-    'no Gather All My Work button. For a unit block brief this is the only route to Canvas.');
+    'no Gather All My Work button. For a unit topic brief this is the only route to Canvas.');
   assert(src.includes('onclick="copyBriefWork()"'), file, 'no Copy to Clipboard button');
   assert(src.includes('id="brief-gather-output"'), file,
     'the gather buttons have nowhere to write: missing #brief-gather-output');
@@ -602,37 +602,37 @@ done(`${AP_CARRIERS.length} files carry no AP framing`);
 //
 //   1. The unit page exists but nothing links to it, so it is reachable only by
 //      typing the URL. That is how the first version shipped.
-//   2. A block card links a Brief that was never generated, which is a 404 for a
-//      student who missed that block and came looking for the reading.
+//   2. A topic card links a Brief that was never generated, which is a 404 for a
+//      student who missed that topic and came looking for the reading.
 section('Unit pages');
 const frontDoor = read(path.join(ROOT, 'index.html')) || '';
 unitDirs.forEach(key => {
   const page = path.join(ROOT, key, 'index.html');
-  if (!assert(fs.existsSync(page), page, 'unit has no index.html mapping its blocks')) return;
+  if (!assert(fs.existsSync(page), page, 'unit has no index.html mapping its topics')) return;
 
   assert(frontDoor.includes(`href="${key}/index.html"`), path.join(ROOT, 'index.html'),
     `nothing on the front door links ${key}/index.html, so the unit is orphaned`);
 
   const src = read(page) || '';
   // Every Brief link on the card list has to resolve. The generic link check would
-  // catch a typo; this catches a block that lost its Brief while keeping its card.
-  (src.match(/href="(block-\d{2}-brief-[^"]+)"/g) || []).forEach(hit => {
+  // catch a typo; this catches a topic that lost its Brief while keeping its card.
+  (src.match(/href="(topic-\d{2}-brief-[^"]+)"/g) || []).forEach(hit => {
     const target = hit.replace(/^href="|"$/g, '');
     assert(fs.existsSync(path.join(ROOT, key, target)), page,
-      `block card links ${target}, which was not generated`);
+      `topic card links ${target}, which was not generated`);
   });
 
-  assert(/class="block-card"/.test(src), page, 'unit page lists no blocks');
+  assert(/class="topic-card"/.test(src), page, 'unit page lists no topics');
 
-  // A block may declare `withholdTitles`: names that must not appear on any
-  // student-facing page in the unit. Social Media Block 2 uses it for the film.
+  // A topic may declare `withholdTitles`: names that must not appear on any
+  // student-facing page in the unit. Social Media Topic 2 uses it for the film.
   //
   // This is a teaching contract, not plumbing, and it is in the gate anyway because
   // breaking it is invisible and irreversible: the damage happens the moment a
   // student reads the title, and no amount of fixing the page afterwards puts the
-  // surprise back. From the Block 1 script, on why the withholding matters, "the
+  // surprise back. From the Topic 1 script, on why the withholding matters, "the
   // second they know the title, half the room looks it up, reads that it's a
-  // documentary about social media being bad, and walks into Block 2 already knowing
+  // documentary about social media being bad, and walks into Topic 2 already knowing
   // what they're supposed to conclude."
   const unitMod = (() => {
     const dir = path.join(ROOT, 'scripts', 'lib', 'unit-content');
@@ -642,13 +642,13 @@ unitDirs.forEach(key => {
     try { return hit ? require(hit) : null; } catch (e) { return null; }
   })();
 
-  (unitMod ? unitMod.blocks || [] : []).forEach(b => {
+  (unitMod ? unitMod.topics || [] : []).forEach(b => {
     (b.withholdTitles || []).forEach(title => {
       glob(path.join(ROOT, key), /\.html$/).concat([path.join(ROOT, 'index.html')])
         .forEach(f => {
           const body = read(f) || '';
           assert(!new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(body), f,
-            `"${title}" is withheld until ${b.block} has been taught, and it appears here. `
+            `"${title}" is withheld until ${b.topic} has been taught, and it appears here. `
             + 'A student who reads it walks in already knowing what to conclude.');
         });
     });
@@ -754,14 +754,14 @@ weekDirs.forEach(dir => {
   }
 });
 
-// Unit blocks.
+// Unit topics.
 (() => {
   const dir = path.join(ROOT, 'scripts', 'lib', 'unit-content');
   if (!fs.existsSync(dir)) return;
   glob(dir, /\.js$/).forEach(f => {
     let unit = null;
     try { unit = require(f); } catch (e) { err(f, 'unit content not loadable'); return; }
-    (unit.blocks || []).forEach(b => checkClips(b.videos, f, `${b.block || 'block'}`));
+    (unit.topics || []).forEach(b => checkClips(b.videos, f, `${b.topic || 'topic'}`));
   });
 })();
 

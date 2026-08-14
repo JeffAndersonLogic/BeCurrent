@@ -74,13 +74,13 @@ function renderIndex(units, weeks) {
         </div>`;
     }
     const m = u.meta;
-    const blocks = (u.blocks || []).length;
-    const briefs = (u.blocks || []).filter(b => b.sections && b.sections.length).length;
+    const topics = (u.topics || []).length;
+    const briefs = (u.topics || []).filter(b => b.sections && b.sections.length).length;
     return `        <a class="unit-card" href="${esc(m.unitKey)}/index.html">
-          <span class="unit-kicker">Unit &middot; ${esc(String(m.blocks || blocks))} blocks</span>
+          <span class="unit-kicker">Unit &middot; ${esc(String(m.topics || topics))} topics</span>
           <h3>${esc(m.unit)}</h3>
           <p>${esc(m.terminalQuestion || m.overview || '')}</p>
-          <span class="unit-meta">${esc(String(briefs))} briefs &middot; ${esc(String(blocks - briefs))} on paper</span>
+          <span class="unit-meta">${esc(String(briefs))} briefs &middot; ${esc(String(topics - briefs))} on paper</span>
         </a>`;
   }).join('\n');
 

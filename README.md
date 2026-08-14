@@ -26,7 +26,7 @@ the daily half are a history class.
 
 ## The modules
 
-A unit block draws on the same eight modules, in whatever order it needs, because
+A unit topic draws on the same eight modules, in whatever order it needs, because
 the point is the method rather than the story:
 
 | # | Module | What it asks |

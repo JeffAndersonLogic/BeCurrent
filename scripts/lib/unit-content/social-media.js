@@ -1,17 +1,17 @@
 'use strict';
 
 /**
- * Social Media unit, Blocks 3 to 5.
+ * Social Media unit, Topics 3 to 5.
  *
- * Blocks 1 and 2 have no Brief: Block 1 is the slide deck and the paper trace,
- * Block 2 is the film. The Brief exists for the blocks that need a reading
+ * Topics 1 and 2 have no Brief: Topic 1 is the slide deck and the paper trace,
+ * Topic 2 is the film. The Brief exists for the topics that need a reading
  * backdrop, which is what it is for.
  *
- * REGISTER. These are written to match the Block 1 deck, not the Foundations-style
+ * REGISTER. These are written to match the Topic 1 deck, not the Foundations-style
  * reading. The deck's own note is the style guide:
  *
  *     "these definitions are deliberately plainer than a dictionary. Precision
- *      here costs comprehension, and comprehension is what the rest of the block
+ *      here costs comprehension, and comprehension is what the rest of the topic
  *      runs on."
  *
  * So: short sentences, one idea each, concrete before abstract, metaphors only
@@ -19,11 +19,11 @@
  * appears in. Flat and curious, never ominous — the moment it sounds like an
  * adult warning them about screens, the room files it away and stops reading.
  *
- * Each block carries START HERE / PUSH FURTHER on its questions, the same two-tier
+ * Each topic carries START HERE / PUSH FURTHER on its questions, the same two-tier
  * structure the deck uses, because that is the differentiation lever that already
  * works in this room.
  *
- * Every block also carries a `roadNotTaken` section. Tracing backwards from a
+ * Every topic also carries a `roadNotTaken` section. Tracing backwards from a
  * present-day outcome only ever surfaces the causes that led to it, so without a
  * deliberate alternative the past reads as a corridor. That section is the fix,
  * and it is why the history in these Briefs names dates and people.
@@ -37,12 +37,12 @@ const UNIT = {
   // unset omits the coach section from every brief in this unit.
   aiCoachUrl: '',
   canvasSubmissionNote: 'Organize your thinking here, then submit your final work in Canvas.',
-  blocks: 5,
+  topics: 5,
   overview: 'We are going to figure out how social media actually works. The machine. The '
     + 'business. Not whether it is good or bad for you, and nobody is going to ask you to delete '
     + 'anything. By the end you should be able to explain how the thing works, out loud, to an '
     + 'adult, which is more than most adults can do.',
-  // Announced on day one and returned to at the end, exactly as the Block 1 script
+  // Announced on day one and returned to at the end, exactly as the Topic 1 script
   // does it. Putting it on the unit page is the point: students should be chewing
   // on it for two weeks before they have to answer it.
   terminalQuestion: 'Who should get to decide what a platform is allowed to do to your '
@@ -56,60 +56,133 @@ const UNIT = {
   }
 };
 
-// ── Block 1 ───────────────────────────────────────────────────────────────────
+// ── Topic 1 ───────────────────────────────────────────────────────────────────
 // Taught from the slide deck with a paper trace. No Brief, and no site artifact at
 // all: the reasoning lives in boxes and arrows on paper, which is deliberate. Per
 // the teaching script, "devices turn a trace into copy-paste from a search result."
-const BLOCK_1 = {
+const TOPIC_1 = {
   n: 1,
-  block: 'Block 1',
+  topic: 'Topic 1',
   title: 'Where the Money Comes From',
   subtitle: 'Follow the money backwards, one step at a time',
   inClass: 'You list the apps you opened today that did not charge you, then build a chain of '
     + 'boxes and arrows from opening an app to a company getting paid. Paper, not devices. '
     + 'Nobody presents; you walk the room and read four other chains instead.',
   onPaper: true,
+
+  overview: 'Every app you opened today was free, and not one of those companies is a charity. '
+    + 'Today you build the chain backwards: from you opening an app to somebody getting paid, one '
+    + 'box and one arrow at a time. You will do it on paper, because a device turns a trace into '
+    + 'copy-paste from a search result. Then you walk the room and read four other chains, which '
+    + 'is where you find out what you left out.',
+
+  learningTargets: [
+    { skill: 'Cause and Effect',
+      target: 'I can trace the chain that connects me opening a free app to a company getting paid.' },
+    { skill: 'Cause and Effect',
+      target: 'I can explain what a company gets from me when I pay it no money at all.' },
+    { skill: 'Generalizing from Evidence',
+      target: 'I can compare my chain with other people\'s and say where they agree and where they do not.' }
+  ],
+
+  successCriteria: [
+    { skill: 'Cause and Effect',
+      criteria: 'I can draw a chain with at least four boxes in it and no gap I cannot explain out loud.' },
+    { skill: 'Cause and Effect',
+      criteria: 'I can name the thing being sold, who is buying it, and who is being sold.' },
+    { skill: 'Generalizing from Evidence',
+      criteria: 'I can name one box I got wrong or left out after reading four other chains, and say which chain changed my mind.' }
+  ],
+
   competencies: [1, 5]
 };
 
-// ── Block 2 ───────────────────────────────────────────────────────────────────
+// ── Topic 2 ───────────────────────────────────────────────────────────────────
 // The film is deliberately NOT NAMED here, and this is load-bearing rather than an
-// oversight. From the Block 1 teaching script: "the second they know the title, half
+// oversight. From the Topic 1 teaching script: "the second they know the title, half
 // the room looks it up, reads that it's a documentary about social media being bad,
-// and walks into Block 2 already knowing what they're supposed to conclude. The
-// withholding is what keeps Block 2 from becoming another warning."
+// and walks into Topic 2 already knowing what they're supposed to conclude. The
+// withholding is what keeps Topic 2 from becoming another warning."
 //
 // A unit page that listed the title would undo that on day one. Add the name here
 // only after the unit has run, if at all.
-const BLOCK_2 = {
+const TOPIC_2 = {
   n: 2,
-  block: 'Block 2',
+  topic: 'Topic 2',
   title: 'Somebody Made a Film About This',
   subtitle: 'Your job is not to agree with it',
   inClass: 'We watch it. Your job is to do to the film exactly what you did to your app in '
-    + 'Block 1: take it apart, find out how it works, see where the money is.',
+    + 'Topic 1: take it apart, find out how it works, see where the money is.',
   onPaper: true,
+
+  overview: 'Somebody made a film about the thing you traced last class. We are going to watch it. '
+    + 'Your job is not to agree with it, and it is not to disagree with it either. Your job is to do '
+    + 'to the film exactly what you did to your app: take it apart, find out how it works, and see '
+    + 'where the money is. Every film was made by somebody, for a reason, with money from somewhere.',
+
+  learningTargets: [
+    { skill: 'Sourcing',
+      target: 'I can identify who made this film, who speaks in it, and what each of them has to gain.' },
+    { skill: 'Fallacies and Propaganda',
+      target: 'I can name a persuasion technique the film uses and explain how it works on a viewer.' },
+    { skill: 'Cause and Effect',
+      target: 'I can separate what the film proves from what it only suggests.' }
+  ],
+
+  successCriteria: [
+    { skill: 'Sourcing',
+      criteria: 'I can say who made the film and point to one thing in it that tells me what it wants me to believe.' },
+    { skill: 'Fallacies and Propaganda',
+      criteria: 'I can point at one specific scene and name the technique it uses on me.' },
+    { skill: 'Cause and Effect',
+      criteria: 'I can state one claim the film makes that I would want to check, and say what evidence would settle it.' }
+  ],
+
   competencies: [2],
 
   // Names that must not appear on any student-facing page in this unit until the
-  // block has been taught. validate.js fails the build if one does. Remove the entry
+  // topic has been taught. validate.js fails the build if one does. Remove the entry
   // once the film has been shown and naming it no longer costs anything.
   withholdTitles: ['The Social Dilemma']
 };
 
-// ── Block 3 ───────────────────────────────────────────────────────────────────
-const BLOCK_3 = {
+// ── Topic 3 ───────────────────────────────────────────────────────────────────
+const TOPIC_3 = {
   n: 3,
-  key: 'sm-b3',
+  key: 'sm-t3',
   slug: 'the-algorithm',
-  block: 'Block 3',
+  topic: 'Topic 3',
   title: 'Inside the <em>Algorithm</em> Box',
-  eyebrow: 'Social Media · Block 3',
+  eyebrow: 'Social Media · Topic 3',
   deck: 'Almost every chain in the room had a box where the app watches what you do. Today you open it.',
   subtitle: 'What the app counts, and what it does with the count',
   skillTags: ['Cause and Effect', 'Hypotheses'],
   inClass: 'We open the box almost every chain had in the middle. Read the Brief, then predict '
     + 'what the app counts about you before we check.',
+
+  overview: 'Almost every chain in the room had a box in the middle where the app watches what you '
+    + 'do. Nobody wrote what was inside it, because none of us knew. Today you open it. You will '
+    + 'find out what an app counts about you when you are not posting, what it does with the count, '
+    + 'and why two people who open the same app at the same second see different things.',
+
+  learningTargets: [
+    { skill: 'Cause and Effect',
+      target: 'I can name what an app counts about me when I have not posted, liked, or commented on anything.' },
+    { skill: 'Cause and Effect',
+      target: 'I can explain the feedback loop that makes an app better at holding my attention the longer I use it.' },
+    { skill: 'Hypotheses',
+      target: 'I can explain that a ranking system pushes on a number a person chose, and predict what that choice costs.' }
+  ],
+
+  successCriteria: [
+    { skill: 'Cause and Effect',
+      criteria: 'I can list three engagement signals an app collects without me sending it anything.' },
+    { skill: 'Cause and Effect',
+      criteria: 'I can explain, out loud, why two people who open the same app at the same second see different things.' },
+    { skill: 'Hypotheses',
+      criteria: 'I can name a number an app could optimize for, and say what would go wrong with that choice.' }
+  ],
+
   competencies: [1, 4],
 
   // Video. Optional, and often the primary path rather than the alternative one.
@@ -123,12 +196,12 @@ const BLOCK_3 = {
   //       captions: true }                   // set false only if genuinely absent
   //   ]
   //
-  // Empty means the block renders no video section at all, not an empty one.
+  // Empty means the topic renders no video section at all, not an empty one.
   videos: [],
 
   support: [
     { label: 'Before You Read',
-      body: 'In Block 1 you built a chain. Almost everybody had a box in the middle where the app '
+      body: 'In Topic 1 you built a chain. Almost everybody had a box in the middle where the app '
         + 'watches what you do. Nobody wrote what was <em>inside</em> that box, because none of us knew. '
         + 'That box is today.' },
     { label: 'Reading Target',
@@ -268,19 +341,43 @@ const BLOCK_3 = {
   ]
 };
 
-// ── Block 4 ───────────────────────────────────────────────────────────────────
-const BLOCK_4 = {
+// ── Topic 4 ───────────────────────────────────────────────────────────────────
+const TOPIC_4 = {
   n: 4,
-  key: 'sm-b4',
+  key: 'sm-t4',
   slug: 'privacy-policy',
-  block: 'Block 4',
+  topic: 'Topic 4',
   title: 'Go <em>Check</em> It Yourself',
-  eyebrow: 'Social Media · Block 4',
+  eyebrow: 'Social Media · Topic 4',
   deck: 'Half this room wrote "they sell my data." Today we read the document and find out.',
   subtitle: 'Reading a privacy policy as a primary source',
   skillTags: ['Generalizing from Evidence', 'Sourcing'],
-  inClass: 'You check the chain you drew in Block 1 against the company\'s own privacy policy. '
+  inClass: 'You check the chain you drew in Topic 1 against the company\'s own privacy policy. '
     + 'Bring a device for this one, because the document is the assignment.',
+
+  overview: 'Half this room wrote that the company sells your data. I told you that was mostly '
+    + 'wrong and I did not prove it, which is not good enough. Today you check me. A privacy policy '
+    + 'is a primary source: free, in your pocket, and the document the company can actually be held '
+    + 'to. You will search it rather than read it, and find out what it does and does not say.',
+
+  learningTargets: [
+    { skill: 'Sourcing',
+      target: 'I can read a privacy policy as a primary source and say who wrote it, when, and who it protects.' },
+    { skill: 'Sourcing',
+      target: 'I can find what a long legal document says about one question without reading it front to back.' },
+    { skill: 'Generalizing from Evidence',
+      target: 'I can check a claim I already made against the document, and change it when the evidence says so.' }
+  ],
+
+  successCriteria: [
+    { skill: 'Sourcing',
+      criteria: 'I can quote an exact sentence from a real policy and say what it does and does not claim.' },
+    { skill: 'Sourcing',
+      criteria: 'I can name the author, the date it was last updated, and who the document protects.' },
+    { skill: 'Generalizing from Evidence',
+      criteria: 'I can point at the sentence that decides a box in my Topic 1 chain, and redraw the box if it was wrong.' }
+  ],
+
   competencies: [2, 5],
 
   // Video. Optional, and often the primary path rather than the alternative one.
@@ -294,12 +391,12 @@ const BLOCK_4 = {
   //       captions: true }                   // set false only if genuinely absent
   //   ]
   //
-  // Empty means the block renders no video section at all, not an empty one.
+  // Empty means the topic renders no video section at all, not an empty one.
   videos: [],
 
   support: [
     { label: 'Before You Read',
-      body: 'In Block 1 a lot of chains said the company <em>sells your data</em>. I told you that was '
+      body: 'In Topic 1 a lot of chains said the company <em>sells your data</em>. I told you that was '
         + 'mostly wrong and I did not prove it. Fair enough. Today you check me.' },
     { label: 'Reading Target',
       body: 'By the end you should be able to point at a specific sentence in a real document and say '
@@ -361,7 +458,7 @@ const BLOCK_4 = {
         'What the policy will describe instead is that they collect a great deal, they keep it, and they '
         + 'let advertisers use it to choose who sees an ad without handing the advertiser the underlying '
         + 'file.',
-        'That is why your Block 1 chain was so close to right. The money does come from advertisers. But '
+        'That is why your Topic 1 chain was so close to right. The money does come from advertisers. But '
         + 'the thing being sold is <strong>access to you</strong>, and the company keeps the data because '
         + 'the data is what makes them the only place to buy that access.',
         'Being nearly right and then checking is not a failure. It is the entire method of this course.'
@@ -427,26 +524,51 @@ const BLOCK_4 = {
       startHere: 'Answer all three. One line each is enough.',
       pushFurther: 'Find something in it that reads more like a shield for the company than a promise to you, and quote it.' },
     { skill: 'Generalizing from Evidence',
-      text: 'Look back at the chain you drew in Block 1. Does the policy support it, contradict it, or say '
+      text: 'Look back at the chain you drew in Topic 1. Does the policy support it, contradict it, or say '
         + 'nothing about it? Point to the sentence that decides it.',
       startHere: 'Pick one box from your chain and one sentence from the policy.',
       pushFurther: 'Redraw the box you got wrong, and say what evidence made you change it.' }
   ]
 };
 
-// ── Block 5 ───────────────────────────────────────────────────────────────────
-const BLOCK_5 = {
+// ── Topic 5 ───────────────────────────────────────────────────────────────────
+const TOPIC_5 = {
   n: 5,
-  key: 'sm-b5',
+  key: 'sm-t5',
   slug: 'who-decides',
-  block: 'Block 5',
+  topic: 'Topic 5',
   title: 'Who Gets to <em>Decide</em>?',
-  eyebrow: 'Social Media · Block 5',
+  eyebrow: 'Social Media · Topic 5',
   deck: 'I told you on the first day I would ask you a hard question at the end. Here it is.',
   subtitle: 'You, the company, or the government',
   skillTags: ['Synthesizing Patterns', 'Generalizing from Evidence'],
   inClass: 'The question from day one, argued properly. You state the strongest version of a '
     + 'position you do not hold, then take your own.',
+
+  overview: 'On the first day I told you I would ask you a hard question at the end, and this is '
+    + 'it: who should get to decide what a platform is allowed to do to your attention, you, the '
+    + 'company, or the government? You traced the money, took a film apart, opened the algorithm '
+    + 'box, and read the company\'s own document, so today is a real argument instead of opinions. '
+    + 'You will not be graded on which side you land.',
+
+  learningTargets: [
+    { skill: 'Synthesizing Patterns',
+      target: 'I can state the strongest version of a position I do not hold.' },
+    { skill: 'Generalizing from Evidence',
+      target: 'I can use an earlier fight over a new medium to predict something about this one.' },
+    { skill: 'Hypotheses',
+      target: 'I can name the evidence that would change my mind.' }
+  ],
+
+  successCriteria: [
+    { skill: 'Synthesizing Patterns',
+      criteria: 'I can make the best case for a side I disagree with in three or four sentences, with its tradeoff named.' },
+    { skill: 'Generalizing from Evidence',
+      criteria: 'I can say what happened with comic books, television, music lyrics, or video games, and what it predicts here.' },
+    { skill: 'Hypotheses',
+      criteria: 'I can state one thing a person could actually go and find out that would move my position.' }
+  ],
+
   competencies: [3, 4, 5],
 
   // Video. Optional, and often the primary path rather than the alternative one.
@@ -460,7 +582,7 @@ const BLOCK_5 = {
   //       captions: true }                   // set false only if genuinely absent
   //   ]
   //
-  // Empty means the block renders no video section at all, not an empty one.
+  // Empty means the topic renders no video section at all, not an empty one.
   videos: [],
 
   support: [
@@ -604,4 +726,4 @@ const BLOCK_5 = {
   ]
 };
 
-module.exports = { meta: UNIT, blocks: [BLOCK_1, BLOCK_2, BLOCK_3, BLOCK_4, BLOCK_5] };
+module.exports = { meta: UNIT, topics: [TOPIC_1, TOPIC_2, TOPIC_3, TOPIC_4, TOPIC_5] };

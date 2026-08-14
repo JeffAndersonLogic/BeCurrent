@@ -35,7 +35,7 @@ The contracts below are enforced by machine, not by memory.
 - `npm run test:browser`, the Chromium contracts. Needs `npm i playwright-core`.
   Two files. `week-page.test.js` is 39 assertions on one week: modal focus, the
   scroll lock, the deck, the brief's capture key, and the record footer read back by
-  the real parser. `brief-gather.test.js` is 28 on a unit block brief: the confidence
+  the real parser. `brief-gather.test.js` is 28 on a unit topic brief: the confidence
   words, the paste's bold/italic shape, and the footer through the real parser in
   both clipboard flavours.
 - `npm run test:all`, both suites.
@@ -92,11 +92,11 @@ push. That keeps the record of what it would have caught.
 - `node scripts/test/week-page.test.js`, drive a real week page in Chromium and
   assert the modal, deck, capture and footer contracts. Run it when touching any
   modal open/close path, the deck, or the Gather panel.
-- `node scripts/test/brief-gather.test.js`, drive a real **unit block** brief in
+- `node scripts/test/brief-gather.test.js`, drive a real **unit topic** brief in
   Chromium and assert its own route to Canvas: the confidence words are on the
   buttons, the paste comes out with the question bold and the response italic, and
   the footer round-trips through the real parser in both clipboard flavours. It runs
-  against a unit block rather than week 01 because that is the case with no other
+  against a unit topic rather than week 01 because that is the case with no other
   route. Run it when touching the gather panel, the confidence scale, or the record
   grammar.
 - `node scripts/build-canvas-record.js`, inline `scripts/lib/canvas-record-block.js`
@@ -269,7 +269,7 @@ real links.
 
 ## The Module Set
 
-The modules are a **toolkit, not a checklist.** A block uses the ones it needs.
+The modules are a **toolkit, not a checklist.** A lesson uses the ones it needs.
 Sometimes all of them, often two or three. Nothing enforces a count or an order,
 because how a lesson is shaped is a teaching decision and the build gate has no
 business having an opinion about it.
@@ -325,7 +325,7 @@ prohibited and `validate.js` rejects them.
 ### Two flavours
 
 `scripts/lib/week-page.js` renders the week-01 orientation reading.
-`scripts/lib/unit-brief-page.js` renders unit blocks and adds two things: START
+`scripts/lib/unit-brief-page.js` renders unit topics and adds two things: START
 HERE / PUSH FURTHER cards on every question, and a required road-not-taken section.
 They are separate files on purpose: week-01 is pinned byte-for-byte by the
 reproducibility test, and generalising one renderer to do both risks moving a byte
@@ -370,9 +370,9 @@ count at all, so the denominator is always computed and never a literal.
 
 **Two surfaces gather, and one grammar serves both.** The week page's panel collects
 every module slot; the Brief's own panel, at the end of its questions, collects that
-brief. The second is not a convenience: a unit block Brief is opened straight off the
+brief. The second is not a convenience: a unit topic Brief is opened straight off the
 unit page with no week shell behind it, so its panel is the **only** route those
-answers have to Canvas. Every Social Media block answer used to be written to
+answers have to Canvas. Every Social Media topic answer used to be written to
 `localStorage` and stranded there, with every structural check green.
 
 Because `canvas-parse-core.js` is one parser, the grammar is one file,
@@ -641,7 +641,7 @@ old offset and fails a page that scrolls fine.
 
 Honest list, so nobody assumes coverage that does not exist:
 
-1. **The browser suite covers one week and one unit block.** `brief-gather.test.js`
+1. **The browser suite covers one week and one unit topic.** `brief-gather.test.js`
    added the unit brief path. Still uncovered: a lesson with only two modules, and
    mobile layout, including the confidence row's fallback to circles under 560px.
 2. **No Skills Lens.** BeHistorical's `teacher/skills-lens.html` is the in-browser
@@ -653,7 +653,7 @@ Honest list, so nobody assumes coverage that does not exist:
    for real, and keep both.
 5. **No real map artwork.** Week 01 has no map because the orientation week has no
    single place. A real lesson needs a real map in the `where` slot.
-6. **One unit of six.** Social Media exists. War in Iran, War in Ukraine, Midterm
+6. **One unit of six.** Social Media exists, five topics deep. War in Iran, War in Ukraine, Midterm
    Elections, Artificial Intelligence and Immigration are on the front door as
    planned cards and have no content modules yet.
 7. **The News Log does not exist.** The Desk says the graded artifact is one log a
@@ -665,27 +665,43 @@ Honest list, so nobody assumes coverage that does not exist:
    every `videos` array is empty because the URLs have to be real ones you supply.
    Nothing was invented to fill them.
 
-## Units and Blocks
+## Units and Topics
 
-A **unit** is a theme that runs several blocks. A **block** is one 90-minute class
-meeting. Content lives in `scripts/lib/unit-content/<unit>.js`, and
-`scripts/build-units.js` emits:
+A **unit** is a theme that runs several topics. A **topic** is one lesson, which in
+this course fills the unit half of one 90-minute block. Content lives in
+`scripts/lib/unit-content/<unit>.js`, and `scripts/build-units.js` emits:
 
 ```
 <unit>/index.html                       the map of the whole arc
-<unit>/block-NN-brief-<slug>.html       a Brief, only for blocks that carry one
-<unit>/block-NN-brief-<slug>-capture.html
+<unit>/topic-NN-brief-<slug>.html       a Brief, only for topics that carry one
+<unit>/topic-NN-brief-<slug>-capture.html
 ```
 
-**Not every block has a Brief, and that is the point.** Social Media Block 1 is a
-slide deck and a paper trace, Block 2 is a film. A block with no `sections` gets no
+**The word is "topic", not "block", and the distinction is load-bearing.** A block
+is a unit of *time*, the 90-minute meeting the Desk and the unit split between them.
+A topic is a unit of *content*. Calling both of them blocks is what made
+"the second half of the block" and "Block 2" mean two unrelated things in the same
+sentence. `topic` is the field name, `Topic N` is the label, and
+`topic-NN-brief-<slug>.html` is the filename.
+
+**Every topic carries an `overview`, three `learningTargets`, and three
+`successCriteria`**, in the same `{ skill, target }` and `{ skill, criteria }` shape
+week content uses. They are the source of truth for three surfaces: the unit page's
+folded plan, the generated lesson plan in `docs/lesson-plans/`, and the TODAY board.
+Nothing downstream retypes them, so a target edited here reaches all three by
+rebuilding.
+
+**Not every topic has a Brief, and that is the point.** Social Media Topic 1 is a
+slide deck and a paper trace, Topic 2 is a film. A topic with no `sections` gets no
 Brief, and its card on the unit page says "Done on paper in class. Nothing to open
 here." rather than showing a dead link.
 
 The unit page is a **map, not a lesson container**. It puts the terminal question at
-the top, because the Block 1 script announces it on day one and returns to it two
+the top, because the Topic 1 script announces it on day one and returns to it two
 weeks later, and a student chewing on it for two weeks argues better than one who
-meets it cold.
+meets it cold. Targets and criteria sit folded inside each topic card for the same
+reason: a student hunting for the topic they missed should not have to scroll past
+thirty "I can" statements to find it.
 
 ### The front door is its own builder
 
@@ -697,12 +713,13 @@ door.
 
 ### Do not name the film
 
-Block 2's title is deliberately vague, and this is load-bearing. From the Block 1
+Topic 2's title is deliberately vague, and this is load-bearing. From the Topic 1
 teaching script: *"the second they know the title, half the room looks it up, reads
-that it's a documentary about social media being bad, and walks into Block 2 already
-knowing what they're supposed to conclude. The withholding is what keeps Block 2 from
-becoming another warning."* A unit page that listed the title would undo that on day
-one.
+that it's a documentary about social media being bad, and walks into [Topic] 2 already
+knowing what they're supposed to conclude. The withholding is what keeps [Topic] 2 from
+becoming another warning."* The script says "block" throughout, because it predates
+this rename; the brackets are here so the quotation stays honest. A unit page that
+listed the title would undo all of it on day one.
 
 
 ## Video
@@ -715,7 +732,7 @@ Two places carry clips, and both take the same shape:
 
 - **A lesson**, via `videos` in the week content module. Renders a self-introducing
   section on the week page.
-- **A Brief**, via `videos` on the week or the block. Renders a strip **above the
+- **A Brief**, via `videos` on the week or the topic. Renders a strip **above the
   prose**, because a student who needs the video should not have to scroll past a
   thousand words to discover it exists.
 
@@ -730,7 +747,7 @@ videos: [
 ]
 ```
 
-**The block introduces itself when clips exist and hides entirely when they do
+**The clip block introduces itself when clips exist and hides entirely when they do
 not.** An empty container leaves a gap that reads as something failing to load, so
 the container stays in the shell and the renderer sets `hidden` on it.
 

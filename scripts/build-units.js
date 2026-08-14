@@ -4,16 +4,16 @@
 /**
  * Rebuild every unit's Briefs from its content module.
  *
- * A unit is a theme that runs several blocks; a block is one 90-minute class
- * meeting. Not every block needs a Brief, so the content module carries only the
- * blocks that have one. Block 1 of Social Media is a slide deck and a paper trace,
- * Block 2 is a film; neither needs a reading, and neither appears here.
+ * A unit is a theme that runs several topics, one per 90-minute class
+ * meeting. Not every topic needs a Brief, so the content module carries only the
+ * topics that have one. Topic 1 of Social Media is a slide deck and a paper trace,
+ * Topic 2 is a film; neither needs a reading, and neither appears here.
  *
  * This is deliberately separate from build-weeks.js. Weeks and units are different
  * shapes and sharing one builder would mean one of them bending.
  *
  * Emits, per unit: an index.html mapping the whole arc, and a Brief plus capture
- * wrapper for each block that carries one.
+ * wrapper for each topic that carries one.
  *
  *   node scripts/build-units.js            write the files
  *   node scripts/build-units.js --check    fail on drift, write nothing
@@ -70,15 +70,15 @@ files.forEach(file => {
   // The unit page is the map of the whole arc and always exists.
   emit(path.join(dir, 'index.html'), renderUnitPage(unit));
 
-  // A Brief only for the blocks that carry one. Block 1 is a slide deck and a paper
-  // trace, Block 2 is a film; generating an empty reading for either would put a
+  // A Brief only for the topics that carry one. Topic 1 is a slide deck and a paper
+  // trace, Topic 2 is a film; generating an empty reading for either would put a
   // dead card on the unit page.
-  (unit.blocks || []).forEach(block => {
-    if (!(block.sections && block.sections.length)) return;
-    const briefFile = briefFileFor(block);
-    emit(path.join(dir, briefFile), renderUnitBrief(unit, block));
+  (unit.topics || []).forEach(topic => {
+    if (!(topic.sections && topic.sections.length)) return;
+    const briefFile = briefFileFor(topic);
+    emit(path.join(dir, briefFile), renderUnitBrief(unit, topic));
     emit(path.join(dir, briefFile.replace(/\.html$/, '-capture.html')),
-      renderUnitWrapper(unit, block, briefFile));
+      renderUnitWrapper(unit, topic, briefFile));
   });
 });
 
