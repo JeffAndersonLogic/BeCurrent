@@ -119,6 +119,16 @@ function dayLabel(key) {
   const d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
   return DOW[d.getDay()] + ' ' + MON[d.getMonth()] + ' ' + d.getDate();
 }
+// The spelled-out form, which is what the day banners and the pre-term notice use.
+const DOW_FULL = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
+  'Saturday'];
+const MON_FULL = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+  'August', 'September', 'October', 'November', 'December'];
+function dayLabelFull(key) {
+  const p = String(key).split('-');
+  const d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  return DOW_FULL[d.getDay()] + ', ' + MON_FULL[d.getMonth()] + ' ' + d.getDate();
+}
 
 const TODAY = dayKeyOf(new Date());
 
@@ -142,19 +152,29 @@ const CYCLE_START = (() => {
 const CYCLE_DAYS = CYCLE_WEEKS * 7;
 const CYCLE_START_KEY = dayKeyOf(CYCLE_START);
 
-// Some other day inside the same cycle as today. Chosen rather than hard-coded,
-// because a hard-coded weekday makes this test pass or fail depending on which day
-// it is run on, and a suite that is green on Tuesday and red on Monday teaches
+// Whether today is inside a cycle at all. Before the term's anchor Monday it is
+// not, and this test must be green then too: a suite that only passes during term is
+// a suite that gets ignored in August, which is exactly when the Desk is being built.
+const TODAY_IN_CYCLE = TODAY >= CYCLE_START_KEY;
+
+// Two days inside the current cycle, neither of them today, chosen rather than
+// hard-coded. A hard-coded weekday makes this test pass or fail depending on which
+// day it is run on, and a suite that is green on Tuesday and red on Monday teaches
 // people to rerun it rather than read it.
-const OTHER_DAY = (() => {
-  for (let i = 0; i < CYCLE_DAYS; i++) {
+const [SEED_A, SEED_B] = (() => {
+  const out = [];
+  for (let i = 0; i < CYCLE_DAYS && out.length < 2; i++) {
     const d = new Date(CYCLE_START.getFullYear(), CYCLE_START.getMonth(),
       CYCLE_START.getDate() + i);
     const key = dayKeyOf(d);
-    if (key !== TODAY) return key;
+    if (key !== TODAY) out.push(key);
   }
-  return null;
+  return out;
 })();
+
+// How many days the gather should find: the two seeded, plus today when today is
+// itself inside the cycle and therefore carries the typed story.
+const EXPECT_DAYS = 2 + (TODAY_IN_CYCLE ? 1 : 0);
 
 // A day in the PREVIOUS cycle, which must not be gathered: that log has already
 // been submitted under its own assignment, and sweeping it in would double-report
@@ -165,6 +185,35 @@ const LAST_CYCLE = (() => {
     CYCLE_START.getDate() - 3);
   return dayKeyOf(d);
 })();
+
+/**
+ * A seeded day that looks like a real one: the first lane filled, the second left
+ * untouched.
+ *
+ * The paste assertions key off THIS rather than off the story typed through the form,
+ * because the form always writes to today's sheet and today is outside the cycle
+ * window before the term's anchor Monday. Keying them to a day inside the window is
+ * what makes this test green in August as well as in October.
+ *
+ * The text is deliberately different from what the typing test types, so an assertion
+ * looking for one can never be satisfied by the other.
+ */
+const SEEDED_ANSWER = 'The zoning board voted to rezone the parcel on Oak Street.\n\n'
+  + 'Two of the five members had asked for a delay the week before.';
+
+function filledDay() {
+  const state = {};
+  const a = LANES[0];
+  state[`${a}-${FACTS[0]}`] = { answer: 'Times Sentinel' };
+  state[`${a}-${FACTS[1]}`] = { answer: 'September 8, 2026' };
+  state[`${a}-${FACTS[2]}`] = { answer: 'https://www.timessentinel.com/example' };
+  state[`${a}-${QUESTIONS[0]}`] = {
+    answer: SEEDED_ANSWER, question: 'seeded prompt for what', confidence: '4'
+  };
+  // QUESTIONS[1] and the whole second lane are left absent on purpose: that is what
+  // exercises the empty source record and the BLANK flags below.
+  return state;
+}
 
 // A seeded day, in exactly the shape the capture block writes.
 function seededDay(tag) {
@@ -265,31 +314,42 @@ function seededDay(tag) {
       await page.getAttribute(`#confidence-${laneA}-${QUESTIONS[0]} button[data-conf="4"]`,
         'aria-pressed') === 'true');
 
-    // ── The weekly gather reaches back ───────────────────────────────────────
-    group('The weekly gather reaches back');
+    // ── The gather reaches across the cycle ──────────────────────────────────
+    group('The gather reaches across the cycle');
 
     await page.evaluate(args => {
-      localStorage.setItem(args.prefix + args.other, JSON.stringify(args.otherState));
-      localStorage.setItem(args.prefix + args.lastWeek, JSON.stringify(args.lastState));
+      args.seeds.forEach(function (s) {
+        localStorage.setItem(args.prefix + s.key, JSON.stringify(s.state));
+      });
+      localStorage.setItem(args.prefix + args.lastCycle, JSON.stringify(args.lastState));
       // A day the student opened and left. It must not print as six blanks: that
       // reads to the teacher as work attempted and abandoned.
       localStorage.setItem(args.prefix + args.empty, JSON.stringify({}));
     }, {
       prefix: STORAGE_PREFIX,
-      other: OTHER_DAY,
-      otherState: seededDay('seeded'),
-      lastWeek: LAST_CYCLE,
+      // SEED_A is the realistic filled day the paste assertions read; SEED_B is a
+      // second day, so the day division and the label uniqueness have something to
+      // divide.
+      seeds: [{ key: SEED_A, state: filledDay() },
+        { key: SEED_B, state: seededDay('seedB') }],
+      lastCycle: LAST_CYCLE,
       lastState: seededDay('lastcycle'),
-      empty: dayKeyOf(new Date(new Date().getFullYear() + 1, 0, 2))
+      // Inside the cycle window but with nothing in it. Placed on a seeded-adjacent
+      // day rather than a far-future one, so it is genuinely a day the gather looks
+      // at and chooses to skip.
+      empty: (() => {
+        const p = SEED_B.split('-').map(Number);
+        return dayKeyOf(new Date(p[0], p[1] - 1, p[2] + 1));
+      })()
     });
 
     await page.click('button:has-text("Gather My Log")');
 
     const status = (await page.textContent('#desk-gather-status') || '').trim();
     check('the status names how many days it gathered',
-      /Gathered 2 days,/.test(status), status);
-    check('and how many boxes of how many are filled, rather than hiding a short week',
-      new RegExp(`of ${PER_DAY * 2} boxes filled`).test(status), status);
+      new RegExp(`Gathered ${EXPECT_DAYS} days,`).test(status), status);
+    check('and how many boxes of how many are filled, rather than hiding a short log',
+      new RegExp(`of ${PER_DAY * EXPECT_DAYS} boxes filled`).test(status), status);
 
     const shape = await page.$eval('#desk-gather-output', out => ({
       heads: Array.from(out.querySelectorAll('h3')).map(h => h.textContent.trim()),
@@ -299,9 +359,19 @@ function seededDay(tag) {
       html: out.innerHTML
     }));
 
-    check('both days are in the paste',
-      shape.text.includes(dayLabel(TODAY)) && shape.text.includes(dayLabel(OTHER_DAY)),
-      `${dayLabel(OTHER_DAY)} + ${dayLabel(TODAY)}`);
+    check('every day in the cycle window is in the paste',
+      [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : [])
+        .every(k => shape.text.includes(dayLabel(k))),
+      [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : []).map(dayLabel).join(' + '));
+
+    // Before the term's anchor Monday, today belongs to no cycle. The page has to say
+    // so rather than reporting an empty log, or a teacher walking the page in August
+    // types two stories, presses Gather, gets nothing, and concludes the button is
+    // broken. This branch is the one that runs pre-term and disappears on day one.
+    if (!TODAY_IN_CYCLE) {
+      check('today is correctly outside the cycle, so its own filing is not gathered',
+        !shape.text.includes(dayLabel(TODAY)), `${dayLabel(TODAY)} before ${CYCLE_START_KEY}`);
+    }
 
     // The previous cycle has already been submitted under its own assignment. This
     // is the assertion that the window is ANCHORED rather than a rolling fourteen
@@ -310,7 +380,8 @@ function seededDay(tag) {
       !shape.text.includes('lastcycle'), `${dayLabel(LAST_CYCLE)} excluded`);
 
     check('a day with nothing in it is not printed as blanks',
-      shape.heads.length === PER_DAY * 2, `${shape.heads.length} headings, expected ${PER_DAY * 2}`);
+      shape.heads.length === PER_DAY * EXPECT_DAYS,
+      `${shape.heads.length} headings, expected ${PER_DAY * EXPECT_DAYS}`);
 
     // Within a day, no two question headings may read the same. Across days they
     // may: the day's first heading drops the date because the <h2> banner directly
@@ -340,7 +411,7 @@ function seededDay(tag) {
     // held; these prove the division is actually there to see.
     const banners = await page.$$eval('#desk-gather-output h2',
       els => els.map(e => e.textContent.trim()));
-    const dayNames = [TODAY, OTHER_DAY].map(k => {
+    const dayNames = [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : []).map(k => {
       const p = k.split('-');
       const d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
       return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d.getDay()]
@@ -350,7 +421,7 @@ function seededDay(tag) {
     }).sort();
     check('each day gets one banner heading, spelling the day out',
       dayNames.every(n => banners.includes(n))
-      && banners.filter(b => dayNames.includes(b)).length === 2,
+      && banners.filter(b => dayNames.includes(b)).length === EXPECT_DAYS,
       banners.join(' | '));
 
     // One banner per day, not one per record. Giving every record its own <h2>
@@ -363,10 +434,18 @@ function seededDay(tag) {
     check('the question text is bold, so it never reads as the student’s own words',
       shape.strongs.some(s => s.startsWith('Question: ')));
     check('the student’s response is italic',
-      shape.ems.some(e => e.startsWith('The town council voted')));
+      shape.ems.some(e => e.startsWith('The zoning board voted')));
     check('a blank line in a response survives as two paragraphs, not a <br>',
-      shape.ems.filter(e => /^(The town council voted|Two of the five)/.test(e)).length === 2,
+      shape.ems.filter(e => /^(The zoning board voted|Two of the five)/.test(e)).length === 2,
       `${shape.ems.length} italic runs`);
+
+    // The end-to-end path, form to paste, only exists once today is inside a cycle.
+    // Asserted when it applies rather than dropped, so the real classroom path stays
+    // covered from the term's first Monday on.
+    if (TODAY_IN_CYCLE) {
+      check('a story typed through the form today reaches the paste',
+        shape.ems.some(e => e.startsWith('The town council voted')));
+    }
     check('the confidence rating travels in words, not a bare numeral',
       /Confidence: 4 of 5, Solid/.test(shape.text));
 
@@ -406,9 +485,9 @@ function seededDay(tag) {
       parsed.hasManifest === true, `hasManifest=${parsed.hasManifest}`);
     check('it reports the cycle this log belongs to',
       parsed.topicId === 'desk-log-' + CYCLE_START_KEY, parsed.topicId);
-    check('it recovers every record both days define',
-      parsed.responses.length === PER_DAY * 2,
-      `${parsed.responses.length} of ${PER_DAY * 2}`);
+    check('it recovers every record every gathered day defines',
+      parsed.responses.length === PER_DAY * EXPECT_DAYS,
+      `${parsed.responses.length} of ${PER_DAY * EXPECT_DAYS}`);
 
     // The real uniqueness invariant, and it lives in the manifest rather than in the
     // rendered headings. Every record declares a date-qualified label, which is what
@@ -424,8 +503,8 @@ function seededDay(tag) {
 
     const declaredExpected = (shape.text.match(/\|expected=(\d+)\|/) || [])[1];
     check('the expected count is computed from the days actually filed, never a literal',
-      Number(declaredExpected) === PER_DAY * 2,
-      `expected=${declaredExpected}, 2 days x ${PER_DAY}`);
+      Number(declaredExpected) === PER_DAY * EXPECT_DAYS,
+      `expected=${declaredExpected}, ${EXPECT_DAYS} days x ${PER_DAY}`);
 
     // THE assertion. If the three facts were printed as a loose line above the
     // questions instead of being a record of their own, that line would fall
@@ -446,10 +525,10 @@ function seededDay(tag) {
     // across a week and across a room. The label carries the date instead.
     const slots = new Set(parsed.responses.map(r => r.slotId));
     check('the slot for one question is the same on both days, so it can be aggregated',
-      slots.size === PER_DAY && slots.has(`desk-${laneA}-${QUESTIONS[0]}`),
+      slots.size === PER_DAY && slots.has(`desk-${LANES[0]}-${QUESTIONS[0]}`),
       Array.from(slots).sort().join(' '));
 
-    const source = parsed.responses.find(r => r.slotId === `desk-${laneA}-source`
+    const source = parsed.responses.find(r => r.slotId === `desk-${LANES[0]}-source`
       && /Times Sentinel/.test(r.response));
     check('the outlet, date and link come back as their own record',
       !!source && /Times Sentinel/.test(source.response)
@@ -466,7 +545,7 @@ function seededDay(tag) {
       !!emptySource && !/blank/i.test(emptySource.response),
       emptySource ? `w=${emptySource.wordCount}, flags=${emptySource.flags.join(',')}` : 'missing');
 
-    const answered = parsed.responses.filter(r => /town council voted/.test(r.response));
+    const answered = parsed.responses.filter(r => /zoning board voted/.test(r.response));
     check('the typed response comes back intact',
       answered.length === 1, `${answered.length} match`);
 
@@ -497,10 +576,41 @@ function seededDay(tag) {
     check('and recovers the same number of records',
       fromPlain.responses.length === parsed.responses.length,
       `${fromPlain.responses.length} vs ${parsed.responses.length}`);
-    const plainAnswered = fromPlain.responses.filter(r => /town council voted/.test(r.response));
+    const plainAnswered = fromPlain.responses.filter(r => /zoning board voted/.test(r.response));
     check('with the typed response intact and unflagged',
       plainAnswered.length === 1 && !plainAnswered[0].flags.includes('EDITED'),
       plainAnswered.length ? plainAnswered[0].flags.join(',') || 'clean' : 'missing');
+
+    // ── An empty gather says which kind of empty it is ────────────────────────
+    group('An empty gather says which kind of empty it is');
+
+    // Two causes, two sentences. Before the term's anchor Monday today belongs to no
+    // cycle, so an empty gather is expected and correct; saying "nothing filed yet"
+    // there would be a lie about work the student can see on the screen, and the move
+    // after "this button is broken" is to stop trusting it. From the first Monday on,
+    // an empty gather really does mean nothing is filed.
+    await page.evaluate(p => {
+      const doomed = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k.indexOf(p) === 0) doomed.push(k);
+      }
+      doomed.forEach(k => localStorage.removeItem(k));
+    }, STORAGE_PREFIX);
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await page.click('button:has-text("Gather My Log")');
+    const emptyStatus = (await page.textContent('#desk-gather-status') || '').trim();
+
+    if (TODAY_IN_CYCLE) {
+      check('an empty log in an open cycle says nothing is filed yet',
+        /Nothing filed in this log yet/.test(emptyStatus), emptyStatus);
+    } else {
+      check('before the term starts it names the day the first log opens',
+        /The first News Log starts/.test(emptyStatus)
+        && emptyStatus.includes(dayLabelFull(CYCLE_START_KEY)), emptyStatus);
+      check('and says the work is saved rather than implying it was lost',
+        /saved on this device/.test(emptyStatus), emptyStatus);
+    }
 
     // ── Nothing leaves the device ─────────────────────────────────────────────
     group('Nothing leaves the device');

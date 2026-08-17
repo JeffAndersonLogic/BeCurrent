@@ -179,7 +179,7 @@ _The United States, or anywhere else. Government, courts, economy, disasters, el
 
 **Every 2 weeks, in Canvas.** One News Log every two weeks, in Canvas, about five class periods of filings. It is the same assignment for the whole two weeks, so paste your log into it again each day. The last paste is the one that gets graded.
 
-The cycle is anchored on Monday `2026-08-17` and runs
+The cycle is anchored on Monday `2026-08-24` and runs
 2 weeks, about 5 class periods. That anchor is the one date in
 `desk-content.js`, and it is what the student's browser counts from, so the Gather
 button collects exactly the days that belong to the current News Log. Change it

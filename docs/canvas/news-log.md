@@ -51,16 +51,16 @@ rides in it. A file upload cannot be parsed and will not appear in any analysis.
 
 Named for the stretch it covers, both ends, so the gradebook sorts
 chronologically and a gap is visible at a glance. These are computed from the
-anchor Monday `2026-08-17`, so they are the real boundaries rather than an
+anchor Monday `2026-08-24`, so they are the real boundaries rather than an
 example:
 
 ```
-CE - News Log - August 17 to 30
-CE - News Log - August 31 to September 13
-CE - News Log - September 14 to 27
-CE - News Log - September 28 to October 11
-CE - News Log - October 12 to 25
-CE - News Log - October 26 to November 8
+CE - News Log - August 24 to September 6
+CE - News Log - September 7 to 20
+CE - News Log - September 21 to October 4
+CE - News Log - October 5 to 18
+CE - News Log - October 19 to November 1
+CE - News Log - November 2 to 15
 ```
 
 ASCII only, and identical in Canvas and PowerSchool character for character. The

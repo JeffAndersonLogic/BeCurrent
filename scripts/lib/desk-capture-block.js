@@ -561,8 +561,27 @@ ${recordBlockSource('  ')}
     // Say the numbers out loud before they submit. A wiped browser profile
     // produces a well-formed paste with nothing in it, and a student has no other
     // way to notice that Monday and Tuesday are gone.
+    //
+    // An empty gather has two causes and they need different sentences. Before the
+    // term's anchor Monday, today belongs to no cycle at all: a teacher walking the
+    // page in August, or a student on an intro day, types two stories, presses
+    // Gather, and correctly gets nothing. "Nothing filed yet" would be a lie about
+    // work they can see on the screen, and the move after "this button is broken" is
+    // to stop trusting it. So the pre-term case says what is actually true.
+    //
+    // The condition is "no days AND before the cycle", not just "before the cycle":
+    // a day inside the window can be filled while today sits outside it, and then
+    // there is a real count to report. (No backticks in these comments: every line
+    // here is inside the template literal that builds this source.)
     if (!doc.days) {
-      deskSay('Nothing filed in this log yet. Fill in a story above, then gather again.', 'short');
+      if (dayKeyOf(cycleStart()) > TODAY) {
+        deskSay('The first News Log starts ' + dayBanner(dayKeyOf(cycleStart()))
+          + '. Anything you file before then is saved on this device, but it is not '
+          + 'part of a log yet.', 'short');
+      } else {
+        deskSay('Nothing filed in this log yet. Fill in a story above, then gather again.',
+          'short');
+      }
       return doc;
     }
     var blank = doc.total - doc.count;

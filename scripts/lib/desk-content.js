@@ -371,7 +371,10 @@ const DESK = {
   // every cycle boundary after it moves, so change it between cycles rather than
   // inside one.
   log: {
-    anchorMonday: '2026-08-17',
+    // The first Monday of the term. Anything filed before it is saved on the device
+    // but belongs to no cycle, and the gather panel says so rather than silently
+    // returning nothing.
+    anchorMonday: '2026-08-24',
     weeks: 2,
     // What a full cycle looks like on a block schedule. Used in the wording only;
     // nothing counts periods, because the Desk has no calendar and must not pretend
