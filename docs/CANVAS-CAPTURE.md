@@ -76,11 +76,48 @@ the paste comes back `EDITED`. Nothing about the rendered page would look wrong.
 **Anything printed between the first label and the footer must belong to some
 record.** Only the document head, above the first label, is free.
 
-**The label carries the date; the slot does not.** A heading reads
-`Fri Sep 12, Local story, Why it caught me`, so five days of the same two questions
-stay distinguishable to a teacher reading thirty of these. The slot stays
-`desk-local-why` on every day of the year, which is what lets one question be looked
-at across a week and across a room.
+**The label carries the date; the slot does not.** A label reads
+`Friday, September 12 Local story, Why it caught me`, so five days of the same two
+questions stay distinguishable to a teacher reading thirty of these, and every row
+of `responses.csv` is attributable to a day. The slot stays `desk-local-why` on
+every day of the year, which is what lets one question be looked at across a week
+and across a room.
+
+**The day banner is the first words of a record's own label, not a heading of its
+own.** This looks like a decoration and is a correctness requirement, for the same
+reason the facts are a record. A week's log needs its days visibly divided, and the
+obvious way is an `<h2>` with the date before each day's first record. That way is
+broken and broken invisibly: a free-standing `<h2>` there sits after the previous
+day's last `My response:`, gets hashed into that answer, and the whole paste comes
+back `EDITED` while the page looks perfect.
+
+So the banner is rendered by splitting one label across two heading elements:
+
+```html
+<h2>Monday, September 8</h2><h3>Local story, Source</h3>
+```
+
+with the label `Monday, September 8 Local story, Source`. The label match therefore
+starts *at* the banner, the previous record's hashed region ends before it, and the
+division costs nothing.
+
+**The join has to be plain whitespace.** `findLabelIndex` tries an exact `indexOf`
+first, which fails here because the rendered text has a newline between the two
+headings, then falls back to a whitespace-insensitive regex built by replacing every
+run of spaces in the label with `\s+`. That fallback is what carries this. Put a
+comma, a bullet or a dash at the split point and the loose regex looks for that
+character where the rendered text has a newline, nothing matches, and every record
+reports `MISSING_BODY`.
+
+Every *later* record of the same day still prints its whole label, or it too reports
+`MISSING_BODY`. The repeated date is wrapped in a `<span class="rec-day">` so the
+heading's text content stays byte-identical to the label while the page renders the
+repetition as small grey type. Canvas usually strips the span; that is fine, because
+the words are what the parser reads.
+
+In the plain-text flavour the divider is a rule of `=` **under** the day's first
+label, never above it. Above it would be inside the previous record's hashed region,
+which is the same trap in a different costume.
 
 **`expected` counts the days actually filed, not the class periods held.** The Desk
 has no calendar, so it cannot know the week had three meetings, and it never reports
@@ -91,7 +128,11 @@ version of that report.
 
 **A day with nothing in it is not gathered at all**, rather than printed as six
 blanks. A student who opened the page and left has not attempted and abandoned six
-boxes, and reporting it that way would say they had.
+boxes, and reporting it that way would say they had. Likewise **a story with nothing
+in it emits an empty Source record** rather than three lines reading `(blank)`: an
+empty record is reported as `BLANK`, which is the honest signal, while three lines of
+the word "blank" is the same information dressed up as work and is what a teacher
+scrolling a five-day log has to read past on every unfilled lane.
 
 ## The path
 

@@ -37,10 +37,10 @@ The contracts below are enforced by machine, not by memory.
   scroll lock, the deck, the brief's capture key, and the record footer read back by
   the real parser. `brief-gather.test.js` is 28 on a unit topic brief: the confidence
   words, the paste's bold/italic shape, and the footer through the real parser in
-  both clipboard flavours. `desk.test.js` is 36 on the Desk: the browser-stamped
+  both clipboard flavours. `desk.test.js` is 40 on the Desk: the browser-stamped
   day key, typing surviving a reload, the weekly gather reaching an earlier day and
-  refusing last week's, and the whole two-day paste through the real parser with no
-  false `EDITED`.
+  refusing last week's, one day banner per day, and the whole two-day paste through
+  the real parser with no false `EDITED`.
 - `npm run test:all`, both suites.
 - `npm run hooks:install`, point git at `.githooks/` so `npm test` runs before
   every push. `npm install` does this automatically. Override once with
@@ -249,6 +249,24 @@ conversation, breaks nothing technically, and is discovered by a student being
 asked to present. The gate fails if a routine step, a lane question, a story
 question and either of its tiers, a house rule, the deck, or the daily
 accountability line uses presenting language.
+
+### What the student page does not show
+
+**The routine and the house rules are not on the Desk page.** The page is three
+things a student acts on: find a story, file it, copy the week. The four timed steps
+are what the teacher runs rather than what the student does with their hands, and
+the house rules are how the class works rather than work to be done.
+
+Both still generate. The routine goes to the TODAY board's Desk slide, both go to
+`docs/lesson-plans/the-desk.md`, and `validate.js` runs the presenting-language
+check over both. **So `desk.routine` and `desk.rules` have no reader on the student
+page and must not be deleted from the content module**: a field with no reader
+*there* is not a field with no reader.
+
+One line from the deleted rules card did need to survive and moved into the gather
+panel: that a student's work lives in this browser only until they copy it into
+Canvas. That is not a rule about how the class runs, it is the reason the last step
+exists.
 
 ### The Desk's rationale is not on the Desk
 
@@ -568,9 +586,17 @@ Three things about it that are not obvious, all covered in `docs/CANVAS-CAPTURE.
   record, so a loose `Outlet: …` line between two questions flags every filing as
   `EDITED` with the page looking perfect. Anything printed between the first label and
   the footer must belong to some record.
-- **The label carries the date, the slot does not.** `Fri Sep 12, Local story, Why it
-  caught me` keeps five days distinguishable in one paste; `desk-local-why` stays
-  constant so one question can be looked at across a week and a room.
+- **The label carries the date, the slot does not.** `Friday, September 12 Local
+  story, Why it caught me` keeps five days distinguishable in one paste and keeps
+  every CSV row attributable to a day; `desk-local-why` stays constant so one
+  question can be looked at across a week and a room.
+- **The day banner is the first words of a label, split across an `<h2>` and an
+  `<h3>`.** A free-standing day heading between two records lands in the earlier
+  one's hashed region and flags the whole paste `EDITED`. The split makes the label
+  match start at the banner instead. The join must be plain whitespace: the exact
+  `indexOf` fails across the heading boundary and the whitespace-insensitive
+  fallback is what carries it, so a comma or a dash at that point gives
+  `MISSING_BODY` on every record.
 
 ## The Canvas Record Footer
 

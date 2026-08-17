@@ -526,36 +526,6 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-variant-numeric:tabular-nums;
 }
 
-/* ── The Desk: the routine ─────────────────────────────────────────────────────
-   Four step cards. These classes had been on the page since the Desk was written
-   and were never defined anywhere, so the routine rendered as a bare <ol>: the
-   list markers showed, the cards had no card, and every step ran together. It
-   looked like a page that had failed to load its stylesheet, on the first thing a
-   student reads on the page they open every day.
-
-   `list-style:none` on the <ol> is therefore load-bearing rather than cosmetic:
-   the step number is already in .block-num, and a marker beside it reads as two
-   different numbering schemes disagreeing. */
-.block-list{
-  list-style:none; margin:0; padding:0;
-  display:grid; gap:14px;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
-}
-.block-card{
-  background:var(--clean-paper); border:1px solid var(--paper-line);
-  border-top:4px solid var(--signal); border-radius:var(--radius);
-  padding:18px 16px; box-shadow:var(--soft-shadow);
-}
-.block-num{
-  font-family:var(--ui); font-size:.66rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
-}
-.block-card h3{
-  margin:8px 0 8px; font-family:var(--display); font-weight:700;
-  font-size:1.12rem; letter-spacing:.04em; color:var(--black-900);
-}
-.block-sub{margin:0;font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
-
 /* ── The Desk: finding a story ─────────────────────────────────────────────────
    The source buttons. Grouped by the job each does, because the student's real
    question is "where do I look for a LOCAL story" and a flat list of a dozen
@@ -571,20 +541,59 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   padding:20px 18px; box-shadow:var(--soft-shadow);
 }
 .source-what{margin:6px 0 14px;font-size:.94rem;color:var(--ink-soft)}
-.source-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+/* A real button per outlet, not a hyperlinked word.
+
+   A run of underlined names reads as prose to skim past, and Hunt is the step a
+   student has five minutes for: a button is a thing you press, and it is a target
+   you can hit with a thumb. Hence a full 2px border rather than a left rule, a
+   solid paper ground, and a press state that fills with --signal.
+
+   The note stays inside the button because "who is Al Jazeera" is the whole reason
+   the button is worth pressing rather than guessed at. It inverts with the rest of
+   the button on hover, so the pressed state is one object changing colour instead
+   of a label and a caption disagreeing.
+
+   min-height gives every button in a row the same height whatever its note's
+   length, so a group reads as a row of buttons and not a ragged stack of cards. */
+.source-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr))}
 .source-btn{
-  display:flex; flex-direction:column; gap:4px; text-decoration:none;
-  background:var(--newsprint); border:1px solid var(--paper-line);
-  border-left:4px solid var(--ink); border-radius:0 10px 10px 0;
-  padding:11px 13px; color:var(--ink);
-  transition:transform .12s ease, border-left-color .12s ease;
+  display:flex; flex-direction:column; gap:5px; text-decoration:none;
+  min-height:74px; padding:12px 14px;
+  background:var(--clean-paper); border:2px solid var(--ink); border-radius:10px;
+  color:var(--ink); box-shadow:0 1px 0 var(--paper-line);
+  transition:background .12s ease, color .12s ease, transform .12s ease;
 }
-.source-btn:hover{transform:translateY(-1px);border-left-color:var(--signal)}
+.source-btn:hover,.source-btn:active{
+  background:var(--signal); border-color:var(--signal); color:var(--clean-paper);
+  transform:translateY(-1px);
+}
 .source-name{
-  font-family:var(--ui); font-size:.78rem; font-weight:700;
+  font-family:var(--ui); font-size:.8rem; font-weight:700;
   letter-spacing:.04em; color:var(--black-900);
 }
-.source-note{font-size:.84rem;line-height:1.4;color:var(--ink-soft)}
+.source-note{font-size:.82rem;line-height:1.35;color:var(--ink-soft)}
+/* Both spans inherit the inverted colour, so the whole button flips as one thing. */
+.source-btn:hover .source-name,.source-btn:active .source-name,
+.source-btn:hover .source-note,.source-btn:active .source-note{color:var(--clean-paper)}
+
+/* The day divider inside the gathered paste. The <h2> is the day; every question
+   heading under it is an <h3>. See dayBannerHtml in desk-capture-block.js for why
+   the day is structurally part of a record label rather than free text. */
+.gather-output h2{
+  margin:22px 0 4px; font-family:var(--display); font-weight:700;
+  font-size:1rem; letter-spacing:.04em; color:var(--signal-deep);
+  border-bottom:2px solid var(--signal); padding-bottom:5px;
+}
+.gather-output h2:first-child{margin-top:0}
+.gather-output h3{
+  margin:16px 0 4px; font-family:var(--ui); font-size:.76rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--black-900);
+}
+/* The repeated date inside a question heading. Every record has to print its whole
+   label or the parser reports MISSING_BODY, so under a day banner the date is said
+   again five more times. It is made quiet rather than removed: the words have to be
+   there, they just do not have to shout. */
+.gather-output .rec-day{font-weight:400;color:var(--black-500)}
 
 /* ── The Desk: filing a story ──────────────────────────────────────────────────
    One card per lane. The lane's question is the largest thing on it, because
@@ -663,17 +672,6 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 .tier-strip .tier p{margin:0;font-size:.95rem}
 .ways{margin:6px 0 0;padding-left:1.1rem}
 .ways li{margin-bottom:4px;font-size:.95rem}
-
-/* The rules exist so a student can rely on them, so they are on the page in the
-   student's own words rather than only in the content module's header. */
-.rules-card{margin-top:16px;border-top:4px solid var(--ink)}
-.rule-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.rule{display:flex;flex-direction:column;gap:2px}
-.rule-text{
-  margin:0; font-family:var(--body); font-weight:700;
-  font-size:1.04rem; line-height:1.45; color:var(--black-900);
-}
-.rule-why{margin:0;font-size:.93rem;color:var(--ink-soft)}
 
 /* ── Week index cards ──────────────────────────────────────────────────────── */
 .week-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}

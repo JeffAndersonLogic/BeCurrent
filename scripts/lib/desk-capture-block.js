@@ -95,6 +95,10 @@ function deskCaptureBlock(lanes, facts, questions) {
   var DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var DOW_FULL = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+    'Friday', 'Saturday'];
+  var MON_FULL = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
 
   // Built from arrays rather than toLocaleDateString, so thirty Chromebooks with
   // thirty locale settings all produce the same heading. That heading is also the
@@ -106,6 +110,13 @@ function deskCaptureBlock(lanes, facts, questions) {
   function dayLabel(key) {
     var d = dateOfKey(key);
     return DOW[d.getDay()] + ' ' + MON[d.getMonth()] + ' ' + d.getDate();
+  }
+  // The day banner, spelled out. Used as the <h2> that divides one day's filings
+  // from the next, and it is the FIRST PART OF A RECORD LABEL rather than free
+  // text. See dayBannerHtml below for why that distinction is the whole trick.
+  function dayBanner(key) {
+    var d = dateOfKey(key);
+    return DOW_FULL[d.getDay()] + ', ' + MON_FULL[d.getMonth()] + ' ' + d.getDate();
   }
 
   var TODAY = dayKeyOf(new Date());
@@ -231,10 +242,18 @@ ${recordBlockSource('  ')}
     return live ? String(live.textContent || '').trim() : '';
   }
 
+  // A story the student filed nothing at all for emits an EMPTY source record
+  // rather than three "(blank)" lines. An empty record is reported as BLANK by the
+  // parser, which is the honest signal; three lines of the word "blank" is the same
+  // information dressed up as work, and it is what a teacher scrolling a five-day
+  // log has to read past.
   function factLine(dayState, lane) {
-    return FACTS.map(function (f) {
-      var v = (dayState[lane.id + '-' + f.id] || {}).answer;
-      return f.label + ': ' + (String(v || '').trim() || '(blank)');
+    var values = FACTS.map(function (f) {
+      return String((dayState[lane.id + '-' + f.id] || {}).answer || '').trim();
+    });
+    if (!values.some(Boolean)) return '';
+    return FACTS.map(function (f, i) {
+      return f.label + ': ' + (values[i] || '(not given)');
     }).join('\\n');
   }
 
@@ -246,18 +265,29 @@ ${recordBlockSource('  ')}
    * printed between two labels is hashed into the earlier one. See the header.
    *
    * The label is date-qualified, which is what makes it unique inside a paste
-   * carrying five days. The slot is NOT: 'desk-local-why' means the same thing on
-   * every day of the year, so the Skills Lens can aggregate one question across a
-   * whole week and across a whole room.
+   * carrying five days, and what keeps every row in responses.csv attributable to
+   * a day. The slot is NOT: 'desk-local-why' means the same thing on every day of
+   * the year, so the Skills Lens can aggregate one question across a whole week and
+   * across a whole room.
+   *
+   * The "first" flag marks the day's first record. It is the one that carries the
+   * day banner, for the reason spelled out over dayBannerHtml.
+   *
+   * No backticks anywhere below this point: every line of this function is inside
+   * the template literal that builds the browser source, so one backtick in a
+   * comment closes the literal and the whole module stops parsing.
    */
   function rowsForDay(dayKey, dayState) {
-    var when = dayLabel(dayKey);
+    // The spelled-out day, not the short form: the banner has to be a prefix of the
+    // label, character for character, and 'Monday, August 17' is what a day divider
+    // should say.
+    var when = dayBanner(dayKey);
     var rows = [];
     LANES.forEach(function (lane) {
       rows.push({
         ord: 'xx',
         id: 'desk-' + lane.id + '-source',
-        label: when + ', ' + lane.name + ' story, Source',
+        label: when + ' ' + lane.name + ' story, Source',
         prompt: 'Outlet, publication date and link.',
         text: factLine(dayState, lane),
         confidence: ''
@@ -268,14 +298,66 @@ ${recordBlockSource('  ')}
         rows.push({
           ord: 'xx',
           id: 'desk-' + id,
-          label: when + ', ' + lane.name + ' story, ' + q.label,
+          label: when + ' ' + lane.name + ' story, ' + q.label,
           prompt: promptFor(dayState, id),
           text: String(entry.answer || '').trim(),
           confidence: String(entry.confidence || '')
         });
       });
     });
+    // Every row knows its day; only the first row of the day prints the banner.
+    rows.forEach(function (r, i) {
+      r.banner = dayBanner(dayKey);
+      r.first = i === 0;
+    });
     return rows;
+  }
+
+  /**
+   * The day banner, and why it is built this strangely.
+   *
+   * A week's log needs the days visually divided or a teacher scrolling thirty of
+   * them cannot tell Monday's filing from Wednesday's. The obvious way to do that
+   * is an <h2> with the date in it before each day's first record.
+   *
+   * That obvious way is broken, and broken invisibly. Everything between one
+   * record's "My response:" marker and the NEXT record's label is what the parser
+   * hashes for that record, so a free-standing <h2> lands inside the previous day's
+   * last answer and the whole paste comes back EDITED, accusing the student of
+   * tampering with work they typed correctly. The page would look perfect.
+   *
+   * So the banner is not free text: it is THE FIRST WORDS OF THE RECORD'S OWN LABEL,
+   * rendered in its own <h2>, with the rest of the label in the <h3> under it. The
+   * label match therefore starts AT the banner, the previous record's hashed region
+   * ends before it, and the day division costs nothing.
+   *
+   * The join has to be plain whitespace. findLabelIndex tries an exact indexOf
+   * first, which fails here because the rendered text has a newline between the two
+   * headings, then falls back to a whitespace-insensitive regex built by replacing
+   * every run of spaces in the label with \\s+. That fallback is what carries this,
+   * and it only works if the character between the banner and the remainder is a
+   * space in the label. Put a comma, a bullet or a dash at that boundary and the
+   * loose regex looks for a comma where the rendered text has a newline, no label
+   * matches, and every record reports MISSING_BODY.
+   */
+  function dayBannerHtml(row) {
+    if (!row.banner) return '<h3>' + bcEsc(row.label) + '</h3>';
+    var rest = row.label.slice(row.banner.length).replace(/^\\s+/, '');
+
+    // The day's first record: the banner becomes the h2 that divides the days, and
+    // the question heading is the h3 under it.
+    if (row.first) {
+      return '<h2>' + bcEsc(row.banner) + '</h2><h3>' + bcEsc(rest) + '</h3>';
+    }
+
+    // Every later record of the same day still has to print its whole label, or the
+    // parser finds no such section and reports MISSING_BODY. So the day stays in the
+    // heading and is merely made quiet: a span carries it, which keeps the heading's
+    // text content byte-identical to the label while letting the page render the
+    // repeated date as small grey type under the banner. Canvas usually strips the
+    // span, and that is fine, because the words are what the parser reads.
+    return '<h3><span class="rec-day">' + bcEsc(row.banner) + '</span> '
+      + bcEsc(rest) + '</h3>';
   }
 
   // A day counts as filed if the student put anything at all in it. A day with an
@@ -329,7 +411,7 @@ ${recordBlockSource('  ')}
     // confidence sits ABOVE the "My response:" marker, because everything below
     // that marker is what gets hashed.
     var body = rows.map(function (r) {
-      return '<h3>' + bcEsc(r.label) + '</h3>'
+      return dayBannerHtml(r)
         + '<p>Confidence: ' + bcEsc(confidencePhrase(r.confidence)) + '</p>'
         + '<p><strong>Question: ' + bcEsc(r.prompt) + '</strong></p>'
         + '<p><strong>My response:</strong></p>'
@@ -355,12 +437,23 @@ ${recordBlockSource('  ')}
       .concat(rows.map(function (r) {
         // The same four lines in the same order, for the same reason.
         // findLabelIndex is case-insensitive, so the label may be shouted here.
-        return [r.label.toUpperCase(),
+        //
+        // The day divider is a rule of equals signs UNDER the day's first label,
+        // never above it, and the difference is not cosmetic. In this flavour the
+        // label is one line of plain text, so indexOf finds it exactly; anything
+        // printed above it therefore falls in the PREVIOUS record's section, after
+        // that record's "My response:", and gets hashed into it. Under the label is
+        // inside this record's own unhashed region, between the label and the
+        // marker, which is where free text is free. The label already begins with
+        // the day, so it reads as a day heading with a rule under it.
+        var lines = [r.label.toUpperCase()];
+        if (r.first && r.banner) lines.push('='.repeat(r.label.length));
+        return lines.concat([
           'Confidence: ' + confidencePhrase(r.confidence),
           'Question: ' + r.prompt,
           'My response:',
           r.text,
-          ''].join('\\n');
+          '']).join('\\n');
       }))
       .concat(manifest)
       .join('\\n');

@@ -9,26 +9,43 @@
  * page is written by the browser at load: see the header of
  * scripts/lib/desk-capture-block.js.
  *
- * ── The page answers questions in the order a student needs them ─────────────
+ * ── Three sections, in the order a student does them ─────────────────────────
  *
- * Watch, then hunt, then file, then copy. The sections are in that order and the
- * quick-nav is in that order, because the source buttons are useless after the
- * form and the form is unusable before the sources. A student who lands here
- * mid-period should be able to scroll to the step the room is on.
+ * Find a story, file it, copy the week. Nothing else. The source buttons are
+ * useless after the form and the form is unusable before the sources, so the
+ * order is fixed, and a student who lands here mid-period can scroll to the step
+ * the room is on.
  *
  * ── What is deliberately NOT printed ────────────────────────────────────────
  *
+ * **The routine and the house rules are not on this page**, and that is the
+ * teacher's call rather than an omission. The four timed steps are what the
+ * teacher runs, not what the student does with their hands, and the projector
+ * board already shows them; the house rules are how the class works rather than
+ * work to be done. Both still generate, into `announcements.html` and into
+ * `docs/lesson-plans/the-desk.md`, so the room and the substitute folder still
+ * have them. What is left here is only the three things a student acts on.
+ *
+ * That leaves `desk.routine` and `desk.rules` with no reader on this page. Do not
+ * delete them from the content module: `build-announcements.js` reads the routine
+ * for the projector slide, `build-lesson-plans.js` reads both, and `validate.js`
+ * runs the presenting-language check over both. A field with no reader *here* is
+ * not a field with no reader.
+ *
  * The content module's `why` fields and its lanes' `note` fields are teacher
- * rationale, and none of them reach this page. They used to: the previous version
- * printed a paragraph of pedagogy under every routine step and every beat, which
- * was most of the page's length and none of its use. They now go to
- * docs/lesson-plans/the-desk.md, so nothing is lost and the student page is
- * things to do rather than an argument for doing them.
+ * rationale, and none of them reach this page either. They used to: the previous
+ * version printed a paragraph of pedagogy under every routine step and every
+ * beat, which was most of the page's length and none of its use.
  *
  * The page also says nothing about nobody presenting. That is enforced in the
  * design and in validate.js, and stating it here would turn an ordinary absence
  * into an announcement, which draws attention to exactly the students it was meant
  * to protect.
+ *
+ * One line from the deleted rules card DID need to survive, and it moved into the
+ * gather panel rather than leaving with the section: that a student's work lives in
+ * this browser only until they copy it into Canvas. That is not a rule about how
+ * the class runs, it is the reason the last step exists.
  */
 
 const { deskCaptureBlock } = require('./desk-capture-block');
@@ -123,14 +140,14 @@ function renderDeskPage(desk) {
   const story = desk.story || {};
   const lanes = desk.lanes || [];
 
-  const routine = (desk.routine || []).map(step => `        <li class="block-card">
-          <div class="block-num">${esc(String(step.minutes))} min &middot; Step ${esc(String(step.n))}</div>
-          <h3>${esc(step.name)}</h3>
-          <p class="block-sub">${esc(step.what)}</p>
-        </li>`).join('\n');
-
   // Grouped, because the student's real question is "where do I look for a LOCAL
   // story" and a flat list of a dozen outlets does not answer it.
+  //
+  // Each one is a real button rather than a hyperlinked word. A run of blue
+  // underlined names reads as prose to skim, and this is the step a student has
+  // five minutes for: a button is a thing you press, and it is also a target you
+  // can hit on a phone. The note rides inside it, because "who is Al Jazeera" is
+  // the whole reason the button is worth pressing rather than guessing.
   const sources = (desk.sources || []).map(g => `        <div class="source-group">
           <div class="eyebrow">${esc(g.group)}</div>
           <p class="source-what">${esc(g.what)}</p>
@@ -146,13 +163,7 @@ ${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)
 
   const ways = (story.ways || []).map(w => `            <li>${esc(w)}</li>`).join('\n');
 
-  const rules = (desk.rules || []).map(r => `          <li class="rule">
-            <p class="rule-text">${esc(r.rule)}</p>
-            <p class="rule-why">${esc(r.why)}</p>
-          </li>`).join('\n');
-
   const a = desk.accountability || {};
-  const totalMinutes = (desk.routine || []).reduce((n, s) => n + (s.minutes || 0), 0);
 
   return `<!doctype html>
 <html lang="en">
@@ -175,7 +186,6 @@ ${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)
       </a>
       <div class="nav-links">
         <a href="../index.html">Home</a>
-        <a href="#routine">The Routine</a>
         <a href="#sources">Find a Story</a>
         <a href="#file">File</a>
         <a href="#week">My Week</a>
@@ -197,19 +207,9 @@ ${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)
   </section>
 
   <main>
-    <section class="section" id="routine">
-      <div class="section-header">
-        <div class="eyebrow">The first ${esc(String(totalMinutes))} minutes</div>
-        <h2>The same four steps, every class.</h2>
-      </div>
-      <ol class="block-list">
-${routine}
-      </ol>
-    </section>
-
     <section class="section" id="sources">
       <div class="section-header">
-        <div class="eyebrow">Step 2 &middot; Find a story</div>
+        <div class="eyebrow">Step 1 &middot; Find a story</div>
         <h2>Two stories. One local, one from further out.</h2>
         <p>Every link opens in a new tab, so keep this one open. If a link is dead, use the
           search button in that group. Anything you bring from somewhere else is welcome, and
@@ -222,7 +222,7 @@ ${sources}
 
     <section class="section" id="file">
       <div class="section-header">
-        <div class="eyebrow">Step 3 &middot; File</div>
+        <div class="eyebrow">Step 2 &middot; File</div>
         <h2>Today&rsquo;s filing: <span class="desk-today" id="desk-today">today</span></h2>
         <p>${esc(story.intro || '')} Your work saves in this browser as you type, and each
           class period gets its own sheet.</p>
@@ -244,7 +244,7 @@ ${ways}
 
     <section class="section" id="week">
       <div class="section-header">
-        <div class="eyebrow">Step 4 &middot; Every day, before you leave</div>
+        <div class="eyebrow">Step 3 &middot; Every day, before you leave</div>
         <h2>Copy your week into Canvas.</h2>
         <p>${esc(a.written || '')}</p>
       </div>
@@ -252,6 +252,9 @@ ${ways}
         <h3>My News Log</h3>
         <p>This gathers every day you have filed this week, today included. Press both
           buttons, then paste into the News Log assignment in Canvas.</p>
+        <p><strong>Do this every day, not just on Friday.</strong> Your filings are saved in
+          this browser only until you copy them into Canvas, so pasting daily is also your
+          backup.</p>
         <div class="quick-nav">
           <button class="btn" type="button" onclick="gatherDeskWork()">Gather My Week</button>
           <button class="btn secondary" type="button" onclick="copyDeskWork()">Copy to Clipboard</button>
@@ -262,22 +265,6 @@ ${ways}
             <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
         </div>
       </div>
-    </section>
-
-    <section class="section" id="rules">
-      <div class="section-header">
-        <div class="eyebrow">How this works</div>
-        <h2>What you can count on.</h2>
-      </div>
-      <article class="card rules-card">
-        <ul class="rule-list">
-${rules}
-        </ul>
-        <div class="prompt-block">
-          <span class="prompt-label">Every class</span>
-          ${esc(a.daily || '')}
-        </div>
-      </article>
     </section>
   </main>
 

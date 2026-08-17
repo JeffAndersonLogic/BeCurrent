@@ -268,16 +268,52 @@ function seededDay(tag) {
     check('a day with nothing in it is not printed as blanks',
       shape.heads.length === PER_DAY * 2, `${shape.heads.length} headings, expected ${PER_DAY * 2}`);
 
-    // Date-qualified, so five days of the same two questions stay distinguishable.
-    // The parser walks the body forward from the previous match, so duplicated
-    // labels would still parse, but the teacher reading thirty of these could not
-    // tell Monday from Friday.
-    check('every heading is distinct, because each carries its own date',
-      new Set(shape.heads).size === shape.heads.length,
-      `${new Set(shape.heads).size} unique of ${shape.heads.length}`);
+    // Within a day, no two question headings may read the same. Across days they
+    // may: the day's first heading drops the date because the <h2> banner directly
+    // above it carries it, so 'Local story, Source' appears once under each banner.
+    // Asserting global uniqueness of the RENDERED headings would fail that on a
+    // correct paste, which is why the real invariant, label uniqueness, is checked
+    // against the manifest further down instead.
+    const perDayHeads = [];
+    for (let i = 0; i < shape.heads.length; i += PER_DAY) {
+      perDayHeads.push(shape.heads.slice(i, i + PER_DAY));
+    }
+    check('within one day, no two question headings read the same',
+      perDayHeads.every(block => new Set(block).size === block.length),
+      perDayHeads.map(b => `${new Set(b).size}/${b.length}`).join(' '));
 
     check('the header names the week and which days were filed',
       /Week of /.test(shape.text) && /Days filed: /.test(shape.text));
+
+    // ── The day banners ───────────────────────────────────────────────────────
+    //
+    // A week's log needs its days visibly divided or a teacher scrolling thirty of
+    // them cannot tell Monday's filing from Wednesday's. The banner is an <h2>, and
+    // it is structurally the first words of a record's own LABEL rather than free
+    // text, because free text between two records is hashed into the earlier one.
+    // The "not one response comes back EDITED" check below is what proves that part
+    // held; these prove the division is actually there to see.
+    const banners = await page.$$eval('#desk-gather-output h2',
+      els => els.map(e => e.textContent.trim()));
+    const dayNames = [TODAY, OTHER_DAY].map(k => {
+      const p = k.split('-');
+      const d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+      return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d.getDay()]
+        + ', ' + ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+          'August', 'September', 'October', 'November', 'December'][d.getMonth()]
+        + ' ' + d.getDate();
+    }).sort();
+    check('each day gets one banner heading, spelling the day out',
+      dayNames.every(n => banners.includes(n))
+      && banners.filter(b => dayNames.includes(b)).length === 2,
+      banners.join(' | '));
+
+    // One banner per day, not one per record. Giving every record its own <h2>
+    // would divide nothing, because a divider that appears between every two rows
+    // is not a divider.
+    check('the banner appears once per day, not once per record',
+      banners.filter(b => b === dayNames[0]).length === 1,
+      `${banners.length} h2 total, ${shape.heads.length} records`);
 
     check('the question text is bold, so it never reads as the student’s own words',
       shape.strongs.some(s => s.startsWith('Question: ')));
@@ -329,6 +365,18 @@ function seededDay(tag) {
       parsed.responses.length === PER_DAY * 2,
       `${parsed.responses.length} of ${PER_DAY * 2}`);
 
+    // The real uniqueness invariant, and it lives in the manifest rather than in the
+    // rendered headings. Every record declares a date-qualified label, which is what
+    // keeps five days of the same two questions apart both for the parser and for
+    // every row of responses.csv. The parser walks the body forward from the previous
+    // match, so duplicated labels would still parse; a teacher reading thirty of
+    // these could not tell Monday from Friday.
+    const labels = parsed.responses.map(r => r.label);
+    check('every record declares a distinct, date-qualified label',
+      new Set(labels).size === labels.length
+      && labels.every(l => /\w+day, \w+ \d+/.test(l)),
+      `${new Set(labels).size} unique of ${labels.length}`);
+
     const declaredExpected = (shape.text.match(/\|expected=(\d+)\|/) || [])[1];
     check('the expected count is computed from the days actually filed, never a literal',
       Number(declaredExpected) === PER_DAY * 2,
@@ -362,6 +410,16 @@ function seededDay(tag) {
       !!source && /Times Sentinel/.test(source.response)
       && new RegExp(DESK.story.facts[1].label).test(source.response),
       source ? source.response.replace(/\s+/g, ' ').slice(0, 58) + '…' : 'missing');
+
+    // A story the student filed nothing for emits an EMPTY source record rather
+    // than three lines reading "(blank)". Three lines of the word blank is the same
+    // information dressed up as work, and it is what a teacher has to read past on
+    // every unfilled lane of a five-day log.
+    const emptySource = parsed.responses.find(r => r.slotId === `desk-${LANES[1]}-source`
+      && r.wordCount === 0);
+    check('an unfilled story leaves its source record empty, not full of "(blank)"',
+      !!emptySource && !/blank/i.test(emptySource.response),
+      emptySource ? `w=${emptySource.wordCount}, flags=${emptySource.flags.join(',')}` : 'missing');
 
     const answered = parsed.responses.filter(r => /town council voted/.test(r.response));
     check('the typed response comes back intact',
