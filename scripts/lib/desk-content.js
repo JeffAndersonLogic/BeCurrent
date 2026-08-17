@@ -97,9 +97,11 @@ const DESK = {
     course: 'CURRENT EVENTS',
     title: 'The Desk',
     deck: 'Watch the news. Find two stories, one local and one from further out. '
-      + 'File them here, then copy your week into Canvas.',
-    // The sum of the routine's minutes is what the page prints; this is the
-    // number the front door and the TODAY board quote. Keep them in step.
+      + 'File them here, then copy your log into Canvas.',
+    // Kept for the generated lesson plan, which is where a substitute needs a
+    // timing. NOT printed on any student-facing surface: the Desk takes about half
+    // the block and is allowed to run long, so a number in front of students is a
+    // promise the room does not keep. The per-step minutes are in `routine`.
     minutes: 32
   },
 
@@ -252,9 +254,17 @@ const DESK = {
       }
     ],
 
-    // How a filing can be made. Three ways, equally valid, no permission needed.
-    // Listed on the page rather than handled quietly per student, because a
-    // student who has to ask for the accommodation often does not ask.
+    // How a filing can be PRODUCED. Not where it is submitted: submission is Canvas
+    // and only Canvas, and the page says that in the gather panel where it matters.
+    // These are the accommodations, and they are equally valid with no permission
+    // needed.
+    //
+    // NOT ON THE STUDENT PAGE any more, by the teacher's call: the box read as a
+    // menu of submission routes, which it never was, and there is only one of those.
+    // It stays here and in docs/lesson-plans/the-desk.md because it is an
+    // accommodation record rather than a student instruction, and a substitute or a
+    // 504 meeting is exactly who needs to know that dictation and a paper card are
+    // normal here rather than a favour. The room learns it from how the class runs.
     ways: [
       'Type it on this page. It saves in this browser as you go.',
       'Dictate it. Voice typing is a normal way to file, not a special arrangement.',
@@ -301,8 +311,14 @@ const DESK = {
       ]
     },
     {
-      group: 'National',
-      what: 'The United States: government, courts, economy, disasters, elections.',
+      // One group rather than two, matching the lane. The student's second story is
+      // "national OR international, you choose", so splitting the buttons into
+      // National and International asked them to decide which lane they were in
+      // before they had a story, which is backwards: you find the story and then
+      // discover where it is.
+      group: 'National or International',
+      what: 'The United States, or anywhere else. Government, courts, economy, '
+        + 'disasters, elections, war, money.',
       links: [
         // "Associated Press" rather than the initials the site brands itself with,
         // for two reasons that point the same way. A 9th grader does not
@@ -314,40 +330,74 @@ const DESK = {
         { name: 'Reuters', url: 'https://www.reuters.com', note: 'UK wire service.' },
         { name: 'NPR', url: 'https://www.npr.org', note: 'US public radio.' },
         { name: 'CNN', url: 'https://www.cnn.com', note: 'US cable, centre left.' },
-        { name: 'Fox News', url: 'https://www.foxnews.com', note: 'US cable, right.' }
-      ]
-    },
-    {
-      group: 'International',
-      what: 'Anywhere else, including the places currently in the units.',
-      links: [
-        { name: 'BBC News', url: 'https://www.bbc.com/news', note: 'UK public broadcaster.' },
-        { name: 'Al Jazeera', url: 'https://www.aljazeera.com', note: 'Based in Qatar, a non-Western desk.' },
-        { name: 'The Guardian', url: 'https://www.theguardian.com/international', note: 'UK, left.' },
-        { name: 'Search world news', url: 'https://news.google.com',
-          note: 'Aggregator. Good for searching one topic across many outlets.' }
+        { name: 'Fox News', url: 'https://www.foxnews.com', note: 'US cable, right.' },
+        { name: 'NewsNation', url: 'https://www.newsnationnow.com', note: 'US cable.' },
+        { name: 'BBC News', url: 'https://www.bbc.com/news',
+          note: 'UK public broadcaster. The one desk here that is not American.' },
+        { name: 'Newsweek', url: 'https://www.newsweek.com', note: 'US news magazine.' },
+        { name: 'Bloomberg', url: 'https://www.bloomberg.com',
+          note: 'US business and markets. Good for the money behind a story.' },
+        // The contributor note is not a warning, it is the lesson. Sourcing is what
+        // this course teaches, and Forbes is the clearest everyday case of one
+        // masthead carrying both staff reporting and outside writing, which is
+        // exactly the distinction a student has to learn to look for.
+        { name: 'Forbes', url: 'https://www.forbes.com',
+          note: 'US business. Check whether a piece is by staff or an outside contributor.' },
+        { name: 'Search the news', url: 'https://news.google.com',
+          note: 'Always works. Good for one topic across many outlets.' }
       ]
     }
   ],
 
+  // ── The News Log cycle ──────────────────────────────────────────────────────
+  //
+  // The graded artifact is one News Log every TWO weeks, which on a block schedule
+  // is about five class periods. The Desk's gather button has to collect exactly
+  // the days that belong to the current log, so it needs to know where one cycle
+  // ends and the next begins.
+  //
+  // A weekly log needed no configuration: "the Monday of this week" is computable
+  // from any date. A two-week cycle is not, because nothing in a single date says
+  // whether this is the first week of a cycle or the second. So the cycle is
+  // ANCHORED here, and every student's browser counts from the same Monday.
+  //
+  // Without an anchor the obvious shortcut is a rolling fourteen days back from
+  // today, and that is wrong in a way that would not look wrong: two students
+  // pressing the button on different days would produce two different windows, and
+  // a day would land in one student's log and the next student's, or in neither.
+  //
+  // `anchorMonday` is the Monday the first cycle starts on, and it is the one date
+  // in this file. Set it to the first Monday of the term. Change it mid-year and
+  // every cycle boundary after it moves, so change it between cycles rather than
+  // inside one.
+  log: {
+    anchorMonday: '2026-08-17',
+    weeks: 2,
+    // What a full cycle looks like on a block schedule. Used in the wording only;
+    // nothing counts periods, because the Desk has no calendar and must not pretend
+    // to have one. See the `expected` note in scripts/lib/desk-capture-block.js.
+    periods: 5
+  },
+
   // ── What a student is accountable for ───────────────────────────────────────
   //
-  // The daily/weekly split is deliberate in both directions. Grading thirty
+  // The daily/per-cycle split is deliberate in both directions. Grading thirty
   // filings a day is 5,400 grading events a year and none of them would get read
-  // properly. Grading nothing daily means finding out on Friday that Tuesday was
-  // lost. So: file daily, copy daily, graded weekly.
+  // properly. Grading nothing until the end means finding out in week two that the
+  // first Tuesday was lost. So: file daily, copy daily, graded once a cycle.
   //
   // "Copy it in every day" is not an optional tidiness step and the page says so.
-  // A week of work living only in this browser's localStorage is one cleared
+  // Two weeks of work living only in this browser's localStorage is one cleared
   // profile away from gone, and the privacy rule correctly forecloses any
-  // server-side copy. Pasting into the same weekly assignment each day is the
-  // only backup that exists, and Canvas keeps every attempt.
+  // server-side copy. Pasting into the same assignment each day is the only backup
+  // that exists, and Canvas keeps every attempt.
   accountability: {
-    daily: 'Two stories filed on this page, then Copy My Week and paste it into this '
-      + 'week’s News Log in Canvas. Never spoken to the class, and never shown with '
+    daily: 'Two stories filed on this page, then Copy My Log and paste it into the '
+      + 'current News Log in Canvas. Never spoken to the class, and never shown with '
       + 'your name on it unless you ask for it.',
-    written: 'One News Log a week, in Canvas. It is the same assignment all week, so paste '
-      + 'your whole week into it again each day. The last paste is the one that gets graded.',
+    written: 'One News Log every two weeks, in Canvas, about five class periods of '
+      + 'filings. It is the same assignment for the whole two weeks, so paste your log '
+      + 'into it again each day. The last paste is the one that gets graded.',
     note: 'The daily filings are the practice and the News Log is the graded artifact. '
       + 'Pasting every day is also your only backup: your work is saved in this browser and '
       + 'nowhere else until you copy it into Canvas.'

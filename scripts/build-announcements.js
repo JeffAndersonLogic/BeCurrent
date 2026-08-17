@@ -208,10 +208,13 @@ function buildDays(schedule, index) {
 }
 
 /* ---------------------------------------------------------
-   The Desk is the first 25 minutes of EVERY class, so it is read out of
+   The Desk is the first half of EVERY class, so it is read out of
    desk-content.js rather than typed on any day. That is also why the
-   slide carries the beats and the routine and no story: a board built
+   slide carries the routine and the two lanes and no story: a board built
    once and served all year cannot hold a headline.
+
+   No minutes reach the payload. The board is projected at students, the Desk is
+   allowed to run long, and a printed number is a promise the room does not keep.
    --------------------------------------------------------- */
 function buildDesk(schedule) {
   if (schedule.settings && schedule.settings.showDesk === false) return null;
@@ -219,9 +222,11 @@ function buildDesk(schedule) {
   try { desk = require('./lib/desk-content'); } catch (e) { return null; }
   return {
     title: plain((desk.meta || {}).title || 'The Desk'),
-    minutes: (desk.meta || {}).minutes || 25,
+    // No minutes in the payload. The board is projected at students and the Desk is
+    // allowed to run long, so a printed number is a promise the room does not keep.
+    // The per-step timings live in docs/lesson-plans/the-desk.md, for the teacher.
     routine: (desk.routine || []).map(s => ({
-      name: plain(s.name), what: plain(s.what), minutes: s.minutes || null
+      name: plain(s.name), what: plain(s.what)
     })),
     // The two lanes, with the question each one exists to ask. This used to read
     // `desk.beats`, which is the field the four-beat rotation lived in before every

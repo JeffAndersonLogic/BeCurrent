@@ -11,7 +11,7 @@
  *
  * ── Three sections, in the order a student does them ─────────────────────────
  *
- * Find a story, file it, copy the week. Nothing else. The source buttons are
+ * Find a story, file it, copy the log. Nothing else. The source buttons are
  * useless after the form and the form is unusable before the sources, so the
  * order is fixed, and a student who lands here mid-period can scroll to the step
  * the room is on.
@@ -46,6 +46,18 @@
  * gather panel rather than leaving with the section: that a student's work lives in
  * this browser only until they copy it into Canvas. That is not a rule about how
  * the class runs, it is the reason the last step exists.
+ *
+ * `story.ways` is off the page too. Those are the accommodations, typing, dictation
+ * or a paper card, and the box read as a menu of SUBMISSION routes, which it never
+ * was: submission is Canvas and only Canvas, and the gather panel says so where it
+ * matters. It still generates into the lesson plan, because a substitute and a 504
+ * meeting are exactly who need to know that dictation is normal here rather than a
+ * favour. Do not delete it from the content module.
+ *
+ * No minute counts anywhere on this page. The Desk runs about half the block and is
+ * allowed to run long, so a number printed at students is a promise the room does
+ * not keep. The per-step timings stay in `docs/lesson-plans/the-desk.md`, which is
+ * where a substitute needs them.
  */
 
 const { deskCaptureBlock } = require('./desk-capture-block');
@@ -146,7 +158,7 @@ function renderDeskPage(desk) {
   // Each one is a real button rather than a hyperlinked word. A run of blue
   // underlined names reads as prose to skim, and this is the step a student has
   // five minutes for: a button is a thing you press, and it is also a target you
-  // can hit on a phone. The note rides inside it, because "who is Al Jazeera" is
+  // can hit on a phone. The note rides inside it, because "who is Bloomberg" is
   // the whole reason the button is worth pressing rather than guessing.
   const sources = (desk.sources || []).map(g => `        <div class="source-group">
           <div class="eyebrow">${esc(g.group)}</div>
@@ -160,8 +172,6 @@ ${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)
         </div>`).join('\n');
 
   const stories = lanes.map(lane => storyCard(lane, story)).join('\n');
-
-  const ways = (story.ways || []).map(w => `            <li>${esc(w)}</li>`).join('\n');
 
   const a = desk.accountability || {};
 
@@ -188,13 +198,13 @@ ${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)
         <a href="../index.html">Home</a>
         <a href="#sources">Find a Story</a>
         <a href="#file">File</a>
-        <a href="#week">My Week</a>
+        <a href="#week">My Log</a>
       </div>
     </nav>
   </header>
 
   <section class="hero" id="top">
-    <p class="dateline">${esc(m.course)} &middot; Every class period &middot; ${esc(String(m.minutes))} minutes</p>
+    <p class="dateline">${esc(m.course)} &middot; Every class period</p>
     <h1 class="logo-title">${esc(m.title)}</h1>
     <p class="hero-copy">
       <span>${esc(m.deck)}</span>
@@ -202,7 +212,7 @@ ${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)
     <div class="quick-nav">
       <a class="btn" href="#sources">Find a Story</a>
       <a class="btn secondary" href="#file">File My Two Stories</a>
-      <a class="btn secondary" href="#week">Copy My Week</a>
+      <a class="btn secondary" href="#week">Copy My Log</a>
     </div>
   </section>
 
@@ -232,36 +242,29 @@ ${sources}
 ${stories}
       </div>
 
-      <article class="card">
-        <div class="prompt-block">
-          <span class="prompt-label">Three ways to file, all equal</span>
-          <ul class="ways">
-${ways}
-          </ul>
-        </div>
-      </article>
     </section>
 
     <section class="section" id="week">
       <div class="section-header">
         <div class="eyebrow">Step 3 &middot; Every day, before you leave</div>
-        <h2>Copy your week into Canvas.</h2>
+        <h2>Copy your log into Canvas.</h2>
         <p>${esc(a.written || '')}</p>
       </div>
       <div class="gather-panel">
         <h3>My News Log</h3>
-        <p>This gathers every day you have filed this week, today included. Press both
-          buttons, then paste into the News Log assignment in Canvas.</p>
-        <p><strong>Do this every day, not just on Friday.</strong> Your filings are saved in
+        <p>This gathers every day you have filed in the current News Log, today
+          included. Press both buttons, then paste into the News Log assignment in
+          Canvas.</p>
+        <p><strong>Do this every day, not just on the last day.</strong> Your filings are saved in
           this browser only until you copy them into Canvas, so pasting daily is also your
           backup.</p>
         <div class="quick-nav">
-          <button class="btn" type="button" onclick="gatherDeskWork()">Gather My Week</button>
+          <button class="btn" type="button" onclick="gatherDeskWork()">Gather My Log</button>
           <button class="btn secondary" type="button" onclick="copyDeskWork()">Copy to Clipboard</button>
         </div>
         <p class="gather-status" id="desk-gather-status" role="status"></p>
         <div class="gather-output" id="desk-gather-output" tabindex="0">
-          <p class="gather-placeholder">Press <strong>Gather My Week</strong>, then
+          <p class="gather-placeholder">Press <strong>Gather My Log</strong>, then
             <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
         </div>
       </div>
@@ -276,7 +279,7 @@ ${ways}
     </div>
   </footer>
 </div>
-${deskCaptureBlock(lanes, story.facts, story.questions)}
+${deskCaptureBlock(lanes, story.facts, story.questions, desk.log)}
 </body>
 </html>
 `;

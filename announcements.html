@@ -166,7 +166,7 @@
       return s;
     }
 
-    // The Desk runs the first 25 minutes of EVERY class, so it is a standing
+    // The Desk runs the first half of EVERY class, so it is a standing
     // slide built from the Desk's own content rather than typed per day. It
     // carries the routine and never a story: this board is generated once and
     // projected all year, and a headline written in August is stale by October.
@@ -175,14 +175,16 @@
       if (!steps.length) return null;
 
       var s = slide();
-      s.appendChild(eyebrow('First ' + (desk.minutes || 25) + ' minutes, every class'));
+      // No minute count. The Desk is allowed to run long, and this board is
+      // projected at students, so a number here is a promise the room does not keep.
+      // The per-step timings are on the teacher's lesson plan.
+      s.appendChild(eyebrow('First half of every class'));
       s.appendChild(el('h2', 'slide-title', desk.title || 'The Desk'));
 
       var grid = el('div', 'desk-grid');
       steps.forEach(function (step, i) {
         var card = el('div', 'desk-card');
-        card.appendChild(el('div', 'desk-step',
-          'Step ' + (i + 1) + (step.minutes ? ' · ' + step.minutes + ' min' : '')));
+        card.appendChild(el('div', 'desk-step', 'Step ' + (i + 1)));
         card.appendChild(el('div', 'desk-name', step.name));
         if (has(step.what)) card.appendChild(el('div', 'desk-what', step.what));
         grid.appendChild(card);

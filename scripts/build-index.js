@@ -63,8 +63,13 @@ function load(dir, re) {
 // numbers that live in desk-content.js: the routine grew a fourth step and the
 // four rotating beats became two fixed lanes, and the front door went on
 // advertising the old shape with every check green. Derived, it cannot.
+//
+// No minute counts on these two cards. The Desk takes about half the block and is
+// allowed to run long, so a number here is a promise the room does not keep, and
+// two cards reading "First 32" and "Remaining 58" turn a teaching judgment into a
+// contract with the student. The kickers say the CADENCE instead, which is the part
+// that is actually true every day. Per-step timings live in the lesson plan.
 const DESK = require('./lib/desk-content');
-const deskMinutes = (DESK.routine || []).reduce((n, s) => n + (s.minutes || 0), 0);
 
 // "one local and one national or international", built from the lane names, so
 // renaming a lane reaches the front door too. Lower-cased because it lands
@@ -171,14 +176,14 @@ ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? ' 
       </div>
       <div class="unit-grid">
         <a class="unit-card" href="daily/index.html">
-          <span class="unit-kicker">First ${deskMinutes} minutes &middot; every day</span>
+          <span class="unit-kicker">First half &middot; every day</span>
           <h3>${esc(DESK.meta.title)}</h3>
           <p>CNN 10, then two stories you pick yourself: one ${deskLanes}. Where it came
             from, what happened, and why it caught you.</p>
           <span class="unit-meta">Same routine every class</span>
         </a>
         <div class="unit-card planned">
-          <span class="unit-kicker">Remaining ${90 - deskMinutes} minutes &middot; for weeks at a time</span>
+          <span class="unit-kicker">Second half &middot; for weeks at a time</span>
           <h3>The Unit</h3>
           <p>One theme, traced backwards from something happening now to where it started,
             ending on a question you have to argue.</p>

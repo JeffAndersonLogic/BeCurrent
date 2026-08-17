@@ -21,21 +21,21 @@
         <a href="../index.html">Home</a>
         <a href="#sources">Find a Story</a>
         <a href="#file">File</a>
-        <a href="#week">My Week</a>
+        <a href="#week">My Log</a>
       </div>
     </nav>
   </header>
 
   <section class="hero" id="top">
-    <p class="dateline">CURRENT EVENTS &middot; Every class period &middot; 32 minutes</p>
+    <p class="dateline">CURRENT EVENTS &middot; Every class period</p>
     <h1 class="logo-title">The Desk</h1>
     <p class="hero-copy">
-      <span>Watch the news. Find two stories, one local and one from further out. File them here, then copy your week into Canvas.</span>
+      <span>Watch the news. Find two stories, one local and one from further out. File them here, then copy your log into Canvas.</span>
     </p>
     <div class="quick-nav">
       <a class="btn" href="#sources">Find a Story</a>
       <a class="btn secondary" href="#file">File My Two Stories</a>
-      <a class="btn secondary" href="#week">Copy My Week</a>
+      <a class="btn secondary" href="#week">Copy My Log</a>
     </div>
   </section>
 
@@ -82,8 +82,8 @@
           </div>
         </div>
         <div class="source-group">
-          <div class="eyebrow">National</div>
-          <p class="source-what">The United States: government, courts, economy, disasters, elections.</p>
+          <div class="eyebrow">National or International</div>
+          <p class="source-what">The United States, or anywhere else. Government, courts, economy, disasters, elections, war, money.</p>
           <div class="source-grid">
             <a class="source-btn" href="https://apnews.com" target="_blank" rel="noopener noreferrer">
               <span class="source-name">Associated Press</span>
@@ -105,27 +105,29 @@
               <span class="source-name">Fox News</span>
               <span class="source-note">US cable, right.</span>
             </a>
-          </div>
-        </div>
-        <div class="source-group">
-          <div class="eyebrow">International</div>
-          <p class="source-what">Anywhere else, including the places currently in the units.</p>
-          <div class="source-grid">
+            <a class="source-btn" href="https://www.newsnationnow.com" target="_blank" rel="noopener noreferrer">
+              <span class="source-name">NewsNation</span>
+              <span class="source-note">US cable.</span>
+            </a>
             <a class="source-btn" href="https://www.bbc.com/news" target="_blank" rel="noopener noreferrer">
               <span class="source-name">BBC News</span>
-              <span class="source-note">UK public broadcaster.</span>
+              <span class="source-note">UK public broadcaster. The one desk here that is not American.</span>
             </a>
-            <a class="source-btn" href="https://www.aljazeera.com" target="_blank" rel="noopener noreferrer">
-              <span class="source-name">Al Jazeera</span>
-              <span class="source-note">Based in Qatar, a non-Western desk.</span>
+            <a class="source-btn" href="https://www.newsweek.com" target="_blank" rel="noopener noreferrer">
+              <span class="source-name">Newsweek</span>
+              <span class="source-note">US news magazine.</span>
             </a>
-            <a class="source-btn" href="https://www.theguardian.com/international" target="_blank" rel="noopener noreferrer">
-              <span class="source-name">The Guardian</span>
-              <span class="source-note">UK, left.</span>
+            <a class="source-btn" href="https://www.bloomberg.com" target="_blank" rel="noopener noreferrer">
+              <span class="source-name">Bloomberg</span>
+              <span class="source-note">US business and markets. Good for the money behind a story.</span>
+            </a>
+            <a class="source-btn" href="https://www.forbes.com" target="_blank" rel="noopener noreferrer">
+              <span class="source-name">Forbes</span>
+              <span class="source-note">US business. Check whether a piece is by staff or an outside contributor.</span>
             </a>
             <a class="source-btn" href="https://news.google.com" target="_blank" rel="noopener noreferrer">
-              <span class="source-name">Search world news</span>
-              <span class="source-note">Aggregator. Good for searching one topic across many outlets.</span>
+              <span class="source-name">Search the news</span>
+              <span class="source-note">Always works. Good for one topic across many outlets.</span>
             </a>
           </div>
         </div>
@@ -309,38 +311,29 @@
       </article>
       </div>
 
-      <article class="card">
-        <div class="prompt-block">
-          <span class="prompt-label">Three ways to file, all equal</span>
-          <ul class="ways">
-            <li>Type it on this page. It saves in this browser as you go.</li>
-            <li>Dictate it. Voice typing is a normal way to file, not a special arrangement.</li>
-            <li>Write it on a paper card and hand it in.</li>
-          </ul>
-        </div>
-      </article>
     </section>
 
     <section class="section" id="week">
       <div class="section-header">
         <div class="eyebrow">Step 3 &middot; Every day, before you leave</div>
-        <h2>Copy your week into Canvas.</h2>
-        <p>One News Log a week, in Canvas. It is the same assignment all week, so paste your whole week into it again each day. The last paste is the one that gets graded.</p>
+        <h2>Copy your log into Canvas.</h2>
+        <p>One News Log every two weeks, in Canvas, about five class periods of filings. It is the same assignment for the whole two weeks, so paste your log into it again each day. The last paste is the one that gets graded.</p>
       </div>
       <div class="gather-panel">
         <h3>My News Log</h3>
-        <p>This gathers every day you have filed this week, today included. Press both
-          buttons, then paste into the News Log assignment in Canvas.</p>
-        <p><strong>Do this every day, not just on Friday.</strong> Your filings are saved in
+        <p>This gathers every day you have filed in the current News Log, today
+          included. Press both buttons, then paste into the News Log assignment in
+          Canvas.</p>
+        <p><strong>Do this every day, not just on the last day.</strong> Your filings are saved in
           this browser only until you copy them into Canvas, so pasting daily is also your
           backup.</p>
         <div class="quick-nav">
-          <button class="btn" type="button" onclick="gatherDeskWork()">Gather My Week</button>
+          <button class="btn" type="button" onclick="gatherDeskWork()">Gather My Log</button>
           <button class="btn secondary" type="button" onclick="copyDeskWork()">Copy to Clipboard</button>
         </div>
         <p class="gather-status" id="desk-gather-status" role="status"></p>
         <div class="gather-output" id="desk-gather-output" tabindex="0">
-          <p class="gather-placeholder">Press <strong>Gather My Week</strong>, then
+          <p class="gather-placeholder">Press <strong>Gather My Log</strong>, then
             <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
         </div>
       </div>
@@ -359,12 +352,17 @@
 (function () {
   'use strict';
 
-  // The storage prefix scripts/validate.js checks and the weekly gather scans for.
+  // The storage prefix scripts/validate.js checks and the cycle gather scans for.
   var PREFIX = "becurrent-desk-";
   var LANES = [{"id":"local","name":"Local"},{"id":"world","name":"National or International"}];
   var FACTS = [{"id":"outlet","label":"Outlet"},{"id":"date","label":"Published"},{"id":"link","label":"Link"}];
   var QUESTIONS = [{"id":"what","label":"What happened"},{"id":"why","label":"Why it caught me"}];
   var CONFIDENCE_WORDS = {"1":"Lost","2":"Shaky","3":"Getting it","4":"Solid","5":"Could teach it"};
+
+  // The News Log cycle, from desk.log. The anchor is the Monday cycle 1 starts on
+  // and it is what makes a multi-week window computable at all; see cycleStart.
+  var ANCHOR_MONDAY = "2026-08-17";
+  var CYCLE_WEEKS = 2;
 
   // ── Today, in the student's own timezone ───────────────────────────────────
   //
@@ -404,6 +402,19 @@
     return DOW_FULL[d.getDay()] + ', ' + MON_FULL[d.getMonth()] + ' ' + d.getDate();
   }
 
+  // The cycle's own name, printed at the top of the paste and used to check that a
+  // log landed under the right Canvas assignment. Both ends are named, because
+  // "News Log, August 17" alone does not say which fortnight it covers, and the
+  // teacher matching thirty pastes to one assignment is the reader here.
+  function rangeLabel(startKey, endKey) {
+    var a = dateOfKey(startKey);
+    var b = dateOfKey(endKey);
+    var left = MON_FULL[a.getMonth()] + ' ' + a.getDate();
+    var right = (a.getMonth() === b.getMonth() ? '' : MON_FULL[b.getMonth()] + ' ')
+      + b.getDate();
+    return 'News Log, ' + left + ' to ' + right;
+  }
+
   var TODAY = dayKeyOf(new Date());
   var KEY = PREFIX + TODAY;
 
@@ -415,14 +426,54 @@
     return x;
   }
 
-  // The seven candidate keys for this week, in order. Seven lookups rather than a
-  // scan of localStorage, so a key left by some other page or an older schema can
-  // never wander into the paste.
-  function weekKeys() {
-    var monday = mondayOf(new Date());
+  /**
+   * The Monday the current News Log cycle started on.
+   *
+   * The log runs CYCLE_WEEKS weeks, so this cannot be computed from today alone:
+   * nothing in a single date says whether this is the first week of a cycle or the
+   * second. It is counted from ANCHOR_MONDAY, which every student's browser shares,
+   * so the whole room's cycle boundaries land on the same day.
+   *
+   * The tempting shortcut is a rolling fourteen days back from today, and it is
+   * wrong in a way that would never look wrong: two students pressing the button on
+   * different days would get two different windows, and a filing would land in one
+   * student's log and the next student's, or in neither.
+   *
+   * Whole days are computed off UTC midnights on purpose. Date arithmetic across a
+   * daylight-saving boundary is off by an hour, and 13.958 days floored by 7 is 1
+   * where 14 days should give 2, which would slip the cycle by a week twice a year.
+   * Both endpoints are local midnights converted the same way, so the difference is
+   * an exact multiple of 24 hours.
+   *
+   * Dates before the anchor floor to cycle 0 rather than going negative, so a page
+   * opened before term starts still gathers into something sane.
+   */
+  function daysBetweenUTC(a, b) {
+    var au = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+    var bu = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+    return Math.round((bu - au) / 86400000);
+  }
+
+  function cycleStart() {
+    var parts = ANCHOR_MONDAY.split('-');
+    var anchor = mondayOf(new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])));
+    var here = mondayOf(new Date());
+    var weeksIn = Math.floor(daysBetweenUTC(anchor, here) / 7);
+    var cycles = Math.floor(weeksIn / CYCLE_WEEKS);
+    if (cycles < 0) cycles = 0;
+    var start = new Date(anchor.getFullYear(), anchor.getMonth(),
+      anchor.getDate() + cycles * CYCLE_WEEKS * 7);
+    return start;
+  }
+
+  // Every candidate key in the current cycle, in order. Enumerated rather than
+  // scanned out of localStorage, so a key left by some other page or an older
+  // schema can never wander into the paste.
+  function cycleKeys() {
+    var start = cycleStart();
     var out = [];
-    for (var i = 0; i < 7; i++) {
-      var d = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i);
+    for (var i = 0; i < CYCLE_WEEKS * 7; i++) {
+      var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
       out.push(dayKeyOf(d));
     }
     return out;
@@ -468,7 +519,7 @@
     // The prompt travels with the answer. The teacher's parser reports "answered a
     // different question" as a real exception, which it can only do if the prompt
     // the student actually saw is stored beside the response. It is also what lets
-    // the weekly gather print a prompt for a day the student is no longer looking at.
+    // the gather print a prompt for a day the student is no longer looking at.
     var questionText = prompt ? String(prompt.textContent || '').trim() : '';
 
     if (state[id] && typeof state[id].answer === 'string') area.value = state[id].answer;
@@ -653,7 +704,7 @@
     }).join('');
   }
 
-  // ── Gather My Week ────────────────────────────────────────────────────────
+  // ── Gather My Log ─────────────────────────────────────────────────────────
 
   function confidencePhrase(value) {
     if (!value) return 'not rated';
@@ -744,7 +795,7 @@
   /**
    * The day banner, and why it is built this strangely.
    *
-   * A week's log needs the days visually divided or a teacher scrolling thirty of
+   * A log needs its days visually divided or a teacher scrolling thirty of
    * them cannot tell Monday's filing from Wednesday's. The obvious way to do that
    * is an <h2> with the date in it before each day's first record.
    *
@@ -799,7 +850,7 @@
 
   function gatheredDays() {
     var out = [];
-    weekKeys().forEach(function (dayKey) {
+    cycleKeys().forEach(function (dayKey) {
       var dayState = dayKey === TODAY ? state : loadDay(dayKey);
       if (!dayState) return;
       if (!dayHasContent(dayState)) return;
@@ -808,10 +859,11 @@
     return out;
   }
 
-  function buildWeekDocument() {
+  function buildLogDocument() {
     var days = gatheredDays();
     var stamp = new Date();
-    var monday = dayKeyOf(mondayOf(new Date()));
+    var start = dayKeyOf(cycleStart());
+    var last = cycleKeys()[cycleKeys().length - 1];
 
     var rows = [];
     days.forEach(function (day) {
@@ -821,13 +873,13 @@
     // The head sits ABOVE the first record label, which is the only region of the
     // paste that belongs to no record and can therefore carry free text. The
     // "Days filed" line is the teacher's completeness signal: the manifest cannot
-    // know how many class periods this week held, but this line makes a missing
+    // know how many class periods the cycle held, but this line makes a missing
     // Wednesday visible at a glance.
     var filed = days.length
       ? days.map(function (d) { return dayLabel(d.key); }).join(', ')
       : 'none yet';
     var head = '<p><strong>CURRENT EVENTS &middot; The Desk &middot; News Log</strong></p>'
-      + '<h2>Week of ' + bcEsc(dayLabel(monday)) + '</h2>'
+      + '<h2>' + bcEsc(rangeLabel(start, last)) + '</h2>'
       + '<p><em>Student work, copied ' + bcEsc(stamp.toLocaleString()) + '</em></p>'
       + '<p>Days filed: ' + bcEsc(filed) + '</p>'
       + '<hr>';
@@ -847,18 +899,18 @@
     }).join('<hr>');
 
     // Computed, never a literal. Six slots for each day actually filed: the Desk
-    // cannot know how many class periods the week held, so an absent day is not
+    // cannot know how many class periods the cycle held, so an absent day is not
     // counted as a shortfall. What it does report is a blank inside a day that was
     // filed, which arrives as w=0 on that record and a BLANK exception for the
     // teacher.
     var manifest = bcRecordManifest(rows, {
-      topic: 'desk-week-' + monday,
+      topic: 'desk-log-' + start,
       expected: days.length * (LANES.length * (1 + QUESTIONS.length)),
       isoStamp: stamp.toISOString()
     });
 
     var plain = ['CURRENT EVENTS \u00b7 The Desk \u00b7 News Log',
-      'Week of ' + dayLabel(monday),
+      rangeLabel(start, last),
       'Student work, copied ' + stamp.toLocaleString(),
       'Days filed: ' + filed,
       '']
@@ -907,7 +959,7 @@
   window.gatherDeskWork = function () {
     var out = document.getElementById('desk-gather-output');
     if (!out) return null;
-    var doc = buildWeekDocument();
+    var doc = buildLogDocument();
     out.innerHTML = doc.html;
     out.dataset.plain = doc.plain;
 
@@ -915,7 +967,7 @@
     // produces a well-formed paste with nothing in it, and a student has no other
     // way to notice that Monday and Tuesday are gone.
     if (!doc.days) {
-      deskSay('Nothing filed this week yet. Fill in a story above, then gather again.', 'short');
+      deskSay('Nothing filed in this log yet. Fill in a story above, then gather again.', 'short');
       return doc;
     }
     var blank = doc.total - doc.count;
@@ -924,7 +976,7 @@
       + (blank > 0
         ? ' ' + blank + ' still blank. You can copy this as it is, or go back and fill '
           + (blank === 1 ? 'it' : 'them') + ' in.'
-        : ' Copy this, then paste it into this week\'s News Log in Canvas.'),
+        : ' Copy this, then paste it into the current News Log in Canvas.'),
       blank > 0 ? 'short' : 'complete');
     return doc;
   };

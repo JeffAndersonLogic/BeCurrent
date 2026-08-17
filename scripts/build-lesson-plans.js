@@ -297,8 +297,16 @@ function renderDeskPlan(desk) {
   out.push('node scripts/build-lesson-plans.js --check  # fail on drift, write nothing');
   out.push('```');
   out.push('');
+  const log = desk.log || {};
+  const cycleWeeks = Number(log.weeks) || 1;
+  const periods = Number(log.periods) || 5;
   out.push(`${plain(m.course)} · every class period · ${minutes} minutes · `
     + `${perDay} boxes filed per student per day`);
+  out.push('');
+  out.push('**The minute counts in this plan are for you, not for the room.** No');
+  out.push('student-facing surface prints them: the Desk takes about half the block and is');
+  out.push('allowed to run long, so a number in front of students is a promise the room does');
+  out.push('not keep.');
   out.push('');
 
   out.push('## What it is');
@@ -397,8 +405,12 @@ function renderDeskPlan(desk) {
   out.push('');
   out.push(list((story.ways || []).map(plain)));
   out.push('');
-  out.push('Listed on the student page rather than arranged quietly per student, because a');
-  out.push('student who has to ask for the accommodation often does not ask.');
+  out.push('**These are on this plan and not on the student page.** They are how a filing gets');
+  out.push('PRODUCED, not where it is submitted: submission is Canvas and only Canvas, and the');
+  out.push('box on the student page read as a menu of submission routes, which it never was.');
+  out.push('They are recorded here because a substitute and a 504 meeting are exactly who need');
+  out.push('to know that dictation and a paper card are normal here rather than a favour. The');
+  out.push('room learns it from how the class runs, not from a notice.');
   out.push('');
 
   out.push('## The source buttons');
@@ -421,11 +433,18 @@ function renderDeskPlan(desk) {
   out.push('');
   out.push(`**Every class.** ${plain((desk.accountability || {}).daily || '')}`);
   out.push('');
-  out.push(`**Once a week, in Canvas.** ${plain((desk.accountability || {}).written || '')}`);
+  out.push(`**Every ${cycleWeeks} weeks, in Canvas.** `
+    + `${plain((desk.accountability || {}).written || '')}`);
+  out.push('');
+  out.push(`The cycle is anchored on Monday \`${plain(log.anchorMonday || 'NOT SET')}\` and runs`);
+  out.push(`${cycleWeeks} weeks, about ${periods} class periods. That anchor is the one date in`);
+  out.push('`desk-content.js`, and it is what the student\'s browser counts from, so the Gather');
+  out.push('button collects exactly the days that belong to the current News Log. Change it');
+  out.push('between cycles, never inside one: every boundary after it moves.');
   out.push('');
   out.push(plain((desk.accountability || {}).note || ''));
   out.push('');
-  out.push('The daily paste is not a tidiness step. A week of filings lives in one browser\'s');
+  out.push('The daily paste is not a tidiness step. A cycle of filings lives in one browser\'s');
   out.push('`localStorage` and nowhere else until the student copies it out, and the privacy rule');
   out.push('correctly forecloses any server-side copy of student writing. Canvas keeps every');
   out.push('attempt, so pasting daily into the same weekly assignment is the only backup that');

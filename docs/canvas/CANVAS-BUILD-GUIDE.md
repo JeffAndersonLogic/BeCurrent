@@ -307,11 +307,11 @@ blocking it. A student who resubmits is recorded as having resubmitted.
 
 ---
 
-## Section 7b, The News Log, the Desk's weekly assignment
+## Section 7b, The News Log, the Desk's two-weekly assignment
 
 The unit half of the block submits through Briefs. The **daily** half submits through
-one weekly assignment called the News Log, and it is the only route the daily filings
-have. `docs/canvas/news-log.md` is generated from `scripts/lib/desk-content.js` and
+one assignment per two-week cycle called the News Log, and it is the only route the
+daily filings have. `docs/canvas/news-log.md` is generated from `scripts/lib/desk-content.js` and
 carries the paste-ready body plus the full settings table; what follows is the part
 that matters when you are building it rather than reading it.
 
@@ -321,21 +321,27 @@ that matters when you are building it rather than reading it.
 | Attempts | **Unlimited** |
 | Assignment group | `News Log`, its own group |
 | Points | 20 |
-| Frequency | One per week, all year, named for the Monday |
+| Frequency | One per two-week cycle, all year, named for the range it covers |
 
-**One a week, not one a day and not one a year.** One a day is 180 gradebook columns
+**One a cycle, not one a day and not one a year.** One a day is 180 gradebook columns
 and 180 Canvas objects built by hand; one for the year is a single column in which a
-missed week is invisible. A weekly column says Tuesday was lost while there is still
-a Wednesday to do something about it.
+missed fortnight is invisible. A per-cycle column says a run of periods was lost while
+there is still time to do something about it.
+
+**The cycle boundaries are not yours to choose in Canvas.** They come from
+`desk.log.anchorMonday` in `scripts/lib/desk-content.js`, which is the same value the
+student's browser counts from, and `docs/canvas/news-log.md` prints the real ranges to
+build from. Name a Canvas assignment for a different fortnight and a student's paste
+will cover a window the assignment does not.
 
 **Unlimited attempts is load-bearing, and for a different reason than on a Brief.**
-Students paste the accumulating log **every day**: Monday is attempt 1, Friday is
-attempt 5 and carries the whole week, and the last attempt is what you grade. That
-daily paste is the only backup that exists. A week of filings lives in one browser's
-`localStorage` until the student copies it out, nothing in this course sends student
-writing anywhere on its own, and a cleared Chromebook profile on Thursday takes Monday
-to Wednesday with it. Cap the attempts and you have removed the backup. `validate.js`
-fails if the generated doc stops saying Unlimited.
+Students paste the accumulating log **every day**, so the first period is attempt 1,
+the last attempt carries the whole cycle, and that last attempt is what you grade. That
+daily paste is the only backup that exists. Two weeks of filings live in one browser's
+`localStorage` until the student copies them out, nothing in this course sends student
+writing anywhere on its own, and a cleared Chromebook profile in week two takes week
+one with it. Cap the attempts and you have removed the backup. `validate.js` fails if
+the generated doc stops saying Unlimited.
 
 **Do not build this as a Discussion.** A Canvas discussion is the feature that looks
 most like a journal and it is the wrong one: a discussion is visible to the class, and
@@ -344,24 +350,25 @@ put it there. Filings are read aloud with names removed. A discussion publishes 
 under their names, in writing, which breaks the constraint the whole daily half is
 built around.
 
-**Build it once and duplicate.** The body is the same every week, so create week one
-from `docs/canvas/news-log.md` through the `</>` editor, then duplicate it in Canvas
-and change the name and the dates. Name each for its Monday, matching the "Week of"
-line the student's own paste prints at the top:
+**Build it once and duplicate.** The body is the same every cycle, so create the first
+from `docs/canvas/news-log.md` through the `</>` editor, then duplicate it in Canvas and
+change the name and the dates. The generated doc lists the real ranges, computed from
+the anchor, and each name matches the line the student's own paste prints at the top:
 
 ```
-CE - News Log - Week of Sept 8
-CE - News Log - Week of Sept 15
+CE - News Log - August 17 to 30
+CE - News Log - August 31 to September 13
 ```
 
-That match is what lets you see at a glance that a log landed in the right week.
+That match is what lets you see at a glance that a log landed under the right
+assignment.
 
 **Reading one.** Each day contributes six records: one Source record per story
 carrying the outlet, date and link, then one per question. A five-day week is thirty
 records in one submission, and `scripts/parse-canvas-submissions.js` reads them all.
 The completeness signal is the **Days filed** line at the top of the paste, not the
 manifest's `expected`: the Desk has no calendar and cannot know how many class periods
-the week held, so it never reports an absent day as a shortfall. A blank box inside a
+the cycle held, so it never reports an absent day as a shortfall. A blank box inside a
 day that *was* filed arrives as a `BLANK` exception. See `docs/CANVAS-CAPTURE.md`.
 
 ---
@@ -384,9 +391,9 @@ panel can only find an assignment that already exists.
    link, answer the questions, gather, copy, paste, submit.
 8. Publish the module.
 
-The News Log is built once for the year rather than per unit, so it is not in that
-list. Do it before the first class period, per Section 7b: the Desk runs on day one
-and its filings have nowhere to go until that assignment exists.
+The News Log is built per two-week cycle rather than per unit, so it is not in that
+list. Build the first one before the first class period, per Section 7b: the Desk runs
+on day one and its filings have nowhere to go until that assignment exists.
 
 ---
 

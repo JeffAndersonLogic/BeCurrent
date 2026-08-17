@@ -14,6 +14,11 @@ node scripts/build-lesson-plans.js --check  # fail on drift, write nothing
 
 CURRENT EVENTS · every class period · 32 minutes · 10 boxes filed per student per day
 
+**The minute counts in this plan are for you, not for the room.** No
+student-facing surface prints them: the Desk takes about half the block and is
+allowed to run long, so a number in front of students is a promise the room does
+not keep.
+
 ## What it is
 
 A 90-minute block runs in two halves. This is the first: the same four steps every
@@ -124,8 +129,12 @@ Briefs use, and the word the student pressed is what prints in the Canvas paste.
 - Dictate it. Voice typing is a normal way to file, not a special arrangement.
 - Write it on a paper card and hand it in.
 
-Listed on the student page rather than arranged quietly per student, because a
-student who has to ask for the accommodation often does not ask.
+**These are on this plan and not on the student page.** They are how a filing gets
+PRODUCED, not where it is submitted: submission is Canvas and only Canvas, and the
+box on the student page read as a menu of submission routes, which it never was.
+They are recorded here because a substitute and a 504 meeting are exactly who need
+to know that dictation and a paper card are normal here rather than a favour. The
+room learns it from how the class runs, not from a notice.
 
 ## The source buttons
 
@@ -148,34 +157,37 @@ _Zionsville, Boone County, Indiana._
 - [Current in Zionsville](https://youarecurrent.com/category/zionsville/): Community coverage: schools, town council, business.
 - [Search Zionsville news](https://news.google.com/search?q=Zionsville%20Indiana): Always works. Use this if a link above is dead.
 
-### National
+### National or International
 
-_The United States: government, courts, economy, disasters, elections._
+_The United States, or anywhere else. Government, courts, economy, disasters, elections, war, money._
 
 - [Associated Press](https://apnews.com): US wire service.
 - [Reuters](https://www.reuters.com): UK wire service.
 - [NPR](https://www.npr.org): US public radio.
 - [CNN](https://www.cnn.com): US cable, centre left.
 - [Fox News](https://www.foxnews.com): US cable, right.
-
-### International
-
-_Anywhere else, including the places currently in the units._
-
-- [BBC News](https://www.bbc.com/news): UK public broadcaster.
-- [Al Jazeera](https://www.aljazeera.com): Based in Qatar, a non-Western desk.
-- [The Guardian](https://www.theguardian.com/international): UK, left.
-- [Search world news](https://news.google.com): Aggregator. Good for searching one topic across many outlets.
+- [NewsNation](https://www.newsnationnow.com): US cable.
+- [BBC News](https://www.bbc.com/news): UK public broadcaster. The one desk here that is not American.
+- [Newsweek](https://www.newsweek.com): US news magazine.
+- [Bloomberg](https://www.bloomberg.com): US business and markets. Good for the money behind a story.
+- [Forbes](https://www.forbes.com): US business. Check whether a piece is by staff or an outside contributor.
+- [Search the news](https://news.google.com): Always works. Good for one topic across many outlets.
 
 ## Where the work goes
 
-**Every class.** Two stories filed on this page, then Copy My Week and paste it into this week’s News Log in Canvas. Never spoken to the class, and never shown with your name on it unless you ask for it.
+**Every class.** Two stories filed on this page, then Copy My Log and paste it into the current News Log in Canvas. Never spoken to the class, and never shown with your name on it unless you ask for it.
 
-**Once a week, in Canvas.** One News Log a week, in Canvas. It is the same assignment all week, so paste your whole week into it again each day. The last paste is the one that gets graded.
+**Every 2 weeks, in Canvas.** One News Log every two weeks, in Canvas, about five class periods of filings. It is the same assignment for the whole two weeks, so paste your log into it again each day. The last paste is the one that gets graded.
+
+The cycle is anchored on Monday `2026-08-17` and runs
+2 weeks, about 5 class periods. That anchor is the one date in
+`desk-content.js`, and it is what the student's browser counts from, so the Gather
+button collects exactly the days that belong to the current News Log. Change it
+between cycles, never inside one: every boundary after it moves.
 
 The daily filings are the practice and the News Log is the graded artifact. Pasting every day is also your only backup: your work is saved in this browser and nowhere else until you copy it into Canvas.
 
-The daily paste is not a tidiness step. A week of filings lives in one browser's
+The daily paste is not a tidiness step. A cycle of filings lives in one browser's
 `localStorage` and nowhere else until the student copies it out, and the privacy rule
 correctly forecloses any server-side copy of student writing. Canvas keeps every
 attempt, so pasting daily into the same weekly assignment is the only backup that

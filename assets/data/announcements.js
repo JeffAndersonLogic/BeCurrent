@@ -248,27 +248,22 @@ window.BECURRENT_ANNOUNCEMENTS = {
   "reminders": [],
   "desk": {
     "title": "The Desk",
-    "minutes": 32,
     "routine": [
       {
         "name": "Watch",
-        "what": "CNN 10, together, captions on, every class period.",
-        "minutes": 10
+        "what": "CNN 10, together, captions on, every class period."
       },
       {
         "name": "Hunt",
-        "what": "Find two stories that interest you: one local, one national or international. The source buttons are the fast way.",
-        "minutes": 5
+        "what": "Find two stories that interest you: one local, one national or international. The source buttons are the fast way."
       },
       {
         "name": "File",
-        "what": "Fill in both stories on this page: where it came from, what happened, and why it caught you. It saves as you type.",
-        "minutes": 12
+        "what": "Fill in both stories on this page: where it came from, what happened, and why it caught you. It saves as you type."
       },
       {
         "name": "The Front Page",
-        "what": "Your teacher reads three or four filings aloud, names removed, and runs one question from Week 01 at them.",
-        "minutes": 5
+        "what": "Your teacher reads three or four filings aloud, names removed, and runs one question from Week 01 at them."
       }
     ],
     "lanes": [

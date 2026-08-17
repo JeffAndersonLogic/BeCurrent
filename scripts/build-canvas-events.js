@@ -273,23 +273,29 @@ function renderAssignments(unit) {
 
 // ── The News Log ─────────────────────────────────────────────────────────────
 //
-// The Desk's route to Canvas: ONE assignment per week, in its own assignment
-// group, and every word of it derived from scripts/lib/desk-content.js so it
-// cannot describe a Desk the students are not being shown.
+// The Desk's route to Canvas: ONE assignment per TWO-WEEK CYCLE, in its own
+// assignment group, and every word of it derived from scripts/lib/desk-content.js
+// so it cannot describe a Desk the students are not being shown. Two weeks is
+// about five class periods on a block schedule.
 //
-// It is one assignment a week rather than one a day, and the reasons run in both
+// It is one assignment a cycle rather than one a day, and the reasons run in both
 // directions. One a day is 180 gradebook columns a year, which nobody reads, and
 // 180 Canvas objects to build by hand. One for the whole year is a single column
-// where a missed week is invisible. A weekly column is the split the Desk's own
-// accountability note asks for: a blank one on Wednesday says Tuesday was lost,
-// while there is still a Wednesday to do something about it.
+// where a missed fortnight is invisible. A per-cycle column is the split the Desk's
+// own accountability note asks for: a blank one says a run of periods was lost while
+// there is still time to do something about it.
+//
+// The cycle boundaries are not this file's to invent. They come from
+// desk.log.anchorMonday, which is the same value the student's browser counts from,
+// so the assignment a teacher builds and the window the gather button collects
+// cannot disagree.
 //
 // ATTEMPTS MUST BE UNLIMITED, and here that is not the usual reason. Students
-// paste the accumulating log EVERY day: Monday is attempt 1, Friday is attempt 5
-// and carries the whole week. That is not a convenience, it is the only backup
-// that exists. A week of filings lives in one browser's localStorage until it is
-// copied out, the privacy rule correctly forecloses any server-side copy, and a
-// cleared Chromebook profile on Thursday takes Monday to Wednesday with it.
+// paste the accumulating log EVERY day, so the first period is attempt 1 and the
+// last carries the whole cycle. That is not a convenience, it is the only backup
+// that exists. Two weeks of filings live in one browser's localStorage until they
+// are copied out, the privacy rule correctly forecloses any server-side copy, and a
+// cleared Chromebook profile in week two takes week one with it.
 //
 // It is deliberately NOT a Canvas Discussion, which is the Canvas feature that
 // looks most like a journal. A discussion is visible to the class, and the Desk's
@@ -299,9 +305,35 @@ function renderAssignments(unit) {
 // loud.
 const NEWS_LOG = {
   group: 'News Log',
-  name: n => `${PREFIX} - News Log - Week of ${n}`,
+  // Named for the cycle it covers, both ends, because "News Log 3" tells a student
+  // nothing about which filings belong in it and a single date does not say which
+  // fortnight. The student's own paste prints the same range at the top, which is
+  // what lets a teacher see at a glance that a log landed under the right assignment.
+  name: range => `${PREFIX} - News Log - ${range}`,
   points: 20
 };
+
+// The cycle windows, derived from the Desk's anchor rather than typed here, so the
+// assignment names and the gather button's window cannot drift apart. Returns the
+// first `count` cycles as { start, end, range } with plain-date arithmetic.
+function logCycles(desk, count) {
+  const log = (desk && desk.log) || {};
+  const weeks = Number(log.weeks) || 1;
+  const parts = String(log.anchorMonday || '').split('-').map(Number);
+  if (parts.length !== 3 || parts.some(Number.isNaN)) return [];
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+  const out = [];
+  for (let i = 0; i < count; i++) {
+    const start = new Date(parts[0], parts[1] - 1, parts[2] + i * weeks * 7);
+    const end = new Date(parts[0], parts[1] - 1, parts[2] + (i + 1) * weeks * 7 - 1);
+    const left = `${MONTHS[start.getMonth()]} ${start.getDate()}`;
+    const right = (start.getMonth() === end.getMonth() ? '' : `${MONTHS[end.getMonth()]} `)
+      + end.getDate();
+    out.push({ start, end, range: `${left} to ${right}` });
+  }
+  return out;
+}
 
 function newsLogBody(desk) {
   const m = desk.meta || {};
@@ -317,7 +349,7 @@ function newsLogBody(desk) {
     .join('\n');
   const ways = (story.ways || []).map(w => `    <li>${esc(plain(w))}</li>`).join('\n');
 
-  return `<h2>${esc(objectName(m.title))}: your News Log for this week</h2>
+  return `<h2>${esc(objectName(m.title))}: your News Log for these two weeks</h2>
 <p><em>${esc(plain(m.deck))}</em></p>
 
 <h3>Step 1 &mdash; Open the Desk</h3>
@@ -337,17 +369,17 @@ ${boxes}
 ${ways}
 </ul>
 
-<h3>Step 3 &mdash; Copy your week into Canvas, every day</h3>
+<h3>Step 3 &mdash; Copy your log into Canvas, every day</h3>
 <ol>
     <li>Scroll to <strong>My News Log</strong> at the bottom of the Desk.</li>
-    <li>Click <strong>Gather My Week</strong>. This collects every day you have filed this week, today included.</li>
+    <li>Click <strong>Gather My Log</strong>. This collects every day you have filed in this log, today included.</li>
     <li>Click <strong>Copy to Clipboard</strong>.</li>
     <li>Paste it into the submission box below and click Submit.</li>
 </ol>
-<p><strong>Do this at the end of every class, not just on Friday.</strong> You can submit here as many times as you like, and the last one is the one I grade, so each day you paste your whole week in again and it replaces the day before. That is also your only backup: your filings are saved in the browser on the device you used, they do not follow you to another Chromebook, and if that browser gets cleared they are gone. Pasting daily means the worst you can ever lose is one day.</p>
+<p><strong>Do this at the end of every class, not just on the last day.</strong> You can submit here as many times as you like, and the last one is the one I grade, so each day you paste your whole log in again and it replaces the day before. That is also your only backup: your filings are saved in the browser on the device you used, they do not follow you to another Chromebook, and if that browser gets cleared they are gone. Pasting daily means the worst you can ever lose is one day.</p>
 
 <h3>Due</h3>
-<p>The end of the last class period this week. Paste it in every day before then.</p>
+<p>The end of the last class period in this two-week stretch. Paste it in every day before then.</p>
 
 <h3>What I am looking for</h3>
 <ol>
@@ -361,6 +393,13 @@ ${ways}
 function renderNewsLog(desk) {
   const m = desk.meta || {};
   const story = desk.story || {};
+  const log = desk.log || {};
+  const weeks = Number(log.weeks) || 1;
+  const periods = Number(log.periods) || 5;
+  const anchor = String(log.anchorMonday || '');
+  // Six shown, which is a term's worth. Enough to build from without turning the
+  // doc into a calendar it would then have to be kept in step with.
+  const cycles = logCycles(desk, 6);
   const perDay = (desk.lanes || []).length
     * ((story.facts || []).length + (story.questions || []).length);
   const out = [];
@@ -373,8 +412,15 @@ function renderNewsLog(desk) {
   out.push('read out of the content module rather than retyped, so a student cannot be');
   out.push('assessed against something they were never shown.');
   out.push('');
-  out.push('One assignment **per week**, all year. It is the Desk\'s only route to Canvas:');
-  out.push(`${perDay} boxes a day, about ${perDay * 5} a week, all pasted into this one box.`);
+  out.push(`One assignment **every ${weeks} weeks**, all year, which on a block schedule is`);
+  out.push(`about ${periods} class periods. It is the Desk's only route to Canvas:`);
+  out.push(`${perDay} boxes a day, about ${perDay * periods} a cycle, all pasted into this one box.`);
+  out.push('');
+  out.push('**The cycle boundaries are not typed here.** They are derived from');
+  out.push('`desk.log.anchorMonday` in `scripts/lib/desk-content.js`, which is the same value');
+  out.push('the student\'s browser counts from, so the assignment you build and the window the');
+  out.push('Gather button collects cannot disagree. Change the anchor between cycles, never');
+  out.push('inside one.');
   out.push('');
   out.push('## Settings');
   out.push('');
@@ -389,13 +435,13 @@ function renderNewsLog(desk) {
   out.push('| Anonymous grading | **Off** |');
   out.push('');
   out.push('**Unlimited attempts is load-bearing here, for a different reason than on a');
-  out.push('Brief.** Students paste the accumulating log every day: Monday is attempt 1,');
-  out.push('Friday is attempt 5 and carries the whole week, and the last attempt is the one');
-  out.push('you grade. That daily paste is the only backup that exists. A week of filings');
-  out.push('lives in one browser\'s `localStorage` until the student copies it out, nothing');
-  out.push('in this course sends student writing anywhere on its own, and a cleared');
-  out.push('Chromebook profile on Thursday takes Monday to Wednesday with it. Cap the');
-  out.push('attempts and you have removed the backup.');
+  out.push('Brief.** Students paste the accumulating log every day, so the first period is');
+  out.push('attempt 1, the last attempt carries the whole cycle, and that last attempt is the');
+  out.push('one you grade. The daily paste is the only backup that exists. Two weeks of');
+  out.push('filings live in one browser\'s `localStorage` until the student copies them out,');
+  out.push('nothing in this course sends student writing anywhere on its own, and a cleared');
+  out.push('Chromebook profile in week two takes week one with it. Cap the attempts and you');
+  out.push('have removed the backup.');
   out.push('');
   out.push('**Not a Discussion.** A Canvas discussion is the feature that looks most like a');
   out.push('journal, and it is the wrong one: a discussion is visible to the class, and the');
@@ -407,26 +453,26 @@ function renderNewsLog(desk) {
   out.push('reads the HTML body of a Text Entry submission, and the Desk\'s record footer');
   out.push('rides in it. A file upload cannot be parsed and will not appear in any analysis.');
   out.push('');
-  out.push('## Naming');
+  out.push('## Naming, and the first cycles');
   out.push('');
-  out.push('One per week, named for the Monday, so the gradebook sorts chronologically and a');
-  out.push('gap is visible at a glance:');
+  out.push('Named for the stretch it covers, both ends, so the gradebook sorts');
+  out.push('chronologically and a gap is visible at a glance. These are computed from the');
+  out.push(`anchor Monday \`${anchor}\`, so they are the real boundaries rather than an`);
+  out.push('example:');
   out.push('');
   out.push('```');
-  out.push(NEWS_LOG.name('Sept 8'));
-  out.push(NEWS_LOG.name('Sept 15'));
-  out.push(NEWS_LOG.name('Sept 22'));
+  cycles.forEach(c => out.push(NEWS_LOG.name(c.range)));
   out.push('```');
   out.push('');
   out.push('ASCII only, and identical in Canvas and PowerSchool character for character. The');
-  out.push('date matches the "Week of" line the student\'s own paste prints at the top, which');
-  out.push('is what lets you tell at a glance that a log landed in the right week.');
+  out.push('range matches the line the student\'s own paste prints at the top, which is what');
+  out.push('lets you tell at a glance that a log landed under the right assignment.');
   out.push('');
   out.push('## The body');
   out.push('');
-  out.push('The same body every week. Paste it through the RCE **`</>`** HTML editor, never');
-  out.push('the visual one. Duplicate last week\'s assignment in Canvas and change the name');
-  out.push('and the dates rather than pasting this thirty-six times.');
+  out.push('The same body every cycle. Paste it through the RCE **`</>`** HTML editor, never');
+  out.push('the visual one. Duplicate the previous assignment in Canvas and change the name');
+  out.push('and the dates rather than pasting this eighteen times.');
   out.push('');
   out.push('```html');
   out.push(newsLogBody(desk));
@@ -434,10 +480,10 @@ function renderNewsLog(desk) {
   out.push('');
   out.push('## What arrives, and how to read it');
   out.push('');
-  out.push('Each day contributes six records: one Source record per story carrying the outlet,');
-  out.push('the date and the link, then one per question. A five-day week is thirty records in');
-  out.push('one submission, and they carry the machine footer');
-  out.push('`scripts/parse-canvas-submissions.js` reads.');
+  out.push(`Each day contributes ${perDay >= 1 ? '' : ''}six records: one Source record per story carrying the`);
+  out.push('outlet, the date and the link, then one per question. A full cycle of');
+  out.push(`${periods} periods is about ${periods * 6} records in one submission, and they carry the`);
+  out.push('machine footer `scripts/parse-canvas-submissions.js` reads.');
   out.push('');
   out.push('Two things to know when reading one, both documented in `docs/CANVAS-CAPTURE.md`:');
   out.push('');
@@ -445,9 +491,9 @@ function renderNewsLog(desk) {
   out.push('  `Fri Sep 12, Local story, Why it caught me`, so five days of the same two');
   out.push('  questions stay distinguishable in the paste. The slot stays `desk-local-why` on');
   out.push('  every day of the year, which is what lets one question be looked at across a');
-  out.push('  week and across a room.');
+  out.push('  cycle and across a room.');
   out.push('- **`expected` counts the days actually filed, not the class periods held.** The');
-  out.push('  Desk has no calendar and cannot know the week had three meetings, so it never');
+  out.push('  Desk has no calendar and cannot know the cycle had four meetings, so it never');
   out.push('  reports an absent day as a shortfall. The completeness signal is the');
   out.push('  **Days filed** line at the top of the student\'s paste, and a blank box inside a');
   out.push('  day that was filed arrives as a `BLANK` exception.');

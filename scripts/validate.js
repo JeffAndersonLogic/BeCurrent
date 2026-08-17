@@ -762,7 +762,7 @@ if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) 
   // Byte-identical to what the lib produces, so a hand-edit inside the generated
   // page cannot survive, and so the shared record grammar cannot drift here while
   // the briefs and the week renderer stay correct.
-  assert(deskSrc.includes(deskCaptureBlock(desk.lanes, story.facts, story.questions)),
+  assert(deskSrc.includes(deskCaptureBlock(desk.lanes, story.facts, story.questions, desk.log)),
     DESK_PAGE,
     'the Desk capture block is not byte-identical to scripts/lib/desk-capture-block.js. '
     + 'Never hand-edit it: change the lib and run node scripts/build-desk.js.');
@@ -775,6 +775,43 @@ if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) 
     + 'gather stops finding any day the student has already filed.');
   assert(/var TODAY = dayKeyOf\(new Date\(\)\)/.test(deskSrc), DESK_PAGE,
     'the day key must be stamped by the browser at load, not built into the page');
+
+  // ── The News Log cycle ─────────────────────────────────────────────────────
+  //
+  // The gather collects the days belonging to the CURRENT log, and the log runs two
+  // weeks, so the window cannot be computed from today alone: nothing in one date
+  // says whether this is the first week of a cycle or the second. It is counted from
+  // an anchor Monday that every browser shares.
+  //
+  // Every failure here is silent and lands in the gradebook rather than on the page.
+  // A rolling window would give two students different fortnights. An anchor that is
+  // not a Monday shifts every boundary mid-week, so one class period's filing ends up
+  // in the previous log and the next in the following one. Neither shows on screen.
+  const deskLog = desk.log || {};
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(String(deskLog.anchorMonday || '')), DESK_CONTENT,
+    'desk.log.anchorMonday must be a YYYY-MM-DD date. It is what every student\'s '
+    + 'browser counts the News Log cycle from, and there is no safe default.');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(String(deskLog.anchorMonday || ''))) {
+    const [ay, am, ad] = String(deskLog.anchorMonday).split('-').map(Number);
+    // Local, matching how the page parses it. getDay() 1 is Monday.
+    assert(new Date(ay, am - 1, ad).getDay() === 1, DESK_CONTENT,
+      `desk.log.anchorMonday (${deskLog.anchorMonday}) is not a Monday. The cycle is `
+      + 'counted in whole weeks from it, so a mid-week anchor puts one class period in '
+      + 'the previous log and the next one in the following log.');
+  }
+  assert(Number.isInteger(deskLog.weeks) && deskLog.weeks >= 1, DESK_CONTENT,
+    `desk.log.weeks must be a whole number of weeks, found ${JSON.stringify(deskLog.weeks)}`);
+
+  // The window is enumerated from the anchor, never rolled back from today. A
+  // rolling window is the shortcut that looks identical and is wrong for everyone
+  // who presses the button on a different day.
+  assert(deskSrc.includes('function cycleStart()') && deskSrc.includes('ANCHOR_MONDAY'),
+    DESK_PAGE, 'the gather window must be anchored, not rolling: two students pressing '
+    + 'the button on different days would otherwise gather two different fortnights');
+  assert(/function daysBetweenUTC/.test(deskSrc), DESK_PAGE,
+    'the cycle must be counted off UTC midnights. Local date arithmetic across a '
+    + 'daylight-saving boundary gives 13.958 days, which floors to the wrong cycle '
+    + 'twice a year.');
   assert(!/toISOString\(\)\s*\.slice/.test(deskSrc), DESK_PAGE,
     'the day key must come from the LOCAL date getters. toISOString() is UTC and rolls '
     + 'over during the school evening, handing an after-school student a blank sheet.');

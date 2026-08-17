@@ -38,9 +38,9 @@ The contracts below are enforced by machine, not by memory.
   the real parser. `brief-gather.test.js` is 28 on a unit topic brief: the confidence
   words, the paste's bold/italic shape, and the footer through the real parser in
   both clipboard flavours. `desk.test.js` is 40 on the Desk: the browser-stamped
-  day key, typing surviving a reload, the weekly gather reaching an earlier day and
-  refusing last week's, one day banner per day, and the whole two-day paste through
-  the real parser with no false `EDITED`.
+  day key, typing surviving a reload, the gather reaching an earlier day in the same
+  News Log cycle and refusing the previous cycle, one day banner per day, and the
+  whole two-day paste through the real parser with no false `EDITED`.
 - `npm run test:all`, both suites.
 - `npm run hooks:install`, point git at `.githooks/` so `npm test` runs before
   every push. `npm install` does this automatically. Override once with
@@ -104,9 +104,9 @@ push. That keeps the record of what it would have caught.
   grammar.
 - `node scripts/test/desk.test.js`, drive the real Desk in Chromium and assert the
   daily filings' only route to Canvas: the sheet is keyed to today in the student's
-  own timezone, typing survives a reload, the weekly gather reaches an earlier day
-  in the same week and refuses last week's, and the whole paste round-trips through
-  the real parser with no false `EDITED`. In the browser suite. Run it when touching
+  own timezone, typing survives a reload, the gather reaches an earlier day in the
+  same News Log cycle and refuses the previous cycle, and the whole paste round-trips
+  through the real parser with no false `EDITED`. In the browser suite. Run it when touching
   the Desk's content module, its capture block, or the record grammar.
 - `node scripts/build-canvas-record.js`, inline `scripts/lib/canvas-record-block.js`
   into the week renderer between its sentinels. `--check` fails on drift, which is
@@ -117,8 +117,8 @@ push. That keeps the record of what it would have caught.
 - `node scripts/build-canvas-events.js`, write the paste-ready Canvas calendar
   events and assignment bodies for every unit into `docs/canvas/`, in two flavours:
   a `.md` to review in the repo and a `.html` to open beside Canvas and press a
-  button in. Also writes `docs/canvas/news-log.md`, the Desk's weekly assignment,
-  from `desk-content.js`. `--check` fails on drift, which is what the offline suite
+  button in. Also writes `docs/canvas/news-log.md`, the Desk's two-weekly assignment,
+  from `desk-content.js`, with the real cycle boundaries derived from its anchor. `--check` fails on drift, which is what the offline suite
   runs. Canvas has no version control of its own, so the repo is the source of truth
   for what gets pasted in. See `docs/canvas/CANVAS-BUILD-GUIDE.md`.
 - `node scripts/test/canvas-events.test.js`, prove the two flavours carry the same
@@ -168,7 +168,7 @@ class meeting is a 90-minute block, and it runs in two halves:
 
 | | The Desk | The Unit |
 |---|---|---|
-| when | first ~32 minutes, **every** class | the remaining ~58, for weeks at a time |
+| when | first half, **every** class | second half, for weeks at a time |
 | what | today's news, two stories per student | one theme, traced backwards |
 | built as | a **protocol**, one generated page | **content**, one module per unit |
 | lives in | `scripts/lib/desk-content.js` → `daily/` | `scripts/lib/unit-content/` → `<unit>/` |
@@ -188,19 +188,29 @@ checks the Desk is linked from the front door and that its lanes, sources and
 capture boxes are intact, because an orphaned Desk still builds and still
 validates.
 
-**Nothing else may retype the Desk's numbers.** The front door, the TODAY board
+**Nothing else may retype the Desk's facts.** The front door, the TODAY board
 and the Canvas News Log all read `desk-content.js`. `index.html` used to state
 "First 25 minutes" and "four beats" as literals, and when the routine grew a step
 and the four rotating beats became two fixed lanes it went on advertising the old
 shape with every check green.
 
+**No minute counts on any student-facing surface.** Not the front door cards, not the
+Desk's dateline, not the TODAY board. The Desk takes about half the block and is
+allowed to run long, so a number printed at students is a promise the room does not
+keep. The per-step timings stay in `desk.routine` and reach
+`docs/lesson-plans/the-desk.md`, which is where a substitute needs them.
+
 ### The four steps, and the two lanes
 
-The routine is Watch (10 min, CNN 10), Hunt (5), File (12) and The Front Page (5).
-Every student files **two stories every class period**: one **Local** and one
+The routine is Watch (CNN 10), Hunt, File and The Front Page, about 32 minutes in
+all. Every student files **two stories every class period**: one **Local** and one
 **National or International**. Per story, three facts they look up (outlet,
 publication date, link) and two questions they write, about two sentences each:
 what happened, and why it caught them.
+
+The source buttons are grouped to match the lanes, **Start here / Local / National or
+International**, because the second lane lets the student choose and asking them to
+pick National or International before they have a story is backwards.
 
 **The split between the facts and the questions is the design.** The facts are
 lookups, so they are answerable by every student in the room on every day, and
@@ -252,8 +262,8 @@ accountability line uses presenting language.
 
 ### What the student page does not show
 
-**The routine and the house rules are not on the Desk page.** The page is three
-things a student acts on: find a story, file it, copy the week. The four timed steps
+**The routine, the house rules and the ways-to-file box are not on the Desk page.**
+The page is three things a student acts on: find a story, file it, copy the log. The four timed steps
 are what the teacher runs rather than what the student does with their hands, and
 the house rules are how the class works rather than work to be done.
 
@@ -267,6 +277,12 @@ One line from the deleted rules card did need to survive and moved into the gath
 panel: that a student's work lives in this browser only until they copy it into
 Canvas. That is not a rule about how the class runs, it is the reason the last step
 exists.
+
+**`story.ways` is off the page too, and it is not about submission.** Those are the
+accommodations, typing or dictation or a paper card. The box read as a menu of
+submission routes, which it never was: submission is Canvas and only Canvas. It still
+generates into the lesson plan, because a substitute and a 504 meeting are exactly who
+need to know that dictation is normal here rather than a favour.
 
 ### The Desk's rationale is not on the Desk
 
@@ -586,6 +602,15 @@ Three things about it that are not obvious, all covered in `docs/CANVAS-CAPTURE.
   record, so a loose `Outlet: …` line between two questions flags every filing as
   `EDITED` with the page looking perfect. Anything printed between the first label and
   the footer must belong to some record.
+- **The gather window is anchored, never rolling.** The News Log runs two weeks,
+  about five class periods, and a two-week window cannot be computed from today
+  alone: nothing in one date says whether this is week one of a cycle or week two.
+  `desk.log.anchorMonday` is the Monday every browser counts from, it is the one date
+  in `desk-content.js`, and it is the one thing needing yearly maintenance. A rolling
+  fourteen days back would give two students different fortnights with nothing on
+  screen showing it. `validate.js` refuses a missing anchor, a non-Monday anchor and a
+  non-integer week count; the builder throws rather than defaulting. Days are counted
+  off UTC midnights, or a daylight-saving change slips the boundary twice a year.
 - **The label carries the date, the slot does not.** `Friday, September 12 Local
   story, Why it caught me` keeps five days distinguishable in one paste and keeps
   every CSV row attributable to a day; `desk-local-why` stays constant so one

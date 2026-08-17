@@ -6,8 +6,15 @@ The lanes, the boxes and the ways to file below are the same text the Desk shows
 read out of the content module rather than retyped, so a student cannot be
 assessed against something they were never shown.
 
-One assignment **per week**, all year. It is the Desk's only route to Canvas:
-10 boxes a day, about 50 a week, all pasted into this one box.
+One assignment **every 2 weeks**, all year, which on a block schedule is
+about 5 class periods. It is the Desk's only route to Canvas:
+10 boxes a day, about 50 a cycle, all pasted into this one box.
+
+**The cycle boundaries are not typed here.** They are derived from
+`desk.log.anchorMonday` in `scripts/lib/desk-content.js`, which is the same value
+the student's browser counts from, so the assignment you build and the window the
+Gather button collects cannot disagree. Change the anchor between cycles, never
+inside one.
 
 ## Settings
 
@@ -22,13 +29,13 @@ One assignment **per week**, all year. It is the Desk's only route to Canvas:
 | Anonymous grading | **Off** |
 
 **Unlimited attempts is load-bearing here, for a different reason than on a
-Brief.** Students paste the accumulating log every day: Monday is attempt 1,
-Friday is attempt 5 and carries the whole week, and the last attempt is the one
-you grade. That daily paste is the only backup that exists. A week of filings
-lives in one browser's `localStorage` until the student copies it out, nothing
-in this course sends student writing anywhere on its own, and a cleared
-Chromebook profile on Thursday takes Monday to Wednesday with it. Cap the
-attempts and you have removed the backup.
+Brief.** Students paste the accumulating log every day, so the first period is
+attempt 1, the last attempt carries the whole cycle, and that last attempt is the
+one you grade. The daily paste is the only backup that exists. Two weeks of
+filings live in one browser's `localStorage` until the student copies them out,
+nothing in this course sends student writing anywhere on its own, and a cleared
+Chromebook profile in week two takes week one with it. Cap the attempts and you
+have removed the backup.
 
 **Not a Discussion.** A Canvas discussion is the feature that looks most like a
 journal, and it is the wrong one: a discussion is visible to the class, and the
@@ -40,30 +47,35 @@ break that in writing.
 reads the HTML body of a Text Entry submission, and the Desk's record footer
 rides in it. A file upload cannot be parsed and will not appear in any analysis.
 
-## Naming
+## Naming, and the first cycles
 
-One per week, named for the Monday, so the gradebook sorts chronologically and a
-gap is visible at a glance:
+Named for the stretch it covers, both ends, so the gradebook sorts
+chronologically and a gap is visible at a glance. These are computed from the
+anchor Monday `2026-08-17`, so they are the real boundaries rather than an
+example:
 
 ```
-CE - News Log - Week of Sept 8
-CE - News Log - Week of Sept 15
-CE - News Log - Week of Sept 22
+CE - News Log - August 17 to 30
+CE - News Log - August 31 to September 13
+CE - News Log - September 14 to 27
+CE - News Log - September 28 to October 11
+CE - News Log - October 12 to 25
+CE - News Log - October 26 to November 8
 ```
 
 ASCII only, and identical in Canvas and PowerSchool character for character. The
-date matches the "Week of" line the student's own paste prints at the top, which
-is what lets you tell at a glance that a log landed in the right week.
+range matches the line the student's own paste prints at the top, which is what
+lets you tell at a glance that a log landed under the right assignment.
 
 ## The body
 
-The same body every week. Paste it through the RCE **`</>`** HTML editor, never
-the visual one. Duplicate last week's assignment in Canvas and change the name
-and the dates rather than pasting this thirty-six times.
+The same body every cycle. Paste it through the RCE **`</>`** HTML editor, never
+the visual one. Duplicate the previous assignment in Canvas and change the name
+and the dates rather than pasting this eighteen times.
 
 ```html
-<h2>The Desk: your News Log for this week</h2>
-<p><em>Watch the news. Find two stories, one local and one from further out. File them here, then copy your week into Canvas.</em></p>
+<h2>The Desk: your News Log for these two weeks</h2>
+<p><em>Watch the news. Find two stories, one local and one from further out. File them here, then copy your log into Canvas.</em></p>
 
 <h3>Step 1 &mdash; Open the Desk</h3>
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/daily/index.html" target="_blank" rel="noopener">The Desk</a></p>
@@ -89,17 +101,17 @@ and the dates rather than pasting this thirty-six times.
     <li>Write it on a paper card and hand it in.</li>
 </ul>
 
-<h3>Step 3 &mdash; Copy your week into Canvas, every day</h3>
+<h3>Step 3 &mdash; Copy your log into Canvas, every day</h3>
 <ol>
     <li>Scroll to <strong>My News Log</strong> at the bottom of the Desk.</li>
-    <li>Click <strong>Gather My Week</strong>. This collects every day you have filed this week, today included.</li>
+    <li>Click <strong>Gather My Log</strong>. This collects every day you have filed in this log, today included.</li>
     <li>Click <strong>Copy to Clipboard</strong>.</li>
     <li>Paste it into the submission box below and click Submit.</li>
 </ol>
-<p><strong>Do this at the end of every class, not just on Friday.</strong> You can submit here as many times as you like, and the last one is the one I grade, so each day you paste your whole week in again and it replaces the day before. That is also your only backup: your filings are saved in the browser on the device you used, they do not follow you to another Chromebook, and if that browser gets cleared they are gone. Pasting daily means the worst you can ever lose is one day.</p>
+<p><strong>Do this at the end of every class, not just on the last day.</strong> You can submit here as many times as you like, and the last one is the one I grade, so each day you paste your whole log in again and it replaces the day before. That is also your only backup: your filings are saved in the browser on the device you used, they do not follow you to another Chromebook, and if that browser gets cleared they are gone. Pasting daily means the worst you can ever lose is one day.</p>
 
 <h3>Due</h3>
-<p>The end of the last class period this week. Paste it in every day before then.</p>
+<p>The end of the last class period in this two-week stretch. Paste it in every day before then.</p>
 
 <h3>What I am looking for</h3>
 <ol>
@@ -112,10 +124,10 @@ and the dates rather than pasting this thirty-six times.
 
 ## What arrives, and how to read it
 
-Each day contributes six records: one Source record per story carrying the outlet,
-the date and the link, then one per question. A five-day week is thirty records in
-one submission, and they carry the machine footer
-`scripts/parse-canvas-submissions.js` reads.
+Each day contributes six records: one Source record per story carrying the
+outlet, the date and the link, then one per question. A full cycle of
+5 periods is about 30 records in one submission, and they carry the
+machine footer `scripts/parse-canvas-submissions.js` reads.
 
 Two things to know when reading one, both documented in `docs/CANVAS-CAPTURE.md`:
 
@@ -123,9 +135,9 @@ Two things to know when reading one, both documented in `docs/CANVAS-CAPTURE.md`
   `Fri Sep 12, Local story, Why it caught me`, so five days of the same two
   questions stay distinguishable in the paste. The slot stays `desk-local-why` on
   every day of the year, which is what lets one question be looked at across a
-  week and across a room.
+  cycle and across a room.
 - **`expected` counts the days actually filed, not the class periods held.** The
-  Desk has no calendar and cannot know the week had three meetings, so it never
+  Desk has no calendar and cannot know the cycle had four meetings, so it never
   reports an absent day as a shortfall. The completeness signal is the
   **Days filed** line at the top of the student's paste, and a blank box inside a
   day that was filed arrives as a `BLANK` exception.

@@ -14,11 +14,14 @@
  *   - The sheet is keyed to TODAY, in the student's own timezone, and the page says
  *     which day it is filing under. An offline check can see the code asking for
  *     that; only a browser can confirm the key it actually wrote.
- *   - Typing persists across a reload. The whole design rests on a week of work
+ *   - Typing persists across a reload. The whole design rests on two weeks of work
  *     surviving in localStorage until the student copies it out.
- *   - The WEEKLY gather reaches back to earlier days in the same week, in order,
- *     with labels that stay distinct. This is the assertion with no offline
- *     equivalent at all: nothing in the repo can see five days of a student's week.
+ *   - The gather reaches back to earlier days in the same News Log CYCLE, in order,
+ *     with labels that stay distinct, and does NOT reach into the previous cycle.
+ *     That last part is what proves the window is anchored rather than a rolling
+ *     fourteen days back from today, which would give two students pressing the
+ *     button on different days two different fortnights. There is no offline
+ *     equivalent: nothing in the repo can see a student's accumulated cycle.
  *   - No response comes back EDITED. That is the real test of the decision to make
  *     the three facts a capture record of their own rather than a loose line above
  *     the questions. Everything between one record's "My response:" and the next
@@ -118,27 +121,48 @@ function dayLabel(key) {
 }
 
 const TODAY = dayKeyOf(new Date());
-const MONDAY = dayKeyOf(mondayOf(new Date()));
 
-// Some other day inside the same Monday-to-Sunday week as today. Chosen rather
-// than hard-coded, because a hard-coded weekday makes this test pass or fail
-// depending on which day of the week it is run on, and a suite that is green on
-// Tuesday and red on Monday teaches people to rerun it rather than read it.
+// The News Log cycle, recomputed here independently of the page, because the point
+// is to check the browser against a separate answer rather than against itself.
+// Whole days off UTC midnights, matching the page: local arithmetic across a
+// daylight-saving boundary gives 13.958 days, which floors to the wrong cycle.
+const CYCLE_WEEKS = Number((DESK.log || {}).weeks) || 1;
+function daysBetweenUTC(a, b) {
+  return Math.round((Date.UTC(b.getFullYear(), b.getMonth(), b.getDate())
+    - Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())) / 86400000);
+}
+const CYCLE_START = (() => {
+  const p = String((DESK.log || {}).anchorMonday || '').split('-').map(Number);
+  const anchor = mondayOf(new Date(p[0], p[1] - 1, p[2]));
+  const here = mondayOf(new Date());
+  const cycles = Math.max(0, Math.floor(Math.floor(daysBetweenUTC(anchor, here) / 7) / CYCLE_WEEKS));
+  return new Date(anchor.getFullYear(), anchor.getMonth(),
+    anchor.getDate() + cycles * CYCLE_WEEKS * 7);
+})();
+const CYCLE_DAYS = CYCLE_WEEKS * 7;
+const CYCLE_START_KEY = dayKeyOf(CYCLE_START);
+
+// Some other day inside the same cycle as today. Chosen rather than hard-coded,
+// because a hard-coded weekday makes this test pass or fail depending on which day
+// it is run on, and a suite that is green on Tuesday and red on Monday teaches
+// people to rerun it rather than read it.
 const OTHER_DAY = (() => {
-  const monday = mondayOf(new Date());
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i);
+  for (let i = 0; i < CYCLE_DAYS; i++) {
+    const d = new Date(CYCLE_START.getFullYear(), CYCLE_START.getMonth(),
+      CYCLE_START.getDate() + i);
     const key = dayKeyOf(d);
     if (key !== TODAY) return key;
   }
   return null;
 })();
 
-// A day outside this week, which must NOT be gathered: last week's log has already
-// been submitted, and sweeping it into this week's paste would double-report it.
-const LAST_WEEK = (() => {
-  const monday = mondayOf(new Date());
-  const d = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() - 3);
+// A day in the PREVIOUS cycle, which must not be gathered: that log has already
+// been submitted under its own assignment, and sweeping it in would double-report
+// it. Three days before this cycle starts is inside the previous one whatever the
+// cycle length.
+const LAST_CYCLE = (() => {
+  const d = new Date(CYCLE_START.getFullYear(), CYCLE_START.getMonth(),
+    CYCLE_START.getDate() - 3);
   return dayKeyOf(d);
 })();
 
@@ -170,7 +194,8 @@ function seededDay(tag) {
 
   try {
     console.log(`\n${C}${W}The Desk, the daily filing and its route to Canvas${X}`);
-    console.log(`${D}  /daily/index.html · today ${TODAY} · week of ${MONDAY}${X}`);
+    console.log(`${D}  /daily/index.html · today ${TODAY} · cycle from ${CYCLE_START_KEY}`
+      + ` (${CYCLE_WEEKS} week${CYCLE_WEEKS === 1 ? '' : 's'})${X}`);
 
     await page.goto(base + '/daily/index.html', { waitUntil: 'domcontentloaded' });
 
@@ -181,13 +206,30 @@ function seededDay(tag) {
     check('the page tells the student which day it is filing under',
       printed === dayLabel(TODAY), `${printed} vs ${dayLabel(TODAY)}`);
 
-    // The generated HTML must carry no date at all. The whole reason one page can
-    // serve 180 class periods is that the build stamps nothing and the browser
-    // stamps everything.
+    // The build must never stamp the CURRENT day into the page. That is the whole
+    // reason one generated page can serve 180 class periods: the browser stamps the
+    // day, the build stamps nothing about today.
+    //
+    // Exactly one date is allowed in the source, and it is the News Log cycle
+    // anchor. It is a calendar anchor rather than content that expires, and it is
+    // what makes a two-week window computable at all; see cycleStart in
+    // desk-capture-block.js. Asserting "exactly one, and it is the anchor" rather
+    // than "none" keeps the check honest: a build that started writing today's date
+    // in would now add a second date and still fail.
+    // One assertion, not two. The obvious pair, "no date equal to today" plus "the
+    // only date is the anchor", contradicts itself on the one day a fortnight when
+    // today IS the anchor Monday, and a check that goes red on a correct build every
+    // other Monday is a check people learn to ignore.
+    //
+    // The blind spot that leaves, a build stamping today's date on the anchor day
+    // itself, is closed on the offline side instead: validate.js asserts the page
+    // computes its day key as dayKeyOf(new Date()) in the browser, so there is no
+    // path by which the build could be writing it.
     const shipped = fs.readFileSync(path.join(ROOT, 'daily', 'index.html'), 'utf8');
-    check('but the generated file itself contains no date',
-      !new RegExp(TODAY).test(shipped) && !/\b20\d{2}-\d{2}-\d{2}\b/.test(shipped),
-      'no YYYY-MM-DD in daily/index.html');
+    const datesInPage = [...new Set(shipped.match(/\b20\d{2}-\d{2}-\d{2}\b/g) || [])];
+    check('the only date in the generated file is the cycle anchor',
+      datesInPage.length === 1 && datesInPage[0] === DESK.log.anchorMonday,
+      datesInPage.join(', ') || 'none');
 
     // ── Typing, and surviving a reload ────────────────────────────────────────
     group('Typing, and surviving a reload');
@@ -236,12 +278,12 @@ function seededDay(tag) {
       prefix: STORAGE_PREFIX,
       other: OTHER_DAY,
       otherState: seededDay('seeded'),
-      lastWeek: LAST_WEEK,
-      lastState: seededDay('lastweek'),
+      lastWeek: LAST_CYCLE,
+      lastState: seededDay('lastcycle'),
       empty: dayKeyOf(new Date(new Date().getFullYear() + 1, 0, 2))
     });
 
-    await page.click('button:has-text("Gather My Week")');
+    await page.click('button:has-text("Gather My Log")');
 
     const status = (await page.textContent('#desk-gather-status') || '').trim();
     check('the status names how many days it gathered',
@@ -261,9 +303,11 @@ function seededDay(tag) {
       shape.text.includes(dayLabel(TODAY)) && shape.text.includes(dayLabel(OTHER_DAY)),
       `${dayLabel(OTHER_DAY)} + ${dayLabel(TODAY)}`);
 
-    // Last week has already been submitted under its own weekly assignment.
-    check('last week is not swept in',
-      !shape.text.includes('lastweek'), `${dayLabel(LAST_WEEK)} excluded`);
+    // The previous cycle has already been submitted under its own assignment. This
+    // is the assertion that the window is ANCHORED rather than a rolling fourteen
+    // days back from today: a rolling window would reach into it.
+    check('the previous cycle is not swept in',
+      !shape.text.includes('lastcycle'), `${dayLabel(LAST_CYCLE)} excluded`);
 
     check('a day with nothing in it is not printed as blanks',
       shape.heads.length === PER_DAY * 2, `${shape.heads.length} headings, expected ${PER_DAY * 2}`);
@@ -282,8 +326,9 @@ function seededDay(tag) {
       perDayHeads.every(block => new Set(block).size === block.length),
       perDayHeads.map(b => `${new Set(b).size}/${b.length}`).join(' '));
 
-    check('the header names the week and which days were filed',
-      /Week of /.test(shape.text) && /Days filed: /.test(shape.text));
+    check('the header names the cycle it covers and which days were filed',
+      /News Log, \w+ \d+ to /.test(shape.text) && /Days filed: /.test(shape.text),
+      (shape.text.match(/News Log, [^S]*/) || [''])[0].trim().slice(0, 40));
 
     // ── The day banners ───────────────────────────────────────────────────────
     //
@@ -359,8 +404,8 @@ function seededDay(tag) {
 
     check('the parser finds a manifest rather than falling back',
       parsed.hasManifest === true, `hasManifest=${parsed.hasManifest}`);
-    check('it reports the week this log belongs to',
-      parsed.topicId === 'desk-week-' + MONDAY, parsed.topicId);
+    check('it reports the cycle this log belongs to',
+      parsed.topicId === 'desk-log-' + CYCLE_START_KEY, parsed.topicId);
     check('it recovers every record both days define',
       parsed.responses.length === PER_DAY * 2,
       `${parsed.responses.length} of ${PER_DAY * 2}`);

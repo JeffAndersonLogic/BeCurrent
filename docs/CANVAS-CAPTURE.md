@@ -24,9 +24,9 @@ page they are on:
   on a unit page opens the brief directly, with no week shell behind it and no
   panel on any page above it. Before it existed, every unit topic answer was
   written to `localStorage` and stranded there with every structural check green.
-- **The Desk's panel**, labelled **Gather My Week**, collects the daily filings.
-  This is also the only route there is, and it is the one that carries work every
-  single class period. See "The Desk" below.
+- **The Desk's panel**, labelled **Gather My Log**, collects the daily filings for
+  the current two-week News Log cycle. This is also the only route there is, and it
+  is the one that carries work every single class period. See "The Desk" below.
 
 All three write the same footer, because `canvas-parse-core.js` is one parser. The
 grammar therefore lives in **one** file, `scripts/lib/canvas-record-block.js`, and
@@ -60,11 +60,41 @@ earlier day stays on disk. `toISOString()` is refused by `validate.js`: it is UT
 so it rolls the date over at 7 or 8pm Eastern and would hand an after-school student
 a blank sheet with their afternoon's work apparently lost.
 
-**One button gathers the week, and the week always contains today**, so there is no
-separate "copy today". Days are found by checking the seven candidate keys for the
-Monday-to-Sunday week containing today, rather than scanning `localStorage`, so a key
-left by another page or an older schema can never wander into the paste. Last week is
-excluded: it has already been submitted under its own weekly assignment.
+**One button gathers the whole cycle, and the cycle always contains today**, so there
+is no separate "copy today". Days are found by enumerating the candidate keys for the
+current cycle rather than scanning `localStorage`, so a key left by another page or an
+older schema can never wander into the paste. The previous cycle is excluded: it has
+already been submitted under its own assignment.
+
+### The cycle is anchored, never rolling
+
+The News Log runs **two weeks**, about five class periods on a block schedule, and
+that is what forces an anchor. A weekly window needed no configuration, because "the
+Monday of this week" is computable from any date. A two-week window is not: nothing in
+a single date says whether this is the first week of a cycle or the second.
+
+So `desk.log.anchorMonday` in `scripts/lib/desk-content.js` is the Monday cycle 1
+starts on, every browser counts whole weeks from it, and the whole room's boundaries
+land on the same day. It is the **one date in that file**, and it is also the one
+thing here that needs yearly maintenance: set it to the first Monday of the term, and
+change it between cycles rather than inside one, because every boundary after it
+moves.
+
+**The shortcut to refuse is a rolling fourteen days back from today.** It is one line
+shorter and wrong in a way nothing on screen would show: two students pressing the
+button on different days would produce two different fortnights, and a filing would
+land in one student's log and the next student's, or in neither.
+
+`validate.js` refuses a missing anchor, an anchor that is not a Monday (a mid-week
+anchor shifts every boundary, so one class period lands in the previous log and the
+next in the following one), and a non-integer week count. `deskCaptureBlock` throws at
+build time rather than defaulting, because a default would mean every browser
+agreeing on the wrong boundary.
+
+**Whole days are counted off UTC midnights.** Local date arithmetic across a
+daylight-saving change gives 13.958 days, which floors to the wrong cycle, so the
+boundary would slip by a week twice a year. Both endpoints are local midnights
+converted the same way, so the difference is an exact multiple of 24 hours.
 
 **Six records a day: one Source record per story, then one per question.** The three
 facts are a record of their own rather than a loose line above the questions, and
@@ -120,7 +150,7 @@ label, never above it. Above it would be inside the previous record's hashed reg
 which is the same trap in a different costume.
 
 **`expected` counts the days actually filed, not the class periods held.** The Desk
-has no calendar, so it cannot know the week had three meetings, and it never reports
+has no calendar, so it cannot know the cycle had four meetings, and it never reports
 an absent day as a shortfall. The completeness signal is the **Days filed** line in
 the paste's head, which is above the first label and therefore free text. A blank box
 inside a day that *was* filed arrives as a `BLANK` exception, which is the honest
@@ -146,7 +176,7 @@ scrolling a five-day log has to read past on every unfilled lane.
 3. On the Desk, each box autosaves into one JSON object per day under
    `becurrent-desk-<YYYY-MM-DD>`, keyed `<lane>-<field>`, with each question's
    prompt and confidence stored beside its answer.
-4. **Gather All My Work**, or **Gather My Week** on the Desk, collects its slots,
+4. **Gather All My Work**, or **Gather My Log** on the Desk, collects its slots,
    emits one document, and appends the record footer.
 5. The student copies it and pastes it into the Canvas assignment. The brief's copy
    writes **both** `text/html` and `text/plain` to the clipboard, so Canvas keeps
@@ -159,11 +189,11 @@ scrolling a five-day log has to read past on every unfilled lane.
    and `exceptions.csv`.
 
 **On the Desk, step 5 happens every day, and that is the only backup there is.**
-The News Log assignment has Unlimited attempts, so Monday is attempt 1 and Friday
-is attempt 5 carrying the whole week. A week of filings lives in one browser's
-`localStorage` until it is copied out, nothing in this course may send student
-writing anywhere on its own, and a cleared Chromebook profile on Thursday takes
-Monday to Wednesday with it. Cap the attempts and the backup is gone.
+The News Log assignment has Unlimited attempts, so the first period is attempt 1 and
+the last attempt carries the whole cycle. Two weeks of filings live in one browser's
+`localStorage` until they are copied out, nothing in this course may send student
+writing anywhere on its own, and a cleared Chromebook profile in week two takes week
+one with it. Cap the attempts and the backup is gone.
 `docs/canvas/news-log.md` is the generated assignment, and `validate.js` fails if
 it stops saying Unlimited or Text Entry.
 

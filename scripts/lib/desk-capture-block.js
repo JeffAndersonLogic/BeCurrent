@@ -21,7 +21,7 @@
  *
  * So the BROWSER stamps the date, at load, into `becurrent-desk-<YYYY-MM-DD>`. The
  * generated HTML stays dateless and reproducible, every class period gets its own
- * clean sheet, and every earlier day is still on disk where the weekly gather can
+ * clean sheet, and every earlier day is still on disk where the cycle's gather can
  * find it.
  *
  * `dayKeyOf` uses the LOCAL date getters and never `toISOString()`. An ISO string
@@ -46,13 +46,16 @@
  *
  * ── One gather button, not two ───────────────────────────────────────────────
  *
- * The panel gathers the WEEK, and the week always contains today, so a separate
+ * The panel gathers the whole CYCLE, which always contains today, so a separate
  * "copy today" button would produce a strict subset of what the one button already
- * produces. Students paste into the same weekly Canvas assignment every day, which
- * per the Canvas build guide has Unlimited attempts: Monday is attempt 1, Friday is
- * attempt 5 and carries the whole week, and every earlier attempt is a backup. That
- * daily paste is the only backup that exists, because the privacy rule correctly
- * forecloses any server-side copy of student writing.
+ * produces. The cycle is two weeks, about five class periods on a block schedule,
+ * and it is anchored rather than rolling: see cycleStart.
+ *
+ * Students paste into the same Canvas assignment every day, which per the Canvas
+ * build guide has Unlimited attempts, so the last paste carries the whole log and
+ * every earlier attempt is a recovery point. That daily paste is the only backup
+ * that exists, because the privacy rule correctly forecloses any server-side copy
+ * of student writing.
  */
 
 const { recordBlockSource } = require('./canvas-record-block');
@@ -65,21 +68,39 @@ const STORAGE_PREFIX = 'becurrent-desk-';
  * @param {Array}  facts      [{ id, label }]             from desk.story.facts
  * @param {Array}  questions  [{ id, label, text }]       from desk.story.questions
  */
-function deskCaptureBlock(lanes, facts, questions) {
+function deskCaptureBlock(lanes, facts, questions, log) {
   const laneMeta = (lanes || []).map(l => ({ id: l.id, name: l.name }));
   const factMeta = (facts || []).map(f => ({ id: f.id, label: f.label }));
   const questionMeta = (questions || []).map(q => ({ id: q.id, label: q.label }));
+  const cycle = log || {};
+  const anchor = cycle.anchorMonday || '';
+  const weeks = Number(cycle.weeks) || 1;
+
+  // A missing or malformed anchor is fatal at BUILD time rather than a default at
+  // run time. A default would mean every student's browser silently agreeing on the
+  // wrong cycle boundary, which puts one day's filing in one log and the next day's
+  // in another, with the page looking perfect and every other check green.
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(anchor)) {
+    throw new Error('desk.log.anchorMonday must be a YYYY-MM-DD date, got '
+      + JSON.stringify(anchor) + '. It is what every browser counts the News Log '
+      + 'cycle from; there is no safe default.');
+  }
 
   return `<script>
 (function () {
   'use strict';
 
-  // The storage prefix scripts/validate.js checks and the weekly gather scans for.
+  // The storage prefix scripts/validate.js checks and the cycle gather scans for.
   var PREFIX = ${JSON.stringify(STORAGE_PREFIX)};
   var LANES = ${JSON.stringify(laneMeta)};
   var FACTS = ${JSON.stringify(factMeta)};
   var QUESTIONS = ${JSON.stringify(questionMeta)};
   var CONFIDENCE_WORDS = ${JSON.stringify(CONFIDENCE_WORDS)};
+
+  // The News Log cycle, from desk.log. The anchor is the Monday cycle 1 starts on
+  // and it is what makes a multi-week window computable at all; see cycleStart.
+  var ANCHOR_MONDAY = ${JSON.stringify(anchor)};
+  var CYCLE_WEEKS = ${weeks};
 
   // ── Today, in the student's own timezone ───────────────────────────────────
   //
@@ -119,6 +140,19 @@ function deskCaptureBlock(lanes, facts, questions) {
     return DOW_FULL[d.getDay()] + ', ' + MON_FULL[d.getMonth()] + ' ' + d.getDate();
   }
 
+  // The cycle's own name, printed at the top of the paste and used to check that a
+  // log landed under the right Canvas assignment. Both ends are named, because
+  // "News Log, August 17" alone does not say which fortnight it covers, and the
+  // teacher matching thirty pastes to one assignment is the reader here.
+  function rangeLabel(startKey, endKey) {
+    var a = dateOfKey(startKey);
+    var b = dateOfKey(endKey);
+    var left = MON_FULL[a.getMonth()] + ' ' + a.getDate();
+    var right = (a.getMonth() === b.getMonth() ? '' : MON_FULL[b.getMonth()] + ' ')
+      + b.getDate();
+    return 'News Log, ' + left + ' to ' + right;
+  }
+
   var TODAY = dayKeyOf(new Date());
   var KEY = PREFIX + TODAY;
 
@@ -130,14 +164,54 @@ function deskCaptureBlock(lanes, facts, questions) {
     return x;
   }
 
-  // The seven candidate keys for this week, in order. Seven lookups rather than a
-  // scan of localStorage, so a key left by some other page or an older schema can
-  // never wander into the paste.
-  function weekKeys() {
-    var monday = mondayOf(new Date());
+  /**
+   * The Monday the current News Log cycle started on.
+   *
+   * The log runs CYCLE_WEEKS weeks, so this cannot be computed from today alone:
+   * nothing in a single date says whether this is the first week of a cycle or the
+   * second. It is counted from ANCHOR_MONDAY, which every student's browser shares,
+   * so the whole room's cycle boundaries land on the same day.
+   *
+   * The tempting shortcut is a rolling fourteen days back from today, and it is
+   * wrong in a way that would never look wrong: two students pressing the button on
+   * different days would get two different windows, and a filing would land in one
+   * student's log and the next student's, or in neither.
+   *
+   * Whole days are computed off UTC midnights on purpose. Date arithmetic across a
+   * daylight-saving boundary is off by an hour, and 13.958 days floored by 7 is 1
+   * where 14 days should give 2, which would slip the cycle by a week twice a year.
+   * Both endpoints are local midnights converted the same way, so the difference is
+   * an exact multiple of 24 hours.
+   *
+   * Dates before the anchor floor to cycle 0 rather than going negative, so a page
+   * opened before term starts still gathers into something sane.
+   */
+  function daysBetweenUTC(a, b) {
+    var au = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+    var bu = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+    return Math.round((bu - au) / 86400000);
+  }
+
+  function cycleStart() {
+    var parts = ANCHOR_MONDAY.split('-');
+    var anchor = mondayOf(new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])));
+    var here = mondayOf(new Date());
+    var weeksIn = Math.floor(daysBetweenUTC(anchor, here) / 7);
+    var cycles = Math.floor(weeksIn / CYCLE_WEEKS);
+    if (cycles < 0) cycles = 0;
+    var start = new Date(anchor.getFullYear(), anchor.getMonth(),
+      anchor.getDate() + cycles * CYCLE_WEEKS * 7);
+    return start;
+  }
+
+  // Every candidate key in the current cycle, in order. Enumerated rather than
+  // scanned out of localStorage, so a key left by some other page or an older
+  // schema can never wander into the paste.
+  function cycleKeys() {
+    var start = cycleStart();
     var out = [];
-    for (var i = 0; i < 7; i++) {
-      var d = new Date(monday.getFullYear(), monday.getMonth(), monday.getDate() + i);
+    for (var i = 0; i < CYCLE_WEEKS * 7; i++) {
+      var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
       out.push(dayKeyOf(d));
     }
     return out;
@@ -183,7 +257,7 @@ function deskCaptureBlock(lanes, facts, questions) {
     // The prompt travels with the answer. The teacher's parser reports "answered a
     // different question" as a real exception, which it can only do if the prompt
     // the student actually saw is stored beside the response. It is also what lets
-    // the weekly gather print a prompt for a day the student is no longer looking at.
+    // the gather print a prompt for a day the student is no longer looking at.
     var questionText = prompt ? String(prompt.textContent || '').trim() : '';
 
     if (state[id] && typeof state[id].answer === 'string') area.value = state[id].answer;
@@ -225,7 +299,7 @@ function deskCaptureBlock(lanes, facts, questions) {
 
 ${recordBlockSource('  ')}
 
-  // ── Gather My Week ────────────────────────────────────────────────────────
+  // ── Gather My Log ─────────────────────────────────────────────────────────
 
   function confidencePhrase(value) {
     if (!value) return 'not rated';
@@ -316,7 +390,7 @@ ${recordBlockSource('  ')}
   /**
    * The day banner, and why it is built this strangely.
    *
-   * A week's log needs the days visually divided or a teacher scrolling thirty of
+   * A log needs its days visually divided or a teacher scrolling thirty of
    * them cannot tell Monday's filing from Wednesday's. The obvious way to do that
    * is an <h2> with the date in it before each day's first record.
    *
@@ -371,7 +445,7 @@ ${recordBlockSource('  ')}
 
   function gatheredDays() {
     var out = [];
-    weekKeys().forEach(function (dayKey) {
+    cycleKeys().forEach(function (dayKey) {
       var dayState = dayKey === TODAY ? state : loadDay(dayKey);
       if (!dayState) return;
       if (!dayHasContent(dayState)) return;
@@ -380,10 +454,11 @@ ${recordBlockSource('  ')}
     return out;
   }
 
-  function buildWeekDocument() {
+  function buildLogDocument() {
     var days = gatheredDays();
     var stamp = new Date();
-    var monday = dayKeyOf(mondayOf(new Date()));
+    var start = dayKeyOf(cycleStart());
+    var last = cycleKeys()[cycleKeys().length - 1];
 
     var rows = [];
     days.forEach(function (day) {
@@ -393,13 +468,13 @@ ${recordBlockSource('  ')}
     // The head sits ABOVE the first record label, which is the only region of the
     // paste that belongs to no record and can therefore carry free text. The
     // "Days filed" line is the teacher's completeness signal: the manifest cannot
-    // know how many class periods this week held, but this line makes a missing
+    // know how many class periods the cycle held, but this line makes a missing
     // Wednesday visible at a glance.
     var filed = days.length
       ? days.map(function (d) { return dayLabel(d.key); }).join(', ')
       : 'none yet';
     var head = '<p><strong>CURRENT EVENTS &middot; The Desk &middot; News Log</strong></p>'
-      + '<h2>Week of ' + bcEsc(dayLabel(monday)) + '</h2>'
+      + '<h2>' + bcEsc(rangeLabel(start, last)) + '</h2>'
       + '<p><em>Student work, copied ' + bcEsc(stamp.toLocaleString()) + '</em></p>'
       + '<p>Days filed: ' + bcEsc(filed) + '</p>'
       + '<hr>';
@@ -419,18 +494,18 @@ ${recordBlockSource('  ')}
     }).join('<hr>');
 
     // Computed, never a literal. Six slots for each day actually filed: the Desk
-    // cannot know how many class periods the week held, so an absent day is not
+    // cannot know how many class periods the cycle held, so an absent day is not
     // counted as a shortfall. What it does report is a blank inside a day that was
     // filed, which arrives as w=0 on that record and a BLANK exception for the
     // teacher.
     var manifest = bcRecordManifest(rows, {
-      topic: 'desk-week-' + monday,
+      topic: 'desk-log-' + start,
       expected: days.length * (LANES.length * (1 + QUESTIONS.length)),
       isoStamp: stamp.toISOString()
     });
 
     var plain = ['CURRENT EVENTS \\u00b7 The Desk \\u00b7 News Log',
-      'Week of ' + dayLabel(monday),
+      rangeLabel(start, last),
       'Student work, copied ' + stamp.toLocaleString(),
       'Days filed: ' + filed,
       '']
@@ -479,7 +554,7 @@ ${recordBlockSource('  ')}
   window.gatherDeskWork = function () {
     var out = document.getElementById('desk-gather-output');
     if (!out) return null;
-    var doc = buildWeekDocument();
+    var doc = buildLogDocument();
     out.innerHTML = doc.html;
     out.dataset.plain = doc.plain;
 
@@ -487,7 +562,7 @@ ${recordBlockSource('  ')}
     // produces a well-formed paste with nothing in it, and a student has no other
     // way to notice that Monday and Tuesday are gone.
     if (!doc.days) {
-      deskSay('Nothing filed this week yet. Fill in a story above, then gather again.', 'short');
+      deskSay('Nothing filed in this log yet. Fill in a story above, then gather again.', 'short');
       return doc;
     }
     var blank = doc.total - doc.count;
@@ -496,7 +571,7 @@ ${recordBlockSource('  ')}
       + (blank > 0
         ? ' ' + blank + ' still blank. You can copy this as it is, or go back and fill '
           + (blank === 1 ? 'it' : 'them') + ' in.'
-        : ' Copy this, then paste it into this week\\'s News Log in Canvas.'),
+        : ' Copy this, then paste it into the current News Log in Canvas.'),
       blank > 0 ? 'short' : 'complete');
     return doc;
   };
