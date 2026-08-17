@@ -33,11 +33,14 @@ The contracts below are enforced by machine, not by memory.
   about a second. This is what the pre-push hook and CI both run, and it is the
   only command you need to remember.
 - `npm run test:browser`, the Chromium contracts. Needs `npm i playwright-core`.
-  Two files. `week-page.test.js` is 39 assertions on one week: modal focus, the
+  Three files. `week-page.test.js` is 39 assertions on one week: modal focus, the
   scroll lock, the deck, the brief's capture key, and the record footer read back by
   the real parser. `brief-gather.test.js` is 28 on a unit topic brief: the confidence
   words, the paste's bold/italic shape, and the footer through the real parser in
-  both clipboard flavours.
+  both clipboard flavours. `desk.test.js` is 36 on the Desk: the browser-stamped
+  day key, typing surviving a reload, the weekly gather reaching an earlier day and
+  refusing last week's, and the whole two-day paste through the real parser with no
+  false `EDITED`.
 - `npm run test:all`, both suites.
 - `npm run hooks:install`, point git at `.githooks/` so `npm test` runs before
   every push. `npm install` does this automatically. Override once with
@@ -99,18 +102,25 @@ push. That keeps the record of what it would have caught.
   against a unit topic rather than week 01 because that is the case with no other
   route. Run it when touching the gather panel, the confidence scale, or the record
   grammar.
+- `node scripts/test/desk.test.js`, drive the real Desk in Chromium and assert the
+  daily filings' only route to Canvas: the sheet is keyed to today in the student's
+  own timezone, typing survives a reload, the weekly gather reaches an earlier day
+  in the same week and refuses last week's, and the whole paste round-trips through
+  the real parser with no false `EDITED`. In the browser suite. Run it when touching
+  the Desk's content module, its capture block, or the record grammar.
 - `node scripts/build-canvas-record.js`, inline `scripts/lib/canvas-record-block.js`
   into the week renderer between its sentinels. `--check` fails on drift, which is
-  what `validate.js` runs. Never hand-edit between the sentinels. See "Two gather
+  what `validate.js` runs. Never hand-edit between the sentinels. See "Three gather
   surfaces, one grammar" in `docs/CANVAS-CAPTURE.md`.
 - `node scripts/build-weeks.js`, rebuild every week from its content module.
   `--check` fails on drift without writing, which is what the offline suite runs.
 - `node scripts/build-canvas-events.js`, write the paste-ready Canvas calendar
   events and assignment bodies for every unit into `docs/canvas/`, in two flavours:
   a `.md` to review in the repo and a `.html` to open beside Canvas and press a
-  button in. `--check` fails on drift, which is what the offline suite runs. Canvas
-  has no version control of its own, so the repo is the source of truth for what
-  gets pasted in. See `docs/canvas/CANVAS-BUILD-GUIDE.md`.
+  button in. Also writes `docs/canvas/news-log.md`, the Desk's weekly assignment,
+  from `desk-content.js`. `--check` fails on drift, which is what the offline suite
+  runs. Canvas has no version control of its own, so the repo is the source of truth
+  for what gets pasted in. See `docs/canvas/CANVAS-BUILD-GUIDE.md`.
 - `node scripts/test/canvas-events.test.js`, prove the two flavours carry the same
   tables byte for byte and that nothing withheld leaks into either. In the offline
   suite.
@@ -120,7 +130,9 @@ push. That keeps the record of what it would have caught.
   `assets/data/announcements.js`; never edit that by hand. `--check` fails on drift,
   which is what the offline suite runs. See `docs/TODAY-BOARD.md`.
 - `node scripts/build-lesson-plans.js`, write one lesson plan per unit into
-  `docs/lesson-plans/` from that unit's content module. `--check` fails on drift,
+  `docs/lesson-plans/`, plus `the-desk.md` from `desk-content.js`, which is where
+  the Desk's rationale lives now that the student page does not print it. `--check`
+  fails on drift,
   which is what the offline suite runs. It is generated because a hand-kept plan
   beside a course that gets rebuilt in response to the news goes wrong quietly: it
   still opens, it still prints, and nothing says its targets stopped matching the
@@ -128,8 +140,11 @@ push. That keeps the record of what it would have caught.
   binder, and an IEP or 504 meeting all want, and none of them can open a
   JavaScript module.
 - `node scripts/build-desk.js`, rebuild `daily/index.html`, the Desk, from
-  `scripts/lib/desk-content.js`. `--check` fails on drift. See "The Block Has Two
-  Halves" below for why the daily half is one page and the units are not.
+  `scripts/lib/desk-content.js`. `--check` fails on drift. The Desk carries a
+  capture block, so this also re-derives it from
+  `scripts/lib/desk-capture-block.js`; never hand-edit the generated page. See "The
+  Block Has Two Halves" below for why the daily half is one page and the units are
+  not, and `docs/CANVAS-CAPTURE.md` for the capture contract.
 - `node scripts/parse-canvas-submissions.js <dir>`, turn an unzipped Canvas
   "Download Submissions" folder into `responses.csv` (one row per student per
   module response) and `exceptions.csv`. Reads and writes local files only, never
@@ -153,8 +168,8 @@ class meeting is a 90-minute block, and it runs in two halves:
 
 | | The Desk | The Unit |
 |---|---|---|
-| when | first ~25 minutes, **every** class | the remaining ~65, for weeks at a time |
-| what | today's news, four beats | one theme, traced backwards |
+| when | first ~32 minutes, **every** class | the remaining ~58, for weeks at a time |
+| what | today's news, two stories per student | one theme, traced backwards |
 | built as | a **protocol**, one generated page | **content**, one module per unit |
 | lives in | `scripts/lib/desk-content.js` → `daily/` | `scripts/lib/unit-content/` → `<unit>/` |
 
@@ -162,15 +177,44 @@ class meeting is a 90-minute block, and it runs in two halves:
 failure mode to avoid.** There are about 180 class periods in a year. Nobody
 authors 180 daily pages, and a teacher three days behind on authoring has a dead
 link in front of thirty students. So the daily half says nothing that expires:
-the Desk carries the beats, the routine and the standing sources, and what changes
-daily is what the students bring to it.
+the Desk carries the routine, the two lanes, the source buttons and the filing
+form, and what changes daily is what the students bring to it.
 
 That is also why **the Desk has no headline on it, ever.** See "Do not fabricate
 reporting" below. A page generated once and served every class period for a year
 cannot carry an example story: written in August it is fabricated, and by October
 it is stale, on the one page this course opens every single day. `validate.js`
-checks the Desk is linked from the front door and that its beats and sources are
-intact, because an orphaned Desk still builds and still validates.
+checks the Desk is linked from the front door and that its lanes, sources and
+capture boxes are intact, because an orphaned Desk still builds and still
+validates.
+
+**Nothing else may retype the Desk's numbers.** The front door, the TODAY board
+and the Canvas News Log all read `desk-content.js`. `index.html` used to state
+"First 25 minutes" and "four beats" as literals, and when the routine grew a step
+and the four rotating beats became two fixed lanes it went on advertising the old
+shape with every check green.
+
+### The four steps, and the two lanes
+
+The routine is Watch (10 min, CNN 10), Hunt (5), File (12) and The Front Page (5).
+Every student files **two stories every class period**: one **Local** and one
+**National or International**. Per story, three facts they look up (outlet,
+publication date, link) and two questions they write, about two sentences each:
+what happened, and why it caught them.
+
+**The split between the facts and the questions is the design.** The facts are
+lookups, so they are answerable by every student in the room on every day, and
+they are exactly the sourcing habit the course is about. Only the questions ask
+for sentences, and two sentences is the cap.
+
+**The four rotating beats are retired.** Local, National, International and a
+rotating Choice used to be lanes a student was assigned to for a week. The reason
+they are gone is coverage per student rather than per room: under the rotation a
+student could go three weeks without reading a local story, so the room had four
+kinds of story on it every day but no individual student did. Two lanes a day
+needs nothing tracked. The Choice beat's question survives as the Push Further
+tier on the second question, where every student meets it daily instead of a
+quarter of the room meeting it one week in four.
 
 ### Nobody speaks to the room
 
@@ -181,13 +225,14 @@ edit.** No student presents, reports out, shares out, or is called on. Ever.
 An earlier Desk ran an oral board and it is gone. The replacement is deliberately
 not "write more instead", because several of the same students are limited in
 written output and that trade just swaps one barrier for another. The daily unit
-of work is a **dispatch**: four short fields, about thirty words, filed privately,
-and filable by typing, by dictation, or on a paper card. The teacher does all the
-talking, reading three or four dispatches aloud with **names removed**.
+of work is two **short filings** rather than an essay: three facts you look up and
+two sentences you write, per story, filed privately, and filable by typing, by
+dictation, or on a paper card. The teacher does all the talking, reading three or
+four filings aloud with **names removed**.
 
 Three properties hold it up, and breaking any one puts the barrier back:
 
-1. A dispatch is never shown with a name unless that student asks.
+1. A filing is never shown with a name unless that student asks.
 2. The teacher voices the discussion, daily. An expert think-aloud is worth more
    to a struggling reader than a peer summary, and it is the failure-tolerant
    mode on a bad day.
@@ -201,8 +246,23 @@ it was meant to protect. Nobody presenting is simply how the class runs.
 `validate.js` enforces the constraint instead, because it is the textbook silent
 regression: an oral step reads as a sensible edit to anyone who was not in the
 conversation, breaks nothing technically, and is discovered by a student being
-asked to present. The gate fails if a routine step, the deck, or the daily
+asked to present. The gate fails if a routine step, a lane question, a story
+question and either of its tiers, a house rule, the deck, or the daily
 accountability line uses presenting language.
+
+### The Desk's rationale is not on the Desk
+
+Every `why` and every `note` in `desk-content.js` is teacher rationale, and the
+student page **does not print it**. It used to, and that was most of the page's
+length and none of its use to a student trying to file two stories in twelve
+minutes.
+
+Deleting the reasoning would have been the wrong fix, because it is exactly what a
+substitute folder, a department binder and a 504 meeting are asking for. It is
+generated into `docs/lesson-plans/the-desk.md` by `build-lesson-plans.js`, from the
+same module the page comes out of, so the plan cannot describe a Desk the students
+are not being shown. **Do not move a `why` onto the page, and do not delete one
+because the page does not use it.**
 
 **The units are the spine**: six across the year, listed in `SPINE` in
 `scripts/build-index.js`. A unit appears on the front door whether or not it has
@@ -489,25 +549,51 @@ failure is the one that leaves everything else green:
 
 Never hand-edit the block inside a generated brief. Change the lib and rebuild.
 
+### The Desk has its own, and it is the same shape
+
+`scripts/lib/desk-capture-block.js` is the only path by which the daily filings reach
+Canvas, and it is the surface that carries work most often: about 180 filings a year
+against five briefs a unit. It requires `canvas-record-block.js` rather than
+restating the grammar, and `validate.js` re-derives it byte for byte the same way.
+
+Three things about it that are not obvious, all covered in `docs/CANVAS-CAPTURE.md`:
+
+- **The key is `becurrent-desk-<YYYY-MM-DD>`, dated by the browser at load** from the
+  local date getters. That is what lets one dateless generated page give every class
+  period a clean sheet. `validate.js` refuses `toISOString()`: it is UTC, so it rolls
+  the date over during the school evening and hands an after-school student a blank
+  sheet.
+- **The three facts are a capture record, not a printed line.** Everything between one
+  record's `My response:` and the next record's label is hashed into the earlier
+  record, so a loose `Outlet: …` line between two questions flags every filing as
+  `EDITED` with the page looking perfect. Anything printed between the first label and
+  the footer must belong to some record.
+- **The label carries the date, the slot does not.** `Fri Sep 12, Local story, Why it
+  caught me` keeps five days distinguishable in one paste; `desk-local-why` stays
+  constant so one question can be looked at across a week and a room.
+
 ## The Canvas Record Footer
 
 Read `docs/CANVAS-CAPTURE.md` before touching a Gather panel or the footer. A wrong
 `expected` count reports complete submissions as incomplete, which is worse than no
 count at all, so the denominator is always computed and never a literal.
 
-**Two surfaces gather, and one grammar serves both.** The week page's panel collects
-every module slot; the Brief's own panel, at the end of its questions, collects that
-brief. The second is not a convenience: a unit topic Brief is opened straight off the
-unit page with no week shell behind it, so its panel is the **only** route those
-answers have to Canvas. Every Social Media topic answer used to be written to
+**Three surfaces gather, and one grammar serves all of them.** The week page's panel
+collects every module slot; the Brief's own panel, at the end of its questions,
+collects that brief; the Desk's **Gather My Week** collects the daily filings. The
+second and third are not conveniences. A unit topic Brief is opened straight off the
+unit page with no week shell behind it, and the Desk has no shell at all, so in both
+cases that panel is the **only** route those answers have to Canvas. Every Social Media topic answer used to be written to
 `localStorage` and stranded there, with every structural check green.
 
 Because `canvas-parse-core.js` is one parser, the grammar is one file,
 `scripts/lib/canvas-record-block.js`, inlined into the renderer by
-`build-canvas-record.js` and into every brief by `brief-capture-block.js`.
-`validate.js` fails on drift in either. **Do not add a second writer.** Two copies
-would mean two answers to "did this student edit their work" depending on which
-button the student pressed.
+`build-canvas-record.js`, into every brief by `brief-capture-block.js`, and into the
+Desk by `desk-capture-block.js`. `validate.js` fails on drift in any of the three.
+**Do not add another writer.** More copies would mean more answers to "did this
+student edit their work" depending on which button the student pressed, with nothing
+able to say which had drifted. A fourth surface that needs to gather requires the
+shared block, not a copy of it.
 
 Three things about the Brief's paste look cosmetic and are not. The per-question
 heading must be the footer's `lab` verbatim, because that is how the parser finds
@@ -680,8 +766,8 @@ same three from Google; that is the one thing about them not carried over.
 **Cinzel is effectively caps-only** (its lowercase codepoints are small capitals),
 **so `--display` is for names, not sentences.** A short title
 in caps is a title; a whole question in caps is shouting, and it is measurably
-slower to read. Anything with a verb in it, the terminal question, a beat
-question, a house rule, a dispatch field, an outlet headline, is set in `--body`
+slower to read. Anything with a verb in it, the terminal question, a lane question,
+a story question, a house rule, an outlet headline, is set in `--body`
 bold instead. It also has a size floor: Cinzel's thin strokes break up on a
 projector below about 17px, and under that the label face is `--ui`.
 
@@ -768,9 +854,11 @@ old offset and fails a page that scrolls fine.
 
 Honest list, so nobody assumes coverage that does not exist:
 
-1. **The browser suite covers one week and one unit topic.** `brief-gather.test.js`
-   added the unit brief path. Still uncovered: a lesson with only two modules, and
-   mobile layout, including the confidence row's fallback to circles under 560px.
+1. **The browser suite covers one week, one unit topic, and the Desk.** Still
+   uncovered: a lesson with only two modules, and mobile layout, including the
+   confidence row's fallback to circles under 560px. The Desk's own gap is that
+   `desk.test.js` seeds two days of one week and cannot fake the clock, so nothing
+   proves a real five-day accumulation or the midnight and week-boundary rollovers.
 2. **No Skills Lens.** BeHistorical's `teacher/skills-lens.html` is the in-browser
    analysis surface. The CLI parser works here today; the drop-a-zip UI does not
    exist yet. `teacher/` is an empty placeholder.
@@ -783,10 +871,11 @@ Honest list, so nobody assumes coverage that does not exist:
 6. **One unit of six.** Social Media exists, five topics deep. War in Iran, War in Ukraine, Midterm
    Elections, Artificial Intelligence and Immigration are on the front door as
    planned cards and have no content modules yet.
-7. **The News Log does not exist.** The Desk says the graded artifact is one log a
-   week, and nothing generates one. Until it does, the daily half is oral only and
-   nothing from it reaches Canvas. This is the next real decision: whether the log
-   is a week in `week-content/` reusing the brief machinery, or something smaller.
+7. **The News Log has no real Canvas round trip yet.** It exists: the Desk gathers
+   it, `docs/canvas/news-log.md` is the generated assignment, and
+   `scripts/test/desk.test.js` proves a two-day week parses back through the real
+   parser. What has not happened is a week of thirty students going through Canvas
+   for real. Until it does, item 4 below applies to it as well.
 8. **No AI coach.** Deliberate, see above. BeCurrent needs its own bot first.
 9. **No clips are configured yet.** The video mechanism is built and tested, but
    every `videos` array is empty because the URLs have to be real ones you supply.

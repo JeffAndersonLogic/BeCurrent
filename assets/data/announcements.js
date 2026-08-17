@@ -248,7 +248,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
   "reminders": [],
   "desk": {
     "title": "The Desk",
-    "minutes": 25,
+    "minutes": 32,
     "routine": [
       {
         "name": "Watch",
@@ -256,32 +256,29 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "minutes": 10
       },
       {
+        "name": "Hunt",
+        "what": "Find two stories that interest you: one local, one national or international. The source buttons are the fast way.",
+        "minutes": 5
+      },
+      {
         "name": "File",
-        "what": "Everyone files one dispatch. Four short fields, about thirty words.",
-        "minutes": 8
+        "what": "Fill in both stories on this page: where it came from, what happened, and why it caught you. It saves as you type.",
+        "minutes": 12
       },
       {
         "name": "The Front Page",
-        "what": "The teacher reads three or four dispatches aloud, names removed, and runs one question from Week 01 at them.",
-        "minutes": 7
+        "what": "Your teacher reads three or four filings aloud, names removed, and runs one question from Week 01 at them.",
+        "minutes": 5
       }
     ],
-    "beats": [
+    "lanes": [
       {
         "name": "Local",
         "question": "Who decided this, and could you go to the meeting where they decide the next one?"
       },
       {
-        "name": "National",
-        "question": "What actually changed today, as opposed to what was said today?"
-      },
-      {
-        "name": "International",
-        "question": "Who is telling us this, and how close are they to it?"
-      },
-      {
-        "name": "Choice",
-        "question": "Why is this being covered at all, and who benefits from the coverage?"
+        "name": "National or International",
+        "question": "What actually changed, as opposed to what was said, and how close is the person telling us to the thing itself?"
       }
     ]
   }

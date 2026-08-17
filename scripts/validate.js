@@ -528,6 +528,12 @@ weekDirs.concat(unitDirs).forEach(dir => {
   glob(path.join(ROOT, dir), /\.html$/).forEach(f => studentPages.push(f));
 });
 studentPages.push(path.join(ROOT, 'index.html'));
+// The Desk. It sits in neither weekDirs nor unitDirs, so for as long as it was a
+// page with no <script> on it nothing here covered it and nothing needed to. It
+// now carries a capture block and a week of student writing in localStorage, which
+// makes it the single most important page in the repo to hold to this rule, and
+// the gap was invisible: every check in this section passed by never looking.
+studentPages.push(path.join(ROOT, 'daily', 'index.html'));
 [RENDERER].forEach(f => studentPages.push(f));
 
 studentPages.forEach(file => {
@@ -672,6 +678,7 @@ done(`${unitDirs.length} unit page${unitDirs.length === 1 ? '' : 's'}, linked fr
 // October, on the single page this course opens every single day.
 section('The Desk');
 const DESK_PAGE = path.join(ROOT, 'daily', 'index.html');
+const DESK_CONTENT = path.join(ROOT, 'scripts', 'lib', 'desk-content.js');
 if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) {
   assert(frontDoor.includes('href="daily/index.html"'), path.join(ROOT, 'index.html'),
     'nothing on the front door links daily/index.html, so the Desk is orphaned');
@@ -691,8 +698,16 @@ if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) 
   // was meant to protect. The design carries the constraint; the room does not
   // need to be told about it.
   const SPEAKING = /\b(present to the class|presentation|report out|share out|out loud to the class|oral report|call on you|called on)\b/i;
+  const story = desk.story || {};
   [['meta.deck', desk.meta.deck],
     ...(desk.routine || []).flatMap((s, i) => [[`routine[${i}].what`, s.what], [`routine[${i}].why`, s.why]]),
+    ...(desk.lanes || []).flatMap((l, i) => [[`lanes[${i}].question`, l.question], [`lanes[${i}].note`, l.note]]),
+    ...(story.questions || []).flatMap((q, i) => [
+      [`story.questions[${i}].text`, q.text],
+      [`story.questions[${i}].startHere`, q.startHere],
+      [`story.questions[${i}].pushFurther`, q.pushFurther]
+    ]),
+    ...(desk.rules || []).flatMap((r, i) => [[`rules[${i}].rule`, r.rule], [`rules[${i}].why`, r.why]]),
     ['accountability.daily', (desk.accountability || {}).daily]
   ].forEach(([where, text]) => {
     assert(!SPEAKING.test(String(text || '')), path.join(ROOT, 'scripts', 'lib', 'desk-content.js'),
@@ -700,16 +715,108 @@ if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) 
       + 'see the header of desk-content.js before changing this.');
   });
 
-  (desk.beats || []).forEach(b => {
-    assert(deskSrc.includes(`>${b.name}<`), DESK_PAGE, `the ${b.name} beat is not on the page`);
+  // The counts are asserted before anything is looped over. Every check below is a
+  // forEach, and a forEach over an empty array passes: renaming `lanes` or
+  // `sources` in the content module without touching this file reported "0 lanes,
+  // 0 sources" and a clean green, which is the shape of failure this repo cares
+  // about more than an outright red. The two lanes are the design (see the header
+  // of desk-content.js), so two is the number.
+  assert((desk.lanes || []).length === 2, DESK_CONTENT,
+    `expected 2 lanes, found ${(desk.lanes || []).length}. Every student files one Local `
+    + 'and one National-or-International story every day; see desk-content.js.');
+  assert((story.facts || []).length >= 1 && (story.questions || []).length >= 1, DESK_CONTENT,
+    'a story needs at least one fact and one question, or the Desk captures nothing');
+  assert((desk.sources || []).length >= 1
+    && (desk.sources || []).every(g => (g.links || []).length >= 1), DESK_CONTENT,
+    'every source group needs at least one link. An empty group renders a heading '
+    + 'over nothing, which reads as something that failed to load.');
+
+  (desk.lanes || []).forEach(l => {
+    assert(deskSrc.includes(`>${l.name}<`), DESK_PAGE, `the ${l.name} lane is not on the page`);
+    assert(deskSrc.includes(`id="story-${l.id}"`), DESK_PAGE,
+      `the ${l.name} lane has no filing card on the page`);
   });
-  (require('./lib/desk-content').resources || []).forEach(r => {
-    assert(deskSrc.includes(`href="${r.url}"`), DESK_PAGE, `${r.name} is not linked`);
-    assert(new RegExp(`href="${r.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*rel="noopener noreferrer"`).test(deskSrc),
-      DESK_PAGE, `${r.name} opens without rel="noopener noreferrer"`);
+
+  // Every source is a real, new-tab, no-referrer-leak link. A source button that
+  // opens in the same tab loses whatever the student had typed into the filing
+  // form, which is the one thing on this page that only exists in the browser.
+  let sourceCount = 0;
+  (desk.sources || []).forEach(g => {
+    assert(deskSrc.includes(`>${g.group}<`), DESK_PAGE, `the ${g.group} source group is not on the page`);
+    (g.links || []).forEach(l => {
+      sourceCount++;
+      assert(deskSrc.includes(`href="${l.url}"`), DESK_PAGE, `${l.name} is not linked`);
+      assert(new RegExp(`href="${l.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*rel="noopener noreferrer"`).test(deskSrc),
+        DESK_PAGE, `${l.name} opens without rel="noopener noreferrer"`);
+    });
   });
-  done(`${(require('./lib/desk-content').beats || []).length} beats, `
-    + `${(require('./lib/desk-content').resources || []).length} standing sources, linked from the front door`);
+
+  // ── The Desk's capture block ───────────────────────────────────────────────
+  //
+  // The Desk is the THIRD gather surface in this course, and the only route the
+  // daily filings have to Canvas: there is no shell behind it and no Brief beside
+  // it. Every failure below leaves the page rendering perfectly and losing the
+  // work, which is why each one is checked rather than trusted.
+  const { deskCaptureBlock, STORAGE_PREFIX: DESK_PREFIX } = require('./lib/desk-capture-block');
+
+  // Byte-identical to what the lib produces, so a hand-edit inside the generated
+  // page cannot survive, and so the shared record grammar cannot drift here while
+  // the briefs and the week renderer stay correct.
+  assert(deskSrc.includes(deskCaptureBlock(desk.lanes, story.facts, story.questions)),
+    DESK_PAGE,
+    'the Desk capture block is not byte-identical to scripts/lib/desk-capture-block.js. '
+    + 'Never hand-edit it: change the lib and run node scripts/build-desk.js.');
+
+  // The key the weekly gather scans for. The date is appended by the browser at
+  // load, which is what keeps this page dateless and still gives every class
+  // period its own sheet; the PREFIX is the part the repo can check.
+  assert(new RegExp(`var PREFIX = "${DESK_PREFIX}"`).test(deskSrc), DESK_PAGE,
+    `the Desk storage prefix is not "${DESK_PREFIX}". Change it here and the weekly `
+    + 'gather stops finding any day the student has already filed.');
+  assert(/var TODAY = dayKeyOf\(new Date\(\)\)/.test(deskSrc), DESK_PAGE,
+    'the day key must be stamped by the browser at load, not built into the page');
+  assert(!/toISOString\(\)\s*\.slice/.test(deskSrc), DESK_PAGE,
+    'the day key must come from the LOCAL date getters. toISOString() is UTC and rolls '
+    + 'over during the school evening, handing an after-school student a blank sheet.');
+
+  // Every field the content module defines is wired to the block. An unwired box
+  // is a student answer that is typed, looks saved, and silently never reaches
+  // Canvas.
+  (desk.lanes || []).forEach(l => {
+    (story.facts || []).forEach(f => {
+      assert(deskSrc.includes(`id="answer-${l.id}-${f.id}"`), DESK_PAGE,
+        `missing input id="answer-${l.id}-${f.id}"`);
+    });
+    (story.questions || []).forEach(q => {
+      assert(deskSrc.includes(`id="answer-${l.id}-${q.id}"`), DESK_PAGE,
+        `missing textarea id="answer-${l.id}-${q.id}"`);
+      assert(deskSrc.includes(`id="question-${l.id}-${q.id}"`), DESK_PAGE,
+        `missing prompt id="question-${l.id}-${q.id}", so the question the student saw is `
+        + 'never recorded beside their answer');
+      assert(deskSrc.includes(`id="confidence-${l.id}-${q.id}"`), DESK_PAGE,
+        `missing confidence row id="confidence-${l.id}-${q.id}"`);
+    });
+  });
+
+  // The Gather panel, both halves. Buttons with no handler are dead buttons; a
+  // handler with nowhere to write is work the student can never retrieve.
+  assert(deskSrc.includes('onclick="gatherDeskWork()"'), DESK_PAGE,
+    'no Gather My Week button. This is the only route the daily filings have to Canvas.');
+  assert(deskSrc.includes('onclick="copyDeskWork()"'), DESK_PAGE, 'no Copy to Clipboard button');
+  assert(deskSrc.includes('id="desk-gather-status"'), DESK_PAGE,
+    'missing #desk-gather-status, so a week with nothing in it cannot tell the student');
+
+  // A div, not a textarea. A textarea can only hold plain text, which loses the
+  // bold question and the italic response the paste is shaped around, and it loses
+  // the rendered selection a manual Ctrl-C depends on where the clipboard API is
+  // blocked outright, which it is on some managed devices.
+  assert(/<div class="gather-output" id="desk-gather-output"/.test(deskSrc), DESK_PAGE,
+    '#desk-gather-output must be a <div>: a textarea loses the formatting and the '
+    + 'selection that a blocked-clipboard copy falls back to');
+
+  done(`${(desk.lanes || []).length} lanes, ${sourceCount} source links, `
+    + `${(desk.lanes || []).length * ((story.facts || []).length + (story.questions || []).length)} `
+    + 'capture boxes wired, linked from the front door');
 }
 
 // ── The TODAY board ───────────────────────────────────────────────────────────
@@ -833,6 +940,38 @@ section('Canvas paste documents');
           + 'the Canvas course-links panel, never hand-typed.');
       }
     });
+
+    // ── The News Log ────────────────────────────────────────────────────────
+    //
+    // The Desk's only route to Canvas, and the only weekly assignment in the
+    // course. Two things about it are load-bearing rather than editorial.
+    //
+    // Unlimited attempts is the whole backup story. Students paste the
+    // accumulating log every day, so Friday's attempt carries the week and every
+    // earlier attempt is a recovery point. A week of filings lives in one
+    // browser's localStorage until it is copied out and nothing in this course
+    // may send student writing anywhere on its own, so capping the attempts
+    // removes the only backup that exists, silently, in a Canvas setting that
+    // nothing else in this repo can see.
+    //
+    // Not a Discussion, because a discussion is visible to the class and the
+    // Desk's first house rule is that a name is never on the board unless the
+    // student puts it there.
+    const NEWS_LOG_DOC = path.join(CANVAS_DIR, 'news-log.md');
+    if (assert(fs.existsSync(NEWS_LOG_DOC), NEWS_LOG_DOC,
+      'docs/canvas/news-log.md is missing. It is the Desk\'s only route to Canvas; '
+      + 'run node scripts/build-canvas-events.js')) {
+      const log = read(NEWS_LOG_DOC) || '';
+      assert(/\|\s*Attempts\s*\|\s*\*\*Unlimited\*\*\s*\|/.test(log), NEWS_LOG_DOC,
+        'the News Log must specify Unlimited attempts. Students paste the accumulating '
+        + 'log daily and that is the only backup a week of filings has.');
+      assert(/Text Entry/.test(log), NEWS_LOG_DOC,
+        'the News Log must specify Text Entry: parse-canvas-submissions.js cannot read '
+        + 'a file upload, so the record footer would never reach any analysis.');
+      assert(log.includes(`${SITE}/daily/index.html`), NEWS_LOG_DOC,
+        'the News Log does not link the Desk, so a student reading the assignment has '
+        + 'no route to the page it is about');
+    }
 
     // A withheld title must not reach Canvas either. The repo check covers
     // student-facing pages; these documents are pasted at students by hand, so

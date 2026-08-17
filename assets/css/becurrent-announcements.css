@@ -281,6 +281,34 @@ body.is-idle { cursor: none; }
 }
 .desk-what { font-size: 2.4vmin; line-height: 1.4; color: var(--ink-soft); }
 
+/* The two lanes. Ink-topped rather than red, because they are a second series
+   under the routine and red is already doing the first: per becurrent-brand.css
+   there is no third accent, and where a second series has to be told apart from
+   the first, the second one is black. The question is set in --body bold, not
+   --display: Cinzel is effectively caps-only, and a whole question in capitals is
+   shouting and measurably slower to read. */
+.desk-lanes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 32vw), 1fr));
+  gap: 2vmin;
+  margin-top: 2vmin;
+}
+.desk-lane {
+  background: var(--newsprint);
+  border: 1px solid var(--paper-line);
+  border-left: 4px solid var(--ink);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 2vmin 2.2vmin;
+}
+.desk-lane-name {
+  font-family: var(--ui); font-size: 1.5vmin; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink);
+}
+.desk-lane-q {
+  font-family: var(--body); font-weight: 700; font-size: 2.5vmin;
+  line-height: 1.35; color: var(--black-900); margin-top: .8vmin;
+}
+
 /* ── Agenda and homework ─────────────────────────────────────────────── */
 .agenda-list, .homework-list {
   list-style: none; margin: 0; padding: 0;
@@ -451,9 +479,9 @@ body.is-idle { cursor: none; }
   .agenda-list.is-long .agenda-item, .homework-list.is-dense .homework-item { font-size: 16px; }
   .agenda-num, .homework-num { font-size: 15px; }
 
-  .desk-grid, .reminder-grid { grid-template-columns: 1fr; }
+  .desk-grid, .desk-lanes, .reminder-grid { grid-template-columns: 1fr; }
   .desk-name, .reminder-title, .ahead-topic, .due-title { font-size: 18px; }
-  .desk-what, .reminder-detail { font-size: 15px; }
+  .desk-what, .reminder-detail, .desk-lane-q { font-size: 15px; }
   .ahead-when, .due-when { width: 68px; }
   .ahead-weekday, .due-weekday, .due-month, .ahead-unit, .due-detail { font-size: 11px; }
   .ahead-daynum, .due-daynum { font-size: 20px; }

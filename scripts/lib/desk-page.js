@@ -3,20 +3,36 @@
 /**
  * The Desk page.
  *
- * A protocol, rendered. It carries no story, no headline and no date, which is
- * what lets one generated page serve every class period of the year. See the
- * header of scripts/lib/desk-content.js for why the daily half of a block is
- * built this way and the unit half is not.
+ * A protocol, rendered, plus the form the protocol asks a student to fill in. It
+ * carries no story, no headline and no date in its source, which is what lets one
+ * generated page serve every class period of the year. The one dated thing on the
+ * page is written by the browser at load: see the header of
+ * scripts/lib/desk-capture-block.js.
  *
- * The page answers four questions, in the order a student standing in the
- * doorway needs them: what happens in the next twenty-five minutes, what exactly
- * am I filing, what is my beat for, and what am I actually graded on.
+ * ── The page answers questions in the order a student needs them ─────────────
  *
- * Note what is absent. The page says nothing about nobody presenting. That is
- * enforced in the design and in validate.js, and stating it here would turn an
- * ordinary absence into an announcement, which draws attention to exactly the
- * students it was meant to protect.
+ * Watch, then hunt, then file, then copy. The sections are in that order and the
+ * quick-nav is in that order, because the source buttons are useless after the
+ * form and the form is unusable before the sources. A student who lands here
+ * mid-period should be able to scroll to the step the room is on.
+ *
+ * ── What is deliberately NOT printed ────────────────────────────────────────
+ *
+ * The content module's `why` fields and its lanes' `note` fields are teacher
+ * rationale, and none of them reach this page. They used to: the previous version
+ * printed a paragraph of pedagogy under every routine step and every beat, which
+ * was most of the page's length and none of its use. They now go to
+ * docs/lesson-plans/the-desk.md, so nothing is lost and the student page is
+ * things to do rather than an argument for doing them.
+ *
+ * The page also says nothing about nobody presenting. That is enforced in the
+ * design and in validate.js, and stating it here would turn an ordinary absence
+ * into an announcement, which draws attention to exactly the students it was meant
+ * to protect.
  */
+
+const { deskCaptureBlock } = require('./desk-capture-block');
+const { CONFIDENCE_WORDS } = require('./brief-capture-block');
 
 function esc(s) {
   return String(s == null ? '' : s)
@@ -26,59 +42,114 @@ function esc(s) {
 // Content that carries its own entities, e.g. a curly apostrophe written as &rsquo;.
 function raw(s) { return String(s == null ? '' : s); }
 
+/**
+ * The confidence scale, Desk flavour.
+ *
+ * Byte-for-byte the same contract as the Brief's: `data-conf` and `aria-pressed`
+ * are what the capture block reads, and the words come from the one table in
+ * brief-capture-block.js that also writes them into the Canvas paste. A student
+ * meets this row on a Brief and on the Desk inside the same block, so it has to
+ * look and behave like one scale. The class is `.confidence` because that is the
+ * flavour becurrent.css defines, which is the stylesheet this page loads.
+ */
+function confidenceRow(id, describe) {
+  const buttons = [1, 2, 3, 4, 5].map(n =>
+    `          <button type="button" data-conf="${n}" aria-pressed="false"
+            aria-label="Confidence ${n} of 5, ${esc(CONFIDENCE_WORDS[n])}"><span class="conf-num">${n}</span><span class="conf-word">${esc(CONFIDENCE_WORDS[n])}</span></button>`
+  ).join('\n');
+  return `        <div class="confidence" id="confidence-${esc(id)}" role="group" aria-label="How well do you understand your own answer: ${esc(describe)}">
+${buttons}
+        </div>`;
+}
+
+/**
+ * One story card: three facts you look up, then the questions you write.
+ *
+ * The facts are `<input>` rather than `<textarea>` on purpose. A single-line box
+ * says "this is a lookup, not an essay", which is the whole reason the facts are
+ * separated from the questions, and `type="url"` on the link field gets a
+ * phone keyboard with a slash on it.
+ */
+function storyCard(lane, story) {
+  const facts = (story.facts || []).map(f => {
+    const id = `${lane.id}-${f.id}`;
+    const type = f.id === 'link' ? 'url' : 'text';
+    return `          <div class="fact">
+            <label class="fact-label" for="answer-${esc(id)}">${esc(f.label)}</label>
+            <p class="fact-ask">${esc(f.ask)}</p>
+            <input class="fact-input" id="answer-${esc(id)}" type="${type}" autocomplete="off"
+              spellcheck="false" placeholder="${esc(f.placeholder || '')}">
+          </div>`;
+  }).join('\n');
+
+  const questions = (story.questions || []).map((q, i) => {
+    const id = `${lane.id}-${q.id}`;
+    const describe = `${lane.name} story, ${q.label}`;
+    const tiers = (q.startHere || q.pushFurther) ? `
+        <div class="tier-strip">
+${q.startHere ? `          <div class="tier">
+            <span class="tier-label">Start Here</span>
+            <p>${raw(q.startHere)}</p>
+          </div>` : ''}
+${q.pushFurther ? `          <div class="tier">
+            <span class="tier-label">Push Further</span>
+            <p>${raw(q.pushFurther)}</p>
+          </div>` : ''}
+        </div>` : '';
+
+    return `      <div class="desk-q">
+        <span class="desk-q-num">Question ${i + 1}</span><span class="desk-q-skill">${esc(q.skill)}</span>
+        <p class="desk-q-text" id="question-${esc(id)}">${esc(q.text)}</p>${tiers}
+        <label class="visually-hidden" for="answer-${esc(id)}">${esc(describe)}</label>
+        <textarea class="work-area" id="answer-${esc(id)}"
+          placeholder="Two sentences. It saves as you type."></textarea>
+${confidenceRow(id, describe)}
+      </div>`;
+  }).join('\n');
+
+  return `      <article class="card story-card" id="story-${esc(lane.id)}">
+        <div class="eyebrow">${esc(lane.name)}</div>
+        <p class="lane-scope">${esc(lane.scope)}</p>
+        <p class="lane-question">${esc(lane.question)}</p>
+        <div class="fact-row">
+${facts}
+        </div>
+${questions}
+      </article>`;
+}
+
 function renderDeskPage(desk) {
   const m = desk.meta;
-  const d = desk.dispatch || {};
+  const story = desk.story || {};
+  const lanes = desk.lanes || [];
 
-  const routine = (desk.routine || []).map(step => `      <li class="block-card">
-        <div class="block-num">${esc(String(step.minutes))} min &middot; Step ${esc(String(step.n))}</div>
-        <h3>${esc(step.name)}</h3>
-        <p class="block-sub">${esc(step.what)}</p>
-        <p class="block-inclass">${esc(step.why)}</p>
-      </li>`).join('\n');
-
-  const fields = (d.fields || []).map((f, i) => `          <li class="field">
-            <span class="field-n">${i + 1}</span>
-            <div>
-              <p class="field-label">${esc(f.label)}</p>
-              <p class="field-ask">${esc(f.ask)}</p>
-              <p class="field-stem">${esc(f.stem)}</p>
-            </div>
-          </li>`).join('\n');
-
-  const tiers = (d.tiers || []).map(t => `          <div class="tier">
-            <span class="tier-label">${esc(t.label)}</span>
-            <p>${raw(t.text)}</p>
-          </div>`).join('\n');
-
-  const ways = (d.ways || []).map(w => `            <li>${esc(w)}</li>`).join('\n');
-
-  const rules = (desk.rules || []).map(r => `        <li class="rule">
-          <p class="rule-text">${esc(r.rule)}</p>
-          <p class="rule-why">${esc(r.why)}</p>
+  const routine = (desk.routine || []).map(step => `        <li class="block-card">
+          <div class="block-num">${esc(String(step.minutes))} min &middot; Step ${esc(String(step.n))}</div>
+          <h3>${esc(step.name)}</h3>
+          <p class="block-sub">${esc(step.what)}</p>
         </li>`).join('\n');
 
-  // The beats are cards rather than a list because each one carries a question,
-  // and the question is the part that gets skipped when a beat is one line.
-  const beats = (desk.beats || []).map(b => `        <article class="card beat-card">
-          <div class="eyebrow">${esc(b.name)}</div>
-          <p class="beat-scope">${esc(b.scope)}</p>
-          <p class="beat-question">${esc(b.question)}</p>
-          <p class="beat-note">${esc(b.note)}</p>
-        </article>`).join('\n');
-
-  const rotation = (desk.rotation || []).map(r =>
-    `<span class="rotation-chip">${esc(r)}</span>`).join('\n            ');
-
-  const resources = (desk.resources || []).map(r => `        <article class="card">
-          <h3>${esc(r.name)}</h3>
-          <p>${esc(r.what)}</p>
-          <div class="prompt-block">
-            <span class="prompt-label">How we use it</span>
-            ${esc(r.how)}
+  // Grouped, because the student's real question is "where do I look for a LOCAL
+  // story" and a flat list of a dozen outlets does not answer it.
+  const sources = (desk.sources || []).map(g => `        <div class="source-group">
+          <div class="eyebrow">${esc(g.group)}</div>
+          <p class="source-what">${esc(g.what)}</p>
+          <div class="source-grid">
+${(g.links || []).map(l => `            <a class="source-btn" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">
+              <span class="source-name">${esc(l.name)}</span>
+              <span class="source-note">${esc(l.note)}</span>
+            </a>`).join('\n')}
           </div>
-          <a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">Open ${esc(r.name)}</a>
-        </article>`).join('\n');
+        </div>`).join('\n');
+
+  const stories = lanes.map(lane => storyCard(lane, story)).join('\n');
+
+  const ways = (story.ways || []).map(w => `            <li>${esc(w)}</li>`).join('\n');
+
+  const rules = (desk.rules || []).map(r => `          <li class="rule">
+            <p class="rule-text">${esc(r.rule)}</p>
+            <p class="rule-why">${esc(r.why)}</p>
+          </li>`).join('\n');
 
   const a = desk.accountability || {};
   const totalMinutes = (desk.routine || []).reduce((n, s) => n + (s.minutes || 0), 0);
@@ -92,6 +163,7 @@ function renderDeskPage(desk) {
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="../assets/css/becurrent.css">
+<style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
 <body>
 <div class="site-shell">
@@ -104,9 +176,9 @@ function renderDeskPage(desk) {
       <div class="nav-links">
         <a href="../index.html">Home</a>
         <a href="#routine">The Routine</a>
-        <a href="#dispatch">The Dispatch</a>
-        <a href="#beats">The Beats</a>
-        <a href="#sources">Sources</a>
+        <a href="#sources">Find a Story</a>
+        <a href="#file">File</a>
+        <a href="#week">My Week</a>
       </div>
     </nav>
   </header>
@@ -118,9 +190,9 @@ function renderDeskPage(desk) {
       <span>${esc(m.deck)}</span>
     </p>
     <div class="quick-nav">
-      <a class="btn" href="#dispatch">What I File</a>
-      <a class="btn secondary" href="#beats">My Beat</a>
-      <a class="btn secondary" href="#sources">Where to Look</a>
+      <a class="btn" href="#sources">Find a Story</a>
+      <a class="btn secondary" href="#file">File My Two Stories</a>
+      <a class="btn secondary" href="#week">Copy My Week</a>
     </div>
   </section>
 
@@ -128,30 +200,39 @@ function renderDeskPage(desk) {
     <section class="section" id="routine">
       <div class="section-header">
         <div class="eyebrow">The first ${esc(String(totalMinutes))} minutes</div>
-        <h2>The same three steps, every class.</h2>
-        <p>The Desk runs at the start of the block and then the block moves to the unit. It
-          is deliberately short and deliberately identical every day: a routine you do not
-          have to be told is a routine that leaves room to think about the story instead of
-          the format.</p>
+        <h2>The same four steps, every class.</h2>
       </div>
       <ol class="block-list">
 ${routine}
       </ol>
     </section>
 
-    <section class="section" id="dispatch">
+    <section class="section" id="sources">
       <div class="section-header">
-        <div class="eyebrow">What you file</div>
-        <h2>One dispatch. About thirty words.</h2>
-        <p>${esc(d.intro || '')}</p>
+        <div class="eyebrow">Step 2 &middot; Find a story</div>
+        <h2>Two stories. One local, one from further out.</h2>
+        <p>Every link opens in a new tab, so keep this one open. If a link is dead, use the
+          search button in that group. Anything you bring from somewhere else is welcome, and
+          it needs the same three facts: outlet, date, link.</p>
       </div>
-      <article class="card dispatch-card">
-        <ol class="field-list">
-${fields}
-        </ol>
-        <div class="tier-strip">
-${tiers}
-        </div>
+      <div class="source-stack">
+${sources}
+      </div>
+    </section>
+
+    <section class="section" id="file">
+      <div class="section-header">
+        <div class="eyebrow">Step 3 &middot; File</div>
+        <h2>Today&rsquo;s filing: <span class="desk-today" id="desk-today">today</span></h2>
+        <p>${esc(story.intro || '')} Your work saves in this browser as you type, and each
+          class period gets its own sheet.</p>
+      </div>
+
+      <div class="story-stack">
+${stories}
+      </div>
+
+      <article class="card">
         <div class="prompt-block">
           <span class="prompt-label">Three ways to file, all equal</span>
           <ul class="ways">
@@ -159,66 +240,43 @@ ${ways}
           </ul>
         </div>
       </article>
+    </section>
 
+    <section class="section" id="week">
+      <div class="section-header">
+        <div class="eyebrow">Step 4 &middot; Every day, before you leave</div>
+        <h2>Copy your week into Canvas.</h2>
+        <p>${esc(a.written || '')}</p>
+      </div>
+      <div class="gather-panel">
+        <h3>My News Log</h3>
+        <p>This gathers every day you have filed this week, today included. Press both
+          buttons, then paste into the News Log assignment in Canvas.</p>
+        <div class="quick-nav">
+          <button class="btn" type="button" onclick="gatherDeskWork()">Gather My Week</button>
+          <button class="btn secondary" type="button" onclick="copyDeskWork()">Copy to Clipboard</button>
+        </div>
+        <p class="gather-status" id="desk-gather-status" role="status"></p>
+        <div class="gather-output" id="desk-gather-output" tabindex="0">
+          <p class="gather-placeholder">Press <strong>Gather My Week</strong>, then
+            <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="section-header">
+        <div class="eyebrow">How this works</div>
+        <h2>What you can count on.</h2>
+      </div>
       <article class="card rules-card">
-        <h3>House rules</h3>
         <ul class="rule-list">
 ${rules}
         </ul>
-      </article>
-    </section>
-
-    <section class="section" id="beats">
-      <div class="section-header">
-        <div class="eyebrow">Your lane</div>
-        <h2>Four beats. You file in one of them.</h2>
-        <p>A beat is the lane your dispatch goes in, and it rotates weekly, so roughly a
-          quarter of the room files each lane and the front page has four kinds of story on
-          it. Each beat also carries the question it exists to ask, because finding a story
-          is not the assignment.</p>
-      </div>
-      <div class="beat-grid">
-${beats}
-      </div>
-      <article class="card rotation-card">
-        <h3>The Choice beat rotates</h3>
-        <p>So that all four lanes come up over a month, rather than the loudest one winning
-          every week.</p>
-        <div class="rotation-row">
-            ${rotation}
-        </div>
-      </article>
-    </section>
-
-    <section class="section" id="sources">
-      <div class="section-header">
-        <div class="eyebrow">Standing sources</div>
-        <h2>Two you can always start from.</h2>
-        <p>Two rather than fifteen. A long list of sources is a list nobody opens, and
-          these are the two this class already uses. Anything you bring from somewhere
-          else is welcome, and it arrives with the same requirements the dispatch asks
-          for: outlet, date, what happened.</p>
-      </div>
-      <div class="module-grid">
-${resources}
-      </div>
-    </section>
-
-    <section class="section" id="log">
-      <div class="section-header">
-        <div class="eyebrow">What you are graded on</div>
-        <h2>The dispatches are practice. The log is the artifact.</h2>
-      </div>
-      <article class="card">
         <div class="prompt-block">
           <span class="prompt-label">Every class</span>
           ${esc(a.daily || '')}
         </div>
-        <div class="prompt-block">
-          <span class="prompt-label">Once a week, in Canvas</span>
-          ${esc(a.written || '')}
-        </div>
-        <p>${esc(a.note || '')}</p>
       </article>
     </section>
   </main>
@@ -231,6 +289,7 @@ ${resources}
     </div>
   </footer>
 </div>
+${deskCaptureBlock(lanes, story.facts, story.questions)}
 </body>
 </html>
 `;

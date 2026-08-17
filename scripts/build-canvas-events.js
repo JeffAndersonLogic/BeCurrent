@@ -271,6 +271,190 @@ function renderAssignments(unit) {
   return out.join('\n').replace(/\n{3,}/g, '\n\n').replace(/\s+$/, '') + '\n';
 }
 
+// ── The News Log ─────────────────────────────────────────────────────────────
+//
+// The Desk's route to Canvas: ONE assignment per week, in its own assignment
+// group, and every word of it derived from scripts/lib/desk-content.js so it
+// cannot describe a Desk the students are not being shown.
+//
+// It is one assignment a week rather than one a day, and the reasons run in both
+// directions. One a day is 180 gradebook columns a year, which nobody reads, and
+// 180 Canvas objects to build by hand. One for the whole year is a single column
+// where a missed week is invisible. A weekly column is the split the Desk's own
+// accountability note asks for: a blank one on Wednesday says Tuesday was lost,
+// while there is still a Wednesday to do something about it.
+//
+// ATTEMPTS MUST BE UNLIMITED, and here that is not the usual reason. Students
+// paste the accumulating log EVERY day: Monday is attempt 1, Friday is attempt 5
+// and carries the whole week. That is not a convenience, it is the only backup
+// that exists. A week of filings lives in one browser's localStorage until it is
+// copied out, the privacy rule correctly forecloses any server-side copy, and a
+// cleared Chromebook profile on Thursday takes Monday to Wednesday with it.
+//
+// It is deliberately NOT a Canvas Discussion, which is the Canvas feature that
+// looks most like a journal. A discussion is visible to the class, and the Desk's
+// first house rule is that a student's name is never on the board unless they put
+// it there. A journal that publishes the room's filings under their names breaks
+// the constraint the whole daily half is built around, in writing rather than out
+// loud.
+const NEWS_LOG = {
+  group: 'News Log',
+  name: n => `${PREFIX} - News Log - Week of ${n}`,
+  points: 20
+};
+
+function newsLogBody(desk) {
+  const m = desk.meta || {};
+  const story = desk.story || {};
+  const deskUrl = `${SITE}/daily/index.html`;
+  const lanes = (desk.lanes || []).map(l =>
+    `    <li><strong>${esc(objectName(l.name))}.</strong> ${esc(plain(l.scope))} `
+    + `Ask yourself: ${esc(plain(l.question))}</li>`).join('\n');
+  const boxes = (story.facts || []).map(f =>
+    `    <li><strong>${esc(plain(f.label))}.</strong> ${esc(plain(f.ask))}</li>`)
+    .concat((story.questions || []).map(q =>
+      `    <li><strong>${esc(plain(q.label))}.</strong> ${esc(plain(q.text))}</li>`))
+    .join('\n');
+  const ways = (story.ways || []).map(w => `    <li>${esc(plain(w))}</li>`).join('\n');
+
+  return `<h2>${esc(objectName(m.title))}: your News Log for this week</h2>
+<p><em>${esc(plain(m.deck))}</em></p>
+
+<h3>Step 1 &mdash; Open the Desk</h3>
+<p><a class="inline_disabled" href="${deskUrl}" target="_blank" rel="noopener">${esc(objectName(m.title))}</a></p>
+<p>Everything happens on that page. There is nothing to download, and each class period gets its own sheet.</p>
+
+<h3>Step 2 &mdash; File two stories, every class</h3>
+<ol>
+${lanes}
+</ol>
+<p>Five boxes for each story:</p>
+<ol>
+${boxes}
+</ol>
+<p>Three ways to file, all equal:</p>
+<ul>
+${ways}
+</ul>
+
+<h3>Step 3 &mdash; Copy your week into Canvas, every day</h3>
+<ol>
+    <li>Scroll to <strong>My News Log</strong> at the bottom of the Desk.</li>
+    <li>Click <strong>Gather My Week</strong>. This collects every day you have filed this week, today included.</li>
+    <li>Click <strong>Copy to Clipboard</strong>.</li>
+    <li>Paste it into the submission box below and click Submit.</li>
+</ol>
+<p><strong>Do this at the end of every class, not just on Friday.</strong> You can submit here as many times as you like, and the last one is the one I grade, so each day you paste your whole week in again and it replaces the day before. That is also your only backup: your filings are saved in the browser on the device you used, they do not follow you to another Chromebook, and if that browser gets cleared they are gone. Pasting daily means the worst you can ever lose is one day.</p>
+
+<h3>Due</h3>
+<p>The end of the last class period this week. Paste it in every day before then.</p>
+
+<h3>What I am looking for</h3>
+<ol>
+    <li>One local story and one national or international story for each class period.</li>
+    <li>The outlet and the date on every story. A story you cannot source is a rumour.</li>
+    <li>Two sentences on what happened, in your own words, and two on why it caught you.</li>
+    <li>An honest confidence rating. A Shaky tells me more than a dishonest Could teach it.</li>
+</ol>`;
+}
+
+function renderNewsLog(desk) {
+  const m = desk.meta || {};
+  const story = desk.story || {};
+  const perDay = (desk.lanes || []).length
+    * ((story.facts || []).length + (story.questions || []).length);
+  const out = [];
+
+  out.push('# The News Log, Paste-Ready');
+  out.push('');
+  out.push('**Generated by `scripts/build-canvas-events.js` from `scripts/lib/desk-content.js`.');
+  out.push('Do not hand-edit.**');
+  out.push('The lanes, the boxes and the ways to file below are the same text the Desk shows,');
+  out.push('read out of the content module rather than retyped, so a student cannot be');
+  out.push('assessed against something they were never shown.');
+  out.push('');
+  out.push('One assignment **per week**, all year. It is the Desk\'s only route to Canvas:');
+  out.push(`${perDay} boxes a day, about ${perDay * 5} a week, all pasted into this one box.`);
+  out.push('');
+  out.push('## Settings');
+  out.push('');
+  out.push('| Setting | Value |');
+  out.push('|---|---|');
+  out.push('| Submission type | Online, then **Text Entry** |');
+  out.push('| Attempts | **Unlimited** |');
+  out.push(`| Assignment group | \`${NEWS_LOG.group}\` |`);
+  out.push(`| Points | ${NEWS_LOG.points} |`);
+  out.push('| Display grade as | Points |');
+  out.push('| Peer review | Off |');
+  out.push('| Anonymous grading | **Off** |');
+  out.push('');
+  out.push('**Unlimited attempts is load-bearing here, for a different reason than on a');
+  out.push('Brief.** Students paste the accumulating log every day: Monday is attempt 1,');
+  out.push('Friday is attempt 5 and carries the whole week, and the last attempt is the one');
+  out.push('you grade. That daily paste is the only backup that exists. A week of filings');
+  out.push('lives in one browser\'s `localStorage` until the student copies it out, nothing');
+  out.push('in this course sends student writing anywhere on its own, and a cleared');
+  out.push('Chromebook profile on Thursday takes Monday to Wednesday with it. Cap the');
+  out.push('attempts and you have removed the backup.');
+  out.push('');
+  out.push('**Not a Discussion.** A Canvas discussion is the feature that looks most like a');
+  out.push('journal, and it is the wrong one: a discussion is visible to the class, and the');
+  out.push('Desk\'s first house rule is that a student\'s name is never on the board unless');
+  out.push('they put it there. Filings are read aloud with names removed. A discussion would');
+  out.push('break that in writing.');
+  out.push('');
+  out.push('**Text Entry is required, not a default.** `scripts/parse-canvas-submissions.js`');
+  out.push('reads the HTML body of a Text Entry submission, and the Desk\'s record footer');
+  out.push('rides in it. A file upload cannot be parsed and will not appear in any analysis.');
+  out.push('');
+  out.push('## Naming');
+  out.push('');
+  out.push('One per week, named for the Monday, so the gradebook sorts chronologically and a');
+  out.push('gap is visible at a glance:');
+  out.push('');
+  out.push('```');
+  out.push(NEWS_LOG.name('Sept 8'));
+  out.push(NEWS_LOG.name('Sept 15'));
+  out.push(NEWS_LOG.name('Sept 22'));
+  out.push('```');
+  out.push('');
+  out.push('ASCII only, and identical in Canvas and PowerSchool character for character. The');
+  out.push('date matches the "Week of" line the student\'s own paste prints at the top, which');
+  out.push('is what lets you tell at a glance that a log landed in the right week.');
+  out.push('');
+  out.push('## The body');
+  out.push('');
+  out.push('The same body every week. Paste it through the RCE **`</>`** HTML editor, never');
+  out.push('the visual one. Duplicate last week\'s assignment in Canvas and change the name');
+  out.push('and the dates rather than pasting this thirty-six times.');
+  out.push('');
+  out.push('```html');
+  out.push(newsLogBody(desk));
+  out.push('```');
+  out.push('');
+  out.push('## What arrives, and how to read it');
+  out.push('');
+  out.push('Each day contributes six records: one Source record per story carrying the outlet,');
+  out.push('the date and the link, then one per question. A five-day week is thirty records in');
+  out.push('one submission, and they carry the machine footer');
+  out.push('`scripts/parse-canvas-submissions.js` reads.');
+  out.push('');
+  out.push('Two things to know when reading one, both documented in `docs/CANVAS-CAPTURE.md`:');
+  out.push('');
+  out.push('- **The record label carries the date, the slot does not.** A heading reads');
+  out.push('  `Fri Sep 12, Local story, Why it caught me`, so five days of the same two');
+  out.push('  questions stay distinguishable in the paste. The slot stays `desk-local-why` on');
+  out.push('  every day of the year, which is what lets one question be looked at across a');
+  out.push('  week and across a room.');
+  out.push('- **`expected` counts the days actually filed, not the class periods held.** The');
+  out.push('  Desk has no calendar and cannot know the week had three meetings, so it never');
+  out.push('  reports an absent day as a shortfall. The completeness signal is the');
+  out.push('  **Days filed** line at the top of the student\'s paste, and a blank box inside a');
+  out.push('  day that was filed arrives as a `BLANK` exception.');
+
+  return out.join('\n').replace(/\n{3,}/g, '\n\n').replace(/\s+$/, '') + '\n';
+}
+
 function renderUnit(unit) {
   const m = unit.meta;
   const code = String(m.code || '').toUpperCase();
@@ -679,12 +863,17 @@ ${sections}
 // happens in a classroom rather than in a diff. So the generated text is audited
 // before anything is written, and a failure refuses the write entirely rather than
 // writing and warning. A bad file on disk is one copy-paste from the calendar.
+// `unit` is optional: the News Log belongs to the Desk rather than to any unit. The
+// withheld-title half needs a unit to have anything to check, but the AP half must
+// run on EVERY generated document, which is why this is no longer guarded at the
+// call site. A document that skipped the audit because it had no unit attached would
+// be the one paste-ready file in the repo with no check on it at all.
 function audit(rel, text, unit) {
   const problems = [];
 
   // A withheld title anywhere in these documents undoes the topic that withholds it
   // on the day the calendar is published, which is before the film is shown.
-  (unit.topics || []).forEach(t => {
+  ((unit && unit.topics) || []).forEach(t => {
     (t.withholdTitles || []).forEach(title => {
       if (text.includes(title)) {
         problems.push(`"${title}" appears in ${rel}. ${plain(t.topic)} withholds it on purpose: `
@@ -710,7 +899,7 @@ const wrote = [];
 const blocked = [];
 
 function emit(rel, content, unit) {
-  const problems = unit ? audit(rel, content, unit) : [];
+  const problems = audit(rel, content, unit);
   if (problems.length) {
     problems.forEach(m => blocked.push(m));
     return;
@@ -731,9 +920,15 @@ const files = fs.existsSync(CONTENT_DIR)
   ? fs.readdirSync(CONTENT_DIR).filter(f => f.endsWith('.js')).sort()
   : [];
 
+// The News Log is written first and unconditionally. It belongs to the Desk, which
+// runs every class period whether or not a unit has been written yet, so it must not
+// sit behind the early exit below: a repo with no unit content would otherwise have
+// no Canvas document for the one assignment that collects work every single day.
+emit(path.join('docs', 'canvas', 'news-log.md'), renderNewsLog(require('./lib/desk-content')));
+
 if (!files.length) {
-  console.log(`${D}No unit content in scripts/lib/unit-content/, nothing to build.${X}`);
-  process.exit(0);
+  console.log(`${D}No unit content in scripts/lib/unit-content/, `
+    + `only the News Log to build.${X}`);
 }
 
 files.forEach(file => {
@@ -774,4 +969,7 @@ if (!wrote.length) {
   }
 }
 
-module.exports = { renderUnit, renderUnitHtml, renderAssignments, ASSIGNMENTS, PREFIX, SITE };
+module.exports = {
+  renderUnit, renderUnitHtml, renderAssignments, renderNewsLog, newsLogBody,
+  ASSIGNMENTS, NEWS_LOG, PREFIX, SITE
+};

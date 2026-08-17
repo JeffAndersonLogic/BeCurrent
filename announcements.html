@@ -188,6 +188,21 @@
         grid.appendChild(card);
       });
       s.appendChild(grid);
+
+      // The two lanes, under the routine. The lane's question is the single most
+      // useful thing this slide can carry: the routine tells the room what happens
+      // next, and the question tells them what they are looking for while it does.
+      var lanes = (desk.lanes || []).filter(function (l) { return has(l.name); });
+      if (lanes.length) {
+        var row = el('div', 'desk-lanes');
+        lanes.forEach(function (lane) {
+          var card = el('div', 'desk-lane');
+          card.appendChild(el('div', 'desk-lane-name', lane.name));
+          if (has(lane.question)) card.appendChild(el('div', 'desk-lane-q', lane.question));
+          row.appendChild(card);
+        });
+        s.appendChild(row);
+      }
       return s;
     }
 

@@ -526,27 +526,129 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-variant-numeric:tabular-nums;
 }
 
-/* ── The Desk: the dispatch and the house rules ────────────────────────────────
-   The four fields of a dispatch. Numbered because filing them in order is the
-   sourcing habit: outlet and date before what happened, every time. */
-.dispatch-card{border-top:4px solid var(--signal)}
-.field-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
-.field{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--paper-line)}
-.field:first-child{border-top:0;padding-top:0}
-.field-n{
-  flex:0 0 auto; width:1.7rem; height:1.7rem; border-radius:50%;
-  display:inline-flex; align-items:center; justify-content:center;
-  background:var(--signal-tint); color:var(--signal-deep);
-  font-family:var(--ui); font-size:.78rem; font-weight:700;
-  font-variant-numeric:tabular-nums;
+/* ── The Desk: the routine ─────────────────────────────────────────────────────
+   Four step cards. These classes had been on the page since the Desk was written
+   and were never defined anywhere, so the routine rendered as a bare <ol>: the
+   list markers showed, the cards had no card, and every step ran together. It
+   looked like a page that had failed to load its stylesheet, on the first thing a
+   student reads on the page they open every day.
+
+   `list-style:none` on the <ol> is therefore load-bearing rather than cosmetic:
+   the step number is already in .block-num, and a marker beside it reads as two
+   different numbering schemes disagreeing. */
+.block-list{
+  list-style:none; margin:0; padding:0;
+  display:grid; gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
 }
-.field div{display:flex;flex-direction:column;gap:3px}
-.field-label{
-  margin:0; font-family:var(--ui); font-size:.68rem; font-weight:700;
+.block-card{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--signal); border-radius:var(--radius);
+  padding:18px 16px; box-shadow:var(--soft-shadow);
+}
+.block-num{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
 }
-.field-ask{margin:0;font-family:var(--body);font-weight:700;font-size:1.02rem;line-height:1.45}
-.field-stem{margin:0;font-size:.93rem;font-style:italic;color:var(--ink-soft)}
+.block-card h3{
+  margin:8px 0 8px; font-family:var(--display); font-weight:700;
+  font-size:1.12rem; letter-spacing:.04em; color:var(--black-900);
+}
+.block-sub{margin:0;font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
+
+/* ── The Desk: finding a story ─────────────────────────────────────────────────
+   The source buttons. Grouped by the job each does, because the student's real
+   question is "where do I look for a LOCAL story" and a flat list of a dozen
+   outlets does not answer it.
+
+   The grid floor is minmax(min(100%,N),1fr), never minmax(N,1fr). A bare floor is
+   a width the track cannot go under, so at a 320px viewport a 200px card inside a
+   wrap that has already spent its padding scrolls the whole page sideways. */
+.source-stack{display:grid;gap:22px}
+.source-group{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--signal); border-radius:var(--radius);
+  padding:20px 18px; box-shadow:var(--soft-shadow);
+}
+.source-what{margin:6px 0 14px;font-size:.94rem;color:var(--ink-soft)}
+.source-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.source-btn{
+  display:flex; flex-direction:column; gap:4px; text-decoration:none;
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-left:4px solid var(--ink); border-radius:0 10px 10px 0;
+  padding:11px 13px; color:var(--ink);
+  transition:transform .12s ease, border-left-color .12s ease;
+}
+.source-btn:hover{transform:translateY(-1px);border-left-color:var(--signal)}
+.source-name{
+  font-family:var(--ui); font-size:.78rem; font-weight:700;
+  letter-spacing:.04em; color:var(--black-900);
+}
+.source-note{font-size:.84rem;line-height:1.4;color:var(--ink-soft)}
+
+/* ── The Desk: filing a story ──────────────────────────────────────────────────
+   One card per lane. The lane's question is the largest thing on it, because
+   "bring a local story" is a scavenger hunt and the question is the part that
+   makes it an assignment. */
+.story-stack{display:grid;gap:20px}
+.story-card{border-top:4px solid var(--signal)}
+.lane-scope{margin:6px 0 0;font-family:var(--ui);font-size:.78rem;color:var(--black-500)}
+.lane-question{
+  margin:8px 0 0; font-family:var(--body); font-weight:700;
+  font-size:1.15rem; line-height:1.42; color:var(--black-900); text-wrap:balance;
+}
+
+/* The three facts. Single-line inputs on purpose: the box shape says "this is a
+   lookup, not an essay", which is the whole reason the facts sit apart from the
+   questions. Three across on a desktop, stacked on a phone. */
+.fact-row{
+  display:grid; gap:12px; margin:18px 0 4px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));
+}
+.fact{
+  display:flex; flex-direction:column; gap:3px;
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-radius:8px; padding:12px 13px;
+}
+.fact-label{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+}
+.fact-ask{margin:0;font-size:.86rem;color:var(--ink-soft)}
+.fact-input{
+  margin-top:5px; width:100%; padding:8px 10px;
+  font-family:var(--body); font-size:.95rem; color:var(--ink);
+  background:var(--clean-paper); border:1px solid var(--paper-line); border-radius:6px;
+}
+
+/* The two questions. Same shape as a Brief's .question-item, which lives in
+   becurrent-brief.css: a student meets both inside one block, so they have to read
+   as one kind of thing. The classes are separate because this page loads
+   becurrent.css only, and linking the whole reading stylesheet to borrow three
+   rules would drag in every reading style with it. */
+.desk-q{border-top:1px solid var(--paper-line);margin-top:20px;padding-top:18px}
+.desk-q-num{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+  margin-right:10px;
+}
+.desk-q-skill{
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em;
+  background:var(--ink-tint); color:var(--ink);
+  padding:3px 8px; border-radius:999px;
+}
+.desk-q-text{
+  margin:10px 0 0; font-family:var(--body); font-weight:700;
+  font-size:1.06rem; line-height:1.45; color:var(--black-900);
+}
+.desk-q .work-area{min-height:104px;margin-top:16px}
+
+/* The date the sheet is filed under, written by the capture block at load. On the
+   page so that "my work disappeared" and "I am looking at tomorrow" are
+   distinguishable without opening devtools. */
+.desk-today{color:var(--signal-deep)}
+.gather-placeholder{margin:0;font-family:var(--ui);font-size:.82rem;color:var(--black-500)}
 
 .tier-strip{display:grid;gap:12px;margin-top:20px;grid-template-columns:1fr}
 @media (min-width:660px){.tier-strip{grid-template-columns:1fr 1fr}}
@@ -572,34 +674,6 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-size:1.04rem; line-height:1.45; color:var(--black-900);
 }
 .rule-why{margin:0;font-size:.93rem;color:var(--ink-soft)}
-
-/* ── The Desk: beats and rotation ──────────────────────────────────────────────
-   A beat card leads with its question, not its scope, because "bring a local
-   story" is a scavenger hunt and the question is the part that makes it an
-   assignment. The question is therefore the largest thing on the card and the
-   scope is a label above it. */
-/* Two by two rather than auto-fit. Four cards carrying a paragraph each land as
-   three-and-a-stray at most desktop widths, which reads as one beat being an
-   afterthought. The four beats are peers. */
-.beat-grid{display:grid;gap:16px;grid-template-columns:1fr}
-@media (min-width:720px){.beat-grid{grid-template-columns:1fr 1fr}}
-.beat-card{border-top:4px solid var(--signal);display:flex;flex-direction:column;gap:8px}
-.beat-card .eyebrow{font-size:.72rem}
-.beat-scope{margin:0;font-family:var(--ui);font-size:.78rem;color:var(--black-500)}
-.beat-question{
-  margin:4px 0 0; font-family:var(--body); font-weight:700;
-  font-size:1.15rem; line-height:1.42; color:var(--black-900); text-wrap:balance;
-}
-.beat-note{margin:0;font-size:.94rem;color:var(--ink-soft)}
-
-.rotation-card{margin-top:16px;border-top:4px solid var(--ink)}
-.rotation-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.rotation-chip{
-  font-family:var(--ui); font-size:.7rem; font-weight:700;
-  text-transform:uppercase; letter-spacing:.1em;
-  background:var(--ink-tint); color:var(--ink);
-  padding:6px 12px; border-radius:999px;
-}
 
 /* ── Week index cards ──────────────────────────────────────────────────────── */
 .week-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}

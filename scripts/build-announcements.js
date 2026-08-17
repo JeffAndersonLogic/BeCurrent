@@ -223,7 +223,12 @@ function buildDesk(schedule) {
     routine: (desk.routine || []).map(s => ({
       name: plain(s.name), what: plain(s.what), minutes: s.minutes || null
     })),
-    beats: (desk.beats || []).map(b => ({ name: plain(b.name), question: plain(b.question) }))
+    // The two lanes, with the question each one exists to ask. This used to read
+    // `desk.beats`, which is the field the four-beat rotation lived in before every
+    // student started filing both lanes every day; the rename is why the board is
+    // rebuilt here rather than left alone. A stale field name would not have
+    // errored, it would have projected a Desk slide with no lanes on it.
+    lanes: (desk.lanes || []).map(l => ({ name: plain(l.name), question: plain(l.question) }))
   };
 }
 

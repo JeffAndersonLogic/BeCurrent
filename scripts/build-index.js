@@ -58,6 +58,21 @@ function load(dir, re) {
   }).filter(Boolean);
 }
 
+// The Desk's own facts, read rather than retyped. The front door used to state
+// "First 25 minutes" and "four beats" as literals, which is a second copy of two
+// numbers that live in desk-content.js: the routine grew a fourth step and the
+// four rotating beats became two fixed lanes, and the front door went on
+// advertising the old shape with every check green. Derived, it cannot.
+const DESK = require('./lib/desk-content');
+const deskMinutes = (DESK.routine || []).reduce((n, s) => n + (s.minutes || 0), 0);
+
+// "one local and one national or international", built from the lane names, so
+// renaming a lane reaches the front door too. Lower-cased because it lands
+// mid-sentence.
+const deskLanes = (DESK.lanes || [])
+  .map(l => String(l.name).toLowerCase())
+  .join(' and one ');
+
 function renderIndex(units, weeks) {
   const byKey = {};
   units.forEach(u => { byKey[u.meta.unitKey] = u; });
@@ -156,14 +171,14 @@ ${units.length ? '        <a href="#units">Units</a>\n' : ''}${weeks.length ? ' 
       </div>
       <div class="unit-grid">
         <a class="unit-card" href="daily/index.html">
-          <span class="unit-kicker">First 25 minutes &middot; every day</span>
-          <h3>The Desk</h3>
-          <p>CNN 10, four beats, and one question asked properly. Local, National,
-            International, and one that rotates.</p>
+          <span class="unit-kicker">First ${deskMinutes} minutes &middot; every day</span>
+          <h3>${esc(DESK.meta.title)}</h3>
+          <p>CNN 10, then two stories you pick yourself: one ${deskLanes}. Where it came
+            from, what happened, and why it caught you.</p>
           <span class="unit-meta">Same routine every class</span>
         </a>
         <div class="unit-card planned">
-          <span class="unit-kicker">Remaining 65 minutes &middot; for weeks at a time</span>
+          <span class="unit-kicker">Remaining ${90 - deskMinutes} minutes &middot; for weeks at a time</span>
           <h3>The Unit</h3>
           <p>One theme, traced backwards from something happening now to where it started,
             ending on a question you have to argue.</p>

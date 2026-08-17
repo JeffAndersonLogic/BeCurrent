@@ -12,35 +12,86 @@ Four files have to agree, and a change to any one breaks the others:
 | `scripts/lib/brief-capture-block.js` | holds the brief's answers, and writes the brief's own footer |
 | `scripts/lib/canvas-parse-core.js` | reads the footer |
 
-## Two gather surfaces, one grammar
+## Three gather surfaces, one grammar
 
-There are **two** buttons labelled Gather All My Work, and which one a student uses
-depends on which page they are on:
+There are **three** gather buttons, and which one a student uses depends on which
+page they are on:
 
 - **The week page's panel** collects every module slot, the brief's three answers
   among them. This is the whole-week submission.
 - **The brief's own panel**, at the end of its questions, collects just that
-  brief. For a **unit block** brief this is the only route there is: a block card
+  brief. For a **unit topic** brief this is the only route there is: a topic card
   on a unit page opens the brief directly, with no week shell behind it and no
-  panel on any page above it. Before it existed, every unit block answer was
+  panel on any page above it. Before it existed, every unit topic answer was
   written to `localStorage` and stranded there with every structural check green.
+- **The Desk's panel**, labelled **Gather My Week**, collects the daily filings.
+  This is also the only route there is, and it is the one that carries work every
+  single class period. See "The Desk" below.
 
-Both write the same footer, because `canvas-parse-core.js` is one parser. The
+All three write the same footer, because `canvas-parse-core.js` is one parser. The
 grammar therefore lives in **one** file, `scripts/lib/canvas-record-block.js`, and
-is inlined into both writers:
+is inlined into all three writers:
 
 - into the renderer by `node scripts/build-canvas-record.js`, between its
   `BEGIN/END INLINED CANVAS RECORD BLOCK` sentinels. `--check` fails on drift,
   which is what `validate.js` runs. Never hand-edit between the sentinels.
 - into every generated brief by `brief-capture-block.js`, which `validate.js`
   re-derives and compares byte for byte.
+- into the Desk by `desk-capture-block.js`, likewise re-derived and compared.
 
-Two copies would mean two answers to "did this student edit their work" depending
-on which button was pressed, with nothing able to say which had drifted.
+More copies would mean more answers to "did this student edit their work"
+depending on which button was pressed, with nothing able to say which had drifted.
 
 **The topic key and the denominator are not shared.** They are parameters, because
 each surface counts its own slots: the week page passes `expectedCaptureCount()`,
-the brief passes the number of questions on the page. Never a literal, in either.
+the brief passes the number of questions on the page, the Desk passes the days it
+actually gathered times its slots per day. Never a literal, in any of them.
+
+## The Desk
+
+The daily half of the block, and the surface that carries work most often: about
+180 filings a year against 5 briefs a unit. Read
+`scripts/lib/desk-capture-block.js` before touching any of it.
+
+**The key is dated by the browser, not by the build.** `becurrent-desk-<YYYY-MM-DD>`,
+with the date stamped at load from the **local** date getters. That is what lets one
+dateless generated page give every class period its own clean sheet while every
+earlier day stays on disk. `toISOString()` is refused by `validate.js`: it is UTC,
+so it rolls the date over at 7 or 8pm Eastern and would hand an after-school student
+a blank sheet with their afternoon's work apparently lost.
+
+**One button gathers the week, and the week always contains today**, so there is no
+separate "copy today". Days are found by checking the seven candidate keys for the
+Monday-to-Sunday week containing today, rather than scanning `localStorage`, so a key
+left by another page or an older schema can never wander into the paste. Last week is
+excluded: it has already been submitted under its own weekly assignment.
+
+**Six records a day: one Source record per story, then one per question.** The three
+facts are a record of their own rather than a loose line above the questions, and
+that is a correctness requirement, not a layout preference. Everything between one
+record's `My response:` marker and the **next** record's label is what the parser
+hashes for that record, so a bare `Outlet: … Published: …` line sitting between two
+questions gets swept into the preceding answer's hashed region and every filing in
+the paste comes back `EDITED`. Nothing about the rendered page would look wrong.
+**Anything printed between the first label and the footer must belong to some
+record.** Only the document head, above the first label, is free.
+
+**The label carries the date; the slot does not.** A heading reads
+`Fri Sep 12, Local story, Why it caught me`, so five days of the same two questions
+stay distinguishable to a teacher reading thirty of these. The slot stays
+`desk-local-why` on every day of the year, which is what lets one question be looked
+at across a week and across a room.
+
+**`expected` counts the days actually filed, not the class periods held.** The Desk
+has no calendar, so it cannot know the week had three meetings, and it never reports
+an absent day as a shortfall. The completeness signal is the **Days filed** line in
+the paste's head, which is above the first label and therefore free text. A blank box
+inside a day that *was* filed arrives as a `BLANK` exception, which is the honest
+version of that report.
+
+**A day with nothing in it is not gathered at all**, rather than printed as six
+blanks. A student who opened the page and left has not attempted and abandoned six
+boxes, and reporting it that way would say they had.
 
 ## The path
 
@@ -51,17 +102,29 @@ the brief passes the number of questions on the page. Never a literal, in either
    textareas. Its capture block writes all three answers, their prompts, and their
    confidence ratings as one JSON object under `becurrent-brief-<weekKey>`. That
    object is the only channel by which those answers reach the week page's panel.
-3. **Gather All My Work**, on either surface, collects its slots, emits one
-   document, and appends the record footer.
-4. The student copies it and pastes it into the Canvas assignment. The brief's copy
+3. On the Desk, each box autosaves into one JSON object per day under
+   `becurrent-desk-<YYYY-MM-DD>`, keyed `<lane>-<field>`, with each question's
+   prompt and confidence stored beside its answer.
+4. **Gather All My Work**, or **Gather My Week** on the Desk, collects its slots,
+   emits one document, and appends the record footer.
+5. The student copies it and pastes it into the Canvas assignment. The brief's copy
    writes **both** `text/html` and `text/plain` to the clipboard, so Canvas keeps
    the formatting and a plain-text target still gets the footer. Where the
    clipboard API is blocked outright, which it is on some managed devices, the
    rendered block is selected first so a manual Ctrl-C copies the formatted
    version rather than nothing.
-5. The teacher downloads submissions and runs
+6. The teacher downloads submissions and runs
    `node scripts/parse-canvas-submissions.js <dir>`, which writes `responses.csv`
    and `exceptions.csv`.
+
+**On the Desk, step 5 happens every day, and that is the only backup there is.**
+The News Log assignment has Unlimited attempts, so Monday is attempt 1 and Friday
+is attempt 5 carrying the whole week. A week of filings lives in one browser's
+`localStorage` until it is copied out, nothing in this course may send student
+writing anywhere on its own, and a cleared Chromebook profile on Thursday takes
+Monday to Wednesday with it. Cap the attempts and the backup is gone.
+`docs/canvas/news-log.md` is the generated assignment, and `validate.js` fails if
+it stops saying Unlimited or Text Entry.
 
 ## The shape of the brief's paste, and why it is that shape
 

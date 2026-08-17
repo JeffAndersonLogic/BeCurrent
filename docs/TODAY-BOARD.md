@@ -100,7 +100,7 @@ Every field except `date` is optional. Leave one out and the board simply skips
 that panel, so a day with only a topic produces a short loop rather than an error.
 
 **The Desk panel is standing, not per day.** It is built from
-`scripts/lib/desk-content.js`, because the Desk runs the first 25 minutes of every
+`scripts/lib/desk-content.js`, because the Desk runs the first ~32 minutes of every
 class and typing it on each day entry would be 180 copies of one routine. It
 carries the routine and never a story, for the same reason the Desk page itself
 does not: a board generated once and projected all year cannot hold a headline

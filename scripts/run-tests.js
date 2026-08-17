@@ -42,7 +42,8 @@ const SUITES = {
   ],
   browser: [
     ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip'],
-    ['scripts/test/brief-gather.test.js', 'the brief\'s own route to Canvas: formatting, footer, parser round trip']
+    ['scripts/test/brief-gather.test.js', 'the brief\'s own route to Canvas: formatting, footer, parser round trip'],
+    ['scripts/test/desk.test.js', 'the Desk: dated sheet, reload, weekly gather, parser round trip']
   ]
 };
 
