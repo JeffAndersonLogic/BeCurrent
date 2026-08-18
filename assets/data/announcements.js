@@ -174,7 +174,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-08-18",
-      "topic": "What It Does to You, and What It Keeps",
+      "topic": "The Impact and the Digital Footprint",
       "unit": "Social Media",
       "subtitle": "Evidence about effects, and a record that does not delete",
       "learningTargets": [

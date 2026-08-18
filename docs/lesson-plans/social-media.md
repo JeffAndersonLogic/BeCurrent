@@ -31,7 +31,7 @@ version of the argument against them.
 | Topic 1 | Where the Money Comes From | On paper | 3 |
 | Topic 2 | Somebody Made a Film About This | On paper | 3 |
 | Topic 3 | Inside the Algorithm Box | Brief | 3 |
-| Topic 4 | What It Does to You, and What It Keeps | Brief | 3 |
+| Topic 4 | The Impact and the Digital Footprint | Brief | 3 |
 | Topic 5 | How a Lie Travels | Brief | 3 |
 | Topic 6 | Who Gets to Decide? | Brief | 3 |
 
@@ -196,7 +196,7 @@ The Brief's own Gather All My Work panel. 3 responses plus their confidence rati
 
 ---
 
-## Topic 4. What It Does to You, and What It Keeps
+## Topic 4. The Impact and the Digital Footprint
 
 _Evidence about effects, and a record that does not delete_
 

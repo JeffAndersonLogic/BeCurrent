@@ -34,7 +34,7 @@ Every link below points at the live GitHub Pages build:
 | `CE - SM1 - Where the Money Comes From` | none, on paper | No |
 | `CE - SM2 - Somebody Made a Film About This` | none, on paper | No |
 | `CE - SM3 - Inside the Algorithm Box` | `SM3 - Inside the Algorithm` | Yes |
-| `CE - SM4 - What It Does to You, and What It Keeps` | `SM4 - Effects and Your Footprint` | Yes |
+| `CE - SM4 - The Impact and the Digital Footprint` | `SM4 - Effects and Your Footprint` | Yes |
 | `CE - SM5 - How a Lie Travels` | `SM5 - How a Lie Travels` | Yes |
 | `CE - SM6 - Who Gets to Decide?` | `SM6 - Who Decides` | Yes |
 
@@ -238,9 +238,9 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - SM4 - What It Does to You, and What It Keeps
+## CE - SM4 - The Impact and the Digital Footprint
 
-**Event title:** `CE - SM4 - What It Does to You, and What It Keeps`  
+**Event title:** `CE - SM4 - The Impact and the Digital Footprint`  
 **Assignment to link:** `SM4 - Effects and Your Footprint`  
 **Source:** `scripts/lib/unit-content/social-media.js`, Topic 4  
 

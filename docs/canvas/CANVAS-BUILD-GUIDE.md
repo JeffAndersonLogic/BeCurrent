@@ -237,7 +237,7 @@ Module: Current Events - Social Media
               (nothing; done in class, and the title stays withheld)
 --- Text Header: Topic 3 - Inside the Algorithm Box ---
 [Assignment]  SM3 - Inside the Algorithm
---- Text Header: Topic 4 - What It Does to You, and What It Keeps ---
+--- Text Header: Topic 4 - The Impact and the Digital Footprint ---
 [Assignment]  SM4 - Effects and Your Footprint
 --- Text Header: Topic 5 - How a Lie Travels ---
 [Assignment]  SM5 - How a Lie Travels

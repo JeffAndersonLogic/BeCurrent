@@ -366,7 +366,7 @@ const TOPIC_4 = {
   key: 'sm-t4',
   slug: 'effects-and-footprint',
   topic: 'Topic 4',
-  title: 'What It Does to You, and What It <em>Keeps</em>',
+  title: 'The Impact and the Digital <em>Footprint</em>',
   eyebrow: 'Social Media · Topic 4',
   deck: 'Two questions today. What the app does to how you feel, and what it keeps after you close it.',
   subtitle: 'Evidence about effects, and a record that does not delete',

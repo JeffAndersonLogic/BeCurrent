@@ -81,16 +81,16 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 **Assignment name, Canvas and PowerSchool, character for character:** `SM4 - Effects and Your Footprint`  
 **Points:** 20  
-**Calendar event it belongs to:** `CE - SM4 - What It Does to You, and What It Keeps`  
+**Calendar event it belongs to:** `CE - SM4 - The Impact and the Digital Footprint`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Social Media, Topic 4: What It Does to You, and What It Keeps</h2>
+<h2>Social Media, Topic 4: The Impact and the Digital Footprint</h2>
 <p><em>Evidence about effects, and a record that does not delete</em></p>
 
 <h3>Step 1 &mdash; Open the Brief</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-04-brief-effects-and-footprint-capture.html" target="_blank" rel="noopener">What It Does to You, and What It Keeps</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-04-brief-effects-and-footprint-capture.html" target="_blank" rel="noopener">The Impact and the Digital Footprint</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
