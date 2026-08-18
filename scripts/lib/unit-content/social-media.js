@@ -444,12 +444,20 @@ const TOPIC_4 = {
   // clip. The slides are here so a student who was out, or who wants the Orben
   // and Haidt slide again, can get to them without asking.
   //
-  // WARNING, AND IT IS THE SAME SHAPE AS THE CANVAS ASSIGNMENT-LINK BUG. A
-  // published Artifact is PRIVATE until it is shared from the page's share menu.
-  // Unshared, this link opens fine from the teacher's own account and shows a
-  // sign-in wall to every student, so the failure is invisible from exactly the
-  // account that would check it. Share the artifact before this goes in front of
-  // a class, or take the row out.
+  // SHARED ON 2026-08-18, and it had to be: a published Artifact is PRIVATE
+  // until it is shared from the page's share menu. Unshared, this link opens
+  // fine from the teacher's own account and shows a sign-in wall to every
+  // student, which is the same shape as the hand-typed Canvas assignment link
+  // this repo already refuses: invisible from exactly the account that would
+  // check it. Its state now reads "shared with anyone with the link", so no
+  // account is needed to open it.
+  //
+  // THE SHARE IS PINNED TO A VERSION, and that is the part that will bite next.
+  // Viewers see the version that was current when it was shared, and they keep
+  // seeing it after a republish until the share pin is moved. So editing the
+  // slides is two steps, not one: publish, then move the pin. Skipping the
+  // second step leaves the room reading last week's deck while the teacher's
+  // own tab shows the new one, with nothing on either screen saying so.
   resources: [
     { label: 'Slides from class',
       url:   'https://claude.ai/code/artifact/185dd6fe-d78f-4bc6-969d-d0456b5d5c46' }
