@@ -130,6 +130,17 @@ function renderTopic(unit, topic) {
     out.push('');
   }
 
+  // Anything else the topic can open. A substitute folder and a department
+  // binder both want to know the slides exist; neither can open a JS module to
+  // find out, which is why this plan is generated in the first place.
+  const resources = topic.resources || [];
+  if (resources.length) {
+    out.push('### Also linked from the unit page');
+    out.push('');
+    out.push(list(resources.map(r => `[${plain(r.label)}](${r.url})`)));
+    out.push('');
+  }
+
   if (hasBrief) {
     out.push('### The Brief');
     out.push('');

@@ -60,7 +60,19 @@ function renderUnitPage(unit) {
       actions.push(`          <a class="btn" href="${esc(briefFileFor(b).replace(/\.html$/, '-capture.html'))}">Read the Brief</a>`);
     }
     clips.forEach(v => {
-      actions.push(`          <a class="btn secondary" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.title)}</a>`);
+      // A clip is headed by its own title, but a real headline is a long button.
+      // `linkLabel` is an optional short label for this row only; the card in the
+      // Brief still carries the published title in full, because that title is
+      // often the thing being taken apart.
+      const label = v.linkLabel || v.title;
+      actions.push(`          <a class="btn secondary" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`);
+    });
+
+    // Anything else a student can open for this topic that is neither the Brief
+    // nor a clip: the slides from class, a handout, a tool. Optional, and absent
+    // by default, so every existing topic renders byte for byte as before.
+    (b.resources || []).forEach(r => {
+      actions.push(`          <a class="btn secondary" href="${esc(r.url)}"${/^https?:/.test(r.url) ? ' target="_blank" rel="noopener noreferrer"' : ''}>${esc(r.label)}</a>`);
     });
     const actionRow = actions.length
       ? `        <div class="topic-actions">\n${actions.join('\n')}\n        </div>`

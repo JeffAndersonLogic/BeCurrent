@@ -31,7 +31,7 @@ version of the argument against them.
 | Topic 1 | Where the Money Comes From | On paper | 3 |
 | Topic 2 | Somebody Made a Film About This | On paper | 3 |
 | Topic 3 | Inside the Algorithm Box | Brief | 3 |
-| Topic 4 | What It Does to You, and What It Keeps | Brief | 3 |
+| Topic 4 | What It Does to You, and What It Keeps | Brief | 4 |
 | Topic 5 | How a Lie Travels | Brief | 3 |
 | Topic 6 | Who Gets to Decide? | Brief | 3 |
 
@@ -203,29 +203,40 @@ _Evidence about effects, and a record that does not delete_
 | | |
 |---|---|
 | Artifact | The Brief, `topic-04-brief-effects-and-footprint.html` |
-| Skills | Corroboration, Cause and Effect |
-| Indiana 1512 | 1, Cause and effect; 5, Generalizing from evidence |
+| Skills | Corroboration, Cause and Effect, Fallacies and Propaganda |
+| Indiana 1512 | 1, Cause and effect; 2, Fallacies and propaganda; 5, Generalizing from evidence |
 | Reaches Canvas | Yes, through the Brief |
 
 ### Overview
 
-Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it.
+Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it. We finish by watching a television report that answers the first question hard, in one direction. By then you will have read the research it is standing on. Your job is not to agree with it and not to dismiss it. Your job is to work out which part of it the evidence actually holds up.
 
 ### Learning targets
 
-1. **Cause and Effect.** I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.
-2. **Corroboration.** I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.
-3. **Generalizing from Evidence.** I can describe what my digital footprint contains, and name one decision somebody could make about me from it.
+1. **Cause and Effect.** I can name one good effect and one bad effect of social media, and say what would have to be true for it to be a cause and not a coincidence.
+2. **Corroboration.** I can explain why two honest researchers can study the same teenagers and reach opposite conclusions.
+3. **Generalizing from Evidence.** I can describe what is in my digital footprint, and name one decision somebody could make about me from it.
+4. **Fallacies and Propaganda.** I can name what today's video wants me to believe, and point at one thing it does to get me there.
 
 ### Success criteria
 
-1. **Cause and Effect.** I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.
+1. **Cause and Effect.** I can state a claim about social media and how people feel, and say whether the evidence behind it shows a cause or only a pattern.
 2. **Corroboration.** I can name two things I would want to know about a study before I believed its headline.
 3. **Generalizing from Evidence.** I can name three places a piece of my footprint sits that I cannot delete myself.
+4. **Fallacies and Propaganda.** I can point at one moment in the video and name the move it makes on me, and say which researcher from Part Three would push back on it.
 
 ### What happens in class
 
-We sort the good effects and the bad ones, then test one claim against the actual research. Second half you find out what your own record already contains.
+We sort the good effects from the bad ones, then test one claim against the actual research. Then you find out what your own record already contains. We finish with a television report that argues one side of this hard, and you take it apart the same way you took apart the film in Topic 2.
+
+### Clips
+
+- [Is social media killing our children? Shocking new evidence revealed](https://www.youtube.com/watch?v=Ojc_JazB5xQ) · 60 Minutes Australia
+  Watch for: Two questions while you watch. What does this program want you to believe, and what does it do to get you there, starting with its own title? Then: which of the researchers in Part Three would agree with it, and which one would not?
+
+### Also linked from the unit page
+
+- [Slides from class](https://claude.ai/code/artifact/185dd6fe-d78f-4bc6-969d-d0456b5d5c46)
 
 ### The Brief
 

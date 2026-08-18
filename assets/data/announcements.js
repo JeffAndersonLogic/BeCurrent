@@ -179,21 +179,25 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "Evidence about effects, and a record that does not delete",
       "learningTargets": [
         {
-          "text": "I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.",
+          "text": "I can name one good effect and one bad effect of social media, and say what would have to be true for it to be a cause and not a coincidence.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.",
+          "text": "I can explain why two honest researchers can study the same teenagers and reach opposite conclusions.",
           "label": "Corroboration"
         },
         {
-          "text": "I can describe what my digital footprint contains, and name one decision somebody could make about me from it.",
+          "text": "I can describe what is in my digital footprint, and name one decision somebody could make about me from it.",
           "label": "Generalizing from Evidence"
+        },
+        {
+          "text": "I can name what today's video wants me to believe, and point at one thing it does to get me there.",
+          "label": "Fallacies and Propaganda"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.",
+          "text": "I can state a claim about social media and how people feel, and say whether the evidence behind it shows a cause or only a pattern.",
           "label": "Cause and Effect"
         },
         {
@@ -203,10 +207,19 @@ window.BECURRENT_ANNOUNCEMENTS = {
         {
           "text": "I can name three places a piece of my footprint sits that I cannot delete myself.",
           "label": "Generalizing from Evidence"
+        },
+        {
+          "text": "I can point at one moment in the video and name the move it makes on me, and say which researcher from Part Three would push back on it.",
+          "label": "Fallacies and Propaganda"
         }
       ],
       "homework": "Finish your three Brief responses and submit them in Canvas.",
-      "note": "Bring a device today. You are going to look yourself up."
+      "note": "Bring a device today. You are going to look yourself up.",
+      "agenda": [
+        "The Desk. Two episodes of CNN 10 to catch us up, then file your two stories.",
+        "Read the Brief and answer the three questions.",
+        "Watch the 60 Minutes report together. Take it apart, do not just take it in."
+      ]
     },
     {
       "date": "2026-08-20",

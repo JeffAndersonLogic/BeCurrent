@@ -252,7 +252,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it.</p>
+                <p>Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it. We finish by watching a television report that answers the first question hard, in one direction. By then you will have read the research it is standing on. Your job is not to agree with it and not to dismiss it. Your job is to work out which part of it the evidence actually holds up.</p>
             </td>
         </tr>
         <tr>
@@ -261,9 +261,10 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.</li>
-                    <li>I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.</li>
-                    <li>I can describe what my digital footprint contains, and name one decision somebody could make about me from it.</li>
+                    <li>I can name one good effect and one bad effect of social media, and say what would have to be true for it to be a cause and not a coincidence.</li>
+                    <li>I can explain why two honest researchers can study the same teenagers and reach opposite conclusions.</li>
+                    <li>I can describe what is in my digital footprint, and name one decision somebody could make about me from it.</li>
+                    <li>I can name what today's video wants me to believe, and point at one thing it does to get me there.</li>
                 </ol>
             </td>
         </tr>
@@ -273,9 +274,10 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.</li>
+                    <li>I can state a claim about social media and how people feel, and say whether the evidence behind it shows a cause or only a pattern.</li>
                     <li>I can name two things I would want to know about a study before I believed its headline.</li>
                     <li>I can name three places a piece of my footprint sits that I cannot delete myself.</li>
+                    <li>I can point at one moment in the video and name the move it makes on me, and say which researcher from Part Three would push back on it.</li>
                 </ol>
             </td>
         </tr>

@@ -65,8 +65,14 @@ function videoStrip(videos) {
   if (!videos || !videos.length) return '';
   const cards = videos.map(v => {
     const meta = [v.source, v.duration].filter(Boolean).join(' · ');
+    // "Watch instead" is the default because a clip is usually the alternative
+    // path through the reading. It is not always: a clip watched together after
+    // the reading is a companion, and labelling that one "instead" tells a
+    // student to skip the thing they just did. `label` overrides it, and the
+    // default is unchanged, so every existing Brief rebuilds identically.
+    const label = v.label || 'Watch instead';
     return `      <div class="brief-video">
-        <span class="brief-video-label">Watch instead</span>
+        <span class="brief-video-label">${esc(label)}</span>
         <p class="brief-video-title">${esc(v.title)}</p>
         ${meta ? `<p class="brief-video-meta">${esc(meta)}</p>` : ''}
         ${v.prompt ? `<p class="brief-video-prompt">${esc(v.prompt)}</p>` : ''}

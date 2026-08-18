@@ -370,49 +370,90 @@ const TOPIC_4 = {
   eyebrow: 'Social Media · Topic 4',
   deck: 'Two questions today. What the app does to how you feel, and what it keeps after you close it.',
   subtitle: 'Evidence about effects, and a record that does not delete',
-  skillTags: ['Corroboration', 'Cause and Effect'],
-  inClass: 'We sort the good effects and the bad ones, then test one claim against the actual '
-    + 'research. Second half you find out what your own record already contains.',
+  skillTags: ['Corroboration', 'Cause and Effect', 'Fallacies and Propaganda'],
+  inClass: 'We sort the good effects from the bad ones, then test one claim against the actual '
+    + 'research. Then you find out what your own record already contains. We finish with a '
+    + 'television report that argues one side of this hard, and you take it apart the same way '
+    + 'you took apart the film in Topic 2.',
 
   overview: 'Two questions today, and they are different kinds of question. First: what does social '
     + 'media do to how you feel? That one has real research behind it, the research disagrees with '
     + 'itself, and your job is to learn to read a disagreement rather than pick a side. Second: what '
     + 'does the app keep after you close it? That one is not a debate. It is a record, it is longer '
-    + 'than what you posted, and people who make decisions about your future can read part of it.',
+    + 'than what you posted, and people who make decisions about your future can read part of it. '
+    + 'We finish by watching a television report that answers the first question hard, in one '
+    + 'direction. By then you will have read the research it is standing on. Your job is not to '
+    + 'agree with it and not to dismiss it. Your job is to work out which part of it the evidence '
+    + 'actually holds up.',
 
+  // Four rather than the usual three, because the video adds a skill the reading
+  // does not exercise. Nothing in the gate enforces a count; how a lesson is
+  // shaped is a teaching decision. Drop the fourth and the day still works, it
+  // just stops asking anything of the thing they watch last.
   learningTargets: [
     { skill: 'Cause and Effect',
-      target: 'I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.' },
+      target: 'I can name one good effect and one bad effect of social media, and say what would have to be true for it to be a cause and not a coincidence.' },
     { skill: 'Corroboration',
-      target: 'I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.' },
+      target: 'I can explain why two honest researchers can study the same teenagers and reach opposite conclusions.' },
     { skill: 'Generalizing from Evidence',
-      target: 'I can describe what my digital footprint contains, and name one decision somebody could make about me from it.' }
+      target: 'I can describe what is in my digital footprint, and name one decision somebody could make about me from it.' },
+    { skill: 'Fallacies and Propaganda',
+      target: 'I can name what today\'s video wants me to believe, and point at one thing it does to get me there.' }
   ],
 
   successCriteria: [
     { skill: 'Cause and Effect',
-      criteria: 'I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.' },
+      criteria: 'I can state a claim about social media and how people feel, and say whether the evidence behind it shows a cause or only a pattern.' },
     { skill: 'Corroboration',
       criteria: 'I can name two things I would want to know about a study before I believed its headline.' },
     { skill: 'Generalizing from Evidence',
-      criteria: 'I can name three places a piece of my footprint sits that I cannot delete myself.' }
+      criteria: 'I can name three places a piece of my footprint sits that I cannot delete myself.' },
+    { skill: 'Fallacies and Propaganda',
+      criteria: 'I can point at one moment in the video and name the move it makes on me, and say which researcher from Part Three would push back on it.' }
   ],
 
-  competencies: [1, 5],
+  competencies: [1, 2, 5],
 
-  // Video. Optional, and often the primary path rather than the alternative one.
+  // The clip is watched TOGETHER, at the end, after the reading. That is why it
+  // carries `label` rather than taking the default: the strip at the top of the
+  // Brief says "Watch instead" everywhere else in this course, and telling a
+  // student to watch this one instead of the reading gets the sequence backwards.
+  // The whole point is that they meet the research first and the argument second.
   //
-  //   videos: [
-  //     { title:    'CNN10 for October 14',
-  //       url:      'https://...',          // required, a real link you supply
-  //       prompt:   'Watch for who is quoted and who is not.',
-  //       source:   'CNN10',                 // optional, shown as a label
-  //       duration: '10:00',                 // optional
-  //       captions: true }                   // set false only if genuinely absent
-  //   ]
+  // THE TITLE IS THE PUBLISHED ONE, VERBATIM, AND THAT IS DELIBERATE. It is a
+  // leading question followed by the word "shocking", which is the exact move
+  // Part Two's Watch For callout is about: a source that lists only harms is
+  // warning, not reporting. Softening it here would hide the specimen. The card
+  // heading carries it in full; `linkLabel` only shortens the button on the unit
+  // page, where the full headline would run off a phone.
   //
-  // Empty means the topic renders no video section at all, not an empty one.
-  videos: [],
+  // duration and captions are left unset on purpose. Both are optional, and
+  // neither was verified against the source, so nothing states them.
+  videos: [
+    { title:     'Is social media killing our children? Shocking new evidence revealed',
+      linkLabel: 'Watch the 60 Minutes report',
+      url:       'https://www.youtube.com/watch?v=Ojc_JazB5xQ',
+      source:    '60 Minutes Australia',
+      label:     'Watch together, after the reading',
+      prompt:    'Two questions while you watch. What does this program want you to believe, and '
+        + 'what does it do to get you there, starting with its own title? Then: which of the '
+        + 'researchers in Part Three would agree with it, and which one would not?' }
+  ],
+
+  // Anything a student can open for this topic that is not the Brief and not a
+  // clip. The slides are here so a student who was out, or who wants the Orben
+  // and Haidt slide again, can get to them without asking.
+  //
+  // WARNING, AND IT IS THE SAME SHAPE AS THE CANVAS ASSIGNMENT-LINK BUG. A
+  // published Artifact is PRIVATE until it is shared from the page's share menu.
+  // Unshared, this link opens fine from the teacher's own account and shows a
+  // sign-in wall to every student, so the failure is invisible from exactly the
+  // account that would check it. Share the artifact before this goes in front of
+  // a class, or take the row out.
+  resources: [
+    { label: 'Slides from class',
+      url:   'https://claude.ai/code/artifact/185dd6fe-d78f-4bc6-969d-d0456b5d5c46' }
+  ],
 
   support: [
     { label: 'Before You Read',
