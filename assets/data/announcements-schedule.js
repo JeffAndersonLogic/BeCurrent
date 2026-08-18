@@ -76,16 +76,14 @@ window.BECURRENT_SCHEDULE = {
       homework: 'Finish your three Brief responses and submit them in Canvas.',
       homeworkDue: 'the start of next class' },
 
-    // Two episodes of CNN 10 today rather than one, and the unit half runs long
-    // because it ends with a screening. The shape of ONE day belongs here rather
-    // than in the topic's content module: the module is what gets taught again
-    // next year, and this is what is happening on this date. No timings, because
-    // this projects at students.
+    // Two episodes of CNN 10 today rather than one. The shape of ONE day belongs
+    // here rather than in the topic's content module: the module is what gets
+    // taught again next year, and this is what is happening on this date. No
+    // timings, because this projects at students.
     { date: '2026-08-18', topic: 'SM4',
       note: 'Bring a device today. You are going to look yourself up.',
       agenda: ['The Desk. Two episodes of CNN 10 to catch us up, then file your two stories.',
-               'Read the Brief and answer the three questions.',
-               'Watch the 60 Minutes report together. Take it apart, do not just take it in.'],
+               'Read the Brief and answer the three questions.'],
       homework: 'Finish your three Brief responses and submit them in Canvas.' },
 
     { date: '2026-08-20', topic: 'SM5',

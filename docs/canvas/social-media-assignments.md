@@ -94,7 +94,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
-<p>Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it. We finish by watching a television report that answers the first question hard, in one direction. By then you will have read the research it is standing on. Your job is not to agree with it and not to dismiss it. Your job is to work out which part of it the evidence actually holds up.</p>
+<p>Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it.</p>
 <ol>
     <li><strong>Cause and Effect.</strong> Pick one negative effect from Part Two. Name the mechanism: step by step, what connects using the app to feeling worse?</li>
     <li><strong>Corroboration.</strong> Two researchers study the same teenagers and reach opposite conclusions. Give two reasons that can happen without either of them lying.</li>
@@ -117,10 +117,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can state a claim about social media and how people feel, and say whether the evidence behind it shows a cause or only a pattern.</li>
+    <li>I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.</li>
     <li>I can name two things I would want to know about a study before I believed its headline.</li>
     <li>I can name three places a piece of my footprint sits that I cannot delete myself.</li>
-    <li>I can point at one moment in the video and name the move it makes on me, and say which researcher from Part Three would push back on it.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">The whole Social Media unit, if you missed a topic</a></p>

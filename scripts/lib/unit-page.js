@@ -60,12 +60,7 @@ function renderUnitPage(unit) {
       actions.push(`          <a class="btn" href="${esc(briefFileFor(b).replace(/\.html$/, '-capture.html'))}">Read the Brief</a>`);
     }
     clips.forEach(v => {
-      // A clip is headed by its own title, but a real headline is a long button.
-      // `linkLabel` is an optional short label for this row only; the card in the
-      // Brief still carries the published title in full, because that title is
-      // often the thing being taken apart.
-      const label = v.linkLabel || v.title;
-      actions.push(`          <a class="btn secondary" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`);
+      actions.push(`          <a class="btn secondary" href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.title)}</a>`);
     });
 
     // Anything else a student can open for this topic that is neither the Brief
