@@ -44,7 +44,7 @@ lesson cannot drift apart without someone noticing.
 | Assignment (Canvas **and** PowerSchool) | `<CODE> - <Short Title>` | `SM3 - Inside the Algorithm` |
 
 The code is the unit's `meta.code` plus the topic number. Social Media is `SM`,
-so its topics are `SM1` through `SM5`. It is the same code the TODAY board's
+so its topics are `SM1` through `SM6`. It is the same code the TODAY board's
 schedule uses, so one identifier covers the projector, the calendar and the
 gradebook.
 
@@ -237,10 +237,12 @@ Module: Current Events - Social Media
               (nothing; done in class, and the title stays withheld)
 --- Text Header: Topic 3 - Inside the Algorithm Box ---
 [Assignment]  SM3 - Inside the Algorithm
---- Text Header: Topic 4 - Go Check It Yourself ---
-[Assignment]  SM4 - Reading a Privacy Policy
---- Text Header: Topic 5 - Who Gets to Decide? ---
-[Assignment]  SM5 - Who Decides
+--- Text Header: Topic 4 - What It Does to You, and What It Keeps ---
+[Assignment]  SM4 - Effects and Your Footprint
+--- Text Header: Topic 5 - How a Lie Travels ---
+[Assignment]  SM5 - How a Lie Travels
+--- Text Header: Topic 6 - Who Gets to Decide? ---
+[Assignment]  SM6 - Who Decides
 ```
 
 Notes:

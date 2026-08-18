@@ -34,8 +34,9 @@ Every link below points at the live GitHub Pages build:
 | `CE - SM1 - Where the Money Comes From` | none, on paper | No |
 | `CE - SM2 - Somebody Made a Film About This` | none, on paper | No |
 | `CE - SM3 - Inside the Algorithm Box` | `SM3 - Inside the Algorithm` | Yes |
-| `CE - SM4 - Go Check It Yourself` | `SM4 - Reading a Privacy Policy` | Yes |
-| `CE - SM5 - Who Gets to Decide?` | `SM5 - Who Decides` | Yes |
+| `CE - SM4 - What It Does to You, and What It Keeps` | `SM4 - Effects and Your Footprint` | Yes |
+| `CE - SM5 - How a Lie Travels` | `SM5 - How a Lie Travels` | Yes |
+| `CE - SM6 - Who Gets to Decide?` | `SM6 - Who Decides` | Yes |
 
 ---
 
@@ -237,10 +238,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - SM4 - Go Check It Yourself
+## CE - SM4 - What It Does to You, and What It Keeps
 
-**Event title:** `CE - SM4 - Go Check It Yourself`  
-**Assignment to link:** `SM4 - Reading a Privacy Policy`  
+**Event title:** `CE - SM4 - What It Does to You, and What It Keeps`  
+**Assignment to link:** `SM4 - Effects and Your Footprint`  
 **Source:** `scripts/lib/unit-content/social-media.js`, Topic 4  
 
 ```html
@@ -251,7 +252,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Half this room wrote that the company sells your data. I told you that was mostly wrong and I did not prove it, which is not good enough. Today you check me. A privacy policy is a primary source: free, in your pocket, and the document the company can actually be held to. You will search it rather than read it, and find out what it does and does not say.</p>
+                <p>Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it.</p>
             </td>
         </tr>
         <tr>
@@ -260,9 +261,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can explain the difference between a primary source and somebody else's summary of one, and say why a company's own privacy policy is the primary source here.</li>
-                    <li>I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.</li>
-                    <li>I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.</li>
+                    <li>I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.</li>
+                    <li>I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.</li>
+                    <li>I can describe what my digital footprint contains, and name one decision somebody could make about me from it.</li>
                 </ol>
             </td>
         </tr>
@@ -272,9 +273,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.</li>
-                    <li>I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.</li>
-                    <li>I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.</li>
+                    <li>I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.</li>
+                    <li>I can name two things I would want to know about a study before I believed its headline.</li>
+                    <li>I can name three places a piece of my footprint sits that I cannot delete myself.</li>
                 </ol>
             </td>
         </tr>
@@ -284,7 +285,7 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">Social Media, the unit page</a></p>
-                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-04-brief-privacy-policy-capture.html" target="_blank" rel="noopener">The Brief for this topic</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-04-brief-effects-and-footprint-capture.html" target="_blank" rel="noopener">The Brief for this topic</a></p>
             </td>
         </tr>
         <tr>
@@ -302,10 +303,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - SM5 - Who Gets to Decide?
+## CE - SM5 - How a Lie Travels
 
-**Event title:** `CE - SM5 - Who Gets to Decide?`  
-**Assignment to link:** `SM5 - Who Decides`  
+**Event title:** `CE - SM5 - How a Lie Travels`  
+**Assignment to link:** `SM5 - How a Lie Travels`  
 **Source:** `scripts/lib/unit-content/social-media.js`, Topic 5  
 
 ```html
@@ -316,7 +317,72 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, and read the company's own document, so today is a real argument instead of opinions. You will not be graded on which side you land.</p>
+                <p>Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>LEARNING TARGETS</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <ol>
+                    <li>I can name four tactics that make false information spread, and explain what each one does to the reader.</li>
+                    <li>I can check an unfamiliar claim in under two minutes, and say specifically what I checked.</li>
+                    <li>I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <ol>
+                    <li>I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.</li>
+                    <li>I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.</li>
+                    <li>I can explain the difference between a claim that is false and a claim that is true but framed to mislead.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>BeCurrent Link</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">Social Media, the unit page</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-05-brief-fake-news-capture.html" target="_blank" rel="noopener">The Brief for this topic</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>ASSIGNMENT</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p>[INSERT ASSIGNMENT LINK]</p>
+                <p>Open the Brief, answer every question, then use <strong>Gather All My Work</strong> and <strong>Copy to Clipboard</strong> at the end of it. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+```
+
+---
+
+## CE - SM6 - Who Gets to Decide?
+
+**Event title:** `CE - SM6 - Who Gets to Decide?`  
+**Assignment to link:** `SM6 - Who Decides`  
+**Source:** `scripts/lib/unit-content/social-media.js`, Topic 6  
+
+```html
+<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+    <tbody>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p>On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.</p>
             </td>
         </tr>
         <tr>
@@ -349,7 +415,7 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">Social Media, the unit page</a></p>
-                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-05-brief-who-decides-capture.html" target="_blank" rel="noopener">The Brief for this topic</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-06-brief-who-decides-capture.html" target="_blank" rel="noopener">The Brief for this topic</a></p>
             </td>
         </tr>
         <tr>

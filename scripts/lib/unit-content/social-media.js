@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Social Media unit, Topics 3 to 5.
+ * Social Media unit, Topics 3 to 6.
  *
  * Topics 1 and 2 have no Brief: Topic 1 is the slide deck and the paper trace,
  * Topic 2 is the film. The Brief exists for the topics that need a reading
@@ -42,7 +42,7 @@ const UNIT = {
   // unset omits the coach section from every brief in this unit.
   aiCoachUrl: '',
   canvasSubmissionNote: 'Organize your thinking here, then submit your final work in Canvas.',
-  topics: 5,
+  topics: 6,
   overview: 'We are going to figure out how social media actually works. The machine. The '
     + 'business. Not whether it is good or bad for you, and nobody is going to ask you to delete '
     + 'anything. By the end you should be able to explain how the thing works, out loud, to an '
@@ -347,53 +347,359 @@ const TOPIC_3 = {
 };
 
 // ── Topic 4 ───────────────────────────────────────────────────────────────────
+//
+// Two halves in one topic, and the order is deliberate. The effects half comes
+// first because it is the one students expect to be a lecture about their screen
+// time, and the fastest way to lose the room is to open there. So it opens on the
+// positives, and the actual work of the half is not "is it bad", it is reading a
+// disagreement between researchers, which is a skill and not a verdict.
+//
+// The footprint half is the opposite kind of question and is labelled as such on
+// the page. Whether social media harms teenagers is contested. What a record
+// contains is not.
+//
+// The research named here is real, dated and checkable on purpose. A topic that
+// tells students to verify claims and then hands them unsourced assertions is
+// teaching the opposite of what it says.
 const TOPIC_4 = {
   n: 4,
   key: 'sm-t4',
-  slug: 'privacy-policy',
+  slug: 'effects-and-footprint',
   topic: 'Topic 4',
-  title: 'Go <em>Check</em> It Yourself',
+  title: 'What It Does to You, and What It <em>Keeps</em>',
   eyebrow: 'Social Media · Topic 4',
-  deck: 'Half this room wrote "they sell my data." Today we read the document and find out.',
-  subtitle: 'Reading a privacy policy as a primary source',
-  skillTags: ['Generalizing from Evidence', 'Sourcing'],
-  inClass: 'You check the chain you drew in Topic 1 against the company\'s own privacy policy. '
-    + 'Bring a device for this one, because the document is the assignment.',
+  deck: 'Two questions today. What the app does to how you feel, and what it keeps after you close it.',
+  subtitle: 'Evidence about effects, and a record that does not delete',
+  skillTags: ['Corroboration', 'Cause and Effect'],
+  inClass: 'We sort the good effects and the bad ones, then test one claim against the actual '
+    + 'research. Second half you find out what your own record already contains.',
 
-  overview: 'Half this room wrote that the company sells your data. I told you that was mostly '
-    + 'wrong and I did not prove it, which is not good enough. Today you check me. A privacy policy '
-    + 'is a primary source: free, in your pocket, and the document the company can actually be held '
-    + 'to. You will search it rather than read it, and find out what it does and does not say.',
+  overview: 'Two questions today, and they are different kinds of question. First: what does social '
+    + 'media do to how you feel? That one has real research behind it, the research disagrees with '
+    + 'itself, and your job is to learn to read a disagreement rather than pick a side. Second: what '
+    + 'does the app keep after you close it? That one is not a debate. It is a record, it is longer '
+    + 'than what you posted, and people who make decisions about your future can read part of it.',
 
-  // The three targets are Parts One, Two and Four: what a primary source is, how to
-  // read one that does not want to be read, and how to source it. Part Three is the
-  // substantive finding, and it belongs in the criteria, because "what is actually
-  // being sold" is evidence of understanding rather than a move to practise.
-  //
-  // Criterion 1 is The Standard from Part Four stated as a performance: a quote,
-  // from a named document, with a date. The topic declares that binding on the rest
-  // of the course, so it should be something a student is measured against rather
-  // than a line in the reading.
   learningTargets: [
-    { skill: 'Sourcing',
-      target: 'I can explain the difference between a primary source and somebody else\'s summary of one, and say why a company\'s own privacy policy is the primary source here.' },
-    { skill: 'Sourcing',
-      target: 'I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.' },
-    { skill: 'Sourcing',
-      target: 'I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.' }
+    { skill: 'Cause and Effect',
+      target: 'I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.' },
+    { skill: 'Corroboration',
+      target: 'I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.' },
+    { skill: 'Generalizing from Evidence',
+      target: 'I can describe what my digital footprint contains, and name one decision somebody could make about me from it.' }
   ],
 
-  // Criterion 3 is the Watch For, which is the sharpest idea in the topic: a
-  // sentence can be completely true and still not mean what you hoped, and telling
-  // those apart is the whole skill. Nothing in the three questions asks for it
-  // directly, which is exactly why it belongs here.
   successCriteria: [
+    { skill: 'Cause and Effect',
+      criteria: 'I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.' },
+    { skill: 'Corroboration',
+      criteria: 'I can name two things I would want to know about a study before I believed its headline.' },
+    { skill: 'Generalizing from Evidence',
+      criteria: 'I can name three places a piece of my footprint sits that I cannot delete myself.' }
+  ],
+
+  competencies: [1, 5],
+
+  // Video. Optional, and often the primary path rather than the alternative one.
+  //
+  //   videos: [
+  //     { title:    'CNN10 for October 14',
+  //       url:      'https://...',          // required, a real link you supply
+  //       prompt:   'Watch for who is quoted and who is not.',
+  //       source:   'CNN10',                 // optional, shown as a label
+  //       duration: '10:00',                 // optional
+  //       captions: true }                   // set false only if genuinely absent
+  //   ]
+  //
+  // Empty means the topic renders no video section at all, not an empty one.
+  videos: [],
+
+  support: [
+    { label: 'Before You Read',
+      body: 'Topic 3 was the machine: what the app counts, and what it does with the count. Today is '
+        + 'the two things that machine touches. How you feel, and what it keeps.' },
+    { label: 'Reading Target',
+      body: 'By the end you should be able to explain why two honest researchers disagree about whether '
+        + 'social media harms teenagers, and name three parts of your record you cannot delete.' }
+  ],
+
+  terms: ['correlation', 'causation', 'effect size', 'social comparison', 'digital footprint',
+    'data broker', 'two-factor authentication'],
+
+  sections: [
+    {
+      label: 'Part One',
+      heading: 'The good half, and it is not a consolation prize',
+      paragraphs: [
+        'Start with what works, because a list of harms with nothing on the other side is not a '
+        + 'description of anything real. Most people in this room use these apps and are fine.',
+        '<strong>Connection and support.</strong> If you have an experience nobody within walking '
+        + 'distance shares, these apps are how you find people who do. A rare diagnosis. A family that '
+        + 'just moved. A thing you are the only person at this school who does. The mechanism is not '
+        + 'complicated: the group you can reach is no longer limited to who lives near you, and a group '
+        + 'that shares your situation cuts the feeling of being the only one.',
+        '<strong>Awareness and advocacy.</strong> Mental health is talked about more openly than it was '
+        + 'twenty years ago, and social media is part of why. To destigmatize something means to make it '
+        + 'less shameful to say out loud. That has a measurable payoff: people ask for help earlier when '
+        + 'the thing they need help with has a name they have heard other people use.',
+        '<strong>Access to information.</strong> You can find out what a condition is, or what a '
+        + 'treatment does, at eleven at night, without having to ask an adult first. For some questions '
+        + 'that is the difference between finding out and not.',
+        '<strong>Expression and creativity.</strong> Making something and showing it to people. For a lot '
+        + 'of people that is the coping mechanism itself, not a distraction from having one.',
+        '<strong>Community building.</strong> Shared interest, hobby, goal. The kid who builds keyboards '
+        + 'has eleven friends who build keyboards, and none of them go to this school.'
+      ],
+      callouts: [
+        { label: 'Watch For',
+          body: 'A source that lists only benefits is selling. A source that lists only harms is warning. '
+            + 'Neither one is reporting. When you notice a page has only one column, that is information '
+            + 'about the page.' }
+      ]
+    },
+    {
+      label: 'Part Two',
+      heading: 'The bad half, named precisely',
+      paragraphs: [
+        '<strong>Cyberbullying.</strong> Harassment, threats, pile-ons. It is associated with higher '
+        + 'anxiety and depression, and at the far end with suicidal thoughts. Hold on to the word '
+        + '<em>associated</em>, because Part Three is about that word. Three things make it different '
+        + 'from bullying in a hallway: it does not stop when the bell rings, the audience can be '
+        + 'thousands instead of six, and there is a written record the target can read again and again.',
+        '<strong>Social comparison.</strong> What you see is curated, which means chosen, which means '
+        + 'everything not chosen is not there. So you compare your ordinary Tuesday against somebody '
+        + 'else\'s best fourteen seconds of a month. Do that enough and it produces feelings of '
+        + 'inadequacy and a lower sense of your own worth. <span class="kt">Social comparison</span> is '
+        + 'the name for measuring yourself against other people, and it is normal. What is new is the '
+        + 'sample size and the editing.',
+        '<strong>Fear of missing out.</strong> Your feed shows events, so it shows you the parts of other '
+        + 'people\'s weeks that photograph well. You now know from Topic 3 that a ranked feed shows you '
+        + 'what held other people\'s attention, which means it is socially denser than any real week is. '
+        + 'The comparison is not just curated, it is assembled from hundreds of lives at once.',
+        '<strong>Compulsive use and distraction.</strong> Checking again, and again, without deciding to. '
+        + 'Whether "addiction" is the right word for this is genuinely argued among clinicians, and you '
+        + 'should know that before you use it. What is argued about much less is sleep. The phone competes '
+        + 'directly with sleep, and short sleep on its own raises anxiety and lowers school performance. '
+        + 'If you want the effect with the least disagreement around it, it is that one.',
+        '<strong>Privacy.</strong> Data breaches, and personal information shared without permission. '
+        + 'There is a second-order cost that is easy to miss: people who are worried about privacy post '
+        + 'less and join less, which costs them exactly the connection Part One is about.'
+      ],
+      callouts: [
+        { label: 'Skill Focus',
+          body: 'Notice how much more useful the precise version is. "Social media is bad for mental '
+            + 'health" cannot be tested, so it cannot be checked, so it cannot be argued about properly. '
+            + '"Comparing yourself against curated images lowers self-esteem" can be tested. A claim you '
+            + 'can test is worth more than a claim that sounds serious.' }
+      ]
+    },
+    {
+      label: 'Part Three',
+      heading: 'Why two honest researchers disagree about the same teenagers',
+      paragraphs: [
+        'Here is the finding almost every study starts from: teenagers who use these apps a lot report '
+        + 'more anxiety and depression than teenagers who use them a little. That is a real pattern. Now '
+        + 'notice that three completely different explanations fit it.',
+        'One, the apps make people anxious. Two, anxious people use the apps more, because that is what '
+        + 'you do at one in the morning when you cannot sleep. Three, some third thing, a hard year at '
+        + 'home, no friends nearby, bad sleep, causes both. <span class="kt">Correlation</span> means two '
+        + 'things move together. <span class="kt">Causation</span> means one makes the other happen. The '
+        + 'pattern above is correlation, and correlation is consistent with all three stories.',
+        'The second idea you need is <span class="kt">effect size</span>: not whether an effect exists, '
+        + 'but how big it is. In 2019 Amy Orben and Andrew Przybylski published a study in <em>Nature '
+        + 'Human Behaviour</em> that ran the numbers across large datasets and found the association '
+        + 'between screen use and teenage wellbeing was tiny, about the same size as associations nobody '
+        + 'worries about, like eating potatoes or wearing glasses. That is a real published finding, and '
+        + 'it is not a joke about potatoes. It is a claim that the effect is too small to explain what '
+        + 'people say it explains.',
+        'Now the other side, argued just as seriously. Jonathan Haidt points at timing: rates of anxiety '
+        + 'and depression among teenagers rose sharply starting around 2012, which is when smartphones '
+        + 'and social media became close to universal among them. He made that case at book length in '
+        + '<em>The Anxious Generation</em> in 2024. Candice Odgers reviewed the book in <em>Nature</em> '
+        + 'the same year and argued the evidence does not support a causal claim that strong, and that '
+        + 'blaming phones may pull attention away from causes that are better established.',
+        'One more piece, and it is a different kind of evidence. In September 2021 the <em>Wall Street '
+        + 'Journal</em> published internal Facebook research leaked by a former employee, Frances '
+        + 'Haugen, in which the company\'s own researchers found Instagram made body image worse for '
+        + 'some teenage girls. Read what that is carefully. It is strong because it is not from a critic, '
+        + 'it is the company studying itself. It is narrow because it is about a subset of users, not '
+        + 'everybody.',
+        'So where does that leave you? The defensible position is that effects are real, they land very '
+        + 'unevenly across different people, and on average they are smaller than the loudest headlines '
+        + 'claim. <strong>Unevenly</strong> is the word doing the work. An average close to zero can hide '
+        + 'a group being hurt a lot, and an average is what most studies report.'
+      ],
+      callouts: [
+        { label: 'The Standard',
+          body: 'A complete answer in this class names the <em>mechanism</em> and the <em>size</em>. "It '
+            + 'causes depression" has neither. "Comparing against curated images lowers self-esteem, and '
+            + 'the average effect is small but much larger for some people" has both.' }
+      ]
+    },
+    {
+      label: 'Part Four',
+      heading: 'The record, which is not a debate',
+      paragraphs: [
+        'Your <span class="kt">digital footprint</span> is the trail of data your activity leaves behind. '
+        + 'Everything you post is in it. So is a great deal you did not post: what you searched, what you '
+        + 'watched and for how long, where your phone was, what you bought, who you messaged.',
+        'Treat it as permanent. Not because deleting is impossible, but because you cannot verify that it '
+        + 'worked. Delete removes your copy. It does not reach the screenshot somebody took, the repost, '
+        + 'the archive that crawled the page, the company\'s own backups, or the other thirty phones in a '
+        + 'group chat. You control the original and nothing else.',
+        'Who reads it. Employers routinely look at candidates\' public profiles during hiring, and so do '
+        + 'colleges. Law enforcement can request records through legal process. And then there are '
+        + '<span class="kt">data broker</span> companies, whose whole business is buying records about '
+        + 'people from many sources, combining them into one profile, and selling it. You never opened an '
+        + 'account with them and they have a file on you anyway.',
+        'A real case, so this is not hypothetical. In June 2017 Harvard withdrew admission offers from at '
+        + 'least ten incoming students over messages they had posted in a private Facebook group chat. '
+        + 'Private group. Real consequence. Nobody hacked anything.',
+        'There are legal edges too, and they are not obvious. Defamation is a false statement of fact that '
+        + 'damages someone\'s reputation. Harassment can be a crime. Copyright infringement covers using '
+        + 'somebody else\'s music, art, or footage without permission, which is worth knowing because '
+        + 'reposting is publishing, legally speaking.',
+        'The same record cuts the other way, and almost nobody plans for this. Three years of you making '
+        + 'things, finishing things, and helping people is an asset when somebody is deciding about you. '
+        + 'The footprint is not only a liability to be minimized. It is a record, and records can be '
+        + 'built on purpose.'
+      ],
+      callouts: [
+        { label: 'Try This',
+          body: 'Search your own name in a browser you are not logged into, then check the images tab. '
+            + 'Most people find one of two things: nothing at all, which is itself worth knowing, or '
+            + 'something they had completely forgotten was public.' }
+      ]
+    },
+    {
+      label: 'Part Five',
+      heading: 'What actually protects it, and what does not',
+      paragraphs: [
+        'Four things are worth your time, and they work for reasons worth understanding rather than as '
+        + 'rules to obey.',
+        '<strong>A different password everywhere.</strong> The mechanism is breaches. When one site gets '
+        + 'broken into, the attackers take the email and password pairs and try them everywhere else, '
+        + 'automatically. Reusing a password is what turns one company\'s failure into your entire '
+        + 'account list. A password manager, or a long phrase you only use once, both solve it.',
+        '<strong><span class="kt">Two-factor authentication</span>.</strong> Something you know plus '
+        + 'something you have, usually a code on your phone. This is the highest-value ten minutes in '
+        + 'this whole topic, because it makes a stolen password insufficient on its own.',
+        '<strong>Recognizing phishing.</strong> A phishing message impersonates someone you trust to get '
+        + 'you to hand over a login. The tell is almost always urgency plus a link: your account will be '
+        + 'closed, your package is held, click here now. The counter is to not use the link. Go to the '
+        + 'site yourself and see whether the thing is true.',
+        '<strong>Recognizing a scam.</strong> Free thing in exchange for a login. A message from a '
+        + 'friend\'s account that does not sound like them, because it is not them. An offer that is '
+        + 'aimed at you specifically and expires immediately.',
+        'Now the honest limit, and it matters more than the four items above. None of that touches what '
+        + 'the companies themselves collect. That is not a security failure, it is the business model you '
+        + 'traced in Topic 1 working exactly as designed. Strong passwords protect you from thieves. They '
+        + 'do not protect you from the arrangement you agreed to.'
+      ],
+      callouts: [
+        { label: 'Watch For',
+          body: '"Just be careful what you post" is advice about the part of your footprint you control, '
+            + 'which is the small part. The larger part is what gets collected, combined and sold while '
+            + 'you post nothing at all. Advice that only covers the small part sounds responsible and '
+            + 'leaves the bigger thing unaddressed.' }
+      ]
+    }
+  ],
+
+  roadNotTaken: {
+    label: 'The Road Not Taken',
+    heading: 'Permanent is a policy choice, and the policy is still moving',
+    paragraphs: [
+      'Part Four told you to treat the record as permanent, and for practical purposes you should. But '
+      + 'permanent is not a law of physics. It is a choice about what companies are required to do, and '
+      + 'different places have chosen differently.',
+      'In May 2014 the European Court of Justice ruled that people can require search engines to remove '
+      + 'certain results about them from searches for their name. It is usually called the right to be '
+      + 'forgotten. It is limited, it is argued about, and it exists. The United States has no general '
+      + 'equivalent. What it has instead is a growing patchwork of state laws: California\'s privacy law '
+      + 'took effect in 2020 and gives residents a right to ask companies to delete data about them, and '
+      + 'a long list of states have passed their own versions since, including Indiana, whose law took '
+      + 'effect in January 2026. Several states have also passed laws specifically about minors and '
+      + 'social media since 2023, and courts have blocked some of them.',
+      'So the arrangement you live under is not the only one available, and it is not finished. Which is '
+      + 'exactly the argument in Topic 6.'
+    ]
+  },
+
+  takeaway: 'The good effects and the bad effects are both real, they land unevenly, and how big an '
+    + 'effect is matters as much as whether it exists. The record is a different kind of question: it is '
+    + 'longer than what you posted, parts of it are not yours to delete, and people who decide things '
+    + 'about you can read some of it.',
+
+  questions: [
+    { skill: 'Cause and Effect',
+      text: 'Pick one negative effect from Part Two. Name the mechanism: step by step, what connects '
+        + 'using the app to feeling worse?',
+      startHere: 'Two or three sentences. Name the effect, then how it works.',
+      pushFurther: 'Then give one reason a researcher might not be able to prove your mechanism is the cause.' },
+    { skill: 'Corroboration',
+      text: 'Two researchers study the same teenagers and reach opposite conclusions. Give two reasons '
+        + 'that can happen without either of them lying.',
+      startHere: 'Two reasons, one sentence each.',
+      pushFurther: 'Say which study in Part Three you find more convincing, and what would change your mind.' },
+    { skill: 'Generalizing from Evidence',
+      text: 'Name three pieces of your digital footprint that sit somewhere you cannot delete. For one of '
+        + 'them, say what somebody could decide about you from it.',
+      startHere: 'Three places, then one decision.',
+      pushFurther: 'Name one thing in your footprint that would help you, and say who would have to see it.' }
+  ]
+};
+
+// ── Topic 5 ───────────────────────────────────────────────────────────────────
+//
+// The trap in this topic is that every student arrives believing they are already
+// good at it, so a lesson built as a list of warning signs gets filed under things
+// they knew. It is built the other way round: the subject is not the fake content,
+// it is the transmission. What carries a false story is novelty and emotion, and
+// the best evidence available says people rather than bots do most of the carrying,
+// which puts the student inside the mechanism instead of outside watching it.
+//
+// The elections half is the source material's nine bullets regrouped into
+// mechanisms, because nine parallel "issue and impact" pairs is a list to be
+// scanned rather than a thing to be understood, and three of the nine are the same
+// machine from Topic 1 pointed at voters.
+const TOPIC_5 = {
+  n: 5,
+  key: 'sm-t5',
+  slug: 'fake-news',
+  topic: 'Topic 5',
+  title: 'How a <em>Lie</em> Travels',
+  eyebrow: 'Social Media · Topic 5',
+  deck: 'The interesting question is not whether people lie online. It is why the lie moves faster '
+    + 'than the correction.',
+  subtitle: 'Fake news, the tactics that carry it, and elections',
+  skillTags: ['Sourcing', 'Corroboration'],
+  inClass: 'We take a real hoax apart, name the four tactics that carry one, then do the checking, '
+    + 'which takes about ninety seconds and almost nobody does.',
+
+  overview: 'Today is the part of this unit everybody thinks they are already good at. You will find '
+    + 'out that spotting false information is mostly not about the false information. It is about what '
+    + 'carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking '
+    + 'system that rewards whatever gets a reaction. Then you will learn the actual checking, which '
+    + 'takes about ninety seconds, and find out what the research says about who does the spreading. '
+    + 'The answer to that last one is not what most people assume.',
+
+  learningTargets: [
+    { skill: 'Fallacies and Propaganda',
+      target: 'I can name four tactics that make false information spread, and explain what each one does to the reader.' },
     { skill: 'Sourcing',
-      criteria: 'I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.' },
+      target: 'I can check an unfamiliar claim in under two minutes, and say specifically what I checked.' },
     { skill: 'Generalizing from Evidence',
-      criteria: 'I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.' },
-    { skill: 'Generalizing from Evidence',
-      criteria: 'I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.' }
+      target: 'I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.' }
+  ],
+
+  successCriteria: [
+    { skill: 'Fallacies and Propaganda',
+      criteria: 'I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.' },
+    { skill: 'Sourcing',
+      criteria: 'I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.' },
+    { skill: 'Corroboration',
+      criteria: 'I can explain the difference between a claim that is false and a claim that is true but framed to mislead.' }
   ],
 
   competencies: [2, 5],
@@ -414,149 +720,246 @@ const TOPIC_4 = {
 
   support: [
     { label: 'Before You Read',
-      body: 'In Topic 1 a lot of chains said the company <em>sells your data</em>. I told you that was '
-        + 'mostly wrong and I did not prove it. Fair enough. Today you check me.' },
+      body: 'You know the machine now: what the app counts and what it pushes a number on. Today you '
+        + 'find out what kind of content that machine rewards, and what happens when somebody builds '
+        + 'content for it deliberately.' },
     { label: 'Reading Target',
-      body: 'By the end you should be able to point at a specific sentence in a real document and say '
-        + 'what it does and does not claim.' }
+      body: 'By the end you should be able to check a claim you are unsure about in under two minutes, '
+        + 'and say out loud what you checked rather than that you did not believe it.' }
   ],
 
-  terms: ['primary source', 'privacy policy', 'third party', 'consent', 'data broker'],
+  terms: ['misinformation', 'disinformation', 'clickbait', 'deepfake', 'bot', 'lateral reading',
+    'echo chamber', 'microtargeting'],
 
   sections: [
     {
       label: 'Part One',
-      heading: 'A primary source is the thing itself',
+      heading: 'Two words, and the difference is the person sending it',
       paragraphs: [
-        'A <span class="kt">primary source</span> is the original document, made by the people involved, '
-        + 'at the time. Not somebody explaining it later. The actual thing.',
-        'A news article about a company\'s privacy rules is a secondary source. The company\'s '
-        + '<span class="kt">privacy policy</span> is the primary source. It is written by the company, it '
-        + 'is the document they can be held to, and anybody can read it for free right now.',
-        'This is one of the few times in this class where the primary source is sitting in your pocket. '
-        + 'Historians would take that trade instantly.'
+        '<span class="kt">Misinformation</span> is false information spread by somebody who thinks it is '
+        + 'true. <span class="kt">Disinformation</span> is false information spread by somebody who knows '
+        + 'it is false. Identical content, different sender, and your response should be different. You '
+        + 'can correct a person who is mistaken. You cannot correct a campaign, because being wrong was '
+        + 'the plan.',
+        'Three shapes it usually arrives in. A viral hoax, which is a story that is simply invented. A '
+        + 'doctored image, which now includes images that were generated rather than edited. And a '
+        + 'misleading headline, which is the sneakiest of the three, because every fact underneath it can '
+        + 'be true while the headline still leaves you believing something false. That last one is '
+        + 'framing, and it is much more common than outright invention.',
+        'Here is how fast the first shape can move. In April 2013 the Associated Press Twitter account '
+        + 'was hacked and posted that there had been explosions at the White House and the president was '
+        + 'injured. The stock market dropped sharply within seconds and recovered within minutes once the '
+        + 'agency said it was false. One fake sentence, from an account people had reason to trust.'
       ],
       callouts: [
-        { label: 'Why It Matters',
-          body: 'When you can read the original, you do not have to trust anybody\'s summary of it. '
-            + 'Including mine. That is the whole point of today.' }
+        { label: 'Skill Focus',
+          body: 'Sourcing starts before the content. Who sent this, and do they know whether it is true? '
+            + 'A friend forwarding something they believe and an account built to deceive are different '
+            + 'problems even when the words are the same.' }
       ]
     },
     {
       label: 'Part Two',
-      heading: 'How to read a document that does not want to be read',
+      heading: 'The four tactics',
       paragraphs: [
-        'These documents are long on purpose. Not to hide things exactly, but because every sentence has '
-        + 'been checked by lawyers who are protecting the company from being sued. Clear writing and legal '
-        + 'safety are not the same goal.',
-        'So do not read it front to back. Nobody does, including lawyers. Do this instead.',
-        'Find the headings first. Almost every policy has a section called something like "Information we '
-        + 'collect" and another called "How we share information." Those two are where your answer lives.',
-        'Then use your browser\'s find function. Search the word <strong>sell</strong>. Search '
-        + '<strong>share</strong>. Search <strong>advertis</strong>, without the ending, so it catches '
-        + 'every version. Search <strong>partner</strong>. Read what comes back.',
-        'You will notice something. The word "share" shows up constantly. The word "sell" often shows up '
-        + 'only to say they <em>do not</em> do it. That gap between the two words is the finding.'
+        '<strong><span class="kt">Clickbait</span>.</strong> A headline written to get the click rather '
+        + 'than to tell you what happened, usually by withholding the exact thing you want to know. You '
+        + 'already know why it exists: from Topic 1, the click is what pays, and from Topic 3, the '
+        + 'headline is optimized for the number somebody chose. Nobody has to intend to mislead for this '
+        + 'to mislead.',
+        '<strong><span class="kt">Deepfake</span>.</strong> Video or audio of a real person, made by '
+        + 'software, saying something they never said. In April 2018 Jordan Peele and BuzzFeed released a '
+        + 'video of Barack Obama that Obama had nothing to do with, made specifically to show people it '
+        + 'was possible. Since then voice cloning in particular has become cheap and fast. The useful '
+        + 'response is not to trust no video, which is unlivable. It is to ask where a clip came from '
+        + 'before treating it as evidence of anything.',
+        '<strong><span class="kt">Bots</span>.</strong> Accounts that are automated rather than people. '
+        + 'What a bot network is for is usually misread: it is not there to persuade you directly, it is '
+        + 'there to make something look popular. Twenty thousand accounts repeating a claim manufactures '
+        + 'the appearance of consensus, and people believe things more readily when they think everyone '
+        + 'else already does.',
+        '<strong>Emotion.</strong> This is the one that carries the other three. Content that makes you '
+        + 'angry, afraid, or outraged gets shared far more than content that makes you think. That is not '
+        + 'a conspiracy, it is a fact about people, including you: you share what you feel, quickly, '
+        + 'before the feeling fades.',
+        'And now put that next to Topic 3. The ranking system does not need to want any of this. It '
+        + 'rewards reaction, sensational content generates reaction, so sensational content gets '
+        + 'promoted, with nobody at the company ever deciding to promote a lie. A system built to '
+        + 'maximize reaction will amplify whatever produces the most reaction, and truth is not what that '
+        + 'number measures.'
       ],
       callouts: [
-        { label: 'Try This',
-          body: 'A <span class="kt">third party</span> is anyone who is not you and not the company. Search '
-            + 'that phrase. Count how many different kinds of third party the policy allows information to '
-            + 'reach. Most students expect two or three.' }
+        { label: 'Skill Focus',
+          body: 'Every one of these four is aimed at a feeling rather than at your reasoning. Naming the '
+            + 'feeling is the counter, because a feeling you have named out loud stops steering you. '
+            + '"This is built to make me angry" is a complete defense and it takes four seconds.' }
       ]
     },
     {
       label: 'Part Three',
-      heading: 'What the document actually says',
+      heading: 'Who actually spreads it, and it is not the bots',
       paragraphs: [
-        'The big platforms generally do not sell your personal information the way a '
-        + '<span class="kt">data broker</span> does. A data broker is a company whose whole business is '
-        + 'buying and selling files about people, and those companies exist and are worth knowing about. '
-        + 'The large social platforms are usually not doing that.',
-        'What the policy will describe instead is that they collect a great deal, they keep it, and they '
-        + 'let advertisers use it to choose who sees an ad without handing the advertiser the underlying '
-        + 'file.',
-        'That is why your Topic 1 chain was so close to right. The money does come from advertisers. But '
-        + 'the thing being sold is <strong>access to you</strong>, and the company keeps the data because '
-        + 'the data is what makes them the only place to buy that access.',
-        'Being nearly right and then checking is not a failure. It is the entire method of this course.'
+        'In 2018 three researchers at MIT, Soroush Vosoughi, Deb Roy and Sinan Aral, published a study in '
+        + '<em>Science</em> that followed roughly 126,000 rumor cascades on Twitter over eleven years. '
+        + 'False stories spread farther, faster, and to more people than true ones, and it was not close. '
+        + 'Then they did the thing that makes the study matter: they removed all the bot activity and ran '
+        + 'it again. The finding held. Humans did the spreading.',
+        'Their explanation was novelty and emotional response. False stories are newer, because they are '
+        + 'not constrained by having happened, and novelty is exactly what people forward.',
+        'Sit with what that means. The fix is mostly not technical, and it is mostly not about the '
+        + 'platforms. It is the two seconds before you repost.',
+        'Money is often the motive rather than politics, which surprises people. During the 2016 US '
+        + 'election, reporters at BuzzFeed News traced a cluster of American political hoax sites to '
+        + 'Veles, a town in North Macedonia, run largely by young people who had discovered that '
+        + 'sensational American political stories paid well in advertising. The same reporting found that '
+        + 'in the final three months of that campaign, the top-performing false election stories drew '
+        + 'more Facebook engagement than the top-performing real ones.',
+        'And a false story with no facts in it at all can move a person to act. In late 2016 a claim '
+        + 'known as Pizzagate spread, alleging a child trafficking operation run out of a Washington DC '
+        + 'restaurant. There was nothing to it. In December 2016 a man drove there from another state and '
+        + 'fired a rifle inside the building. Nobody was hurt, which was luck.'
       ],
       callouts: [
         { label: 'Watch For',
-          body: 'A policy saying "we do not sell your data" can be completely true and still not mean what '
-            + 'you hoped. Read the next paragraph, which usually explains what they <em>do</em> do. The true '
-            + 'sentence and the reassuring sentence are not always the same sentence.' }
+          body: '"It was bots" and "it was foreign interference" are both real phenomena and both '
+            + 'comfortable, because they put the problem outside the room. The best evidence available '
+            + 'says ordinary people forwarding things they did not check do most of the work.' }
       ]
     },
     {
       label: 'Part Four',
-      heading: 'Source the document, not just the claim',
+      heading: 'The checking, which takes about ninety seconds',
       paragraphs: [
-        'Every document has an author, a date, and an audience. Ask all three, every time, for the rest of '
-        + 'your life.',
-        'Who wrote it? A company\'s legal team. Not a neutral party. Not a regulator.',
-        'When was it updated? Policies change, and the date is usually at the top or bottom. If it changed '
-        + 'recently, something made it change. That is a lead.',
-        'Who is it written to protect? Read a few sentences and ask honestly whether they read like a '
-        + 'promise to you or a shield for them. Often both, in the same sentence.',
-        '<span class="kt">Consent</span> is the word to watch hardest. In these documents consent usually '
-        + 'means you kept using the product. Not that anyone asked you a question you could answer no to.'
+        'The single most useful habit is <span class="kt">lateral reading</span>. Instead of studying the '
+        + 'page you landed on, harder and harder, you leave it: open new tabs and find out what other '
+        + 'sources say about whoever published it. Researchers at Stanford compared professional fact '
+        + 'checkers with students and found that the checkers did this almost immediately while the '
+        + 'students stayed on the page examining its design, its logo, and its About section, all of '
+        + 'which are things the page controls.',
+        'The moves, in order of return. Who published this. When, because old stories recirculate as new '
+        + 'ones constantly. Does anybody else report it, and if only one outlet has it, why. What is the '
+        + 'earliest version, because the version you saw is usually several hands down the chain. And for '
+        + 'a photograph, a reverse image search, which will often show you the same picture from a '
+        + 'different year or a different country.',
+        'Fact-checking sites like Snopes and FactCheck.org are worth using for a specific case: the claim '
+        + 'you have now seen five times. If a thing is circulating widely, somebody has probably already '
+        + 'done the work, and reading their work is faster than repeating it.',
+        'Skepticism has a failure mode, and you should know it, because it is the one this course could '
+        + 'accidentally teach. Doubting everything equally is not media literacy, it is paralysis, and it '
+        + 'is genuinely useful to anyone running a disinformation campaign: if nothing can be established, '
+        + 'nothing they say can be disproved. The goal is calibration, believing things in proportion to '
+        + 'the evidence, not suspicion of everything.',
+        'The rule with the best return on effort is the plainest one. Do not pass along something you have '
+        + 'not checked. That is not offered as a moral rule. Part Three is the reason: you are part of the '
+        + 'distribution system, measurably, and it is the largest part.'
       ],
       callouts: [
         { label: 'The Standard',
-          body: 'From here on, "I read it somewhere" is not evidence in this class. Evidence is a quote, '
-            + 'from a named document, with a date. That standard applies to me too.' }
+          body: '"I do not believe it" is not a check. A check names what you looked at. "Two outlets have '
+            + 'it, both citing the same single anonymous source" is a check, and it can end in uncertainty '
+            + 'and still be finished work.' }
+      ]
+    },
+    {
+      label: 'Part Five',
+      heading: 'Elections, where all of it runs at once',
+      paragraphs: [
+        'Everything above shows up in an election together, and it is worth separating what is a real '
+        + 'mechanism from what is a slogan.',
+        '<strong>False information about voting itself.</strong> The version that does measurable damage is '
+        + 'not usually about candidates, it is about procedure: the wrong date, invented ID requirements, a '
+        + 'polling place that moved. That kind of claim does not change an opinion, it changes whether '
+        + 'somebody shows up, which is a larger effect and a cheaper one to produce.',
+        '<strong>Foreign interference.</strong> Governments and groups outside a country using its '
+        + 'platforms to affect its politics. In February 2018 a United States grand jury indicted thirteen '
+        + 'Russian nationals and the Internet Research Agency for running social media accounts that posed '
+        + 'as Americans during the 2016 election. Read the described aim carefully, because it is not what '
+        + 'people assume: much of it was to widen existing divisions rather than to argue for a candidate.',
+        '<strong><span class="kt">Microtargeting</span>.</strong> Campaigns buying narrow audiences by '
+        + 'attribute, which is the machine from Topic 1 pointed at voters instead of shoppers. The damage '
+        + 'it does is specific and easy to miss: two voters can be shown different promises by the same '
+        + 'campaign, and neither one ever sees the other\'s, so there stops being a single public record of '
+        + 'what was promised. The Cambridge Analytica story in 2018 was this: profile data on tens of '
+        + 'millions of Facebook users collected through a quiz app and used for political targeting. '
+        + 'Facebook agreed to a five billion dollar penalty from the Federal Trade Commission in 2019.',
+        '<strong><span class="kt">Echo chambers</span> and filter bubbles.</strong> The idea that ranking '
+        + 'narrows what you see until you mostly encounter people who already agree with you, so opposing '
+        + 'arguments arrive only in their weakest form. Hold this one loosely: it is the part of this '
+        + 'section the research is least settled on, which is what The Road Not Taken below is about.',
+        '<strong>Polarization.</strong> Us against them, hardening. The mechanism is the engagement number '
+        + 'again: content attacking the other side reliably outperforms content explaining your own, so '
+        + 'the attack is what spreads, in every direction at once.',
+        '<strong>The regulation gap.</strong> American rules about political advertising were written for '
+        + 'broadcast television, where an ad is public by definition and a station has to keep a file of '
+        + 'who bought it. Much of what happens on platforms is governed instead by each company\'s own '
+        + 'policies, which they write and can change. Nobody voted on those policies. That is the last '
+        + 'thing you need before Topic 6.'
+      ],
+      callouts: [
+        { label: 'Watch For',
+          body: '"Social media decided the election" is a claim about size, and nobody has good evidence '
+            + 'for it. Every mechanism in this section is real and documented. How much any of it moves an '
+            + 'actual outcome is genuinely unsettled, and a person who tells you it is settled, in either '
+            + 'direction, is telling you about themselves.' }
       ]
     }
   ],
 
   roadNotTaken: {
     label: 'The Road Not Taken',
-    heading: 'These documents exist because of specific fights, not because companies volunteered',
+    heading: 'The echo chamber is the part of this that might be wrong',
     paragraphs: [
-      'Privacy policies did not appear because companies decided you deserved an explanation. They exist '
-      + 'because laws made them exist, and each law came out of an argument somebody won.',
-      'In 1998 Congress passed COPPA, which set rules about children under 13 online, which is why every '
-      + 'app asks your birthday. In 2018 the European Union\'s GDPR took effect, which is why the whole '
-      + 'internet suddenly filled with cookie banners that year. In 2020 California\'s CCPA gave people '
-      + 'there the right to tell a company not to sell their information, which is why some sites show you '
-      + 'a "Do Not Sell My Info" link and others do not.',
-      'Notice the pattern. Each rule covers a specific group of people, in a specific place, at a specific '
-      + 'time. There was no single moment when privacy rules were settled, and there is no reason to think '
-      + 'the current set is final. Other rules were proposed and lost. Some are being argued about now.'
+      'Eli Pariser named the filter bubble in 2011 and it became the standard explanation for almost '
+      + 'everything about online politics. It is repeated so often that it sounds like a finding rather '
+      + 'than a theory. It is a theory, and it has taken real damage.',
+      'When researchers measured what people actually read rather than what the theory predicts, they '
+      + 'kept finding news diets more varied than expected, and that the heavily sealed-in partisans are '
+      + 'a small share of users rather than the norm. A 2015 study in <em>Science</em> by Eytan Bakshy, '
+      + 'Solomon Messing and Lada Adamic found that on Facebook, individual choices about what to click '
+      + 'mattered more than the ranking did for how much cross-cutting content people actually read. '
+      + 'Note who the authors worked for, which is Facebook. That is a reason to read it carefully, not a '
+      + 'reason to throw it out, and noticing the difference is the skill.',
+      'The rival explanation is that the bubble is mostly offline: who you live near, who you are related '
+      + 'to, and who you talk to in person, none of which an algorithm chose.',
+      'This matters because the two stories point at different fixes. If ranking causes the bubble, '
+      + 'changing the ranking helps. If people choose it, changing the ranking does very little and the '
+      + 'proposal was aimed at the wrong thing. Keep that in your pocket for Topic 6, because somebody in '
+      + 'the argument is going to propose exactly that fix.'
     ]
   },
 
-  takeaway: 'The privacy policy is a primary source you can read for free. Search it rather than reading '
-    + 'it. "Share" and "sell" are different words doing different work, and the gap between them is where '
-    + 'the real answer lives.',
+  takeaway: 'False things travel because they are new and they make you feel something, and the best '
+    + 'evidence says people rather than bots do most of the carrying. The check takes ninety seconds and '
+    + 'names what you actually looked at. In an election every tactic here runs at once, and how much any '
+    + 'of it changes an outcome is still argued.',
 
   questions: [
+    { skill: 'Fallacies and Propaganda',
+      text: 'Pick something you saw this week that made you feel something strongly. Name the feeling, '
+        + 'and explain how that feeling helped the thing travel.',
+      startHere: 'Name the feeling, then one sentence on how it spread.',
+      pushFurther: 'Say whether it was false, or true and framed to mislead, and how you can tell the difference.' },
     { skill: 'Sourcing',
-      text: 'Find the sentence in a real privacy policy that comes closest to saying "we sell your data." '
-        + 'Quote it exactly. Then say whether it actually says that.',
-      startHere: 'Copy one sentence and add one sentence of your own about it.',
-      pushFurther: 'Quote the sentence right after it, and explain what the pair together allows.' },
-    { skill: 'Sourcing',
-      text: 'For the policy you read: who wrote it, when was it last updated, and who does it protect?',
-      startHere: 'Answer all three. One line each is enough.',
-      pushFurther: 'Find something in it that reads more like a shield for the company than a promise to you, and quote it.' },
+      text: 'Take one claim you are not sure about and check it laterally. Write down what you did: who '
+        + 'published it, when, and who else reports it.',
+      startHere: 'Two moves is enough. Write what you found, including if you found nothing.',
+      pushFurther: 'Find the earliest version you can, and say who benefits if people believe it.' },
     { skill: 'Generalizing from Evidence',
-      text: 'Look back at the chain you drew in Topic 1. Does the policy support it, contradict it, or say '
-        + 'nothing about it? Point to the sentence that decides it.',
-      startHere: 'Pick one box from your chain and one sentence from the policy.',
-      pushFurther: 'Redraw the box you got wrong, and say what evidence made you change it.' }
+      text: 'Pick one item from Part Five and explain the mechanism: step by step, how would it actually '
+        + 'change an election?',
+      startHere: 'One item, three steps.',
+      pushFurther: 'Name the evidence that would show it changed an outcome, and say whether that evidence could exist.' }
   ]
 };
 
-// ── Topic 5 ───────────────────────────────────────────────────────────────────
-const TOPIC_5 = {
-  n: 5,
-  key: 'sm-t5',
+// ── Topic 6 ───────────────────────────────────────────────────────────────────
+const TOPIC_6 = {
+  n: 6,
+  key: 'sm-t6',
   slug: 'who-decides',
-  topic: 'Topic 5',
+  topic: 'Topic 6',
   title: 'Who Gets to <em>Decide</em>?',
-  eyebrow: 'Social Media · Topic 5',
+  eyebrow: 'Social Media · Topic 6',
   deck: 'I told you on the first day I would ask you a hard question at the end. Here it is.',
   subtitle: 'You, the company, or the government',
   skillTags: ['Synthesizing Patterns', 'Generalizing from Evidence'],
@@ -566,7 +969,8 @@ const TOPIC_5 = {
   overview: 'On the first day I told you I would ask you a hard question at the end, and this is '
     + 'it: who should get to decide what a platform is allowed to do to your attention, you, the '
     + 'company, or the government? You traced the money, took a film apart, opened the algorithm '
-    + 'box, and read the company\'s own document, so today is a real argument instead of opinions. '
+    + 'box, weighed the research on what it does to people, and followed a false story through the '
+    + 'system, so today is a real argument instead of opinions. '
     + 'You will not be graded on which side you land.',
 
   // Three targets for the three moves the topic teaches: map the argument, find the
@@ -620,8 +1024,9 @@ const TOPIC_5 = {
   support: [
     { label: 'Before You Read',
       body: 'You now know how the machine works. You traced the money, watched the film and took it apart, '
-        + 'opened the algorithm box, and read the company\'s own document. That was all so today would be '
-        + 'a real argument instead of opinions.' },
+        + 'opened the algorithm box, read the evidence about effects and about your own record, and '
+        + 'followed a lie through the system. That was all so today would be a real argument instead of '
+        + 'opinions.' },
     { label: 'Reading Target',
       body: 'By the end you should be able to state the strongest version of a position you do not hold, '
         + 'well enough that somebody who holds it would say you got it right.' }
@@ -758,4 +1163,4 @@ const TOPIC_5 = {
   ]
 };
 
-module.exports = { meta: UNIT, topics: [TOPIC_1, TOPIC_2, TOPIC_3, TOPIC_4, TOPIC_5] };
+module.exports = { meta: UNIT, topics: [TOPIC_1, TOPIC_2, TOPIC_3, TOPIC_4, TOPIC_5, TOPIC_6] };

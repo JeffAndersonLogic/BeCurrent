@@ -77,28 +77,28 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
-## SM4 - Reading a Privacy Policy
+## SM4 - Effects and Your Footprint
 
-**Assignment name, Canvas and PowerSchool, character for character:** `SM4 - Reading a Privacy Policy`  
+**Assignment name, Canvas and PowerSchool, character for character:** `SM4 - Effects and Your Footprint`  
 **Points:** 20  
-**Calendar event it belongs to:** `CE - SM4 - Go Check It Yourself`  
+**Calendar event it belongs to:** `CE - SM4 - What It Does to You, and What It Keeps`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Social Media, Topic 4: Go Check It Yourself</h2>
-<p><em>Reading a privacy policy as a primary source</em></p>
+<h2>Social Media, Topic 4: What It Does to You, and What It Keeps</h2>
+<p><em>Evidence about effects, and a record that does not delete</em></p>
 
 <h3>Step 1 &mdash; Open the Brief</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-04-brief-privacy-policy-capture.html" target="_blank" rel="noopener">Go Check It Yourself</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-04-brief-effects-and-footprint-capture.html" target="_blank" rel="noopener">What It Does to You, and What It Keeps</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
-<p>Half this room wrote that the company sells your data. I told you that was mostly wrong and I did not prove it, which is not good enough. Today you check me. A privacy policy is a primary source: free, in your pocket, and the document the company can actually be held to. You will search it rather than read it, and find out what it does and does not say.</p>
+<p>Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it.</p>
 <ol>
-    <li><strong>Sourcing.</strong> Find the sentence in a real privacy policy that comes closest to saying "we sell your data." Quote it exactly. Then say whether it actually says that.</li>
-    <li><strong>Sourcing.</strong> For the policy you read: who wrote it, when was it last updated, and who does it protect?</li>
-    <li><strong>Generalizing from Evidence.</strong> Look back at the chain you drew in Topic 1. Does the policy support it, contradict it, or say nothing about it? Point to the sentence that decides it.</li>
+    <li><strong>Cause and Effect.</strong> Pick one negative effect from Part Two. Name the mechanism: step by step, what connects using the app to feeling worse?</li>
+    <li><strong>Corroboration.</strong> Two researchers study the same teenagers and reach opposite conclusions. Give two reasons that can happen without either of them lying.</li>
+    <li><strong>Generalizing from Evidence.</strong> Name three pieces of your digital footprint that sit somewhere you cannot delete. For one of them, say what somebody could decide about you from it.</li>
 </ol>
 <p>Every question has a <strong>START HERE</strong> card and a <strong>PUSH FURTHER</strong> card. START HERE is the whole answer, not a lesser one. Take PUSH FURTHER when you have the first part down.</p>
 <p><strong>Type a real answer in every box.</strong> Gather All My Work collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -117,9 +117,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.</li>
-    <li>I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.</li>
-    <li>I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.</li>
+    <li>I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.</li>
+    <li>I can name two things I would want to know about a study before I believed its headline.</li>
+    <li>I can name three places a piece of my footprint sits that I cannot delete myself.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">The whole Social Media unit, if you missed a topic</a></p>
@@ -127,24 +127,74 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
-## SM5 - Who Decides
+## SM5 - How a Lie Travels
 
-**Assignment name, Canvas and PowerSchool, character for character:** `SM5 - Who Decides`  
+**Assignment name, Canvas and PowerSchool, character for character:** `SM5 - How a Lie Travels`  
 **Points:** 20  
-**Calendar event it belongs to:** `CE - SM5 - Who Gets to Decide?`  
+**Calendar event it belongs to:** `CE - SM5 - How a Lie Travels`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Social Media, Topic 5: Who Gets to Decide?</h2>
-<p><em>You, the company, or the government</em></p>
+<h2>Social Media, Topic 5: How a Lie Travels</h2>
+<p><em>Fake news, the tactics that carry it, and elections</em></p>
 
 <h3>Step 1 &mdash; Open the Brief</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-05-brief-who-decides-capture.html" target="_blank" rel="noopener">Who Gets to Decide?</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-05-brief-fake-news-capture.html" target="_blank" rel="noopener">How a Lie Travels</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
-<p>On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, and read the company's own document, so today is a real argument instead of opinions. You will not be graded on which side you land.</p>
+<p>Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.</p>
+<ol>
+    <li><strong>Fallacies and Propaganda.</strong> Pick something you saw this week that made you feel something strongly. Name the feeling, and explain how that feeling helped the thing travel.</li>
+    <li><strong>Sourcing.</strong> Take one claim you are not sure about and check it laterally. Write down what you did: who published it, when, and who else reports it.</li>
+    <li><strong>Generalizing from Evidence.</strong> Pick one item from Part Five and explain the mechanism: step by step, how would it actually change an election?</li>
+</ol>
+<p>Every question has a <strong>START HERE</strong> card and a <strong>PUSH FURTHER</strong> card. START HERE is the whole answer, not a lesser one. Take PUSH FURTHER when you have the first part down.</p>
+<p><strong>Type a real answer in every box.</strong> Gather All My Work collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
+
+<h3>Step 3 &mdash; Submit in Canvas</h3>
+<ol>
+    <li>Scroll to the <strong>Save Your Work</strong> panel at the end of the Brief.</li>
+    <li>Click <strong>Gather All My Work</strong>. This pulls every response you typed into one block.</li>
+    <li>Click <strong>Copy to Clipboard</strong>.</li>
+    <li>Paste it into the submission box below and click Submit.</li>
+</ol>
+<p><strong>This is the only way your work reaches me.</strong> BeCurrent saves your typing in the browser on the device you used, but that is not a submission and it does not follow you to another Chromebook. If you do not submit in Canvas, I have no record that you did the work.</p>
+
+<h3>Due</h3>
+<p>The beginning of our next class period.</p>
+
+<h3>Success criteria</h3>
+<ol>
+    <li>I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.</li>
+    <li>I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.</li>
+    <li>I can explain the difference between a claim that is false and a claim that is true but framed to mislead.</li>
+</ol>
+
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/index.html" target="_blank" rel="noopener">The whole Social Media unit, if you missed a topic</a></p>
+```
+
+---
+
+## SM6 - Who Decides
+
+**Assignment name, Canvas and PowerSchool, character for character:** `SM6 - Who Decides`  
+**Points:** 20  
+**Calendar event it belongs to:** `CE - SM6 - Who Gets to Decide?`  
+
+Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
+
+```html
+<h2>Social Media, Topic 6: Who Gets to Decide?</h2>
+<p><em>You, the company, or the government</em></p>
+
+<h3>Step 1 &mdash; Open the Brief</h3>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/social-media/topic-06-brief-who-decides-capture.html" target="_blank" rel="noopener">Who Gets to Decide?</a></p>
+<p>Everything happens on the website. There is nothing to download.</p>
+
+<h3>Step 2 &mdash; Read it and answer all 3</h3>
+<p>On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.</p>
 <ol>
     <li><strong>Synthesizing Patterns.</strong> Pick the position you do NOT hold. State the strongest version of it, in your own words, as well as you possibly can.</li>
     <li><strong>Generalizing from Evidence.</strong> Pick one earlier fight: comic books, television, music lyrics, or video games. What happened, and what does it predict about this one?</li>

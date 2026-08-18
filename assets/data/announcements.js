@@ -174,42 +174,80 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-08-18",
-      "topic": "Go Check It Yourself",
+      "topic": "What It Does to You, and What It Keeps",
       "unit": "Social Media",
-      "subtitle": "Reading a privacy policy as a primary source",
+      "subtitle": "Evidence about effects, and a record that does not delete",
       "learningTargets": [
         {
-          "text": "I can explain the difference between a primary source and somebody else's summary of one, and say why a company's own privacy policy is the primary source here.",
-          "label": "Sourcing"
+          "text": "I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.",
+          "label": "Cause and Effect"
         },
         {
-          "text": "I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.",
-          "label": "Sourcing"
+          "text": "I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.",
+          "label": "Corroboration"
         },
         {
-          "text": "I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.",
-          "label": "Sourcing"
+          "text": "I can describe what my digital footprint contains, and name one decision somebody could make about me from it.",
+          "label": "Generalizing from Evidence"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.",
-          "label": "Sourcing"
+          "text": "I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.",
+          "label": "Cause and Effect"
         },
         {
-          "text": "I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.",
-          "label": "Generalizing from Evidence"
+          "text": "I can name two things I would want to know about a study before I believed its headline.",
+          "label": "Corroboration"
         },
         {
-          "text": "I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.",
+          "text": "I can name three places a piece of my footprint sits that I cannot delete myself.",
           "label": "Generalizing from Evidence"
         }
       ],
       "homework": "Finish your three Brief responses and submit them in Canvas.",
-      "note": "Bring a device today. The document is the assignment."
+      "note": "Bring a device today. You are going to look yourself up."
     },
     {
       "date": "2026-08-20",
+      "topic": "How a Lie Travels",
+      "unit": "Social Media",
+      "subtitle": "Fake news, the tactics that carry it, and elections",
+      "learningTargets": [
+        {
+          "text": "I can name four tactics that make false information spread, and explain what each one does to the reader.",
+          "label": "Fallacies and Propaganda"
+        },
+        {
+          "text": "I can check an unfamiliar claim in under two minutes, and say specifically what I checked.",
+          "label": "Sourcing"
+        },
+        {
+          "text": "I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.",
+          "label": "Generalizing from Evidence"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.",
+          "label": "Fallacies and Propaganda"
+        },
+        {
+          "text": "I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.",
+          "label": "Sourcing"
+        },
+        {
+          "text": "I can explain the difference between a claim that is false and a claim that is true but framed to mislead.",
+          "label": "Corroboration"
+        }
+      ],
+      "homework": [
+        "Finish your three Brief responses and submit them in Canvas.",
+        "Bring one claim you saw this week that you are not sure about."
+      ]
+    },
+    {
+      "date": "2026-08-21",
       "topic": "Who Gets to Decide?",
       "unit": "Social Media",
       "subtitle": "You, the company, or the government",

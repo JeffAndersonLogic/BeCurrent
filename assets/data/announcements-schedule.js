@@ -16,7 +16,7 @@
 
        topic: 'SM3'     a unit topic. The letters are the unit's `code`
                         in its content module, the number is the topic.
-                        Social Media is SM, so SM1 to SM5.
+                        Social Media is SM, so SM1 to SM6.
        week: '01'       an orientation week, from scripts/lib/week-content/.
 
    Either one fills in the unit or week name, the title, the learning
@@ -77,10 +77,14 @@ window.BECURRENT_SCHEDULE = {
       homeworkDue: 'the start of next class' },
 
     { date: '2026-08-18', topic: 'SM4',
-      note: 'Bring a device today. The document is the assignment.',
+      note: 'Bring a device today. You are going to look yourself up.',
       homework: 'Finish your three Brief responses and submit them in Canvas.' },
 
     { date: '2026-08-20', topic: 'SM5',
+      homework: ['Finish your three Brief responses and submit them in Canvas.',
+                 'Bring one claim you saw this week that you are not sure about.'] },
+
+    { date: '2026-08-21', topic: 'SM6',
       homework: 'Finish your three Brief responses and submit them in Canvas.' }
   ],
 

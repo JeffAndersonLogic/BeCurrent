@@ -10,7 +10,7 @@ node scripts/build-lesson-plans.js          # write
 node scripts/build-lesson-plans.js --check  # fail on drift, write nothing
 ```
 
-CURRENT EVENTS · 5 topics · 3 with a Brief, 2 on paper
+CURRENT EVENTS · 6 topics · 4 with a Brief, 2 on paper
 
 ## What the unit is
 
@@ -31,8 +31,9 @@ version of the argument against them.
 | Topic 1 | Where the Money Comes From | On paper | 3 |
 | Topic 2 | Somebody Made a Film About This | On paper | 3 |
 | Topic 3 | Inside the Algorithm Box | Brief | 3 |
-| Topic 4 | Go Check It Yourself | Brief | 3 |
-| Topic 5 | Who Gets to Decide? | Brief | 3 |
+| Topic 4 | What It Does to You, and What It Keeps | Brief | 3 |
+| Topic 5 | How a Lie Travels | Brief | 3 |
+| Topic 6 | Who Gets to Decide? | Brief | 3 |
 
 Each topic uses the earlier ones. The chain drawn in Topic 1 is what gets checked
 against a real document in Topic 4, so they are a sequence rather than a list.
@@ -195,65 +196,66 @@ The Brief's own Gather All My Work panel. 3 responses plus their confidence rati
 
 ---
 
-## Topic 4. Go Check It Yourself
+## Topic 4. What It Does to You, and What It Keeps
 
-_Reading a privacy policy as a primary source_
+_Evidence about effects, and a record that does not delete_
 
 | | |
 |---|---|
-| Artifact | The Brief, `topic-04-brief-privacy-policy.html` |
-| Skills | Generalizing from Evidence, Sourcing |
-| Indiana 1512 | 2, Fallacies and propaganda; 5, Generalizing from evidence |
+| Artifact | The Brief, `topic-04-brief-effects-and-footprint.html` |
+| Skills | Corroboration, Cause and Effect |
+| Indiana 1512 | 1, Cause and effect; 5, Generalizing from evidence |
 | Reaches Canvas | Yes, through the Brief |
 
 ### Overview
 
-Half this room wrote that the company sells your data. I told you that was mostly wrong and I did not prove it, which is not good enough. Today you check me. A privacy policy is a primary source: free, in your pocket, and the document the company can actually be held to. You will search it rather than read it, and find out what it does and does not say.
+Two questions today, and they are different kinds of question. First: what does social media do to how you feel? That one has real research behind it, the research disagrees with itself, and your job is to learn to read a disagreement rather than pick a side. Second: what does the app keep after you close it? That one is not a debate. It is a record, it is longer than what you posted, and people who make decisions about your future can read part of it.
 
 ### Learning targets
 
-1. **Sourcing.** I can explain the difference between a primary source and somebody else's summary of one, and say why a company's own privacy policy is the primary source here.
-2. **Sourcing.** I can find what I need in a long document written not to be read, by going to its headings and searching for words instead of reading front to back.
-3. **Sourcing.** I can source a document by naming who wrote it, when it was last updated, and who it is written to protect.
+1. **Cause and Effect.** I can name a positive and a negative effect of social media, and say what would have to be true for either one to be a cause rather than a coincidence.
+2. **Corroboration.** I can explain why two honest researchers looking at the same teenagers reach opposite conclusions about harm.
+3. **Generalizing from Evidence.** I can describe what my digital footprint contains, and name one decision somebody could make about me from it.
 
 ### Success criteria
 
-1. **Sourcing.** I can quote one sentence from a named policy, with the date it was updated, and say both what it claims and what it carefully does not.
-2. **Generalizing from Evidence.** I can explain what the document did to the chain I drew in Topic 1: the money does come from advertisers, and what is sold is access to me rather than a file about me.
-3. **Generalizing from Evidence.** I can point at a sentence that is completely true and still not reassuring, and explain what makes those two different.
+1. **Cause and Effect.** I can state a claim about social media and mental health, and say whether the evidence behind it shows a cause or only a pattern.
+2. **Corroboration.** I can name two things I would want to know about a study before I believed its headline.
+3. **Generalizing from Evidence.** I can name three places a piece of my footprint sits that I cannot delete myself.
 
 ### What happens in class
 
-You check the chain you drew in Topic 1 against the company's own privacy policy. Bring a device for this one, because the document is the assignment.
+We sort the good effects and the bad ones, then test one claim against the actual research. Second half you find out what your own record already contains.
 
 ### The Brief
 
-**Before You Read.** In Topic 1 a lot of chains said the company sells your data. I told you that was mostly wrong and I did not prove it. Fair enough. Today you check me.
+**Before You Read.** Topic 3 was the machine: what the app counts, and what it does with the count. Today is the two things that machine touches. How you feel, and what it keeps.
 
-**Reading Target.** By the end you should be able to point at a specific sentence in a real document and say what it does and does not claim.
+**Reading Target.** By the end you should be able to explain why two honest researchers disagree about whether social media harms teenagers, and name three parts of your record you cannot delete.
 
-**Key terms.** primary source, privacy policy, third party, consent, data broker.
+**Key terms.** correlation, causation, effect size, social comparison, digital footprint, data broker, two-factor authentication.
 
-- **Part One.** A primary source is the thing itself
-- **Part Two.** How to read a document that does not want to be read
-- **Part Three.** What the document actually says
-- **Part Four.** Source the document, not just the claim
+- **Part One.** The good half, and it is not a consolation prize
+- **Part Two.** The bad half, named precisely
+- **Part Three.** Why two honest researchers disagree about the same teenagers
+- **Part Four.** The record, which is not a debate
+- **Part Five.** What actually protects it, and what does not
 
-**The Road Not Taken.** These documents exist because of specific fights, not because companies volunteered
+**The Road Not Taken.** Permanent is a policy choice, and the policy is still moving
 
-**BeReady, the 10-second takeaway.** The privacy policy is a primary source you can read for free. Search it rather than reading it. "Share" and "sell" are different words doing different work, and the gap between them is where the real answer lives.
+**BeReady, the 10-second takeaway.** The good effects and the bad effects are both real, they land unevenly, and how big an effect is matters as much as whether it exists. The record is a different kind of question: it is longer than what you posted, parts of it are not yours to delete, and people who decide things about you can read some of it.
 
 ### The questions
 
-1. **Sourcing.** Find the sentence in a real privacy policy that comes closest to saying "we sell your data." Quote it exactly. Then say whether it actually says that.
-   - START HERE: Copy one sentence and add one sentence of your own about it.
-   - PUSH FURTHER: Quote the sentence right after it, and explain what the pair together allows.
-2. **Sourcing.** For the policy you read: who wrote it, when was it last updated, and who does it protect?
-   - START HERE: Answer all three. One line each is enough.
-   - PUSH FURTHER: Find something in it that reads more like a shield for the company than a promise to you, and quote it.
-3. **Generalizing from Evidence.** Look back at the chain you drew in Topic 1. Does the policy support it, contradict it, or say nothing about it? Point to the sentence that decides it.
-   - START HERE: Pick one box from your chain and one sentence from the policy.
-   - PUSH FURTHER: Redraw the box you got wrong, and say what evidence made you change it.
+1. **Cause and Effect.** Pick one negative effect from Part Two. Name the mechanism: step by step, what connects using the app to feeling worse?
+   - START HERE: Two or three sentences. Name the effect, then how it works.
+   - PUSH FURTHER: Then give one reason a researcher might not be able to prove your mechanism is the cause.
+2. **Corroboration.** Two researchers study the same teenagers and reach opposite conclusions. Give two reasons that can happen without either of them lying.
+   - START HERE: Two reasons, one sentence each.
+   - PUSH FURTHER: Say which study in Part Three you find more convincing, and what would change your mind.
+3. **Generalizing from Evidence.** Name three pieces of your digital footprint that sit somewhere you cannot delete. For one of them, say what somebody could decide about you from it.
+   - START HERE: Three places, then one decision.
+   - PUSH FURTHER: Name one thing in your footprint that would help you, and say who would have to see it.
 
 ### Where the work goes
 
@@ -261,20 +263,87 @@ The Brief's own Gather All My Work panel. 3 responses plus their confidence rati
 
 ---
 
-## Topic 5. Who Gets to Decide?
+## Topic 5. How a Lie Travels
+
+_Fake news, the tactics that carry it, and elections_
+
+| | |
+|---|---|
+| Artifact | The Brief, `topic-05-brief-fake-news.html` |
+| Skills | Sourcing, Corroboration |
+| Indiana 1512 | 2, Fallacies and propaganda; 5, Generalizing from evidence |
+| Reaches Canvas | Yes, through the Brief |
+
+### Overview
+
+Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.
+
+### Learning targets
+
+1. **Fallacies and Propaganda.** I can name four tactics that make false information spread, and explain what each one does to the reader.
+2. **Sourcing.** I can check an unfamiliar claim in under two minutes, and say specifically what I checked.
+3. **Generalizing from Evidence.** I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.
+
+### Success criteria
+
+1. **Fallacies and Propaganda.** I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.
+2. **Sourcing.** I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.
+3. **Corroboration.** I can explain the difference between a claim that is false and a claim that is true but framed to mislead.
+
+### What happens in class
+
+We take a real hoax apart, name the four tactics that carry one, then do the checking, which takes about ninety seconds and almost nobody does.
+
+### The Brief
+
+**Before You Read.** You know the machine now: what the app counts and what it pushes a number on. Today you find out what kind of content that machine rewards, and what happens when somebody builds content for it deliberately.
+
+**Reading Target.** By the end you should be able to check a claim you are unsure about in under two minutes, and say out loud what you checked rather than that you did not believe it.
+
+**Key terms.** misinformation, disinformation, clickbait, deepfake, bot, lateral reading, echo chamber, microtargeting.
+
+- **Part One.** Two words, and the difference is the person sending it
+- **Part Two.** The four tactics
+- **Part Three.** Who actually spreads it, and it is not the bots
+- **Part Four.** The checking, which takes about ninety seconds
+- **Part Five.** Elections, where all of it runs at once
+
+**The Road Not Taken.** The echo chamber is the part of this that might be wrong
+
+**BeReady, the 10-second takeaway.** False things travel because they are new and they make you feel something, and the best evidence says people rather than bots do most of the carrying. The check takes ninety seconds and names what you actually looked at. In an election every tactic here runs at once, and how much any of it changes an outcome is still argued.
+
+### The questions
+
+1. **Fallacies and Propaganda.** Pick something you saw this week that made you feel something strongly. Name the feeling, and explain how that feeling helped the thing travel.
+   - START HERE: Name the feeling, then one sentence on how it spread.
+   - PUSH FURTHER: Say whether it was false, or true and framed to mislead, and how you can tell the difference.
+2. **Sourcing.** Take one claim you are not sure about and check it laterally. Write down what you did: who published it, when, and who else reports it.
+   - START HERE: Two moves is enough. Write what you found, including if you found nothing.
+   - PUSH FURTHER: Find the earliest version you can, and say who benefits if people believe it.
+3. **Generalizing from Evidence.** Pick one item from Part Five and explain the mechanism: step by step, how would it actually change an election?
+   - START HERE: One item, three steps.
+   - PUSH FURTHER: Name the evidence that would show it changed an outcome, and say whether that evidence could exist.
+
+### Where the work goes
+
+The Brief's own Gather All My Work panel. 3 responses plus their confidence ratings, copied by the student and pasted into Canvas as Text Entry. That panel is the only route these answers have, because the Brief is a standalone page inside an iframe.
+
+---
+
+## Topic 6. Who Gets to Decide?
 
 _You, the company, or the government_
 
 | | |
 |---|---|
-| Artifact | The Brief, `topic-05-brief-who-decides.html` |
+| Artifact | The Brief, `topic-06-brief-who-decides.html` |
 | Skills | Synthesizing Patterns, Generalizing from Evidence |
 | Indiana 1512 | 3, Synthesizing patterns; 4, Hypotheses; 5, Generalizing from evidence |
 | Reaches Canvas | Yes, through the Brief |
 
 ### Overview
 
-On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, and read the company's own document, so today is a real argument instead of opinions. You will not be graded on which side you land.
+On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.
 
 ### Learning targets
 
@@ -294,7 +363,7 @@ The question from day one, argued properly. You state the strongest version of a
 
 ### The Brief
 
-**Before You Read.** You now know how the machine works. You traced the money, watched the film and took it apart, opened the algorithm box, and read the company's own document. That was all so today would be a real argument instead of opinions.
+**Before You Read.** You now know how the machine works. You traced the money, watched the film and took it apart, opened the algorithm box, read the evidence about effects and about your own record, and followed a lie through the system. That was all so today would be a real argument instead of opinions.
 
 **Reading Target.** By the end you should be able to state the strongest version of a position you do not hold, well enough that somebody who holds it would say you got it right.
 

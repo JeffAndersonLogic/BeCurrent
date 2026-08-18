@@ -70,8 +70,9 @@ const DECK_URL = '';
 // submit to is a gradebook row that reads as missing work for the whole class.
 const ASSIGNMENTS = {
   SM3: { name: 'SM3 - Inside the Algorithm', points: 20 },
-  SM4: { name: 'SM4 - Reading a Privacy Policy', points: 20 },
-  SM5: { name: 'SM5 - Who Decides', points: 20 }
+  SM4: { name: 'SM4 - Effects and Your Footprint', points: 20 },
+  SM5: { name: 'SM5 - How a Lie Travels', points: 20 },
+  SM6: { name: 'SM6 - Who Decides', points: 20 }
 };
 
 const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
