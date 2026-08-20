@@ -157,6 +157,11 @@ push. That keeps the record of what it would have caught.
   artwork. Trims and recolours; never redraws. Needs
   `pip install fonttools brotli svgelements`, and is off the test path on
   purpose. See "The Mark, the Palette, and the Faces" below.
+- `node scripts/decks/build-topic-0N-deck.js`, rebuild a block's projected slide
+  deck into `social-media/decks/`. Needs `npm i pptxgenjs`, which is deliberately
+  not a repo dependency, and is deliberately outside every suite: nothing a
+  student can reach depends on a deck. Read `scripts/decks/README.md` first,
+  especially before checking one for overflowing text.
 
 The student entry point is `index.html`, and it is generated. Student work reaches
 the teacher through **Canvas only**.
@@ -622,6 +627,39 @@ Three things about it that are not obvious, all covered in `docs/CANVAS-CAPTURE.
   `indexOf` fails across the heading boundary and the whitespace-insensitive
   fallback is what carries it, so a comma or a dash at that point gives
   `MISSING_BODY` on every record.
+## Teaching Decks
+
+The slides a block is taught from live in `social-media/decks/` as `.pptx` files,
+built by the generators in `scripts/decks/`. They are the one artifact here that
+is deliberately **not** a generated web page, because a deck is projected by one
+person on whatever laptop is plugged in, sometimes with no network, and it gets
+reordered mid-lesson. PowerPoint and Google Slides both open a `.pptx` and
+neither needs this repo to have deployed.
+
+`validate.js` says nothing about them on purpose. A deck is not on any student's
+path, so the gate has no business having an opinion about it, the same way it has
+no opinion about how many modules a lesson shows.
+
+There is still a generator, because hand-editing a binary is how content drifts.
+The Topic 6 builder reads its positions, precedents and questions out of
+`scripts/lib/unit-content/social-media.js` and **fails the build** if that module
+stops saying what the slides claim it says, so the deck cannot quietly teach last
+term's argument. Editing the `.pptx` in PowerPoint for a classroom fix is fine
+and will be overwritten by the next rebuild; that is the intended tradeoff.
+
+Two things in `scripts/decks/deck-kit.js` are load-bearing rather than
+decorative, and both are written up in `scripts/decks/README.md`: content slides
+are light for the same projector reasons as the Polarity section below, and the
+type is Cambria, Calibri and Courier New rather than the brand faces, because a
+`.pptx` carries a font *name* and a face the projector laptop lacks silently
+substitutes and reflows the slide in front of the room.
+
+**Checking a deck needs the metric-compatible fonts installed**
+(`fonts-crosextra-caladea`, `fonts-crosextra-carlito`) or LibreOffice measures
+substitutes that are wider than the real ones and reports overflow on slides that
+are fine. That is the same trap as BeHistorical's font-dependent reflow check: a
+check run against the wrong fonts reports confidently about a page nobody will
+ever see.
 
 ## The Canvas Record Footer
 
@@ -931,6 +969,15 @@ Honest list, so nobody assumes coverage that does not exist:
 9. **No clips are configured yet.** The video mechanism is built and tested, but
    every `videos` array is empty because the URLs have to be real ones you supply.
    Nothing was invented to fill them.
+9. **Topic 5 has no content module.** How a Lie Travels was written into the arc
+   after `scripts/lib/unit-content/social-media.js` was, so that file still
+   describes five blocks and Who Gets to Decide is Block 5 in it while being
+   Topic 6 in the teaching plan. Its Brief is authored prose with no block behind
+   it, which means `build-topic-05-deck.js` carries its own copy of that text.
+   **That is the only real content duplication in this repo**, and it is the next
+   thing to fix: land Topic 5 as a block, renumber, and point its deck at the
+   module the way the Topic 6 deck already does. See
+   `scripts/decks/README.md`.
 
 ## Units and Topics
 
