@@ -382,7 +382,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.</p>
+                <p>On the first day I said I would ask you a hard question at the end. This is it. Who should get to decide what a platform is allowed to do to your attention: you, the company, or the government? You have earned the right to argue it. You traced the money, took a film apart, opened the algorithm box, weighed the research on what these systems do to people, and followed a false story through the system. You will not be graded on which side you choose.</p>
             </td>
         </tr>
         <tr>
@@ -391,9 +391,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.</li>
-                    <li>I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.</li>
-                    <li>I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.</li>
+                    <li>I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.</li>
+                    <li>I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.</li>
+                    <li>I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.</li>
                 </ol>
             </td>
         </tr>
@@ -403,8 +403,8 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can state the position I did not pick well enough that somebody who holds it would say I got it right.</li>
-                    <li>I can answer the hardest question against my own position, rather than restating why I am right.</li>
+                    <li>I can state the position I did not choose well enough that somebody who holds it would say I got it right.</li>
+                    <li>I can answer the hardest problem with my own position, instead of repeating why I am right.</li>
                     <li>I can name what would change my mind, specifically enough that somebody could go looking for it.</li>
                 </ol>
             </td>

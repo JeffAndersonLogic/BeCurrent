@@ -347,27 +347,27 @@ _You, the company, or the government_
 
 ### Overview
 
-On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.
+On the first day I said I would ask you a hard question at the end. This is it. Who should get to decide what a platform is allowed to do to your attention: you, the company, or the government? You have earned the right to argue it. You traced the money, took a film apart, opened the algorithm box, weighed the research on what these systems do to people, and followed a false story through the system. You will not be graded on which side you choose.
 
 ### Learning targets
 
-1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.
-2. **Hypotheses.** I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.
-3. **Generalizing from Evidence.** I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.
+1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.
+2. **Hypotheses.** I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.
+3. **Generalizing from Evidence.** I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.
 
 ### Success criteria
 
-1. **Synthesizing Patterns.** I can state the position I did not pick well enough that somebody who holds it would say I got it right.
-2. **Synthesizing Patterns.** I can answer the hardest question against my own position, rather than restating why I am right.
+1. **Synthesizing Patterns.** I can state the position I did not choose well enough that somebody who holds it would say I got it right.
+2. **Synthesizing Patterns.** I can answer the hardest problem with my own position, instead of repeating why I am right.
 3. **Hypotheses.** I can name what would change my mind, specifically enough that somebody could go looking for it.
 
 ### What happens in class
 
-The question from day one, argued properly. You state the strongest version of a position you do not hold, then take your own.
+The question from day one, argued properly. You state the strongest version of a position you do not hold, and then you take your own.
 
 ### The Brief
 
-**Before You Read.** You now know how the machine works. You traced the money, watched the film and took it apart, opened the algorithm box, read the evidence about effects and about your own record, and followed a lie through the system. That was all so today would be a real argument instead of opinions.
+**Before You Read.** You already know how the machine works. You traced the money, took a film apart, opened the algorithm box, read the evidence about effects and about your own record, and followed a false story through the system. All of that was so today could be a real argument instead of a set of opinions.
 
 **Reading Target.** By the end you should be able to state the strongest version of a position you do not hold, well enough that somebody who holds it would say you got it right.
 
@@ -377,23 +377,23 @@ The question from day one, argued properly. You state the strongest version of a
 - **Position One.** You decide
 - **Position Two.** The company decides
 - **Position Three.** The government decides
-- **The Method.** This argument has been had before
+- **The Method.** This argument has happened before
 
-**The Road Not Taken.** The rules we have were chosen, and one of them was almost undone
+**The Road Not Taken.** The rules we have now were chosen, and one of them nearly did not survive
 
-**BeReady, the 10-second takeaway.** Three answers, each with a real case and a real cost. This argument has been had four times before about four different media, and it usually ended in self-regulation under pressure. Your job is not to win it today. It is to state the other side well enough that they would recognize it.
+**BeReady, the 10-second takeaway.** There are three answers, and each one has a real case and a real cost. This argument has happened four times before about four other media, and it usually ended with the industry regulating itself under pressure. Your job today is not to win. Your job is to state the other side well enough that somebody who holds it would say you got it right.
 
 ### The questions
 
-1. **Synthesizing Patterns.** Pick the position you do NOT hold. State the strongest version of it, in your own words, as well as you possibly can.
-   - START HERE: Three or four sentences making the best case for a side you disagree with.
-   - PUSH FURTHER: Then name the one fact that would make that side clearly right.
-2. **Generalizing from Evidence.** Pick one earlier fight: comic books, television, music lyrics, or video games. What happened, and what does it predict about this one?
-   - START HERE: Say what happened and one thing it predicts.
-   - PUSH FURTHER: Name one way social media is genuinely different, and say whether that breaks your prediction.
-3. **Generalizing from Evidence.** What evidence would change your mind? Be specific enough that somebody could go looking for it.
-   - START HERE: One thing. It has to be something a person could actually find out.
-   - PUSH FURTHER: Say why you have not gone looking for it yet.
+1. **Synthesizing Patterns.** Choose the position you do not agree with. Write the strongest case for it, in your own words.
+   - START HERE: Three or four sentences making the best case you can for a side you disagree with.
+   - PUSH FURTHER: Then name one fact that, if it turned out to be true, would make that position clearly correct.
+2. **Generalizing from Evidence.** Choose one earlier argument: comic books, television, music lyrics, or video games. Describe what happened, then name one way social media is different from that medium.
+   - START HERE: Say what happened in two or three sentences, then name one difference.
+   - PUSH FURTHER: Explain whether that difference makes the earlier case more useful or less useful for deciding this one.
+3. **Generalizing from Evidence.** What evidence would change your mind about who should decide? Be specific enough that somebody could go looking for it.
+   - START HERE: Name one thing. It has to be something a person could actually find out.
+   - PUSH FURTHER: Explain where a person could look for that evidence.
 
 ### Where the work goes
 

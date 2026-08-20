@@ -257,25 +257,25 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "You, the company, or the government",
       "learningTargets": [
         {
-          "text": "I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.",
+          "text": "I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.",
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.",
+          "text": "I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.",
           "label": "Hypotheses"
         },
         {
-          "text": "I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.",
+          "text": "I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.",
           "label": "Generalizing from Evidence"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can state the position I did not pick well enough that somebody who holds it would say I got it right.",
+          "text": "I can state the position I did not choose well enough that somebody who holds it would say I got it right.",
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can answer the hardest question against my own position, rather than restating why I am right.",
+          "text": "I can answer the hardest problem with my own position, instead of repeating why I am right.",
           "label": "Synthesizing Patterns"
         },
         {
