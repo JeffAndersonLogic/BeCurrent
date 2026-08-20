@@ -1,0 +1,334 @@
+<title>Topics 5 and 6 Teaching Sheet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  /* Palette lifted from assets/css/becurrent-brief.css, so the sheet in the
+     teacher's hand and the Brief on the student's screen are the same course.
+     Topic 5 takes the signal red, Topic 6 the cool blue: on a two-column sheet
+     the accent is how you know which column your thumb is on. */
+  :root{
+    --ink:#14171A; --ink-soft:#39424A; --ink-faint:#6B757E;
+    --newsprint:#F4F2ED; --paper:#FFFEFB; --rule:#D7D3CB; --rule-soft:#E4E0D8;
+    --t5:#96201F; --t5-tint:#F6E7E5;
+    --t6:#1B4E68; --t6-tint:#E2ECF1;
+    --sans:"Source Sans 3","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#F2F0EA; --ink-soft:#C3C8CD; --ink-faint:#8C959D;
+      --newsprint:#15181B; --paper:#1D2126; --rule:#333A41; --rule-soft:#282E34;
+      --t5:#E98B84; --t5-tint:#2B1E1E;
+      --t6:#8FBFD8; --t6-tint:#17262E;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#F2F0EA; --ink-soft:#C3C8CD; --ink-faint:#8C959D;
+    --newsprint:#15181B; --paper:#1D2126; --rule:#333A41; --rule-soft:#282E34;
+    --t5:#E98B84; --t5-tint:#2B1E1E;
+    --t6:#8FBFD8; --t6-tint:#17262E;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--newsprint);color:var(--ink);font-family:var(--sans)}
+
+  .sheet{
+    width:min(7.86in,100%); margin:0 auto; padding:14px;
+    font-size:13.4px; line-height:1.22;
+  }
+  @media print{ .sheet{ font-size:10.2px; padding:0; width:100% } }
+
+  /* ── Sheet head ──────────────────────────────────────────────────────────── */
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:1em;
+    border-bottom:2px solid var(--ink);padding-bottom:.42em}
+  .head h1{margin:0;font-size:1.32em;font-weight:800;letter-spacing:-.008em}
+  .head .who{font-family:var(--mono);font-size:.66em;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-faint);white-space:nowrap}
+
+  /* ── Two topic columns ───────────────────────────────────────────────────── */
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));
+    gap:1.25em;margin-top:.7em}
+  .col{min-width:0}
+  .col.t5{--accent:var(--t5);--accent-tint:var(--t5-tint)}
+  .col.t6{--accent:var(--t6);--accent-tint:var(--t6-tint)}
+
+  .topic{display:flex;align-items:baseline;gap:.5em}
+  .topic .n{font-family:var(--mono);font-size:.68em;font-weight:700;letter-spacing:.1em;
+    color:var(--accent)}
+  .topic h2{margin:0;font-size:1.16em;font-weight:800;letter-spacing:-.006em}
+  .thesis{margin:.24em 0 0;font-family:var(--serif);font-style:italic;
+    font-size:.94em;color:var(--ink-soft)}
+
+  h3{margin:.62em 0 .24em;font-size:.66em;font-weight:700;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--accent);
+    border-bottom:1px solid var(--rule-soft);padding-bottom:.16em}
+
+  p{margin:0 0 .3em}
+  .lede{font-family:var(--serif);font-size:.97em;margin-bottom:.38em}
+  b,strong{font-weight:700;color:var(--ink)}
+
+  /* Facts you say out loud, with a date gutter. Ordered by when, because the
+     dates are the thing that gets fumbled. */
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:.18em .5em;
+    background:var(--accent-tint);padding:.38em .5em;border-radius:2px}
+  .facts dt{font-family:var(--mono);font-size:.74em;font-weight:700;
+    color:var(--accent);white-space:nowrap;padding-top:.14em;
+    font-variant-numeric:tabular-nums}
+  .facts dd{margin:0;font-size:.9em}
+
+  .terms{font-size:.9em}
+  .terms span{display:block;margin-bottom:.13em}
+  .terms b{font-family:var(--serif);font-weight:600}
+
+  ol,ul{margin:0;padding-left:1.15em}
+  li{margin-bottom:.15em;font-size:.9em}
+  ul.plain{list-style:none;padding-left:0}
+  ul.plain li{padding-left:.85em;position:relative}
+  ul.plain li::before{content:"";position:absolute;left:.16em;top:.52em;
+    width:.26em;height:.26em;background:var(--accent);border-radius:50%}
+
+  ol.spine{counter-reset:s;list-style:none;padding-left:0}
+  ol.spine li{padding-left:1.5em;position:relative}
+  ol.spine li::before{counter-increment:s;content:counter(s);position:absolute;left:0;
+    font-family:var(--mono);font-size:.78em;font-weight:700;color:var(--accent)}
+
+  .stance{display:grid;grid-template-columns:auto 1fr;gap:.13em .5em;font-size:.88em}
+  .stance .who{font-weight:700;white-space:nowrap}
+  .stance .cost{color:var(--ink-soft)}
+  .stance .lbl{font-family:var(--mono);font-size:.72em;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--accent)}
+
+  .dont li{color:var(--ink-soft)}
+  .dont li b{color:var(--ink)}
+
+  .endon{margin-top:.5em;padding:.36em .55em;border-radius:2px;
+    background:var(--paper);border:1px solid var(--rule);
+    font-family:var(--serif);font-size:.94em}
+  .endon i{display:block;font-family:var(--mono);font-style:normal;font-size:.7em;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:.18em}
+
+  /* ── Shared foot ─────────────────────────────────────────────────────────── */
+  .both{margin-top:.8em;border-top:2px solid var(--ink);padding-top:.4em}
+  .both h3{color:var(--ink);border:0;margin:0 0 .35em;padding:0}
+  .bothgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));
+    gap:.7em}
+  .bothgrid div{font-size:.88em}
+  .bothgrid strong{display:block;font-family:var(--mono);font-size:.74em;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.12em}
+  .src{margin-top:.45em;font-family:var(--mono);font-size:.68em;color:var(--ink-faint);
+    letter-spacing:.03em}
+
+  @page{size:letter portrait;margin:.32in}
+</style>
+
+<div class="sheet">
+
+  <div class="head">
+    <h1>Social Media, Topics 5 and 6</h1>
+    <div class="who">BeCurrent &middot; teaching sheet &middot; two 90-minute blocks</div>
+  </div>
+
+  <div class="cols">
+
+    <!-- ── TOPIC 5 ──────────────────────────────────────────────────────── -->
+    <div class="col t5">
+      <div class="topic"><span class="n">TOPIC 5</span><h2>How a Lie Travels</h2></div>
+      <p class="thesis">Why false stories spread faster than the corrections that follow them.</p>
+
+      <h3>The point of the block</h3>
+      <p class="lede">False stories spread because they are <b>new</b> and because they produce
+      <b>strong emotions</b>. People, not bots, do most of the spreading. A real check takes about two
+      minutes and <b>names what you looked at</b>.</p>
+
+      <h3>Say it right</h3>
+      <dl class="facts">
+        <dt>Apr 2013</dt><dd>The <b>AP</b> Twitter account is hacked: explosions at the White House,
+          the president injured. Market drops sharply <b>within seconds</b>, recovers within minutes.</dd>
+        <dt>Apr 2018</dt><dd><b>Jordan Peele and BuzzFeed</b> release a video of Obama he had nothing
+          to do with, made to show people it was possible.</dd>
+        <dt>2018</dt><dd><b>Vosoughi, Roy and Aral</b> (MIT), in <i>Science</i>: about <b>126,000</b>
+          rumor cascades over <b>11 years</b>. False spread farther and faster. They removed all bot
+          activity and <b>the finding held</b>. Explanation: novelty and emotion.</dd>
+        <dt>2016</dt><dd><b>Veles, North Macedonia</b>: BuzzFeed News traced US political hoax sites to
+          one town. In the final three months, top false election stories drew more Facebook
+          engagement than the top real ones.</dd>
+        <dt>Dec 2016</dt><dd><b>Pizzagate</b>: nothing to it. A man drove from another state and fired
+          a rifle inside the restaurant. Nobody hurt, which was luck.</dd>
+        <dt>Feb 2018</dt><dd>A US grand jury indicts <b>13 Russian nationals</b> and the Internet
+          Research Agency. The described aim was largely <b>widening divisions</b>, not backing a
+          candidate.</dd>
+        <dt>2018</dt><dd><b>Cambridge Analytica</b>: profile data on tens of millions via a quiz
+          app, used for political targeting. <b>$5B FTC penalty</b>, 2019.</dd>
+        <dt>2011&ndash;15</dt><dd><b>Pariser</b> names the filter bubble (2011). <b>Bakshy, Messing
+          and Adamic</b>, <i>Science</i> (2015): clicks mattered more than ranking, and <b>those
+          authors worked for Facebook</b>. Read carefully, do not throw out.</dd>
+      </dl>
+
+      <h3>Define out loud</h3>
+      <div class="terms">
+        <span><b>Misinformation</b> &mdash; false, spread by somebody who thinks it is true.</span>
+        <span><b>Disinformation</b> &mdash; false, spread by somebody who knows it is false.</span>
+        <span><b>Lateral reading</b> &mdash; leave the page and find out who published it.</span>
+        <span><b>Clickbait &middot; deepfake &middot; bot &middot; echo chamber &middot; microtargeting</b> &mdash; each in the sentence it first appears.</span>
+      </div>
+
+      <h3>The check, in order of return</h3>
+      <ol class="spine">
+        <li>Who published this?</li>
+        <li>When? Old stories recirculate as new ones constantly.</li>
+        <li>Does anybody else report it? If only one outlet has it, why?</li>
+        <li>What is the earliest version? The one you saw is several hands down the chain.</li>
+        <li>For a photograph, a reverse image search.</li>
+      </ol>
+      <p style="font-size:.86em;margin-top:.3em">For a claim you have already seen five times,
+      <b>read Snopes or FactCheck.org</b>. Somebody has done the work; reading it is faster than
+      repeating it.</p>
+
+      <h3>The class, in order</h3>
+      <ol class="spine">
+        <li>Open cold on the speed gap. Two words, one difference: <b>the sender</b>.</li>
+        <li>Four tactics: clickbait, deepfake, bots, emotion. Bots make a claim look
+          <b>popular</b>; they are not there to persuade anyone.</li>
+        <li>Put it next to Topic 3: the system rewards reaction, so <b>nobody has to decide to
+          promote a lie</b>.</li>
+        <li>The MIT study. Design first, finding second, bots-removed third. Let them draw the
+          conclusion.</li>
+        <li><b>Demonstrate lateral reading live</b> on one real claim. Narrate the tabs.</li>
+        <li>Elections, fast pass: pause only on procedure and the regulation gap. Then the echo
+          chamber, held loosely.</li>
+      </ol>
+
+      <h3>Do not</h3>
+      <ul class="plain dont">
+        <li><b>Do not moralize about screens.</b> The second it sounds like an adult warning, the
+          room files it away and stops reading.</li>
+        <li><b>Do not teach blanket doubt.</b> Doubting everything equally is paralysis, and it
+          helps anyone running a campaign. The goal is <b>calibration</b>.</li>
+        <li><b>Do not let "it was bots" stand.</b> It is comfortable: it puts the problem outside
+          the room.</li>
+        <li><b>Do not say social media decided an election.</b> The mechanisms are documented. The
+          size is not.</li>
+      </ul>
+
+      <h3>They write</h3>
+      <ol>
+        <li>One post that gave you a strong emotional reaction. <b>Name the emotion</b>, then how it
+          made people more likely to share it.</li>
+        <li>Check one claim by lateral reading. <b>Write what you did</b>: who published it, when,
+          and whether another source reports it.</li>
+        <li>One item from Part Five, <b>in three steps</b>: how could it change an election result?</li>
+      </ol>
+
+      <div class="endon"><i>End on</i>
+        The main fix is not technical. It is the two seconds before you repost.</div>
+    </div>
+
+    <!-- ── TOPIC 6 ──────────────────────────────────────────────────────── -->
+    <div class="col t6">
+      <div class="topic"><span class="n">TOPIC 6</span><h2>Who Gets to Decide?</h2></div>
+      <p class="thesis">I told you on the first day I would ask you a hard question at the end. Here it is.</p>
+
+      <h3>The question, word for word</h3>
+      <p class="lede">Who should get to decide what a platform is allowed to do to your attention:
+      <b>you</b>, <b>the company</b>, or <b>the government</b>?</p>
+      <p style="font-size:.88em">Not graded on which they pick. Graded on stating the strongest
+      version of the one they <b>did not</b>.</p>
+
+      <h3>Say this before the argument starts</h3>
+      <div class="terms">
+        <span><b>Nobody in this argument is stupid.</b> Every position is held by serious people who
+          have thought about it more than we have.</span>
+        <span><b>The trap:</b> if a position sounds obviously wrong, you are arguing with the weak
+          version, and beating that teaches nothing.</span>
+        <span><b>Tradeoff</b> &mdash; you give something up to get something.
+          <b>An answer with no tradeoff in it is not finished.</b></span>
+      </div>
+
+      <h3>The three, case and cost</h3>
+      <div class="stance">
+        <span class="lbl">You</span><span></span>
+        <span class="who">Case</span><span>Your attention, your phone, and the controls exist.</span>
+        <span class="who">Cost</span><span class="cost">Thousands of engineers and A/B tests on one side. Willpower on the other.</span>
+        <span class="lbl">Company</span><span></span>
+        <span class="who">Case</span><span>They built it. <b>Self-regulation</b> is not nothing: bad press does move them.</span>
+        <span class="who">Cost</span><span class="cost">Their income is your attention. You are asking the wrong party to protect you.</span>
+        <span class="lbl">Government</span><span></span>
+        <span class="who">Case</span><span><b>Regulation</b> is ordinary: seatbelts, no cigarette ads on TV, no full-time child labor.</span>
+        <span class="who">Cost</span><span class="cost">Protect and control are the same power in different hands.</span>
+      </div>
+      <p style="font-size:.86em;margin-top:.34em"><b>Unintended consequence:</b> rules aimed at big
+      platforms land hardest on small ones that cannot afford lawyers. Belongs in the argument,
+      does not settle it.</p>
+
+      <h3>Precedent: it has been had four times</h3>
+      <dl class="facts">
+        <dt>1954</dt><dd>Comic books. Senate hearing, industry code. <b>Research largely discredited later.</b></dd>
+        <dt>1970s</dt><dd>Television violence. Hearings across the decade.</dd>
+        <dt>1985</dt><dd>Music lyrics. Senate hearings, the parental advisory sticker.</dd>
+        <dt>1993</dt><dd>Video games. Hearings, the rating on every box. <b>Research still contested.</b></dd>
+        <dt>4 of 4</dt><dd>Ended in <b>industry self-regulation under threat of government action</b>,
+          rather than in a law.</dd>
+      </dl>
+      <p style="font-size:.86em;margin-top:.34em">Three differences any precedent argument must
+      survive: <b>personalized</b>, <b>always with you</b>, <b>responds to you</b>. A comic book did
+      not know who was holding it.</p>
+
+      <h3>Section 230, the one fact that changes the feel</h3>
+      <dl class="facts">
+        <dt>1996</dt><dd>One sentence: a platform is generally not treated as the publisher of what
+          its users post.</dd>
+        <dt>1997</dt><dd>The rest of that law is struck down by the Supreme Court. <b>230 survives.</b></dd>
+        <dt>Since</dt><dd>Both parties have proposed repealing or narrowing it, for opposite
+          reasons. It is still there.</dd>
+      </dl>
+
+      <h3>The class, in order</h3>
+      <ol class="spine">
+        <li>Read the question. <b>Stop talking.</b> Nobody answers yet.</li>
+        <li><b>Straw poll by hands, no discussion.</b> Write the split on the board and leave it.</li>
+        <li>Ground rule, then the standard. Hold them to the tradeoff all block.</li>
+        <li>Each position: strongest case first, from somebody who <b>disagrees</b>. Then the
+          hardest question, and <b>do not resolve it</b>.</li>
+        <li>Case and cost across all three. Cannot name their own cost, not ready to write.</li>
+        <li>The four precedents. Ask what they have in common <b>before</b> you say it.</li>
+        <li>Break the precedent on purpose with the three differences.</li>
+        <li>Section 230, then back to the board: <b>who moved, and why?</b></li>
+      </ol>
+
+      <h3>Do not</h3>
+      <ul class="plain dont">
+        <li><b>Do not answer the hardest questions.</b> They are the honest shape of the problem,
+          not rhetorical setups.</li>
+        <li><b>Do not let the weak version win.</b> If the room agrees too fast, they beat a strawman.</li>
+        <li><b>Do not signal your own position.</b> They will write toward it.</li>
+        <li><b>Do not let precedent settle it.</b> Using one well names what is the same <i>and</i>
+          what is different.</li>
+      </ul>
+
+      <h3>They write</h3>
+      <ol>
+        <li>The position you do <b>not</b> hold, stated as strongly as you possibly can.</li>
+        <li>One earlier fight. What happened, and what does it predict about this one?</li>
+        <li>What evidence would change your mind? Specific enough to go looking for.</li>
+      </ol>
+
+      <div class="endon"><i>End on</i>
+        State the other side well enough that somebody who holds it would say you got it right.</div>
+    </div>
+  </div>
+
+  <!-- ── Shared ────────────────────────────────────────────────────────────── -->
+  <div class="both">
+    <h3>Both blocks</h3>
+    <div class="bothgrid">
+      <div><strong>Register</strong>Short sentences, one idea each, concrete before abstract. Flat
+        and curious, never ominous.</div>
+      <div><strong>Two tiers, always</strong>Start Here and Push Further are <b>both real
+        answers</b>. Say it out loud. Confidence is <b>not graded</b>: a Shaky tells you more than a
+        dishonest Could teach it.</div>
+      <div><strong>Getting the work in</strong>Answers save in that browser on that device only.
+        <b>Gather All My Work</b>, Copy, paste into Canvas. Nothing reaches you until they paste.</div>
+    </div>
+    <div class="src">Topic 5 from its Brief &middot; Topic 6 from scripts/lib/unit-content/social-media.js &middot; full arc in the decks under social-media/decks/</div>
+  </div>
+</div>
