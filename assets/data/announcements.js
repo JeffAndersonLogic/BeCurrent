@@ -219,21 +219,21 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "Fake news, the tactics that carry it, and elections",
       "learningTargets": [
         {
-          "text": "I can name four tactics that make false information spread, and explain what each one does to the reader.",
+          "text": "I can name four tactics that spread false information, and explain what each one does to the reader.",
           "label": "Fallacies and Propaganda"
         },
         {
-          "text": "I can check an unfamiliar claim in under two minutes, and say specifically what I checked.",
+          "text": "I can check an unfamiliar claim in about two minutes, and say exactly what I checked.",
           "label": "Sourcing"
         },
         {
-          "text": "I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.",
+          "text": "I can explain one specific way that false information affects an election, beyond people believing something untrue.",
           "label": "Generalizing from Evidence"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.",
+          "text": "I can name the emotion a post is aiming for, and explain why that emotion helps it spread.",
           "label": "Fallacies and Propaganda"
         },
         {

@@ -317,7 +317,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.</p>
+                <p>Most people believe they are already good at spotting false information. Today you will find out that spotting it is mostly not about the false information itself. It is about what carries it: strong emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. You will then learn how to check a claim, which takes about two minutes, and read what the research says about who does the spreading. That last answer is not the one most people expect.</p>
             </td>
         </tr>
         <tr>
@@ -326,9 +326,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can name four tactics that make false information spread, and explain what each one does to the reader.</li>
-                    <li>I can check an unfamiliar claim in under two minutes, and say specifically what I checked.</li>
-                    <li>I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.</li>
+                    <li>I can name four tactics that spread false information, and explain what each one does to the reader.</li>
+                    <li>I can check an unfamiliar claim in about two minutes, and say exactly what I checked.</li>
+                    <li>I can explain one specific way that false information affects an election, beyond people believing something untrue.</li>
                 </ol>
             </td>
         </tr>
@@ -338,7 +338,7 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.</li>
+                    <li>I can name the emotion a post is aiming for, and explain why that emotion helps it spread.</li>
                     <li>I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.</li>
                     <li>I can explain the difference between a claim that is false and a claim that is true but framed to mislead.</li>
                 </ol>

@@ -38,29 +38,26 @@ offline suite must stay runnable on a bare checkout with no `npm install` at all
 which is what CI's `structure` job proves by running with none. A deck builder is
 not on the push path and has no business adding a package to it.
 
-## Numbering
+## Which topics have decks
 
-The teaching plan runs six topics. `social-media.js` still describes five blocks,
-because **How a Lie Travels** was added to the arc after that file was written:
-
-| Teaching plan | `social-media.js` | Deck |
+| Topic | Content module | Deck |
 |---|---|---|
-| Topic 1, Where the Money Comes From | Block 1 | none, taught on paper |
-| Topic 2, Somebody Made a Film About This | Block 2 | none, the film |
-| Topic 3, Inside the Algorithm Box | Block 3 | not written |
-| Topic 4, Go Check It Yourself | Block 4 | not written |
-| Topic 5, How a Lie Travels | **no block yet** | `topic-05-how-a-lie-travels.pptx` |
-| Topic 6, Who Gets to Decide? | Block 5 | `topic-06-who-gets-to-decide.pptx` |
+| 1, Where the Money Comes From | planned card | none, taught on paper |
+| 2, Somebody Made a Film About This | planned card | none, the film |
+| 3, Inside the Algorithm Box | yes | not written |
+| 4, The Impact and the Digital Footprint | yes | not written |
+| 5, How a Lie Travels | yes | `topic-05-how-a-lie-travels.pptx` |
+| 6, Who Gets to Decide? | yes | `topic-06-who-gets-to-decide.pptx` |
 
-Topic 5's Brief exists as authored prose but has no content module in this repo,
-so its deck carries its own copy of that text. **That is the one real content
-duplication here**, and it is the thing to fix first: when Topic 5 lands in
-`social-media.js`, rewrite `build-topic-05-deck.js` to read from it the way the
-Topic 6 builder does, and renumber the blocks. Until then, a change to the Brief
-has to be made in both places, and nothing will tell you if you forget.
+Both builders read `UNIT.topics` and find their topic by `n`, so a deck is one
+constant away from pointing at a different lesson and cannot silently point at
+none: `guards()` throws if the topic is missing, has been renamed, or has stopped
+carrying what the slides claim.
 
-Each builder carries `TOPIC_N` (or the equivalent constant) so a renumbering is
-one line per deck.
+**Nothing on a slide restates a topic title.** The recap slide on each deck derives
+every earlier topic's title from the module. It was typed by hand once, and it went
+stale the day Topic 4 was retitled to The Impact and the Digital Footprint, with
+nothing to say so. That is the whole argument for deriving in one sentence.
 
 ## The design kit
 

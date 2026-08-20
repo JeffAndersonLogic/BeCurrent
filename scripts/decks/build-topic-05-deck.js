@@ -9,11 +9,17 @@
  * `npm i pptxgenjs`. See scripts/decks/README.md for why, and for the numbering
  * note (the teaching plan's Topic 5 has no block in social-media.js yet).
  *
- * SOURCE OF TRUTH. Every date, name, number and study on these slides comes from
- * the Topic 5 Brief. Nothing is invented: no headline, statistic, date or
- * quotation was added that the Brief does not carry. That constraint is the whole
- * subject of the lesson, and a deck that broke it while teaching it would be the
- * worst available outcome.
+ * SOURCE OF TRUTH. The title, the deck line, the skill tags, every section
+ * heading, the takeaway and all three questions are read out of
+ * scripts/lib/unit-content/social-media.js, so this deck cannot disagree with the
+ * Brief a student read the night before. The condensed slide lines are shortened
+ * versions of that same prose, and guards() below fails the build if the topic
+ * stops saying what these slides claim it says.
+ *
+ * Nothing here is invented: no headline, statistic, date or quotation appears that
+ * the topic does not carry. That constraint is the whole subject of the lesson,
+ * and a deck that broke it while teaching it would be the worst available
+ * outcome.
  *
  * REGISTER. Ninth grade, academic but not dry, and written to be read once at
  * speed by a room with a heavy IEP and 504 load. The rules, which the first
@@ -36,8 +42,36 @@ const path = require('path');
 const K = require('./deck-kit.js');
 const { P, F, M, CW } = K;
 
+const TOPIC_N = 5;
+const UNIT = require('../lib/unit-content/social-media.js');
+const T = UNIT.topics.find(t => t.n === TOPIC_N);
+
+const plain = s => String(s).replace(/<[^>]+>/g, '');
 const OUT = path.join(__dirname, '..', '..', 'social-media', 'decks', 'topic-05-how-a-lie-travels.pptx');
-const FOOT = 'BECURRENT  ·  SOCIAL MEDIA  ·  TOPIC 5';
+const FOOT = 'BECURRENT  ·  SOCIAL MEDIA  ·  TOPIC ' + TOPIC_N;
+
+/* ── Guards. Each one is a thing a slide below asserts about the topic. ────── */
+(function guards() {
+  const fail = m => { throw new Error('social-media.js changed under this deck: ' + m); };
+  if (!T) fail('no topic ' + TOPIC_N);
+  if (T.slug !== 'fake-news') fail('topic ' + TOPIC_N + ' is no longer fake-news');
+  if (T.sections.length !== 5) fail('expected 5 sections, found ' + T.sections.length);
+  ['Two words for false information',
+   'Four tactics, and the system that rewards them',
+   'Who spreads false information',
+   'How to check a claim, in about two minutes',
+   'Elections, where all of it appears at once'].forEach((h, i) => {
+    if (plain(T.sections[i].heading) !== h) fail('section ' + i + ' is no longer "' + h + '"');
+  });
+  ['misinformation', 'disinformation', 'clickbait', 'deepfake', 'bot', 'lateral reading',
+   'echo chamber', 'microtargeting'].forEach(t => {
+    if (!T.terms.includes(t)) fail('the term "' + t + '" is gone');
+  });
+  if (T.questions.length !== 3) fail('expected 3 questions, found ' + T.questions.length);
+  // Slide 8 states this as a number, and slide 2 promises the two minutes.
+  if (!T.sections[2].paragraphs.join(' ').includes('126,000')) fail('the MIT study figure is gone');
+  if (!T.support[1].body.includes('two minutes')) fail('the reading target no longer says two minutes');
+})();
 
 // The teaching script, one entry per slide in order. Kept here rather than beside
 // each slide so the whole spoken arc can be read in one pass, which is how a
@@ -118,17 +152,18 @@ const pres = K.newDeck({
 {
   const s = K.dark(pres);
   K.chip(s, '05', { x: M, y: 0.6, d: 0.56, size: 14 });
-  K.eyebrow(s, 'Social Media · Topic 5', { x: 1.32, y: 0.75, color: P.signalPale });
-  K.title(s, 'How a Lie Travels', { y: 1.42, h: 0.95, size: 42, color: P.onDark });
-  K.body(s, 'Why false stories spread faster than corrections do.',
-    { x: M, y: 2.5, w: 7.5, h: 0.5, face: F.display, size: 18, italic: true, color: P.onDarkSoft });
+  K.eyebrow(s, plain(T.eyebrow), { x: 1.32, y: 0.75, color: P.signalPale });
+  K.title(s, plain(T.title), { y: 1.42, h: 0.95, size: 42, color: P.onDark });
+  K.body(s, plain(T.deck),
+    { x: M, y: 2.5, w: 7.6, h: 0.9, face: F.display, size: 17, italic: true, color: P.onDarkSoft,
+      lineSpacing: 1.15 });
 
-  ['SOURCING', 'CORROBORATION'].forEach((tag, i) => {
+  T.skillTags.forEach((tag, i) => {
     const w = 1.5 + i * 0.6;
     const x = M + i * 1.72;
     K.card(s, { x, y: 3.4, w, h: 0.36, fill: P.slate700, line: P.slate700, flat: true });
-    K.body(s, tag, { x, y: 3.4, w, h: 0.36, face: F.mono, size: 9, bold: true, color: P.signalPale,
-      align: 'center', valign: 'middle' });
+    K.body(s, tag.toUpperCase(), { x, y: 3.4, w, h: 0.36, face: F.mono, size: 9, bold: true,
+      color: P.signalPale, align: 'center', valign: 'middle' });
   });
 
   notes(s);
@@ -141,16 +176,16 @@ const pres = K.newDeck({
   K.eyebrow(s, 'Before you read');
   K.title(s, 'What today builds on', { size: 30 });
 
+  const named = n => plain((UNIT.topics.find(t => t.n === n) || {}).title || 'Topic ' + n);
   const rows = [
-    ['1', 'Topic 1', 'Apps make money when people keep looking at them.'],
-    ['3', 'Topic 3', 'The feed ranks posts to produce the most reaction.'],
-    ['5', 'Topic 5', 'Which posts get the most reaction, and who uses that on purpose.']
+    ['1', named(1), 'Apps make money when people keep looking at them.'],
+    ['3', named(3), 'The feed ranks posts to produce the most reaction.'],
+    ['5', named(5), 'Which posts get the most reaction, and who uses that on purpose.']
   ];
   rows.forEach(([n, label, text], i) => {
     const y = 1.9 + i * 0.9;
     K.chip(s, n, { x: M, y, d: 0.44, fill: i === 2 ? P.signal : P.slate700, size: 11 });
-    K.body(s, label, { x: 1.2, y: y - 0.02, w: 3.9, h: 0.26, size: 12, bold: true, color: P.ink,
-      face: F.mono });
+    K.body(s, label, { x: 1.2, y: y - 0.02, w: 3.9, h: 0.26, size: 12, bold: true, color: P.ink });
     K.body(s, text, { x: 1.2, y: y + 0.24, w: 3.9, h: 0.52, size: 13 });
   });
 
@@ -169,7 +204,7 @@ const pres = K.newDeck({
 {
   const s = K.light(pres);
   K.eyebrow(s, 'Part one');
-  K.title(s, 'Two words for false information');
+  K.title(s, plain(T.sections[0].heading));
 
   const pairs = [
     ['MISINFORMATION', 'False information shared by someone who believes it is true.', P.coolTint, P.cool],
@@ -465,7 +500,7 @@ const pres = K.newDeck({
 {
   const s = K.light(pres);
   K.eyebrow(s, 'Part five');
-  K.title(s, 'In an election, these appear together');
+  K.title(s, plain(T.sections[4].heading), { size: 28 });
 
   const items = [
     ['False voting information', 'A wrong date, invented ID rules, or a polling place that moved. This changes whether people vote.'],
@@ -529,21 +564,15 @@ const pres = K.newDeck({
   K.body(s, 'False stories spread because they are new and because they produce strong emotions. '
     + 'Most of the spreading is done by people, not bots.',
     { x: M, y: 0.76, w: 8.6, h: 0.76, face: F.display, size: 18.5, bold: true, color: P.onDark,
-      lineSpacing: 1.1 });
+      lineSpacing: 1.1 });   // a two-line summary of T.takeaway, which runs four sentences
 
   K.card(s, { x: M, y: 1.78, w: CW, h: 2.56, fill: P.slate700, line: P.slate700, flat: true });
   K.body(s, 'WHAT YOU WILL WRITE', { x: 0.88, y: 1.98, w: 8.2, h: 0.24, face: F.mono, size: 9,
     bold: true, color: P.signalPale });
 
-  const qs = [
-    ['Fallacies and Propaganda',
-      'Describe one post you saw this week that produced a strong emotion. Name the emotion, then explain how it made people more likely to share the post.'],
-    ['Sourcing',
-      'Choose one claim you are unsure about and check it using lateral reading. Write down who published it, when, and whether another source reports it.'],
-    ['Generalizing from Evidence',
-      'Choose one item from Part Five. Explain, in three steps, how it could change the result of an election.']
-  ];
-  qs.forEach(([skill, text], i) => {
+  T.questions.forEach((q, i) => {
+    const skill = q.skill;
+    const text = plain(q.text);
     const y = 2.38 + i * 0.68;
     K.chip(s, String(i + 1), { x: 0.88, y, d: 0.34, size: 9.5 });
     K.body(s, skill.toUpperCase(), { x: 1.36, y: y - 0.02, w: 7.7, h: 0.22, face: F.mono, size: 8,

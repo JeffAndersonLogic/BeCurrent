@@ -530,6 +530,35 @@ Week pages show a three-card flow inside `.week-roadmap`: **Get the Story**,
 
 ## Brief Standard
 
+### Register: ninth grade, academic but not dry
+
+**This is the rule the first draft of Topic 5 broke, and it cost a rewrite.** The
+prose read well on a page and badly in front of a class: rhetorical questions used
+as teaching content, inverted constructions, sentence fragments standing in for
+conclusions, and pronouns pointing at ideas two sentences back. In a room with a
+heavy IEP and 504 load that is not a matter of taste, it is a comprehension
+problem, and the questions were the worst of it.
+
+- One idea per sentence, and most sentences under twenty words.
+- Subject, verb, object. No inverted or aphoristic constructions.
+- Define a term in plain words the first time it appears, then reuse that same
+  term rather than reaching for a synonym.
+- **No rhetorical questions in the prose.** A question mark means a student is
+  meant to answer it.
+- The concrete example comes immediately after the abstract claim, never before.
+- Signpost: "three forms", "first", "second". A reader who loses the thread should
+  be able to find it again from the paragraph alone.
+- No idioms, and no metaphor that has to be decoded before it can be understood.
+
+**A question names one task and one thing to hand in.** "Explain the mechanism" is
+not a task a ninth grader can act on. "Explain, in three steps, how it could change
+the result of an election" is. `startHere` and `pushFurther` are both real answers,
+so neither may read as the remedial one.
+
+None of this is machine-checkable, which is why it is written here rather than in
+`validate.js`. The gate is hard on plumbing and silent on pedagogy, and register is
+pedagogy.
+
 A brief is a reading with questions under it. Five things are required, because
 without them a student cannot read it or cannot submit it: an `h1.brief-title`, a
 `.brief-body`, a `.check-section`, the `.page-footer-note` that says where work goes,
@@ -969,15 +998,6 @@ Honest list, so nobody assumes coverage that does not exist:
 9. **No clips are configured yet.** The video mechanism is built and tested, but
    every `videos` array is empty because the URLs have to be real ones you supply.
    Nothing was invented to fill them.
-9. **Topic 5 has no content module.** How a Lie Travels was written into the arc
-   after `scripts/lib/unit-content/social-media.js` was, so that file still
-   describes five blocks and Who Gets to Decide is Block 5 in it while being
-   Topic 6 in the teaching plan. Its Brief is authored prose with no block behind
-   it, which means `build-topic-05-deck.js` carries its own copy of that text.
-   **That is the only real content duplication in this repo**, and it is the next
-   thing to fix: land Topic 5 as a block, renumber, and point its deck at the
-   module the way the Topic 6 deck already does. See
-   `scripts/decks/README.md`.
 
 ## Units and Topics
 

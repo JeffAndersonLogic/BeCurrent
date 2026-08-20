@@ -280,53 +280,53 @@ _Fake news, the tactics that carry it, and elections_
 
 ### Overview
 
-Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.
+Most people believe they are already good at spotting false information. Today you will find out that spotting it is mostly not about the false information itself. It is about what carries it: strong emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. You will then learn how to check a claim, which takes about two minutes, and read what the research says about who does the spreading. That last answer is not the one most people expect.
 
 ### Learning targets
 
-1. **Fallacies and Propaganda.** I can name four tactics that make false information spread, and explain what each one does to the reader.
-2. **Sourcing.** I can check an unfamiliar claim in under two minutes, and say specifically what I checked.
-3. **Generalizing from Evidence.** I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.
+1. **Fallacies and Propaganda.** I can name four tactics that spread false information, and explain what each one does to the reader.
+2. **Sourcing.** I can check an unfamiliar claim in about two minutes, and say exactly what I checked.
+3. **Generalizing from Evidence.** I can explain one specific way that false information affects an election, beyond people believing something untrue.
 
 ### Success criteria
 
-1. **Fallacies and Propaganda.** I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.
+1. **Fallacies and Propaganda.** I can name the emotion a post is aiming for, and explain why that emotion helps it spread.
 2. **Sourcing.** I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.
 3. **Corroboration.** I can explain the difference between a claim that is false and a claim that is true but framed to mislead.
 
 ### What happens in class
 
-We take a real hoax apart, name the four tactics that carry one, then do the checking, which takes about ninety seconds and almost nobody does.
+We take one real hoax apart, name the four tactics that carry false information, and then practice the checking, which takes about two minutes.
 
 ### The Brief
 
-**Before You Read.** You know the machine now: what the app counts and what it pushes a number on. Today you find out what kind of content that machine rewards, and what happens when somebody builds content for it deliberately.
+**Before You Read.** You already know how the machine works. In Topic 1 you traced how an app makes money when people keep looking at it. In Topic 3 you opened the ranking system and saw that the feed is built to produce reaction. This reading is about which posts produce the most reaction, and about people who build posts for that on purpose.
 
-**Reading Target.** By the end you should be able to check a claim you are unsure about in under two minutes, and say out loud what you checked rather than that you did not believe it.
+**Reading Target.** By the end you should be able to check a claim you are unsure about in about two minutes, and explain out loud what you checked. Saying "I did not believe it" is not an explanation.
 
 **Key terms.** misinformation, disinformation, clickbait, deepfake, bot, lateral reading, echo chamber, microtargeting.
 
-- **Part One.** Two words, and the difference is the person sending it
-- **Part Two.** The four tactics
-- **Part Three.** Who actually spreads it, and it is not the bots
-- **Part Four.** The checking, which takes about ninety seconds
-- **Part Five.** Elections, where all of it runs at once
+- **Part One.** Two words for false information
+- **Part Two.** Four tactics, and the system that rewards them
+- **Part Three.** Who spreads false information
+- **Part Four.** How to check a claim, in about two minutes
+- **Part Five.** Elections, where all of it appears at once
 
-**The Road Not Taken.** The echo chamber is the part of this that might be wrong
+**The Road Not Taken.** The echo chamber may be the part of this that is wrong
 
-**BeReady, the 10-second takeaway.** False things travel because they are new and they make you feel something, and the best evidence says people rather than bots do most of the carrying. The check takes ninety seconds and names what you actually looked at. In an election every tactic here runs at once, and how much any of it changes an outcome is still argued.
+**BeReady, the 10-second takeaway.** False stories spread because they are new and because they produce strong emotions, and the best available evidence says that people, not bots, do most of the spreading. Checking a claim takes about two minutes, and a real check names what you looked at. In an election every tactic in this reading appears at once, and how much any of it changes a result is still argued about.
 
 ### The questions
 
-1. **Fallacies and Propaganda.** Pick something you saw this week that made you feel something strongly. Name the feeling, and explain how that feeling helped the thing travel.
-   - START HERE: Name the feeling, then one sentence on how it spread.
-   - PUSH FURTHER: Say whether it was false, or true and framed to mislead, and how you can tell the difference.
-2. **Sourcing.** Take one claim you are not sure about and check it laterally. Write down what you did: who published it, when, and who else reports it.
-   - START HERE: Two moves is enough. Write what you found, including if you found nothing.
-   - PUSH FURTHER: Find the earliest version you can, and say who benefits if people believe it.
-3. **Generalizing from Evidence.** Pick one item from Part Five and explain the mechanism: step by step, how would it actually change an election?
-   - START HERE: One item, three steps.
-   - PUSH FURTHER: Name the evidence that would show it changed an outcome, and say whether that evidence could exist.
+1. **Fallacies and Propaganda.** Describe one post you saw this week that gave you a strong emotional reaction. Name the emotion, then explain how that emotion made people more likely to share the post.
+   - START HERE: Two or three sentences. Name the emotion, then say how it helped the post spread.
+   - PUSH FURTHER: Decide whether the post was false, or true but framed to mislead, and explain how you can tell those two apart.
+2. **Sourcing.** Choose one claim you are unsure about and check it using lateral reading. Write down what you did: who published it, when it was published, and whether any other source reports it.
+   - START HERE: Two of the five checking questions is enough. Report what you found, including if you found nothing.
+   - PUSH FURTHER: Find the earliest version of the claim that you can, and explain who benefits if people believe it.
+3. **Generalizing from Evidence.** Choose one item from Part Five. Explain, in three steps, how it could change the result of an election.
+   - START HERE: Name the item, then give three steps in order.
+   - PUSH FURTHER: Name the evidence that would show it actually changed a result, and say whether that evidence could realistically exist.
 
 ### Where the work goes
 
