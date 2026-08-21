@@ -219,21 +219,21 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "Fake news, the tactics that carry it, and elections",
       "learningTargets": [
         {
-          "text": "I can name four tactics that make false information spread, and explain what each one does to the reader.",
+          "text": "I can name four tactics that spread false information, and explain what each one does to the reader.",
           "label": "Fallacies and Propaganda"
         },
         {
-          "text": "I can check an unfamiliar claim in under two minutes, and say specifically what I checked.",
+          "text": "I can check an unfamiliar claim in about two minutes, and say exactly what I checked.",
           "label": "Sourcing"
         },
         {
-          "text": "I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.",
+          "text": "I can explain one specific way that false information affects an election, beyond people believing something untrue.",
           "label": "Generalizing from Evidence"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.",
+          "text": "I can name the emotion a post is aiming for, and explain why that emotion helps it spread.",
           "label": "Fallacies and Propaganda"
         },
         {
@@ -257,25 +257,25 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "You, the company, or the government",
       "learningTargets": [
         {
-          "text": "I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.",
+          "text": "I can state all three answers to who should decide, and give the case and the tradeoff for each one.",
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.",
+          "text": "I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.",
           "label": "Hypotheses"
         },
         {
-          "text": "I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.",
+          "text": "I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.",
           "label": "Generalizing from Evidence"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can state the position I did not pick well enough that somebody who holds it would say I got it right.",
+          "text": "I can state the position I did not choose well enough that somebody who holds it would say I got it right.",
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can answer the hardest question against my own position, rather than restating why I am right.",
+          "text": "I can name the tradeoff in the position I actually hold, not just the one I argued against.",
           "label": "Synthesizing Patterns"
         },
         {

@@ -144,11 +144,11 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
-<p>Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.</p>
+<p>Most people believe they are already good at spotting false information. Today you will find out that spotting it is mostly not about the false information itself. It is about what carries it: strong emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. You will then learn how to check a claim, which takes about two minutes, and read what the research says about who does the spreading. That last answer is not the one most people expect.</p>
 <ol>
-    <li><strong>Fallacies and Propaganda.</strong> Pick something you saw this week that made you feel something strongly. Name the feeling, and explain how that feeling helped the thing travel.</li>
-    <li><strong>Sourcing.</strong> Take one claim you are not sure about and check it laterally. Write down what you did: who published it, when, and who else reports it.</li>
-    <li><strong>Generalizing from Evidence.</strong> Pick one item from Part Five and explain the mechanism: step by step, how would it actually change an election?</li>
+    <li><strong>Fallacies and Propaganda.</strong> Describe one post you saw this week that gave you a strong emotional reaction. Name the emotion, then explain how that emotion made people more likely to share the post.</li>
+    <li><strong>Sourcing.</strong> Choose one claim you are unsure about and check it using lateral reading. Write down what you did: who published it, when it was published, and whether any other source reports it.</li>
+    <li><strong>Generalizing from Evidence.</strong> Choose one item from Part Five. Explain, in three steps, how it could change the result of an election.</li>
 </ol>
 <p>Every question has a <strong>START HERE</strong> card and a <strong>PUSH FURTHER</strong> card. START HERE is the whole answer, not a lesser one. Take PUSH FURTHER when you have the first part down.</p>
 <p><strong>Type a real answer in every box.</strong> Gather All My Work collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -167,7 +167,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.</li>
+    <li>I can name the emotion a post is aiming for, and explain why that emotion helps it spread.</li>
     <li>I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.</li>
     <li>I can explain the difference between a claim that is false and a claim that is true but framed to mislead.</li>
 </ol>
@@ -194,11 +194,11 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
-<p>On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.</p>
+<p>On the first day I said I would ask you a hard question at the end. This is it. Who should get to decide what a platform is allowed to do to your attention: you, the company, or the government? You have earned the right to argue it. You traced the money, took a film apart, opened the algorithm box, weighed the research on what these systems do to people, and followed a false story through the system. You will not be graded on which side you choose.</p>
 <ol>
-    <li><strong>Synthesizing Patterns.</strong> Pick the position you do NOT hold. State the strongest version of it, in your own words, as well as you possibly can.</li>
-    <li><strong>Generalizing from Evidence.</strong> Pick one earlier fight: comic books, television, music lyrics, or video games. What happened, and what does it predict about this one?</li>
-    <li><strong>Generalizing from Evidence.</strong> What evidence would change your mind? Be specific enough that somebody could go looking for it.</li>
+    <li><strong>Synthesizing Patterns.</strong> Choose the position you do not agree with. Write the strongest case for it, in your own words.</li>
+    <li><strong>Generalizing from Evidence.</strong> Choose one earlier argument: comic books, television, music lyrics, or video games. Describe what happened, then name one way social media is different from that medium.</li>
+    <li><strong>Generalizing from Evidence.</strong> What evidence would change your mind about who should decide? Be specific enough that somebody could go looking for it.</li>
 </ol>
 <p>Every question has a <strong>START HERE</strong> card and a <strong>PUSH FURTHER</strong> card. START HERE is the whole answer, not a lesser one. Take PUSH FURTHER when you have the first part down.</p>
 <p><strong>Type a real answer in every box.</strong> Gather All My Work collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -217,8 +217,8 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can state the position I did not pick well enough that somebody who holds it would say I got it right.</li>
-    <li>I can answer the hardest question against my own position, rather than restating why I am right.</li>
+    <li>I can state the position I did not choose well enough that somebody who holds it would say I got it right.</li>
+    <li>I can name the tradeoff in the position I actually hold, not just the one I argued against.</li>
     <li>I can name what would change my mind, specifically enough that somebody could go looking for it.</li>
 </ol>
 

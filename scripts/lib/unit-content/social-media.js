@@ -693,32 +693,32 @@ const TOPIC_5 = {
   topic: 'Topic 5',
   title: 'How a <em>Lie</em> Travels',
   eyebrow: 'Social Media · Topic 5',
-  deck: 'The interesting question is not whether people lie online. It is why the lie moves faster '
-    + 'than the correction.',
+  deck: 'False stories often spread faster than the corrections that follow them. This reading '
+    + 'explains why that happens, and what to do about it.',
   subtitle: 'Fake news, the tactics that carry it, and elections',
   skillTags: ['Sourcing', 'Corroboration'],
-  inClass: 'We take a real hoax apart, name the four tactics that carry one, then do the checking, '
-    + 'which takes about ninety seconds and almost nobody does.',
+  inClass: 'We take one real hoax apart, name the four tactics that carry false information, and then '
+    + 'practice the checking, which takes about two minutes.',
 
-  overview: 'Today is the part of this unit everybody thinks they are already good at. You will find '
-    + 'out that spotting false information is mostly not about the false information. It is about what '
-    + 'carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking '
-    + 'system that rewards whatever gets a reaction. Then you will learn the actual checking, which '
-    + 'takes about ninety seconds, and find out what the research says about who does the spreading. '
-    + 'The answer to that last one is not what most people assume.',
+  overview: 'Most people believe they are already good at spotting false information. Today you will '
+    + 'find out that spotting it is mostly not about the false information itself. It is about what '
+    + 'carries it: strong emotion, headlines built to be clicked, accounts that are not people, and a '
+    + 'ranking system that rewards whatever gets a reaction. You will then learn how to check a claim, '
+    + 'which takes about two minutes, and read what the research says about who does the spreading. '
+    + 'That last answer is not the one most people expect.',
 
   learningTargets: [
     { skill: 'Fallacies and Propaganda',
-      target: 'I can name four tactics that make false information spread, and explain what each one does to the reader.' },
+      target: 'I can name four tactics that spread false information, and explain what each one does to the reader.' },
     { skill: 'Sourcing',
-      target: 'I can check an unfamiliar claim in under two minutes, and say specifically what I checked.' },
+      target: 'I can check an unfamiliar claim in about two minutes, and say exactly what I checked.' },
     { skill: 'Generalizing from Evidence',
-      target: 'I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.' }
+      target: 'I can explain one specific way that false information affects an election, beyond people believing something untrue.' }
   ],
 
   successCriteria: [
     { skill: 'Fallacies and Propaganda',
-      criteria: 'I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.' },
+      criteria: 'I can name the emotion a post is aiming for, and explain why that emotion helps it spread.' },
     { skill: 'Sourcing',
       criteria: 'I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.' },
     { skill: 'Corroboration',
@@ -743,12 +743,13 @@ const TOPIC_5 = {
 
   support: [
     { label: 'Before You Read',
-      body: 'You know the machine now: what the app counts and what it pushes a number on. Today you '
-        + 'find out what kind of content that machine rewards, and what happens when somebody builds '
-        + 'content for it deliberately.' },
+      body: 'You already know how the machine works. In Topic 1 you traced how an app makes money when '
+        + 'people keep looking at it. In Topic 3 you opened the ranking system and saw that the feed is '
+        + 'built to produce reaction. This reading is about which posts produce the most reaction, and '
+        + 'about people who build posts for that on purpose.' },
     { label: 'Reading Target',
-      body: 'By the end you should be able to check a claim you are unsure about in under two minutes, '
-        + 'and say out loud what you checked rather than that you did not believe it.' }
+      body: 'By the end you should be able to check a claim you are unsure about in about two minutes, '
+        + 'and explain out loud what you checked. Saying "I did not believe it" is not an explanation.' }
   ],
 
   terms: ['misinformation', 'disinformation', 'clickbait', 'deepfake', 'bot', 'lateral reading',
@@ -757,221 +758,236 @@ const TOPIC_5 = {
   sections: [
     {
       label: 'Part One',
-      heading: 'Two words, and the difference is the person sending it',
+      heading: 'Two words for false information',
       paragraphs: [
-        '<span class="kt">Misinformation</span> is false information spread by somebody who thinks it is '
-        + 'true. <span class="kt">Disinformation</span> is false information spread by somebody who knows '
-        + 'it is false. Identical content, different sender, and your response should be different. You '
-        + 'can correct a person who is mistaken. You cannot correct a campaign, because being wrong was '
-        + 'the plan.',
-        'Three shapes it usually arrives in. A viral hoax, which is a story that is simply invented. A '
-        + 'doctored image, which now includes images that were generated rather than edited. And a '
-        + 'misleading headline, which is the sneakiest of the three, because every fact underneath it can '
-        + 'be true while the headline still leaves you believing something false. That last one is '
-        + 'framing, and it is much more common than outright invention.',
-        'Here is how fast the first shape can move. In April 2013 the Associated Press Twitter account '
-        + 'was hacked and posted that there had been explosions at the White House and the president was '
-        + 'injured. The stock market dropped sharply within seconds and recovered within minutes once the '
-        + 'agency said it was false. One fake sentence, from an account people had reason to trust.'
+        'There are two words for false information, and the difference between them is the sender. '
+        + '<span class="kt">Misinformation</span> is false information shared by someone who believes it '
+        + 'is true. <span class="kt">Disinformation</span> is false information shared by someone who '
+        + 'knows it is false. The post on the screen can look exactly the same in both cases. What '
+        + 'differs is what the sender knows.',
+        'That difference should change your response. You can correct a person who made a mistake, '
+        + 'because they did not want to be wrong. You cannot correct a campaign that was built to '
+        + 'mislead, because being wrong was the plan.',
+        'False information usually arrives in one of three forms. The first is an <strong>invented '
+        + 'story</strong> about an event that never happened. The second is a <strong>fake '
+        + 'image</strong>, which means a photo or video that was edited, or created by software. The '
+        + 'third is a <strong>misleading headline</strong>, and it is the most common of the three. In '
+        + 'that case every fact in the article can be true while the headline still leaves the reader '
+        + 'believing something false. That last form is called framing, and it is far more common than '
+        + 'outright invention.',
+        'Here is how quickly the first form can move. In April 2013, hackers took control of the '
+        + 'Associated Press Twitter account and posted that there had been explosions at the White House '
+        + 'and that the president was injured. Neither of those things had happened. The stock market '
+        + 'dropped sharply within seconds, and recovered within minutes once the Associated Press said '
+        + 'the post was false. That was one false sentence, sent from an account readers had good reason '
+        + 'to trust.'
       ],
       callouts: [
         { label: 'Skill Focus',
-          body: 'Sourcing starts before the content. Who sent this, and do they know whether it is true? '
-            + 'A friend forwarding something they believe and an account built to deceive are different '
-            + 'problems even when the words are the same.' }
+          body: 'Sourcing begins before you read the content. Ask two questions. Who sent this? Do they '
+            + 'know whether it is true? A friend forwarding a story they believe and an account built to '
+            + 'deceive are different problems, even when the words are identical.' }
       ]
     },
     {
       label: 'Part Two',
-      heading: 'The four tactics',
+      heading: 'Four tactics, and the system that rewards them',
       paragraphs: [
-        '<strong><span class="kt">Clickbait</span>.</strong> A headline written to get the click rather '
-        + 'than to tell you what happened, usually by withholding the exact thing you want to know. You '
-        + 'already know why it exists: from Topic 1, the click is what pays, and from Topic 3, the '
-        + 'headline is optimized for the number somebody chose. Nobody has to intend to mislead for this '
-        + 'to mislead.',
+        '<strong><span class="kt">Clickbait</span>.</strong> A headline written to get a click rather '
+        + 'than to tell you what happened. It usually works by holding back the exact detail you want. '
+        + 'You already know why it exists. In Topic 1 you saw that the click is what pays, and in Topic 3 '
+        + 'you saw that the headline is written to raise a number somebody chose. Nobody has to intend to '
+        + 'mislead for clickbait to mislead.',
         '<strong><span class="kt">Deepfake</span>.</strong> Video or audio of a real person, made by '
-        + 'software, saying something they never said. In April 2018 Jordan Peele and BuzzFeed released a '
-        + 'video of Barack Obama that Obama had nothing to do with, made specifically to show people it '
-        + 'was possible. Since then voice cloning in particular has become cheap and fast. The useful '
-        + 'response is not to trust no video, which is unlivable. It is to ask where a clip came from '
-        + 'before treating it as evidence of anything.',
-        '<strong><span class="kt">Bots</span>.</strong> Accounts that are automated rather than people. '
-        + 'What a bot network is for is usually misread: it is not there to persuade you directly, it is '
-        + 'there to make something look popular. Twenty thousand accounts repeating a claim manufactures '
-        + 'the appearance of consensus, and people believe things more readily when they think everyone '
-        + 'else already does.',
-        '<strong>Emotion.</strong> This is the one that carries the other three. Content that makes you '
-        + 'angry, afraid, or outraged gets shared far more than content that makes you think. That is not '
-        + 'a conspiracy, it is a fact about people, including you: you share what you feel, quickly, '
-        + 'before the feeling fades.',
-        'And now put that next to Topic 3. The ranking system does not need to want any of this. It '
-        + 'rewards reaction, sensational content generates reaction, so sensational content gets '
-        + 'promoted, with nobody at the company ever deciding to promote a lie. A system built to '
-        + 'maximize reaction will amplify whatever produces the most reaction, and truth is not what that '
-        + 'number measures.'
+        + 'software, saying something they never said. In April 2018, Jordan Peele and BuzzFeed released '
+        + 'a video of Barack Obama that Obama had nothing to do with. They made it specifically to show '
+        + 'people that this was possible. Voice cloning has become cheap and fast since then. The useful '
+        + 'response is not to distrust all video, because that is not a livable rule. The useful response '
+        + 'is to ask where a clip came from before treating it as evidence.',
+        '<strong><span class="kt">Bots</span>.</strong> A bot is an account that is automated rather '
+        + 'than run by a person. What a bot network is for is often misunderstood. It is usually not '
+        + 'trying to persuade you directly. It is trying to make a claim look popular, because people are '
+        + 'more willing to believe something when they think everyone else already believes it.',
+        '<strong>Emotion.</strong> This is the fourth tactic, and it carries the other three. Posts that '
+        + 'make people angry or afraid are shared far more often than posts that make people think. This '
+        + 'is not a conspiracy. It is a fact about human behavior, including yours. People share what '
+        + 'they feel, quickly, before the feeling fades.',
+        'Now place those four tactics next to what you learned in Topic 3. The ranking system does not '
+        + 'need to want any of this. It rewards reaction. Sensational posts produce reaction. Therefore '
+        + 'sensational posts get shown to more people. No employee at the company ever decides to promote '
+        + 'a lie. A system built to maximize reaction will spread whatever produces the most reaction, '
+        + 'and truth is not what that measurement captures.'
       ],
       callouts: [
         { label: 'Skill Focus',
-          body: 'Every one of these four is aimed at a feeling rather than at your reasoning. Naming the '
-            + 'feeling is the counter, because a feeling you have named out loud stops steering you. '
-            + '"This is built to make me angry" is a complete defense and it takes four seconds.' }
+          body: 'All four tactics aim at your emotions rather than at your reasoning. Naming the emotion '
+            + 'is an effective defense, because an emotion you have named out loud stops steering you. '
+            + 'Saying "this post is built to make me angry" takes about four seconds.' }
       ]
     },
     {
       label: 'Part Three',
-      heading: 'Who actually spreads it, and it is not the bots',
+      heading: 'Who spreads false information',
       paragraphs: [
-        'In 2018 three researchers at MIT, Soroush Vosoughi, Deb Roy and Sinan Aral, published a study in '
-        + '<em>Science</em> that followed roughly 126,000 rumor cascades on Twitter over eleven years. '
-        + 'False stories spread farther, faster, and to more people than true ones, and it was not close. '
-        + 'Then they did the thing that makes the study matter: they removed all the bot activity and ran '
-        + 'it again. The finding held. Humans did the spreading.',
-        'Their explanation was novelty and emotional response. False stories are newer, because they are '
-        + 'not constrained by having happened, and novelty is exactly what people forward.',
-        'Sit with what that means. The fix is mostly not technical, and it is mostly not about the '
-        + 'platforms. It is the two seconds before you repost.',
-        'Money is often the motive rather than politics, which surprises people. During the 2016 US '
-        + 'election, reporters at BuzzFeed News traced a cluster of American political hoax sites to '
-        + 'Veles, a town in North Macedonia, run largely by young people who had discovered that '
-        + 'sensational American political stories paid well in advertising. The same reporting found that '
-        + 'in the final three months of that campaign, the top-performing false election stories drew '
-        + 'more Facebook engagement than the top-performing real ones.',
-        'And a false story with no facts in it at all can move a person to act. In late 2016 a claim '
-        + 'known as Pizzagate spread, alleging a child trafficking operation run out of a Washington DC '
-        + 'restaurant. There was nothing to it. In December 2016 a man drove there from another state and '
-        + 'fired a rifle inside the building. Nobody was hurt, which was luck.'
+        'In 2018, three researchers at MIT named Soroush Vosoughi, Deb Roy and Sinan Aral published a '
+        + 'study in the journal <em>Science</em>. They followed about 126,000 rumors on Twitter over '
+        + 'eleven years. They found that false stories reached more people, and reached them faster, than '
+        + 'true stories did. The difference was large.',
+        'Then they did the step that makes the study important. They removed all of the automated '
+        + 'accounts from the data and repeated the analysis. The result did not change. People, not bots, '
+        + 'did most of the spreading.',
+        'Their explanation was novelty and emotion. False stories are newer than true ones, because a '
+        + 'true story is limited to what actually happened and a false story is not. Novelty is what '
+        + 'people pass along.',
+        'Consider what that means. The main solution is not a technical one, and it is mostly not about '
+        + 'the platforms. It is the two seconds before a person reposts.',
+        'The motive behind false stories is often money rather than politics, which surprises many '
+        + 'people. During the 2016 United States election, reporters at BuzzFeed News traced a group of '
+        + 'websites publishing false American political stories to Veles, a town in North Macedonia. Many '
+        + 'of those sites were run by young people who had found that sensational American political '
+        + 'stories earned well in advertising. The same reporting found that in the final three months of '
+        + 'that campaign, the best-performing false election stories drew more engagement on Facebook '
+        + 'than the best-performing true ones.',
+        'A false story with no evidence behind it can also move a person to act. In late 2016, a false '
+        + 'claim known as Pizzagate spread, alleging that a child trafficking operation was being run out '
+        + 'of a restaurant in Washington DC. There was no evidence for it. In December 2016, a man drove '
+        + 'to that restaurant from another state and fired a rifle inside the building. No one was hurt.'
       ],
       callouts: [
         { label: 'Watch For',
-          body: '"It was bots" and "it was foreign interference" are both real phenomena and both '
-            + 'comfortable, because they put the problem outside the room. The best evidence available '
-            + 'says ordinary people forwarding things they did not check do most of the work.' }
+          body: '"It was bots" and "it was foreign interference" both describe real things, and both are '
+            + 'comfortable explanations, because they place the problem outside our own behavior. The '
+            + 'best available evidence says that ordinary people, forwarding things they did not check, '
+            + 'do most of the work.' }
       ]
     },
     {
       label: 'Part Four',
-      heading: 'The checking, which takes about ninety seconds',
+      heading: 'How to check a claim, in about two minutes',
       paragraphs: [
-        'The single most useful habit is <span class="kt">lateral reading</span>. Instead of studying the '
-        + 'page you landed on, harder and harder, you leave it: open new tabs and find out what other '
-        + 'sources say about whoever published it. Researchers at Stanford compared professional fact '
-        + 'checkers with students and found that the checkers did this almost immediately while the '
-        + 'students stayed on the page examining its design, its logo, and its About section, all of '
-        + 'which are things the page controls.',
-        'The moves, in order of return. Who published this. When, because old stories recirculate as new '
-        + 'ones constantly. Does anybody else report it, and if only one outlet has it, why. What is the '
-        + 'earliest version, because the version you saw is usually several hands down the chain. And for '
-        + 'a photograph, a reverse image search, which will often show you the same picture from a '
-        + 'different year or a different country.',
-        'Fact-checking sites like Snopes and FactCheck.org are worth using for a specific case: the claim '
-        + 'you have now seen five times. If a thing is circulating widely, somebody has probably already '
-        + 'done the work, and reading their work is faster than repeating it.',
-        'Skepticism has a failure mode, and you should know it, because it is the one this course could '
-        + 'accidentally teach. Doubting everything equally is not media literacy, it is paralysis, and it '
-        + 'is genuinely useful to anyone running a disinformation campaign: if nothing can be established, '
-        + 'nothing they say can be disproved. The goal is calibration, believing things in proportion to '
-        + 'the evidence, not suspicion of everything.',
-        'The rule with the best return on effort is the plainest one. Do not pass along something you have '
-        + 'not checked. That is not offered as a moral rule. Part Three is the reason: you are part of the '
-        + 'distribution system, measurably, and it is the largest part.'
+        'The most useful habit is <span class="kt">lateral reading</span>. Instead of studying the page '
+        + 'you landed on more and more closely, you leave it. You open new tabs and find out what other '
+        + 'sources say about whoever published it. Researchers at Stanford compared professional '
+        + 'fact-checkers with students. The fact-checkers left the page almost immediately. The students '
+        + 'stayed and examined the page\'s design, its logo, and its About section, all of which the page '
+        + 'itself controls.',
+        'There are five questions to ask, listed here from most useful to least. '
+        + 'First, who published this? Second, when was it published, since old stories are constantly '
+        + 'reshared as new ones? Third, does any other source report it, and if only one does, why? '
+        + 'Fourth, what is the earliest version you can find, since the version you saw is usually '
+        + 'several steps down a chain? Fifth, for a photograph, what does a reverse image search show? '
+        + 'That search will often return the same picture from a different year or a different country.',
+        'Fact-checking sites such as Snopes and FactCheck.org are most useful in one specific case, which '
+        + 'is a claim you have already seen five times. If something is circulating widely, somebody has '
+        + 'probably already done the work, and reading their work is faster than repeating it.',
+        'Being skeptical can go wrong in one specific way, and you should know about it, because this class could teach '
+        + 'it by accident. Doubting everything equally is not media literacy. It is paralysis, and it is '
+        + 'genuinely useful to anyone running a disinformation campaign, because if nothing can be '
+        + 'established then nothing they say can be disproven. The goal is calibration, which means '
+        + 'believing a claim in proportion to the evidence for it.',
+        'The single most useful rule is also the simplest one. Do not pass along something you have not '
+        + 'checked. That is not offered as a rule about being a good person. Part Three is the reason: '
+        + 'you are part of the distribution system, and that part is the largest one.'
       ],
       callouts: [
         { label: 'The Standard',
-          body: '"I do not believe it" is not a check. A check names what you looked at. "Two outlets have '
-            + 'it, both citing the same single anonymous source" is a check, and it can end in uncertainty '
-            + 'and still be finished work.' }
+          body: '"I do not believe it" is not a check. A check names what you looked at. "Two outlets '
+            + 'report this, and both cite the same anonymous source" is a check. It can end in '
+            + 'uncertainty and still be finished work.' }
       ]
     },
     {
       label: 'Part Five',
-      heading: 'Elections, where all of it runs at once',
+      heading: 'Elections, where all of it appears at once',
       paragraphs: [
-        'Everything above shows up in an election together, and it is worth separating what is a real '
-        + 'mechanism from what is a slogan.',
-        '<strong>False information about voting itself.</strong> The version that does measurable damage is '
-        + 'not usually about candidates, it is about procedure: the wrong date, invented ID requirements, a '
-        + 'polling place that moved. That kind of claim does not change an opinion, it changes whether '
-        + 'somebody shows up, which is a larger effect and a cheaper one to produce.',
-        '<strong>Foreign interference.</strong> Governments and groups outside a country using its '
-        + 'platforms to affect its politics. In February 2018 a United States grand jury indicted thirteen '
-        + 'Russian nationals and the Internet Research Agency for running social media accounts that posed '
-        + 'as Americans during the 2016 election. Read the described aim carefully, because it is not what '
-        + 'people assume: much of it was to widen existing divisions rather than to argue for a candidate.',
-        '<strong><span class="kt">Microtargeting</span>.</strong> Campaigns buying narrow audiences by '
-        + 'attribute, which is the machine from Topic 1 pointed at voters instead of shoppers. The damage '
-        + 'it does is specific and easy to miss: two voters can be shown different promises by the same '
-        + 'campaign, and neither one ever sees the other\'s, so there stops being a single public record of '
-        + 'what was promised. The Cambridge Analytica story in 2018 was this: profile data on tens of '
-        + 'millions of Facebook users collected through a quiz app and used for political targeting. '
-        + 'Facebook agreed to a five billion dollar penalty from the Federal Trade Commission in 2019.',
-        '<strong><span class="kt">Echo chambers</span> and filter bubbles.</strong> The idea that ranking '
-        + 'narrows what you see until you mostly encounter people who already agree with you, so opposing '
-        + 'arguments arrive only in their weakest form. Hold this one loosely: it is the part of this '
-        + 'section the research is least settled on, which is what The Road Not Taken below is about.',
-        '<strong>Polarization.</strong> Us against them, hardening. The mechanism is the engagement number '
-        + 'again: content attacking the other side reliably outperforms content explaining your own, so '
-        + 'the attack is what spreads, in every direction at once.',
+        'In an election, everything above appears at the same time. It helps to separate the mechanisms '
+        + 'that are documented from the claims that are only slogans. There are six to know.',
+        '<strong>False information about voting.</strong> The version that does measurable damage is '
+        + 'usually not about candidates. It is about procedure: a wrong date, invented ID requirements, '
+        + 'or a polling place that has moved. A claim like that does not change an opinion. It changes '
+        + 'whether a person votes, which is a larger effect and a cheaper one to produce.',
+        '<strong>Foreign interference.</strong> This means governments or groups outside a country using '
+        + 'its platforms to affect its politics. In February 2018, a United States grand jury indicted '
+        + 'thirteen Russian nationals and the Internet Research Agency for running social media accounts '
+        + 'that posed as Americans during the 2016 election. Read the described goal carefully, because '
+        + 'it is not what most people assume. Much of the effort aimed to widen existing divisions rather '
+        + 'than to argue for one candidate.',
+        '<strong><span class="kt">Microtargeting</span>.</strong> Campaigns pay to show messages to '
+        + 'narrow groups of voters, selected by attribute. This is the system from Topic 1 pointed at '
+        + 'voters instead of shoppers. The damage it does is specific and easy to miss. Two voters can be '
+        + 'shown different promises by the same campaign, and neither one ever sees the other\'s, so '
+        + 'there is no longer a single public record of what was promised. The Cambridge Analytica story '
+        + 'in 2018 was an example of this. Profile data on tens of millions of Facebook users was '
+        + 'collected through a quiz app and used for political targeting. In 2019, Facebook agreed to a '
+        + 'five billion dollar penalty from the Federal Trade Commission.',
+        '<strong><span class="kt">Echo chambers</span>.</strong> This is the idea that ranking narrows '
+        + 'what a person sees until they mostly encounter people who already agree with them, so opposing '
+        + 'arguments arrive only in weak forms. Treat this one as less certain than the others. It is the least settled part of '
+        + 'this section, which is what The Road Not Taken below is about.',
+        '<strong>Polarization.</strong> This means us-against-them hardening over time. The mechanism is '
+        + 'the engagement number again. Posts attacking the other side reliably outperform posts '
+        + 'explaining your own side, so the attacks spread fastest, in every direction at once.',
         '<strong>The regulation gap.</strong> American rules about political advertising were written for '
-        + 'broadcast television, where an ad is public by definition and a station has to keep a file of '
-        + 'who bought it. Much of what happens on platforms is governed instead by each company\'s own '
-        + 'policies, which they write and can change. Nobody voted on those policies. That is the last '
-        + 'thing you need before Topic 6.'
+        + 'broadcast television, where an advertisement is public by definition and a station must keep a '
+        + 'record of who bought it. Much of what happens on platforms is governed instead by each '
+        + 'company\'s own policies, which the companies write and can change. No voter approved those '
+        + 'policies. That is the last thing you need before Topic 6.'
       ],
       callouts: [
         { label: 'Watch For',
           body: '"Social media decided the election" is a claim about size, and nobody has good evidence '
-            + 'for it. Every mechanism in this section is real and documented. How much any of it moves an '
-            + 'actual outcome is genuinely unsettled, and a person who tells you it is settled, in either '
-            + 'direction, is telling you about themselves.' }
+            + 'for it. Every mechanism in this section is real and documented. How much any of it moves '
+            + 'an actual result is genuinely unsettled, and a person who tells you it is settled, in '
+            + 'either direction, is telling you about themselves rather than about the evidence.' }
       ]
     }
   ],
 
   roadNotTaken: {
     label: 'The Road Not Taken',
-    heading: 'The echo chamber is the part of this that might be wrong',
+    heading: 'The echo chamber may be the part of this that is wrong',
     paragraphs: [
-      'Eli Pariser named the filter bubble in 2011 and it became the standard explanation for almost '
-      + 'everything about online politics. It is repeated so often that it sounds like a finding rather '
-      + 'than a theory. It is a theory, and it has taken real damage.',
-      'When researchers measured what people actually read rather than what the theory predicts, they '
-      + 'kept finding news diets more varied than expected, and that the heavily sealed-in partisans are '
-      + 'a small share of users rather than the norm. A 2015 study in <em>Science</em> by Eytan Bakshy, '
-      + 'Solomon Messing and Lada Adamic found that on Facebook, individual choices about what to click '
-      + 'mattered more than the ranking did for how much cross-cutting content people actually read. '
-      + 'Note who the authors worked for, which is Facebook. That is a reason to read it carefully, not a '
-      + 'reason to throw it out, and noticing the difference is the skill.',
-      'The rival explanation is that the bubble is mostly offline: who you live near, who you are related '
-      + 'to, and who you talk to in person, none of which an algorithm chose.',
-      'This matters because the two stories point at different fixes. If ranking causes the bubble, '
-      + 'changing the ranking helps. If people choose it, changing the ranking does very little and the '
-      + 'proposal was aimed at the wrong thing. Keep that in your pocket for Topic 6, because somebody in '
-      + 'the argument is going to propose exactly that fix.'
+      'Eli Pariser named the filter bubble in 2011, and it became the standard explanation for almost '
+      + 'everything about online politics. It is repeated so often that it sounds like a research '
+      + 'finding. It is a theory, and it has taken real damage.',
+      'When researchers measured what people actually read, rather than what the theory predicts, they '
+      + 'kept finding news diets more varied than expected. They also found that heavily sealed-off '
+      + 'partisans are a small share of users rather than the norm. A 2015 study in <em>Science</em> by '
+      + 'Eytan Bakshy, Solomon Messing and Lada Adamic found that on Facebook, individual choices about '
+      + 'what to click mattered more than the ranking did for how much opposing content people actually '
+      + 'read. Those authors worked for Facebook, and that is worth remembering. It is a reason to read the study '
+      + 'carefully. It is not a reason to throw it out, and noticing that difference is the skill.',
+      'A rival explanation is that the bubble is mostly offline. Who you live near, who you are related '
+      + 'to, and who you talk to in person were not chosen by an algorithm.',
+      'This matters because the two explanations point to different solutions. If ranking causes the '
+      + 'bubble, then changing the ranking helps. If people choose it themselves, then changing the '
+      + 'ranking does very little, and the proposal was aimed at the wrong target. Keep that in mind '
+      + 'during Topic 6, because somebody in that argument is going to propose exactly that solution.'
     ]
   },
 
-  takeaway: 'False things travel because they are new and they make you feel something, and the best '
-    + 'evidence says people rather than bots do most of the carrying. The check takes ninety seconds and '
-    + 'names what you actually looked at. In an election every tactic here runs at once, and how much any '
-    + 'of it changes an outcome is still argued.',
+  takeaway: 'False stories spread because they are new and because they produce strong emotions, and '
+    + 'the best available evidence says that people, not bots, do most of the spreading. Checking a '
+    + 'claim takes about two minutes, and a real check names what you looked at. In an election every '
+    + 'tactic in this reading appears at once, and how much any of it changes a result is still argued '
+    + 'about.',
 
   questions: [
     { skill: 'Fallacies and Propaganda',
-      text: 'Pick something you saw this week that made you feel something strongly. Name the feeling, '
-        + 'and explain how that feeling helped the thing travel.',
-      startHere: 'Name the feeling, then one sentence on how it spread.',
-      pushFurther: 'Say whether it was false, or true and framed to mislead, and how you can tell the difference.' },
+      text: 'Describe one post you saw this week that gave you a strong emotional reaction. Name the '
+        + 'emotion, then explain how that emotion made people more likely to share the post.',
+      startHere: 'Two or three sentences. Name the emotion, then say how it helped the post spread.',
+      pushFurther: 'Decide whether the post was false, or true but framed to mislead, and explain how you can tell those two apart.' },
     { skill: 'Sourcing',
-      text: 'Take one claim you are not sure about and check it laterally. Write down what you did: who '
-        + 'published it, when, and who else reports it.',
-      startHere: 'Two moves is enough. Write what you found, including if you found nothing.',
-      pushFurther: 'Find the earliest version you can, and say who benefits if people believe it.' },
+      text: 'Choose one claim you are unsure about and check it using lateral reading. Write down what '
+        + 'you did: who published it, when it was published, and whether any other source reports it.',
+      startHere: 'Answering two of the five checking questions is enough. Report what you found, including if you found nothing.',
+      pushFurther: 'Find the earliest version of the claim that you can, and explain who benefits if people believe it.' },
     { skill: 'Generalizing from Evidence',
-      text: 'Pick one item from Part Five and explain the mechanism: step by step, how would it actually '
-        + 'change an election?',
-      startHere: 'One item, three steps.',
-      pushFurther: 'Name the evidence that would show it changed an outcome, and say whether that evidence could exist.' }
+      text: 'Choose one item from Part Five. Explain, in three steps, how it could change the result of '
+        + 'an election.',
+      startHere: 'Name the item, then give three steps in order.',
+      pushFurther: 'Name the evidence that would show it actually changed a result, and say whether that evidence could realistically exist.' }
   ]
 };
 
@@ -983,47 +999,43 @@ const TOPIC_6 = {
   topic: 'Topic 6',
   title: 'Who Gets to <em>Decide</em>?',
   eyebrow: 'Social Media · Topic 6',
-  deck: 'I told you on the first day I would ask you a hard question at the end. Here it is.',
+  deck: 'On the first day I said I would ask you a hard question at the end. This is it.',
   subtitle: 'You, the company, or the government',
   skillTags: ['Synthesizing Patterns', 'Generalizing from Evidence'],
   inClass: 'The question from day one, argued properly. You state the strongest version of a '
-    + 'position you do not hold, then take your own.',
+    + 'position you do not hold, and then you take your own.',
 
-  overview: 'On the first day I told you I would ask you a hard question at the end, and this is '
-    + 'it: who should get to decide what a platform is allowed to do to your attention, you, the '
-    + 'company, or the government? You traced the money, took a film apart, opened the algorithm '
-    + 'box, weighed the research on what it does to people, and followed a false story through the '
-    + 'system, so today is a real argument instead of opinions. '
-    + 'You will not be graded on which side you land.',
+  overview: 'On the first day I said I would ask you a hard question at the end. This is it. Who '
+    + 'should get to decide what a platform is allowed to do to your attention: you, the company, '
+    + 'or the government? You have earned the right to argue it. You traced the money, took a film '
+    + 'apart, opened the algorithm box, weighed the research on what these systems do to people, '
+    + 'and followed a false story through the system. You will not be graded on which side you '
+    + 'choose.',
 
-  // Three targets for the three moves the topic teaches: map the argument, find the
-  // tradeoff, use a precedent. The tradeoff is its own target rather than a clause
-  // inside another one because the topic states the rule outright, "an answer with
-  // no tradeoff in it is not finished", and a rule that governs every answer is
-  // worth naming on its own.
-  //
-  // The precedent target names the move, what is the same and what is different,
-  // rather than asking for a prediction. The topic is explicit that the four earlier
-  // fights do NOT tell you the answer, so a target reading "predict something about
-  // this one" asks for the one thing the reading says the history cannot give.
+  // Every position now uses the same two-part shape and the same two labels, "the case" and "the
+  // tradeoff." That word choice is not decoration: it is the word this topic already teaches in
+  // The Standard section and in learningTargets[1], so reusing it here instead of inventing a new
+  // abstract label per position (the earlier draft had "ownership," "a conflict of interest," and
+  // "cuts both ways") removes three pieces of vocabulary a ninth grader would otherwise have to
+  // hold in their head for no reason. Fewer new words, same content.
   learningTargets: [
     { skill: 'Synthesizing Patterns',
-      target: 'I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.' },
+      target: 'I can state all three answers to who should decide, and give the case and the tradeoff for each one.' },
     { skill: 'Hypotheses',
-      target: 'I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.' },
+      target: 'I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.' },
     { skill: 'Generalizing from Evidence',
-      target: 'I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.' }
+      target: 'I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.' }
   ],
 
-  // Criterion 2 is the one that does the work. Every position in the topic carries a
-  // "hardest question", and a student who states the other side well and then never
-  // turns that question on their own position has done half the assignment. None of
-  // the three questions asks for it, which is why it belongs here.
+  // Criterion 2 is the one that does the work. Every position in this topic carries a tradeoff, and
+  // a student who states the other side well and then never turns that same question on their own
+  // position has done half the assignment. None of the three questions asks for it, which is why it
+  // belongs here.
   successCriteria: [
     { skill: 'Synthesizing Patterns',
-      criteria: 'I can state the position I did not pick well enough that somebody who holds it would say I got it right.' },
+      criteria: 'I can state the position I did not choose well enough that somebody who holds it would say I got it right.' },
     { skill: 'Synthesizing Patterns',
-      criteria: 'I can answer the hardest question against my own position, rather than restating why I am right.' },
+      criteria: 'I can name the tradeoff in the position I actually hold, not just the one I argued against.' },
     { skill: 'Hypotheses',
       criteria: 'I can name what would change my mind, specifically enough that somebody could go looking for it.' }
   ],
@@ -1046,10 +1058,10 @@ const TOPIC_6 = {
 
   support: [
     { label: 'Before You Read',
-      body: 'You now know how the machine works. You traced the money, watched the film and took it apart, '
-        + 'opened the algorithm box, read the evidence about effects and about your own record, and '
-        + 'followed a lie through the system. That was all so today would be a real argument instead of '
-        + 'opinions.' },
+      body: 'You already know how the machine works. You traced the money, took a film apart, opened '
+        + 'the algorithm box, read the evidence about effects and about your own record, and followed '
+        + 'a false story through the system. All of that was so today could be a real argument instead '
+        + 'of a set of opinions.' },
     { label: 'Reading Target',
       body: 'By the end you should be able to state the strongest version of a position you do not hold, '
         + 'well enough that somebody who holds it would say you got it right.' }
@@ -1062,127 +1074,142 @@ const TOPIC_6 = {
       label: 'The Question',
       heading: 'Who should get to decide what a platform can do to your attention?',
       paragraphs: [
-        'Three answers are on the table. You. The company. The government.',
-        'Before you pick, one ground rule. Nobody in this argument is stupid. Every one of these three '
-        + 'positions is held by serious people who have thought about it more than we have. If a position '
-        + 'sounds obviously wrong to you, you are probably arguing against the weak version of it.',
-        'You will not be graded on which one you pick. You will be graded on whether you can state the '
-        + 'strongest version of the one you did not pick.'
+        'There are three answers on the table. You decide. The company decides. The government decides.',
+        'Before you choose, there is one ground rule. Serious, thoughtful people hold each of these '
+        + 'three positions. If a position feels obviously wrong to you, you are probably picturing a '
+        + 'weak version of it, not the strongest one.',
+        'You will not be graded on which position you choose. You will be graded on how well you can '
+        + 'state the strongest version of a position you did not choose.'
       ],
       callouts: [
         { label: 'The Standard',
-          body: 'A <span class="kt">tradeoff</span> means you give something up to get something. Every '
-            + 'answer here has one. An answer with no tradeoff in it is not finished.' }
+          body: 'A <span class="kt">tradeoff</span> is something you give up in order to get something '
+            + 'else. Every answer here has one. An answer with no tradeoff in it is not finished.' }
       ]
     },
     {
       label: 'Position One',
       heading: 'You decide',
       paragraphs: [
-        'The strongest case: it is your attention and your phone. You can delete the app, turn off '
-        + 'notifications, use the chronological feed, set a timer. Those controls exist. Adults get to make '
-        + 'bad choices about their own time, and treating teenagers as incapable of choosing is its own kind '
-        + 'of insult.',
-        'The hardest question for this position: the app was designed by people whose job was to make it '
-        + 'hard to put down, and they are very good at their job. Is a choice still a free choice when one '
-        + 'side has thousands of engineers and A/B tests and you have willpower?'
+        '<b>The case:</b> it is your attention and your phone, so you should be the one who controls '
+        + 'it. Real tools already exist. You can delete the app, turn off notifications, switch to '
+        + 'the feed that shows posts in time order instead of by algorithm, or set a timer. Adults get '
+        + 'to make their own choices about their time, even bad ones. Telling teenagers they cannot be '
+        + 'trusted to choose is unfair to them.',
+        '<b>The tradeoff:</b> the two sides are not evenly matched. The app was built by engineers '
+        + 'whose job is to make it hard to stop scrolling, and they have had years to get good at that '
+        + 'job. On one side is a large, well-funded team. On the other side is your willpower, by '
+        + 'itself. A choice made under those conditions may not be as free as it looks.'
       ]
     },
     {
       label: 'Position Two',
       heading: 'The company decides',
       paragraphs: [
-        'The strongest case: they built it, they pay for it, and you are not required to use it. This is '
-        + 'called <span class="kt">self-regulation</span>, and it is not nothing. Companies do change '
-        + 'things, sometimes because users complain and sometimes because bad press costs money. They also '
-        + 'know how the product works better than any regulator will.',
-        'The hardest question for this position: the company\'s income depends on your attention. When you '
-        + 'ask someone to protect you from the thing that pays them, what should you expect?'
+        '<b>The case:</b> the company built the product, pays to run it, and does not force anyone to '
+        + 'use it. When a company makes its own rules instead of waiting for government rules, that is '
+        + 'called <span class="kt">self-regulation</span>. Self-regulation is a real force, not just '
+        + 'words: companies do change their products, sometimes because users complain and sometimes '
+        + 'because bad press costs them money. Companies also understand their own product better than '
+        + 'an outside regulator would.',
+        '<b>The tradeoff:</b> the company earns its money from your attention. Fixing the problem would '
+        + 'mean reducing the exact thing that makes the company money. That is a hard thing to ask a '
+        + 'company to do to itself.'
       ]
     },
     {
       label: 'Position Three',
       heading: 'The government decides',
       paragraphs: [
-        '<span class="kt">Regulation</span> means the government sets rules a company has to follow. The '
-        + 'strongest case: we already do this constantly, and mostly nobody argues about it anymore. Cars '
-        + 'have required seatbelts. Cigarettes cannot be advertised on television. Children cannot work '
-        + 'full time. In each case people once said the choice should be personal, and now almost nobody '
-        + 'does.',
-        'The hardest question for this position: a government that can require a platform to change what it '
-        + 'shows you can also require it to change what it shows you. The power to protect and the power to '
-        + 'control are the same power, in different hands.'
+        '<b>The case:</b> <span class="kt">regulation</span> means the government requires a company '
+        + 'to follow certain rules. We already do this constantly, and most people no longer argue '
+        + 'about it. Cars must have seatbelts. Cigarette ads are banned from television. Children '
+        + 'cannot work full-time jobs. In each case, people used to say the choice should be personal. '
+        + 'Almost nobody says that now.',
+        '<b>The tradeoff:</b> the same power can be used two different ways. A government that is '
+        + 'allowed to make a platform protect people is also a government that is allowed to make a '
+        + 'platform control what people see. Right now we would be trusting the government to use that '
+        + 'power only the first way.'
       ],
       callouts: [
         { label: 'Watch For',
-          body: 'An <span class="kt">unintended consequence</span> is a result nobody wanted or predicted. '
-            + 'Rules aimed at big platforms often land hardest on small ones that cannot afford lawyers. '
-            + 'That does not settle the argument. It does belong in it.' }
+          body: 'An <span class="kt">unintended consequence</span> is a result that nobody wanted or '
+            + 'predicted. Rules written for large platforms often hurt small ones the most, because a '
+            + 'small company cannot afford the lawyers that complicated new rules require. That does '
+            + 'not settle the argument, but it belongs in it.' }
       ]
     },
     {
       label: 'The Method',
-      heading: 'This argument has been had before',
+      heading: 'This argument has happened before',
       paragraphs: [
-        'A <span class="kt">precedent</span> is an earlier case that people point to when deciding a new '
-        + 'one. This exact fight, about a new medium and what it does to young people, has run at least four '
-        + 'times before.',
-        'Comic books, in 1954, produced a Senate hearing and an industry code. Television violence produced '
-        + 'hearings across the 1970s. Music lyrics produced Senate hearings in 1985 and the parental '
-        + 'advisory sticker. Video games produced hearings in 1993 and the rating system on every box today.',
-        'Look at what those four have in common. Every one ended in industry self-regulation under threat '
-        + 'of government action, rather than in a law. Also worth knowing: the strongest claims made in '
-        + 'several of those panics did not hold up later. The comic book research was largely discredited. '
-        + 'The video game research is still contested.',
-        'That history does not tell you the answer. It does tell you that "this new thing is harming '
-        + 'children" has been said before, sometimes correctly and sometimes not, and that the people saying '
-        + 'it were sincere either way.'
+        'A <span class="kt">precedent</span> is an earlier case that people point to when they are '
+        + 'deciding a new one. This exact argument, about a new kind of media and what it does to '
+        + 'young people, has happened at least four times before.',
+        '<b>1954, comic books.</b> They led to a Senate hearing and a new industry code.',
+        '<b>1970s, television violence.</b> It led to hearings across the whole decade.',
+        '<b>1985, music lyrics.</b> They led to Senate hearings and the parental advisory sticker you '
+        + 'still see on album covers today.',
+        '<b>1993, video games.</b> They led to hearings and the rating system that is still on every '
+        + 'game box.',
+        'Those four examples have two things in common. First, none of them ended with a new law. Each '
+        + 'one ended with the industry making its own rules, only after the government threatened to '
+        + 'step in.',
+        'Second, some of the strongest claims made during these arguments turned out to be wrong. '
+        + 'Later research showed that the comic book studies were seriously flawed. The video game '
+        + 'research is still argued about today.',
+        'This history does not tell you who is right today. It does tell you something else: people '
+        + 'have said "this new thing is dangerous for kids" many times before. Sometimes they turned '
+        + 'out to be right. Sometimes they did not. Either way, they believed what they were saying.'
       ],
       callouts: [
         { label: 'Skill Focus',
-          body: 'Using a precedent well means naming what is the same <em>and</em> what is different. Social '
-            + 'media is not a comic book: it is personalized, it is always with you, and it responds to you. '
-            + 'Any argument from precedent has to survive those three differences.' }
+          body: 'Using a precedent well means naming what is the same <em>and</em> what is different, '
+            + 'not just one or the other. Social media is different from a comic book in three specific '
+            + 'ways: it is personalized to you, it is with you all the time, and it responds to what '
+            + 'you do. Any comparison to an earlier case has to deal with those three differences.' }
       ]
     }
   ],
 
   roadNotTaken: {
     label: 'The Road Not Taken',
-    heading: 'The rules we have were chosen, and one of them was almost undone',
+    heading: 'The rules we have now were chosen, and one of them almost disappeared',
     paragraphs: [
-      'The most important rule about platforms in the United States is a single sentence from 1996, in '
-      + 'Section 230 of the Communications Decency Act. It says a platform is generally not treated as the '
-      + 'publisher of what its users post. That sentence is a large part of why the internet looks the way '
-      + 'it does.',
-      'It could easily not exist. The rest of the law it came in was struck down by the Supreme Court in '
-      + '1997 as a violation of free speech. Section 230 survived. Politicians in both parties have since '
-      + 'proposed repealing or narrowing it, for opposite reasons, and it is still there.',
-      'So when you argue about who should decide, remember that the current arrangement is not the natural '
-      + 'state of things. It is one sentence that survived a court case, and people are still fighting over '
-      + 'it right now.'
+      'The most important rule about platforms in the United States is one sentence, written in 1996. '
+      + 'It is part of a law called Section 230. The sentence says that a platform is usually not '
+      + 'treated as the publisher of what its users post. In plain terms: if you post something '
+      + 'illegal or false, you can be held responsible for it, but the platform usually cannot.',
+      'This rule almost did not survive. It was part of a much larger law. In 1997, the Supreme Court '
+      + 'struck down the rest of that law for violating free speech. Only Section 230 survived. Since '
+      + 'then, lawmakers from both parties have tried to change it or remove it, for different reasons. '
+      + 'It is still the law today.',
+      'So remember this when you argue today: the rules we have were not the only possible outcome. '
+      + 'They came down to one sentence that barely survived a court case, and people are still '
+      + 'fighting over it right now.'
     ]
   },
 
-  takeaway: 'Three answers, each with a real case and a real cost. This argument has been had four times '
-    + 'before about four different media, and it usually ended in self-regulation under pressure. Your job '
-    + 'is not to win it today. It is to state the other side well enough that they would recognize it.',
+  takeaway: 'There are three answers, and each one has a real case and a real tradeoff. This argument '
+    + 'has happened four times before, about four different kinds of media, and it usually ended in '
+    + 'self-regulation instead of a new law. Your job today is not to win the argument. Your job is to '
+    + 'state the other side well enough that somebody who holds it would say you got it right.',
 
   questions: [
     { skill: 'Synthesizing Patterns',
-      text: 'Pick the position you do NOT hold. State the strongest version of it, in your own words, as '
-        + 'well as you possibly can.',
-      startHere: 'Three or four sentences making the best case for a side you disagree with.',
-      pushFurther: 'Then name the one fact that would make that side clearly right.' },
+      text: 'Choose the position you do not agree with. Write the strongest case for it, in your own words.',
+      startHere: 'Three or four sentences making the best case you can for a side you disagree with.',
+      pushFurther: 'Name one fact that would prove that position right.' },
     { skill: 'Generalizing from Evidence',
-      text: 'Pick one earlier fight: comic books, television, music lyrics, or video games. What happened, '
-        + 'and what does it predict about this one?',
-      startHere: 'Say what happened and one thing it predicts.',
-      pushFurther: 'Name one way social media is genuinely different, and say whether that breaks your prediction.' },
+      text: 'Choose one earlier argument: comic books, television, music lyrics, or video games. '
+        + 'Describe what happened, then name one way social media is different from that medium.',
+      startHere: 'Say what happened in two or three sentences, then name one difference.',
+      pushFurther: 'Then say whether that difference makes the older example more helpful or less helpful for answering today\'s question.' },
     { skill: 'Generalizing from Evidence',
-      text: 'What evidence would change your mind? Be specific enough that somebody could go looking for it.',
-      startHere: 'One thing. It has to be something a person could actually find out.',
-      pushFurther: 'Say why you have not gone looking for it yet.' }
+      text: 'What evidence would change your mind about who should decide? Be specific enough that '
+        + 'somebody could go looking for it.',
+      startHere: 'Name one thing. It has to be something a person could actually find out.',
+      pushFurther: 'Explain where a person could look for that evidence.' }
   ]
 };
 

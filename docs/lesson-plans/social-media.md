@@ -280,53 +280,53 @@ _Fake news, the tactics that carry it, and elections_
 
 ### Overview
 
-Today is the part of this unit everybody thinks they are already good at. You will find out that spotting false information is mostly not about the false information. It is about what carries it: emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. Then you will learn the actual checking, which takes about ninety seconds, and find out what the research says about who does the spreading. The answer to that last one is not what most people assume.
+Most people believe they are already good at spotting false information. Today you will find out that spotting it is mostly not about the false information itself. It is about what carries it: strong emotion, headlines built to be clicked, accounts that are not people, and a ranking system that rewards whatever gets a reaction. You will then learn how to check a claim, which takes about two minutes, and read what the research says about who does the spreading. That last answer is not the one most people expect.
 
 ### Learning targets
 
-1. **Fallacies and Propaganda.** I can name four tactics that make false information spread, and explain what each one does to the reader.
-2. **Sourcing.** I can check an unfamiliar claim in under two minutes, and say specifically what I checked.
-3. **Generalizing from Evidence.** I can explain one specific mechanism by which false information affects an election, beyond people believing wrong things.
+1. **Fallacies and Propaganda.** I can name four tactics that spread false information, and explain what each one does to the reader.
+2. **Sourcing.** I can check an unfamiliar claim in about two minutes, and say exactly what I checked.
+3. **Generalizing from Evidence.** I can explain one specific way that false information affects an election, beyond people believing something untrue.
 
 ### Success criteria
 
-1. **Fallacies and Propaganda.** I can name the feeling a piece of content is aiming for, and say why that feeling helps it spread.
+1. **Fallacies and Propaganda.** I can name the emotion a post is aiming for, and explain why that emotion helps it spread.
 2. **Sourcing.** I can trace a claim back to its earliest source, or say honestly that I looked and could not find one.
 3. **Corroboration.** I can explain the difference between a claim that is false and a claim that is true but framed to mislead.
 
 ### What happens in class
 
-We take a real hoax apart, name the four tactics that carry one, then do the checking, which takes about ninety seconds and almost nobody does.
+We take one real hoax apart, name the four tactics that carry false information, and then practice the checking, which takes about two minutes.
 
 ### The Brief
 
-**Before You Read.** You know the machine now: what the app counts and what it pushes a number on. Today you find out what kind of content that machine rewards, and what happens when somebody builds content for it deliberately.
+**Before You Read.** You already know how the machine works. In Topic 1 you traced how an app makes money when people keep looking at it. In Topic 3 you opened the ranking system and saw that the feed is built to produce reaction. This reading is about which posts produce the most reaction, and about people who build posts for that on purpose.
 
-**Reading Target.** By the end you should be able to check a claim you are unsure about in under two minutes, and say out loud what you checked rather than that you did not believe it.
+**Reading Target.** By the end you should be able to check a claim you are unsure about in about two minutes, and explain out loud what you checked. Saying "I did not believe it" is not an explanation.
 
 **Key terms.** misinformation, disinformation, clickbait, deepfake, bot, lateral reading, echo chamber, microtargeting.
 
-- **Part One.** Two words, and the difference is the person sending it
-- **Part Two.** The four tactics
-- **Part Three.** Who actually spreads it, and it is not the bots
-- **Part Four.** The checking, which takes about ninety seconds
-- **Part Five.** Elections, where all of it runs at once
+- **Part One.** Two words for false information
+- **Part Two.** Four tactics, and the system that rewards them
+- **Part Three.** Who spreads false information
+- **Part Four.** How to check a claim, in about two minutes
+- **Part Five.** Elections, where all of it appears at once
 
-**The Road Not Taken.** The echo chamber is the part of this that might be wrong
+**The Road Not Taken.** The echo chamber may be the part of this that is wrong
 
-**BeReady, the 10-second takeaway.** False things travel because they are new and they make you feel something, and the best evidence says people rather than bots do most of the carrying. The check takes ninety seconds and names what you actually looked at. In an election every tactic here runs at once, and how much any of it changes an outcome is still argued.
+**BeReady, the 10-second takeaway.** False stories spread because they are new and because they produce strong emotions, and the best available evidence says that people, not bots, do most of the spreading. Checking a claim takes about two minutes, and a real check names what you looked at. In an election every tactic in this reading appears at once, and how much any of it changes a result is still argued about.
 
 ### The questions
 
-1. **Fallacies and Propaganda.** Pick something you saw this week that made you feel something strongly. Name the feeling, and explain how that feeling helped the thing travel.
-   - START HERE: Name the feeling, then one sentence on how it spread.
-   - PUSH FURTHER: Say whether it was false, or true and framed to mislead, and how you can tell the difference.
-2. **Sourcing.** Take one claim you are not sure about and check it laterally. Write down what you did: who published it, when, and who else reports it.
-   - START HERE: Two moves is enough. Write what you found, including if you found nothing.
-   - PUSH FURTHER: Find the earliest version you can, and say who benefits if people believe it.
-3. **Generalizing from Evidence.** Pick one item from Part Five and explain the mechanism: step by step, how would it actually change an election?
-   - START HERE: One item, three steps.
-   - PUSH FURTHER: Name the evidence that would show it changed an outcome, and say whether that evidence could exist.
+1. **Fallacies and Propaganda.** Describe one post you saw this week that gave you a strong emotional reaction. Name the emotion, then explain how that emotion made people more likely to share the post.
+   - START HERE: Two or three sentences. Name the emotion, then say how it helped the post spread.
+   - PUSH FURTHER: Decide whether the post was false, or true but framed to mislead, and explain how you can tell those two apart.
+2. **Sourcing.** Choose one claim you are unsure about and check it using lateral reading. Write down what you did: who published it, when it was published, and whether any other source reports it.
+   - START HERE: Answering two of the five checking questions is enough. Report what you found, including if you found nothing.
+   - PUSH FURTHER: Find the earliest version of the claim that you can, and explain who benefits if people believe it.
+3. **Generalizing from Evidence.** Choose one item from Part Five. Explain, in three steps, how it could change the result of an election.
+   - START HERE: Name the item, then give three steps in order.
+   - PUSH FURTHER: Name the evidence that would show it actually changed a result, and say whether that evidence could realistically exist.
 
 ### Where the work goes
 
@@ -347,27 +347,27 @@ _You, the company, or the government_
 
 ### Overview
 
-On the first day I told you I would ask you a hard question at the end, and this is it: who should get to decide what a platform is allowed to do to your attention, you, the company, or the government? You traced the money, took a film apart, opened the algorithm box, weighed the research on what it does to people, and followed a false story through the system, so today is a real argument instead of opinions. You will not be graded on which side you land.
+On the first day I said I would ask you a hard question at the end. This is it. Who should get to decide what a platform is allowed to do to your attention: you, the company, or the government? You have earned the right to argue it. You traced the money, took a film apart, opened the algorithm box, weighed the research on what these systems do to people, and followed a false story through the system. You will not be graded on which side you choose.
 
 ### Learning targets
 
-1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the strongest case and the hardest question for each one.
-2. **Hypotheses.** I can name the tradeoff in a position, including the one I hold, because an answer with no tradeoff in it is not finished.
-3. **Generalizing from Evidence.** I can use an earlier fight over a new medium as a precedent, by naming what is the same and what is different.
+1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the case and the tradeoff for each one.
+2. **Hypotheses.** I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.
+3. **Generalizing from Evidence.** I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.
 
 ### Success criteria
 
-1. **Synthesizing Patterns.** I can state the position I did not pick well enough that somebody who holds it would say I got it right.
-2. **Synthesizing Patterns.** I can answer the hardest question against my own position, rather than restating why I am right.
+1. **Synthesizing Patterns.** I can state the position I did not choose well enough that somebody who holds it would say I got it right.
+2. **Synthesizing Patterns.** I can name the tradeoff in the position I actually hold, not just the one I argued against.
 3. **Hypotheses.** I can name what would change my mind, specifically enough that somebody could go looking for it.
 
 ### What happens in class
 
-The question from day one, argued properly. You state the strongest version of a position you do not hold, then take your own.
+The question from day one, argued properly. You state the strongest version of a position you do not hold, and then you take your own.
 
 ### The Brief
 
-**Before You Read.** You now know how the machine works. You traced the money, watched the film and took it apart, opened the algorithm box, read the evidence about effects and about your own record, and followed a lie through the system. That was all so today would be a real argument instead of opinions.
+**Before You Read.** You already know how the machine works. You traced the money, took a film apart, opened the algorithm box, read the evidence about effects and about your own record, and followed a false story through the system. All of that was so today could be a real argument instead of a set of opinions.
 
 **Reading Target.** By the end you should be able to state the strongest version of a position you do not hold, well enough that somebody who holds it would say you got it right.
 
@@ -377,23 +377,23 @@ The question from day one, argued properly. You state the strongest version of a
 - **Position One.** You decide
 - **Position Two.** The company decides
 - **Position Three.** The government decides
-- **The Method.** This argument has been had before
+- **The Method.** This argument has happened before
 
-**The Road Not Taken.** The rules we have were chosen, and one of them was almost undone
+**The Road Not Taken.** The rules we have now were chosen, and one of them almost disappeared
 
-**BeReady, the 10-second takeaway.** Three answers, each with a real case and a real cost. This argument has been had four times before about four different media, and it usually ended in self-regulation under pressure. Your job is not to win it today. It is to state the other side well enough that they would recognize it.
+**BeReady, the 10-second takeaway.** There are three answers, and each one has a real case and a real tradeoff. This argument has happened four times before, about four different kinds of media, and it usually ended in self-regulation instead of a new law. Your job today is not to win the argument. Your job is to state the other side well enough that somebody who holds it would say you got it right.
 
 ### The questions
 
-1. **Synthesizing Patterns.** Pick the position you do NOT hold. State the strongest version of it, in your own words, as well as you possibly can.
-   - START HERE: Three or four sentences making the best case for a side you disagree with.
-   - PUSH FURTHER: Then name the one fact that would make that side clearly right.
-2. **Generalizing from Evidence.** Pick one earlier fight: comic books, television, music lyrics, or video games. What happened, and what does it predict about this one?
-   - START HERE: Say what happened and one thing it predicts.
-   - PUSH FURTHER: Name one way social media is genuinely different, and say whether that breaks your prediction.
-3. **Generalizing from Evidence.** What evidence would change your mind? Be specific enough that somebody could go looking for it.
-   - START HERE: One thing. It has to be something a person could actually find out.
-   - PUSH FURTHER: Say why you have not gone looking for it yet.
+1. **Synthesizing Patterns.** Choose the position you do not agree with. Write the strongest case for it, in your own words.
+   - START HERE: Three or four sentences making the best case you can for a side you disagree with.
+   - PUSH FURTHER: Name one fact that would prove that position right.
+2. **Generalizing from Evidence.** Choose one earlier argument: comic books, television, music lyrics, or video games. Describe what happened, then name one way social media is different from that medium.
+   - START HERE: Say what happened in two or three sentences, then name one difference.
+   - PUSH FURTHER: Then say whether that difference makes the older example more helpful or less helpful for answering today's question.
+3. **Generalizing from Evidence.** What evidence would change your mind about who should decide? Be specific enough that somebody could go looking for it.
+   - START HERE: Name one thing. It has to be something a person could actually find out.
+   - PUSH FURTHER: Explain where a person could look for that evidence.
 
 ### Where the work goes
 
