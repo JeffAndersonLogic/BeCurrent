@@ -322,7 +322,7 @@ We take one real hoax apart, name the four tactics that carry false information,
    - START HERE: Two or three sentences. Name the emotion, then say how it helped the post spread.
    - PUSH FURTHER: Decide whether the post was false, or true but framed to mislead, and explain how you can tell those two apart.
 2. **Sourcing.** Choose one claim you are unsure about and check it using lateral reading. Write down what you did: who published it, when it was published, and whether any other source reports it.
-   - START HERE: Two of the five checking questions is enough. Report what you found, including if you found nothing.
+   - START HERE: Answering two of the five checking questions is enough. Report what you found, including if you found nothing.
    - PUSH FURTHER: Find the earliest version of the claim that you can, and explain who benefits if people believe it.
 3. **Generalizing from Evidence.** Choose one item from Part Five. Explain, in three steps, how it could change the result of an election.
    - START HERE: Name the item, then give three steps in order.

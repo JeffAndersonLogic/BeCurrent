@@ -871,7 +871,7 @@ const TOPIC_5 = {
         + 'fact-checkers with students. The fact-checkers left the page almost immediately. The students '
         + 'stayed and examined the page\'s design, its logo, and its About section, all of which the page '
         + 'itself controls.',
-        'There are five questions to ask, listed here in order of how much they return for the effort. '
+        'There are five questions to ask, listed here from most useful to least. '
         + 'First, who published this? Second, when was it published, since old stories are constantly '
         + 'reshared as new ones? Third, does any other source report it, and if only one does, why? '
         + 'Fourth, what is the earliest version you can find, since the version you saw is usually '
@@ -880,12 +880,12 @@ const TOPIC_5 = {
         'Fact-checking sites such as Snopes and FactCheck.org are most useful in one specific case, which '
         + 'is a claim you have already seen five times. If something is circulating widely, somebody has '
         + 'probably already done the work, and reading their work is faster than repeating it.',
-        'Skepticism has a failure mode, and you should know what it is, because this course could teach '
+        'Being skeptical can go wrong in one specific way, and you should know about it, because this class could teach '
         + 'it by accident. Doubting everything equally is not media literacy. It is paralysis, and it is '
         + 'genuinely useful to anyone running a disinformation campaign, because if nothing can be '
         + 'established then nothing they say can be disproven. The goal is calibration, which means '
         + 'believing a claim in proportion to the evidence for it.',
-        'The rule with the best return is the simplest one. Do not pass along something you have not '
+        'The single most useful rule is also the simplest one. Do not pass along something you have not '
         + 'checked. That is not offered as a rule about being a good person. Part Three is the reason: '
         + 'you are part of the distribution system, and that part is the largest one.'
       ],
@@ -922,7 +922,7 @@ const TOPIC_5 = {
         + 'five billion dollar penalty from the Federal Trade Commission.',
         '<strong><span class="kt">Echo chambers</span>.</strong> This is the idea that ranking narrows '
         + 'what a person sees until they mostly encounter people who already agree with them, so opposing '
-        + 'arguments arrive only in weak forms. Hold this one loosely. It is the least settled part of '
+        + 'arguments arrive only in weak forms. Treat this one as less certain than the others. It is the least settled part of '
         + 'this section, which is what The Road Not Taken below is about.',
         '<strong>Polarization.</strong> This means us-against-them hardening over time. The mechanism is '
         + 'the engagement number again. Posts attacking the other side reliably outperform posts '
@@ -955,7 +955,7 @@ const TOPIC_5 = {
       + 'partisans are a small share of users rather than the norm. A 2015 study in <em>Science</em> by '
       + 'Eytan Bakshy, Solomon Messing and Lada Adamic found that on Facebook, individual choices about '
       + 'what to click mattered more than the ranking did for how much opposing content people actually '
-      + 'read. Note who those authors worked for, which is Facebook. That is a reason to read the study '
+      + 'read. Those authors worked for Facebook, and that is worth remembering. It is a reason to read the study '
       + 'carefully. It is not a reason to throw it out, and noticing that difference is the skill.',
       'A rival explanation is that the bubble is mostly offline. Who you live near, who you are related '
       + 'to, and who you talk to in person were not chosen by an algorithm.',
@@ -981,7 +981,7 @@ const TOPIC_5 = {
     { skill: 'Sourcing',
       text: 'Choose one claim you are unsure about and check it using lateral reading. Write down what '
         + 'you did: who published it, when it was published, and whether any other source reports it.',
-      startHere: 'Two of the five checking questions is enough. Report what you found, including if you found nothing.',
+      startHere: 'Answering two of the five checking questions is enough. Report what you found, including if you found nothing.',
       pushFurther: 'Find the earliest version of the claim that you can, and explain who benefits if people believe it.' },
     { skill: 'Generalizing from Evidence',
       text: 'Choose one item from Part Five. Explain, in three steps, how it could change the result of '
