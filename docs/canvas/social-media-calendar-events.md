@@ -391,7 +391,7 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.</li>
+                    <li>I can state all three answers to who should decide, and give the case and the tradeoff for each one.</li>
                     <li>I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.</li>
                     <li>I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.</li>
                 </ol>
@@ -404,7 +404,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <ol>
                     <li>I can state the position I did not choose well enough that somebody who holds it would say I got it right.</li>
-                    <li>I can answer the hardest problem with my own position, instead of repeating why I am right.</li>
+                    <li>I can name the tradeoff in the position I actually hold, not just the one I argued against.</li>
                     <li>I can name what would change my mind, specifically enough that somebody could go looking for it.</li>
                 </ol>
             </td>

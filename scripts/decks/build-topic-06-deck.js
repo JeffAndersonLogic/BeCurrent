@@ -67,39 +67,33 @@ const CLOSING_QUOTE = 'state the other side well enough that somebody who holds 
 
 const POSITIONS = [
   { ord: 'Position one', heading: plain(B.sections[1].heading),
-    caseLabel: 'Ownership',
     strongest: [
-      'It is your attention and your phone.',
-      'The controls already exist: delete the app, turn off notifications, switch to the chronological feed, set a timer.',
-      'Adults are allowed to make poor choices about their own time. Treating teenagers as unable to choose is its own kind of disrespect.'
+      'It is your attention and your phone, so you should be the one who controls it.',
+      'Real tools already exist: delete the app, turn off notifications, switch to a time-ordered feed, set a timer.',
+      'Adults get to make their own choices about their time, even bad ones.'
     ],
-    problemLabel: 'The size of the mismatch',
-    hardest: 'The app was designed by people whose job was to make it hard to put down, and they are very '
-      + 'good at that job. On one side there are thousands of engineers and years of testing. On the other '
-      + 'side there is your willpower. A choice made under those conditions is not obviously a free choice.' },
+    hardest: 'The two sides are not evenly matched. The app was built by engineers whose job is to make it '
+      + 'hard to stop scrolling, and they have had years to get good at that job. On one side is a large, '
+      + 'well-funded team. On the other side is your willpower, by itself.' },
 
   { ord: 'Position two', heading: plain(B.sections[2].heading),
-    caseLabel: 'They built it',
     strongest: [
-      'The company built the product, pays for it, and does not require anyone to use it.',
-      'When a company sets its own rules, that is called self-regulation. It is not nothing: companies do change things when users complain or bad publicity costs money.',
-      'They also understand the product better than any outside regulator will.'
+      'The company built the product, pays to run it, and does not force anyone to use it.',
+      'Self-regulation is a real force: companies do change their products when users complain or bad press costs them money.',
+      'The company also understands its own product better than an outside regulator would.'
     ],
-    problemLabel: 'A conflict of interest',
-    hardest: 'The company earns its money from your attention. Asking that company to protect you from the '
-      + 'thing that pays it puts the company on both sides of the question at once.' },
+    hardest: 'The company earns its money from your attention. Fixing the problem would mean reducing the '
+      + 'exact thing that makes the company money. That is a hard thing to ask a company to do to itself.' },
 
   { ord: 'Position three', heading: plain(B.sections[3].heading),
-    caseLabel: 'We already do this',
     strongest: [
-      'Regulation means the government sets rules a company has to follow.',
-      'Cars must have seatbelts. Cigarettes cannot be advertised on television. Children cannot work full time.',
-      'People once argued each of those should be a personal choice. Almost nobody argues that now.'
+      'Regulation means the government requires a company to follow certain rules.',
+      'We already do this constantly: seatbelts, no cigarette ads on TV, no full-time child labor.',
+      'People used to say those choices should be personal. Almost nobody says that now.'
     ],
-    problemLabel: 'The power cuts both ways',
-    hardest: 'A government that can require a platform to change what it shows you can use that same power '
-      + 'for its own purposes later. Protecting people and controlling them require the same legal '
-      + 'authority. What changes is who is holding it.' }
+    hardest: 'The same power can be used two different ways. A government allowed to make a platform '
+      + 'protect people is also a government allowed to make a platform control what people see. Right '
+      + 'now we would be trusting it to use that power only the first way.' }
 ];
 
 const PRECEDENTS = [
@@ -122,8 +116,8 @@ const NOTES = [
   + 'board and leave it there. You will come back to it at the end and ask who moved.',
 
   'This slide decides whether the argument is any good. Say it plainly: every one of these positions is '
-  + 'held by serious people. If a position seems obviously wrong, they are arguing with a weak version '
-  + 'of it, and beating a weak version teaches nothing.',
+  + 'held by serious, thoughtful people. If a position feels obviously wrong, they are probably picturing '
+  + 'a weak version of it, and beating a weak version teaches nothing.',
 
   'Define tradeoff, then hold everybody to it for the rest of the block. An answer with no cost in it is '
   + 'not finished, and that is the standard you will grade against, so say so now rather than after.',
@@ -133,7 +127,7 @@ const NOTES = [
   + 'honest shape of the problem, not a trick.',
 
   'The self-regulation card is the one students underrate, so give it real weight: bad publicity does '
-  + 'move companies. Then the hardest problem, which is the clearest conflict of interest in the unit. '
+  + 'move companies. Then the tradeoff, which is the clearest conflict of interest in the unit. '
   + 'Let the silence sit for a moment.',
 
   'Lead with the ordinary examples, because seatbelts and cigarette advertising are what make this '
@@ -321,13 +315,13 @@ POSITIONS.forEach((pos, i) => {
 
   const cardH = i === 2 ? 2.25 : 2.75;
   K.card(s, { x: M, y: 1.78, w: 4.2, h: cardH });
-  K.body(s, 'THE STRONGEST CASE: ' + pos.caseLabel.toUpperCase(), { x: 0.86, y: 2.0, w: 3.68,
-    h: 0.24, face: F.mono, size: 8.5, bold: true, color: P.cool });
+  K.body(s, 'THE CASE', { x: 0.86, y: 2.0, w: 3.68, h: 0.24, face: F.mono, size: 8.5, bold: true,
+    color: P.cool });
   K.bullets(s, pos.strongest, { x: 0.86, y: 2.32, w: 3.68, h: cardH - 0.72, size: 12.5, gap: 8 });
 
   K.card(s, { x: 5.2, y: 1.78, w: 4.2, h: cardH, fill: P.signalTint, line: P.signalTint });
-  K.body(s, 'THE HARDEST PROBLEM: ' + pos.problemLabel.toUpperCase(), { x: 5.46, y: 2.0, w: 3.68,
-    h: 0.24, face: F.mono, size: 8.5, bold: true, color: P.signalDeep });
+  K.body(s, 'THE TRADEOFF', { x: 5.46, y: 2.0, w: 3.68, h: 0.24, face: F.mono, size: 8.5, bold: true,
+    color: P.signalDeep });
   K.body(s, pos.hardest, { x: 5.46, y: 2.32, w: 3.68, h: cardH - 0.72, size: 12.5, color: P.ink,
     lineSpacing: 1.16 });
 
@@ -335,8 +329,8 @@ POSITIONS.forEach((pos, i) => {
     K.card(s, { x: M, y: 4.22, w: CW, h: 0.7, fill: P.coolTint, line: P.coolTint });
     K.body(s, 'WATCH FOR', { x: 0.86, y: 4.36, w: 1.3, h: 0.22, face: F.mono, size: 8.5, bold: true,
       color: P.cool });
-    K.body(s, 'An unintended consequence is a result nobody wanted or predicted. Rules written for '
-      + 'large platforms often land hardest on small ones, which cannot afford the lawyers.',
+    K.body(s, 'Rules written for large platforms often hurt small ones the most, because small '
+      + 'companies cannot afford the lawyers new rules require.',
       { x: 2.2, y: 4.3, w: 6.9, h: 0.54, size: 12, color: P.ink, lineSpacing: 1.06 });
   }
 
@@ -348,17 +342,17 @@ POSITIONS.forEach((pos, i) => {
 {
   const s = K.light(pres);
   K.eyebrow(s, 'Before you write');
-  K.title(s, 'The case, and the cost');
+  K.title(s, 'The case, and the tradeoff');
 
   const grid = [
     ['You', 'It is your attention, and the controls already exist.',
-      'Thousands of engineers on one side, your willpower on the other.'],
-    ['The company', 'They built it, and bad publicity does move them.',
-      'They earn money from your attention, so you are asking the wrong party.'],
+      'A large, well-funded team on one side, your willpower on the other.'],
+    ['The company', 'They built it, and bad press does move them.',
+      'Fixing the problem means giving up the thing that makes them money.'],
     ['The government', 'Seatbelts. Cigarette advertising. Child labor.',
-      'The same authority that protects people can be used to control them.']
+      'The same power that protects people can be used to control them.']
   ];
-  grid.forEach(([label, kase, cost], i) => {
+  grid.forEach(([label, kase, tradeoff], i) => {
     const x = M + i * 3.0;
     K.card(s, { x, y: 1.7, w: 2.8, h: 2.7 });
     K.body(s, label, { x: x + 0.24, y: 1.92, w: 2.32, h: 0.3, size: 16, bold: true, color: P.ink,
@@ -366,12 +360,12 @@ POSITIONS.forEach((pos, i) => {
     K.body(s, 'THE CASE', { x: x + 0.24, y: 2.34, w: 2.32, h: 0.22, face: F.mono, size: 8.5,
       bold: true, color: P.cool });
     K.body(s, kase, { x: x + 0.24, y: 2.6, w: 2.32, h: 0.62, size: 12, lineSpacing: 1.06 });
-    K.body(s, 'THE COST', { x: x + 0.24, y: 3.3, w: 2.32, h: 0.22, face: F.mono, size: 8.5,
+    K.body(s, 'THE TRADEOFF', { x: x + 0.24, y: 3.3, w: 2.32, h: 0.22, face: F.mono, size: 8.5,
       bold: true, color: P.signalDeep });
-    K.body(s, cost, { x: x + 0.24, y: 3.56, w: 2.32, h: 0.7, size: 12, lineSpacing: 1.06 });
+    K.body(s, tradeoff, { x: x + 0.24, y: 3.56, w: 2.32, h: 0.7, size: 12, lineSpacing: 1.06 });
   });
 
-  K.body(s, 'If you cannot say the cost of your own position, you are not ready to write about it yet.',
+  K.body(s, 'If you cannot name your own tradeoff, you are not ready to write about it yet.',
     { x: M, y: 4.56, w: CW, h: 0.34, size: 13.5, italic: true });
 
   notes(s);
@@ -416,20 +410,19 @@ POSITIONS.forEach((pos, i) => {
     color: P.signalDeep });
   K.body(s, '4 of 4', { x: 0.88, y: 2.3, w: 3.64, h: 0.56, face: F.display, size: 32, bold: true,
     color: P.signalDeep });
-  K.body(s, 'ended with the industry regulating itself under the threat of government action, rather '
-    + 'than in a law.',
+  K.body(s, 'ended with the industry making its own rules, instead of a new law.',
     { x: 0.88, y: 2.94, w: 3.64, h: 0.8, size: 13, color: P.ink, lineSpacing: 1.14 });
 
   K.card(s, { x: 5.2, y: 1.8, w: 4.2, h: 2.1 });
   K.body(s, 'SECOND', { x: 5.46, y: 2.02, w: 3.68, h: 0.24, face: F.mono, size: 9, bold: true,
     color: P.cool });
-  K.body(s, 'The strongest claims made during several of those arguments did not hold up later. The '
-    + 'comic book research was largely discredited. The video game research is still contested.',
+  K.body(s, 'Some of the strongest claims made back then turned out to be wrong. The comic book '
+    + 'research was seriously flawed. The video game research is still argued about.',
     { x: 5.46, y: 2.34, w: 3.68, h: 1.3, size: 13, lineSpacing: 1.16 });
 
-  K.body(s, 'That history does not tell you the answer. It tells you that "this new thing is harming '
-    + 'children" has been said before, sometimes correctly and sometimes not, and that the people '
-    + 'saying it believed it either way.',
+  K.body(s, 'This history does not tell you who is right today. People have said "this new thing is '
+    + 'dangerous for kids" many times before, sometimes correctly and sometimes not, and they believed '
+    + 'it either way.',
     { x: M, y: 4.1, w: CW, h: 0.7, size: 13, lineSpacing: 1.14 });
 
   notes(s);
@@ -469,29 +462,32 @@ POSITIONS.forEach((pos, i) => {
 {
   const s = K.light(pres);
   K.eyebrow(s, plain(B.roadNotTaken.label));
-  K.title(s, 'One sentence, written in 1996');
+  K.title(s, 'One sentence, from 1996', { size: 30 });
 
-  K.card(s, { x: M, y: 1.66, w: CW, h: 0.94, fill: P.signalTint, line: P.signalTint });
-  K.body(s, '"A platform is generally not treated as the publisher of what its users post."',
-    { x: 0.9, y: 1.66, w: 8.2, h: 0.94, face: F.display, size: 18, italic: true, color: P.ink,
+  K.card(s, { x: M, y: 1.6, w: CW, h: 0.86, fill: P.signalTint, line: P.signalTint });
+  K.body(s, 'In plain terms: if a user posts something illegal, the user can be held responsible. '
+    + 'The platform usually cannot.',
+    { x: 0.9, y: 1.6, w: 8.2, h: 0.86, face: F.display, size: 17, italic: true, color: P.ink,
       valign: 'middle' });
 
   const steps = [
-    ['1996', 'That sentence becomes part of Section 230 of the Communications Decency Act.'],
-    ['1997', 'The Supreme Court strikes down the rest of the law for violating free speech. Section 230 survives.'],
-    ['Since', 'Politicians in both parties have proposed repealing it or narrowing it, for opposite reasons.'],
-    ['Now', 'It is still in place, and people are still arguing about it.']
+    ['1996', 'One sentence becomes part of Section 230 of the Communications Decency Act: a platform '
+      + 'is usually not treated as the publisher of what its users post.'],
+    ['1997', 'The Supreme Court strikes down the rest of that law for violating free speech. Section '
+      + '230 survives.'],
+    ['Since', 'Lawmakers from both parties have tried to change it or remove it, for different reasons.'],
+    ['Now', 'It is still the law, and people are still fighting over it.']
   ];
   steps.forEach(([when, text], i) => {
-    const y = 2.72 + i * 0.48;
-    K.body(s, when, { x: M, y, w: 0.72, h: 0.28, face: F.mono, size: 10.5, bold: true,
+    const y = 2.62 + i * 0.5;
+    K.body(s, when, { x: M, y, w: 0.9, h: 0.4, face: F.mono, size: 9.5, bold: true,
       color: P.signalDeep, valign: 'middle' });
-    K.body(s, text, { x: 1.42, y, w: 7.98, h: 0.36, size: 12.5, color: P.ink, valign: 'middle',
-      lineSpacing: 1.04 });
+    K.body(s, text, { x: 1.6, y, w: 7.8, h: 0.44, size: 11.5, color: P.ink, valign: 'middle',
+      lineSpacing: 1.06 });
   });
 
-  K.body(s, 'The arrangement we have now was not inevitable.',
-    { x: M, y: 4.68, w: CW, h: 0.3, size: 13.5, bold: true, color: P.ink });
+  K.body(s, 'The rules we have now were not the only possible outcome.',
+    { x: M, y: 4.7, w: CW, h: 0.3, size: 13.5, bold: true, color: P.ink });
 
   notes(s);
   K.footer(s, FOOT);
@@ -501,8 +497,8 @@ POSITIONS.forEach((pos, i) => {
 {
   const s = K.dark(pres);
   K.eyebrow(s, 'Summary', { color: P.signalPale });
-  K.body(s, 'There are three answers, and each one has a real case and a real cost. Your job today is '
-    + 'not to win the argument.',
+  K.body(s, 'There are three answers, and each one has a real case and a real tradeoff. Your job '
+    + 'today is not to win the argument.',
     { x: M, y: 0.76, w: 8.6, h: 0.76, face: F.display, size: 18.5, bold: true, color: P.onDark,
       lineSpacing: 1.1 });
 

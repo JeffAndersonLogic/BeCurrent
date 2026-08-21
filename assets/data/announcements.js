@@ -257,7 +257,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "You, the company, or the government",
       "learningTargets": [
         {
-          "text": "I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.",
+          "text": "I can state all three answers to who should decide, and give the case and the tradeoff for each one.",
           "label": "Synthesizing Patterns"
         },
         {
@@ -275,7 +275,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Synthesizing Patterns"
         },
         {
-          "text": "I can answer the hardest problem with my own position, instead of repeating why I am right.",
+          "text": "I can name the tradeoff in the position I actually hold, not just the one I argued against.",
           "label": "Synthesizing Patterns"
         },
         {

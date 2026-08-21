@@ -218,7 +218,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <h3>Success criteria</h3>
 <ol>
     <li>I can state the position I did not choose well enough that somebody who holds it would say I got it right.</li>
-    <li>I can answer the hardest problem with my own position, instead of repeating why I am right.</li>
+    <li>I can name the tradeoff in the position I actually hold, not just the one I argued against.</li>
     <li>I can name what would change my mind, specifically enough that somebody could go looking for it.</li>
 </ol>
 

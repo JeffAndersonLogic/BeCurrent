@@ -351,14 +351,14 @@ On the first day I said I would ask you a hard question at the end. This is it. 
 
 ### Learning targets
 
-1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.
+1. **Synthesizing Patterns.** I can state all three answers to who should decide, and give the case and the tradeoff for each one.
 2. **Hypotheses.** I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.
 3. **Generalizing from Evidence.** I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.
 
 ### Success criteria
 
 1. **Synthesizing Patterns.** I can state the position I did not choose well enough that somebody who holds it would say I got it right.
-2. **Synthesizing Patterns.** I can answer the hardest problem with my own position, instead of repeating why I am right.
+2. **Synthesizing Patterns.** I can name the tradeoff in the position I actually hold, not just the one I argued against.
 3. **Hypotheses.** I can name what would change my mind, specifically enough that somebody could go looking for it.
 
 ### What happens in class
@@ -379,18 +379,18 @@ The question from day one, argued properly. You state the strongest version of a
 - **Position Three.** The government decides
 - **The Method.** This argument has happened before
 
-**The Road Not Taken.** The rules we have now were chosen, and one of them nearly did not survive
+**The Road Not Taken.** The rules we have now were chosen, and one of them almost disappeared
 
-**BeReady, the 10-second takeaway.** There are three answers, and each one has a real case and a real cost. This argument has happened four times before about four other media, and it usually ended with the industry regulating itself under pressure. Your job today is not to win. Your job is to state the other side well enough that somebody who holds it would say you got it right.
+**BeReady, the 10-second takeaway.** There are three answers, and each one has a real case and a real tradeoff. This argument has happened four times before, about four different kinds of media, and it usually ended in self-regulation instead of a new law. Your job today is not to win the argument. Your job is to state the other side well enough that somebody who holds it would say you got it right.
 
 ### The questions
 
 1. **Synthesizing Patterns.** Choose the position you do not agree with. Write the strongest case for it, in your own words.
    - START HERE: Three or four sentences making the best case you can for a side you disagree with.
-   - PUSH FURTHER: Then name one fact that, if it turned out to be true, would make that position clearly correct.
+   - PUSH FURTHER: Name one fact that would prove that position right.
 2. **Generalizing from Evidence.** Choose one earlier argument: comic books, television, music lyrics, or video games. Describe what happened, then name one way social media is different from that medium.
    - START HERE: Say what happened in two or three sentences, then name one difference.
-   - PUSH FURTHER: Explain whether that difference makes the earlier case more useful or less useful for deciding this one.
+   - PUSH FURTHER: Then say whether that difference makes the older example more helpful or less helpful for answering today's question.
 3. **Generalizing from Evidence.** What evidence would change your mind about who should decide? Be specific enough that somebody could go looking for it.
    - START HERE: Name one thing. It has to be something a person could actually find out.
    - PUSH FURTHER: Explain where a person could look for that evidence.

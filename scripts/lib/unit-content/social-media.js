@@ -1012,35 +1012,30 @@ const TOPIC_6 = {
     + 'and followed a false story through the system. You will not be graded on which side you '
     + 'choose.',
 
-  // Three targets for the three moves the topic teaches: map the argument, find the
-  // tradeoff, use a precedent. The tradeoff is its own target rather than a clause
-  // inside another one because the topic states the rule outright, "an answer with
-  // no tradeoff in it is not finished", and a rule that governs every answer is
-  // worth naming on its own.
-  //
-  // The precedent target names the move, what is the same and what is different,
-  // rather than asking for a prediction. The topic is explicit that the four earlier
-  // arguments do NOT tell you the answer, so a target reading "predict something
-  // about this one" asks for the one thing the reading says the history cannot give.
-  // Question 2 was rewritten to match, for the same reason.
+  // Every position now uses the same two-part shape and the same two labels, "the case" and "the
+  // tradeoff." That word choice is not decoration: it is the word this topic already teaches in
+  // The Standard section and in learningTargets[1], so reusing it here instead of inventing a new
+  // abstract label per position (the earlier draft had "ownership," "a conflict of interest," and
+  // "cuts both ways") removes three pieces of vocabulary a ninth grader would otherwise have to
+  // hold in their head for no reason. Fewer new words, same content.
   learningTargets: [
     { skill: 'Synthesizing Patterns',
-      target: 'I can state all three answers to who should decide, and give the strongest case and the hardest problem for each one.' },
+      target: 'I can state all three answers to who should decide, and give the case and the tradeoff for each one.' },
     { skill: 'Hypotheses',
       target: 'I can name the tradeoff in a position, including the position I hold, because an answer with no tradeoff in it is not finished.' },
     { skill: 'Generalizing from Evidence',
       target: 'I can use an earlier argument about a new medium as a precedent, by naming what is the same and what is different.' }
   ],
 
-  // Criterion 2 is the one that does the work. Every position in the topic carries a
-  // "hardest problem", and a student who states the other side well and then never
-  // turns that problem on their own position has done half the assignment. None of
-  // the three questions asks for it, which is why it belongs here.
+  // Criterion 2 is the one that does the work. Every position in this topic carries a tradeoff, and
+  // a student who states the other side well and then never turns that same question on their own
+  // position has done half the assignment. None of the three questions asks for it, which is why it
+  // belongs here.
   successCriteria: [
     { skill: 'Synthesizing Patterns',
       criteria: 'I can state the position I did not choose well enough that somebody who holds it would say I got it right.' },
     { skill: 'Synthesizing Patterns',
-      criteria: 'I can answer the hardest problem with my own position, instead of repeating why I am right.' },
+      criteria: 'I can name the tradeoff in the position I actually hold, not just the one I argued against.' },
     { skill: 'Hypotheses',
       criteria: 'I can name what would change my mind, specifically enough that somebody could go looking for it.' }
   ],
@@ -1080,130 +1075,136 @@ const TOPIC_6 = {
       heading: 'Who should get to decide what a platform can do to your attention?',
       paragraphs: [
         'There are three answers on the table. You decide. The company decides. The government decides.',
-        'Before you choose, there is one ground rule. Every one of these three positions is held by '
-        + 'serious people who have thought about it longer than we have. If a position seems obviously '
-        + 'wrong to you, you are probably arguing against a weak version of it rather than the real one.',
+        'Before you choose, there is one ground rule. Serious, thoughtful people hold each of these '
+        + 'three positions. If a position feels obviously wrong to you, you are probably picturing a '
+        + 'weak version of it, not the strongest one.',
         'You will not be graded on which position you choose. You will be graded on how well you can '
         + 'state the strongest version of a position you did not choose.'
       ],
       callouts: [
         { label: 'The Standard',
-          body: 'A <span class="kt">tradeoff</span> is what you give up in order to get something else. '
-            + 'Every answer here has one. An answer with no tradeoff in it is not finished.' }
+          body: 'A <span class="kt">tradeoff</span> is something you give up in order to get something '
+            + 'else. Every answer here has one. An answer with no tradeoff in it is not finished.' }
       ]
     },
     {
       label: 'Position One',
       heading: 'You decide',
       paragraphs: [
-        'The strongest case for this position is ownership. It is your attention and your phone. The '
-        + 'controls already exist. You can delete the app, turn off notifications, switch to the '
-        + 'chronological feed, or set a timer. Adults are allowed to make poor choices about their own '
-        + 'time, and treating teenagers as unable to choose is its own kind of disrespect.',
-        'The hardest problem for this position is the size of the mismatch. The app was designed by '
-        + 'people whose job was to make it hard to put down, and they are very good at that job. On one '
-        + 'side there are thousands of engineers and years of testing. On the other side there is your '
-        + 'willpower. A choice made under those conditions is not obviously a free choice.'
+        '<b>The case:</b> it is your attention and your phone, so you should be the one who controls '
+        + 'it. Real tools already exist. You can delete the app, turn off notifications, switch to '
+        + 'the feed that shows posts in time order instead of by algorithm, or set a timer. Adults get '
+        + 'to make their own choices about their time, even bad ones. Telling teenagers they cannot be '
+        + 'trusted to choose is unfair to them.',
+        '<b>The tradeoff:</b> the two sides are not evenly matched. The app was built by engineers '
+        + 'whose job is to make it hard to stop scrolling, and they have had years to get good at that '
+        + 'job. On one side is a large, well-funded team. On the other side is your willpower, by '
+        + 'itself. A choice made under those conditions may not be as free as it looks.'
       ]
     },
     {
       label: 'Position Two',
       heading: 'The company decides',
       paragraphs: [
-        'The strongest case for this position is that the company built the product, pays for it, and '
-        + 'does not require anyone to use it. When a company sets its own rules, that is called '
-        + '<span class="kt">self-regulation</span>, and it is not nothing. Companies do change things, '
-        + 'sometimes because users complain and sometimes because bad publicity costs money. They also '
-        + 'understand the product better than any outside regulator will.',
-        'The hardest problem for this position is a conflict of interest. The company earns its money '
-        + 'from your attention. Asking that company to protect you from the thing that pays it puts the '
-        + 'company on both sides of the question at once.'
+        '<b>The case:</b> the company built the product, pays to run it, and does not force anyone to '
+        + 'use it. When a company makes its own rules instead of waiting for government rules, that is '
+        + 'called <span class="kt">self-regulation</span>. Self-regulation is a real force, not just '
+        + 'words: companies do change their products, sometimes because users complain and sometimes '
+        + 'because bad press costs them money. Companies also understand their own product better than '
+        + 'an outside regulator would.',
+        '<b>The tradeoff:</b> the company earns its money from your attention. Fixing the problem would '
+        + 'mean reducing the exact thing that makes the company money. That is a hard thing to ask a '
+        + 'company to do to itself.'
       ]
     },
     {
       label: 'Position Three',
       heading: 'The government decides',
       paragraphs: [
-        '<span class="kt">Regulation</span> means the government sets rules that a company has to '
-        + 'follow. The strongest case for this position is that we already do this constantly, and most '
-        + 'people no longer argue about it. Cars must have seatbelts. Cigarettes cannot be advertised on '
-        + 'television. Children cannot work full time. In each of those cases people once argued that '
-        + 'the choice should be personal. Almost nobody argues that now.',
-        'The hardest problem for this position is that the power cuts both ways. A government that can '
-        + 'require a platform to change what it shows you can use that same power for its own purposes '
-        + 'later. Protecting people and controlling them require the same legal authority. What changes '
-        + 'is who is holding it, and what they want.'
+        '<b>The case:</b> <span class="kt">regulation</span> means the government requires a company '
+        + 'to follow certain rules. We already do this constantly, and most people no longer argue '
+        + 'about it. Cars must have seatbelts. Cigarette ads are banned from television. Children '
+        + 'cannot work full-time jobs. In each case, people used to say the choice should be personal. '
+        + 'Almost nobody says that now.',
+        '<b>The tradeoff:</b> the same power can be used two different ways. A government that is '
+        + 'allowed to make a platform protect people is also a government that is allowed to make a '
+        + 'platform control what people see. Right now we would be trusting the government to use that '
+        + 'power only the first way.'
       ],
       callouts: [
         { label: 'Watch For',
           body: 'An <span class="kt">unintended consequence</span> is a result that nobody wanted or '
-            + 'predicted. Rules written for large platforms often land hardest on small ones, because a '
-            + 'small company cannot afford the lawyers. That does not settle the argument, but it belongs '
-            + 'in it.' }
+            + 'predicted. Rules written for large platforms often hurt small ones the most, because a '
+            + 'small company cannot afford the lawyers that complicated new rules require. That does '
+            + 'not settle the argument, but it belongs in it.' }
       ]
     },
     {
       label: 'The Method',
       heading: 'This argument has happened before',
       paragraphs: [
-        'A <span class="kt">precedent</span> is an earlier case that people point to when they decide a '
-        + 'new one. This exact argument, about a new medium and what it does to young people, has '
-        + 'happened at least four times before.',
-        'In 1954, comic books produced a Senate hearing and an industry code. Television violence '
-        + 'produced hearings across the 1970s. Music lyrics produced Senate hearings in 1985 and the '
-        + 'parental advisory sticker. Video games produced hearings in 1993 and the rating system that '
-        + 'is on every box today.',
-        'Those four have two things in common. First, every one of them ended in industry '
-        + 'self-regulation under the threat of government action, rather than in a law. Second, the '
-        + 'strongest claims made during several of those arguments did not hold up later. The comic book '
-        + 'research was largely discredited. The video game research is still contested.',
-        'That history does not tell you the answer. It does tell you that the sentence "this new thing '
-        + 'is harming children" has been said before, sometimes correctly and sometimes not, and that '
-        + 'the people saying it believed it either way.'
+        'A <span class="kt">precedent</span> is an earlier case that people point to when they are '
+        + 'deciding a new one. This exact argument, about a new kind of media and what it does to '
+        + 'young people, has happened at least four times before.',
+        '<b>1954, comic books.</b> They led to a Senate hearing and a new industry code.',
+        '<b>1970s, television violence.</b> It led to hearings across the whole decade.',
+        '<b>1985, music lyrics.</b> They led to Senate hearings and the parental advisory sticker you '
+        + 'still see on album covers today.',
+        '<b>1993, video games.</b> They led to hearings and the rating system that is still on every '
+        + 'game box.',
+        'Those four examples have two things in common. First, none of them ended with a new law. Each '
+        + 'one ended with the industry making its own rules, only after the government threatened to '
+        + 'step in.',
+        'Second, some of the strongest claims made during these arguments turned out to be wrong. '
+        + 'Later research showed that the comic book studies were seriously flawed. The video game '
+        + 'research is still argued about today.',
+        'This history does not tell you who is right today. It does tell you something else: people '
+        + 'have said "this new thing is dangerous for kids" many times before. Sometimes they turned '
+        + 'out to be right. Sometimes they did not. Either way, they believed what they were saying.'
       ],
       callouts: [
         { label: 'Skill Focus',
-          body: 'Using a precedent well means naming what is the same <em>and</em> what is different. '
-            + 'Social media is not a comic book. It is personalized, it is always with you, and it '
-            + 'responds to what you do. Any argument from precedent has to survive those three '
-            + 'differences.' }
+          body: 'Using a precedent well means naming what is the same <em>and</em> what is different, '
+            + 'not just one or the other. Social media is different from a comic book in three specific '
+            + 'ways: it is personalized to you, it is with you all the time, and it responds to what '
+            + 'you do. Any comparison to an earlier case has to deal with those three differences.' }
       ]
     }
   ],
 
   roadNotTaken: {
     label: 'The Road Not Taken',
-    heading: 'The rules we have now were chosen, and one of them nearly did not survive',
+    heading: 'The rules we have now were chosen, and one of them almost disappeared',
     paragraphs: [
-      'The most important rule about platforms in the United States is one sentence written in 1996. '
-      + 'It is part of Section 230 of the Communications Decency Act, and it says that a platform is '
-      + 'generally not treated as the publisher of what its users post. That single sentence is a large '
-      + 'part of why the internet looks the way it does.',
-      'It could easily not exist. The rest of the law it belonged to was struck down by the Supreme '
-      + 'Court in 1997 for violating free speech protections. Section 230 survived. Since then, '
-      + 'politicians in both parties have proposed repealing it or narrowing it, for opposite reasons, '
-      + 'and it is still in place.',
-      'So when you argue about who should decide, remember that the current arrangement was not '
-      + 'inevitable. It is one sentence that survived a court case, and people are still arguing about '
-      + 'it right now.'
+      'The most important rule about platforms in the United States is one sentence, written in 1996. '
+      + 'It is part of a law called Section 230. The sentence says that a platform is usually not '
+      + 'treated as the publisher of what its users post. In plain terms: if you post something '
+      + 'illegal or false, you can be held responsible for it, but the platform usually cannot.',
+      'This rule almost did not survive. It was part of a much larger law. In 1997, the Supreme Court '
+      + 'struck down the rest of that law for violating free speech. Only Section 230 survived. Since '
+      + 'then, lawmakers from both parties have tried to change it or remove it, for different reasons. '
+      + 'It is still the law today.',
+      'So remember this when you argue today: the rules we have were not the only possible outcome. '
+      + 'They came down to one sentence that barely survived a court case, and people are still '
+      + 'fighting over it right now.'
     ]
   },
 
-  takeaway: 'There are three answers, and each one has a real case and a real cost. This argument has '
-    + 'happened four times before about four other media, and it usually ended with the industry '
-    + 'regulating itself under pressure. Your job today is not to win. Your job is to state the other '
-    + 'side well enough that somebody who holds it would say you got it right.',
+  takeaway: 'There are three answers, and each one has a real case and a real tradeoff. This argument '
+    + 'has happened four times before, about four different kinds of media, and it usually ended in '
+    + 'self-regulation instead of a new law. Your job today is not to win the argument. Your job is to '
+    + 'state the other side well enough that somebody who holds it would say you got it right.',
 
   questions: [
     { skill: 'Synthesizing Patterns',
       text: 'Choose the position you do not agree with. Write the strongest case for it, in your own words.',
       startHere: 'Three or four sentences making the best case you can for a side you disagree with.',
-      pushFurther: 'Then name one fact that, if it turned out to be true, would make that position clearly correct.' },
+      pushFurther: 'Name one fact that would prove that position right.' },
     { skill: 'Generalizing from Evidence',
-      text: 'Choose one earlier argument: comic books, television, music lyrics, or video games. Describe '
-        + 'what happened, then name one way social media is different from that medium.',
+      text: 'Choose one earlier argument: comic books, television, music lyrics, or video games. '
+        + 'Describe what happened, then name one way social media is different from that medium.',
       startHere: 'Say what happened in two or three sentences, then name one difference.',
-      pushFurther: 'Explain whether that difference makes the earlier case more useful or less useful for deciding this one.' },
+      pushFurther: 'Then say whether that difference makes the older example more helpful or less helpful for answering today\'s question.' },
     { skill: 'Generalizing from Evidence',
       text: 'What evidence would change your mind about who should decide? Be specific enough that '
         + 'somebody could go looking for it.',
