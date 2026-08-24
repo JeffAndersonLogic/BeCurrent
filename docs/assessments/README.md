@@ -66,6 +66,20 @@ Three files come out of one bank, and none of them builds a question of its own:
   unpublished. Check the item count before publishing; an import that quietly
   dropped one is a quiz out of 24 that nobody notices until it is graded.
 
+  Two things about the conversion, both found by running it rather than assuming
+  it. The `%%` comment block at the top of the file, which carries these
+  instructions and the warning that the file holds the answers, is stripped and
+  does **not** become a question or a quiz description. And text2qti writes
+  `cc_maxattempts` as **1**, so the imported quiz allows a single attempt. That is
+  right for a test and it is the opposite of the News Log's Unlimited, which is
+  set for a reason; do not carry a habit from one to the other.
+
+  This conversion is deliberately not in any suite. It needs a Python package,
+  and `validate.js` has to stay runnable on a bare checkout with no install at
+  all, which is the same reason `scripts/brand/build-wordmark.py` sits off the
+  test path. What the offline suite proves is that the source file still matches
+  the bank; whether text2qti is installed is a fact about your machine.
+
 Writing the zip from here instead would mean committing a binary no diff can read,
 whose reproducibility check would have to special-case timestamps, and whose
 contents are the answer key. A text file is reviewable and covered by the same
