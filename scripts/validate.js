@@ -1279,6 +1279,119 @@ function walkImages(dir) {
 walkImages(path.join(ROOT, 'assets', 'images'));
 done('magic bytes checked, SVG intrinsic sizes checked');
 
+// ── Study guides ──────────────────────────────────────────────────────────────
+//
+// One per unit, for the review day. It is the counterpart of the assessment and
+// the opposite call about where it lives: the exam is kept out of this public
+// repo because a published exam is a spent one, and the guide ships on the site
+// because a student who cannot reach it cannot use it. What keeps them apart is
+// not secrecy, it is what each is built from. The guide comes from the unit
+// content module and never from the item bank, so it describes what was taught
+// rather than what is on the test.
+//
+// Four failures, none of them visible on the page.
+//
+//   1. AN ORPHANED OR A DEAD-LINKED GUIDE. Both directions, because they fail
+//      opposite ways and both leave every other check green: a guide nothing
+//      links sits on disk, gets served by Pages, and is reachable only by typing
+//      the filename; a unit page linking a guide that was never generated is a
+//      404 on the one day of the unit a student is definitely looking for it.
+//
+//   2. A TERM WITH NO DEFINITION. The glossary is lifted out of the reading's own
+//      `<span class="kt">` prose rather than authored, so a term that stops being
+//      marked in the Brief silently drops off the guide. The renderer filters it
+//      out, the page still looks complete, and a student revises without it.
+//
+//   3. A CASE THE READING DOES NOT TEACH. `namesAndCases` is the one hand-written
+//      part, which makes it the one part that can drift from the topic it sits
+//      in. Every year in one has to appear in that topic's prose, which catches a
+//      mistyped date and a case borrowed from somewhere the students never read.
+//
+//   4. A SCRIPT. Same rule the Briefs' generated pages are held to elsewhere: a
+//      page with no script cannot ship a SyntaxError that discards its own
+//      behaviour, and this page has no behaviour worth that risk.
+section('Study guides');
+{
+  let sgTerms = 0, sgCases = 0, guides = 0;
+  const sg = (() => {
+    try { return require(path.join(ROOT, 'scripts', 'lib', 'study-guide-page.js')); }
+    catch (e) { return null; }
+  })();
+  const up = (() => {
+    try { return require(path.join(ROOT, 'scripts', 'lib', 'unit-page.js')); }
+    catch (e) { return null; }
+  })();
+
+  if (!sg || !up || !up.hasStudyGuide) {
+    assert(false, path.join(ROOT, 'scripts', 'lib', 'study-guide-page.js'),
+      'the study guide renderer could not be loaded, so no guide can be checked');
+  } else {
+    unitDirs.forEach(key => {
+      const file = path.join(ROOT, 'scripts', 'lib', 'unit-content', `${key}.js`);
+      let unit;
+      try { unit = require(file); } catch (e) { return; }
+
+      const page = path.join(ROOT, key, 'study-guide.html');
+      const unitPage = read(path.join(ROOT, key, 'index.html')) || '';
+      const wanted = up.hasStudyGuide(unit);
+
+      if (!wanted) {
+        // Not an oversight; a one-topic unit has nothing to revise from. What
+        // would be an oversight is a page left behind from when it did.
+        assert(!fs.existsSync(page), page,
+          `${key} is below the bar for a study guide but one exists here, unlinked and `
+          + 'reachable only by typing the filename');
+        return;
+      }
+
+      if (!assert(fs.existsSync(page), page,
+        `${key} has enough topics for a study guide and none was generated. `
+        + 'Run node scripts/build-units.js')) return;
+      guides++;
+
+      const src = read(page) || '';
+      assert(unitPage.includes('href="study-guide.html"'), path.join(ROOT, key, 'index.html'),
+        'the unit page does not link its own study guide, so the guide is orphaned on the '
+        + 'one day of the unit a student is looking for it');
+      assert(!/<script/i.test(src), page,
+        'a study guide must ship no <script>. A page with no script cannot ship a '
+        + 'SyntaxError that silently discards its own behaviour, and this page has none '
+        + 'worth the risk.');
+      assert(src === sg.renderStudyGuide(unit), page,
+        'the study guide no longer matches its unit content module. It is generated; edit '
+        + `scripts/lib/unit-content/${key}.js and rebuild.`);
+
+      (unit.topics || []).forEach(topic => {
+        // Every term the Brief lists has to be findable in the Brief's own prose.
+        (topic.terms || []).forEach(term => {
+          sgTerms++;
+          assert(sg.definitionFor(topic, term), file,
+            `Topic ${topic.n} lists "${term}" as a key term and the reading never marks it `
+            + 'with <span class="kt">, so the study guide has no definition to lift and '
+            + 'drops it. Mark it in the sentence that defines it.');
+        });
+
+        // The hand-written half, held to the prose beside it.
+        const prose = JSON.stringify(topic.sections || []) + JSON.stringify(topic.roadNotTaken || {});
+        ((topic.studyGuide || {}).namesAndCases || []).forEach(c => {
+          sgCases++;
+          assert(c.name && c.what, file,
+            `Topic ${topic.n} has a study-guide case missing its name or its explanation`);
+          (String(c.name + ' ' + c.what).match(/\b(1[89]\d\d|20\d\d)\b/g) || []).forEach(year => {
+            assert(prose.includes(year), file,
+              `Topic ${topic.n}'s study guide names ${year} in "${c.name}", and ${year} does `
+              + 'not appear anywhere in that topic\'s reading. Either the date is wrong or the '
+              + 'case is one the students were never taught.');
+          });
+        });
+      });
+    });
+
+    done(`${guides} study guide${guides === 1 ? '' : 's'}, ${sgTerms} terms defined in the `
+      + `reading, ${sgCases} cases traced back to it`);
+  }
+}
+
 // ── Assessments ───────────────────────────────────────────────────────────────
 //
 // An end-of-unit assessment is generated from one item bank in

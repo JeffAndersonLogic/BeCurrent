@@ -23,7 +23,8 @@ const fs = require('fs');
 const path = require('path');
 
 const { renderUnitBrief, renderUnitWrapper } = require('./lib/unit-brief-page');
-const { renderUnitPage, briefFileFor } = require('./lib/unit-page');
+const { renderUnitPage, briefFileFor, hasStudyGuide } = require('./lib/unit-page');
+const { renderStudyGuide } = require('./lib/study-guide-page');
 
 const ROOT = path.resolve(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT, 'scripts', 'lib', 'unit-content');
@@ -69,6 +70,19 @@ files.forEach(file => {
 
   // The unit page is the map of the whole arc and always exists.
   emit(path.join(dir, 'index.html'), renderUnitPage(unit));
+
+  // The study guide, for the review day. Built from this same content module and
+  // never from the assessment item bank: a guide built from the bank would be a
+  // map of the test, and its weighting would tell a student which paragraphs to
+  // skip. See the header of lib/study-guide-page.js.
+  //
+  // A unit gets one once its topics carry enough to revise from, so a unit that is
+  // still one topic deep does not ship a page with three lines on it. hasStudyGuide
+  // is the one place that decides, because the unit page has to make the same call
+  // to know whether to link it.
+  if (hasStudyGuide(unit)) {
+    emit(path.join(dir, 'study-guide.html'), renderStudyGuide(unit));
+  }
 
   // A Brief only for the topics that carry one. Topic 1 is a slide deck and a paper
   // trace, Topic 2 is a film; generating an empty reading for either would put a

@@ -37,6 +37,19 @@ function slugify(s) {
     .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
+/**
+ * Whether this unit has enough taught material to be worth a study guide, and the
+ * single place that decides. The builder asks it before emitting the page and the
+ * unit page asks it before linking one; two separate judgments would eventually
+ * disagree, and the failure is a link to a page that was never written.
+ *
+ * The bar is two topics carrying a reading. Below that the guide is shorter than
+ * the Briefs it points at.
+ */
+function hasStudyGuide(unit) {
+  return (unit.topics || []).filter(t => t.sections && t.sections.length).length >= 2;
+}
+
 function briefFileFor(topic) {
   const nn = String(topic.n).padStart(2, '0');
   return `topic-${nn}-brief-${topic.slug || slugify(topic.topic)}.html`;
@@ -140,6 +153,7 @@ ${actionRow}
         <a href="../index.html">Home</a>
         <a href="#question">The Question</a>
         <a href="#topics">The Topics</a>
+${hasStudyGuide(unit) ? '        <a href="study-guide.html">Study Guide</a>' : ''}
       </div>
     </nav>
   </header>
@@ -153,6 +167,7 @@ ${actionRow}
     <div class="quick-nav">
       <a class="btn" href="#topics">The Topics</a>
       <a class="btn secondary" href="#question">The Question</a>
+${hasStudyGuide(unit) ? '      <a class="btn secondary" href="study-guide.html">Study Guide</a>' : ''}
     </div>
   </section>
 
@@ -173,7 +188,7 @@ ${actionRow}
     <section class="section" id="topics">
       <div class="section-header">
         <div class="eyebrow">The Arc</div>
-        <h2>Five topics, in order.</h2>
+        <h2>${esc(String(topics.length))} topics, in order.</h2>
         <p>Each one uses the earlier ones. The chain you draw in Topic 1 is what you check
           against a real document in Topic 4, so they are a sequence rather than a list.</p>
       </div>
@@ -208,4 +223,4 @@ ${competencyList}
 `;
 }
 
-module.exports = { renderUnitPage, briefFileFor };
+module.exports = { renderUnitPage, briefFileFor, hasStudyGuide };

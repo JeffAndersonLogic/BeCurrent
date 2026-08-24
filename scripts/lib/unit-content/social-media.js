@@ -99,6 +99,17 @@ const TOPIC_1 = {
       criteria: 'I can name one box I got wrong or left out after reading four other chains, and say which chain changed my mind.' }
   ],
 
+  studyGuide: {
+    namesAndCases: [
+      { name: 'The chain',
+        what: 'You open a free app, the app holds your attention, an advertiser pays to be put '
+          + 'in front of it. Four boxes minimum, and no gap you cannot explain out loud.' },
+      { name: 'Who is the customer',
+        what: 'The advertiser, because the advertiser is the one who hands over money. Not you. '
+          + 'You are what is being sold access to.' }
+    ]
+  },
+
   competencies: [1, 5]
 };
 
@@ -144,6 +155,17 @@ const TOPIC_2 = {
   ],
 
   competencies: [2],
+
+  studyGuide: {
+    namesAndCases: [
+      { name: 'Who made it, and what do they gain',
+        what: 'The first question about any film, and the same question you ask of a post. A '
+          + 'documentary is a genre, not a standard of proof.' },
+      { name: 'Proves against suggests',
+        what: 'A dramatized scene performed by actors illustrates a claim. It does not '
+          + 'establish it. Separating those two is the whole job.' }
+    ]
+  },
 
   // Names that must not appear on any student-facing page in this unit until the
   // topic has been taught. validate.js fails the build if one does. Remove the entry
@@ -326,6 +348,22 @@ const TOPIC_3 = {
   takeaway: 'The app counts what you do, sorts you in with people who behave like you, and shows you what '
     + 'held them. Then your reaction becomes the next count. Somebody chose which number that loop is '
     + 'pushing on.',
+
+  studyGuide: {
+    namesAndCases: [
+      { name: 'Facebook News Feed, 2006',
+        what: 'Launched mostly in time order. Feeds were not born ranked.' },
+      { name: 'Instagram switches to ranking, 2016',
+        what: 'The company said people were missing about 70 percent of their feed. A real '
+          + 'problem, and ranking is a real solution to it. It also made more money, and when '
+          + 'two causes point the same way it is hard to say which did the work.' },
+      { name: 'Twitter adds the time-order switch back, 2018',
+        what: 'Still there. Ranking did not fully win, which is why the question is why the '
+          + 'ranked version is the default rather than why ranking won.' },
+      { name: 'Instagram Following and Favorites, 2022',
+        what: 'Both chronological. Same point: the choice is still being made.' }
+    ]
+  },
 
   questions: [
     { skill: 'Cause and Effect',
@@ -654,6 +692,33 @@ const TOPIC_4 = {
     + 'longer than what you posted, parts of it are not yours to delete, and people who decide things '
     + 'about you can read some of it.',
 
+  studyGuide: {
+    namesAndCases: [
+      { name: 'Orben and Przybylski, 2019, Nature Human Behaviour',
+        what: 'Ran the numbers across large datasets and found the association between screen '
+          + 'use and teenage wellbeing was tiny, about the size of associations nobody worries '
+          + 'about. A claim about effect size, not about whether an effect exists.' },
+      { name: 'Haidt, The Anxious Generation, 2024',
+        what: 'Argues from timing: teenage anxiety and depression rose sharply around 2012, when '
+          + 'smartphones and social media became close to universal.' },
+      { name: 'Odgers reviews it in Nature, 2024',
+        what: 'Argues the evidence does not support a causal claim that strong, and that blaming '
+          + 'phones pulls attention off causes that are better established. Two serious people, '
+          + 'opposite conclusions, neither one lying.' },
+      { name: 'Haugen and the Wall Street Journal, September 2021',
+        what: 'Internal Facebook research, leaked by a former employee, in which the company\'s '
+          + 'own researchers found Instagram made body image worse for some teenage girls. '
+          + 'Strong because it is the company studying itself. Narrow because it is about a '
+          + 'subset of users.' },
+      { name: 'Harvard withdraws offers, June 2017',
+        what: 'At least ten incoming students, over messages posted in a private group chat. '
+          + 'Private group, real consequence, nobody hacked anything.' },
+      { name: 'The right to be forgotten, May 2014',
+        what: 'The European Court of Justice ruled people can require search engines to remove '
+          + 'certain results about them. Permanent is a policy choice, not a law of physics.' }
+    ]
+  },
+
   questions: [
     { skill: 'Cause and Effect',
       text: 'Pick one negative effect from Part Two. Name the mechanism: step by step, what connects '
@@ -972,6 +1037,45 @@ const TOPIC_5 = {
     + 'tactic in this reading appears at once, and how much any of it changes a result is still argued '
     + 'about.',
 
+  studyGuide: {
+    namesAndCases: [
+      { name: 'The Associated Press account is hacked, April 2013',
+        what: 'One false sentence about explosions at the White House, from an account readers '
+          + 'had good reason to trust. The stock market dropped within seconds and recovered '
+          + 'within minutes.' },
+      { name: 'Vosoughi, Roy and Aral, 2018, Science',
+        what: 'About 126,000 rumors on Twitter over eleven years. False stories reached more '
+          + 'people, faster. Then they removed every automated account and the result did not '
+          + 'change: people, not bots, do most of the spreading. Their explanation was novelty '
+          + 'and emotion.' },
+      { name: 'Peele and BuzzFeed, April 2018',
+        what: 'A video of Barack Obama that Obama had nothing to do with, made specifically to '
+          + 'show people it was possible.' },
+      { name: 'Veles, North Macedonia, 2016',
+        what: 'BuzzFeed News traced false American political stories to a group of sites run by '
+          + 'young people who had found the traffic paid well. The motive was money, not '
+          + 'politics, which surprises most people.' },
+      { name: 'Pizzagate, December 2016',
+        what: 'A false claim with no evidence behind it moved a man to drive to a restaurant in '
+          + 'another state and fire a rifle inside it.' },
+      { name: 'The Stanford fact-checker study',
+        what: 'Professional fact-checkers left the page almost immediately. Students stayed and '
+          + 'studied the design, the logo and the About section, all of which the page controls.' },
+      { name: 'The Internet Research Agency indictment, February 2018',
+        what: 'Thirteen Russian nationals, for running accounts that posed as Americans in 2016. '
+          + 'Read the goal carefully: much of it aimed to widen existing divisions rather than '
+          + 'to argue for one candidate.' },
+      { name: 'Cambridge Analytica, 2018',
+        what: 'Profile data on tens of millions of Facebook users, collected through a quiz app '
+          + 'and used for political targeting. Facebook agreed to a five billion dollar penalty '
+          + 'from the Federal Trade Commission in 2019.' },
+      { name: 'Bakshy, Messing and Adamic, 2015, Science',
+        what: 'On Facebook, individual choices about what to click mattered more than the '
+          + 'ranking did for how much opposing content people actually read. The authors worked '
+          + 'for Facebook, which is a reason to read it carefully rather than to throw it out.' }
+    ]
+  },
+
   questions: [
     { skill: 'Fallacies and Propaganda',
       text: 'Describe one post you saw this week that gave you a strong emotional reaction. Name the '
@@ -1194,6 +1298,31 @@ const TOPIC_6 = {
     + 'has happened four times before, about four different kinds of media, and it usually ended in '
     + 'self-regulation instead of a new law. Your job today is not to win the argument. Your job is to '
     + 'state the other side well enough that somebody who holds it would say you got it right.',
+
+  studyGuide: {
+    namesAndCases: [
+      { name: 'Comic books, 1954',
+        what: 'A Senate hearing and a new industry code. Later research showed the studies '
+          + 'behind the alarm were seriously flawed.' },
+      { name: 'Television violence, 1970s',
+        what: 'Hearings across the whole decade.' },
+      { name: 'Music lyrics, 1985',
+        what: 'Senate hearings, and the parental advisory sticker still on album covers.' },
+      { name: 'Video games, 1993',
+        what: 'Hearings, and the rating system still on every game box. The research is still '
+          + 'argued about today.' },
+      { name: 'What all four have in common',
+        what: 'None of them ended with a new law. Each ended with the industry writing its own '
+          + 'rules, only after the government threatened to step in.' },
+      { name: 'Section 230, 1996',
+        what: 'One sentence: a platform is usually not treated as the publisher of what its '
+          + 'users post. You can still be held responsible for what you post; the platform '
+          + 'usually cannot.' },
+      { name: 'The Supreme Court, 1997',
+        what: 'Struck down the rest of the law Section 230 was part of, for violating free '
+          + 'speech. Only that one sentence survived, and people are still fighting over it.' }
+    ]
+  },
 
   questions: [
     { skill: 'Synthesizing Patterns',
