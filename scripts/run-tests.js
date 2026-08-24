@@ -38,7 +38,12 @@ const SUITES = {
     ['scripts/test/video-block.test.js', 'video path through a brief, both states'],
     ['scripts/test/canvas-paragraphs.test.js', 'Canvas blank-line round trip, both course sentinels'],
     ['scripts/test/canvas-zip.test.js', 'zip reader + CLI/browser CSV parity'],
-    ['scripts/test/canvas-events.test.js', 'calendar events: both flavours agree, nothing leaks']
+    ['scripts/test/canvas-events.test.js', 'calendar events: both flavours agree, nothing leaks'],
+    // Passes trivially on a checkout with no item bank, which is the normal state
+    // of this repo: the bank is private, see docs/assessments/README.md. It earns
+    // its place on the machine that HAS the bank, where it is the only thing
+    // proving the printed exam still matches the key being graded against.
+    ['scripts/build-assessments.js --check', 'the exam still matches its item bank']
   ],
   browser: [
     ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip'],
@@ -126,7 +131,11 @@ for (const suite of names) {
     // stdio inherit: a failing check's own output is the useful part, and these
     // scripts already print well. Swallowing it to re-print a summary would lose
     // the file and line every one of them reports.
-    const run = spawnSync(process.execPath, [rel], { cwd: ROOT, stdio: 'inherit', env: childEnv });
+    // A suite entry may carry arguments, as `scripts/build-assessments.js --check`
+    // does. Splitting on whitespace keeps the entry readable as the command a
+    // person would type, which is also what the PASS line prints.
+    const argv = rel.split(/\s+/);
+    const run = spawnSync(process.execPath, argv, { cwd: ROOT, stdio: 'inherit', env: childEnv });
     const secs = ((Date.now() - started) / 1000).toFixed(1);
 
     // spawnSync reports a launch failure through .error and a signal kill through

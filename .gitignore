@@ -10,3 +10,24 @@ submissions.zip
 *_submissions/
 responses.csv
 exceptions.csv
+
+# The assessment bank and everything generated from it.
+#
+# This repository is PUBLIC, because GitHub Pages serves it, and .nojekyll means
+# every committed file is served verbatim at a guessable URL. An exam committed
+# here is a published exam, an answer key committed here is a published answer
+# key, and git history keeps both after a delete. Unlike a wrong link or a stale
+# target, that one cannot be repaired by fixing it: the moment a student has read
+# the questions, the assessment is spent.
+#
+# So the generator, its gate, and the README are in the repo, and the questions
+# and answers are not. docs/assessments/README.md says where they do live.
+#
+# The -KEY line is deliberately redundant with the blanket line above it. If
+# somebody ever un-ignores this folder to commit a blank practice sheet, the
+# files carrying answers stay ignored anyway, and validate.js checks that this
+# pattern exists.
+scripts/lib/assessment-content/
+docs/assessments/*
+!docs/assessments/README.md
+docs/assessments/*-KEY*

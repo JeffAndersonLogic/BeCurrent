@@ -1279,6 +1279,219 @@ function walkImages(dir) {
 walkImages(path.join(ROOT, 'assets', 'images'));
 done('magic bytes checked, SVG intrinsic sizes checked');
 
+// ── Assessments ───────────────────────────────────────────────────────────────
+//
+// An end-of-unit assessment is generated from one item bank in
+// scripts/lib/assessment-content/, the same way everything else here is
+// generated, and for the same reason: the exam a student takes and the key the
+// teacher grades against must be two views of one file or they will eventually
+// be two documents, and the only person who finds out is the student who was
+// marked wrong for a right answer.
+//
+// Four failures are checked here because each one is invisible on the page.
+//
+//   1. THE KEY REACHING THE PUBLIC SITE. This repository is public and
+//      `.nojekyll` means Pages serves every committed file verbatim, so a
+//      committed key is a published key at a guessable URL, and git history
+//      keeps it after a delete. The generator names every file carrying answers
+//      `-KEY`, and this check proves .gitignore actually covers that pattern.
+//      It is the one failure in this section that cannot be undone by fixing it.
+//
+//   2. THE KEY LEAKING THROUGH THE STUDENT EXAM. Not by a visible mark, which
+//      anyone would catch, but by option order: an exam whose bytes change when
+//      the answers change is an exam that encodes them. So the exam is rebuilt
+//      from a bank with every answer index moved and asserted byte-identical.
+//
+//   3. AN UNANSWERABLE OR DOUBLE-ANSWERABLE ITEM. An answer index off the end
+//      of the options, or two options that say the same thing, renders as a
+//      perfectly normal question and is discovered during the test.
+//
+//   4. THE WITHHELD FILM TITLE. Topic 2's film is withheld, and an item bank is
+//      exactly the kind of document written weeks later by someone reaching for
+//      a concrete detail.
+//
+// Item SHAPE is checked too, and that is a teaching rule rather than plumbing,
+// which normally means it stays out of this file. It is here because this room
+// is grades 9 through 12 in one section with a heavy IEP and 504 load, and
+// because the shapes banned below are the ones that test whether a student can
+// survive a question rather than whether they learned anything: "all of the
+// above", "none of the above", and a negated stem. A gate is the only thing that
+// stops one arriving in a bank written in a hurry the night before.
+section('Assessments');
+{
+  const BANK_DIR = path.join(ROOT, 'scripts', 'lib', 'assessment-content');
+  const ASSESS_DIR = path.join(ROOT, 'docs', 'assessments');
+
+  if (!fs.existsSync(BANK_DIR)) {
+    done('no assessment banks yet, nothing to check');
+  } else {
+    const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+    // A bank may carry the same <em> and <span class="kt"> a content module does,
+    // so every comparison here is made on the text a student actually reads. Two
+    // options that differ only in markup are still two identical options.
+    const plainish = s => String(s == null ? '' : s)
+      .replace(/<[^>]+>/g, '')
+      .replace(/&amp;/g, '&')
+      .replace(/\s+/g, ' ')
+      .trim();
+    let builder = null;
+    try { builder = require(path.join(ROOT, 'scripts', 'build-assessments.js')); } catch (e) { /* reported below */ }
+    assert(builder, path.join(ROOT, 'scripts', 'build-assessments.js'),
+      'the assessment builder could not be loaded, so nothing generated from a bank can be checked');
+
+    const gitignore = read(path.join(ROOT, '.gitignore')) || '';
+    let itemCount = 0;
+
+    glob(BANK_DIR, /\.js$/).forEach(file => {
+      let bank;
+      try { bank = require(file); } catch (e) {
+        err(file, `item bank does not load: ${e.message}`);
+        return;
+      }
+      const m = bank.meta || {};
+      const items = bank.items || [];
+
+      if (!assert(m.key, file, 'item bank has no meta.key, which is what names its output files')) return;
+      assert(items.length > 0, file, 'item bank carries no items');
+
+      // The unit it assesses has to be a real one, because that is what lets the
+      // withheld-title check below find the film to look for.
+      assert(m.unitKey && unitDirs.includes(m.unitKey), file,
+        `meta.unitKey "${m.unitKey}" does not match any unit in scripts/lib/unit-content/, `
+        + 'so nothing can tell which unit this assesses or what it is allowed to name');
+
+      const src = read(file) || '';
+      const apHit = src.match(/\bAP\b|Advanced Placement/);
+      assert(!apHit, file,
+        `"${apHit ? apHit[0] : ''}" appears here. BeCurrent is not an AP course, and an `
+        + 'assessment is the last place to tell a struggling ninth grader the work was '
+        + 'pitched at somebody else.');
+
+      const letterCounts = new Map();
+
+      items.forEach((item, idx) => {
+        itemCount++;
+        const where = `item ${item.n == null ? idx + 1 : item.n}`;
+
+        assert(item.n === idx + 1, file,
+          `${where} is out of order. Items are numbered by position, and a gap or a repeat `
+          + 'means the exam and the answer sheet stop agreeing about which question is which.');
+        assert(plainish(item.stem).length > 0, file, `${where} has an empty stem`);
+
+        const opts = item.options || [];
+        assert(opts.length === 4, file,
+          `${where} has ${opts.length} options. Four, always: a bank that varies the count `
+          + 'makes the answer sheet unusable and the item harder for no teaching reason.');
+        assert(new Set(opts.map(o => plainish(o).toLowerCase())).size === opts.length, file,
+          `${where} has two options that say the same thing, so it has two right answers or `
+          + 'two wrong ones and no way to tell which was meant');
+        opts.forEach((o, i) => assert(plainish(o).length > 0, file,
+          `${where} option ${LETTERS[i]} is empty`));
+
+        assert(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < opts.length,
+          file, `${where} has answer index ${item.answer}, which is not one of its options. `
+          + 'The item renders normally and cannot be answered correctly by anyone.');
+
+        assert((item.notes || []).length === opts.length, file,
+          `${where} has ${(item.notes || []).length} notes for ${opts.length} options. Every `
+          + 'wrong option is supposed to name the misconception it catches, which is what makes '
+          + 'the results worth reading rather than just totalling.');
+
+        assert(item.skill && item.level, file,
+          `${where} is missing its skill or thinking level, so it cannot appear in the blueprint`);
+
+        // The banned shapes.
+        opts.forEach((o, i) => {
+          assert(!/\b(all|none) of the above\b/i.test(plainish(o)), file,
+            `${where} option ${LETTERS[i]} is "${plainish(o)}". That tests whether a student can `
+            + 'hold four judgments at once, which is not what this unit taught.');
+        });
+        assert(!/\b(NOT|EXCEPT|LEAST)\b/.test(plainish(item.stem)), file,
+          `${where} has a negated stem. A student who reads carefully and misses the negation `
+          + 'gets it wrong for reading carefully.');
+
+        if (Number.isInteger(item.answer) && LETTERS[item.answer]) {
+          const l = LETTERS[item.answer];
+          letterCounts.set(l, (letterCounts.get(l) || 0) + 1);
+        }
+      });
+
+      // No letter may take more than 40 percent of the key. A student who works
+      // out that the answer is usually C has found a way to score without reading,
+      // and a bank drifts into this one edit at a time without anyone deciding to.
+      if (items.length) {
+        let worst = null;
+        letterCounts.forEach((n, l) => {
+          if (!worst || n > worst.n) worst = { l, n };
+        });
+        assert(worst && (worst.n / items.length) <= 0.4, file,
+          `${worst ? worst.l : ''} is the answer to ${worst ? worst.n : 0} of ${items.length} `
+          + 'items. Spread the key: over 40 percent in one letter is a pattern a student can '
+          + 'score against without reading a question.');
+      }
+
+      // ── The key must not be committable ──────────────────────────────────
+      const keyFiles = [`${m.key}-KEY.md`, `${m.key}-KEY-canvas.txt`];
+      keyFiles.forEach(name => {
+        const full = path.join(ASSESS_DIR, name);
+        const rel = path.relative(ROOT, full);
+        const ignored = spawnSync('git', ['check-ignore', '-q', rel], { cwd: ROOT }).status === 0;
+        assert(ignored, path.join(ROOT, '.gitignore'),
+          `${rel} carries the answer key and git does not ignore it. This repository is public `
+          + 'and .nojekyll means Pages serves every committed file verbatim, so committing it '
+          + 'publishes the key at a guessable URL and leaves it in history after a delete.');
+      });
+      assert(/-KEY/.test(gitignore), path.join(ROOT, '.gitignore'),
+        'nothing in .gitignore matches the -KEY naming the assessment builder uses. One pattern '
+        + 'has to cover the whole family, or the next key-bearing flavour gets committed.');
+
+      // ── The student exam must not encode the key ─────────────────────────
+      const exam = path.join(ASSESS_DIR, `${m.key}-exam.html`);
+      if (builder && assert(fs.existsSync(exam), exam,
+        'the student exam has not been generated. Run node scripts/build-assessments.js')) {
+        const real = read(exam) || '';
+        assert(real === builder.renderExam(bank), exam,
+          'the student exam no longer matches its item bank. The exam students take and the key '
+          + 'the teacher grades against have to come out of the same file.');
+
+        // Move every answer somewhere else and rebuild. Identical bytes prove the
+        // exam says nothing about which option is right.
+        const moved = {
+          meta: bank.meta,
+          items: items.map(i => Object.assign({}, i, {
+            answer: (i.answer + 1) % ((i.options || []).length || 1)
+          }))
+        };
+        assert(builder.renderExam(moved) === real, exam,
+          'the student exam changes when the answers change, so its bytes encode the key. '
+          + 'Nothing on a student exam may depend on item.answer.');
+      }
+
+      // ── The withheld film title ──────────────────────────────────────────
+      const unitFile = path.join(ROOT, 'scripts', 'lib', 'unit-content', `${m.unitKey}.js`);
+      let unit = null;
+      try { unit = fs.existsSync(unitFile) ? require(unitFile) : null; } catch (e) { unit = null; }
+      (unit ? unit.topics || [] : []).forEach(t => {
+        (t.withholdTitles || []).forEach(title => {
+          const re = new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+          assert(!re.test(src), file,
+            `"${title}" is withheld until ${t.topic} has been taught, and it appears in the `
+            + 'item bank.');
+          glob(ASSESS_DIR, /\.(html|md|txt)$/).forEach(doc => {
+            assert(!re.test(read(doc) || ''), doc,
+              `"${title}" is withheld until ${t.topic} has been taught, and it appears in a `
+              + 'generated assessment.');
+          });
+        });
+      });
+    });
+
+    done(`${itemCount} assessment item${itemCount === 1 ? '' : 's'} checked, key files ignored, `
+      + 'exam carries no answers');
+  }
+}
+
 // ── Local link integrity ─────────────────────────────────────────────────────
 section('Local link integrity');
 let linkCount = 0;
