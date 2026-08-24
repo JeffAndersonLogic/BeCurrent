@@ -90,15 +90,19 @@ window.BECURRENT_SCHEDULE = {
       homework: ['Finish your three Brief responses and submit them in Canvas.',
                  'Bring one claim you saw this week that you are not sure about.'] },
 
-    { date: '2026-08-21', topic: 'SM6',
-      homework: 'Finish your three Brief responses and submit them in Canvas.' }
+    { date: '2026-08-24', topic: 'SM6',
+      homework: 'Finish your three Brief responses and submit them in Canvas.' },
+
+    { date: '2026-08-26', topicTitle: 'Review / Study Guide',
+      agenda: ['Review the unit: the six topics and the terms.',
+               'Work through the study guide.'],
+      note: 'No new material today. The Social Media Assessment is Friday.' }
   ],
 
   // Every quiz, test and exam. Past dates drop off the board on their own.
   // A date you have not set yet is fine: leave `date` out and it shows as TBD.
   assessments: [
-    // { date: '2026-08-21', title: 'Social Media unit check', type: 'Quiz',
-    //   detail: 'The terminal question, argued in writing.' }
+    { date: '2026-08-28', title: 'Social Media Assessment', type: 'Test' }
   ],
 
   // Off by default. Add one and a Reminders slide joins the loop.

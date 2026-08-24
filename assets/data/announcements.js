@@ -251,7 +251,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ]
     },
     {
-      "date": "2026-08-21",
+      "date": "2026-08-24",
       "topic": "Who Gets to Decide?",
       "unit": "Social Media",
       "subtitle": "You, the company, or the government",
@@ -284,9 +284,24 @@ window.BECURRENT_ANNOUNCEMENTS = {
         }
       ],
       "homework": "Finish your three Brief responses and submit them in Canvas."
+    },
+    {
+      "date": "2026-08-26",
+      "topic": "Review / Study Guide",
+      "note": "No new material today. The Social Media Assessment is Friday.",
+      "agenda": [
+        "Review the unit: the six topics and the terms.",
+        "Work through the study guide."
+      ]
     }
   ],
-  "assessments": [],
+  "assessments": [
+    {
+      "date": "2026-08-28",
+      "title": "Social Media Assessment",
+      "type": "Test"
+    }
+  ],
   "reminders": [],
   "desk": {
     "title": "The Desk",
