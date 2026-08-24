@@ -20,6 +20,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 
@@ -74,7 +75,7 @@ done(`${weekDirs.length} week${weekDirs.length === 1 ? '' : 's'} (${weekDirs.joi
 
 // ── The module set ────────────────────────────────────────────────────────────
 //
-// The modules are a TOOLKIT, not a checklist. A block uses the ones it needs, and
+// The modules are a TOOLKIT, not a checklist. A lesson uses the ones it needs, and
 // how many modules a lesson shows on a given day is a teaching decision that this
 // file has no business enforcing. An earlier version asserted "exactly 8, in this
 // order" and that was a code of daily conduct wearing a build gate's clothes.
@@ -185,7 +186,7 @@ if (rendSrc && parserSrc) {
 
   // The sentinel is the one token that differs between the two courses, so the
   // parser has to accept both and the renderer has to emit this course's.
-  assert(/BC_RECORD_OPEN = '--- BECURRENT RECORD/.test(rendSrc), RENDERER,
+  assert(/BC_RECORD_OPEN = ["']--- BECURRENT RECORD/.test(rendSrc), RENDERER,
     'renderer must open the footer with the BECURRENT sentinel');
   assert(/RE_SENTINEL = \/---\\s\*\(\?:BECURRENT\|BEHISTORICAL\) RECORD\//.test(parserSrc), PARSER,
     'parser must accept both course sentinels, or one course stops parsing');
@@ -193,16 +194,92 @@ if (rendSrc && parserSrc) {
   // The denominator. A hard-coded 8 would report a week with no brief yet as
   // three responses short, which is worse than no count at all.
   assert(rendSrc.includes('function expectedCaptureCount'), RENDERER, 'missing expectedCaptureCount()');
-  assert(/\|expected='\s*\+\s*expectedCaptureCount\(\)/.test(rendSrc), RENDERER,
-    'the footer must declare expected= from expectedCaptureCount(), never a literal');
+  assert(/expected:\s*expectedCaptureCount\(\)/.test(rendSrc), RENDERER,
+    'the footer must declare expected from expectedCaptureCount(), never a literal');
 
   // Paragraph structure is the one corruption the hash cannot catch, because the
   // hash normalizes whitespace on purpose. So the response must go out as
   // sibling <p> elements and never as <br>.
-  assert(rendSrc.includes('function paragraphsHtml'), RENDERER, 'missing paragraphsHtml()');
+  assert(rendSrc.includes('function bcParagraphsHtml'), RENDERER, 'missing bcParagraphsHtml()');
   assert(/split\(\/\\n\{2,\}\//.test(rendSrc), RENDERER,
-    'paragraphsHtml must split on blank lines so a blank line survives Canvas');
+    'bcParagraphsHtml must split on blank lines so a blank line survives Canvas');
   done('shared machine grammar, per-course sentinel, computed denominator, paragraph split');
+}
+
+// ── One writer of the record grammar ─────────────────────────────────────────
+//
+// Two surfaces build a paste now: the week page's Gather panel and the Brief's own,
+// which for a unit topic is the ONLY route its answers have to Canvas. Both have to
+// write the footer one parser reads, so the grammar lives in
+// scripts/lib/canvas-record-block.js and is inlined into both.
+//
+// Two copies would mean two answers to "did this student edit their work" depending
+// on which button the student pressed, with nothing able to say which had drifted.
+// That is the failure that lost BeHistorical's capture block twice, so it is
+// asserted here rather than trusted to a comment.
+section('One record-grammar writer');
+{
+  const { recordBlockSource } = require('./lib/canvas-record-block');
+  const shared = recordBlockSource('');
+
+  const drift = spawnSync(process.execPath,
+    [path.join(ROOT, 'scripts', 'build-canvas-record.js'), '--check'],
+    { cwd: ROOT, encoding: 'utf8' });
+  assert(drift.status === 0, RENDERER,
+    'the inlined record block has drifted from scripts/lib/canvas-record-block.js. '
+    + 'Run: node scripts/build-canvas-record.js');
+
+  // And the briefs carry the same source. Asserting only the renderer would leave
+  // the half-contract, which is the dangerous half.
+  const { captureBlock: cb } = require('./lib/brief-capture-block');
+  assert(cb('w00', 1, '').includes(recordBlockSource('  ')),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    'the emitted capture block does not carry the shared record grammar');
+
+  // The Brief's denominator is its own question count, and it must be computed the
+  // same way the week page computes its own: never a literal.
+  assert(/expected:\s*IDS\.length/.test(cb('w00', 3, '')),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    "the brief footer must declare expected from IDS.length, never a literal");
+
+  // The shared block is the thing both surfaces now depend on for the tokens the
+  // parser matches, so it has to carry them itself rather than assume a caller does.
+  const SHARED_TOKENS = ["'#BHV|v='", "'#BHR|i='", 'BECURRENT RECORD', 'function bcHash'];
+  SHARED_TOKENS.forEach(token => {
+    assert(shared.includes(token), path.join(ROOT, 'scripts/lib/canvas-record-block.js'),
+      `the shared record block is missing ${token}`);
+  });
+  done('one grammar, inlined into the renderer and into every brief');
+}
+
+// ── Gather All My Work, on the brief ─────────────────────────────────────────
+//
+// A unit topic Brief is opened straight off the unit page with no week shell around
+// it, so its own Gather panel is the only route those answers have to Canvas. A
+// brief that renders the buttons but carries no handler behind them is the dead
+// button failure, and one that carries the handler but no buttons is unreachable
+// work. Both directions are asserted, per brief, below in the capture-block pass.
+section('Brief gather panel');
+{
+  const { captureBlock: cb } = require('./lib/brief-capture-block');
+  const emitted = cb('w00', 3, '');
+  ['gatherBriefWork', 'copyBriefWork'].forEach(fn => {
+    assert(emitted.includes('window.' + fn + ' ='),
+      path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+      `the capture block must define ${fn}()`);
+  });
+
+  // Both clipboard flavours. text/html is the only thing that carries the bold
+  // question and the italic response into Canvas; text/plain is what the record
+  // footer has to survive in, and what a locked-down device falls back to.
+  assert(emitted.includes("'text/html'") && emitted.includes("'text/plain'"),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    'the copy must write both text/html and text/plain, or Canvas loses the formatting');
+  assert(emitted.includes("bcParagraphsHtml(r.text, 'em')"),
+    path.join(ROOT, 'scripts/lib/brief-capture-block.js'),
+    "the student's response must be emitted in italics, so the teacher can tell it "
+    + 'from the prompt above it');
+  done('gather and copy defined, both clipboard flavours, response in italics');
 }
 
 // ── The brief capture block ───────────────────────────────────────────────────
@@ -221,12 +298,12 @@ weekDirs.forEach(dir => {
     .forEach(f => weekBriefFiles.push(f));
 });
 
-// Unit briefs. A unit carries a Brief only for the blocks that need a reading, so
-// there is deliberately no expected count here: Social Media has none for Block 1
-// (a slide deck and a paper trace) or Block 2 (a film).
+// Unit briefs. A unit carries a Brief only for the topics that need a reading, so
+// there is deliberately no expected count here: Social Media has none for Topic 1
+// (a slide deck and a paper trace) or Topic 2 (a film).
 const unitBriefFiles = [];
 unitDirs.forEach(dir => {
-  glob(path.join(ROOT, dir), /^block-\d{2}-brief-.*\.html$/)
+  glob(path.join(ROOT, dir), /^topic-\d{2}-brief-.*\.html$/)
     .filter(f => !f.endsWith('-capture.html'))
     .forEach(f => unitBriefFiles.push(f));
 });
@@ -264,6 +341,31 @@ briefFiles.forEach(file => {
     assert(src.includes(`id="question-q${i}"`), file, `missing prompt id="question-q${i}"`);
     assert(src.includes(`id="confidence-q${i}"`), file, `missing confidence row id="confidence-q${i}"`);
   }
+
+  // The Gather panel, both halves. The buttons with no handler is a dead button; the
+  // handler with no ids to write into is work the student can never retrieve. A unit
+  // topic Brief has no other route to Canvas at all, so a missing panel there is
+  // lost work rather than an inconvenience.
+  assert(src.includes('onclick="gatherBriefWork()"'), file,
+    'no Gather All My Work button. For a unit topic brief this is the only route to Canvas.');
+  assert(src.includes('onclick="copyBriefWork()"'), file, 'no Copy to Clipboard button');
+  assert(src.includes('id="brief-gather-output"'), file,
+    'the gather buttons have nowhere to write: missing #brief-gather-output');
+  assert(src.includes('id="brief-gather-status"'), file,
+    'missing #brief-gather-status, so a short gather cannot tell the student');
+
+  // The output has to be a div, not a textarea. A textarea can only ever hold plain
+  // text, which loses the bold question and the italic response the whole paste is
+  // shaped around, and it also loses the rendered selection that a manual Ctrl-C
+  // depends on where the clipboard API is blocked.
+  assert(!/<textarea[^>]*id="brief-gather-output"/.test(src), file,
+    '#brief-gather-output must be a div, not a textarea, or the formatting is lost');
+
+  // Every confidence button carries its word. The number alone is the legend-in-your-
+  // head version this replaced, and the word is also what the Canvas paste prints.
+  const pills = (src.match(/class="conf-word"/g) || []).length;
+  assert(pills === count * 5, file,
+    `expected ${count * 5} labelled confidence buttons, found ${pills}`);
 });
 done(`${briefFiles.length} brief${briefFiles.length === 1 ? '' : 's'} carrying an identical capture block`);
 
@@ -426,6 +528,12 @@ weekDirs.concat(unitDirs).forEach(dir => {
   glob(path.join(ROOT, dir), /\.html$/).forEach(f => studentPages.push(f));
 });
 studentPages.push(path.join(ROOT, 'index.html'));
+// The Desk. It sits in neither weekDirs nor unitDirs, so for as long as it was a
+// page with no <script> on it nothing here covered it and nothing needed to. It
+// now carries a capture block and a week of student writing in localStorage, which
+// makes it the single most important page in the repo to hold to this rule, and
+// the gap was invisible: every check in this section passed by never looking.
+studentPages.push(path.join(ROOT, 'daily', 'index.html'));
 [RENDERER].forEach(f => studentPages.push(f));
 
 studentPages.forEach(file => {
@@ -460,6 +568,39 @@ codeCarriers.forEach(file => {
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
 
+// ── This is not an AP course ─────────────────────────────────────────────────
+//
+// BeCurrent is an elective that runs 9th through 12th grade in one room, with a wide
+// spread of reading and writing levels in it. AP framing does two wrong things at
+// once: it is factually untrue of this course, and it tells a struggling 9th grader
+// that the work is pitched at somebody else.
+//
+// It is checked rather than trusted because the port from BeHistorical carried it in
+// once already, as 'AP Skill Parallel' callouts on three briefs, and the same route
+// is open every time a lesson is adapted across from that repo. The skill NAMES stay
+// — Sourcing, Framing, Causation, Corroboration are what this course teaches, and
+// they belong to nobody.
+//
+// The word boundary matters: 'AP' as a standalone word, not 'APPLE' or 'gap'.
+section('Not an AP course');
+const AP_CARRIERS = studentPages.concat(
+  glob(path.join(ROOT, 'scripts', 'lib', 'week-content'), /\.js$/),
+  fs.existsSync(path.join(ROOT, 'scripts', 'lib', 'unit-content'))
+    ? glob(path.join(ROOT, 'scripts', 'lib', 'unit-content'), /\.js$/) : [],
+  [path.join(ROOT, 'scripts', 'lib', 'desk-content.js')]
+);
+
+AP_CARRIERS.forEach(file => {
+  const src = read(file);
+  if (!src) return;
+  const hit = src.match(/\bAP\b(?!\s*World MagicSchool)|Advanced Placement/);
+  assert(!hit, file,
+    `"${hit ? hit[0] : ''}" appears here. BeCurrent is not an AP course: it is a 9-12 `
+    + 'elective with a mixed skill range in one room. Name the skill instead, the way '
+    + "'Skill Focus' does.");
+});
+done(`${AP_CARRIERS.length} files carry no AP framing`);
+
 // ── Unit pages ────────────────────────────────────────────────────────────────
 //
 // A unit page is the only map of its arc, so two ways of losing it matter and
@@ -467,37 +608,37 @@ done(`${studentPages.length} student-facing files carry no off-device capture`);
 //
 //   1. The unit page exists but nothing links to it, so it is reachable only by
 //      typing the URL. That is how the first version shipped.
-//   2. A block card links a Brief that was never generated, which is a 404 for a
-//      student who missed that block and came looking for the reading.
+//   2. A topic card links a Brief that was never generated, which is a 404 for a
+//      student who missed that topic and came looking for the reading.
 section('Unit pages');
 const frontDoor = read(path.join(ROOT, 'index.html')) || '';
 unitDirs.forEach(key => {
   const page = path.join(ROOT, key, 'index.html');
-  if (!assert(fs.existsSync(page), page, 'unit has no index.html mapping its blocks')) return;
+  if (!assert(fs.existsSync(page), page, 'unit has no index.html mapping its topics')) return;
 
   assert(frontDoor.includes(`href="${key}/index.html"`), path.join(ROOT, 'index.html'),
     `nothing on the front door links ${key}/index.html, so the unit is orphaned`);
 
   const src = read(page) || '';
   // Every Brief link on the card list has to resolve. The generic link check would
-  // catch a typo; this catches a block that lost its Brief while keeping its card.
-  (src.match(/href="(block-\d{2}-brief-[^"]+)"/g) || []).forEach(hit => {
+  // catch a typo; this catches a topic that lost its Brief while keeping its card.
+  (src.match(/href="(topic-\d{2}-brief-[^"]+)"/g) || []).forEach(hit => {
     const target = hit.replace(/^href="|"$/g, '');
     assert(fs.existsSync(path.join(ROOT, key, target)), page,
-      `block card links ${target}, which was not generated`);
+      `topic card links ${target}, which was not generated`);
   });
 
-  assert(/class="block-card"/.test(src), page, 'unit page lists no blocks');
+  assert(/class="topic-card"/.test(src), page, 'unit page lists no topics');
 
-  // A block may declare `withholdTitles`: names that must not appear on any
-  // student-facing page in the unit. Social Media Block 2 uses it for the film.
+  // A topic may declare `withholdTitles`: names that must not appear on any
+  // student-facing page in the unit. Social Media Topic 2 uses it for the film.
   //
   // This is a teaching contract, not plumbing, and it is in the gate anyway because
   // breaking it is invisible and irreversible: the damage happens the moment a
   // student reads the title, and no amount of fixing the page afterwards puts the
-  // surprise back. From the Block 1 script, on why the withholding matters, "the
+  // surprise back. From the Topic 1 script, on why the withholding matters, "the
   // second they know the title, half the room looks it up, reads that it's a
-  // documentary about social media being bad, and walks into Block 2 already knowing
+  // documentary about social media being bad, and walks into Topic 2 already knowing
   // what they're supposed to conclude."
   const unitMod = (() => {
     const dir = path.join(ROOT, 'scripts', 'lib', 'unit-content');
@@ -507,19 +648,392 @@ unitDirs.forEach(key => {
     try { return hit ? require(hit) : null; } catch (e) { return null; }
   })();
 
-  (unitMod ? unitMod.blocks || [] : []).forEach(b => {
+  (unitMod ? unitMod.topics || [] : []).forEach(b => {
     (b.withholdTitles || []).forEach(title => {
       glob(path.join(ROOT, key), /\.html$/).concat([path.join(ROOT, 'index.html')])
         .forEach(f => {
           const body = read(f) || '';
           assert(!new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i').test(body), f,
-            `"${title}" is withheld until ${b.block} has been taught, and it appears here. `
+            `"${title}" is withheld until ${b.topic} has been taught, and it appears here. `
             + 'A student who reads it walks in already knowing what to conclude.');
         });
     });
   });
 });
 done(`${unitDirs.length} unit page${unitDirs.length === 1 ? '' : 's'}, linked from the front door`);
+
+// ── The Desk ──────────────────────────────────────────────────────────────────
+//
+// The daily half of every block, and the one page a student opens more often
+// than any other. Two things about it fail quietly.
+//
+// Orphaning: the Desk lives at daily/index.html and nothing else in the site
+// links down into it, so if the front door drops the link the page still builds,
+// still validates, and is reachable only by typing the URL. That is exactly how
+// the first unit page shipped orphaned.
+//
+// A headline: per CLAUDE.md the Desk must never carry a story, because the page
+// is generated once and served every class period for a year. A "for example"
+// headline written in August is a fabricated one by September and a stale one by
+// October, on the single page this course opens every single day.
+section('The Desk');
+const DESK_PAGE = path.join(ROOT, 'daily', 'index.html');
+const DESK_CONTENT = path.join(ROOT, 'scripts', 'lib', 'desk-content.js');
+if (assert(fs.existsSync(DESK_PAGE), DESK_PAGE, 'daily/index.html is missing')) {
+  assert(frontDoor.includes('href="daily/index.html"'), path.join(ROOT, 'index.html'),
+    'nothing on the front door links daily/index.html, so the Desk is orphaned');
+
+  const deskSrc = read(DESK_PAGE) || '';
+  const desk = require('./lib/desk-content');
+
+  // Nobody speaks to the room. This is a hard constraint set by the teacher on
+  // the basis of the room's IEP and 504 load, and it is exactly the kind of rule
+  // that regresses quietly: an oral step reads as a perfectly sensible edit to
+  // anyone who was not in the conversation, breaks nothing technically, and is
+  // discovered by a student being asked to present.
+  //
+  // Enforced here and NOT announced on the page. An earlier version required the
+  // page to promise students they would never present, which turned an ordinary
+  // absence into a special accommodation and pointed at exactly the students it
+  // was meant to protect. The design carries the constraint; the room does not
+  // need to be told about it.
+  const SPEAKING = /\b(present to the class|presentation|report out|share out|out loud to the class|oral report|call on you|called on)\b/i;
+  const story = desk.story || {};
+  [['meta.deck', desk.meta.deck],
+    ...(desk.routine || []).flatMap((s, i) => [[`routine[${i}].what`, s.what], [`routine[${i}].why`, s.why]]),
+    ...(desk.lanes || []).flatMap((l, i) => [[`lanes[${i}].question`, l.question], [`lanes[${i}].note`, l.note]]),
+    ...(story.questions || []).flatMap((q, i) => [
+      [`story.questions[${i}].text`, q.text],
+      [`story.questions[${i}].startHere`, q.startHere],
+      [`story.questions[${i}].pushFurther`, q.pushFurther]
+    ]),
+    ...(desk.rules || []).flatMap((r, i) => [[`rules[${i}].rule`, r.rule], [`rules[${i}].why`, r.why]]),
+    ['accountability.daily', (desk.accountability || {}).daily]
+  ].forEach(([where, text]) => {
+    assert(!SPEAKING.test(String(text || '')), path.join(ROOT, 'scripts', 'lib', 'desk-content.js'),
+      `${where} asks a student to speak to the room. The daily half is filed, never spoken; `
+      + 'see the header of desk-content.js before changing this.');
+  });
+
+  // The counts are asserted before anything is looped over. Every check below is a
+  // forEach, and a forEach over an empty array passes: renaming `lanes` or
+  // `sources` in the content module without touching this file reported "0 lanes,
+  // 0 sources" and a clean green, which is the shape of failure this repo cares
+  // about more than an outright red. The two lanes are the design (see the header
+  // of desk-content.js), so two is the number.
+  assert((desk.lanes || []).length === 2, DESK_CONTENT,
+    `expected 2 lanes, found ${(desk.lanes || []).length}. Every student files one Local `
+    + 'and one National-or-International story every day; see desk-content.js.');
+  assert((story.facts || []).length >= 1 && (story.questions || []).length >= 1, DESK_CONTENT,
+    'a story needs at least one fact and one question, or the Desk captures nothing');
+  assert((desk.sources || []).length >= 1
+    && (desk.sources || []).every(g => (g.links || []).length >= 1), DESK_CONTENT,
+    'every source group needs at least one link. An empty group renders a heading '
+    + 'over nothing, which reads as something that failed to load.');
+
+  (desk.lanes || []).forEach(l => {
+    assert(deskSrc.includes(`>${l.name}<`), DESK_PAGE, `the ${l.name} lane is not on the page`);
+    assert(deskSrc.includes(`id="story-${l.id}"`), DESK_PAGE,
+      `the ${l.name} lane has no filing card on the page`);
+  });
+
+  // Every source is a real, new-tab, no-referrer-leak link. A source button that
+  // opens in the same tab loses whatever the student had typed into the filing
+  // form, which is the one thing on this page that only exists in the browser.
+  let sourceCount = 0;
+  (desk.sources || []).forEach(g => {
+    assert(deskSrc.includes(`>${g.group}<`), DESK_PAGE, `the ${g.group} source group is not on the page`);
+    (g.links || []).forEach(l => {
+      sourceCount++;
+      assert(deskSrc.includes(`href="${l.url}"`), DESK_PAGE, `${l.name} is not linked`);
+      assert(new RegExp(`href="${l.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*rel="noopener noreferrer"`).test(deskSrc),
+        DESK_PAGE, `${l.name} opens without rel="noopener noreferrer"`);
+    });
+  });
+
+  // ── The Desk's capture block ───────────────────────────────────────────────
+  //
+  // The Desk is the THIRD gather surface in this course, and the only route the
+  // daily filings have to Canvas: there is no shell behind it and no Brief beside
+  // it. Every failure below leaves the page rendering perfectly and losing the
+  // work, which is why each one is checked rather than trusted.
+  const { deskCaptureBlock, STORAGE_PREFIX: DESK_PREFIX } = require('./lib/desk-capture-block');
+
+  // Byte-identical to what the lib produces, so a hand-edit inside the generated
+  // page cannot survive, and so the shared record grammar cannot drift here while
+  // the briefs and the week renderer stay correct.
+  assert(deskSrc.includes(deskCaptureBlock(desk.lanes, story.facts, story.questions, desk.log)),
+    DESK_PAGE,
+    'the Desk capture block is not byte-identical to scripts/lib/desk-capture-block.js. '
+    + 'Never hand-edit it: change the lib and run node scripts/build-desk.js.');
+
+  // The key the weekly gather scans for. The date is appended by the browser at
+  // load, which is what keeps this page dateless and still gives every class
+  // period its own sheet; the PREFIX is the part the repo can check.
+  assert(new RegExp(`var PREFIX = "${DESK_PREFIX}"`).test(deskSrc), DESK_PAGE,
+    `the Desk storage prefix is not "${DESK_PREFIX}". Change it here and the weekly `
+    + 'gather stops finding any day the student has already filed.');
+  assert(/var TODAY = dayKeyOf\(new Date\(\)\)/.test(deskSrc), DESK_PAGE,
+    'the day key must be stamped by the browser at load, not built into the page');
+
+  // ── The News Log cycle ─────────────────────────────────────────────────────
+  //
+  // The gather collects the days belonging to the CURRENT log, and the log runs two
+  // weeks, so the window cannot be computed from today alone: nothing in one date
+  // says whether this is the first week of a cycle or the second. It is counted from
+  // an anchor Monday that every browser shares.
+  //
+  // Every failure here is silent and lands in the gradebook rather than on the page.
+  // A rolling window would give two students different fortnights. An anchor that is
+  // not a Monday shifts every boundary mid-week, so one class period's filing ends up
+  // in the previous log and the next in the following one. Neither shows on screen.
+  const deskLog = desk.log || {};
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(String(deskLog.anchorMonday || '')), DESK_CONTENT,
+    'desk.log.anchorMonday must be a YYYY-MM-DD date. It is what every student\'s '
+    + 'browser counts the News Log cycle from, and there is no safe default.');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(String(deskLog.anchorMonday || ''))) {
+    const [ay, am, ad] = String(deskLog.anchorMonday).split('-').map(Number);
+    // Local, matching how the page parses it. getDay() 1 is Monday.
+    assert(new Date(ay, am - 1, ad).getDay() === 1, DESK_CONTENT,
+      `desk.log.anchorMonday (${deskLog.anchorMonday}) is not a Monday. The cycle is `
+      + 'counted in whole weeks from it, so a mid-week anchor puts one class period in '
+      + 'the previous log and the next one in the following log.');
+  }
+  assert(Number.isInteger(deskLog.weeks) && deskLog.weeks >= 1, DESK_CONTENT,
+    `desk.log.weeks must be a whole number of weeks, found ${JSON.stringify(deskLog.weeks)}`);
+
+  // The window is enumerated from the anchor, never rolled back from today. A
+  // rolling window is the shortcut that looks identical and is wrong for everyone
+  // who presses the button on a different day.
+  assert(deskSrc.includes('function cycleStart()') && deskSrc.includes('ANCHOR_MONDAY'),
+    DESK_PAGE, 'the gather window must be anchored, not rolling: two students pressing '
+    + 'the button on different days would otherwise gather two different fortnights');
+  assert(/function daysBetweenUTC/.test(deskSrc), DESK_PAGE,
+    'the cycle must be counted off UTC midnights. Local date arithmetic across a '
+    + 'daylight-saving boundary gives 13.958 days, which floors to the wrong cycle '
+    + 'twice a year.');
+  assert(!/toISOString\(\)\s*\.slice/.test(deskSrc), DESK_PAGE,
+    'the day key must come from the LOCAL date getters. toISOString() is UTC and rolls '
+    + 'over during the school evening, handing an after-school student a blank sheet.');
+
+  // Every field the content module defines is wired to the block. An unwired box
+  // is a student answer that is typed, looks saved, and silently never reaches
+  // Canvas.
+  (desk.lanes || []).forEach(l => {
+    (story.facts || []).forEach(f => {
+      assert(deskSrc.includes(`id="answer-${l.id}-${f.id}"`), DESK_PAGE,
+        `missing input id="answer-${l.id}-${f.id}"`);
+    });
+    (story.questions || []).forEach(q => {
+      assert(deskSrc.includes(`id="answer-${l.id}-${q.id}"`), DESK_PAGE,
+        `missing textarea id="answer-${l.id}-${q.id}"`);
+      assert(deskSrc.includes(`id="question-${l.id}-${q.id}"`), DESK_PAGE,
+        `missing prompt id="question-${l.id}-${q.id}", so the question the student saw is `
+        + 'never recorded beside their answer');
+      assert(deskSrc.includes(`id="confidence-${l.id}-${q.id}"`), DESK_PAGE,
+        `missing confidence row id="confidence-${l.id}-${q.id}"`);
+    });
+  });
+
+  // The Gather panel, both halves. Buttons with no handler are dead buttons; a
+  // handler with nowhere to write is work the student can never retrieve.
+  assert(deskSrc.includes('onclick="gatherDeskWork()"'), DESK_PAGE,
+    'no Gather My Week button. This is the only route the daily filings have to Canvas.');
+  assert(deskSrc.includes('onclick="copyDeskWork()"'), DESK_PAGE, 'no Copy to Clipboard button');
+  assert(deskSrc.includes('id="desk-gather-status"'), DESK_PAGE,
+    'missing #desk-gather-status, so a week with nothing in it cannot tell the student');
+
+  // A div, not a textarea. A textarea can only hold plain text, which loses the
+  // bold question and the italic response the paste is shaped around, and it loses
+  // the rendered selection a manual Ctrl-C depends on where the clipboard API is
+  // blocked outright, which it is on some managed devices.
+  assert(/<div class="gather-output" id="desk-gather-output"/.test(deskSrc), DESK_PAGE,
+    '#desk-gather-output must be a <div>: a textarea loses the formatting and the '
+    + 'selection that a blocked-clipboard copy falls back to');
+
+  done(`${(desk.lanes || []).length} lanes, ${sourceCount} source links, `
+    + `${(desk.lanes || []).length * ((story.facts || []).length + (story.questions || []).length)} `
+    + 'capture boxes wired, linked from the front door');
+}
+
+// ── The TODAY board ───────────────────────────────────────────────────────────
+//
+// The projector surface, and the one page in this repo whose whole value is that
+// it agrees with the curriculum. Three ways that fails, none of them visible on
+// the screen:
+//
+//   1. Orphaning. announcements.html sits at the root and nothing else links
+//      down into it, so a front door that drops the link leaves a board that
+//      still builds, still validates, and is reachable only by typing the URL.
+//      That is exactly how the first unit page shipped.
+//   2. A board reading nothing. The page renders its own "no announcements
+//      file" panel if the data is missing, which is honest but is discovered at
+//      the front of a room with thirty students watching.
+//   3. A board that has stopped being generated. If someone hand-edits
+//      assets/data/announcements.js, the next build silently reverts it, and in
+//      the meantime the projected targets are a second copy of the curriculum
+//      with nothing able to say the two disagree. The drift check in the offline
+//      suite is the real guard; this asserts the wiring it depends on.
+section('The TODAY board');
+{
+  const BOARD = path.join(ROOT, 'announcements.html');
+  if (assert(fs.existsSync(BOARD), BOARD, 'announcements.html is missing')) {
+    const boardSrc = read(BOARD) || '';
+
+    assert(frontDoor.includes('href="announcements.html"'), path.join(ROOT, 'index.html'),
+      'nothing on the front door links announcements.html, so the board is orphaned');
+
+    assert(boardSrc.includes('src="assets/data/announcements.js"'), BOARD,
+      'the board does not load assets/data/announcements.js, so it can only render its empty state');
+    assert(/BECURRENT_ANNOUNCEMENTS/.test(boardSrc), BOARD,
+      'the board does not read window.BECURRENT_ANNOUNCEMENTS, which is what the builder writes');
+
+    const DATA_FILE = path.join(ROOT, 'assets', 'data', 'announcements.js');
+    const SCHEDULE_FILE = path.join(ROOT, 'assets', 'data', 'announcements-schedule.js');
+    assert(fs.existsSync(SCHEDULE_FILE), SCHEDULE_FILE,
+      'the hand-edited schedule is missing, so nothing can be built');
+    if (assert(fs.existsSync(DATA_FILE), DATA_FILE,
+      'the generated board data is missing, run node scripts/build-announcements.js')) {
+      const dataSrc = read(DATA_FILE) || '';
+      assert(/DO NOT EDIT THIS FILE/.test(dataSrc), DATA_FILE,
+        'lost its generated-file header, which is the only warning against hand-editing it');
+      assert(/window\.BECURRENT_ANNOUNCEMENTS\s*=/.test(dataSrc), DATA_FILE,
+        'does not assign window.BECURRENT_ANNOUNCEMENTS, so the board reads nothing');
+    }
+
+    // Every unit a day can be pointed at needs a code, and two units sharing one
+    // would mean a day silently projecting the wrong unit's targets under the
+    // right unit's name. The builder exits on a clash; this catches the missing
+    // half, which the builder can only warn about.
+    const seenCodes = new Map();
+    unitDirs.forEach(key => {
+      const file = path.join(ROOT, 'scripts', 'lib', 'unit-content', `${key}.js`);
+      if (!fs.existsSync(file)) return;
+      let unit;
+      try { unit = require(file); } catch (e) { return; }
+      const code = String((unit.meta || {}).code || '');
+      if (!assert(!!code, file,
+        'has no meta.code, so no day in the announcements schedule can point at its topics')) return;
+      assert(!seenCodes.has(code), file,
+        `shares the code "${code}" with ${seenCodes.get(code)}. A day pointing at ${code}1 `
+        + 'would silently get one of them.');
+      seenCodes.set(code, key);
+    });
+
+    done('board linked, reading its generated data, and every unit has a schedule code');
+  }
+}
+
+// ── Canvas paste documents ────────────────────────────────────────────────────
+//
+// Canvas is outside this repository and has no version control of its own, so
+// the generated docs in docs/canvas/ are the only record of what was pasted in.
+// The drift check in the offline suite proves they still match the course data.
+// This proves the other half, which drift cannot see: that every BeCurrent URL
+// inside them points at a file that actually exists.
+//
+// That failure is the reason this check exists. The unit's Briefs were renamed
+// from block-NN to topic-NN in this repo, and a Canvas event carrying the old
+// path would still be a blue underlined clickable link, in front of thirty
+// students, resolving to a 404. Nothing on the Canvas side would report it, and
+// nothing on this side would either, because a generated markdown file is not a
+// page anything else links to.
+section('Canvas paste documents');
+{
+  const CANVAS_DIR = path.join(ROOT, 'docs', 'canvas');
+  if (!fs.existsSync(CANVAS_DIR)) {
+    done('no docs/canvas yet, nothing to check');
+  } else {
+    const SITE = 'https://jeffandersonlogic.github.io/BeCurrent';
+    const docs = glob(CANVAS_DIR, /\.md$/);
+    let urls = 0;
+
+    docs.forEach(file => {
+      const src = read(file) || '';
+
+      // Every link into the live site must resolve to a real path on disk.
+      //
+      // These URLs sit in markdown as well as in HTML, so the match has to stop
+      // at a backtick and shed trailing sentence punctuation; otherwise a URL
+      // written inside `code` at the end of a sentence is reported as a missing
+      // file called "index.html`." and the check cries wolf on its first run.
+      // A trailing slash is a directory reference, which is a real thing to link.
+      for (const hit of src.matchAll(new RegExp(`${SITE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/([^"'\`\\s)>]+)`, 'g'))) {
+        urls++;
+        const rel = hit[1].split(/[?#]/)[0].replace(/[.,;:]+$/, '');
+        if (!rel) continue;
+        assert(fs.existsSync(path.join(ROOT, rel)), file,
+          `points at ${rel}, which does not exist in this repo. A Canvas link to a `
+          + 'renamed or deleted file is a 404 that still looks like a working link.');
+      }
+
+      // The placeholder must survive into the doc. A generator that started
+      // emitting a real href here would be emitting a hand-typed Canvas link,
+      // which renders fine and resolves to nothing for anyone whose enrollment
+      // differs from the teacher's; see Section 5 of CANVAS-BUILD-GUIDE.md.
+      if (/-calendar-events\.md$/.test(file)) {
+        assert(src.includes('[INSERT ASSIGNMENT LINK]'), file,
+          'has no [INSERT ASSIGNMENT LINK] placeholder. Assignment links must come from '
+          + 'the Canvas course-links panel, never hand-typed.');
+      }
+    });
+
+    // ── The News Log ────────────────────────────────────────────────────────
+    //
+    // The Desk's only route to Canvas, and the only weekly assignment in the
+    // course. Two things about it are load-bearing rather than editorial.
+    //
+    // Unlimited attempts is the whole backup story. Students paste the
+    // accumulating log every day, so Friday's attempt carries the week and every
+    // earlier attempt is a recovery point. A week of filings lives in one
+    // browser's localStorage until it is copied out and nothing in this course
+    // may send student writing anywhere on its own, so capping the attempts
+    // removes the only backup that exists, silently, in a Canvas setting that
+    // nothing else in this repo can see.
+    //
+    // Not a Discussion, because a discussion is visible to the class and the
+    // Desk's first house rule is that a name is never on the board unless the
+    // student puts it there.
+    const NEWS_LOG_DOC = path.join(CANVAS_DIR, 'news-log.md');
+    if (assert(fs.existsSync(NEWS_LOG_DOC), NEWS_LOG_DOC,
+      'docs/canvas/news-log.md is missing. It is the Desk\'s only route to Canvas; '
+      + 'run node scripts/build-canvas-events.js')) {
+      const log = read(NEWS_LOG_DOC) || '';
+      assert(/\|\s*Attempts\s*\|\s*\*\*Unlimited\*\*\s*\|/.test(log), NEWS_LOG_DOC,
+        'the News Log must specify Unlimited attempts. Students paste the accumulating '
+        + 'log daily and that is the only backup a week of filings has.');
+      assert(/Text Entry/.test(log), NEWS_LOG_DOC,
+        'the News Log must specify Text Entry: parse-canvas-submissions.js cannot read '
+        + 'a file upload, so the record footer would never reach any analysis.');
+      assert(log.includes(`${SITE}/daily/index.html`), NEWS_LOG_DOC,
+        'the News Log does not link the Desk, so a student reading the assignment has '
+        + 'no route to the page it is about');
+    }
+
+    // A withheld title must not reach Canvas either. The repo check covers
+    // student-facing pages; these documents are pasted at students by hand, so
+    // they are the one route around it.
+    unitDirs.forEach(key => {
+      const file = path.join(ROOT, 'scripts', 'lib', 'unit-content', `${key}.js`);
+      if (!fs.existsSync(file)) return;
+      let unit;
+      try { unit = require(file); } catch (e) { return; }
+      (unit.topics || []).forEach(t => {
+        (t.withholdTitles || []).forEach(title => {
+          docs.forEach(doc => {
+            const src = read(doc) || '';
+            assert(!src.includes(title), doc,
+              `"${title}" is withheld until ${t.topic} has been taught, and it appears in a `
+              + 'document that gets pasted into Canvas.');
+          });
+        });
+      });
+    });
+
+    done(`${docs.length} Canvas document${docs.length === 1 ? '' : 's'}, `
+      + `${urls} site link${urls === 1 ? '' : 's'} resolving to real files`);
+  }
+}
 
 // ── Video ─────────────────────────────────────────────────────────────────────
 //
@@ -563,14 +1077,14 @@ weekDirs.forEach(dir => {
   }
 });
 
-// Unit blocks.
+// Unit topics.
 (() => {
   const dir = path.join(ROOT, 'scripts', 'lib', 'unit-content');
   if (!fs.existsSync(dir)) return;
   glob(dir, /\.js$/).forEach(f => {
     let unit = null;
     try { unit = require(f); } catch (e) { err(f, 'unit content not loadable'); return; }
-    (unit.blocks || []).forEach(b => checkClips(b.videos, f, `${b.block || 'block'}`));
+    (unit.topics || []).forEach(b => checkClips(b.videos, f, `${b.topic || 'topic'}`));
   });
 })();
 
@@ -599,6 +1113,131 @@ studentPages.filter(f => f.endsWith('.html')).forEach(file => {
     'no favicon link. Every student-facing page must link assets/favicon.svg.');
 });
 done(`linked on ${studentPages.filter(f => f.endsWith('.html')).length} pages`);
+
+// ── The brand file ───────────────────────────────────────────────────────────
+//
+// becurrent-brand.css is the only file that defines a token, and every page has
+// to link it. Both halves of that fail quietly enough to be worth a check.
+//
+// A page that links becurrent.css and forgets the brand file resolves every
+// custom property to nothing: no palette, no faces, a page that is technically
+// complete and looks like a 1996 term paper. Nothing else in this suite would
+// notice, because every id, block and capture wire is still exactly where it
+// should be.
+//
+// A second :root in a component stylesheet is the quieter one. It works, so it
+// survives, and the course ends up with two reds that agree until the day one of
+// them is edited. That is the same failure as two copies of the capture block,
+// in a place nobody thinks to look.
+section('The brand file');
+const BRAND = path.join(ROOT, 'assets', 'css', 'becurrent-brand.css');
+assert(fs.existsSync(BRAND), BRAND, 'assets/css/becurrent-brand.css is missing');
+
+const brandSrc = read(BRAND) || '';
+['--signal', '--signal-deep', '--black-900', '--ink', '--focus', '--display', '--body', '--ui']
+  .forEach(token => {
+    assert(new RegExp(`${token}\\s*:`).test(brandSrc), BRAND,
+      `the brand file defines no ${token}`);
+  });
+
+// Every token a component asks for has to exist. An undefined custom property
+// does not fall back to anything: `color: var(--gone)` inherits, and
+// `border-top: 4px solid var(--gone)` draws the border in currentColor. Both
+// render as a page that looks broadly right, which is why removing a token and
+// leaving one component still asking for it survives a visual check.
+//
+// This is the check the red-and-black recolour needed. --cool was referenced in
+// 35 places across two stylesheets; missing one would have left a lone teal rule
+// resolving to whatever the surrounding text colour happened to be.
+const defined = new Set((brandSrc.match(/(--[a-z0-9-]+)\s*:/g) || [])
+  .map(m => m.replace(/\s*:$/, '')));
+['becurrent.css', 'becurrent-brief.css'].forEach(name => {
+  const file = path.join(ROOT, 'assets', 'css', name);
+  const src = (read(file) || '').replace(/\/\*[\s\S]*?\*\//g, '');
+  const used = new Set((src.match(/var\(\s*(--[a-z0-9-]+)/g) || [])
+    .map(m => m.replace(/^var\(\s*/, '')));
+  [...used].sort().forEach(token => {
+    assert(defined.has(token), file,
+      `${name} uses ${token}, which becurrent-brand.css does not define. `
+      + 'An undefined custom property does not fall back, it resolves to nothing.');
+  });
+});
+
+// The same failure one layer down. A @font-face pointing at a file that is not
+// there is silent: the browser drops to the next family in the stack and the
+// page renders in Georgia or Arial, correctly, in the wrong typeface.
+(brandSrc.match(/url\("([^"]+\.woff2)"\)/g) || []).forEach(m => {
+  const rel = m.replace(/^url\("/, '').replace(/"\)$/, '');
+  const full = path.resolve(path.dirname(BRAND), rel);
+  assert(fs.existsSync(full), BRAND,
+    `@font-face points at ${rel}, which does not exist. A missing face does not `
+    + 'error, it falls back to a system font and the page is simply the wrong type.');
+});
+
+// Only pages that carry a component stylesheet. A capture wrapper is a bare
+// iframe host with no stylesheet of any kind, and requiring one there would be
+// asking it to download three fonts to render nothing.
+let brandLinked = 0;
+studentPages.filter(f => f.endsWith('.html')).forEach(file => {
+  const src = read(file);
+  if (!src) return;
+  if (!/becurrent(-brief)?\.css/.test(src)) return;
+  brandLinked += 1;
+  assert(/<link rel="stylesheet" href="[^"]*assets\/css\/becurrent-brand\.css">/.test(src), file,
+    'no brand stylesheet. Every page that links a component stylesheet must link '
+    + 'assets/css/becurrent-brand.css first, or every colour and face on it resolves to nothing.');
+});
+
+['becurrent.css', 'becurrent-brief.css'].forEach(name => {
+  const file = path.join(ROOT, 'assets', 'css', name);
+  const src = read(file) || '';
+  assert(!/--[a-z0-9-]+\s*:/.test(src.replace(/\/\*[\s\S]*?\*\//g, '')), file,
+    `${name} defines a custom property. Tokens live only in becurrent-brand.css.`);
+});
+done(`${brandLinked} pages linked, tokens defined once`);
+
+// ── The wordmark lockups ─────────────────────────────────────────────────────
+//
+// Every page renders the wordmark as an <img> with explicit width and height,
+// and those numbers have to match the file. If they drift the browser reserves
+// the wrong box and the mark is letterboxed or stretched inside it, which looks
+// like a rendering bug rather than a stale attribute.
+//
+// This is not hypothetical, and it has happened on every redraw: 4889x810, then
+// 4101x716, then 7101x733 when the mark moved to Cinzel. Each time, ten
+// hardcoded pairs across four generators had to move with it, and nothing else
+// in this suite would have caught a single one.
+section('Wordmark lockups');
+const MARKS = ['becurrent-wordmark.svg', 'becurrent-wordmark-ink.svg'];
+const markDims = {};
+MARKS.forEach(name => {
+  const full = path.join(ROOT, 'assets', 'images', 'brand', name);
+  const src = read(full);
+  if (!assert(!!src, full, 'wordmark file is missing')) return;
+  const w = (src.match(/<svg[^>]*\swidth="([\d.]+)"/) || [])[1];
+  const h = (src.match(/<svg[^>]*\sheight="([\d.]+)"/) || [])[1];
+  assert(!!w && !!h, full, 'wordmark has no intrinsic width and height');
+  markDims[name] = { w, h };
+});
+
+let lockups = 0;
+studentPages.filter(f => f.endsWith('.html')).forEach(file => {
+  const src = read(file) || '';
+  MARKS.forEach(name => {
+    const dims = markDims[name];
+    if (!dims) return;
+    const re = new RegExp(`<img[^>]*brand/${name.replace('.', '\\.')}"[^>]*>`, 'g');
+    (src.match(re) || []).forEach(tag => {
+      lockups += 1;
+      const w = (tag.match(/\swidth="(\d+)"/) || [])[1];
+      const h = (tag.match(/\sheight="(\d+)"/) || [])[1];
+      assert(w === dims.w && h === dims.h, file,
+        `${name} is rendered at ${w}x${h} but the file is ${dims.w}x${dims.h}. `
+        + 'The <img> dimensions must match the mark, or the browser reserves the wrong box.');
+    });
+  });
+});
+done(`${lockups} lockups, all matching the mark's own dimensions`);
 
 // ── Image integrity ──────────────────────────────────────────────────────────
 //

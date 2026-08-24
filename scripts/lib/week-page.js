@@ -15,7 +15,7 @@
  * confirm not one byte moved. That is the step that catches escaping bugs.
  */
 
-const { captureBlock } = require('./brief-capture-block');
+const { captureBlock, CONFIDENCE_WORDS } = require('./brief-capture-block');
 
 function esc(s) {
   return String(s == null ? '' : s)
@@ -91,15 +91,53 @@ function builderSection(aiUrl) {
 `;
 }
 
+/**
+ * The confidence scale. Each button carries its own word.
+ *
+ * It used to read "Confidence", five bare numerals, then "1 lost, 5 could teach
+ * it" off to the right, which asks the student to hold a legend in their head
+ * while they choose. The word is now on the thing being pressed. The row keeps a
+ * hidden name because dropping the visible label would otherwise leave five
+ * buttons announced with no idea what they are a scale of.
+ *
+ * Kept identical to unit-brief-page.js on purpose: the two renderers stay
+ * separate so week 01 cannot be moved a byte by a unit change, but a student who
+ * meets both surfaces must meet one scale.
+ */
 function confidenceRow(id) {
   const buttons = [1, 2, 3, 4, 5].map(n =>
-    `        <button type="button" data-conf="${n}" aria-pressed="false" aria-label="Confidence ${n} of 5">${n}</button>`
+    `        <button type="button" data-conf="${n}" aria-pressed="false"
+          aria-label="Confidence ${n} of 5, ${esc(CONFIDENCE_WORDS[n])}"><span class="conf-num">${n}</span><span class="conf-word">${esc(CONFIDENCE_WORDS[n])}</span></button>`
   ).join('\n');
-  return `      <div class="q-confidence" id="confidence-${id}">
-        <span class="confidence-label">Confidence</span>
+  return `      <div class="q-confidence" id="confidence-${id}" role="group" aria-label="How well do you understand your own answer to question ${id.replace(/\D/g, '')}?">
 ${buttons}
-        <span class="confidence-label" style="opacity:.7">1 lost, 5 could teach it</span>
       </div>`;
+}
+
+/**
+ * Gather All My Work, on the Brief.
+ *
+ * A week Brief has two routes to Canvas: this one, and the week page's Gather
+ * panel, which pulls these same three answers out of localStorage along with
+ * every other module. The note says which is which, because two buttons with the
+ * same label collecting different amounts of work is exactly the confusion worth
+ * spending a sentence to avoid.
+ */
+function gatherSection() {
+  return `<section class="gather-section">
+  <h2>Gather All My Work</h2>
+  <p>Gather your three answers here, copy them, and paste them into Canvas. If your teacher asked for the whole week rather than just the reading, use the <strong>Gather All My Work</strong> panel at the bottom of the week page instead, which picks up these three answers along with every other module.</p>
+  <div class="gather-actions">
+    <button class="btn" type="button" onclick="gatherBriefWork()">Gather All My Work</button>
+    <button class="btn secondary" type="button" onclick="copyBriefWork()">Copy to Clipboard</button>
+  </div>
+  <p class="gather-status" id="brief-gather-status" role="status"></p>
+  <div class="gather-output" id="brief-gather-output" tabindex="0">
+    <p class="gather-placeholder">Press <strong>Gather All My Work</strong>, then <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
+  </div>
+</section>
+
+`;
 }
 
 function renderBrief(week) {
@@ -149,6 +187,7 @@ ${confidenceRow(id)}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Brief | ${esc(m.week)} | BeCurrent</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="../assets/css/becurrent-brief.css">
 <style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
@@ -183,18 +222,18 @@ ${terms}
 ${videoStrip(week.videos)}${sections}
 
   <div class="be-ready">
-    <span class="be-ready-label">BeReady: 10-Second Takeaway</span>
+    <span class="be-ready-label">BeReady: 10-second takeaway</span>
     <p>${raw(week.takeaway)}</p>
   </div>
 </div>
 
 <section class="check-section">
   <h2>Check Your Understanding</h2>
-  <p>Three questions. Answer in full sentences, and rate your confidence honestly, a 2 tells your teacher more than a dishonest 5.</p>
+  <p>Three questions. Answer in full sentences, and rate your confidence honestly, a Shaky tells your teacher more than a dishonest Could teach it.</p>
 ${questionItems}
 </section>
 
-${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
+${gatherSection()}${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
 
 <nav class="module-footer">
   <a href="index.html">&larr; Where in the World</a>
@@ -224,7 +263,12 @@ function renderWrapper(week, briefFile) {
 <title>Brief Capture Wrapper | ${esc(m.week)}</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <style>
-  html, body { margin:0; padding:0; width:100%; height:100%; background:#171B1F; overflow:hidden; }
+  /* --black-900, as a literal. This wrapper links no stylesheet on purpose:
+     it is a bare iframe host, and pulling in the brand file would make it
+     download three fonts to render nothing. The one cost is that this value
+     has to be kept in step with becurrent-brand.css by hand. It is only ever
+     seen for the instant before the brief paints. */
+  html, body { margin:0; padding:0; width:100%; height:100%; background:#111111; overflow:hidden; }
   iframe { width:100%; height:100vh; border:0; display:block; }
 </style>
 </head>

@@ -1,15 +1,40 @@
 # BeCurrent
 
-A static Current Events lesson platform. One story a week, worked eight ways.
+A static Current Events lesson platform. Every class period opens with today's news
+and then goes deep on one theme, traced backwards to where it started.
 
 Sibling to [BeHistorical](https://github.com/JeffAndersonLogic/ap-world-history),
 and it shares that project's Canvas capture pipeline so one teacher tool reads
 both courses.
 
-## The week
+## The block
 
-Every week is the same eight modules, in the same order, because the point is the
-method rather than the story:
+One class meeting is a 90-minute block, and it runs in two halves.
+
+**The Desk**, the first twenty-five minutes of *every* class: CNN 10, then four
+beats on the board (Local, National, International, and one that rotates through
+Politics, Sports, Entertainment and Pop Culture), then one of the five questions
+run properly at one story. It is a protocol rather than content, so it is one
+generated page that never goes stale and carries no headline. `daily/index.html`.
+
+**The Unit**, the remaining sixty-five, for weeks at a time: one theme traced
+backwards from something happening now to where it started, ending on a question
+students have to argue. Six across the year. `scripts/lib/unit-content/`.
+
+You need both. The daily half without the units is a news feed; the units without
+the daily half are a history class.
+
+## The board
+
+`announcements.html` is the classroom screen: today's topic, the Desk routine, the
+learning targets, the success criteria, homework, and what is coming up. It is
+generated from the course data, so it cannot say something the lesson does not.
+See `docs/TODAY-BOARD.md`.
+
+## The modules
+
+A unit topic draws on the same eight modules, in whatever order it needs, because
+the point is the method rather than the story:
 
 | # | Module | What it asks |
 |---|--------|--------------|
@@ -78,6 +103,35 @@ Nothing on any page makes a network call with student writing in it. `validate.j
 fails the build on a `<form action>`, a `fetch()`, or an `XMLHttpRequest` anywhere a
 student can reach.
 
+## The look
+
+`assets/css/becurrent-brand.css` is the one file that defines a colour or a face,
+and its header explains where each value came from and which red is allowed
+where.
+
+**Red and black, in BeHistorical's type.** The two courses are the same method
+taught by the same teacher, so they share a type family and are told apart by
+colour: BeHistorical is bronze on parchment, this is red and black on newsprint.
+Headings are Cinzel, body text is Libre Baskerville, labels are Montserrat, all
+three self-hosted in `assets/fonts/` because no student-facing page in this repo
+makes a third-party request.
+
+There is no third accent. Where a second series has to be distinguished from the
+first, the second one is black. The focus ring is ink, never the accent, because
+red is already on nearly every card border.
+
+The mark is **Be**, an oversized red **C**, then **URRENT**, with the word
+crossing in front of the C. `assets/images/brand/becurrent-mark-source.svg` is
+the supplied artwork and the source of truth; the four lockups are derived from
+it by trimming, recolouring and composing, never by redrawing. Two colourways,
+because the word is black in the artwork and would vanish on the dark bands. It
+is unreadable below about 38px tall, which is why the masthead and footer are
+sized the way they are.
+
+`python3 scripts/brand/build-wordmark.py` regenerates all four. It needs
+`fonttools brotli svgelements` and is off the test path on purpose; the outputs
+are committed.
+
 ## Deploying
 
 GitHub Pages serves `main`, so what is on `main` is what students have. Push to a
@@ -86,7 +140,9 @@ working branch, let Validate go green, then fast-forward `main` to that commit.
 
 ## Status
 
-Week 01 is complete and both suites are green: 168 structural checks and 32 browser
-assertions. Weeks 02 to 36 are unwritten and the teacher-facing Skills Lens has not
-been built. The full list of known gaps is at the bottom of `CLAUDE.md` under "What
+Both suites are green: 416 structural checks and 39 browser assertions. The Desk,
+the orientation week and the Social Media unit are complete. The other five units
+are on the front door as planned cards with no content modules yet, and the weekly
+News Log the Desk promises has not been built, so nothing from the daily half
+reaches Canvas. The teacher-facing Skills Lens has not been built. The full list of known gaps is at the bottom of `CLAUDE.md` under "What
 is missing", so nobody has to guess what is covered.

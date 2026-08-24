@@ -1,0 +1,198 @@
+/* =========================================================
+   BECURRENT BRAND, the palette and the type.
+
+   One file, linked first by every page, because a token defined in two
+   stylesheets is a token that will eventually disagree with itself. The
+   component rules live in becurrent.css and becurrent-brief.css; nothing but
+   this file defines what the colours and the faces are.
+
+   ── One family, two courses ─────────────────────────────────────────────────
+
+   BeCurrent and BeHistorical are taught by the same teacher out of the same
+   method, so they share a type family and are separated by colour. The three
+   faces below are BeHistorical's three faces. What tells the two apart at a
+   glance is the palette: BeHistorical is bronze on parchment, BeCurrent is
+   RED AND BLACK.
+
+   That split is deliberate and it is the cheap half to get right. Type
+   communicates "same course system"; colour communicates "different course".
+   Reversing it, different faces and a shared palette, would say the opposite of
+   what is true.
+
+   ── Red and black ───────────────────────────────────────────────────────────
+
+   Two colours and the paper they sit on. There is no third accent, and that is
+   a constraint rather than an omission: a scheme with a spare colour in it ends
+   up using the spare colour for whatever needs distinguishing next, and a year
+   later nothing means anything. Where a second series has to be told apart from
+   the first, the second one is BLACK. Where something needs emphasis, it is RED.
+
+     --signal      #CE1400   the red, and the only red, from the artwork
+     --signal-deep #A31000   the same red, darkened to be legible at body size
+     --black-900   #111111   the ground for every surface students scan
+     --ink         #141414   the ink every surface students read is set in
+
+   The neutrals are true neutrals, with no blue in them, because a slate grey
+   next to a warm red reads as a third colour whether or not it was meant to.
+
+   ── Where the red can and cannot go ─────────────────────────────────────────
+
+   The logo red is a display colour, and the numbers say where it can go:
+
+     --clean-paper on --signal      5.59:1   passes at any size, so buttons use it
+     --signal on --newsprint        5.04:1   passes, but see below
+     --signal-deep on --newsprint   7.13:1   comfortable on either ground
+     --signal on --black-900        3.35:1   large display only, as in the mark
+
+   So: --signal draws rules, borders, button grounds, and display type 20px and
+   up, where 3:1 is the bar and it clears it everywhere. --signal-deep is the
+   red that body-size words are set in, including every eyebrow, chip and key
+   term. The two are one hue apart and swapping them looks like a nicety, which
+   is how an eyebrow ends up under 4.5:1 with every structural check still green.
+
+   The button carries the least slack at 5.59:1 against a 4.5 bar. Darkening
+   --clean-paper or lightening --signal puts every button on the site at risk,
+   so if either moves, rerun the numbers rather than eyeballing it.
+
+   These numbers moved when the real artwork arrived. Until then the red was
+   sampled off a picture of the logo rather than the logo itself, and came out a
+   little lighter and bluer than the file: D5211A against the artwork's CE1400.
+   Every ratio on the light grounds improved; the one on --black-900 fell from
+   3.65 to 3.35, which still clears the 3:1 bar display-size red is held to.
+
+   ── The focus ring is its own token ─────────────────────────────────────────
+
+   --focus is INK, not red, and it has a paper counterpart for dark grounds. In a
+   two-colour scheme the accent is already drawn on nearly every card border, so
+   a red focus ring would be a ring the student has to work out is a ring. The
+   one thing a focus indicator must never be is ambiguous, so it is the colour
+   that is not the accent, on both polarities.
+
+   ── The faces ───────────────────────────────────────────────────────────────
+
+   Three roles, self-hosted from assets/fonts/. Self-hosted because a
+   student-facing page in this repo makes no third-party request, and a webfont
+   <link> to someone else's CDN is exactly that. BeHistorical loads these three
+   from Google; that is the one thing about them not carried over.
+
+     --display  Cinzel             every heading. Caps-only Roman, so headings
+                                   set in it are set in caps by the face itself.
+     --body     Libre Baskerville  everything students read at length.
+     --ui       Montserrat         labels, eyebrows, buttons, counters, chips.
+
+   ONLY THE SHIPPED WEIGHTS EXIST, and that means something different per face.
+   Cinzel and Montserrat are here as VARIABLE fonts covering 400-900 and 100-900,
+   so any weight in range is genuinely drawn. Libre Baskerville is STATIC at 400
+   and 700 with italics, so a font-weight:500 or :800 on body text is not a
+   fallback, it is the browser smearing the nearest weight into a fake one, which
+   looks like a slightly swollen version of the right font and is hard to name
+   when you see it. Add the file before you add the weight.
+
+   --display has a floor. Cinzel is a high-contrast inscriptional Roman whose
+   thin strokes break up on a projector below about 17px, and it is caps-only,
+   which is slow to read in quantity. It is for headings and nothing smaller;
+   anything under that is --ui. This is the one thing Poppins allowed that Cinzel
+   does not.
+
+   ONE REVIEWED EXCEPTION, and it is a teacher's call rather than a typographic
+   one: the eyebrow labels on the Brief's shaded boxes are Cinzel, at 13.8px. They
+   name the boxes a student is meant to stop at (Before You Read, The Standard,
+   The Road Not Taken, BeReady) and setting them in the course's display face is
+   what makes those boxes read as landmarks rather than as more layout.
+
+   Two things pay for going under the floor. They are set at .86rem rather than
+   the .66rem the --ui eyebrows use, which is the largest a label can be without
+   out-shouting the .section-heading above it, and the uppercase transform is
+   dropped so Cinzel's small capitals do the work instead of five caps in a row of
+   hairline strokes. Verify on the classroom projector before a term starts. If
+   they break up there, the fix is to put these back to --ui and leave the rest
+   alone, not to shrink the headings to match.
+
+   ========================================================= */
+
+/* ── Faces ─────────────────────────────────────────────────────────────────── */
+@font-face{
+  font-family:"Cinzel";
+  font-style:normal;
+  font-weight:400 900;
+  font-display:swap;
+  src:url("../fonts/cinzel-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face{
+  font-family:"Montserrat";
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url("../fonts/montserrat-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face{
+  font-family:"Libre Baskerville";
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url("../fonts/libre-baskerville-latin-400-normal.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Libre Baskerville";
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+  src:url("../fonts/libre-baskerville-latin-400-italic.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Libre Baskerville";
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url("../fonts/libre-baskerville-latin-700-normal.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Libre Baskerville";
+  font-style:italic;
+  font-weight:700;
+  font-display:swap;
+  src:url("../fonts/libre-baskerville-latin-700-italic.woff2") format("woff2");
+}
+
+:root{
+  /* Ink and paper. Every surface a student reads. Neutral black rather than a
+     blue-black, so the red never picks up a second hue to sit against. */
+  --ink:#141414;
+  --ink-soft:#454545;
+  --ink-tint:rgba(20,20,20,.07);
+  --newsprint:#F4F2ED;
+  --clean-paper:#FFFEFB;
+  --paper-line:rgba(20,20,20,.14);
+
+  /* Black, for the surfaces that get scanned. 900 is the ground the generated
+     logo plate is drawn on; the rest are the same neutral opened up in steps. */
+  --black-900:#111111;
+  --black-800:#1D1D1D;
+  --black-700:#2C2C2C;
+  --black-500:#5A5A5A;
+
+  /* The signal, and the only colour on the site that is not black or paper.
+     --signal is the logo red and draws things; --signal-deep is the same hue
+     darkened until words set in it clear 4.5:1 on both light grounds;
+     --signal-pale is the same hue lifted for the dark panels. All three are the
+     artwork's red or a derivation of it; not one of them is eyeballed. */
+  --signal:#CE1400;
+  --signal-deep:#A31000;
+  --signal-pale:#E9958C;
+  --signal-tint:rgba(206,20,0,.10);
+
+  /* The focus ring, in both polarities. Never the accent: see above. */
+  --focus:#141414;
+  --focus-invert:#FFFEFB;
+
+  --shadow:0 20px 60px rgba(0,0,0,.16);
+  --soft-shadow:0 10px 26px rgba(0,0,0,.10);
+  --radius:14px;
+
+  /* Three roles, three faces, matching BeHistorical. --display is caps-only and
+     has a size floor; see the note above before setting a small heading in it. */
+  --display:"Cinzel","Trajan Pro","Times New Roman",Georgia,serif;
+  --body:"Libre Baskerville",Georgia,serif;
+  --ui:"Montserrat","Inter",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}

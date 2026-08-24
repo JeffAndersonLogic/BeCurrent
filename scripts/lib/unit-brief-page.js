@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * The Brief, unit/block flavour.
+ * The Brief, unit/topic flavour.
  *
  * Separate from week-page.js on purpose. That file renders the week-01 orientation
  * reading and is pinned byte-for-byte by the reproducibility test; generalising it
@@ -22,7 +22,7 @@
  * reach Canvas by exactly one code path in this repo.
  */
 
-const { captureBlock } = require('./brief-capture-block');
+const { captureBlock, CONFIDENCE_WORDS } = require('./brief-capture-block');
 
 function esc(s) {
   return String(s == null ? '' : s)
@@ -60,7 +60,7 @@ function coachIntercept(aiUrl) {
 // A video path through the reading, for students who need one. Placed directly
 // under the support strip rather than at the end, because a student who needs the
 // video should not have to scroll past 1,000 words of prose to discover it exists.
-// Omitted entirely when the block has no clips.
+// Omitted entirely when the topic has no clips.
 function videoStrip(videos) {
   if (!videos || !videos.length) return '';
   const cards = videos.map(v => {
@@ -97,28 +97,65 @@ function builderSection(aiUrl) {
 `;
 }
 
+/**
+ * The confidence scale. Each button carries its own word.
+ *
+ * It used to read "Confidence", five bare numerals, then "1 lost, 5 could teach
+ * it" off to the right, which asks the student to hold a legend in their head
+ * while they choose. The word is now on the thing being pressed. The row keeps a
+ * hidden name because dropping the visible label would otherwise leave five
+ * buttons announced with no idea what they are a scale of.
+ *
+ * `data-conf` and `aria-pressed` are untouched: they are what
+ * scripts/lib/brief-capture-topic.js reads, and the words come from the same
+ * table it writes into the Canvas paste.
+ */
 function confidenceRow(id) {
   const buttons = [1, 2, 3, 4, 5].map(n =>
-    `        <button type="button" data-conf="${n}" aria-pressed="false" aria-label="Confidence ${n} of 5">${n}</button>`
+    `        <button type="button" data-conf="${n}" aria-pressed="false"
+          aria-label="Confidence ${n} of 5, ${esc(CONFIDENCE_WORDS[n])}"><span class="conf-num">${n}</span><span class="conf-word">${esc(CONFIDENCE_WORDS[n])}</span></button>`
   ).join('\n');
-  return `      <div class="q-confidence" id="confidence-${id}">
-        <span class="confidence-label">Confidence</span>
+  return `      <div class="q-confidence" id="confidence-${id}" role="group" aria-label="How well do you understand your own answer to question ${id.replace(/\D/g, '')}?">
 ${buttons}
-        <span class="confidence-label tier-anchor">1 lost, 5 could teach it</span>
       </div>`;
 }
 
-function renderUnitBrief(unit, block) {
-  const m = unit.meta;
-  const key = block.key;
-  const questions = block.questions || [];
+/**
+ * Gather All My Work, on the Brief.
+ *
+ * For a unit topic this is the only route to Canvas: the topic card on the unit
+ * page opens the Brief directly, and there is no week page with a Gather panel
+ * behind it. The buttons carry the same labels the week page uses, so the two
+ * surfaces are one habit rather than two.
+ */
+function gatherSection() {
+  return `<section class="gather-section">
+  <h2>Gather All My Work</h2>
+  <p>Your answers save in this browser on this device only. Gather them here, copy them, and paste them into the Canvas assignment, which is where your graded work goes.</p>
+  <div class="gather-actions">
+    <button class="btn" type="button" onclick="gatherBriefWork()">Gather All My Work</button>
+    <button class="btn secondary" type="button" onclick="copyBriefWork()">Copy to Clipboard</button>
+  </div>
+  <p class="gather-status" id="brief-gather-status" role="status"></p>
+  <div class="gather-output" id="brief-gather-output" tabindex="0">
+    <p class="gather-placeholder">Press <strong>Gather All My Work</strong>, then <strong>Copy to Clipboard</strong>, then paste into Canvas.</p>
+  </div>
+</section>
 
-  const supportCards = (block.support || []).map(c => `      <div class="support-card">
+`;
+}
+
+function renderUnitBrief(unit, topic) {
+  const m = unit.meta;
+  const key = topic.key;
+  const questions = topic.questions || [];
+
+  const supportCards = (topic.support || []).map(c => `      <div class="support-card">
         <span class="support-label">${esc(c.label)}</span>
         <p>${raw(c.body)}</p>
       </div>`).join('\n');
 
-  const terms = (block.terms || []).map(t =>
+  const terms = (topic.terms || []).map(t =>
     `      <span class="term-chip">${esc(t)}</span>`).join('\n');
 
   const section = (s, i) => {
@@ -137,9 +174,9 @@ ${callouts}
     </div>`;
   };
 
-  const sections = (block.sections || []).map(section).join('\n');
+  const sections = (topic.sections || []).map(section).join('\n');
 
-  const rnt = block.roadNotTaken;
+  const rnt = topic.roadNotTaken;
   const roadNotTaken = rnt ? `
   <div class="road-not-taken">
     <div class="section-label">${esc(rnt.label)}</div>
@@ -175,8 +212,9 @@ ${confidenceRow(id)}
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Brief | ${esc(m.unit)} ${esc(block.block)} | BeCurrent</title>
+<title>The Brief | ${esc(m.unit)} ${esc(topic.topic)} | BeCurrent</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/becurrent-brand.css">
 <link rel="stylesheet" href="../assets/css/becurrent-brief.css">
 <style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
@@ -184,18 +222,18 @@ ${confidenceRow(id)}
 
 <header class="module-header">
   <div class="inner">
-    <div class="module-badge">${esc(block.block)}</div>
+    <div class="module-badge">${esc(topic.topic)}</div>
     <p class="module-name">The Brief</p>
     <p class="module-subtitle">${esc(m.unit)} &middot; ${esc(m.course)}</p>
   </div>
 </header>
 
 <div class="brief-title-band">
-  <div class="brief-eyebrow">${esc(block.eyebrow)}</div>
-  <h1 class="brief-title">${raw(block.title)}</h1>
-  <p class="brief-deck">${esc(block.deck)}</p>
+  <div class="brief-eyebrow">${esc(topic.eyebrow)}</div>
+  <h1 class="brief-title">${raw(topic.title)}</h1>
+  <p class="brief-deck">${esc(topic.deck)}</p>
   <div class="skill-tags">
-${(block.skillTags || []).map(t => `    <span class="skill-tag">${esc(t)}</span>`).join('\n')}
+${(topic.skillTags || []).map(t => `    <span class="skill-tag">${esc(t)}</span>`).join('\n')}
   </div>
 </div>
 
@@ -208,22 +246,22 @@ ${supportCards}
 ${terms}
   </div>
 
-${videoStrip(block.videos)}${sections}
+${videoStrip(topic.videos)}${sections}
 ${roadNotTaken}
 
   <div class="be-ready">
-    <span class="be-ready-label">BeReady: 10-Second Takeaway</span>
-    <p>${raw(block.takeaway)}</p>
+    <span class="be-ready-label">BeReady: 10-second takeaway</span>
+    <p>${raw(topic.takeaway)}</p>
   </div>
 </div>
 
 <section class="check-section">
   <h2>Check Your Understanding</h2>
-  <p>Answer in full sentences. Every question has two cards under it, and both are real answers &mdash; pick the one you want. Rate your confidence honestly, a 2 tells your teacher more than a dishonest 5.</p>
+  <p>Answer in full sentences. Every question has two cards under it, and both are real answers &mdash; pick the one you want. Rate your confidence honestly, a Shaky tells your teacher more than a dishonest Could teach it.</p>
 ${questionItems}
 </section>
 
-${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
+${gatherSection()}${builderSection(m.aiCoachUrl)}<p class="page-footer-note">${esc(m.canvasSubmissionNote)}</p>
 
 <nav class="module-footer">
   <a href="../index.html" target="_top">&larr; BeCurrent home</a>
@@ -241,22 +279,27 @@ ${captureBlock(key, questions.length, m.aiCoachUrl)}
  * because the brief renders that button with no onclick of its own and relies on
  * the interception. A wrapper without it is a dead button.
  */
-function renderUnitWrapper(unit, block, briefFile) {
+function renderUnitWrapper(unit, topic, briefFile) {
   const m = unit.meta;
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brief Capture Wrapper | ${esc(m.unit)} ${esc(block.block)}</title>
+<title>Brief Capture Wrapper | ${esc(m.unit)} ${esc(topic.topic)}</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <style>
-  html, body { margin:0; padding:0; width:100%; height:100%; background:#171B1F; overflow:hidden; }
+  /* --black-900, as a literal. This wrapper links no stylesheet on purpose:
+     it is a bare iframe host, and pulling in the brand file would make it
+     download three fonts to render nothing. The one cost is that this value
+     has to be kept in step with becurrent-brand.css by hand. It is only ever
+     seen for the instant before the brief paints. */
+  html, body { margin:0; padding:0; width:100%; height:100%; background:#111111; overflow:hidden; }
   iframe { width:100%; height:100vh; border:0; display:block; }
 </style>
 </head>
 <body>
-<iframe id="brief-frame" src="${esc(briefFile)}" title="The Brief, ${esc(m.unit)} ${esc(block.block)}"></iframe>
+<iframe id="brief-frame" src="${esc(briefFile)}" title="The Brief, ${esc(m.unit)} ${esc(topic.topic)}"></iframe>
 <script>
 (function () {
   'use strict';

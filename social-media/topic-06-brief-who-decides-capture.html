@@ -3,15 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brief Capture Wrapper | Social Media Block 3</title>
+<title>Brief Capture Wrapper | Social Media Topic 6</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <style>
-  html, body { margin:0; padding:0; width:100%; height:100%; background:#171B1F; overflow:hidden; }
+  /* --black-900, as a literal. This wrapper links no stylesheet on purpose:
+     it is a bare iframe host, and pulling in the brand file would make it
+     download three fonts to render nothing. The one cost is that this value
+     has to be kept in step with becurrent-brand.css by hand. It is only ever
+     seen for the instant before the brief paints. */
+  html, body { margin:0; padding:0; width:100%; height:100%; background:#111111; overflow:hidden; }
   iframe { width:100%; height:100vh; border:0; display:block; }
 </style>
 </head>
 <body>
-<iframe id="brief-frame" src="block-03-brief-the-algorithm.html" title="The Brief, Social Media Block 3"></iframe>
+<iframe id="brief-frame" src="topic-06-brief-who-decides.html" title="The Brief, Social Media Topic 6"></iframe>
 <script>
 (function () {
   'use strict';

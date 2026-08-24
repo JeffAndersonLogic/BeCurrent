@@ -8,46 +8,47 @@
 
    Newsprint under ink throughout. See the polarity note in becurrent.css for
    why every reading surface in this course is light.
+
+   The palette and the faces come from becurrent-brand.css, which a brief links
+   ahead of this file. Nothing here defines a token, so the brief inside the
+   iframe and the week page around it cannot end up two different reds.
    ========================================================= */
-:root{
-  --ink:#14171A;
-  --ink-soft:#3C444C;
-  --newsprint:#F4F2ED;
-  --clean-paper:#FFFEFB;
-  --paper-line:rgba(20,23,26,.14);
-  --slate-900:#171B1F;
-  --slate-500:#5C6873;
-  --signal:#B22222;
-  --signal-deep:#8A1A1A;
-  --signal-tint:rgba(178,34,34,.10);
-  --cool:#1F5673;
-  --cool-tint:rgba(31,86,115,.10);
-  --sans:"Source Sans 3","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-}
 *{box-sizing:border-box}
+
+/* Same motion contract as the rest of the site. A brief opens inside an iframe,
+   which does NOT inherit the parent document's media queries, so this cannot be
+   left to becurrent.css. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
 body{
   margin:0; background:var(--newsprint); color:var(--ink);
-  font-family:var(--serif); font-size:17px; line-height:1.7;
+  font-family:var(--body); font-size:16px; line-height:1.75;
 }
 img{max-width:100%;display:block}
 
 /* ── Module header ─────────────────────────────────────────────────────────── */
 .module-header{
-  background:var(--slate-900); color:var(--clean-paper);
+  background:var(--black-900); color:var(--clean-paper);
   padding:18px 0; border-bottom:3px solid var(--signal);
 }
 .module-header .inner{width:min(820px,92vw);margin:auto}
 .module-header .module-badge{
   font-family:var(--mono); font-size:.7rem; font-weight:700;
-  letter-spacing:.1em; color:#E8A0A0;
+  letter-spacing:.1em; color:var(--signal-pale);
 }
 .module-header .module-name{
-  margin:4px 0 2px; font-family:var(--sans); font-weight:800; font-size:1.24rem;
+  margin:4px 0 2px; font-family:var(--display); font-weight:700; font-size:1.28rem;
+  letter-spacing:.03em; line-height:1.2;
 }
 .module-header .module-subtitle{
-  margin:0; font-family:var(--sans); font-size:.78rem; color:rgba(255,254,251,.68);
+  margin:0; font-family:var(--ui); font-size:.78rem; color:rgba(255,254,251,.68);
 }
 
 /* ── Title band ────────────────────────────────────────────────────────────── */
@@ -58,21 +59,21 @@ img{max-width:100%;display:block}
   border-radius:14px 14px 0 0;
 }
 .brief-eyebrow{
-  font-family:var(--sans); font-size:.68rem; font-weight:800;
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
 }
 .brief-title{
-  margin:10px 0 8px; font-family:var(--sans); font-weight:800;
-  font-size:clamp(1.7rem,4.6vw,2.5rem); line-height:1.12; letter-spacing:-.02em;
-  color:var(--slate-900);
+  margin:10px 0 8px; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.6rem,4.2vw,2.25rem); line-height:1.2; letter-spacing:.02em;
+  color:var(--black-900);
 }
 .brief-title em{font-style:normal;color:var(--signal)}
 .brief-deck{margin:0;font-style:italic;font-size:1.1rem;color:var(--ink-soft)}
 .skill-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .skill-tag{
-  font-family:var(--sans); font-size:.64rem; font-weight:800;
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
-  background:var(--cool-tint); color:var(--cool);
+  background:var(--ink-tint); color:var(--ink);
   padding:4px 10px; border-radius:999px;
 }
 
@@ -83,83 +84,105 @@ img{max-width:100%;display:block}
   border:1px solid var(--paper-line); border-top:0;
   padding:8px 28px 34px;
 }
+/* ── The shaded-box eyebrows ───────────────────────────────────────────────────
+   Before You Read, Reading Target, The Standard, Watch For, Skill Focus, The Road
+   Not Taken, Start Here, Push Further, BeReady. Every one of them names a box the
+   student is meant to stop at, so they are set in the course display face rather
+   than in the label face, which is what makes those boxes read as landmarks
+   instead of as more layout.
+
+   Two departures from the --ui eyebrows they replace, and both are load-bearing.
+   .86rem rather than .66rem, because Cinzel's thin strokes need the size and this
+   is as large as a label goes before it competes with the .section-heading above
+   it; see the reviewed exception to the --display floor in becurrent-brand.css.
+   And NO text-transform, because Cinzel's lowercase codepoints are small capitals:
+   left alone, "The Standard" sets as a cap-and-small-cap phrase, while uppercasing
+   it gives five hairline caps in a row. That is also why BeReady can render as
+   B-e-R-eady, with the two capitals doing the naming.
+
+   The plain .section-label on a numbered section stays --ui. Those are not boxes,
+   they are the running eyebrow over the prose, and they carry a 3.6rem Cinzel
+   numeral beside them already. */
+.support-card .support-label,
+.callout .callout-label,
+.road-not-taken .section-label,
+.tier-label,
+.be-ready .be-ready-label{
+  font-family:var(--display); font-weight:700;
+  font-size:.86rem; letter-spacing:.045em; text-transform:none;
+}
+
 .support-strip{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:22px 0}
 .support-card{
   background:var(--newsprint); border:1px solid var(--paper-line);
-  border-left:4px solid var(--cool); border-radius:0 10px 10px 0; padding:14px 16px;
+  border-left:4px solid var(--ink); border-radius:0 10px 10px 0; padding:14px 16px;
 }
 .support-card .support-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
-  display:block; margin-bottom:6px;
+  color:var(--ink); display:block; margin-bottom:6px;
 }
 .support-card p{margin:0;font-size:.94rem}
 
 .vocab-strip{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
 .term-chip{
-  font-family:var(--sans); font-size:.74rem; font-weight:700;
+  font-family:var(--ui); font-size:.74rem; font-weight:700;
   background:var(--signal-tint); color:var(--signal-deep);
-  border:1px solid rgba(178,34,34,.24);
+  border:1px solid rgba(206,20,0,.24);
   padding:5px 12px; border-radius:999px;
 }
 
 .section{position:relative;margin:0 0 30px;padding-top:8px}
 .section-number{
   position:absolute; top:-6px; right:0;
-  font-family:var(--sans); font-weight:800; font-size:3.4rem;
-  color:rgba(20,23,26,.06); line-height:1; pointer-events:none;
+  font-family:var(--display); font-weight:700; font-size:3.6rem;
+  color:var(--ink-tint); line-height:1; pointer-events:none;
 }
 .section-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
 }
 .section-heading{
-  margin:6px 0 12px; font-family:var(--sans); font-weight:800;
-  font-size:1.34rem; letter-spacing:-.01em; color:var(--slate-900);
+  margin:6px 0 12px; font-family:var(--display); font-weight:700;
+  font-size:1.3rem; letter-spacing:.025em; line-height:1.24; color:var(--black-900);
 }
 .reading-text{margin:0 0 14px}
 .kt{font-weight:700;color:var(--signal-deep)}
 
 .callout{
-  background:var(--cool-tint); border-left:4px solid var(--cool);
+  background:var(--ink-tint); border-left:4px solid var(--ink);
   border-radius:0 10px 10px 0; padding:14px 16px; margin:18px 0;
 }
 .callout .callout-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
-  display:block; margin-bottom:6px;
+  color:var(--ink); display:block; margin-bottom:6px;
 }
 .callout p{margin:0;font-size:.96rem}
 
 .be-ready{
-  background:var(--slate-900); color:var(--clean-paper);
+  background:var(--black-900); color:var(--clean-paper);
   border-radius:12px; padding:20px 22px; margin:26px 0 0;
 }
 .be-ready .be-ready-label{
-  font-family:var(--sans); font-size:.68rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.12em; color:#E8A0A0;
-  display:block; margin-bottom:8px;
+  color:var(--signal-pale); display:block; margin-bottom:8px;
 }
 .be-ready p{margin:0;font-size:1rem}
 
 
 /* ── Video path through the reading ────────────────────────────────────────────
    Sits high on the page on purpose. A student who needs the video should not have
-   to scroll past a thousand words of prose to find out it exists, and the cool
+   to scroll past a thousand words of prose to find out it exists, and the black
    border matches the support cards so it reads as help rather than as an aside. */
 .brief-video-strip{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0 0 26px}
 .brief-video{
   background:var(--newsprint); border:1px solid var(--paper-line);
-  border-left:4px solid var(--cool); border-radius:0 10px 10px 0;
+  border-left:4px solid var(--ink); border-radius:0 10px 10px 0;
   padding:14px 16px;
 }
 .brief-video-label{
   display:block; margin-bottom:6px;
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.12em; color:var(--cool);
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--ink);
 }
-.brief-video-title{margin:0 0 4px;font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--slate-900)}
-.brief-video-meta{margin:0 0 8px;font-family:var(--sans);font-size:.74rem;color:var(--ink-soft)}
+.brief-video-title{margin:0 0 4px;font-family:var(--ui);font-weight:700;font-size:1rem;color:var(--black-900)}
+.brief-video-meta{margin:0 0 8px;font-family:var(--ui);font-size:.74rem;color:var(--ink-soft)}
 .brief-video-prompt{margin:0 0 12px;font-size:.93rem}
 
 /* ── Road not taken ────────────────────────────────────────────────────────────
@@ -170,13 +193,13 @@ img{max-width:100%;display:block}
 .road-not-taken{
   background:var(--newsprint);
   border:1px solid var(--paper-line);
-  border-left:4px solid var(--slate-500);
+  border-left:4px solid var(--black-500);
   border-radius:0 12px 12px 0;
   padding:20px 22px;
   margin:0 0 30px;
 }
-.road-not-taken .section-label{color:var(--slate-500)}
-.road-not-taken .section-heading{font-size:1.18rem;margin-bottom:10px}
+.road-not-taken .section-label{color:var(--black-500)}
+.road-not-taken .section-heading{font-size:1.26rem;margin-bottom:10px}
 .road-not-taken .reading-text:last-child{margin-bottom:0}
 
 /* ── Two-tier task cards ───────────────────────────────────────────────────────
@@ -191,58 +214,110 @@ img{max-width:100%;display:block}
 .tier{
   background:var(--newsprint);
   border:1px solid var(--paper-line);
-  border-top:3px solid var(--cool);
+  border-top:3px solid var(--ink);
   border-radius:8px;
   padding:12px 14px;
 }
 .tier:last-child{border-top-color:var(--signal)}
 .tier-label{
-  display:block; margin-bottom:5px;
-  font-family:var(--sans); font-size:.64rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.11em; color:var(--cool);
+  display:block; margin-bottom:5px; color:var(--ink);
 }
 .tier:last-child .tier-label{color:var(--signal-deep)}
 .tier p{margin:0;font-size:.93rem;line-height:1.5}
 
-/* The confidence anchor was .66rem at .7 opacity, which measures 4.18:1 and is
-   below the 4.5:1 minimum. Full opacity at a readable size instead. */
-.confidence-label.tier-anchor{opacity:1;font-size:.68rem;color:var(--ink-soft)}
+/* ── The confidence scale ──────────────────────────────────────────────────────
+   The word is on the button. This used to be the label "Confidence", five bare
+   numerals, and the anchor "1 lost, 5 could teach it" off to the right, which asks
+   a student to hold a legend in their head and look back and forth to use it. The
+   two labels are gone and the row carries a hidden name instead, so the buttons are
+   still announced as a scale.
+
+   The buttons are pills rather than 32px circles because they now have to hold a
+   phrase. The numeral stays, in --ui, so a teacher can still say "put a 3" out
+   loud, and the aria-label carries both. Below 560px the words drop out with
+   .conf-word and the row falls back to five circles, because five pills wrapping
+   over three lines is worse than the legend it replaced. */
+.q-confidence{margin:14px 0 0;display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.q-confidence button{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:2px; min-width:78px; padding:7px 10px; cursor:pointer;
+  border:1px solid var(--paper-line); border-radius:9px;
+  background:var(--clean-paper); color:var(--ink-soft);
+}
+.q-confidence .conf-num{font-family:var(--ui);font-size:.86rem;font-weight:700;line-height:1}
+.q-confidence .conf-word{
+  font-family:var(--ui); font-size:.64rem; font-weight:700; line-height:1.15;
+  text-transform:uppercase; letter-spacing:.06em; text-align:center;
+}
+.q-confidence button[aria-pressed="true"]{
+  background:var(--ink); border-color:var(--ink); color:var(--clean-paper);
+}
+@media (max-width:560px){
+  .q-confidence .conf-word{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .q-confidence button{min-width:0;width:36px;height:36px;border-radius:50%;padding:0}
+}
 
 /* ── Check section ─────────────────────────────────────────────────────────── */
 .check-section{
   width:min(820px,92vw); margin:26px auto 0;
   background:var(--clean-paper); border:1px solid var(--paper-line);
-  border-top:4px solid var(--cool); border-radius:14px; padding:26px 28px;
+  border-top:4px solid var(--ink); border-radius:14px; padding:26px 28px;
 }
-.check-section > h2{margin:0 0 6px;font-family:var(--sans);font-size:1.24rem;color:var(--slate-900)}
+.check-section > h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.26rem;letter-spacing:.025em;line-height:1.24;color:var(--black-900)}
 .check-section > p{margin:0 0 20px;color:var(--ink-soft);font-size:.95rem}
 .question-item{border-top:1px solid var(--paper-line);padding:18px 0 0;margin-top:18px}
 .question-item:first-of-type{border-top:0;margin-top:0;padding-top:0}
-.q-num{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--slate-500)}
+.q-num{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--black-500)}
 .q-skill{
-  font-family:var(--sans); font-size:.62rem; font-weight:800;
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
-  background:var(--cool-tint); color:var(--cool);
+  background:var(--ink-tint); color:var(--ink);
   padding:3px 8px; border-radius:999px; margin-left:8px;
 }
-.q-text{margin:10px 0 10px;font-weight:700;color:var(--slate-900)}
+.q-text{margin:10px 0 10px;font-family:var(--body);font-weight:700;color:var(--black-900)}
 .q-textarea{
   width:100%; min-height:130px; padding:12px 14px;
-  font-family:var(--serif); font-size:1rem; line-height:1.6; color:var(--ink);
+  font-family:var(--body); font-size:1rem; line-height:1.6; color:var(--ink);
   background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
   resize:vertical;
 }
-.q-confidence{margin:12px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.q-confidence .confidence-label{
-  font-family:var(--sans); font-size:.64rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft);
+
+/* ── Gather All My Work ────────────────────────────────────────────────────────
+   The route to Canvas, and for a unit block Brief it is the ONLY route: those are
+   opened straight off the unit page with no week shell and no Gather panel behind
+   them. The top rule is --signal for that reason, the same weight the AI coach
+   builder gets, because this is the step that decides whether the work counts.
+
+   The output is a div and not a textarea, deliberately. A textarea can only ever
+   show plain text, and the whole point of this paste is that the question comes
+   through bold and the student's own writing italic. Showing it rendered also means
+   a manual Ctrl-C copies the formatted version when the clipboard API is blocked,
+   which it is on some managed devices. */
+.gather-section{
+  width:min(820px,92vw); margin:26px auto 0;
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--signal); border-radius:14px; padding:26px 28px;
 }
-.q-confidence button{
-  font-family:var(--sans); font-size:.8rem; font-weight:700;
-  width:32px; height:32px; border-radius:50%; cursor:pointer;
-  border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
+.gather-section h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:.025em;line-height:1.24;color:var(--black-900)}
+.gather-section > p{margin:0 0 16px;color:var(--ink-soft);font-size:.95rem}
+.gather-actions{display:flex;gap:10px;flex-wrap:wrap}
+.gather-status{
+  font-family:var(--ui); font-size:.86rem; font-weight:700;
+  color:var(--signal-deep); margin:14px 0 0; min-height:1.2em;
 }
-.q-confidence button[aria-pressed="true"]{background:var(--cool);border-color:var(--cool);color:var(--clean-paper)}
+.gather-output{
+  margin-top:12px; max-height:24rem; overflow-y:auto;
+  background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
+  padding:16px 18px; font-size:.92rem; line-height:1.55; color:var(--ink);
+}
+.gather-output h2{font-size:1.05rem;margin:0 0 8px}
+.gather-output h3{
+  margin:16px 0 6px; font-family:var(--display); font-weight:700;
+  font-size:.94rem; letter-spacing:.04em; color:var(--black-900);
+}
+.gather-output p{margin:0 0 8px}
+.gather-output hr{border:0;border-top:1px solid var(--paper-line);margin:14px 0}
+.gather-placeholder{color:var(--ink-soft)}
 
 /* ── Builder ───────────────────────────────────────────────────────────────── */
 .builder-section{
@@ -250,7 +325,7 @@ img{max-width:100%;display:block}
   background:var(--clean-paper); border:1px solid var(--paper-line);
   border-top:4px solid var(--signal); border-radius:14px; padding:26px 28px;
 }
-.builder-section h2{margin:0 0 6px;font-family:var(--sans);font-size:1.18rem;color:var(--slate-900)}
+.builder-section h2{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1.22rem;letter-spacing:.025em;line-height:1.24;color:var(--black-900)}
 .builder-section p{margin:0 0 16px;color:var(--ink-soft);font-size:.95rem}
 .builder-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 #ai-output{
@@ -261,7 +336,7 @@ img{max-width:100%;display:block}
 
 .btn{
   display:inline-flex; align-items:center; gap:8px;
-  font-family:var(--sans); font-weight:700; font-size:.82rem; letter-spacing:.03em;
+  font-family:var(--ui); font-weight:700; font-size:.82rem; letter-spacing:.03em;
   padding:10px 18px; border-radius:8px; cursor:pointer; text-decoration:none;
   border:1px solid var(--signal); background:var(--signal); color:var(--clean-paper);
 }
@@ -269,13 +344,17 @@ img{max-width:100%;display:block}
 .btn.secondary{background:transparent;color:var(--signal-deep)}
 .btn.secondary:hover{background:var(--signal-tint)}
 .btn:focus-visible,a:focus-visible,button:focus-visible,textarea:focus-visible{
-  outline:3px solid var(--cool); outline-offset:2px;
+  outline:3px solid var(--focus); outline-offset:2px;
 }
+/* The ring is ink, which is invisible on the one dark band a brief has. Same
+   rule as the week page: the indicator inverts with the surface, and it is
+   never the accent on either. */
+.module-header :focus-visible,.be-ready :focus-visible{outline-color:var(--focus-invert)}
 
 /* ── Footers ───────────────────────────────────────────────────────────────── */
 .page-footer-note{
   width:min(820px,92vw); margin:22px auto 0;
-  font-family:var(--sans); font-size:.84rem; color:var(--ink-soft);
+  font-family:var(--ui); font-size:.84rem; color:var(--ink-soft);
   background:var(--signal-tint); border-left:4px solid var(--signal);
   border-radius:0 8px 8px 0; padding:12px 16px;
 }
@@ -285,13 +364,15 @@ img{max-width:100%;display:block}
   padding-top:18px; border-top:1px solid var(--paper-line);
 }
 .module-footer a{
-  font-family:var(--sans); font-size:.78rem; font-weight:700;
-  text-decoration:none; color:var(--cool);
+  font-family:var(--ui); font-size:.78rem; font-weight:700;
+  text-decoration:none; color:var(--signal-deep);
+  /* 24px minimum hit area, per WCAG 2.2 SC 2.5.8. These two links are how a
+     student gets out of a brief, so they are worth being easy to hit. */
+  display:inline-flex; align-items:center; min-height:24px; padding:2px 0;
 }
-.module-footer a:hover{color:var(--signal-deep)}
+.module-footer a:hover{color:var(--ink)}
 
 @media (max-width:640px){
-  body{font-size:16px}
   .brief-title-band,.brief-body,.check-section,.builder-section{padding-left:18px;padding-right:18px}
   .section-number{display:none}
 }

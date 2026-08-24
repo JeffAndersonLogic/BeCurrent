@@ -1,0 +1,499 @@
+/* =========================================================
+   THE TODAY BOARD
+
+   The classroom projector surface. Open announcements.html, press F,
+   leave it up.
+
+   POLARITY. Every reading surface in BeCurrent is newsprint under ink,
+   for the reasons at the top of becurrent-brand.css: a lamp projector
+   can only add light, so a dark ground degrades to washed-out grey in a
+   lit room while a light one puts the lumens to work. This board is the
+   most projected surface in the course, so it is the last place to
+   reverse that. The masthead and the footer stay dark, because those are
+   scanned rather than read.
+
+   TYPE. Cinzel is caps-only and has a legibility floor of about 17px on
+   a projector, so it sets the slide titles and nothing small. Every line
+   with a verb in it, which is every learning target and every success
+   criterion, is Libre Baskerville. A whole "I can" statement in caps is
+   shouting and measurably slower to read.
+
+   SIZE. Type is in vmin, not px, because the same file has to hold up on
+   a classroom projector and on a phone. The density classes the board
+   applies (.is-dense, .is-tight) step it down further as a slide fills,
+   so a long day shrinks rather than overflowing off the bottom of the
+   screen where nobody can see it.
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--newsprint);
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.is-idle { cursor: none; }
+
+.board {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* The slide timer, as a hairline across the top. It answers "is this thing
+   still running" from the back of the room without taking any space. */
+.timing-bar {
+  position: absolute; inset: 0 0 auto 0;
+  height: 4px; background: var(--ink-tint); z-index: 5;
+}
+.timing-fill {
+  height: 100%; width: 0;
+  background: var(--signal);
+  transition: width .12s linear;
+}
+.board.is-paused .timing-fill { background: var(--black-500); }
+
+/* ── Masthead and footer, the two dark bands ─────────────────────────── */
+.masthead {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2vmin;
+  padding: 1.6vmin 3vmin;
+  background: var(--black-900);
+  color: var(--clean-paper);
+  border-bottom: 3px solid var(--signal);
+}
+.masthead-brand {
+  display: flex; align-items: center; gap: 1.6vmin;
+  text-decoration: none; color: inherit;
+}
+.masthead-brand img { height: 4.4vmin; min-height: 30px; width: auto; display: block; }
+.masthead-course {
+  display: block;
+  font-family: var(--ui); font-size: 1.5vmin; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--signal-pale);
+}
+.masthead-clock { text-align: right; }
+.clock-time {
+  font-family: var(--ui); font-size: 2.6vmin; font-weight: 800;
+  letter-spacing: .02em; line-height: 1;
+}
+.clock-date {
+  font-family: var(--ui); font-size: 1.4vmin; font-weight: 600;
+  letter-spacing: .06em; color: var(--signal-pale); margin-top: .5vmin;
+}
+
+.board-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2vmin;
+  padding: 1.2vmin 3vmin;
+  background: var(--black-900);
+  color: var(--clean-paper);
+  border-top: 3px solid var(--signal);
+}
+.foot-meta {
+  font-family: var(--ui); font-size: 1.4vmin; font-weight: 600;
+  letter-spacing: .06em; color: var(--signal-pale);
+}
+.paused-flag {
+  display: none;
+  font-weight: 800; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--clean-paper);
+}
+.board.is-paused .paused-flag { display: inline; }
+
+.dots { display: flex; gap: 1vmin; }
+.dot {
+  width: 1.2vmin; height: 1.2vmin; min-width: 8px; min-height: 8px;
+  padding: 0; border: 0; border-radius: 50%;
+  background: rgba(255,254,251,.28);
+  cursor: pointer;
+}
+.dot.is-active { background: var(--signal); }
+.dot:focus-visible { outline: 2px solid var(--focus-invert); outline-offset: 3px; }
+
+/* ── The stage ───────────────────────────────────────────────────────── */
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  padding: 4vmin 6vmin;
+}
+.slide {
+  position: absolute; inset: 4vmin 6vmin;
+  display: none;
+  flex-direction: column; justify-content: center;
+}
+/* Measure. A line running the full width of a 16:9 projector is a line the room
+   loses its place in, so the reading column is capped rather than set to the
+   screen. The panels that are tables of dates keep the full width.
+
+   The cap sits on the element that carries the large type, never on its
+   container: `ch` resolves against the element's OWN font-size, so a max-width
+   on a list whose font-size is the inherited 16px caps at a third of what the
+   32px items inside it actually need, and the slide comes out as a narrow
+   column with two thirds of the screen empty. */
+.slide-title { max-width: 20ch; }
+.title-card-topic { max-width: 16ch; }
+.title-card-subtitle, .panel-text,
+.target-item, .criteria-item,
+.agenda-item, .homework-item { max-width: 44ch; }
+.reminder-grid { max-width: 76vw; }
+.slide.is-active { display: flex; }
+
+.slide-eyebrow {
+  font-family: var(--ui); font-size: 2.1vmin; font-weight: 800;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--signal-deep);
+  margin-bottom: 1.4vmin;
+}
+.slide-title {
+  margin: 0 0 3vmin;
+  font-family: var(--display); font-weight: 700;
+  font-size: 7vmin; line-height: 1.1; letter-spacing: .02em;
+  color: var(--black-900);
+}
+.slide-title::after {
+  content: ""; display: block;
+  width: 12vmin; height: 4px; margin-top: 1.6vmin;
+  background: var(--signal);
+}
+
+/* ── The title card ──────────────────────────────────────────────────── */
+.slide-title-card { align-items: flex-start; }
+.title-card-mark { height: 11vmin; min-height: 54px; width: auto; margin-bottom: 2vmin; }
+.title-card-day {
+  font-family: var(--ui); font-size: 2.6vmin; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 1.6vmin;
+}
+.title-card-topic {
+  margin: 0;
+  font-family: var(--display); font-weight: 700;
+  font-size: 9.4vmin; line-height: 1.05; letter-spacing: .02em;
+  color: var(--black-900);
+}
+.title-card-unit {
+  margin-top: 1.8vmin;
+  font-family: var(--ui); font-size: 2.6vmin; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--signal-deep);
+}
+.title-card-subtitle {
+  margin-top: 1.4vmin;
+  font-size: 2.9vmin; font-style: italic; color: var(--ink-soft);
+}
+
+/* ── Panels ──────────────────────────────────────────────────────────── */
+.panel {
+  background: var(--clean-paper);
+  border: 1px solid var(--paper-line);
+  border-left: 6px solid var(--signal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 3.4vmin;
+  box-shadow: var(--soft-shadow);
+}
+.panel-text { margin: 0; font-size: 4vmin; line-height: 1.45; }
+.panel-foot { margin-top: 2.4vmin; display: flex; gap: 1.2vmin; flex-wrap: wrap; }
+
+.chip {
+  font-family: var(--ui); font-size: 1.8vmin; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .8vmin 1.6vmin; border-radius: 999px;
+  white-space: nowrap;
+}
+.chip.quiet { background: var(--ink-tint); color: var(--ink); }
+.chip.solid { background: var(--signal); color: var(--clean-paper); }
+.chip.alarm { background: var(--black-900); color: var(--clean-paper); }
+
+/* ── Targets and criteria ────────────────────────────────────────────── */
+.target-list, .criteria-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 2.2vmin;
+}
+.target-item, .criteria-item {
+  display: flex; gap: 1.8vmin; align-items: flex-start;
+  font-size: 3.6vmin; line-height: 1.4;
+}
+.target-item { border-left: 4px solid var(--signal); padding-left: 2vmin; }
+
+/* The tick is drawn, not typed: no glyph and no font to go missing. */
+.criteria-mark {
+  flex: 0 0 auto;
+  width: 3vmin; height: 3vmin; min-width: 18px; min-height: 18px;
+  margin-top: .4vmin;
+  border: 3px solid var(--signal); border-radius: 4px;
+  position: relative;
+}
+.criteria-mark::after {
+  content: ""; position: absolute;
+  left: 28%; top: 6%; width: 34%; height: 62%;
+  border: solid var(--signal); border-width: 0 3px 3px 0;
+  transform: rotate(42deg);
+}
+.criteria-body { display: block; }
+
+.entry-label {
+  display: block;
+  font-family: var(--ui); font-size: 1.7vmin; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--signal-deep); margin-bottom: .4vmin;
+}
+
+/* Curriculum prose runs from one line to a paragraph, so the type steps down
+   as the slide fills rather than letting a long day overflow the screen. */
+.target-list.is-dense .target-item,
+.criteria-list.is-dense .criteria-item { font-size: 3.1vmin; }
+.target-list.is-tight .target-item,
+.criteria-list.is-tight .criteria-item { font-size: 2.6vmin; line-height: 1.35; }
+.target-list.is-tight, .criteria-list.is-tight { gap: 1.6vmin; }
+
+/* ── The Desk ────────────────────────────────────────────────────────── */
+/* auto-fit rather than a fixed two, so three routine steps come out as three
+   columns instead of two and an empty corner. */
+.desk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24vw, 1fr));
+  gap: 2vmin;
+}
+.desk-card {
+  background: var(--clean-paper);
+  border: 1px solid var(--paper-line);
+  border-top: 4px solid var(--signal);
+  border-radius: var(--radius);
+  padding: 2.2vmin;
+}
+.desk-step {
+  font-family: var(--ui); font-size: 1.5vmin; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--signal-deep);
+}
+.desk-name {
+  font-family: var(--display); font-size: 3.1vmin; font-weight: 700;
+  letter-spacing: .02em; color: var(--black-900); margin: .6vmin 0;
+}
+.desk-what { font-size: 2.4vmin; line-height: 1.4; color: var(--ink-soft); }
+
+/* The two lanes. Ink-topped rather than red, because they are a second series
+   under the routine and red is already doing the first: per becurrent-brand.css
+   there is no third accent, and where a second series has to be told apart from
+   the first, the second one is black. The question is set in --body bold, not
+   --display: Cinzel is effectively caps-only, and a whole question in capitals is
+   shouting and measurably slower to read. */
+.desk-lanes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 32vw), 1fr));
+  gap: 2vmin;
+  margin-top: 2vmin;
+}
+.desk-lane {
+  background: var(--newsprint);
+  border: 1px solid var(--paper-line);
+  border-left: 4px solid var(--ink);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 2vmin 2.2vmin;
+}
+.desk-lane-name {
+  font-family: var(--ui); font-size: 1.5vmin; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink);
+}
+.desk-lane-q {
+  font-family: var(--body); font-weight: 700; font-size: 2.5vmin;
+  line-height: 1.35; color: var(--black-900); margin-top: .8vmin;
+}
+
+/* ── Agenda and homework ─────────────────────────────────────────────── */
+.agenda-list, .homework-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 2vmin; counter-reset: none;
+}
+.agenda-item, .homework-item {
+  display: flex; gap: 2vmin; align-items: baseline;
+  font-size: 3.6vmin; line-height: 1.4;
+}
+.agenda-num, .homework-num {
+  flex: 0 0 auto;
+  font-family: var(--ui); font-size: 2.9vmin; font-weight: 800;
+  color: var(--signal);
+}
+.agenda-list.is-long .agenda-item,
+.homework-list.is-dense .homework-item { font-size: 3vmin; }
+.homework-body { display: flex; flex-direction: column; gap: .8vmin; align-items: flex-start; }
+.homework-due { align-self: flex-start; }
+
+/* ── Looking ahead, and dated work ───────────────────────────────────── */
+.ahead-list, .due-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.6vmin;
+}
+.ahead-item, .due-item {
+  display: flex; align-items: center; gap: 2.4vmin;
+  background: var(--clean-paper);
+  border: 1px solid var(--paper-line);
+  border-left: 5px solid var(--paper-line);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.8vmin 2.2vmin;
+}
+.due-item.is-soon { border-left-color: var(--signal); }
+.due-item.is-urgent { border-left-color: var(--black-900); background: var(--signal-tint); }
+
+.ahead-when, .due-when {
+  flex: 0 0 auto; width: 13vmin; text-align: center;
+  border-right: 1px solid var(--paper-line);
+}
+.ahead-weekday, .due-weekday, .due-month {
+  font-family: var(--ui); font-size: 1.4vmin; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--signal-deep);
+}
+.ahead-daynum, .due-daynum {
+  font-family: var(--ui); font-size: 3.3vmin; font-weight: 800; color: var(--black-900);
+}
+.due-tbd {
+  font-family: var(--ui); font-size: 1.8vmin; font-weight: 800;
+  letter-spacing: .1em; color: var(--black-500);
+}
+.ahead-body, .due-body { flex: 1; min-width: 0; }
+.ahead-topic, .due-title {
+  font-family: var(--display); font-size: 3.1vmin; font-weight: 700;
+  letter-spacing: .02em; color: var(--black-900); line-height: 1.15;
+}
+.ahead-unit, .due-detail {
+  font-family: var(--ui); font-size: 1.5vmin; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-soft); margin-top: .6vmin;
+}
+.due-count { flex: 0 0 auto; display: flex; gap: 1vmin; align-items: center; }
+
+/* ── Reminders and the empty states ──────────────────────────────────── */
+.reminder-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2vmin; }
+.reminder-card {
+  background: var(--clean-paper);
+  border: 1px solid var(--paper-line);
+  border-left: 5px solid var(--signal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 2.2vmin;
+}
+.reminder-title {
+  font-family: var(--display); font-size: 2.4vmin; font-weight: 700;
+  color: var(--black-900); letter-spacing: .02em;
+}
+.reminder-detail { font-size: 2vmin; line-height: 1.4; color: var(--ink-soft); margin-top: .8vmin; }
+
+.state-note { font-size: 2.6vmin; line-height: 1.5; color: var(--ink-soft); }
+.state-note code {
+  font-family: var(--mono); font-size: .9em;
+  background: var(--ink-tint); padding: .3vmin .8vmin; border-radius: 4px;
+}
+
+/* ── The help card, for whoever is driving ───────────────────────────── */
+.help-hint {
+  position: fixed; right: 2vmin; bottom: 9vmin;
+  font-family: var(--ui); font-size: 1.4vmin; font-weight: 700;
+  letter-spacing: .08em;
+  background: var(--black-900); color: var(--clean-paper);
+  padding: 1vmin 1.8vmin; border-radius: 999px;
+  z-index: 20;
+}
+.help-hint.is-hidden { display: none; }
+.help-overlay {
+  position: fixed; inset: 0; z-index: 30;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(17,17,17,.86);
+}
+.help-overlay.is-open { display: flex; }
+.help-card {
+  background: var(--clean-paper); color: var(--ink);
+  border-top: 6px solid var(--signal);
+  border-radius: var(--radius);
+  padding: 4vmin; max-width: 62ch; box-shadow: var(--shadow);
+}
+.help-card h2 {
+  margin: 0 0 2vmin;
+  font-family: var(--display); font-size: 3.4vmin; font-weight: 700;
+  letter-spacing: .02em; color: var(--black-900);
+}
+.help-card dl {
+  margin: 0 0 2vmin;
+  display: grid; grid-template-columns: auto 1fr; gap: 1.2vmin 2.4vmin;
+  align-items: baseline;
+}
+.help-card dt {
+  font-family: var(--ui); font-size: 1.6vmin; font-weight: 800;
+  letter-spacing: .08em;
+  background: var(--ink-tint); padding: .5vmin 1.2vmin; border-radius: 6px;
+  white-space: nowrap;
+}
+.help-card dd { margin: 0; font-size: 1.9vmin; line-height: 1.4; }
+.help-card p { margin: 0; font-size: 1.8vmin; line-height: 1.5; color: var(--ink-soft); }
+.help-card code {
+  font-family: var(--mono); font-size: .9em;
+  background: var(--ink-tint); padding: .2vmin .7vmin; border-radius: 4px;
+}
+
+/* ── Page mode ───────────────────────────────────────────────────────────
+   Under 900px this stops being a projector kiosk and becomes a page: every
+   panel stacked, nothing auto-advancing, nothing to wait for. A student
+   reading it on a phone should never be scrolled out from under. */
+@media (max-width: 900px) {
+  html, body { height: auto; }
+  .board { height: auto; overflow: visible; }
+  .timing-bar, .dots, .help-hint { display: none; }
+
+  .stage { padding: 0; }
+  .slide {
+    position: static; inset: auto;
+    display: flex !important;
+    padding: 26px 20px;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .slide-eyebrow { font-size: 12px; margin-bottom: 8px; }
+  .slide-title { font-size: 26px; margin-bottom: 16px; }
+  .slide-title::after { width: 60px; height: 3px; margin-top: 10px; }
+
+  .title-card-mark { height: 44px; min-height: 0; }
+  .title-card-day { font-size: 13px; }
+  .title-card-topic { font-size: 30px; }
+  .title-card-unit, .title-card-subtitle { font-size: 14px; }
+
+  .panel { padding: 18px; }
+  .panel-text { font-size: 17px; }
+  .chip { font-size: 11px; padding: 5px 10px; }
+
+  .target-item, .criteria-item,
+  .target-list.is-dense .target-item, .criteria-list.is-dense .criteria-item,
+  .target-list.is-tight .target-item, .criteria-list.is-tight .criteria-item {
+    font-size: 16px; line-height: 1.5;
+  }
+  .criteria-mark { width: 18px; height: 18px; border-width: 2px; }
+  .criteria-mark::after { border-width: 0 2px 2px 0; }
+  .entry-label { font-size: 10px; }
+
+  .agenda-item, .homework-item,
+  .agenda-list.is-long .agenda-item, .homework-list.is-dense .homework-item { font-size: 16px; }
+  .agenda-num, .homework-num { font-size: 15px; }
+
+  .desk-grid, .desk-lanes, .reminder-grid { grid-template-columns: 1fr; }
+  .desk-name, .reminder-title, .ahead-topic, .due-title { font-size: 18px; }
+  .desk-what, .reminder-detail, .desk-lane-q { font-size: 15px; }
+  .ahead-when, .due-when { width: 68px; }
+  .ahead-weekday, .due-weekday, .due-month, .ahead-unit, .due-detail { font-size: 11px; }
+  .ahead-daynum, .due-daynum { font-size: 20px; }
+
+  .masthead, .board-foot { padding: 12px 16px; }
+  .masthead-brand img { height: 30px; }
+  .masthead-course { font-size: 11px; }
+  .clock-time { font-size: 18px; }
+  .clock-date, .foot-meta { font-size: 11px; }
+  .state-note { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timing-fill { transition: none; }
+}

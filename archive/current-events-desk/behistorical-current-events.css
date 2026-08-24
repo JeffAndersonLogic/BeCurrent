@@ -1,0 +1,170 @@
+/* BeHistorical | Current Events Desk
+   Self-contained surface styling, same token values as the rest of the site.
+   Kept in its own file so the weekly desk can never disturb a lesson page. */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --blackened-steel:#1a1c1d;--charcoal-steel:#2b2f31;--gunmetal-gray:#3e4447;
+  --aged-iron:#5a5f5c;--muted-sandstone:#d2b48c;--burnished-bronze:#8c5a2b;
+  --rust-copper:#a8652d;--oxidized-brown:#6b3e1f;--antique-gold:#c9a46a;
+  --warm-paper:#f5f0e7;--clean-paper:#fffdf7;--ink:#151718;
+  --newsprint:#ece5d8;--rule:#d8cbb9;
+  --font-display:'Cinzel','Trajan Pro',Georgia,serif;
+  --font-body:'Libre Baskerville',Georgia,serif;
+  --font-ui:'Montserrat',Arial,sans-serif
+}
+
+body{background:var(--blackened-steel);font-family:var(--font-body);color:var(--clean-paper);padding:0 0 3rem}
+.desk{max-width:1040px;margin:0 auto;padding:0 1rem}
+
+/* ── Sticky status rail ────────────────────────────────────────────────────
+   Progress and autosave state have to stay visible: a student who cannot see
+   that the page saved will not trust it, and a teacher scanning the room needs
+   to read completion off a screen from six feet away. */
+.status-rail{position:sticky;top:0;z-index:40;background:rgba(26,28,29,.96);border-bottom:1px solid var(--gunmetal-gray);backdrop-filter:blur(6px)}
+.status-inner{max-width:1040px;margin:0 auto;padding:.6rem 1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.status-brand{display:flex;align-items:center;gap:.55rem;font-family:var(--font-display);font-size:.9rem;color:var(--clean-paper);letter-spacing:.03em;text-decoration:none}
+.status-brand img{width:26px;height:26px;object-fit:cover;border-radius:2px;border:1px solid rgba(201,164,106,.4)}
+.status-brand .gold{color:var(--antique-gold)}
+.status-meter{flex:1 1 220px;min-width:180px}
+.meter-label{font-family:var(--font-ui);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-sandstone);display:flex;justify-content:space-between;gap:.75rem;margin-bottom:.3rem}
+.meter-track{height:6px;background:#23272a;border:1px solid var(--gunmetal-gray);border-radius:999px;overflow:hidden}
+.meter-fill{height:100%;width:0;background:linear-gradient(90deg,var(--oxidized-brown),var(--antique-gold));transition:width .25s ease}
+.save-state{font-family:var(--font-ui);font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--aged-iron);white-space:nowrap}
+.save-state.is-saved{color:var(--antique-gold)}
+
+/* ── Masthead ─────────────────────────────────────────────────────────────── */
+.masthead{background:var(--blackened-steel);border:1px solid var(--gunmetal-gray);border-top:0;padding:2.2rem 2.4rem 1.8rem;position:relative;overflow:hidden}
+.masthead::before{content:'';position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--oxidized-brown),var(--antique-gold),var(--muted-sandstone),var(--antique-gold),var(--oxidized-brown))}
+.mast-eyebrow{font-family:var(--font-ui);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);margin-bottom:.8rem}
+.mast-wordmark{font-family:var(--font-display);font-size:clamp(2rem,7vw,3.4rem);font-weight:800;line-height:1;letter-spacing:.04em;color:var(--clean-paper)}
+.mast-wordmark em{color:var(--antique-gold);font-style:normal}
+.mast-rule{display:flex;align-items:center;gap:1rem;margin:1rem 0;border-top:1px solid rgba(201,164,106,.35);border-bottom:1px solid rgba(201,164,106,.35);padding:.5rem 0;font-family:var(--font-ui);font-size:.63rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-sandstone);flex-wrap:wrap;justify-content:space-between}
+.mast-deck{font-size:.95rem;font-style:italic;color:var(--muted-sandstone);line-height:1.75;max-width:780px;margin-bottom:1.1rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.skill-tag{font-family:var(--font-ui);font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-sandstone);border:1px solid rgba(210,180,140,.3);padding:.2rem .55rem;border-radius:2px}
+
+/* ── Directions and the outlet deck ───────────────────────────────────────── */
+.brief-strip{background:var(--clean-paper);color:var(--ink);border:1px solid var(--gunmetal-gray);border-top:0;padding:1.4rem 2.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.brief-card{border:1px solid #ddd6ca;border-left:4px solid var(--burnished-bronze);padding:1rem;background:#faf7f2}
+.brief-card h3{font-family:var(--font-display);font-size:.95rem;color:var(--blackened-steel);margin-bottom:.5rem}
+.brief-card p{font-size:.8rem;line-height:1.7;color:#333}
+.brief-card p+p{margin-top:.5rem}
+.brief-card strong{color:var(--oxidized-brown)}
+
+.wire-deck{background:var(--newsprint);color:var(--ink);border:1px solid var(--gunmetal-gray);border-top:0;padding:1.3rem 2.4rem 1.6rem}
+.wire-deck h3{font-family:var(--font-ui);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--oxidized-brown);margin-bottom:.3rem}
+.wire-deck .wire-note{font-size:.76rem;font-style:italic;color:#4a463f;margin-bottom:.9rem}
+.wire-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:.5rem}
+.wire-link{display:block;background:var(--clean-paper);border:1px solid rgba(140,90,43,.28);border-left:3px solid var(--burnished-bronze);border-radius:2px;padding:.55rem .7rem;text-decoration:none;transition:background .15s ease,transform .15s ease}
+.wire-link:hover{background:#fff;transform:translateY(-1px)}
+.wire-link .wl-name{display:block;font-family:var(--font-ui);font-size:.74rem;font-weight:700;letter-spacing:.03em;color:var(--oxidized-brown)}
+.wire-link .wl-note{display:block;font-family:var(--font-ui);font-size:.6rem;color:#6a635a;margin-top:.15rem;line-height:1.4}
+
+/* ── Stations ─────────────────────────────────────────────────────────────── */
+.station{background:var(--warm-paper);color:var(--ink);border:1px solid var(--gunmetal-gray);border-top:0;padding:1.9rem 2.4rem;position:relative}
+.station:nth-of-type(even){background:var(--clean-paper)}
+.station-number{font-family:var(--font-display);font-size:3.6rem;font-weight:800;color:rgba(140,90,43,.12);position:absolute;top:1rem;right:2rem;line-height:1;pointer-events:none}
+.station-eyebrow{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.station-label{font-family:var(--font-ui);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--burnished-bronze)}
+.chip{font-family:var(--font-ui);font-size:.57rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:.16rem .45rem;border-radius:2px;white-space:nowrap}
+.chip.skill{color:var(--oxidized-brown);border:1px solid rgba(140,90,43,.4)}
+.chip.clock{color:#5f5a52;border:1px solid rgba(95,90,82,.35)}
+.chip.theme{color:var(--clean-paper);background:var(--burnished-bronze)}
+.station-heading{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--blackened-steel);line-height:1.3;border-bottom:1px solid rgba(140,90,43,.2);padding:0 3.5rem .55rem 0;margin-bottom:.9rem}
+.station-body{font-size:.88rem;line-height:1.8;color:#26251f;margin-bottom:1.1rem;max-width:80ch}
+.station-body a{color:var(--oxidized-brown);font-weight:700}
+
+/* The move: the historian's instruction, set apart from the task itself. */
+.the-move{background:var(--charcoal-steel);border-left:3px solid var(--antique-gold);padding:.9rem 1.1rem;margin:1.1rem 0;border-radius:0 3px 3px 0}
+.the-move .move-label{font-family:var(--font-ui);font-size:.57rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);margin-bottom:.3rem}
+.the-move p{font-family:var(--font-ui);font-size:.79rem;color:var(--warm-paper);line-height:1.7}
+.the-move strong{color:var(--muted-sandstone)}
+
+/* ── Fields ───────────────────────────────────────────────────────────────── */
+.field{margin-bottom:1rem}
+.field:last-child{margin-bottom:0}
+.field-label{display:block;font-family:var(--font-ui);font-size:.68rem;font-weight:700;letter-spacing:.06em;color:#3d3830;margin-bottom:.3rem}
+.field-hint{display:block;font-family:var(--font-ui);font-size:.63rem;font-style:italic;color:#726b60;margin-bottom:.35rem;line-height:1.5}
+.ce-input,.ce-area,.ce-select{width:100%;background:#fffdf7;border:1px solid #cdc3b3;border-radius:2px;padding:.55rem .7rem;font-family:var(--font-body);font-size:.85rem;color:var(--ink);line-height:1.7;outline:0}
+.ce-select{font-family:var(--font-ui);font-size:.8rem}
+.ce-area{min-height:92px;resize:vertical}
+.ce-area.tall{min-height:130px}
+.ce-input:focus,.ce-area:focus,.ce-select:focus{border-color:var(--burnished-bronze);box-shadow:0 0 0 2px rgba(140,90,43,.15)}
+.ce-input::placeholder,.ce-area::placeholder{color:#a09889;font-style:italic}
+.field-foot{display:flex;justify-content:space-between;gap:.75rem;font-family:var(--font-ui);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:#8b8378;margin-top:.22rem}
+.field-foot .count.is-met{color:var(--oxidized-brown);font-weight:700}
+
+/* A row is one logged story: a fixed source label plus the student's entry. */
+.row-card{background:rgba(255,253,247,.75);border:1px solid #ddd6ca;border-left:4px solid var(--burnished-bronze);border-radius:2px;padding:.9rem 1rem;margin-bottom:.75rem}
+.row-card:last-of-type{margin-bottom:0}
+.row-head{display:flex;align-items:center;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-bottom:.55rem}
+.row-name{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--blackened-steel)}
+.row-open{font-family:var(--font-ui);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--oxidized-brown);border:1px solid rgba(140,90,43,.4);border-radius:2px;padding:.2rem .5rem;text-decoration:none;white-space:nowrap}
+.row-open:hover{background:var(--burnished-bronze);color:var(--clean-paper)}
+.row-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.row-grid.single{grid-template-columns:1fr}
+
+/* Pinned article, when the edition file names one. */
+.pinned{background:var(--charcoal-steel);border:1px solid var(--gunmetal-gray);border-left:4px solid var(--antique-gold);border-radius:0 3px 3px 0;padding:1rem 1.1rem;margin-bottom:.9rem}
+.pinned-source{font-family:var(--font-ui);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-sandstone);margin-bottom:.3rem}
+.pinned-title{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--clean-paper);line-height:1.35;margin-bottom:.5rem}
+.pinned-q{font-family:var(--font-ui);font-size:.79rem;color:var(--warm-paper);line-height:1.7;margin-bottom:.7rem}
+.pinned .ce-area{background:#23272a;border-color:var(--gunmetal-gray);color:var(--warm-paper)}
+.pinned .ce-area::placeholder{color:#7d8280}
+.pinned .field-foot{color:#8b8f8d}
+.pinned .field-foot .count.is-met{color:var(--antique-gold)}
+.pinned .row-open{color:var(--antique-gold);border-color:rgba(201,164,106,.45)}
+.pinned .row-open:hover{background:var(--antique-gold);color:var(--ink)}
+
+/* ── Closing wire ─────────────────────────────────────────────────────────── */
+.be-ready{background:#efe5d6;color:var(--ink);border:1px solid var(--gunmetal-gray);border-top:2px solid var(--burnished-bronze);padding:1.7rem 2.4rem}
+.be-ready h3{font-family:var(--font-display);font-size:1.05rem;color:var(--blackened-steel);margin-bottom:.4rem}
+.be-ready p{font-size:.85rem;line-height:1.75;color:#2a2822;margin-bottom:.9rem;max-width:80ch}
+
+/* ── Hand-off panel ───────────────────────────────────────────────────────── */
+.handoff{background:var(--blackened-steel);border:1px solid var(--gunmetal-gray);border-top:2px solid var(--antique-gold);padding:1.9rem 2.4rem}
+.handoff h3{font-family:var(--font-display);font-size:1.15rem;color:var(--antique-gold);margin-bottom:.6rem}
+.handoff p{font-size:.86rem;line-height:1.75;color:var(--warm-paper);margin-bottom:.9rem;max-width:80ch}
+.tool-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.8rem}
+button,.tool-button{display:inline-block;font-family:var(--font-ui);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--antique-gold);color:var(--ink);border:0;border-radius:3px;padding:.55rem 1.15rem;cursor:pointer;text-decoration:none}
+button.secondary,.tool-button.secondary{background:transparent;color:var(--antique-gold);border:1px solid var(--antique-gold)}
+button.danger{background:transparent;color:#c98a6a;border:1px solid rgba(201,138,106,.5)}
+button:hover,.tool-button:hover{background:var(--burnished-bronze);color:var(--warm-paper)}
+button.danger:hover{background:rgba(201,138,106,.15);color:#e0a184}
+.handoff-result{font-family:var(--font-ui);font-size:.7rem;color:var(--muted-sandstone);min-height:1.1rem;margin-bottom:.7rem}
+.work-output{background:var(--clean-paper);color:var(--ink);border-radius:3px;padding:1.1rem 1.3rem;max-height:340px;overflow:auto;font-size:.82rem;line-height:1.65}
+.work-output:empty{display:none}
+.work-output p{margin-bottom:.5rem}
+.work-output hr{border:0;border-top:1px solid var(--rule);margin:.9rem 0}
+
+.desk-footer{background:var(--charcoal-steel);border:1px solid var(--gunmetal-gray);border-top:0;padding:1rem 2.4rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;font-family:var(--font-ui);font-size:.63rem;color:#9da19f}
+.desk-footer a{color:var(--antique-gold);text-decoration:none;border:1px solid rgba(201,164,106,.4);border-radius:2px;padding:.35rem .8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.desk-footer a:hover{background:rgba(201,164,106,.14)}
+
+/* ── Narrow screens ───────────────────────────────────────────────────────── */
+@media(max-width:760px){
+  .desk{padding:0}
+  .masthead,.brief-strip,.wire-deck,.station,.be-ready,.handoff,.desk-footer{padding-left:1.25rem;padding-right:1.25rem;border-left:0;border-right:0}
+  .brief-strip{grid-template-columns:1fr}
+  .row-grid{grid-template-columns:1fr}
+  .station-heading{padding-right:2.6rem}
+  .station-number{font-size:2.6rem;right:1rem}
+  .tool-row{flex-direction:column}
+  .tool-row>*{text-align:center}
+}
+
+/* ── Print, for the day the network is down ───────────────────────────────── */
+@media print{
+  body{background:#fff;color:#000;padding:0}
+  .status-rail,.wire-deck,.handoff,.desk-footer,.row-open{display:none !important}
+  .masthead{background:#fff;color:#000;border-color:#000}
+  .mast-wordmark,.mast-deck,.mast-rule,.mast-eyebrow,.skill-tag{color:#000}
+  .mast-wordmark em{color:#000}
+  .station,.brief-strip,.be-ready{background:#fff;border-color:#999;break-inside:avoid}
+  .the-move,.pinned{background:#f2f2f2;color:#000;border-color:#666}
+  .the-move p,.the-move .move-label,.pinned-title,.pinned-q,.pinned-source{color:#000}
+  .ce-input,.ce-area,.ce-select{border:1px solid #666;background:#fff}
+  .ce-area{min-height:70px}
+}

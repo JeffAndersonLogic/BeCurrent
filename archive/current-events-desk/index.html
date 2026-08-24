@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>BeCurrent | Current Events Desk</title>
+  <meta name="description" content="BeHistorical current events desk. Read the wire the way a historian reads an archive.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="behistorical-current-events.css?v=1">
+</head>
+<body>
+
+  <!-- Sticky rail: progress and save state stay on screen the whole hour. -->
+  <div class="status-rail">
+    <div class="status-inner">
+      <a class="status-brand" href="../../index.html">
+        <img src="behistorical-logo.jpeg" alt="">
+        <span>Be<span class="gold">Current</span></span>
+      </a>
+      <div class="status-meter">
+        <div class="meter-label">
+          <span id="meter-count">0 of 0 filled</span>
+          <span id="save-state" class="save-state">Autosaves as you type</span>
+        </div>
+        <div class="meter-track" id="meter-track" role="progressbar" aria-label="Desk progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="meter-fill" id="meter-fill"></div>
+        </div>
+      </div>
+      <button class="secondary" id="btn-gather" type="button">Gather my work</button>
+    </div>
+  </div>
+
+  <div class="desk">
+
+    <header class="masthead" id="masthead"></header>
+
+    <section class="brief-strip">
+      <div class="brief-card">
+        <h3>Directions</h3>
+        <p>Work the stations in order. Every box <strong>saves itself</strong> as you type, so you can close the tab and come back.</p>
+        <p>Bullet points are fine. Detail is not optional: name the outlet, quote the headline, say who is affected.</p>
+      </div>
+      <div class="brief-card">
+        <h3>Turning it in</h3>
+        <p>When you finish, scroll to the bottom, press <strong>Gather my work</strong>, then <strong>Copy all my work</strong>, and paste it into the Canvas assignment.</p>
+        <p id="time-budget"></p>
+      </div>
+    </section>
+
+    <section class="wire-deck">
+      <h3>The Wire</h3>
+      <p class="wire-note">Every link opens in a new tab. Keep this one open.</p>
+      <div class="wire-grid" id="wire-deck-grid"></div>
+    </section>
+
+    <main id="stations"></main>
+
+    <section class="be-ready">
+      <h3>BeReady: Today's Wire in One Sentence</h3>
+      <p>Reporters call the opening line of a story the lede. It is one sentence, and it carries everything. Close the desk by writing today's.</p>
+      <div id="closing-field"></div>
+    </section>
+
+    <section class="handoff">
+      <h3>Copy All My Work</h3>
+      <p>This page is your thinking space. Canvas is where the grade lives, and nothing travels between them on its own. Press <strong>Gather my work</strong>, check that everything you wrote is there, then <strong>Copy all my work</strong> and paste it into the Canvas assignment.</p>
+      <div class="tool-row">
+        <button id="btn-copy" type="button">Copy all my work</button>
+        <button class="secondary" id="btn-print" type="button">Print or save as PDF</button>
+        <button class="danger" id="btn-clear" type="button">Clear this edition</button>
+      </div>
+      <p class="handoff-result" id="handoff-result"></p>
+      <div class="work-output" id="work-output"></div>
+    </section>
+
+    <footer class="desk-footer">
+      <span>BeHistorical · BeCurrent · Read evidence, interpret change, explain significance.</span>
+      <a href="../../index.html">Back to the course hub</a>
+    </footer>
+
+  </div>
+
+  <script src="current-events-edition.js?v=1"></script>
+  <script src="behistorical-current-events.js?v=1"></script>
+</body>
+</html>

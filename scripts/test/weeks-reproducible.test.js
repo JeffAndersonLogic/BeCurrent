@@ -4,7 +4,8 @@
 /**
  * Every generated file still reproduces exactly from its content module.
  *
- * Both builders: weeks (the orientation reading) and units (theme blocks).
+ * All four builders: weeks (the orientation reading), units (theme blocks), the
+ * Desk (the daily half of a block), and the front door that links them.
  *
  * This is the check that makes the generated content model actually hold. Without
  * it, a hand-edit to a generated week survives review, ships, appears to work,
@@ -26,7 +27,9 @@ const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
 console.log('\n  Generated weeks reproduce from their content modules\n');
 
 let failed = false;
-for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js', 'scripts/build-index.js']) {
+for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js',
+  'scripts/build-desk.js', 'scripts/build-index.js', 'scripts/build-lesson-plans.js',
+  'scripts/build-announcements.js', 'scripts/build-canvas-events.js']) {
   const run = spawnSync(process.execPath, [builder, '--check'], { cwd: ROOT, encoding: 'utf8' });
   const out = (run.stdout || '') + (run.stderr || '');
   process.stdout.write(out.split('\n').map(l => l ? '  ' + l : l).join('\n'));
@@ -36,7 +39,7 @@ for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js', 'scri
 if (failed) {
   console.log(`\n  ${R}FAIL${X}  a generated file does not match its content module`);
   console.log(`  ${D}These files are generated. Edit scripts/lib/week-content/, then run:${X}`);
-  console.log(`  ${D}  npm run build:weeks && npm run build:units && npm run build:index${X}\n`);
+  console.log(`  ${D}  npm run build:weeks && npm run build:units && npm run build:desk && npm run build:index${X}\n`);
   process.exit(1);
 }
 

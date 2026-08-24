@@ -1,9 +1,15 @@
 /* =========================================================
    BECURRENT OFFICIAL STYLE SYSTEM
 
-   Newsroom, not archive. BeHistorical is bronze and parchment; this is
-   newsprint, ink, and one signal accent. The two courses should never be
-   mistaken for each other at a glance.
+   The palette and the faces are in becurrent-brand.css, which every page links
+   first and which explains where each value came from. This file is components
+   only, and it defines no tokens of its own.
+
+   One family, two courses. BeCurrent and BeHistorical share a type family,
+   because they are the same method taught by the same teacher, and are told
+   apart by colour: BeHistorical is bronze on parchment, this is RED AND BLACK
+   on newsprint. There is no third accent anywhere in this file. Where a second
+   series has to be distinguished from the first, the second one is black.
 
    The polarity rule is carried over from BeHistorical deliberately, because the
    reasoning is about rooms and eyes rather than about history:
@@ -19,46 +25,40 @@
    So every surface a student READS is light. Dark surfaces are for surfaces
    students SCAN: the nav, the background-card grid, the footer.
    ========================================================= */
-:root{
-  /* Ink and paper */
-  --ink:#14171A;
-  --ink-soft:#3C444C;
-  --newsprint:#F4F2ED;
-  --clean-paper:#FFFEFB;
-  --paper-line:rgba(20,23,26,.14);
-
-  /* Slate, for the surfaces that get scanned */
-  --slate-900:#171B1F;
-  --slate-800:#232A31;
-  --slate-700:#333C45;
-  --slate-500:#5C6873;
-
-  /* One signal accent, plus a cool counterpart for the second series */
-  --signal:#B22222;
-  --signal-deep:#8A1A1A;
-  --signal-tint:rgba(178,34,34,.10);
-  --cool:#1F5673;
-  --cool-tint:rgba(31,86,115,.10);
-
-  --shadow:0 20px 60px rgba(20,23,26,.16);
-  --soft-shadow:0 10px 26px rgba(20,23,26,.10);
-  --radius:14px;
-
-  --sans:"Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
-  --mono:ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
+/* Motion is a preference the student already expressed in their OS, and this
+   course has no business overriding it. Smooth scrolling and the card lift are
+   pleasant defaults and a genuine problem for a vestibular disorder, which sits
+   squarely inside the accommodation load this room carries. Honour the setting
+   rather than making anyone ask.
+
+   Note this has to kill scroll-behavior too, not just transitions: the renderer
+   calls scrollIntoView in several places and a smooth scroll is the movement
+   most likely to be the problem. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
 body{
   margin:0;
   background:var(--newsprint);
   color:var(--ink);
-  font-family:var(--serif);
-  font-size:17px;
-  line-height:1.65;
+  font-family:var(--body);
+  /* 16px and 1.7, the same setting BeHistorical uses, because it is the same
+     face. Libre Baskerville has a very large x-height for its point size: at the
+     17px the previous sans wanted, it sets noticeably bigger than the old body
+     text rather than the same size in a different face. */
+  font-size:16px;
+  line-height:1.7;
 }
-a{color:var(--cool)}
+a{color:var(--signal-deep)}
 img{max-width:100%;display:block}
 .site-shell{min-height:100vh;display:flex;flex-direction:column}
 main{flex:1}
@@ -66,26 +66,33 @@ main{flex:1}
 /* ── Masthead ──────────────────────────────────────────────────────────────── */
 .topbar{
   position:sticky; top:0; z-index:30;
-  background:var(--slate-900);
+  background:var(--black-900);
   border-bottom:3px solid var(--signal);
 }
 .nav{
   width:min(1160px,92vw); margin:auto;
-  min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:22px;
+  min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:22px;
 }
-.brand-mini{
-  display:flex; align-items:baseline; gap:2px; text-decoration:none;
-  font-family:var(--sans);
-  font-weight:800; letter-spacing:-.01em; font-size:1.18rem;
-  color:var(--clean-paper);
-}
-.brand-mini .mark-be{opacity:.72;font-weight:600}
-.brand-mini .mark-c{color:var(--signal);}
+/* The masthead brand is the wordmark file itself, not type set to look like it.
+   Two reasons it is an <img> and not styled text: the mark's tracking and its
+   two-tone split would have to be reproduced by hand in every lockup, and an
+   <img> of a committed file cannot drift away from the logo the way a
+   hand-tuned span can. */
+.brand-mini{display:flex;align-items:center;text-decoration:none;min-height:24px}
+/* 38px, not the 21px the old mark used. The interlocking-C lockup is 4.1:1 where
+   the previous wordmark was 9.7:1, so at a fixed height it gives the word less
+   than half the width. At 21px the C swallows "URRENT" and the mark is a red
+   blob. 40px is the measured floor; 38 clears it inside a 64px nav. */
+.brand-mini img{height:38px;width:auto}
 .nav-links{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
 .nav-links a{
-  font-family:var(--sans);
+  font-family:var(--ui);
   text-transform:uppercase; letter-spacing:.1em; font-size:.68rem; font-weight:700;
   text-decoration:none; color:rgba(255,254,251,.74);
+  /* Padded to clear 24px, per WCAG 2.2 SC 2.5.8. The text is small on purpose,
+     the hit area does not have to be: an 18px-tall link is a miss on a phone
+     held one-handed, and this nav is the only way back to the front door. */
+  display:inline-flex; align-items:center; min-height:24px; padding:3px 2px;
 }
 .nav-links a:hover{color:var(--clean-paper)}
 
@@ -99,26 +106,34 @@ main{flex:1}
   box-shadow:var(--shadow);
   border-radius:var(--radius);
 }
+/* The hero on the front door and on a week page is the wordmark, in ink on
+   paper. Capped in px as well as in vw so it stops growing before it starts
+   competing with the week's actual headline underneath it. */
+.hero-wordmark{margin:0 0 2px}
+.hero-wordmark img{width:min(330px,58vw);height:auto}
+
+/* A unit page puts the unit's own name here instead, so this stays type. The
+   display face, well clear of the size floor in becurrent-brand.css. Cinzel is
+   caps-only, so this renders in caps whatever case the unit name is written in. */
 .logo-title{
-  margin:0; font-family:var(--sans); font-weight:800;
-  font-size:clamp(2.1rem,6vw,3.4rem); letter-spacing:-.02em; line-height:1.02;
-  color:var(--slate-900);
+  margin:0; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.9rem,5.4vw,3rem); letter-spacing:.015em; line-height:1.14;
+  color:var(--black-900);
 }
-.logo-title .hero-c{color:var(--signal)}
 .dateline{
-  margin:14px 0 0; font-family:var(--sans); font-size:.72rem; font-weight:700;
+  margin:14px 0 0; font-family:var(--ui); font-size:.72rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.14em; color:var(--signal-deep);
   padding-bottom:12px; border-bottom:1px solid var(--paper-line);
 }
 .hero-copy{margin:16px 0 0;font-size:1.14rem}
-.hero-copy strong{display:block;font-family:var(--sans);font-size:1.32rem;line-height:1.25;color:var(--slate-900)}
+.hero-copy strong{display:block;font-family:var(--body);font-weight:700;font-size:1.3rem;line-height:1.3;color:var(--black-900)}
 .hero-copy span{color:var(--ink-soft)}
 .quick-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 
 /* ── Buttons ───────────────────────────────────────────────────────────────── */
 .btn{
   display:inline-flex; align-items:center; gap:8px;
-  font-family:var(--sans); font-weight:700; font-size:.82rem;
+  font-family:var(--ui); font-weight:700; font-size:.82rem;
   letter-spacing:.03em;
   padding:10px 18px; border-radius:8px; cursor:pointer;
   text-decoration:none; border:1px solid var(--signal);
@@ -128,29 +143,37 @@ main{flex:1}
 .btn.secondary{background:transparent;color:var(--signal-deep)}
 .btn.secondary:hover{background:var(--signal-tint);color:var(--signal-deep)}
 .btn.quiet{background:transparent;border-color:var(--paper-line);color:var(--ink-soft)}
-.btn.quiet:hover{background:rgba(20,23,26,.05);color:var(--ink)}
+.btn.quiet:hover{background:rgba(20,20,20,.05);color:var(--ink)}
+/* The ring is ink rather than the accent, because in a two-colour scheme the
+   accent is already drawn on nearly every card border and a red ring would be a
+   ring the student has to work out is a ring. It inverts on the dark bands, or
+   it would be invisible exactly where the nav lives. */
 .btn:focus-visible,a:focus-visible,button:focus-visible,
 textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid var(--cool); outline-offset:2px;
+  outline:3px solid var(--focus); outline-offset:2px;
+}
+.topbar :focus-visible,.footer :focus-visible,.dark-panel :focus-visible,
+.background-figure :focus-visible,.lightbox :focus-visible{
+  outline-color:var(--focus-invert);
 }
 
 /* ── Sections ──────────────────────────────────────────────────────────────── */
 .section{width:min(1160px,92vw);margin:0 auto 34px;padding:0}
 .section-header{margin:0 0 20px}
 .eyebrow{
-  font-family:var(--sans); font-size:.68rem; font-weight:800;
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.16em; color:var(--signal-deep);
 }
 .section-header h2{
-  margin:6px 0 8px; font-family:var(--sans); font-weight:800;
-  font-size:clamp(1.4rem,3vw,2rem); letter-spacing:-.015em; color:var(--slate-900);
+  margin:6px 0 8px; font-family:var(--display); font-weight:700;
+  font-size:clamp(1.35rem,2.8vw,1.85rem); letter-spacing:.02em; line-height:1.2; color:var(--black-900);
 }
 .section-header p{margin:0;color:var(--ink-soft);max-width:70ch}
 .card{
   background:var(--clean-paper); border:1px solid var(--paper-line);
   border-radius:var(--radius); padding:24px; box-shadow:var(--soft-shadow);
 }
-.card h3{margin:0 0 14px;font-family:var(--sans);font-size:1.06rem;color:var(--slate-900)}
+.card h3{margin:0 0 14px;font-family:var(--display);font-weight:700;font-size:1.06rem;letter-spacing:.04em;color:var(--black-900)}
 
 /* ── Classroom Flow ────────────────────────────────────────────────────────── */
 .week-roadmap{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
@@ -160,7 +183,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   border-radius:10px; padding:14px 16px; font-size:.95rem;
 }
 .roadmap-step strong{
-  display:block; font-family:var(--sans); font-size:.72rem; font-weight:800;
+  display:block; font-family:var(--ui); font-size:.72rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em; color:var(--signal-deep); margin-bottom:6px;
 }
 
@@ -171,9 +194,9 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   border-radius:10px; padding:14px 16px;
 }
 .target-item .skill-chip{
-  display:inline-block; font-family:var(--sans); font-size:.64rem; font-weight:800;
+  display:inline-block; font-family:var(--ui); font-size:.64rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.1em;
-  background:var(--cool-tint); color:var(--cool);
+  background:var(--ink-tint); color:var(--ink);
   padding:3px 8px; border-radius:999px; margin-bottom:8px;
 }
 
@@ -192,37 +215,37 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-family:var(--mono); font-size:.7rem; font-weight:700;
   letter-spacing:.08em; color:var(--signal-deep);
 }
-.module-card h3{margin:8px 0 6px;font-family:var(--sans);font-size:1.04rem;color:var(--slate-900)}
+.module-card h3{margin:8px 0 6px;font-family:var(--display);font-weight:700;font-size:1.04rem;letter-spacing:.04em;line-height:1.25;color:var(--black-900)}
 .module-card p{margin:0;font-size:.9rem;color:var(--ink-soft)}
 .module-card .module-kind{
-  display:inline-block; margin-top:12px; font-family:var(--sans);
-  font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em;
-  color:var(--slate-500);
+  display:inline-block; margin-top:12px; font-family:var(--ui);
+  font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--black-500);
 }
 
 /* ── Background cards: the one dark grid, because they are scanned ─────────── */
 .dark-panel{
-  background:var(--slate-900); color:var(--clean-paper);
+  background:var(--black-900); color:var(--clean-paper);
   border-radius:var(--radius); padding:30px 26px; margin-bottom:34px;
   width:min(1160px,92vw); margin-left:auto; margin-right:auto;
 }
-.dark-panel .eyebrow{color:#E8A0A0}
+.dark-panel .eyebrow{color:var(--signal-pale)}
 .dark-panel .section-header h2{color:var(--clean-paper)}
 .dark-panel .section-header p{color:rgba(255,254,251,.72)}
 .background-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .background-card{
   text-align:left; width:100%; font:inherit; cursor:pointer;
-  background:var(--slate-800); color:var(--clean-paper);
-  border:1px solid var(--slate-700); border-radius:12px; padding:18px;
+  background:var(--black-800); color:var(--clean-paper);
+  border:1px solid var(--black-700); border-radius:12px; padding:18px;
 }
-.background-card:hover{border-color:var(--signal);background:var(--slate-700)}
-.background-card h3{margin:0 0 6px;font-family:var(--sans);font-size:1rem;color:var(--clean-paper)}
+.background-card:hover{border-color:var(--signal);background:var(--black-700)}
+.background-card h3{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:.045em;line-height:1.25;color:var(--clean-paper)}
 .background-card p{margin:0;font-size:.86rem;color:rgba(255,254,251,.7)}
 
 /* ── Modals ────────────────────────────────────────────────────────────────── */
 .pop-modal,.background-modal,.lightbox{
   position:fixed; inset:0; z-index:60;
-  background:rgba(20,23,26,.72);
+  background:rgba(17,17,17,.72);
   display:none; align-items:flex-start; justify-content:center;
   padding:24px; overflow-y:auto;
 }
@@ -237,10 +260,10 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   padding:20px 24px; border-bottom:1px solid var(--paper-line);
   position:sticky; top:0; background:var(--clean-paper); border-radius:var(--radius) var(--radius) 0 0;
 }
-.pop-header h2{margin:4px 0 0;font-family:var(--sans);font-size:1.24rem;color:var(--slate-900)}
+.pop-header h2{margin:4px 0 0;font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.025em;line-height:1.22;color:var(--black-900)}
 .pop-body{padding:24px}
 .pop-body h4{
-  margin:22px 0 8px; font-family:var(--sans); font-size:.72rem; font-weight:800;
+  margin:22px 0 8px; font-family:var(--ui); font-size:.72rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
 }
 .pop-body h4:first-child{margin-top:0}
@@ -252,15 +275,15 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
    but a pale one would leave the title unreadable with every check still green. */
 .background-panel{width:min(940px,100%)}
 .background-body{padding:26px}
-.background-body h2{margin:0 0 4px;font-family:var(--sans);font-size:1.5rem;color:var(--slate-900)}
+.background-body h2{margin:0 0 4px;font-family:var(--display);font-weight:700;font-size:1.45rem;letter-spacing:.02em;line-height:1.2;color:var(--black-900)}
 .background-body .card-rule{height:3px;background:var(--signal);width:64px;margin:12px 0 18px}
 .background-body ul{margin:0;padding-left:1.1rem}
 .background-body li{margin-bottom:10px}
 .background-body strong{color:var(--signal-deep)}
-.background-figure{background:var(--slate-900);border-radius:10px;padding:12px;margin:0 0 18px}
+.background-figure{background:var(--black-900);border-radius:10px;padding:12px;margin:0 0 18px}
 .background-figure img{border-radius:6px;margin:auto}
 .background-figure figcaption{
-  font-family:var(--sans); font-size:.74rem; color:rgba(255,254,251,.72);
+  font-family:var(--ui); font-size:.74rem; color:rgba(255,254,251,.72);
   margin-top:10px; text-align:center;
 }
 .deck-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid var(--paper-line)}
@@ -270,7 +293,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 .lightbox figure{margin:auto;max-width:min(1100px,100%)}
 .lightbox img{border-radius:10px;margin:auto}
 .lightbox figcaption{
-  color:var(--clean-paper); font-family:var(--sans); font-size:.84rem;
+  color:var(--clean-paper); font-family:var(--ui); font-size:.84rem;
   text-align:center; margin-top:12px;
 }
 .enlargeable{cursor:zoom-in;border:1px solid var(--paper-line);border-radius:8px;background:none;padding:0;width:100%}
@@ -281,45 +304,55 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   border-radius:0 10px 10px 0; padding:14px 16px; margin:0 0 14px;
 }
 .prompt-block .prompt-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
   display:block; margin-bottom:6px;
 }
 .work-area{
   width:100%; min-height:150px; padding:12px 14px;
-  font-family:var(--serif); font-size:1rem; line-height:1.6; color:var(--ink);
+  font-family:var(--body); font-size:1rem; line-height:1.6; color:var(--ink);
   background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
   resize:vertical;
 }
-.confidence{margin:14px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.confidence .confidence-label{
-  font-family:var(--sans); font-size:.66rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft);
-}
+/* The confidence scale, module pop-out flavour. Deliberately identical to
+   .q-confidence in becurrent-brief.css: a student meets both inside one lesson, so
+   the scale has to look like one scale. The word is on the button rather than in a
+   legend to the right of the row; see the note over .q-confidence for why. */
+.confidence{margin:14px 0 0;display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
 .confidence button{
-  font-family:var(--sans); font-size:.82rem; font-weight:700;
-  width:34px; height:34px; border-radius:50%; cursor:pointer;
-  border:1px solid var(--paper-line); background:var(--clean-paper); color:var(--ink-soft);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:2px; min-width:78px; padding:7px 10px; cursor:pointer;
+  border:1px solid var(--paper-line); border-radius:9px;
+  background:var(--clean-paper); color:var(--ink-soft);
 }
-.confidence button[aria-pressed="true"]{background:var(--cool);border-color:var(--cool);color:var(--clean-paper)}
+.confidence .conf-num{font-family:var(--ui);font-size:.86rem;font-weight:700;line-height:1}
+.confidence .conf-word{
+  font-family:var(--ui); font-size:.64rem; font-weight:700; line-height:1.15;
+  text-transform:uppercase; letter-spacing:.06em; text-align:center;
+}
+.confidence button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--clean-paper)}
+@media (max-width:560px){
+  .confidence .conf-word{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .confidence button{min-width:0;width:36px;height:36px;border-radius:50%;padding:0}
+}
 
 /* ── Outlet comparison table ───────────────────────────────────────────────── */
 .outlet-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:0 0 18px}
 .outlet{background:var(--newsprint);border:1px solid var(--paper-line);border-radius:10px;padding:16px}
 .outlet .outlet-name{
-  font-family:var(--sans); font-size:.68rem; font-weight:800;
-  text-transform:uppercase; letter-spacing:.1em; color:var(--cool); margin-bottom:8px;
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--ink); margin-bottom:8px;
 }
-.outlet .outlet-headline{font-family:var(--sans);font-weight:700;font-size:1rem;color:var(--slate-900);margin:0 0 8px}
+.outlet .outlet-headline{font-family:var(--body);font-weight:700;font-size:1rem;line-height:1.4;color:var(--black-900);margin:0 0 8px}
 .outlet .outlet-lede{margin:0;font-size:.92rem;color:var(--ink-soft)}
 
 /* ── Claim sorting ─────────────────────────────────────────────────────────── */
 .statement-list{display:grid;gap:10px;margin:0 0 18px;padding:0;list-style:none}
 .statement{
   background:var(--newsprint); border:1px solid var(--paper-line);
-  border-left:4px solid var(--slate-500); border-radius:0 8px 8px 0; padding:12px 14px;
+  border-left:4px solid var(--black-500); border-radius:0 8px 8px 0; padding:12px 14px;
 }
-.statement .statement-num{font-family:var(--mono);font-size:.7rem;color:var(--slate-500);margin-right:8px}
+.statement .statement-num{font-family:var(--mono);font-size:.7rem;color:var(--black-500);margin-right:8px}
 
 /* ── Checklist ─────────────────────────────────────────────────────────────── */
 .step-list{margin:0 0 18px;padding-left:1.2rem}
@@ -328,7 +361,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 /* ── Gather panel ──────────────────────────────────────────────────────────── */
 .gather-panel{
   background:var(--clean-paper); border:1px solid var(--paper-line);
-  border-top:4px solid var(--cool); border-radius:var(--radius);
+  border-top:4px solid var(--ink); border-radius:var(--radius);
   padding:24px; box-shadow:var(--soft-shadow);
 }
 .gather-output{
@@ -336,7 +369,7 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   font-family:var(--mono); font-size:.78rem; line-height:1.5;
   background:var(--newsprint); border:1px solid var(--paper-line); border-radius:8px;
 }
-.gather-status{font-family:var(--sans);font-size:.86rem;font-weight:700;margin:12px 0 0}
+.gather-status{font-family:var(--ui);font-size:.86rem;font-weight:700;margin:12px 0 0}
 .gather-status.short{color:var(--signal-deep)}
 .gather-status.complete{color:#1B6E3C}
 
@@ -349,25 +382,26 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 .video-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .video-card{
   background:var(--clean-paper); border:1px solid var(--paper-line);
-  border-top:4px solid var(--cool); border-radius:var(--radius);
+  border-top:4px solid var(--ink); border-radius:var(--radius);
   padding:20px 18px; box-shadow:var(--soft-shadow);
   display:flex; flex-direction:column; gap:10px;
 }
-.video-card h3{margin:0;font-family:var(--sans);font-size:1.06rem;color:var(--slate-900)}
+.video-card h3{margin:0;font-family:var(--display);font-weight:700;font-size:1.06rem;letter-spacing:.04em;line-height:1.25;color:var(--black-900)}
 .video-card .video-meta{
-  margin:0; font-family:var(--sans); font-size:.74rem; font-weight:700;
-  letter-spacing:.04em; color:var(--cool);
+  margin:0; font-family:var(--ui); font-size:.74rem; font-weight:700;
+  letter-spacing:.04em; color:var(--ink-soft);
 }
 .video-card .prompt-block{margin:0}
 .video-card .btn{align-self:flex-start;margin-top:auto}
 
 /* ── Footer ────────────────────────────────────────────────────────────────── */
 .footer{
-  background:var(--slate-900); color:rgba(255,254,251,.72);
+  background:var(--black-900); color:rgba(255,254,251,.72);
   padding:30px 0; margin-top:20px; border-top:3px solid var(--signal);
 }
 .footer-inner{width:min(1160px,92vw);margin:auto}
-.footer-brand{font-family:var(--sans);font-weight:800;font-size:1.1rem;color:var(--clean-paper)}
+/* Same floor as the masthead, scaled for a quieter band. */
+.footer-brand img{height:30px;width:auto}
 .footer p{margin:6px 0 0;font-size:.88rem}
 
 
@@ -392,13 +426,24 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
   letter-spacing:.06em; color:var(--signal-deep);
 }
 .unit-card h3{
-  margin:0; font-family:var(--sans); font-weight:800;
-  font-size:1.3rem; letter-spacing:-.015em; color:var(--slate-900);
+  margin:0; font-family:var(--display); font-weight:700;
+  font-size:1.28rem; letter-spacing:.025em; line-height:1.24; color:var(--black-900);
 }
 .unit-card p{margin:0;font-size:.98rem;color:var(--ink-soft);font-style:italic}
+/* A unit that has not been written yet, and the second half of the block anatomy.
+   Not an <a>, because a card that looks clickable and is not is worse than one
+   that says so. A grey rule rather than a red one is the tell: red means there
+   is something here. */
+.unit-card.planned{
+  border-top-color:var(--black-500);
+  box-shadow:none; background:var(--newsprint);
+}
+.unit-card.planned:hover{transform:none;box-shadow:none}
+.unit-card.planned .unit-kicker{color:var(--black-500)}
+
 .unit-card .unit-meta{
   margin-top:auto; padding-top:6px;
-  font-family:var(--sans); font-size:.72rem; font-weight:700; color:var(--slate-500);
+  font-family:var(--ui); font-size:.72rem; font-weight:700; color:var(--black-500);
 }
 
 /* ── Unit page ─────────────────────────────────────────────────────────────────
@@ -406,43 +451,65 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
    Block 1 is what Block 4 checks against a real document. The connecting rule down
    the left is drawn for the same reason, and it stops before the last card so the
    arc reads as finished rather than cut off. */
-.terminal-question{border-top:4px solid var(--cool)}
+.terminal-question{border-top:4px solid var(--ink)}
 .terminal-question-text{
-  margin:0 0 12px; font-family:var(--sans); font-weight:700;
-  font-size:clamp(1.15rem,2.6vw,1.5rem); line-height:1.32; color:var(--slate-900);
+  margin:0 0 12px; font-family:var(--body); font-weight:700;
+  font-size:clamp(1.2rem,2.4vw,1.42rem); line-height:1.4; color:var(--black-900);
   text-wrap:balance;
 }
 .terminal-question-note{margin:0;font-size:.95rem;color:var(--ink-soft)}
 
-.block-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
-.block-card{
+.topic-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.topic-card{
   position:relative;
   background:var(--clean-paper); border:1px solid var(--paper-line);
   border-left:4px solid var(--signal); border-radius:0 var(--radius) var(--radius) 0;
   padding:20px 22px; box-shadow:var(--soft-shadow);
 }
-.block-card .block-num{
+.topic-card .topic-num{
   font-family:var(--mono); font-size:.72rem; font-weight:700;
   letter-spacing:.08em; color:var(--signal-deep);
 }
-.block-card h3{
-  margin:6px 0 4px; font-family:var(--sans); font-weight:800;
-  font-size:1.22rem; letter-spacing:-.01em; color:var(--slate-900);
+.topic-card h3{
+  margin:6px 0 4px; font-family:var(--display); font-weight:700;
+  font-size:1.24rem; letter-spacing:.025em; line-height:1.24; color:var(--black-900);
 }
-.block-card h3 em{font-style:normal;color:var(--signal)}
-.block-card .block-sub{margin:0 0 10px;font-style:italic;color:var(--ink-soft)}
-.block-card .block-inclass{margin:0 0 12px;font-size:.96rem}
-.block-card .block-onpaper{
-  margin:0; font-family:var(--sans); font-size:.84rem; font-weight:700;
-  color:var(--slate-500);
+.topic-card h3 em{font-style:normal;color:var(--signal)}
+.topic-card .topic-sub{margin:0 0 10px;font-style:italic;color:var(--ink-soft)}
+.topic-card .topic-inclass{margin:0 0 12px;font-size:.96rem}
+.topic-card .topic-onpaper{
+  margin:0; font-family:var(--ui); font-size:.84rem; font-weight:700;
+  color:var(--black-500);
 }
-.block-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.topic-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+
+/* The lesson plan, folded. The unit page is a map: a student looking for the
+   topic they missed should not scroll past thirty "I can" statements to find it.
+   The board projects these open, which is where they get read aloud. */
+.topic-plan{margin:0 0 14px;border-top:1px solid var(--paper-line);padding-top:12px}
+.topic-plan>summary{
+  cursor:pointer; font-family:var(--ui); font-size:.78rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.06em; color:var(--signal-deep);
+}
+.topic-plan>summary:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.topic-overview{margin:12px 0 0;font-size:.95rem}
+.target-group{margin-top:14px}
+.target-group h4{
+  margin:0 0 6px; font-family:var(--ui); font-size:.72rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--black-500);
+}
+.target-list{margin:0;padding-left:20px;display:grid;gap:6px}
+.target-list li{font-size:.94rem;line-height:1.55}
+.target-skill{
+  display:block; font-family:var(--ui); font-size:.62rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--signal-deep);
+}
 
 .competency-tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
 .competency-tag{
-  font-family:var(--sans); font-size:.62rem; font-weight:800;
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
   text-transform:uppercase; letter-spacing:.08em;
-  background:var(--cool-tint); color:var(--cool);
+  background:var(--ink-tint); color:var(--ink);
   padding:3px 8px; border-radius:999px; cursor:help;
 }
 
@@ -454,10 +521,157 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 .competency-n{
   flex:0 0 auto; width:1.7rem; height:1.7rem; border-radius:50%;
   display:inline-flex; align-items:center; justify-content:center;
-  background:var(--cool-tint); color:var(--cool);
-  font-family:var(--sans); font-size:.78rem; font-weight:800;
+  background:var(--ink-tint); color:var(--ink);
+  font-family:var(--ui); font-size:.78rem; font-weight:700;
   font-variant-numeric:tabular-nums;
 }
+
+/* ── The Desk: finding a story ─────────────────────────────────────────────────
+   The source buttons. Grouped by the job each does, because the student's real
+   question is "where do I look for a LOCAL story" and a flat list of a dozen
+   outlets does not answer it.
+
+   The grid floor is minmax(min(100%,N),1fr), never minmax(N,1fr). A bare floor is
+   a width the track cannot go under, so at a 320px viewport a 200px card inside a
+   wrap that has already spent its padding scrolls the whole page sideways. */
+.source-stack{display:grid;gap:22px}
+.source-group{
+  background:var(--clean-paper); border:1px solid var(--paper-line);
+  border-top:4px solid var(--signal); border-radius:var(--radius);
+  padding:20px 18px; box-shadow:var(--soft-shadow);
+}
+.source-what{margin:6px 0 14px;font-size:.94rem;color:var(--ink-soft)}
+/* A real button per outlet, not a hyperlinked word.
+
+   A run of underlined names reads as prose to skim past, and Hunt is the step a
+   student has five minutes for: a button is a thing you press, and it is a target
+   you can hit with a thumb. Hence a full 2px border rather than a left rule, a
+   solid paper ground, and a press state that fills with --signal.
+
+   The note stays inside the button because "who is Al Jazeera" is the whole reason
+   the button is worth pressing rather than guessed at. It inverts with the rest of
+   the button on hover, so the pressed state is one object changing colour instead
+   of a label and a caption disagreeing.
+
+   min-height gives every button in a row the same height whatever its note's
+   length, so a group reads as a row of buttons and not a ragged stack of cards. */
+.source-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr))}
+.source-btn{
+  display:flex; flex-direction:column; gap:5px; text-decoration:none;
+  min-height:74px; padding:12px 14px;
+  background:var(--clean-paper); border:2px solid var(--ink); border-radius:10px;
+  color:var(--ink); box-shadow:0 1px 0 var(--paper-line);
+  transition:background .12s ease, color .12s ease, transform .12s ease;
+}
+.source-btn:hover,.source-btn:active{
+  background:var(--signal); border-color:var(--signal); color:var(--clean-paper);
+  transform:translateY(-1px);
+}
+.source-name{
+  font-family:var(--ui); font-size:.8rem; font-weight:700;
+  letter-spacing:.04em; color:var(--black-900);
+}
+.source-note{font-size:.82rem;line-height:1.35;color:var(--ink-soft)}
+/* Both spans inherit the inverted colour, so the whole button flips as one thing. */
+.source-btn:hover .source-name,.source-btn:active .source-name,
+.source-btn:hover .source-note,.source-btn:active .source-note{color:var(--clean-paper)}
+
+/* The day divider inside the gathered paste. The <h2> is the day; every question
+   heading under it is an <h3>. See dayBannerHtml in desk-capture-block.js for why
+   the day is structurally part of a record label rather than free text. */
+.gather-output h2{
+  margin:22px 0 4px; font-family:var(--display); font-weight:700;
+  font-size:1rem; letter-spacing:.04em; color:var(--signal-deep);
+  border-bottom:2px solid var(--signal); padding-bottom:5px;
+}
+.gather-output h2:first-child{margin-top:0}
+.gather-output h3{
+  margin:16px 0 4px; font-family:var(--ui); font-size:.76rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--black-900);
+}
+/* The repeated date inside a question heading. Every record has to print its whole
+   label or the parser reports MISSING_BODY, so under a day banner the date is said
+   again five more times. It is made quiet rather than removed: the words have to be
+   there, they just do not have to shout. */
+.gather-output .rec-day{font-weight:400;color:var(--black-500)}
+
+/* ── The Desk: filing a story ──────────────────────────────────────────────────
+   One card per lane. The lane's question is the largest thing on it, because
+   "bring a local story" is a scavenger hunt and the question is the part that
+   makes it an assignment. */
+.story-stack{display:grid;gap:20px}
+.story-card{border-top:4px solid var(--signal)}
+.lane-scope{margin:6px 0 0;font-family:var(--ui);font-size:.78rem;color:var(--black-500)}
+.lane-question{
+  margin:8px 0 0; font-family:var(--body); font-weight:700;
+  font-size:1.15rem; line-height:1.42; color:var(--black-900); text-wrap:balance;
+}
+
+/* The three facts. Single-line inputs on purpose: the box shape says "this is a
+   lookup, not an essay", which is the whole reason the facts sit apart from the
+   questions. Three across on a desktop, stacked on a phone. */
+.fact-row{
+  display:grid; gap:12px; margin:18px 0 4px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));
+}
+.fact{
+  display:flex; flex-direction:column; gap:3px;
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-radius:8px; padding:12px 13px;
+}
+.fact-label{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+}
+.fact-ask{margin:0;font-size:.86rem;color:var(--ink-soft)}
+.fact-input{
+  margin-top:5px; width:100%; padding:8px 10px;
+  font-family:var(--body); font-size:.95rem; color:var(--ink);
+  background:var(--clean-paper); border:1px solid var(--paper-line); border-radius:6px;
+}
+
+/* The two questions. Same shape as a Brief's .question-item, which lives in
+   becurrent-brief.css: a student meets both inside one block, so they have to read
+   as one kind of thing. The classes are separate because this page loads
+   becurrent.css only, and linking the whole reading stylesheet to borrow three
+   rules would drag in every reading style with it. */
+.desk-q{border-top:1px solid var(--paper-line);margin-top:20px;padding-top:18px}
+.desk-q-num{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--signal-deep);
+  margin-right:10px;
+}
+.desk-q-skill{
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em;
+  background:var(--ink-tint); color:var(--ink);
+  padding:3px 8px; border-radius:999px;
+}
+.desk-q-text{
+  margin:10px 0 0; font-family:var(--body); font-weight:700;
+  font-size:1.06rem; line-height:1.45; color:var(--black-900);
+}
+.desk-q .work-area{min-height:104px;margin-top:16px}
+
+/* The date the sheet is filed under, written by the capture block at load. On the
+   page so that "my work disappeared" and "I am looking at tomorrow" are
+   distinguishable without opening devtools. */
+.desk-today{color:var(--signal-deep)}
+.gather-placeholder{margin:0;font-family:var(--ui);font-size:.82rem;color:var(--black-500)}
+
+.tier-strip{display:grid;gap:12px;margin-top:20px;grid-template-columns:1fr}
+@media (min-width:660px){.tier-strip{grid-template-columns:1fr 1fr}}
+.tier-strip .tier{
+  background:var(--newsprint); border:1px solid var(--paper-line);
+  border-left:4px solid var(--ink); border-radius:0 10px 10px 0; padding:14px 16px;
+}
+.tier-strip .tier-label{
+  display:block; font-family:var(--ui); font-size:.64rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--ink); margin-bottom:6px;
+}
+.tier-strip .tier p{margin:0;font-size:.95rem}
+.ways{margin:6px 0 0;padding-left:1.1rem}
+.ways li{margin-bottom:4px;font-size:.95rem}
 
 /* ── Week index cards ──────────────────────────────────────────────────────── */
 .week-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
@@ -470,12 +684,17 @@ textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
 }
 .week-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .week-card .week-num{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--signal-deep)}
-.week-card h3{margin:8px 0 6px;font-family:var(--sans);font-size:1.06rem;color:var(--slate-900)}
+.week-card h3{margin:8px 0 6px;font-family:var(--display);font-weight:700;font-size:1.06rem;letter-spacing:.04em;line-height:1.25;color:var(--black-900)}
 .week-card p{margin:0;font-size:.9rem;color:var(--ink-soft)}
-.week-card.upcoming{opacity:.6;border-top-color:var(--slate-500);cursor:default}
+.week-card.upcoming{opacity:.6;border-top-color:var(--black-500);cursor:default}
 
 @media (max-width:640px){
-  body{font-size:16px}
+  /* The mark is a wide lockup, and Cinzel made it wider: at 21px tall it is
+     about 200px of a 390px screen, which left the nav links wrapping into two
+     ragged rows beside it. Below 640px the brand takes its own row and the
+     links sit under it, left aligned, rather than competing for one line. */
+  .nav{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0}
+  .nav-links{justify-content:flex-start;gap:14px}
   .hero{padding:26px 20px}
   .dark-panel{padding:22px 18px}
   .pop-body,.background-body{padding:18px}

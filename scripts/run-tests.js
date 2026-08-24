@@ -37,10 +37,13 @@ const SUITES = {
     ['scripts/test/weeks-reproducible.test.js', 'generated weeks match their content modules'],
     ['scripts/test/video-block.test.js', 'video path through a brief, both states'],
     ['scripts/test/canvas-paragraphs.test.js', 'Canvas blank-line round trip, both course sentinels'],
-    ['scripts/test/canvas-zip.test.js', 'zip reader + CLI/browser CSV parity']
+    ['scripts/test/canvas-zip.test.js', 'zip reader + CLI/browser CSV parity'],
+    ['scripts/test/canvas-events.test.js', 'calendar events: both flavours agree, nothing leaks']
   ],
   browser: [
-    ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip']
+    ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip'],
+    ['scripts/test/brief-gather.test.js', 'the brief\'s own route to Canvas: formatting, footer, parser round trip'],
+    ['scripts/test/desk.test.js', 'the Desk: dated sheet, reload, weekly gather, parser round trip']
   ]
 };
 

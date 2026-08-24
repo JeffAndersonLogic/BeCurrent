@@ -272,12 +272,23 @@ function weekDirs() {
 
       if (wrapper) {
         // The brief is nested one level deeper, inside the wrapper.
+        //
+        // Waiting on readyState and not only on #answer-q1 existing. The textarea
+        // is in the DOM the moment the parser reaches it, but the capture block is
+        // an inline script at the END of the document, so between those two points
+        // there is a live window where the textarea exists and nothing is listening
+        // to it. Typing in that window dispatches an input event into the void: the
+        // storage write never happens and the assertion below times out reporting an
+        // empty record, which looks exactly like a broken capture block. readyState
+        // leaving 'loading' means the parser finished, which means that script ran.
+        // The window is small and it widened when the briefs started loading
+        // webfonts, which is how it got noticed.
         await page.waitForFunction(() => {
           const outer = document.querySelector('#pop-body iframe.module-frame');
           try {
             const inner = outer.contentDocument.getElementById('brief-frame');
-            return !!(inner && inner.contentDocument
-              && inner.contentDocument.getElementById('answer-q1'));
+            const doc = inner && inner.contentDocument;
+            return !!(doc && doc.readyState !== 'loading' && doc.getElementById('answer-q1'));
           } catch (e) { return false; }
         }, null, { timeout: 10000 });
 
