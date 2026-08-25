@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Media Assessment Study Guide | BeCurrent</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/becurrent-brand.css">
+<link rel="stylesheet" href="../assets/css/becurrent.css">
+<style>
+:root{
+  --guide-ink:#14171A;
+  --guide-ink-soft:#3C444C;
+  --guide-newsprint:#F4F2ED;
+  --guide-paper:#FFFEFB;
+  --guide-line:rgba(20,23,26,.14);
+  --guide-slate:#171B1F;
+  --guide-muted:#5C6873;
+  --guide-signal:#B22222;
+  --guide-signal-deep:#8A1A1A;
+  --guide-signal-tint:rgba(178,34,34,.10);
+  --guide-cool:#1F5673;
+  --guide-cool-tint:rgba(31,86,115,.10);
+  --guide-sans:"Source Sans 3","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --guide-serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --guide-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--guide-newsprint);color:var(--guide-ink)}
+.guide-masthead{background:var(--guide-slate);color:#fff;border-bottom:4px solid var(--guide-signal)}
+.guide-masthead-inner{width:min(1180px,94vw);margin:auto;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.guide-brand img{display:block;width:170px;height:auto;filter:brightness(0) invert(1)}
+.guide-meta{font-family:var(--guide-mono);font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:#E8A0A0;margin:0 0 5px}
+.guide-titleline{font-family:var(--guide-sans);font-weight:800;font-size:1rem;color:rgba(255,255,255,.82);margin:0}
+.guide-actions{display:flex;gap:8px;flex-wrap:wrap}
+.guide-actions a{font-family:var(--guide-sans);font-size:.76rem;font-weight:800;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:8px 11px}
+.guide-actions a:hover{background:rgba(255,255,255,.08)}
+.guide-shell{width:min(1180px,94vw);margin:28px auto 50px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px}
+.guide-side{position:sticky;top:18px;align-self:start}
+.guide-nav{background:var(--guide-paper);border:1px solid var(--guide-line);border-top:4px solid var(--guide-signal);border-radius:12px;padding:16px}
+.guide-nav-kicker{font-family:var(--guide-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--guide-signal-deep);font-weight:800}
+.guide-nav h2{margin:5px 0 10px;font-family:var(--guide-sans);font-size:1rem}
+.guide-nav ol{list-style:none;padding:0;margin:0}
+.guide-nav li{border-top:1px solid var(--guide-line)}
+.guide-nav a{display:block;padding:7px 3px;text-decoration:none;font-family:var(--guide-sans);font-size:.77rem;font-weight:700;color:var(--guide-ink-soft)}
+.guide-nav a:hover{color:var(--guide-signal-deep)}
+.guide-note{margin-top:14px;background:var(--guide-slate);color:#fff;border-radius:10px;padding:14px;font-size:.81rem;line-height:1.45}
+.guide-note strong{display:block;font-family:var(--guide-sans);color:#E8A0A0;margin-bottom:4px}
+.guide-main{min-width:0}
+.guide-hero{background:var(--guide-paper);border:1px solid var(--guide-line);border-top:5px solid var(--guide-signal);border-radius:14px 14px 0 0;padding:31px 32px}
+.guide-eyebrow{font-family:var(--guide-sans);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.14em;color:var(--guide-signal-deep)}
+.guide-hero h1{margin:8px 0 9px;font-family:var(--guide-sans);font-size:clamp(2rem,4vw,3rem);line-height:1.05;letter-spacing:-.035em;color:var(--guide-slate)}
+.guide-hero h1 em{font-style:normal;color:var(--guide-signal)}
+.guide-deck{margin:0;font-family:var(--guide-serif);font-size:1.08rem;font-style:italic;color:var(--guide-ink-soft)}
+.guide-eq{margin-top:20px;padding:15px 17px;background:var(--guide-cool-tint);border-left:4px solid var(--guide-cool);border-radius:0 10px 10px 0}
+.guide-eq strong{display:block;font-family:var(--guide-sans);font-size:.64rem;text-transform:uppercase;letter-spacing:.12em;color:var(--guide-cool);margin-bottom:4px}
+.guide-eq p{margin:0;font-family:var(--guide-serif);font-size:1.02rem;font-weight:700}
+.guide-intro{background:var(--guide-paper);border:1px solid var(--guide-line);border-top:0;padding:22px 32px 26px}
+.guide-intro-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.guide-info{background:var(--guide-newsprint);border:1px solid var(--guide-line);border-left:4px solid var(--guide-cool);border-radius:0 10px 10px 0;padding:14px 16px}
+.guide-info strong{display:block;font-family:var(--guide-sans);font-size:.67rem;text-transform:uppercase;letter-spacing:.1em;color:var(--guide-cool)}
+.guide-info p{margin:5px 0 0;font-size:.92rem}
+.guide-section{position:relative;margin-top:22px;background:var(--guide-paper);border:1px solid var(--guide-line);border-radius:12px;padding:24px 28px 26px}
+.guide-section:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--guide-signal);border-radius:12px 0 0 12px}
+.guide-num{position:absolute;right:18px;top:10px;font-family:var(--guide-sans);font-weight:900;font-size:3rem;line-height:1;color:rgba(20,23,26,.055)}
+.guide-label{font-family:var(--guide-sans);font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.14em;color:var(--guide-signal-deep)}
+.guide-section h2{margin:6px 0 14px;font-family:var(--guide-sans);font-size:1.42rem;letter-spacing:-.015em;color:var(--guide-slate)}
+.guide-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.guide-box{background:var(--guide-newsprint);border:1px solid var(--guide-line);border-radius:10px;padding:15px 16px}
+.guide-box.concepts{border-top:3px solid var(--guide-signal)}
+.guide-box.connections{border-top:3px solid var(--guide-cool)}
+.guide-box.examples{border-top:3px solid var(--guide-muted)}
+.guide-box h3{margin:0 0 8px;font-family:var(--guide-sans);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;color:var(--guide-slate)}
+.guide-box ul{margin:0;padding-left:19px}
+.guide-box li{margin:5px 0;font-size:.93rem}
+.guide-connection{margin-top:14px;background:var(--guide-slate);color:#fff;border-radius:10px;padding:13px 15px;font-family:var(--guide-sans);font-weight:800;text-align:center;line-height:1.5}
+.guide-arrow{color:#E8A0A0;padding:0 5px}
+.guide-pills{margin:4px 0 14px;display:flex;gap:8px;flex-wrap:wrap}
+.guide-pill{font-family:var(--guide-sans);font-size:.72rem;font-weight:800;background:var(--guide-signal-tint);color:var(--guide-signal-deep);border:1px solid rgba(178,34,34,.2);padding:5px 10px;border-radius:999px}
+.guide-end{margin-top:24px;background:var(--guide-slate);color:#fff;border-radius:12px;padding:24px 26px}
+.guide-end .guide-label{color:#E8A0A0}
+.guide-end h2{margin:6px 0 10px;font-family:var(--guide-sans);font-size:1.45rem}
+.guide-end p{margin:0;color:rgba(255,255,255,.84)}
+.guide-chain{margin-top:16px;padding:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;font-family:var(--guide-sans);text-align:center;font-weight:800;line-height:1.7}
+.guide-footer{width:min(1180px,94vw);margin:0 auto 40px;padding:18px 0;border-top:1px solid var(--guide-line);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-family:var(--guide-sans);font-size:.78rem;color:var(--guide-ink-soft)}
+.guide-footer a{font-weight:800;color:var(--guide-signal-deep);text-decoration:none}
+@media(max-width:900px){.guide-shell{grid-template-columns:1fr}.guide-side{position:static}.guide-nav ol{columns:2}}
+@media(max-width:700px){.guide-masthead-inner{align-items:flex-start;flex-direction:column}.guide-cols,.guide-intro-grid{grid-template-columns:1fr}.guide-hero,.guide-intro,.guide-section{padding-left:20px;padding-right:20px}.guide-nav ol{columns:1}}
+</style>
+</head>
+<body>
+<header class="guide-masthead">
+  <div class="guide-masthead-inner">
+    <a class="guide-brand" href="../index.html" aria-label="BeCurrent home"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450"></a>
+    <div>
+      <p class="guide-meta">Current Events · Social Media · Assessment Prep</p>
+      <p class="guide-titleline">Conceptual Study Guide</p>
+    </div>
+    <div class="guide-actions">
+      <a href="index.html">Social Media Unit</a>
+      <a href="#top">Top</a>
+    </div>
+  </div>
+</header>
+
+<div class="guide-shell" id="top">
+  <aside class="guide-side">
+    <nav class="guide-nav" aria-label="Study guide sections">
+      <div class="guide-nav-kicker">Assessment Map</div>
+      <h2>What to know</h2>
+      <ol>
+        <li><a href="#s1">01 · Attention Economy</a></li>
+        <li><a href="#s2">02 · Algorithms & Ranking</a></li>
+        <li><a href="#s3">03 · Claims & Evidence</a></li>
+        <li><a href="#s4">04 · Research & Causation</a></li>
+        <li><a href="#s5">05 · Orben & Przybylski</a></li>
+        <li><a href="#s6">06 · Footprint & Security</a></li>
+        <li><a href="#s7">07 · False Information</a></li>
+        <li><a href="#s8">08 · Vosoughi, Roy & Aral</a></li>
+        <li><a href="#s9">09 · Lateral Reading</a></li>
+        <li><a href="#s10">10 · Elections</a></li>
+        <li><a href="#s11">11 · Tradeoffs</a></li>
+        <li><a href="#s12">12 · Media Regulation</a></li>
+        <li><a href="#s13">13 · Section 230</a></li>
+      </ol>
+    </nav>
+    <div class="guide-note"><strong>This is your study space.</strong>Use the guide to prepare and organize the ideas. Your exam resource is a separate one-page product.</div>
+  </aside>
+
+  <main class="guide-main">
+    <section class="guide-hero">
+      <div class="guide-eyebrow">The Social Media Assessment</div>
+      <h1>Know the <em>ideas.</em> Build the connections.</h1>
+      <p class="guide-deck">This guide tells you what matters without giving you a test key. Your job is to organize the evidence and ideas into something you can actually use.</p>
+      <div class="guide-eq"><strong>Essential Question</strong><p>Who should get to decide what a platform is allowed to do to your attention: you, the company, or the government?</p></div>
+    </section>
+
+    <section class="guide-intro">
+      <div class="guide-intro-grid">
+        <div class="guide-info"><strong>What this is</strong><p>A map of the concepts, research, examples, and connections that matter for the assessment.</p></div>
+        <div class="guide-info"><strong>What this is not</strong><p>An answer key. The assessment asks you to reason with these ideas, not simply recognize copied sentences.</p></div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="s1"><div class="guide-num">01</div><div class="guide-label">The Business Model</div><h2>The Attention Economy</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Free social-media platforms</li><li>Advertising</li><li>Users vs. customers</li><li>Attention as something valuable</li><li>Revenue</li><li>The relationship between a business model and platform design</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>If an app is free, how does the company still make money?</li><li>Who is actually paying the social-media company?</li><li>What are advertisers paying to gain access to?</li><li>Why is your attention valuable to a platform?</li><li>How can the way a company makes money influence the way its platform is designed?</li></ul></div></div><div class="guide-connection">Attention <span class="guide-arrow">→</span> Advertising <span class="guide-arrow">→</span> Revenue</div></section>
+
+    <section class="guide-section" id="s2"><div class="guide-num">02</div><div class="guide-label">Inside the Feed</div><h2>Algorithms, Ranking & Personalization</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Behavioral signals</li><li>Ranked feeds</li><li>Chronological feeds</li><li>Recommendation systems</li><li>Personalization</li><li>Algorithms</li><li>Optimization</li><li>Engagement</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>What can a platform learn from your behavior even if you never post, like, or comment?</li><li>Why might how long you stop on something matter?</li><li>How does a ranked feed differ from a chronological feed?</li><li>Why can two people open the same app and see completely different content?</li><li>Who determines what the system is supposed to optimize?</li></ul></div></div><div class="guide-connection">Behavior <span class="guide-arrow">→</span> Signals <span class="guide-arrow">→</span> Predictions <span class="guide-arrow">→</span> Ranking <span class="guide-arrow">→</span> More Behavior</div></section>
+
+    <section class="guide-section" id="s3"><div class="guide-num">03</div><div class="guide-label">Media Literacy</div><h2>Claims, Sources & Evidence</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Source credibility</li><li>Incentives</li><li>Documentary evidence</li><li>Dramatization</li><li>Illustration vs. proof</li><li>Evidence quality</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>Who created a source?</li><li>What perspective or incentive might the creator have?</li><li>What evidence supports the argument?</li><li>Does a dramatized scene illustrate something or actually prove that it happened?</li><li>Why can something be persuasive without being strong evidence?</li></ul></div></div><div class="guide-connection">Who is making the claim? <span class="guide-arrow">→</span> What evidence is being offered? <span class="guide-arrow">→</span> What does that evidence actually establish?</div></section>
+
+    <section class="guide-section" id="s4"><div class="guide-num">04</div><div class="guide-label">Reading Research</div><h2>Correlation, Causation & Research</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Correlation</li><li>Causation</li><li>Alternative explanations</li><li>Effect size</li><li>Research design</li><li>Research interpretation</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>What is the difference between two things occurring together and one causing the other?</li><li>Why can't a relationship between social-media use and anxiety automatically establish causation?</li><li>What other explanations might fit the same evidence?</li><li>Why does the size of an observed relationship matter?</li><li>Why might honest researchers reach different conclusions?</li></ul></div></div><div class="guide-connection">“These things are related.” <span class="guide-arrow">≠</span> “This thing caused that thing.”</div></section>
+
+    <section class="guide-section" id="s5"><div class="guide-num">05</div><div class="guide-label">Named Research</div><h2>Amy Orben & Andrew Przybylski — 2019</h2><div class="guide-cols"><div class="guide-box examples"><h3>Example to Know</h3><ul><li>What relationship they were investigating</li><li>What they found about screen use and teenage wellbeing</li><li>Why the size of the association mattered</li><li>Why comparisons to eating potatoes or wearing glasses mattered</li></ul></div><div class="guide-box connections"><h3>Bigger Connection</h3><ul><li>The existence of a statistical relationship does not automatically tell you whether it is large enough to explain the claims people are making about it.</li><li>Think about the difference between statistically detectable and practically significant.</li></ul></div></div></section>
+
+    <section class="guide-section" id="s6"><div class="guide-num">06</div><div class="guide-label">Your Data</div><h2>Digital Footprint, Privacy & Security</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Digital footprint</li><li>Permanence</li><li>Screenshots, reposts, archives, and backups</li><li>Strong and unique passwords</li><li>Two-factor authentication</li><li>Platform data collection</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>Why should something posted online be treated as potentially permanent?</li><li>What risks do passwords and 2FA help reduce?</li><li>What is the difference between protecting an account from an outsider and controlling what the platform itself collects?</li></ul></div></div><div class="guide-connection">Account Security <span class="guide-arrow">≠</span> Platform Privacy</div></section>
+
+    <section class="guide-section" id="s7"><div class="guide-num">07</div><div class="guide-label">Information Quality</div><h2>Misinformation, Disinformation & Misleading Content</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Misinformation</li><li>Disinformation</li><li>Intent</li><li>Misleading headlines</li><li>Framing</li><li>Accurate information presented misleadingly</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>What distinguishes misinformation from disinformation?</li><li>Why does the sharer's intent matter?</li><li>Can every individual fact be accurate while the overall message is still misleading?</li><li>How can a headline change what readers believe happened?</li></ul></div></div><div class="guide-connection">Accuracy <span class="guide-arrow">+</span> Context <span class="guide-arrow">+</span> Framing <span class="guide-arrow">+</span> Intent</div></section>
+
+    <section class="guide-section" id="s8"><div class="guide-num">08</div><div class="guide-label">Named Research</div><h2>Vosoughi, Roy & Aral — 2018</h2><div class="guide-cols"><div class="guide-box examples"><h3>Example to Know</h3><ul><li>What the researchers studied</li><li>How false stories compared with true stories</li><li>What happened when automated accounts were removed from the analysis</li><li>What that suggested about the role of human users</li><li>Why novelty and emotion mattered</li></ul></div><div class="guide-box connections"><h3>Bigger Connection</h3><ul><li>False information does not necessarily need a machine to spread it.</li><li>Human choices matter.</li></ul></div></div><div class="guide-connection">Novelty <span class="guide-arrow">+</span> Emotion <span class="guide-arrow">+</span> Human Sharing</div></section>
+
+    <section class="guide-section" id="s9"><div class="guide-num">09</div><div class="guide-label">Verification</div><h2>Lateral Reading & Professional Fact-Checking</h2><div class="guide-cols"><div class="guide-box examples"><h3>Example to Know</h3><ul><li>Stanford researchers compared professional fact-checkers with students.</li><li>Professional fact-checkers often left the original page quickly to investigate the publisher elsewhere.</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>What is lateral reading?</li><li>Why might a professional fact-checker leave a webpage rather than simply reading it more carefully?</li><li>Why aren't professional design, logos, and About pages enough to establish credibility?</li></ul></div></div><div class="guide-connection">“What does this website say about itself?” <span class="guide-arrow">→</span> “What do reliable outside sources say about this website or claim?”</div></section>
+
+    <section class="guide-section" id="s10"><div class="guide-num">10</div><div class="guide-label">Politics & Participation</div><h2>Social Media, Elections & Microtargeting</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concepts to Review</h3><ul><li>Election misinformation</li><li>Voting procedures</li><li>Political persuasion</li><li>Participation</li><li>Microtargeting</li><li>Transparency</li><li>Political advertising</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>Why might false information about voting procedures be particularly damaging?</li><li>How is influencing whether someone participates different from persuading someone which candidate to support?</li><li>How does microtargeting differ from a broad public advertisement?</li><li>Why does transparency matter?</li></ul></div></div><div class="guide-connection">Influencing a voter's choice <span class="guide-arrow">≠</span> Influencing whether a voter participates</div></section>
+
+    <section class="guide-section" id="s11"><div class="guide-num">11</div><div class="guide-label">The Unit Question</div><h2>Tradeoffs & Who Should Make the Rules?</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Three Decision-Makers</h3><ul><li><strong>The User:</strong> choice, personal responsibility, controls, limits of individual willpower</li><li><strong>The Company:</strong> expertise, ability to change the product, self-regulation, financial incentives</li><li><strong>The Government:</strong> common rules, protection, enforcement, government power, unintended consequences</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>What might each option do well?</li><li>What might each option do poorly?</li><li>What does each approach gain?</li><li>What does each approach give up?</li><li>Why might company self-regulation create a conflict of interest?</li></ul></div></div><div class="guide-connection">Benefit <span class="guide-arrow">→</span> Cost <span class="guide-arrow">→</span> Tradeoff</div></section>
+
+    <section class="guide-section" id="s12"><div class="guide-num">12</div><div class="guide-label">Historical Precedent</div><h2>Earlier Fights Over New Media</h2><div class="guide-pills"><span class="guide-pill">1954 · Comic Books</span><span class="guide-pill">1970s · Television Violence</span><span class="guide-pill">1985 · Music Lyrics</span><span class="guide-pill">1993 · Video Games</span></div><div class="guide-cols"><div class="guide-box examples"><h3>Examples to Know</h3><ul><li>What concerns people raised about each medium</li><li>How government pressure influenced the industries involved</li><li>What role industry self-regulation played</li><li>What similar outcome appeared across the examples</li></ul></div><div class="guide-box connections"><h3>Bigger Connection</h3><ul><li>Earlier media controversies can be useful precedents, but a good comparison also asks how social media is different.</li><li>Look for the relationship between public concern, government pressure, and industry response.</li></ul></div></div><div class="guide-connection">Public Concern <span class="guide-arrow">→</span> Government Pressure <span class="guide-arrow">→</span> Industry Response</div></section>
+
+    <section class="guide-section" id="s13"><div class="guide-num">13</div><div class="guide-label">Platform Liability</div><h2>Section 230</h2><div class="guide-cols"><div class="guide-box concepts"><h3>Concept to Review</h3><ul><li>The basic meaning of Section 230 as it was presented in this unit</li><li>Why the word <strong>publisher</strong> matters</li><li>The difference between the person who creates a post and the platform where it appears</li></ul></div><div class="guide-box connections"><h3>Questions to Think Through</h3><ul><li>How are platforms generally treated when users post content on them?</li><li>What would change if a platform were automatically treated as the publisher of everything its users posted?</li><li>What does Section 230 not mean about individual responsibility?</li></ul></div></div><div class="guide-connection">Person who creates the post <span class="guide-arrow">≠</span> Platform where the post appears</div></section>
+
+    <section class="guide-end"><div class="guide-label">Putting the Unit Together</div><h2>The assessment is really asking whether you can follow the system.</h2><p>The individual concepts matter, but the strongest preparation is being able to move from the business model to the algorithm to the information environment to the argument over responsibility.</p><div class="guide-chain">Free Platform → Revenue → Attention → Behavioral Signals → Ranking → Personalized Content → Information & Sharing → Privacy / Politics / Responsibility → Who Should Decide?</div></section>
+  </main>
+</div>
+
+<footer class="guide-footer"><span>BeCurrent · Social Media Assessment Prep</span><a href="index.html">← Return to the Social Media unit</a></footer>
+</body>
+</html>
