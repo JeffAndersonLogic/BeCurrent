@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palette lab | BeCurrent 2.0</title>
+<meta name="description" content="Three palette directions on the same redesigned hero and timeline.">
+
+<!--
+  THE PALETTE LAB — a decision surface, not a page of the site.
+
+  Two things are being changed at once here, deliberately, and it is worth
+  being clear about why. Showing three palettes on the OLD layout would
+  have meant judging paint on a wall we had already agreed was broken: the
+  page was a stack of identical full-width bands, each opening with the
+  same eyebrow / display heading / standfirst, and the only axis of
+  variation left in a grayscale system was lightness — which is exactly
+  why it alternated dark, light, dark, light like a zebra.
+
+  So the STRUCTURE is fixed once, here, and held constant across all
+  three:
+
+    · The hero is LIGHT and asymmetric, with a photograph bleeding off
+      the right edge, rather than a dark band with a bordered panel in it.
+    · "Today's headline" is three hairline-ruled items in a strip, not a
+      box. A bordered panel is what made it read as a dashboard.
+    · Section openers VARY — one is a dateline rule, one is a large
+      number. Nothing repeats the eyebrow / heading / standfirst pattern.
+    · The timeline carries the pedagogy in colour: the present is the
+      signal hue at full strength and each step back recedes in size,
+      weight and saturation. Colour means "how far back am I", which is
+      the one thing the student has to hold in their head.
+
+  Only the PALETTE varies between A, B and C. That is the decision.
+
+  Every palette keeps the same three-value structure, which is the fix for
+  "the current site is too light to navigate": a tinted page ground, a
+  near-white raised surface, and a deep anchor used sparingly. White stops
+  being the background and becomes a lift.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<style>
+/* ── THE THREE PALETTES ───────────────────────────────────────────────
+   Same token names, three sets of values, so the entire page re-skins
+   from one attribute. This is also how the real site would ship it: a
+   palette is a token block, never a set of colours sprinkled through
+   the components.
+
+   Contrast is measured, not eyeballed. Every text token below clears
+   WCAG AA on the ground it is used against; --signal is a MARK colour
+   in every palette and is never used for small text, which is what
+   --signal-text exists for. */
+
+[data-palette="a"]{            /* INK & SIGNAL ORANGE — wire service */
+  --page:#F6F3EE; --raised:#FFFFFF;
+  --ink:#17203A; --ink-soft:#4A5670;
+  --rule:rgba(23,32,58,.16); --rule-strong:rgba(23,32,58,.34);
+  --signal:#D2551F; --signal-text:#9C3D12; --signal-wash:rgba(210,85,31,.10);
+  --anchor:#17203A; --on-anchor:#F6F3EE; --on-anchor-soft:#A2ADC7;
+}
+[data-palette="b"]{            /* SLATE & CITRON — the data desk */
+  --page:#F4F5F0; --raised:#FFFFFF;
+  --ink:#1E2A2E; --ink-soft:#4E5D62;
+  --rule:rgba(30,42,46,.16); --rule-strong:rgba(30,42,46,.34);
+  --signal:#C3D82C; --signal-text:#556711; --signal-wash:rgba(195,216,44,.18);
+  --anchor:#1E2A2E; --on-anchor:#F4F5F0; --on-anchor-soft:#A3B2B7;
+}
+[data-palette="c"]{            /* LAYERED PAPER — no dark sections */
+  --page:#E9E4D8; --raised:#FBF9F4;
+  --ink:#2A2E28; --ink-soft:#575D51;
+  --rule:rgba(42,46,40,.20); --rule-strong:rgba(42,46,40,.38);
+  --signal:#2F6248; --signal-text:#24523B; --signal-wash:rgba(47,98,72,.12);
+  --anchor:#2A2E28; --on-anchor:#F3F0E7; --on-anchor-soft:#A8AC9E;
+}
+
+:root{
+  --display:"Playfair Display", Georgia, serif;
+  --body:"Source Serif 4", Georgia, serif;
+  --ui:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --page-w:1240px;
+  --gutter:clamp(18px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:var(--body); font-size:17px; line-height:1.6;
+  transition:background .25s ease, color .25s ease;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;line-height:1.02;font-weight:800;font-family:var(--display)}
+.wrap{width:min(var(--page-w),100% - (var(--gutter)*2));margin-inline:auto}
+:where(a,button):focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* ── The lab's own chrome. Not part of the design. ─────────────────── */
+.lab{
+  position:sticky; top:0; z-index:50;
+  background:#101214; color:#E6E8EA;
+  padding:11px 0; border-bottom:1px solid rgba(255,255,255,.14);
+}
+.lab-in{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.lab p{margin:0;font-family:var(--ui);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#8B9297}
+.lab-btns{display:flex;gap:6px}
+.lab-btns button{
+  font-family:var(--ui);font-size:.7rem;font-weight:700;letter-spacing:.08em;
+  background:transparent;color:#8B9297;border:1px solid rgba(255,255,255,.22);
+  padding:8px 14px;border-radius:2px;cursor:pointer;
+}
+.lab-btns button[aria-pressed="true"]{background:#E6E8EA;color:#101214;border-color:#E6E8EA}
+.swatches{display:flex;gap:0}
+.swatches i{width:26px;height:26px;display:block}
+
+/* ── MASTHEAD ─────────────────────────────────────────────────────── */
+.mast{background:var(--anchor);color:var(--on-anchor)}
+.mast-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}
+.mark{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:-.01em;
+      color:var(--on-anchor);text-decoration:none;position:relative;padding-bottom:.3em;display:inline-block}
+.mark .sc{font-size:.76em;text-transform:uppercase;letter-spacing:.02em}
+.mark .big{font-size:1.34em;margin-left:-.035em;color:var(--signal)}
+.mark svg{position:absolute;left:0;right:0;bottom:.04em;width:100%;height:.17em}
+.mast nav{display:flex;gap:clamp(14px,2.4vw,30px)}
+.mast nav a{font-family:var(--ui);font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--on-anchor-soft);text-decoration:none}
+.mast nav a[aria-current]{color:var(--on-anchor)}
+
+/* ── WIRE ─────────────────────────────────────────────────────────── */
+.wire{background:var(--raised);border-bottom:1px solid var(--rule)}
+.wire-in{display:flex;align-items:center;gap:18px;padding:9px 0;overflow-x:auto}
+.wire b{font-family:var(--ui);font-size:.62rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--signal-text);white-space:nowrap;display:flex;align-items:center;gap:7px}
+.wire b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--signal)}
+.wire a{color:var(--ink);text-decoration:none;font-size:.86rem;white-space:nowrap;
+  padding-left:18px;border-left:1px solid var(--rule)}
+.wire a span{font-family:var(--ui);font-size:.62rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-right:7px}
+
+/* ── HERO ─────────────────────────────────────────────────────────────
+   Light, asymmetric, photograph bleeding off the right edge. The old
+   hero was a dark band with a bordered panel floated in it, which is
+   the shape of a dashboard rather than of a front page. */
+.hero{padding-top:clamp(22px,3vw,38px)}
+.dateline{
+  display:flex;align-items:baseline;gap:16px;
+  font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);
+  padding-bottom:12px;border-bottom:2px solid var(--ink);
+}
+.dateline .live{color:var(--signal-text);display:flex;align-items:center;gap:7px}
+.dateline .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--signal)}
+.dateline .sp{margin-left:auto;font-weight:600;letter-spacing:.1em}
+
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,40px);padding:clamp(24px,3.5vw,44px) 0 0}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:start}
+}
+.hero h1{
+  font-size:clamp(2.6rem,6.6vw,5.1rem);letter-spacing:-.028em;font-weight:900;
+  overflow-wrap:break-word;margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;font-weight:800;color:var(--signal-text)}
+.hero .stand{font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.45;color:var(--ink-soft);max-width:36ch;margin:0 0 26px}
+.cta{
+  display:inline-flex;align-items:center;gap:12px;background:var(--signal);
+  color:#fff;font-family:var(--ui);font-weight:800;font-size:.8rem;letter-spacing:.13em;
+  text-transform:uppercase;padding:16px 28px;border-radius:2px;text-decoration:none;
+}
+[data-palette="b"] .cta{color:#1E2A2E}   /* citron is a light mark; ink on it, not white */
+.cta:hover{filter:brightness(1.08)}
+
+/* The photograph bleeds to the right page edge — the single strongest
+   signal that this is a publication and not a template. */
+.hero-photo{position:relative;margin-right:calc(-1 * var(--gutter))}
+@media (min-width:900px){ .hero-photo{margin-right:calc((100vw - var(--page-w))/-2 - var(--gutter))} }
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero-photo figcaption{
+  font-family:var(--ui);font-size:.66rem;letter-spacing:.06em;color:var(--ink-soft);
+  padding:9px 0 0;max-width:52ch;
+}
+
+/* ── TODAY'S HEADLINE — a strip, not a panel ──────────────────────── */
+.facts{padding:clamp(30px,4vw,52px) 0 0}
+.facts-head{
+  font-family:var(--ui);font-size:.66rem;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-soft);margin:0 0 4px;
+}
+.facts-lead{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.85rem);
+  font-weight:700;line-height:1.16;max-width:26ch;margin:0 0 26px}
+.facts-row{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid var(--rule-strong)}
+@media (min-width:820px){ .facts-row{grid-template-columns:repeat(3,1fr)} }
+.fact{padding:18px 24px 20px 0;border-bottom:1px solid var(--rule)}
+@media (min-width:820px){
+  .fact{border-bottom:0;border-right:1px solid var(--rule);padding-right:26px}
+  .fact:last-child{border-right:0;padding-right:0}
+}
+.fact .n{
+  font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--signal-text);
+  display:block;line-height:1;margin-bottom:10px;
+}
+.fact p{margin:0;font-size:.94rem;line-height:1.5}
+.fact .src{font-family:var(--ui);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);display:block;margin-top:10px}
+
+/* ── REVERSE HISTORY — the palette carries the pedagogy ───────────────
+   The present is the signal hue at full strength; each step back
+   recedes in size, weight and saturation. Colour answers "how far back
+   am I", which is the one thing a student has to hold in their head. */
+.rh{padding:clamp(40px,5.5vw,78px) 0}
+.rh-open{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:clamp(24px,3vw,40px)}
+.rh-open h2{font-size:clamp(1.6rem,3.2vw,2.4rem);letter-spacing:-.02em}
+.rh-open .note{font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:9px}
+
+.track{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding-bottom:8px;position:relative}
+.track::before{
+  content:"";position:absolute;left:0;right:0;top:52px;height:2px;
+  background:linear-gradient(to right,var(--signal) 0%,var(--ink-soft) 42%,var(--rule) 100%);
+}
+.node{
+  flex:1 0 auto;min-width:132px;padding-right:20px;position:relative;z-index:1;
+  background:none;border:0;text-align:left;cursor:pointer;font:inherit;color:inherit;
+}
+.node .yr{font-family:var(--display);font-weight:800;display:block;line-height:1;margin-bottom:20px}
+.node .dot{width:14px;height:14px;border-radius:50%;display:block;margin-bottom:14px;
+  background:var(--page);border:2px solid var(--ink-soft)}
+.node .lab2{font-family:var(--ui);font-size:.72rem;font-weight:600;line-height:1.34;
+  display:block;max-width:15ch;color:var(--ink-soft)}
+
+/* Depth: the recession is the whole idea. */
+.node[data-d="0"] .yr{font-size:2.15rem;color:var(--signal-text)}
+.node[data-d="0"] .dot{background:var(--signal);border-color:var(--signal);width:18px;height:18px;margin-bottom:12px}
+.node[data-d="0"] .lab2{color:var(--ink);font-weight:700}
+.node[data-d="1"] .yr{font-size:1.62rem;color:var(--ink)}
+.node[data-d="2"] .yr{font-size:1.5rem;color:var(--ink);opacity:.9}
+.node[data-d="3"] .yr{font-size:1.4rem;color:var(--ink-soft)}
+.node[data-d="4"] .yr{font-size:1.3rem;color:var(--ink-soft);opacity:.85}
+.node[data-d="5"] .yr{font-size:1.22rem;color:var(--ink-soft);opacity:.72}
+.node[data-d="6"] .yr{font-size:1.16rem;color:var(--ink-soft);opacity:.62}
+.node:hover .yr,.node:hover .lab2{color:var(--signal-text)}
+.node:hover .dot{border-color:var(--signal)}
+
+/* ── A SECOND SECTION OPENER, deliberately unlike the first ──────────
+   The old page opened every section the same way. This one leads with
+   the figure itself; the heading is demoted to a caption. */
+.fig-sec{background:var(--raised);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.fig-in{padding:clamp(36px,4.5vw,64px) 0;display:grid;gap:clamp(20px,3vw,44px);grid-template-columns:1fr}
+@media (min-width:860px){ .fig-in{grid-template-columns:auto 1fr;align-items:center} }
+.bignum{font-family:var(--display);font-weight:900;font-size:clamp(4rem,11vw,8.5rem);
+  line-height:.82;letter-spacing:-.04em;color:var(--signal-text)}
+.bignum small{font-size:.34em;font-weight:800;letter-spacing:0}
+.fig-in .why{max-width:44ch}
+.fig-in .why h3{font-family:var(--ui);font-size:.68rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.fig-in .why p{margin:0 0 12px;font-size:1.02rem;line-height:1.5}
+.fig-in .why p:last-child{margin:0;font-size:.9rem;color:var(--ink-soft)}
+
+footer.pad{padding:clamp(34px,5vw,70px) 0;color:var(--ink-soft);font-family:var(--ui);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body data-palette="b">
+
+<div class="lab">
+  <div class="wrap lab-in">
+    <p>Palette lab · same layout, three directions</p>
+    <div class="lab-btns" role="group" aria-label="Palette">
+      <button type="button" data-p="a" aria-pressed="false">A · Ink &amp; Orange</button>
+      <button type="button" data-p="b" aria-pressed="true">B · Slate &amp; Citron</button>
+      <button type="button" data-p="c" aria-pressed="false">C · Layered Paper</button>
+    </div>
+    <div class="swatches" id="sw" aria-hidden="true"></div>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="mark" href="#">
+      <span>B</span><span class="sc">e</span><span class="big">C</span><span class="sc">urrent</span>
+      <svg viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M20 3.4 L36 1.25 L100 .6 L60 3.9 Z" fill="currentColor" opacity=".55"/>
+      </svg>
+    </a>
+    <nav>
+      <a href="#" aria-current="page">Today</a><a href="#">Investigations</a>
+      <a href="#">Trace it back</a><a href="#">Sources</a><a href="#">My work</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wire">
+  <div class="wrap wire-in">
+    <b>The Current Wire</b>
+    <a href="#"><span>CNBC</span>Iran warns of Hormuz ship seizures ahead of sanctions push</a>
+    <a href="#"><span>CNN</span>Bessent promises "economic D-Day" ahead of expected sanctions</a>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="dateline">
+        <span class="live">Live investigation</span>
+        <span>Tuesday, August 25</span>
+        <span class="sp">Verified today</span>
+      </p>
+      <div class="hero-grid">
+        <div>
+          <h1>Why is there war with <em>Iran</em>?</h1>
+          <p class="stand">The fighting is happening now. To understand it you have to go back further than the nuclear program.</p>
+          <a class="cta" href="#">Start investigation <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <figure class="hero-photo" style="margin-block:0">
+          <img src="assets/images/photos/hormuz.jpg" alt="Satellite photograph of the Strait of Hormuz, the narrow sea passage between Iran and the Arabian peninsula.">
+          <figcaption>The Strait of Hormuz from orbit. Every barrel of Gulf oil leaves through this channel. NASA, public domain.</figcaption>
+        </figure>
+      </div>
+
+      <div class="facts">
+        <p class="facts-head">Today’s headline</p>
+        <p class="facts-lead">Washington opens an economic front as the last ceasefire deadline passes</p>
+        <div class="facts-row">
+          <div class="fact"><span class="n">01</span>
+            <p>The sixty-day settlement window agreed in June expired on August 17 with no agreement reached.</p>
+            <span class="src">CFR</span></div>
+          <div class="fact"><span class="n">02</span>
+            <p>The US Treasury announced secondary sanctions on foreign firms still trading with Iran.</p>
+            <span class="src">CNN · Aug 24</span></div>
+          <div class="fact"><span class="n">03</span>
+            <p>Iran threatened to seize vessels and shut the strait completely if neighbours help enforce them.</p>
+            <span class="src">CNBC · Aug 24</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rh">
+    <div class="wrap">
+      <div class="rh-open">
+        <h2>Reverse History</h2>
+        <p class="note">Today <span aria-hidden="true">→</span> digging backward</p>
+      </div>
+      <div class="track">
+        <button class="node" data-d="0"><span class="yr">2026</span><span class="dot"></span><span class="lab2">Open war, and an economic siege</span></button>
+        <button class="node" data-d="1"><span class="yr">2025</span><span class="dot"></span><span class="lab2">The first strikes on the nuclear sites</span></button>
+        <button class="node" data-d="2"><span class="yr">2018</span><span class="dot"></span><span class="lab2">The United States leaves the deal</span></button>
+        <button class="node" data-d="3"><span class="yr">2015</span><span class="dot"></span><span class="lab2">The nuclear agreement</span></button>
+        <button class="node" data-d="4"><span class="yr">1979</span><span class="dot"></span><span class="lab2">The Revolution, and the hostages</span></button>
+        <button class="node" data-d="5"><span class="yr">1957</span><span class="dot"></span><span class="lab2">America starts the nuclear program</span></button>
+        <button class="node" data-d="6"><span class="yr">1953</span><span class="dot"></span><span class="lab2">The coup, and the Shah</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="fig-sec">
+    <div class="wrap fig-in">
+      <p class="bignum">20<small>%</small></p>
+      <div class="why">
+        <h3>Shipping through the Strait of Hormuz</h3>
+        <p>As a share of the pre-war average. The channel is 21 miles wide at its narrowest, and Iran controls the northern shore.</p>
+        <p>Reported by CNBC, August 24, 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pad"><div class="wrap">Palette lab · not a page of the site</div></footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var body = document.body, sw = document.getElementById('sw');
+  var TOKENS = ['--page','--raised','--signal','--ink','--anchor'];
+
+  function paintSwatches() {
+    var cs = getComputedStyle(body);
+    sw.innerHTML = TOKENS.map(function (t) {
+      return '<i style="background:' + cs.getPropertyValue(t).trim() + '"></i>';
+    }).join('');
+  }
+
+  document.querySelectorAll('[data-p]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      body.setAttribute('data-palette', b.getAttribute('data-p'));
+      document.querySelectorAll('[data-p]').forEach(function (o) {
+        o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+      });
+      paintSwatches();
+    });
+  });
+  paintSwatches();
+})();
+</script>
+</body>
+</html>
