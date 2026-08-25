@@ -1,0 +1,585 @@
+/* =========================================================
+   BECURRENT 2.0 — INVESTIGATION SURFACES
+
+   The complaint this file answers is that every piece of content in
+   BeCurrent 1.0 looked like every other piece: a rounded card, a
+   heading, three lines, a button. Here each KIND of evidence gets a
+   treatment that tells you what kind it is before you read a word.
+
+     a turning point  → full-bleed dark feature, display type at scale
+     a primary source → a document: bordered, cream, monospaced meta
+     a quotation      → set large, hanging mark, no box at all
+     a statistic      → the number IS the layout
+     coverage compare → two columns that visibly compete
+     perspective      → a three-way split, verification held last
+     the map          → the map dominates; text yields to it
+
+   Nothing here is a variant of one card component with a modifier
+   class, because that is exactly how a publication ends up looking
+   templated.
+
+   Reading surfaces stay light (see the polarity note in bc2.css). The
+   dark treatments are for things students SCAN or LOOK AT — the
+   turning-point openers and the timeline — never for long prose.
+   ========================================================= */
+
+/* ─────────────────────────────────────────────────────────────────────
+   INVESTIGATION TITLE BLOCK
+   Compact on purpose. It names the page and states the question, then
+   gets out of the way — the sticky nav and the first section have to be
+   reachable inside a 768px viewport without scrolling past a second hero.
+   ───────────────────────────────────────────────────────────────────── */
+.inv-title{background:var(--carbon); color:var(--frosted); padding:clamp(24px,3.4vw,40px) 0 clamp(20px,2.6vw,30px)}
+.inv-title .eyebrow{color:var(--steel-text); margin-bottom:12px}
+.inv-title h1{
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(1.9rem,4.4vw,3.2rem); letter-spacing:-.022em;
+  line-height:1.02; color:var(--ivory);
+  overflow-wrap:break-word; max-width:20ch; margin-bottom:14px;
+}
+.inv-question{
+  font-size:1.02rem; line-height:1.5; color:var(--platinum);
+  max-width:60ch; margin:0;
+  border-left:2px solid var(--frosted); padding-left:16px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   STICKY PROGRESS NAVIGATOR
+   Five stops, named for what the student does, not "Module 03".
+   Short — 44px — because the Chromebook viewport is 768px tall.
+   ───────────────────────────────────────────────────────────────────── */
+.inv-nav{
+  position:sticky; top:0; z-index:25;
+  background:rgba(13,15,16,.96); color:var(--platinum);
+  border-bottom:1px solid var(--rule-dark);
+  backdrop-filter:blur(6px);
+}
+.inv-nav ol{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:0; overflow-x:auto; scrollbar-width:none;
+}
+.inv-nav ol::-webkit-scrollbar{display:none}
+.inv-nav li{flex:0 0 auto; display:flex; align-items:center}
+.inv-nav li + li::before{content:""; width:1px; height:15px; background:var(--rule-dark)}
+.inv-nav a{
+  display:block; padding:13px 18px;
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase;
+  color:var(--steel-text); text-decoration:none; white-space:nowrap;
+  border-bottom:2px solid transparent;
+}
+.inv-nav a:hover{color:var(--frosted)}
+.inv-nav a[aria-current="true"]{color:var(--ivory); border-bottom-color:var(--frosted)}
+.inv-nav .nav-done{color:var(--platinum)}
+.inv-nav .nav-done::after{content:" ·"; color:var(--frosted)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION OPENER
+   ───────────────────────────────────────────────────────────────────── */
+.sec{padding:clamp(44px,6vw,86px) 0; scroll-margin-top:52px}
+.sec-paper{background:var(--paper)}
+.sec-ivory{background:var(--ivory)}
+.sec-dark{background:var(--carbon); color:var(--frosted)}
+.sec-gunmetal{background:var(--gunmetal); color:var(--frosted)}
+
+.sec-head{max-width:var(--measure); margin-bottom:clamp(22px,3vw,36px)}
+.sec-head .eyebrow{color:var(--graphite); margin-bottom:11px}
+.sec-dark .sec-head .eyebrow,.sec-gunmetal .sec-head .eyebrow{color:var(--steel-text)}
+.sec-head h2{
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(1.75rem,3.6vw,2.75rem); letter-spacing:-.02em;
+  line-height:1.06; margin-bottom:14px;
+}
+.sec-head .standfirst{
+  font-size:1.06rem; line-height:1.55; color:var(--graphite); margin:0;
+}
+.sec-dark .sec-head .standfirst,.sec-gunmetal .sec-head .standfirst{color:var(--platinum)}
+
+/* Body prose. Held to a measure, not to a container width. */
+.prose{max-width:var(--measure)}
+.prose p{margin:0 0 17px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{font-weight:700}
+.prose a{color:var(--ink); text-decoration-thickness:1px; text-underline-offset:3px}
+.sec-dark .prose,.sec-gunmetal .prose{color:var(--platinum)}
+.sec-dark .prose a,.sec-gunmetal .prose a{color:var(--frosted)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   EVENT ANCHOR — what is happening, dated, with its sourcing visible
+   ───────────────────────────────────────────────────────────────────── */
+/* Single column first, two columns only when there is room for two.
+   `minmax(min(100%,N),1fr)` stops ONE track from forcing a floor wider than
+   its container, but two of them side by side still sum past it: at a 320px
+   viewport this grid asked for 284px + 260px and scrolled the page sideways
+   by 262px. The floor guard is necessary and not sufficient — a fixed
+   multi-column template also needs a width at which it stops being
+   multi-column. */
+.anchor-grid{
+  display:grid; gap:clamp(20px,3vw,40px);
+  grid-template-columns:1fr;
+  align-items:start;
+}
+@media (min-width: 860px){
+  .anchor-grid{grid-template-columns:minmax(0,1.5fr) minmax(min(100%,260px),1fr)}
+}
+.anchor-facts{list-style:none; margin:0; padding:0}
+.anchor-facts li{
+  border-top:1px solid var(--rule-light);
+  padding:15px 0 14px;
+}
+.anchor-facts li:last-child{border-bottom:1px solid var(--rule-light)}
+.anchor-facts .af-date{
+  font-family:var(--ui); font-size:.65rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--graphite);
+  display:block; margin-bottom:5px;
+}
+.anchor-facts .af-text{margin:0; line-height:1.5}
+.anchor-facts .af-src{
+  font-family:var(--ui); font-size:.68rem; color:var(--graphite);
+  display:inline-block; margin-top:7px;
+}
+.anchor-facts .af-src a{color:var(--graphite)}
+
+/* The "how current is this" block. A course about verification cannot
+   be vague about the freshness of its own claims. */
+.freshness{
+  background:var(--gunmetal); color:var(--platinum);
+  border-top:2px solid var(--frosted);
+  padding:20px 21px;
+}
+.freshness .fr-head{
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--frosted);
+  margin:0 0 11px;
+}
+.freshness p{margin:0 0 10px; font-size:.88rem; line-height:1.5}
+.freshness p:last-child{margin-bottom:0}
+.freshness .fr-date{color:var(--ivory); font-weight:600}
+
+/* ─────────────────────────────────────────────────────────────────────
+   PREDICTION — "stop, don't google it yet"
+   A dark full-bleed interruption. It is meant to stop the scroll.
+   ───────────────────────────────────────────────────────────────────── */
+.predict-stop{
+  font-family:var(--display); font-weight:800; font-style:italic;
+  font-size:clamp(1.9rem,4.4vw,3.1rem); letter-spacing:-.02em;
+  color:var(--ivory); line-height:1; margin-bottom:16px;
+}
+.predict-q{font-size:1.1rem; color:var(--platinum); max-width:52ch; margin:0 0 28px}
+
+.predict-options{
+  display:grid; gap:10px;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,215px),1fr));
+  margin:0 0 26px; padding:0; border:0;
+}
+.predict-options legend{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--steel-text);
+  padding:0; margin-bottom:14px;
+}
+/* A real checkbox, visually replaced but never removed from the a11y
+   tree and never made pointer-only. */
+.pick{position:relative; display:block}
+.pick input{position:absolute; opacity:0; width:100%; height:100%; margin:0; cursor:pointer}
+.pick .pick-face{
+  display:flex; align-items:center; gap:12px;
+  border:1px solid var(--rule-dark); padding:13px 15px;
+  font-family:var(--ui); font-size:.84rem; font-weight:600;
+  color:var(--platinum); background:transparent;
+}
+.pick .pick-box{
+  flex:0 0 auto; width:15px; height:15px;
+  border:1px solid var(--steel); position:relative;
+}
+.pick input:hover + .pick-face{border-color:var(--platinum); color:var(--frosted)}
+.pick input:focus-visible + .pick-face{outline:3px solid var(--frosted); outline-offset:3px}
+.pick input:checked + .pick-face{border-color:var(--frosted); color:var(--ivory); background:var(--wash-dark)}
+.pick input:checked + .pick-face .pick-box{background:var(--frosted); border-color:var(--frosted)}
+.pick input:checked + .pick-face .pick-box::after{
+  content:""; position:absolute; left:4px; top:1px;
+  width:4px; height:8px; border:solid var(--carbon);
+  border-width:0 2px 2px 0; transform:rotate(42deg);
+}
+
+.predict-saved{
+  font-family:var(--ui); font-size:.76rem; letter-spacing:.06em;
+  color:var(--frosted); margin:14px 0 0; min-height:1.2em;
+}
+
+/* The return visit, later in the page. Same data, different question. */
+.recall{
+  background:var(--ivory); border:1px solid var(--rule-light);
+  border-top:3px solid var(--ink); padding:clamp(20px,3vw,30px);
+}
+.recall .rc-head{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--graphite);
+  margin:0 0 12px;
+}
+.recall .rc-you{
+  font-family:var(--display); font-size:clamp(1.2rem,2.4vw,1.6rem);
+  line-height:1.25; margin:0 0 6px;
+}
+.recall .rc-empty{color:var(--graphite); font-style:italic}
+.recall-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px;padding:0;list-style:none}
+.recall-chips li{
+  font-family:var(--ui); font-size:.72rem; font-weight:700;
+  letter-spacing:.05em; border:1px solid var(--ink);
+  padding:6px 12px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   MAP — the map dominates, the text yields
+   ───────────────────────────────────────────────────────────────────── */
+.map-feature{display:grid; gap:clamp(18px,2.6vw,32px); grid-template-columns:1fr; align-items:start}
+@media (min-width: 900px){
+  .map-feature{grid-template-columns:minmax(0,2.15fr) minmax(min(100%,250px),1fr)}
+}
+.map-frame{
+  position:relative; background:var(--carbon);
+  border:1px solid var(--rule-dark);
+}
+.map-frame img{width:100%; height:auto}
+.map-caption{
+  font-family:var(--ui); font-size:.74rem; color:var(--graphite);
+  padding:10px 2px 0; margin:0; line-height:1.45;
+}
+.map-points{list-style:none;margin:0;padding:0}
+.map-points li{border-top:1px solid var(--rule-light); padding:13px 0}
+.map-points li:last-child{border-bottom:1px solid var(--rule-light)}
+.map-points .mp-name{
+  font-family:var(--ui); font-size:.7rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; display:block; margin-bottom:4px;
+}
+.map-points p{margin:0; font-size:.9rem; line-height:1.5; color:var(--graphite)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   TURNING POINT — a full-width visual feature, not a card
+   ───────────────────────────────────────────────────────────────────── */
+.tp{background:var(--carbon); color:var(--frosted); position:relative; overflow:hidden}
+.tp-media{position:absolute; inset:0; z-index:0}
+/* The plate is TEXTURE here, not a diagram to be read. At full strength its
+   rule and node sat straight through the body copy, which reads as a
+   rendering fault rather than as art. A photograph dropped into `photo`
+   wants the same treatment, so the opacity lives on the layer rather than
+   being baked into the SVG. */
+.tp-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+.tp-media::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to right,rgba(13,15,16,.96) 0%,rgba(13,15,16,.90) 52%,rgba(13,15,16,.62) 100%);
+}
+.tp-inner{position:relative; z-index:1; padding:clamp(40px,6vw,80px) 0}
+.tp-year{
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(3.2rem,10vw,7.5rem); line-height:.85;
+  letter-spacing:-.035em; color:var(--frosted); opacity:.30;
+  margin-bottom:-.16em;
+}
+/* The headline is set as three stacked lines on purpose. "THE ALLY /
+   BECOMES / THE ENEMY" is a piece of editorial writing and breaking it
+   by hand is the difference between a headline and a sentence. */
+.tp-headline{
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(2.1rem,5.6vw,4.2rem); line-height:.98;
+  letter-spacing:-.025em; color:var(--ivory);
+  overflow-wrap:break-word; margin:0 0 22px;
+}
+.tp-headline span{display:block}
+.tp-headline em{font-style:italic; color:var(--frosted)}
+.tp-body{max-width:60ch}
+.tp-body p{color:var(--platinum); margin:0 0 15px}
+.tp-body p:last-child{margin-bottom:0}
+.tp-dateline{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--steel-text);
+  margin:0 0 20px; padding-bottom:14px;
+  border-bottom:1px solid var(--rule-dark); display:inline-block;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   PRIMARY SOURCE — reads as a document, not as a content block
+   ───────────────────────────────────────────────────────────────────── */
+.doc{
+  background:#FBF9F3;
+  border:1px solid rgba(23,25,26,.24);
+  box-shadow:var(--shadow-soft);
+  max-width:74ch;
+}
+.doc-head{
+  border-bottom:1px solid rgba(23,25,26,.20);
+  padding:16px 22px 13px;
+  display:flex; flex-wrap:wrap; gap:5px 20px; align-items:baseline;
+  font-family:var(--ui); font-size:.67rem; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--graphite);
+}
+.doc-head .doc-kind{font-weight:700; color:var(--ink)}
+.doc-body{padding:24px 26px 20px}
+.doc-body p{margin:0 0 14px; line-height:1.66}
+.doc-body p:last-child{margin-bottom:0}
+.doc-body .doc-redact{background:var(--ink); color:transparent; user-select:none; padding:0 2px}
+.doc-foot{
+  border-top:1px solid rgba(23,25,26,.14);
+  padding:13px 22px 16px; margin:0;
+  font-family:var(--ui); font-size:.74rem; color:var(--graphite); line-height:1.5;
+}
+.doc-foot a{color:var(--graphite)}
+
+/* The questions that turn a source into work. */
+.doc-ask{max-width:74ch; margin-top:26px}
+.doc-ask .da-head{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--graphite);
+  margin:0 0 14px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   QUOTE — no box. A rule and scale do the work.
+   ───────────────────────────────────────────────────────────────────── */
+.pullquote{margin:clamp(28px,4vw,46px) 0; max-width:24ch}
+.pullquote blockquote{
+  margin:0; font-family:var(--display); font-weight:700; font-style:italic;
+  font-size:clamp(1.5rem,3.4vw,2.4rem); line-height:1.16;
+  letter-spacing:-.015em;
+}
+.pullquote figcaption{
+  font-family:var(--ui); font-size:.72rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--graphite);
+  margin-top:16px; padding-top:13px; border-top:1px solid var(--rule-light);
+}
+.sec-dark .pullquote blockquote,.sec-gunmetal .pullquote blockquote,.tp .pullquote blockquote{color:var(--ivory)}
+.sec-dark .pullquote figcaption,.sec-gunmetal .pullquote figcaption,.tp .pullquote figcaption{
+  color:var(--steel-text); border-top-color:var(--rule-dark)}
+.sec-dark .pullquote figcaption a,.sec-gunmetal .pullquote figcaption a,.tp .pullquote figcaption a{color:var(--platinum)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   BIG NUMBER — the figure is the layout
+   ───────────────────────────────────────────────────────────────────── */
+.bignum-row{
+  display:grid; gap:clamp(18px,3vw,40px);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
+}
+.bignum .bn-fig{
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(2.6rem,6vw,4rem); line-height:.9;
+  letter-spacing:-.03em; display:block; margin-bottom:12px;
+}
+.bignum .bn-unit{font-size:.42em; font-weight:700; letter-spacing:0}
+.bignum p{margin:0; font-size:.92rem; line-height:1.5; color:var(--graphite); max-width:34ch}
+.bignum .bn-src{
+  font-family:var(--ui); font-size:.66rem; color:var(--graphite);
+  display:block; margin-top:10px; padding-top:9px;
+  border-top:1px solid var(--rule-light);
+}
+/* Every dark ground, not just .sec-dark. The figures band is gunmetal and
+   the turning-point feature is .tp; listing only .sec-dark left graphite
+   body text sitting on gunmetal at 2.03:1 with the rule written and not
+   applying. Keep these selector lists in step with the dark surfaces. */
+.sec-dark .bignum .bn-fig,.sec-gunmetal .bignum .bn-fig,.tp .bignum .bn-fig{color:var(--ivory)}
+.sec-dark .bignum p,.sec-gunmetal .bignum p,.tp .bignum p,
+.sec-dark .bignum .bn-src,.sec-gunmetal .bignum .bn-src,.tp .bignum .bn-src{color:var(--platinum)}
+.sec-dark .bignum .bn-src,.sec-gunmetal .bignum .bn-src{border-top-color:var(--rule-dark)}
+.sec-dark .bignum .bn-src a,.sec-gunmetal .bignum .bn-src a,.tp .bignum .bn-src a{color:var(--platinum)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   PERSPECTIVE SPLIT — two claims, then verification, held last
+   The third column is deliberately NOT symmetrical with the first two:
+   "what can we verify" is a different kind of thing from "what each
+   side says", and making all three identical cards would teach that
+   they carry equal evidentiary weight.
+   ───────────────────────────────────────────────────────────────────── */
+.persp{display:grid; gap:0; grid-template-columns:1fr; border:1px solid var(--rule-light)}
+@media (min-width: 820px){ .persp{grid-template-columns:1fr 1fr} }
+.persp-side{padding:clamp(20px,2.8vw,30px); background:var(--ivory)}
+.persp-side + .persp-side{border-top:1px solid var(--rule-light)}
+@media (min-width: 820px){
+  .persp-side + .persp-side{border-top:0; border-left:1px solid var(--rule-light)}
+}
+.persp-side .ps-who{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  padding-bottom:11px; margin:0 0 15px;
+  border-bottom:2px solid var(--ink);
+}
+.persp-side ul{list-style:none;margin:0;padding:0}
+.persp-side li{position:relative; padding-left:18px; margin-bottom:11px; font-size:.94rem; line-height:1.5}
+.persp-side li::before{content:""; position:absolute; left:0; top:.66em; width:9px; height:1px; background:var(--graphite)}
+.persp-side li:last-child{margin-bottom:0}
+
+.persp-verify{
+  grid-column:1/-1;
+  background:var(--carbon); color:var(--frosted);
+  padding:clamp(20px,2.8vw,30px);
+}
+.persp-verify .pv-head{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--frosted);
+  padding-bottom:11px; margin:0 0 15px; border-bottom:2px solid var(--frosted);
+}
+.persp-verify ul{list-style:none;margin:0;padding:0}
+.persp-verify li{position:relative; padding-left:18px; margin-bottom:11px; font-size:.94rem; line-height:1.5; color:var(--platinum)}
+.persp-verify li::before{content:""; position:absolute; left:0; top:.66em; width:9px; height:1px; background:var(--steel)}
+.persp-verify li:last-child{margin-bottom:0}
+.persp-verify strong{color:var(--ivory)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   EVIDENCE SORT — reporting vs interpretation
+   A real interaction: the student decides, then sees the reasoning.
+   ───────────────────────────────────────────────────────────────────── */
+.ev-list{list-style:none;margin:0;padding:0;max-width:78ch}
+.ev-item{
+  border:1px solid var(--rule-light); background:var(--ivory);
+  padding:19px 20px 17px; margin-bottom:14px;
+}
+.ev-item[data-state="right"]{border-left:3px solid var(--ink)}
+.ev-item[data-state="wrong"]{border-left:3px solid var(--steel)}
+.ev-stmt{margin:0 0 15px; font-size:1.02rem; line-height:1.5}
+.ev-buttons{display:flex; flex-wrap:wrap; gap:9px}
+.ev-buttons button{
+  font-family:var(--ui); font-size:.72rem; font-weight:700;
+  letter-spacing:.11em; text-transform:uppercase;
+  background:transparent; color:var(--ink);
+  border:1px solid var(--rule-light); padding:10px 16px;
+  cursor:pointer; border-radius:2px;
+}
+.ev-buttons button:hover{border-color:var(--ink); background:var(--wash-light)}
+.ev-buttons button[aria-pressed="true"]{background:var(--carbon); color:var(--ivory); border-color:var(--carbon)}
+.ev-why{
+  margin:15px 0 0; padding-top:14px; border-top:1px solid var(--rule-light);
+  font-size:.92rem; line-height:1.55; color:var(--graphite);
+}
+.ev-why[hidden]{display:none}
+.ev-why .evw-verdict{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--ink);
+  display:block; margin-bottom:6px;
+}
+.ev-score{
+  font-family:var(--ui); font-size:.78rem; color:var(--graphite);
+  margin:18px 0 0; letter-spacing:.04em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   WRITING SURFACES — claim builder, reflection
+   ───────────────────────────────────────────────────────────────────── */
+.write{max-width:72ch}
+.write label{
+  display:block; font-family:var(--ui); font-size:.72rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--graphite);
+  margin:0 0 8px;
+}
+.write .write-help{font-size:.9rem; color:var(--graphite); margin:0 0 12px; line-height:1.5}
+.write textarea{
+  width:100%; min-height:130px; resize:vertical;
+  font-family:var(--body); font-size:1rem; line-height:1.6;
+  color:var(--ink); background:#FBF9F3;
+  border:1px solid rgba(23,25,26,.28); border-radius:2px;
+  padding:14px 15px;
+}
+.write textarea:hover{border-color:rgba(23,25,26,.45)}
+.write + .write{margin-top:26px}
+.save-state{
+  font-family:var(--ui); font-size:.72rem; letter-spacing:.06em;
+  color:var(--graphite); margin:9px 0 0; min-height:1.2em;
+}
+
+/* The scaffold. Visible structure, not a fill-in-the-blank. */
+.claim-frame{
+  background:var(--gunmetal); color:var(--platinum);
+  padding:20px 22px; margin:0 0 26px; max-width:72ch;
+}
+.claim-frame .cf-head{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--frosted);
+  margin:0 0 13px;
+}
+.claim-frame ol{margin:0; padding-left:20px}
+.claim-frame li{margin-bottom:9px; font-size:.92rem; line-height:1.5}
+.claim-frame li:last-child{margin-bottom:0}
+.claim-frame strong{color:var(--ivory)}
+
+.coach-slot{
+  border:1px dashed var(--rule-light); background:transparent;
+  padding:18px 20px; margin-top:24px; max-width:72ch;
+}
+.coach-slot .cs-head{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--graphite);
+  margin:0 0 9px;
+}
+.coach-slot p{margin:0 0 12px; font-size:.9rem; color:var(--graphite); line-height:1.5}
+.coach-slot button[disabled]{opacity:.5; cursor:not-allowed}
+
+/* ─────────────────────────────────────────────────────────────────────
+   SOURCES
+   ───────────────────────────────────────────────────────────────────── */
+.src-list{list-style:none;margin:0;padding:0;max-width:80ch}
+.src-list li{
+  display:grid; grid-template-columns:minmax(min(100%,88px),auto) 1fr; gap:6px 18px;
+  border-top:1px solid var(--rule-light); padding:14px 0;
+}
+.src-list li:last-child{border-bottom:1px solid var(--rule-light)}
+.src-org{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--graphite);
+  padding-top:3px;
+}
+.src-main a{color:var(--ink); text-underline-offset:3px}
+.src-note{display:block; font-size:.85rem; color:var(--graphite); margin-top:4px; line-height:1.45}
+
+/* ─────────────────────────────────────────────────────────────────────
+   MY WORK
+   ───────────────────────────────────────────────────────────────────── */
+.work-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr))}
+.work-card{background:var(--ivory); border:1px solid var(--rule-light); padding:19px 20px 18px}
+.work-card h3{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--graphite);
+  margin-bottom:11px; padding-bottom:9px; border-bottom:1px solid var(--rule-light);
+}
+.work-card .wc-body{font-size:.95rem; line-height:1.55; white-space:pre-wrap; margin:0}
+.work-card .wc-empty{color:var(--graphite); font-style:italic; font-size:.92rem; margin:0}
+.work-card .wc-meta{
+  font-family:var(--ui); font-size:.66rem; color:var(--graphite);
+  margin:12px 0 0; padding-top:9px; border-top:1px solid var(--rule-light);
+}
+
+.work-progress{
+  background:var(--carbon); color:var(--frosted);
+  padding:clamp(20px,3vw,28px); margin-bottom:28px;
+}
+.work-progress .wp-head{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--steel-text); margin:0 0 12px;
+}
+.wp-steps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0}
+.wp-steps li{
+  flex:1 1 auto; min-width:120px;
+  border-top:3px solid var(--graphite); padding:11px 14px 0 0;
+  font-family:var(--ui); font-size:.72rem; font-weight:600; color:var(--steel-text);
+}
+.wp-steps li[data-done="true"]{border-top-color:var(--frosted); color:var(--frosted)}
+
+/* A truthful note about where work is and is not. */
+.capture-note{
+  border:1px solid var(--rule-light); border-left:3px solid var(--graphite);
+  background:var(--paper); padding:17px 19px; margin-top:28px; max-width:74ch;
+}
+.capture-note .cn-head{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--graphite); margin:0 0 9px;
+}
+.capture-note p{margin:0 0 9px; font-size:.9rem; line-height:1.5}
+.capture-note p:last-child{margin-bottom:0}
+
+/* ─────────────────────────────────────────────────────────────────────
+   PROTOTYPE BANNER
+   This build is not linked from the production front door, but anyone
+   who lands on it deserves to know what they are looking at.
+   ───────────────────────────────────────────────────────────────────── */
+.proto-flag{
+  background:var(--frosted); color:var(--carbon);
+  font-family:var(--ui); font-size:.7rem; font-weight:700;
+  letter-spacing:.11em; text-transform:uppercase;
+  padding:8px 0; text-align:center;
+}
+.proto-flag span{opacity:.72; font-weight:600; text-transform:none; letter-spacing:.02em; font-size:.92em}

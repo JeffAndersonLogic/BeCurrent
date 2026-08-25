@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="presentation" aria-hidden="true">
+  <!--
+    The hero plate.
+
+    A SEPARATE FILE FROM iran-plate.svg ON PURPOSE. The map carries place
+    labels sized to be read at map scale; behind a headline and under a
+    scrim those same labels come through as stray half-words ("...UZ",
+    "arrowest") and read as a rendering fault rather than as texture.
+
+    So this is the same geography with every word removed: coastlines, the
+    graticule, the shipping lane, and the pinch at Hormuz. It is meant to be
+    felt rather than read, which is the actual job of a hero image when the
+    page has no photograph yet.
+
+    It is also the FLOOR, not the picture. hero.photo is empty today; set it
+    and the photograph layers on top with onerror removing itself, so a dead
+    URL degrades to this instead of to an empty frame.
+  -->
+  <defs>
+    <linearGradient id="hSea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0D0E"/>
+      <stop offset="1" stop-color="#171C20"/>
+    </linearGradient>
+    <linearGradient id="hLand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20262A"/>
+      <stop offset="1" stop-color="#171B1E"/>
+    </linearGradient>
+    <radialGradient id="hGlow" cx=".68" cy=".56" r=".42">
+      <stop offset="0" stop-color="#D9DCDE" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#D9DCDE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#hSea)"/>
+
+  <g stroke="#D9DCDE" stroke-opacity=".045" stroke-width="1">
+    <path d="M0 150h1600M0 300h1600M0 450h1600M0 600h1600M0 750h1600"/>
+    <path d="M200 0v900M400 0v900M600 0v900M800 0v900M1000 0v900M1200 0v900M1400 0v900"/>
+  </g>
+
+  <!-- Iran, north of the Gulf. -->
+  <path d="M0 0 H1600 V596
+           L1493 626 L1373 643 L1253 632 L1173 602 L1136 569
+           L1093 549 L1027 523 L920 482 L787 434 L640 382 L493 322 L347 266 L200 210 L0 166 Z"
+        fill="url(#hLand)"/>
+  <path d="M0 166 L200 210 L347 266 L493 322 L640 382 L787 434 L920 482 L1027 523 L1093 549 L1136 569 L1173 602 L1253 632 L1373 643 L1493 626 L1600 596"
+        fill="none" stroke="#B8BDC0" stroke-opacity=".34" stroke-width="1.8"/>
+
+  <!-- The Arabian side, with Musandam reaching up to form the pinch. -->
+  <path d="M0 900 V360
+           L160 422 L333 487 L507 540 L667 583 L813 610 L933 623 L1040 620
+           L1104 597 L1128 595
+           L1144 648 L1200 706 L1300 761 L1427 806 L1600 840 V900 Z"
+        fill="url(#hLand)"/>
+  <path d="M0 360 L160 422 L333 487 L507 540 L667 583 L813 610 L933 623 L1040 620 L1104 597 L1128 595 L1144 648 L1200 706 L1300 761 L1427 806 L1600 840"
+        fill="none" stroke="#B8BDC0" stroke-opacity=".24" stroke-width="1.5"/>
+
+  <!-- The lane out of the Gulf, threading the pinch. The one bright line. -->
+  <path d="M233 300 C 467 366, 747 456, 960 514 C 1053 540, 1104 559, 1135 581
+           C 1173 614, 1267 667, 1387 710 C 1480 744, 1547 763, 1600 775"
+        fill="none" stroke="#D9DCDE" stroke-opacity=".55" stroke-width="2.6"
+        stroke-dasharray="15 11" stroke-linecap="round"/>
+
+  <!-- The strait, marked but unlabelled. -->
+  <circle cx="1135" cy="581" r="40" fill="none" stroke="#D9DCDE" stroke-opacity=".34" stroke-width="1.5"/>
+  <circle cx="1135" cy="581" r="66" fill="none" stroke="#D9DCDE" stroke-opacity=".13" stroke-width="1"/>
+  <circle cx="1135" cy="581" r="5" fill="#D9DCDE" fill-opacity=".7"/>
+
+  <rect width="1600" height="900" fill="url(#hGlow)"/>
+</svg>

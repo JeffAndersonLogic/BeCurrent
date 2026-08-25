@@ -40,7 +40,8 @@ const SUITES = {
     ['scripts/test/canvas-zip.test.js', 'zip reader + CLI/browser CSV parity']
   ],
   browser: [
-    ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip']
+    ['scripts/test/week-page.test.js', 'modal focus, scroll lock, deck, capture, footer round trip'],
+    ['scripts/test/prototype-v2.test.js', 'BeCurrent 2.0: timeline keyboard, persistence, 320px reflow in the real display face']
   ]
 };
 

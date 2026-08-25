@@ -428,6 +428,32 @@ weekDirs.concat(unitDirs).forEach(dir => {
 studentPages.push(path.join(ROOT, 'index.html'));
 [RENDERER].forEach(f => studentPages.push(f));
 
+// The BeCurrent 2.0 prototype, if it is present.
+//
+// It is discovered by directory rather than through the week/unit
+// conventions above, because it deliberately satisfies NONE of them: no
+// weeks, no briefs, no capture wrappers, no ten-module shape. Checking it
+// against those contracts would fail it for having been designed on
+// purpose, which is the trap BeHistorical documented when a new page type
+// picked up a filename prefix that dragged it into the wrong glob.
+//
+// It must still be inside THIS scan. "No capture channel but Canvas" is
+// not a lesson-shape convention, it is the promise that a student's
+// writing never leaves their device, and any page a student can open is
+// covered by it whether or not it is a week. Without these lines the
+// prototype sits outside the only check that enforces that, silently,
+// while every other check stays green — which is the exact failure shape
+// this repo exists to refuse.
+const protoDir = path.join(ROOT, 'prototype-v2');
+const protoFiles = [];
+if (fs.existsSync(protoDir)) {
+  glob(protoDir, /\.html$/).forEach(f => protoFiles.push(f));
+  ['assets/js', 'assets/data'].forEach(sub => {
+    glob(path.join(protoDir, sub), /\.js$/).forEach(f => protoFiles.push(f));
+  });
+  protoFiles.forEach(f => studentPages.push(f));
+}
+
 studentPages.forEach(file => {
   const src = read(file);
   if (!src) return;
@@ -459,6 +485,55 @@ codeCarriers.forEach(file => {
     + 'AP World code must never be carried into this repo.');
 });
 done(`${studentPages.length} student-facing files carry no off-device capture`);
+
+// ── The prototype stays out of the live student site ─────────────────────────
+//
+// prototype-v2/ is a design prototype under review. It is not finished
+// teaching material, and the way it does damage is not by being wrong — it is
+// by being reachable. A student who finds it from the front door cannot tell
+// a prototype from the course, and neither can a parent or a case manager.
+//
+// So the isolation is asserted rather than remembered. `main` is what students
+// have the moment it is pushed, and "we meant to unlink that before deploying"
+// is not a thing anyone can check after the fact.
+//
+// WHEN THE PROTOTYPE IS APPROVED and becomes the real front door, DELETE THIS
+// WHOLE SECTION. Do not weaken it, and do not add an exception to it: an
+// assertion with a carve-out in it stops telling you anything.
+if (fs.existsSync(protoDir)) {
+  section('Prototype is isolated from the live site');
+
+  const frontDoorSrc = read(path.join(ROOT, 'index.html')) || '';
+  assert(!/prototype-v2/.test(frontDoorSrc), path.join(ROOT, 'index.html'),
+    'the front door links prototype-v2/. The prototype is under review and must not be '
+    + 'reachable by students. Remove the link, or if the prototype has been approved as '
+    + 'the new front door, delete this section of validate.js.');
+
+  // Nor from any week or unit page a student is actually assigned.
+  weekDirs.concat(unitDirs).forEach(dir => {
+    glob(path.join(ROOT, dir), /\.html$/).forEach(f => {
+      const src = read(f);
+      if (!src) return;
+      assert(!/prototype-v2/.test(src), f,
+        'a live lesson page links prototype-v2/. The prototype must not be reachable '
+        + 'from assigned work.');
+    });
+  });
+
+  // The prototype must not read or write the production briefs' storage keys.
+  // It shares an origin with them on GitHub Pages, so a stray key here would
+  // let a design prototype overwrite real student work.
+  protoFiles.forEach(f => {
+    const src = read(f);
+    if (!src) return;
+    assert(!/becurrent-brief-/.test(src), f,
+      'the prototype touches a production brief storage key. It shares an origin with '
+      + 'the live site, so it must namespace its own storage and never read or write '
+      + 'becurrent-brief-*.');
+  });
+
+  done(`${protoFiles.length} prototype files: unlinked from the live site, no production storage keys`);
+}
 
 // ── Unit pages ────────────────────────────────────────────────────────────────
 //

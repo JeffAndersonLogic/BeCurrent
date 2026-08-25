@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="A diagram of the US-Iran relationship: aligned from 1953, inverting sharply in 1979, hostile since">
+  <!--
+    1979, drawn rather than photographed.
+
+    This is a turning-point plate, and it is deliberately NOT a stock
+    photograph of a crowd. It states the actual claim of the section: the
+    relationship did not decay gradually, it inverted, and it inverted in
+    one year. A decorative image would have said nothing; this says the
+    thing the prose says, in one look.
+
+    The axis is real. 1953 to now, with the alliance held high for
+    twenty-six years and the drop at 1979 drawn as a break rather than a
+    curve, because that is what happened.
+
+    Signal Silver only. It sits behind display type at up to 4.2rem, so
+    everything here stays under 30% opacity in the headline's column.
+  -->
+  <defs>
+    <linearGradient id="tpBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D0F10"/>
+      <stop offset="1" stop-color="#171C1F"/>
+    </linearGradient>
+    <linearGradient id="tpLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#747B80"/>
+      <stop offset=".52"  stop-color="#D9DCDE"/>
+      <stop offset=".62"  stop-color="#D9DCDE"/>
+      <stop offset="1"    stop-color="#4A5054"/>
+    </linearGradient>
+    <style>
+      .ax { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .16em; fill: #4A5054; }
+      .st { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .14em; fill: #747B80; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#tpBg)"/>
+
+  <!-- Horizon rules, the neutral line the relationship sits above and below. -->
+  <g stroke="#D9DCDE" stroke-opacity=".07" stroke-width="1">
+    <path d="M0 168h1200M0 337h1200M0 506h1200"/>
+  </g>
+
+  <!-- Decade ticks. -->
+  <g stroke="#747B80" stroke-opacity=".22" stroke-width="1">
+    <path d="M170 500v22M330 500v22M490 500v22M650 500v22M810 500v22M970 500v22M1130 500v22"/>
+  </g>
+
+  <!-- The relationship. High and steady while the Shah rules, a vertical
+       break at 1979, hostile and jagged since. -->
+  <path d="M60 214 L170 208 L330 200 L470 196 L560 192
+           L604 192
+           L612 470 L640 448 L700 486 L760 452 L830 494 L900 458 L970 500 L1040 466 L1110 506 L1160 486"
+        fill="none" stroke="url(#tpLine)" stroke-width="3.2"
+        stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- The break itself, emphasised. -->
+  <path d="M608 192 L608 470" stroke="#D9DCDE" stroke-opacity=".28" stroke-width="14" stroke-linecap="butt"/>
+  <circle cx="608" cy="192" r="7.5" fill="#D9DCDE"/>
+  <circle cx="608" cy="470" r="7.5" fill="none" stroke="#D9DCDE" stroke-width="2.4"/>
+
+  <!-- The year, set large in the plate rather than as a caption. -->
+  <text x="646" y="352" font-family="Georgia, 'Times New Roman', serif" font-weight="700"
+        font-size="132" letter-spacing="-.03em" fill="#D9DCDE" fill-opacity=".17">1979</text>
+
+  <!-- Band labels. -->
+  <text class="st" x="60" y="176">ALLIED · 1953 TO 1979</text>
+  <text class="st" x="646" y="556" fill="#5D666B">HOSTILE · 1979 TO NOW</text>
+
+  <!-- Axis. -->
+  <path d="M60 522 H1160" stroke="#747B80" stroke-opacity=".3" stroke-width="1"/>
+  <text class="ax" x="60"   y="548">1953</text>
+  <text class="ax" x="586"  y="548" fill="#B8BDC0">1979</text>
+  <text class="ax" x="1104" y="548">NOW</text>
+</svg>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why is there war with Iran? | BeCurrent</title>
+<meta name="description" content="The fighting is now. The story starts in 1953. A Reverse History investigation.">
+
+<!--
+  THE IRAN INVESTIGATION — BeCurrent 2.0 prototype.
+
+  This page is a SHELL. Every section below is an empty mount filled by
+  assets/js/bc2-investigation-page.js from the content model, so a second
+  investigation is a content file rather than a copy of this markup.
+
+  SECTION ORDER IS PEDAGOGY, not layout preference. The prediction must
+  come before any history: if a student reads the explanation first, the
+  reflection at the end has nothing to compare against and Reverse
+  History collapses into an ordinary lesson. See the header comment in
+  bc2-investigation-page.js.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<link rel="stylesheet" href="assets/css/bc2.css">
+<link rel="stylesheet" href="assets/css/bc2-investigation.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-mode="student">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<p class="proto-flag">BeCurrent 2.0 — design prototype <span>· not the live student site</span></p>
+
+<header class="masthead bc-dark" id="masthead"></header>
+
+<!-- The investigation names itself before the sticky nav. Two reasons:
+     a page whose first heading is an h2 has no document title in the
+     outline, and a student arriving on a deep link would otherwise scroll
+     into "what is happening right now" without ever seeing the question
+     the whole page exists to answer. -->
+<div class="inv-title bc-dark">
+  <div class="wrap">
+    <p class="eyebrow">Investigation</p>
+    <h1 id="inv-title-h"></h1>
+    <p class="inv-question" id="inv-question"></p>
+  </div>
+</div>
+
+<nav class="inv-nav bc-dark" id="inv-nav" aria-label="Investigation progress"></nav>
+
+<main id="main-content">
+
+  <!-- ── TODAY ─────────────────────────────────────────────────── -->
+  <section class="sec sec-paper" id="today" aria-labelledby="today-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Today</p>
+        <h2 id="today-h">What is happening right now</h2>
+        <p class="standfirst">Start with the present. Every question this investigation asks comes out of something on this page.</p>
+      </div>
+      <div id="today-body"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-gunmetal bc-dark" aria-labelledby="fig-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">By the numbers</p>
+        <h2 id="fig-h">Four figures, and who counted them</h2>
+        <p class="standfirst">A number with nobody’s name on it is not a fact yet.</p>
+      </div>
+      <div id="figures-body"></div>
+    </div>
+  </section>
+
+  <!-- ── WHY: prediction BEFORE any explanation ────────────────── -->
+  <section class="sec sec-dark bc-dark" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <h2 id="why-h" class="sr-only">Your prediction</h2>
+      <div id="prediction-body"></div>
+
+      <div class="teacher-note" data-teacher-only style="margin-top:34px;max-width:72ch">
+        <p class="tn-head">Teacher note · why this is first</p>
+        <p>This has to happen before students see the timeline. The reflection at the end compares against what they save here, and if they read the history first there is nothing to compare against.</p>
+        <p>Selections save to the device. A student on a different machine at the end will get the "no prediction recorded" path, which is handled and says what to do instead.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Geography ─────────────────────────────────────────────── -->
+  <section class="sec sec-paper" id="where" aria-labelledby="where-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" id="where-eyebrow"></p>
+        <h2 id="where-h"></h2>
+        <p class="standfirst" id="where-stand"></p>
+      </div>
+      <div id="geography-body"></div>
+    </div>
+  </section>
+
+  <!-- ── TRACE IT BACK: the signature ──────────────────────────── -->
+  <section class="sec sec-dark bc-dark" id="trace" aria-labelledby="trace-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Trace it back</p>
+        <h2 id="trace-h">Reverse History</h2>
+        <p class="standfirst">Today is on the left. Each step to the right goes further back, and answers a question the step before it raised. The arrows point the other way, toward the present, because that is the direction the consequences travel.</p>
+      </div>
+
+      <div id="timeline"></div>
+
+      <div style="margin-top:44px;border-top:1px solid var(--rule-dark);padding-top:30px">
+        <p class="eyebrow" style="color:var(--steel-text);margin-bottom:18px">Three strands, not one chain</p>
+        <ul class="rh-threads" id="threads"></ul>
+      </div>
+
+      <div class="teacher-note" data-teacher-only style="max-width:72ch">
+        <p class="tn-head">Teacher note · the 1953 node</p>
+        <p>This is where the room usually goes quiet, and where the lesson can go wrong. Watch for the chain hardening into "so America caused all of this". The node carries a <strong>Historians disagree</strong> note for exactly that reason and it is worth reading aloud.</p>
+        <p>The terminal node deliberately ends on another question rather than an answer. History does not bottom out in 1953, and saying so is what keeps this from being a conspiracy shape.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The turning point, full width ─────────────────────────── -->
+  <div id="feature"></div>
+
+  <!-- ── Primary source ────────────────────────────────────────── -->
+  <section class="sec sec-ivory" id="source" aria-labelledby="src-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" id="ps-eyebrow"></p>
+        <h2 id="src-h"></h2>
+        <p class="standfirst" id="ps-stand"></p>
+      </div>
+      <div id="primary-source-body"></div>
+    </div>
+  </section>
+
+  <!-- ── EVIDENCE ──────────────────────────────────────────────── -->
+  <section class="sec sec-paper" id="evidence" aria-labelledby="ev-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" id="ev-eyebrow"></p>
+        <h2 id="ev-h"></h2>
+        <p class="standfirst" id="ev-stand"></p>
+      </div>
+      <div id="evidence-body"></div>
+    </div>
+  </section>
+
+  <!-- ── Perspectives ──────────────────────────────────────────── -->
+  <section class="sec sec-ivory" id="perspectives" aria-labelledby="persp-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Perspective check</p>
+        <h2 id="persp-h">Two governments, and what can actually be checked</h2>
+        <p class="standfirst">Both sides make claims that are partly checkable and partly not. Sorting which is which is most of the work.</p>
+      </div>
+      <div id="perspectives-body"></div>
+    </div>
+  </section>
+
+  <!-- ── DECIDE ────────────────────────────────────────────────── -->
+  <section class="sec sec-paper" id="decide" aria-labelledby="claim-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" id="claim-eyebrow"></p>
+        <h2 id="claim-h"></h2>
+        <p class="standfirst" id="claim-stand"></p>
+      </div>
+      <div id="claim-body"></div>
+    </div>
+  </section>
+
+  <!-- ── Reflection ────────────────────────────────────────────── -->
+  <section class="sec sec-ivory" id="reflect" aria-labelledby="refl-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" id="refl-eyebrow"></p>
+        <h2 id="refl-h"></h2>
+        <p class="standfirst" id="refl-stand"></p>
+      </div>
+      <div id="reflection-body"></div>
+
+      <p style="margin-top:34px">
+        <a class="btn-dark" href="my-work.html">See everything I’ve written <span aria-hidden="true">&rarr;</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Sources ───────────────────────────────────────────────── -->
+  <section class="sec sec-paper" id="sources" aria-labelledby="src-list-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Sources</p>
+        <h2 id="src-list-h">Everything this investigation is built on</h2>
+        <p class="standfirst">Every claim above traces to one of these. If a date here disagrees with what you find, the source wins and the page is wrong.</p>
+      </div>
+      <div id="sources-body"></div>
+
+      <div class="teacher-note" data-teacher-only style="margin-top:34px">
+        <p class="tn-head">Teacher note · keeping this current</p>
+        <p>Only <strong>assets/data/iran-current.js</strong> goes stale. The historical spine in <strong>iran-history.js</strong> should not need an edit for a year.</p>
+        <p>To update: change <strong>asOf</strong>, rewrite <strong>status</strong>, put the newest developments at the top of that array, drop the oldest off the bottom. Ten minutes. Change <strong>asOf</strong> even when nothing else changed, because a stale date is a lie and "we checked and nothing moved" is information.</p>
+      </div>
+
+      <div class="teacher-note" data-teacher-only>
+        <p class="tn-head">Teacher note · standards, timing and access</p>
+        <ul id="teacher-standards"></ul>
+        <p style="margin-top:14px"><strong>Timing</strong></p>
+        <ul id="teacher-timing"></ul>
+        <p style="margin-top:14px"><strong>Accessibility</strong></p>
+        <ul id="teacher-a11y"></ul>
+        <p style="margin-top:14px"><strong>Getting work into Canvas</strong></p>
+        <p id="teacher-canvas"></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer bc-dark" id="site-footer"></footer>
+
+<script src="assets/data/iran-history.js"></script>
+<script src="assets/data/iran-current.js"></script>
+<script src="assets/data/iran-investigation.js"></script>
+<script src="assets/js/bc2-store.js"></script>
+<script src="assets/js/bc2-components.js"></script>
+<script src="assets/js/bc2-timeline.js"></script>
+<script src="assets/js/bc2-investigation-page.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var inv = window.BC_INVESTIGATION;
+  var C   = window.BC2;
+  var S   = window.BC2Store;
+  var P   = window.BC2InvestigationPage;
+  var esc = C.esc;
+
+  function text(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+
+  C.mount('masthead', C.masthead({ nav: C.NAV, current: 'trace' }));
+  C.mount('inv-nav', P.renderNav(inv));
+  C.mount('site-footer', C.footer());
+
+  text('inv-title-h', inv.title);
+  text('inv-question', inv.question);
+
+  /* Sections whose headings come from the content model, so a new
+     investigation restates nothing in its markup. */
+  text('where-eyebrow', inv.geography.eyebrow);
+  text('where-h', inv.geography.title);
+  text('where-stand', inv.geography.standfirst);
+
+  text('ps-eyebrow', inv.primarySource.eyebrow);
+  text('src-h', inv.primarySource.title);
+  text('ps-stand', inv.primarySource.standfirst);
+
+  text('ev-eyebrow', inv.evidence.eyebrow);
+  text('ev-h', inv.evidence.title);
+  text('ev-stand', inv.evidence.standfirst);
+
+  text('claim-eyebrow', inv.claim.eyebrow);
+  text('claim-h', inv.claim.title);
+  text('claim-stand', inv.claim.standfirst);
+
+  text('refl-eyebrow', inv.reflection.eyebrow);
+  text('refl-h', inv.reflection.title);
+  text('refl-stand', inv.reflection.standfirst);
+
+  C.mount('today-body', P.renderToday(inv));
+  C.mount('figures-body', P.renderFigures(inv));
+  C.mount('prediction-body', P.renderPrediction(inv));
+  C.mount('geography-body', P.renderGeography(inv));
+  C.mount('feature', P.renderFeature(inv));
+  C.mount('primary-source-body', P.renderPrimarySource(inv));
+  C.mount('evidence-body', P.renderEvidence(inv));
+  C.mount('perspectives-body', P.renderPerspectives(inv));
+  C.mount('claim-body', P.renderClaim(inv));
+  C.mount('reflection-body', P.renderReflection(inv));
+  C.mount('sources-body', C.sourceList(inv.sources));
+
+  /* The timeline. Deep links like #trace-1953 open a node directly,
+     which is what makes a projected lesson able to jump to one. */
+  var timeline = window.BC2Timeline.render('timeline', inv.history, inv.sources);
+  C.mount('threads', inv.history.threads.map(function (t) {
+    return '<li data-thread="' + esc(t.id) + '">'
+      + '<span class="tl-key" aria-hidden="true"></span>'
+      + '<span><span class="tl-name">' + esc(t.name) + '</span>'
+      + '<p class="tl-desc">' + esc(t.desc) + '</p></span></li>';
+  }).join(''));
+
+  if (timeline && window.location.hash.indexOf('#trace-') === 0) {
+    timeline.open(window.location.hash.replace('#trace-', ''));
+  }
+
+  /* Teacher metadata. Public by construction — this is a static site, so
+     nothing here is hidden in any real sense. No answer keys ship. */
+  function fill(id, items) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = items.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+  }
+  fill('teacher-standards', inv.teacher.standards);
+  fill('teacher-a11y', inv.teacher.accessibility);
+  var timing = document.getElementById('teacher-timing');
+  if (timing) {
+    timing.innerHTML = inv.teacher.timing.map(function (row) {
+      return '<li><strong>' + esc(row[0]) + '</strong> — ' + esc(row[1]) + '</li>';
+    }).join('');
+  }
+  text('teacher-canvas', inv.teacher.canvas);
+
+  P.wirePrediction(inv);
+  P.wireEvidence(inv);
+  P.wireWriting(inv);
+  P.paintRecall(inv);
+  P.wireProgress(inv);
+  S.wireModeToggle();
+})();
+</script>
+</body>
+</html>

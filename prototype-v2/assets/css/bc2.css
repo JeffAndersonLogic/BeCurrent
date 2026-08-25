@@ -1,0 +1,663 @@
+/* =========================================================
+   BECURRENT 2.0 — "SIGNAL SILVER"
+
+   A publication that happens to teach, not a dashboard wearing
+   a publication's clothes.
+
+   THE PALETTE IS METAL AND PAPER. There is no chromatic accent.
+   Red, teal and purple are all explicitly out. What carries emphasis
+   here is tone, weight and space: frosted silver against carbon, one
+   ivory element brighter than everything near it, a platinum hairline.
+   Colour in the product comes from photography, not from the UI.
+
+   CONTRAST IS NOT A MATTER OF TASTE. Measured against the two
+   grounds this system actually uses:
+
+     on CARBON  #0D0F10         on WARM PAPER #F2EFE8
+     ──────────────────────     ──────────────────────
+     frosted  #D9DCDE 13.95:1   ink      #17191A 15.36:1
+     platinum #B8BDC0 10.14:1   graphite #4A5054  7.12:1
+     steel    #747B80  4.47:1   steel    #747B80  3.74:1
+
+   (Measured, not estimated. Steel lands at 4.47 on carbon, which is
+   under the 4.5 body-text threshold — close enough to look fine and
+   still fail, which is exactly why it is written down.)
+
+   So --steel IS NOT A TEXT COLOUR on either ground. It is for rules,
+   borders and dots. Small text on a dark ground is --steel-text,
+   --platinum or --frosted; small text on paper is --ink or
+   --graphite. Do not "tidy" a label back down to bare --steel: it
+   will look right and measure wrong.
+
+   POLARITY, carried from BeCurrent 1.0 and BeHistorical, because the
+   reasoning is about rooms and eyes rather than taste: every surface a
+   student READS at length is light. Carbon and gunmetal are for
+   surfaces students SCAN — masthead, wire, hero, timeline, footer.
+
+   CHROMEBOOK FIRST. Laid out against 1366x768. That viewport is only
+   768px tall, so nothing here is sized in whole viewport heights: a
+   100vh hero would push the signature interaction under the fold on
+   the exact machine every student is holding.
+   ========================================================= */
+
+:root{
+  /* Dark surfaces */
+  --carbon:#0D0F10;
+  --gunmetal:#1B1F22;
+  --graphite:#4A5054;
+
+  /* Metallic tones */
+  --steel:#747B80;
+  --platinum:#B8BDC0;
+  --frosted:#D9DCDE;
+
+  /* Steel, lifted just enough to be legible as TEXT.
+     #747B80 measures 4.47:1 on carbon and 3.86:1 on gunmetal — under the
+     4.5 body threshold on both, by a margin small enough to look fine and
+     still fail. This is the same tone raised to 5.71:1 and 4.93:1.
+     --steel stays for RULES, DOTS AND BORDERS, where contrast minimums do
+     not apply and the darker tone is what makes a hairline read as a
+     hairline. Never set small text in bare --steel. */
+  --steel-text:#868D93;
+
+  /* Reading surfaces */
+  --paper:#F2EFE8;
+  --ivory:#F7F4ED;
+  --ink:#17191A;
+
+  /* Derived, so a hairline is never re-invented per component */
+  --rule-dark:rgba(184,189,192,.22);
+  --rule-light:rgba(23,25,26,.16);
+  --wash-dark:rgba(217,220,222,.06);
+  --wash-light:rgba(23,25,26,.045);
+
+  --shadow-lift:0 18px 48px rgba(13,15,16,.28);
+  --shadow-soft:0 6px 18px rgba(13,15,16,.12);
+
+  /* Two loaded families, not three. Labels use the system UI sans:
+     Chromebooks ship Roboto, so a small uppercase label costs nothing
+     to render and we spend the font budget where it shows. */
+  --display:"Playfair Display", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --ui:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --measure:66ch;      /* reading width, not a container width */
+  --page:1180px;
+  --gutter:clamp(18px, 4vw, 44px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{ -webkit-text-size-adjust:100%; }
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.62;
+  font-synthesis-weight:none;
+}
+
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.1}
+
+/* One focus treatment for the whole product. A ring, never a tint:
+   a few percent of background shift is invisible on a projector and
+   absent entirely in forced-colours mode. */
+:where(a,button,select,textarea,input,summary,[tabindex]):focus-visible{
+  outline:3px solid var(--ink);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.on-dark :where(a,button,select,textarea,input,[tabindex]):focus-visible,
+.bc-dark :where(a,button,select,textarea,input,[tabindex]):focus-visible{
+  outline-color:var(--frosted);
+}
+
+.skip-link{
+  position:absolute; left:12px; top:-60px; z-index:100;
+  background:var(--ivory); color:var(--ink);
+  font-family:var(--ui); font-weight:700; font-size:.85rem;
+  padding:11px 18px; text-decoration:none; border-radius:3px;
+  transition:top .12s ease;
+}
+.skip-link:focus{top:12px}
+
+.wrap{width:min(var(--page), 100% - (var(--gutter) * 2)); margin-inline:auto}
+.wrap-wide{width:min(1400px, 100% - (var(--gutter) * 2)); margin-inline:auto}
+
+/* A label is the one place uppercase letterspacing earns its keep. */
+.eyebrow{
+  font-family:var(--ui);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.68rem;
+  font-weight:700;
+  margin:0;
+}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   MASTHEAD
+   Carbon, thin, and it does not follow you down the page. A sticky bar
+   on a 768px-tall screen is 64px of permanent rent for navigation a
+   student uses twice a session.
+   ───────────────────────────────────────────────────────────────────── */
+.masthead{background:var(--carbon); color:var(--frosted)}
+
+.masthead-top{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; padding:18px 0 14px;
+}
+.wordmark{
+  display:inline-flex; align-items:baseline; gap:.02em;
+  text-decoration:none; color:var(--ivory);
+  font-family:var(--display); font-weight:800;
+  font-size:1.62rem; letter-spacing:-.015em; line-height:1;
+}
+.wordmark .w-be{color:var(--platinum); font-weight:600}
+/* The oversized C is the logo. It is the one piece of the identity that
+   survives being shrunk to a favicon, so it is set larger than its
+   line and tinted platinum rather than given a colour accent. */
+.wordmark .w-c{
+  font-size:1.5em; line-height:0; position:relative; top:.06em;
+  color:var(--frosted);
+}
+.wordmark .w-urrent{color:var(--ivory)}
+.masthead-tag{
+  font-family:var(--ui); font-size:.7rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--steel-text); margin:6px 0 0;
+}
+
+.mode-toggle{display:flex; align-items:center; gap:0; border:1px solid var(--rule-dark); border-radius:3px; overflow:hidden}
+.mode-toggle button{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
+  background:transparent; color:var(--steel-text);
+  border:0; padding:8px 15px; cursor:pointer;
+}
+.mode-toggle button[aria-pressed="true"]{background:var(--frosted); color:var(--carbon)}
+.mode-toggle button:hover:not([aria-pressed="true"]){color:var(--frosted)}
+
+/* Primary navigation, top-based. No left rail: on a 1366px screen a
+   240px rail is 18% of the width spent on links, permanently. */
+.mainnav{border-top:1px solid var(--rule-dark)}
+.mainnav ul{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-wrap:wrap; gap:clamp(16px,2.6vw,34px);
+}
+.mainnav a{
+  display:block; padding:13px 0;
+  font-family:var(--ui); font-size:.72rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--platinum); text-decoration:none;
+  border-bottom:2px solid transparent;
+}
+.mainnav a:hover{color:var(--ivory)}
+.mainnav a[aria-current="page"]{color:var(--ivory); border-bottom-color:var(--frosted)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   THE CURRENT WIRE
+   Manually curated, five headlines at most. It exists to make the room
+   feel live; it is not a news product and does not call an API.
+   ───────────────────────────────────────────────────────────────────── */
+.wire{background:var(--gunmetal); border-top:1px solid var(--rule-dark); border-bottom:1px solid var(--rule-dark)}
+.wire-inner{display:flex; align-items:stretch; gap:0}
+.wire-label{
+  flex:0 0 auto; display:flex; align-items:center; gap:9px;
+  padding:11px 20px 11px 0; margin-right:20px;
+  border-right:1px solid var(--rule-dark);
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--frosted);
+  white-space:nowrap;
+}
+.wire-dot{width:7px;height:7px;border-radius:50%;background:var(--frosted);flex:0 0 auto}
+@media (prefers-reduced-motion: no-preference){
+  .wire-dot{animation:wire-pulse 2.6s ease-in-out infinite}
+}
+@keyframes wire-pulse{0%,100%{opacity:.35}50%{opacity:1}}
+
+.wire-list{
+  flex:1 1 auto; display:flex; gap:0; overflow-x:auto;
+  list-style:none; margin:0; padding:0;
+  scrollbar-width:thin;
+}
+.wire-list li{flex:0 0 auto; display:flex; align-items:center}
+.wire-list li + li{border-left:1px solid var(--rule-dark)}
+.wire-item{
+  display:flex; align-items:baseline; gap:9px;
+  padding:11px 20px; text-decoration:none; color:var(--platinum);
+  font-size:.86rem; white-space:nowrap;
+}
+.wire-item:hover{color:var(--ivory); background:var(--wash-dark)}
+.wire-src{
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--steel-text);
+}
+.wire-item:hover .wire-src{color:var(--platinum)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   HERO
+   Photograph on top, generated local plate underneath. The plate is
+   the floor: a dead remote URL degrades to on-topic artwork rather than
+   an empty frame, which is the repo's image contract.
+   ───────────────────────────────────────────────────────────────────── */
+.hero{position:relative; background:var(--carbon); color:var(--ivory); overflow:hidden}
+.hero-media{position:absolute; inset:0; z-index:0}
+.hero-media img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+}
+.hero-plate{filter:saturate(.7)}
+/* Two overlapping washes rather than one: the vertical keeps the lower
+   edge readable, the horizontal protects the headline column without
+   flattening the whole photograph into grey. */
+.hero-media::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(to right, rgba(13,15,16,.94) 0%, rgba(13,15,16,.86) 38%, rgba(13,15,16,.42) 68%, rgba(13,15,16,.30) 100%),
+    linear-gradient(to top, rgba(13,15,16,.85) 0%, rgba(13,15,16,.10) 55%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:minmax(min(100%,420px),1.35fr) minmax(min(100%,270px),.9fr);
+  gap:clamp(24px,4vw,64px); align-items:end;
+  padding:clamp(34px,5vw,60px) 0 clamp(28px,4vw,44px);
+  min-height:min(58vh, 470px);
+}
+.hero-eyebrow{color:var(--frosted); margin-bottom:16px}
+.hero-eyebrow .hero-date{color:var(--steel-text); margin-right:12px}
+
+.hero h1{
+  font-family:var(--display);
+  font-size:clamp(2.45rem, 6.1vw, 4.6rem);
+  font-weight:800; letter-spacing:-.022em; line-height:.98;
+  /* A long word in a display face is how a hero overflows a 320px
+     phone. This is a no-op until a word cannot fit on its own line. */
+  overflow-wrap:break-word;
+  margin-bottom:18px;
+}
+.hero h1 em{font-style:italic; font-weight:700; color:var(--frosted)}
+.hero-standfirst{
+  font-size:clamp(1.02rem,1.6vw,1.22rem); line-height:1.5;
+  color:var(--platinum); max-width:44ch; margin:0 0 26px;
+}
+
+/* The single brightest element on the page. Nothing else gets ivory
+   fill, which is what makes "where do I click" answerable in a second. */
+.btn-primary{
+  display:inline-flex; align-items:center; gap:12px;
+  background:var(--ivory); color:var(--carbon);
+  font-family:var(--ui); font-weight:700; font-size:.82rem;
+  letter-spacing:.13em; text-transform:uppercase;
+  padding:15px 26px; border:0; border-radius:2px;
+  text-decoration:none; cursor:pointer;
+}
+.btn-primary:hover{background:#fff}
+.btn-primary .arrow{transition:transform .16s ease}
+@media (prefers-reduced-motion: reduce){ .btn-primary .arrow{transition:none} }
+.btn-primary:hover .arrow{transform:translateX(4px)}
+
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:10px;
+  background:transparent; color:var(--frosted);
+  border:1px solid var(--rule-dark); border-radius:2px;
+  font-family:var(--ui); font-weight:700; font-size:.75rem;
+  letter-spacing:.12em; text-transform:uppercase;
+  padding:12px 20px; text-decoration:none; cursor:pointer;
+}
+.btn-ghost:hover{border-color:var(--platinum); color:var(--ivory)}
+
+.btn-dark{
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--carbon); color:var(--ivory);
+  border:0; border-radius:2px;
+  font-family:var(--ui); font-weight:700; font-size:.78rem;
+  letter-spacing:.12em; text-transform:uppercase;
+  padding:14px 24px; text-decoration:none; cursor:pointer;
+}
+.btn-dark:hover{background:var(--gunmetal)}
+
+.btn-quiet{
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--ink);
+  border:1px solid var(--rule-light); border-radius:2px;
+  font-family:var(--ui); font-weight:700; font-size:.72rem;
+  letter-spacing:.11em; text-transform:uppercase;
+  padding:10px 16px; text-decoration:none; cursor:pointer;
+}
+.btn-quiet:hover{border-color:var(--ink); background:var(--wash-light)}
+
+/* Today's headline panel, sitting in the hero's right column. */
+.headline-panel{
+  background:rgba(27,31,34,.80);
+  border:1px solid var(--rule-dark);
+  border-top:2px solid var(--frosted);
+  padding:22px 22px 20px;
+  backdrop-filter:blur(3px);
+}
+.headline-panel h2{
+  font-family:var(--ui); font-size:.66rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--frosted);
+  margin-bottom:12px;
+}
+.headline-panel .hp-lead{
+  font-family:var(--display); font-size:1.16rem; line-height:1.26;
+  color:var(--ivory); margin:0 0 14px; font-weight:700;
+}
+.headline-panel ul{list-style:none;margin:0 0 16px;padding:0}
+.headline-panel li{
+  position:relative; padding-left:17px; margin-bottom:9px;
+  font-size:.88rem; line-height:1.45; color:var(--platinum);
+}
+.headline-panel li::before{
+  content:""; position:absolute; left:0; top:.62em;
+  width:7px; height:1px; background:var(--steel);
+}
+.hp-asof{
+  font-family:var(--ui); font-size:.64rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--steel-text);
+  border-top:1px solid var(--rule-dark); padding-top:11px; margin:0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTIONS
+   ───────────────────────────────────────────────────────────────────── */
+.band{padding:clamp(40px,5.4vw,72px) 0}
+.band-paper{background:var(--paper)}
+.band-ivory{background:var(--ivory)}
+.band-dark{background:var(--carbon); color:var(--frosted)}
+.band-gunmetal{background:var(--gunmetal); color:var(--frosted)}
+
+.band-head{
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:20px; flex-wrap:wrap;
+  padding-bottom:14px; margin-bottom:clamp(22px,3vw,34px);
+  border-bottom:1px solid var(--rule-light);
+}
+.band-dark .band-head,.band-gunmetal .band-head{border-bottom-color:var(--rule-dark)}
+.band-head .eyebrow{color:var(--graphite)}
+.band-dark .band-head .eyebrow,.band-gunmetal .band-head .eyebrow{color:var(--platinum)}
+.band-head h2{
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(1.5rem,2.9vw,2.15rem); letter-spacing:-.015em;
+}
+.band-head .band-note{
+  font-size:.9rem; color:var(--graphite); max-width:46ch; margin:0;
+}
+.band-dark .band-head .band-note,.band-gunmetal .band-head .band-note{color:var(--platinum)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   REVERSE HISTORY TIMELINE — the signature interaction
+   TODAY sits at the left and the track runs BACKWARD to the right.
+   Causation arrows point left, toward the present, so the two
+   directions a student has to hold at once stay visually distinct:
+   you travel right to dig, the consequences flow back left.
+   Nodes recede as they get older — smaller, dimmer, thinner rule —
+   so "deeper" is legible without reading a single date.
+   ───────────────────────────────────────────────────────────────────── */
+.rh{position:relative}
+.rh-axis{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; margin-bottom:14px;
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--steel-text);
+}
+.rh-axis .rh-axis-back{display:inline-flex;align-items:center;gap:9px}
+
+.rh-track{
+  position:relative;
+  display:flex; align-items:stretch; gap:0;
+  overflow-x:auto; overflow-y:hidden;
+  padding-bottom:6px;
+  scrollbar-width:thin;
+}
+/* The connecting rail. Fades toward the past rather than stopping dead,
+   because the chain does not actually end at 1953. */
+.rh-track::before{
+  content:""; position:absolute; left:0; right:0; top:41px; height:1px;
+  background:linear-gradient(to right, var(--frosted) 0%, var(--steel) 55%, rgba(116,123,128,.15) 100%);
+}
+
+.rh-node{
+  position:relative; z-index:1;
+  flex:1 0 auto; min-width:138px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:0;
+  background:transparent; border:0;
+  padding:0 18px 14px 0; margin:0;
+  text-align:left; cursor:pointer; color:inherit; font:inherit;
+}
+/* The homepage preview is a static list, not a control. It must not
+   claim to be clickable — the link out sits under it. */
+.rh-track-static .rh-node{cursor:default}
+.rh-node .rh-year{
+  font-family:var(--display); font-weight:800;
+  font-size:1.42rem; letter-spacing:-.01em; color:var(--platinum);
+  line-height:1; margin-bottom:18px;
+}
+.rh-node .rh-dot{
+  width:13px; height:13px; border-radius:50%;
+  background:var(--carbon); border:2px solid var(--steel);
+  margin-bottom:14px;
+}
+.rh-node .rh-label{
+  font-family:var(--ui); font-size:.72rem; font-weight:600;
+  line-height:1.34; color:var(--steel-text); max-width:15ch;
+}
+.rh-node:hover .rh-year,.rh-node:hover .rh-label{color:var(--frosted)}
+.rh-node:hover .rh-dot{border-color:var(--frosted)}
+
+/* TODAY. Larger, brighter, filled. It is the only filled dot. */
+.rh-node[data-now="true"] .rh-year{font-size:1.85rem; color:var(--ivory)}
+.rh-node[data-now="true"] .rh-dot{background:var(--frosted); border-color:var(--frosted); width:16px;height:16px; margin-bottom:12px}
+.rh-node[data-now="true"] .rh-label{color:var(--frosted); font-weight:700}
+
+/* Recession into the past, applied by depth index from the renderer. */
+.rh-node[data-depth="1"] .rh-year{opacity:.94}
+.rh-node[data-depth="2"] .rh-year{opacity:.86}
+.rh-node[data-depth="3"] .rh-year{opacity:.78}
+.rh-node[data-depth="4"] .rh-year{opacity:.70}
+.rh-node[data-depth="5"] .rh-year{opacity:.62}
+
+/* Selected, not merely focused. The tabs pattern makes these two
+   different states and the styling has to keep them different: a
+   student can arrow along the years without opening anything. */
+.rh-node[aria-selected="true"] .rh-dot{background:var(--frosted); border-color:var(--frosted)}
+.rh-node[aria-selected="true"] .rh-year,
+.rh-node[aria-selected="true"] .rh-label{color:var(--ivory)}
+.rh-node[aria-selected="true"] .rh-year{opacity:1}
+
+.rh-hint{
+  font-family:var(--ui); font-size:.7rem; letter-spacing:.06em;
+  color:var(--steel-text); margin:14px 0 0;
+}
+
+.rh-arrow{
+  position:absolute; left:-9px; top:35px; z-index:2;
+  color:var(--steel-text); font-size:.8rem; line-height:1;
+}
+
+/* The expanded panel sits under the whole track, not inside a node,
+   so a long body never widens one column and shoves the rest sideways. */
+.rh-panel{
+  margin-top:22px; border-top:1px solid var(--rule-dark);
+  padding-top:22px;
+}
+.rh-panel[hidden]{display:none}
+.rh-panel-grid{
+  display:grid; grid-template-columns:minmax(min(100%,300px),1.6fr) minmax(min(100%,220px),1fr);
+  gap:clamp(20px,3vw,44px);
+}
+.rh-panel h3{
+  font-family:var(--display); font-size:clamp(1.35rem,2.5vw,1.95rem);
+  color:var(--ivory); letter-spacing:-.015em; margin-bottom:6px;
+}
+.rh-panel .rh-when{
+  font-family:var(--ui); font-size:.68rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--steel-text);
+  margin:0 0 14px;
+}
+.rh-panel p{color:var(--platinum); margin:0 0 13px; max-width:60ch}
+.rh-panel .rh-why{
+  border-left:2px solid var(--frosted); padding:2px 0 2px 16px;
+  color:var(--frosted); font-size:.96rem;
+}
+/* "Which raises..." — the question that sends the student one step
+   further back. This is the engine of Reverse History, so it is set as
+   a feature in the panel's second column rather than as a trailing line. */
+.rh-next{
+  border-top:2px solid var(--frosted); padding-top:15px; margin-bottom:20px;
+}
+.rh-next-label{
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--steel-text);
+  margin:0 0 8px;
+}
+.rh-next-q{
+  font-family:var(--display); font-size:1.16rem; line-height:1.28;
+  color:var(--ivory); margin:0; font-style:italic;
+}
+
+.rh-cite-head{
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--steel-text);
+  margin:20px 0 8px;
+}
+.rh-cites{list-style:none;margin:0;padding:0}
+.rh-cites li{margin-bottom:6px; font-size:.82rem; line-height:1.4}
+.rh-cites a{color:var(--platinum)}
+.rh-cites a:hover{color:var(--frosted)}
+
+.rh-thread-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0;list-style:none}
+.rh-thread-tag{
+  font-family:var(--ui); font-size:.62rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  border:1px solid var(--rule-dark); color:var(--platinum);
+  padding:5px 10px; border-radius:2px;
+}
+
+/* Thread legend: three causal strands, distinguished by rule pattern
+   rather than by colour, because the palette has no colour to spend
+   and a pattern survives being printed or projected badly. */
+.rh-threads{list-style:none;margin:0;padding:0}
+.rh-threads li{
+  display:grid; grid-template-columns:34px 1fr; gap:12px;
+  align-items:start; margin-bottom:16px;
+}
+.rh-threads .tl-key{height:3px;margin-top:8px;background:var(--steel)}
+.rh-threads li[data-thread="distrust"] .tl-key{background:var(--frosted)}
+.rh-threads li[data-thread="nuclear"] .tl-key{
+  background:repeating-linear-gradient(to right,var(--platinum) 0 7px,transparent 7px 12px);
+}
+.rh-threads li[data-thread="power"] .tl-key{
+  background:repeating-linear-gradient(to right,var(--steel) 0 3px,transparent 3px 7px);
+}
+.rh-threads .tl-name{
+  font-family:var(--ui); font-size:.74rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--frosted);
+  display:block; margin-bottom:3px;
+}
+.rh-threads .tl-desc{font-size:.86rem; color:var(--platinum); margin:0; line-height:1.45}
+
+/* ─────────────────────────────────────────────────────────────────────
+   INVESTIGATION CARDS
+   Photograph-led, not a rounded rectangle with an icon in it.
+   ───────────────────────────────────────────────────────────────────── */
+.inv-grid{
+  display:grid; gap:clamp(16px,2.2vw,26px);
+  grid-template-columns:repeat(auto-fill, minmax(min(100%,248px),1fr));
+}
+.inv-card{
+  position:relative; display:flex; flex-direction:column;
+  text-decoration:none; color:inherit;
+  background:var(--ivory);
+  border:1px solid var(--rule-light);
+}
+.inv-card:hover{border-color:var(--ink)}
+.inv-card .inv-media{position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--gunmetal)}
+.inv-card .inv-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.inv-card .inv-body{padding:16px 17px 18px; display:flex; flex-direction:column; gap:7px; flex:1}
+.inv-card h3{
+  font-family:var(--display); font-size:1.14rem; line-height:1.18;
+  letter-spacing:-.01em;
+}
+.inv-card .inv-note{font-size:.85rem; color:var(--graphite); margin:0; line-height:1.45}
+.inv-status{
+  font-family:var(--ui); font-size:.6rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase;
+  color:var(--graphite);
+}
+.inv-card[data-status="active"] .inv-status{color:var(--ink)}
+.inv-card[data-status="planned"]{opacity:.82}
+.inv-card[data-status="planned"] .inv-media{filter:grayscale(1) contrast(.9)}
+.inv-planned-flag{
+  position:absolute; top:0; left:0; z-index:2;
+  background:var(--carbon); color:var(--frosted);
+  font-family:var(--ui); font-size:.58rem; font-weight:700;
+  letter-spacing:.13em; text-transform:uppercase; padding:5px 10px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   CONTINUE STRIP — "you're here", never a score
+   ───────────────────────────────────────────────────────────────────── */
+.continue{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; flex-wrap:wrap;
+  background:var(--gunmetal); color:var(--frosted);
+  border-left:3px solid var(--frosted);
+  padding:18px 22px;
+}
+.continue .c-where{font-family:var(--ui); font-size:.66rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--steel-text); margin:0 0 5px}
+.continue .c-what{font-family:var(--display); font-size:1.16rem; color:var(--ivory); margin:0}
+.continue .c-step{font-size:.87rem; color:var(--platinum); margin:4px 0 0}
+
+/* ─────────────────────────────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────────────────────────────── */
+.site-footer{background:var(--carbon); color:var(--platinum); padding:34px 0 40px; margin-top:0}
+.site-footer .foot-grid{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+.site-footer p{margin:0 0 7px; font-size:.85rem; max-width:52ch}
+.site-footer .foot-note{color:var(--steel-text); font-size:.78rem}
+.site-footer a{color:var(--frosted)}
+
+/* ─────────────────────────────────────────────────────────────────────
+   TEACHER MODE
+   Everything here is public by construction — this is a static site on
+   GitHub Pages, so nothing hidden by CSS is actually protected. What
+   lives here is planning metadata a student could read without harm.
+   No answer keys. Ever.
+   ───────────────────────────────────────────────────────────────────── */
+[data-teacher-only]{display:none}
+body[data-mode="teacher"] [data-teacher-only]{display:block}
+body[data-mode="teacher"] li[data-teacher-only]{display:list-item}
+
+.teacher-note{
+  background:var(--gunmetal); color:var(--frosted);
+  border-left:3px solid var(--platinum);
+  padding:18px 20px; margin:22px 0;
+}
+.teacher-note .tn-head{
+  font-family:var(--ui); font-size:.64rem; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--platinum);
+  margin:0 0 9px;
+}
+.teacher-note p{margin:0 0 9px; font-size:.9rem; color:var(--platinum)}
+.teacher-note p:last-child{margin-bottom:0}
+.teacher-note ul{margin:0; padding-left:19px; font-size:.88rem; color:var(--platinum)}
+.teacher-note li{margin-bottom:5px}
+.teacher-note strong{color:var(--ivory)}
+
+@media (max-width: 860px){
+  .hero-inner{grid-template-columns:1fr; align-items:start}
+  .rh-panel-grid{grid-template-columns:1fr}
+  .masthead-top{flex-wrap:wrap; gap:14px}
+}

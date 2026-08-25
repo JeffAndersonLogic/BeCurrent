@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Map of Iran, the Persian Gulf and the Strait of Hormuz">
+  <!--
+    Iran, the Gulf, and the Strait of Hormuz.
+
+    Local artwork is the floor: this renders whether or not a remote
+    photograph loads, so a dead URL degrades to an on-topic map instead
+    of an empty frame. It carries explicit width and height because a
+    viewBox alone leaves the intrinsic size undefined and an <img>
+    holding one gets stretched until the picture is letterboxed away.
+
+    Drawn for teaching, not for navigation. Coastlines are simplified;
+    the pinch at Hormuz is true to the thing that matters, which is that
+    the only way out of the Gulf runs within a few miles of Iran.
+
+    Palette is the Signal Silver set. No colour: this sits under a
+    photograph on the hero and must not fight it.
+  -->
+  <defs>
+    <linearGradient id="seaFade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D0F10"/>
+      <stop offset="1" stop-color="#14181B"/>
+    </linearGradient>
+    <linearGradient id="landFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232A2E"/>
+      <stop offset="1" stop-color="#1B1F22"/>
+    </linearGradient>
+    <style>
+      .lbl   { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: .14em; fill: #B8BDC0; }
+      .lbl-s { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: .12em; fill: #747B80; }
+      .lbl-k { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .13em; fill: #D9DCDE; }
+      .sea   { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 17px; letter-spacing: .1em; fill: #5D666B; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#seaFade)"/>
+
+  <!-- Graticule. Faint enough to read as paper texture at hero scale. -->
+  <g stroke="#D9DCDE" stroke-opacity=".055" stroke-width="1">
+    <path d="M0 125h1200M0 250h1200M0 375h1200M0 500h1200M0 625h1200"/>
+    <path d="M150 0v750M350 0v750M550 0v750M750 0v750M950 0v750M1150 0v750"/>
+  </g>
+
+  <!-- Bathymetric contours in the Gulf: three lines echoing the coast,
+       which is what gives the water a sense of being shallow and closed. -->
+  <g fill="none" stroke="#747B80" stroke-opacity=".16" stroke-width="1.1">
+    <path d="M120 268 C 300 322, 520 400, 700 444 C 780 464, 820 476, 848 486"/>
+    <path d="M140 292 C 320 346, 530 418, 706 460 C 782 478, 822 490, 850 498"/>
+    <path d="M165 316 C 340 368, 540 434, 712 474 C 786 490, 824 502, 852 510"/>
+  </g>
+
+  <!-- IRAN. Northern shore of the Gulf, then round the corner into the
+       Gulf of Oman. -->
+  <path d="M0 0 H1200 V498
+           L1120 522 L1030 536 L940 527 L880 502 L852 474
+           L820 458 L770 436 L690 402 L590 362 L480 318 L370 272 L260 222 L150 175 L0 138 Z"
+        fill="url(#landFade)"/>
+  <path d="M0 138 L150 175 L260 222 L370 272 L480 318 L590 362 L690 402 L770 436 L820 458 L852 474 L880 502 L940 527 L1030 536 L1120 522 L1200 498"
+        fill="none" stroke="#B8BDC0" stroke-opacity=".55" stroke-width="1.6"/>
+
+  <!-- THE ARABIAN SIDE, with the Musandam peninsula reaching north to
+       form the pinch. -->
+  <path d="M0 750 V300
+           L120 352 L250 406 L380 450 L500 486 L610 508 L700 518 L780 516
+           L828 498 L846 496
+           L858 540 L900 588 L975 634 L1070 672 L1200 700 V750 Z"
+        fill="url(#landFade)"/>
+  <path d="M0 300 L120 352 L250 406 L380 450 L500 486 L610 508 L700 518 L780 516 L828 498 L846 496 L858 540 L900 588 L975 634 L1070 672 L1200 700"
+        fill="none" stroke="#B8BDC0" stroke-opacity=".40" stroke-width="1.4"/>
+
+  <!-- The shipping lane. Frosted, dashed, and it threads the pinch:
+       the single most important line on the map. -->
+  <path d="M175 250 C 350 305, 560 380, 720 428 C 790 450, 828 466, 851 484 C 880 512, 950 556, 1040 592 C 1110 620, 1160 636, 1200 646"
+        fill="none" stroke="#D9DCDE" stroke-opacity=".85" stroke-width="2.4"
+        stroke-dasharray="13 9" stroke-linecap="round"/>
+
+  <!-- The strait itself, called out. -->
+  <g>
+    <circle cx="851" cy="484" r="30" fill="none" stroke="#D9DCDE" stroke-opacity=".55" stroke-width="1.4"/>
+    <circle cx="851" cy="484" r="46" fill="none" stroke="#D9DCDE" stroke-opacity=".22" stroke-width="1"/>
+    <path d="M881 470 L960 424" stroke="#D9DCDE" stroke-opacity=".5" stroke-width="1.2"/>
+    <text class="lbl-k" x="968" y="416">STRAIT OF HORMUZ</text>
+    <text class="lbl-s" x="968" y="437">21 miles at its narrowest</text>
+  </g>
+
+  <!-- Nuclear sites, central Iran. Square markers, deliberately unlike
+       the round city dots. -->
+  <g>
+    <g fill="none" stroke="#D9DCDE" stroke-opacity=".9" stroke-width="1.8">
+      <rect x="498" y="248" width="13" height="13"/>
+      <rect x="551" y="214" width="13" height="13"/>
+      <rect x="612" y="188" width="13" height="13"/>
+    </g>
+    <text class="lbl-s" x="470" y="240">ISFAHAN</text>
+    <text class="lbl-s" x="527" y="206">NATANZ</text>
+    <text class="lbl-s" x="590" y="180">FORDOW</text>
+  </g>
+
+  <!-- Cities. -->
+  <g>
+    <circle cx="606" cy="104" r="6" fill="#D9DCDE"/>
+    <text class="lbl" x="622" y="110">TEHRAN</text>
+
+    <circle cx="806" cy="450" r="5" fill="#B8BDC0"/>
+    <text class="lbl-s" x="700" y="428">BANDAR ABBAS</text>
+  </g>
+
+  <!-- Region labels. -->
+  <text class="lbl" x="140" y="88" letter-spacing=".22em">I R A N</text>
+  <text class="sea" x="330" y="392" transform="rotate(15 330 392)">Persian Gulf</text>
+  <text class="sea" x="960" y="560" transform="rotate(19 960 560)">Gulf of Oman</text>
+  <text class="lbl-s" x="120" y="560" letter-spacing=".2em">ARABIAN PENINSULA</text>
+
+  <!-- Scale-free reminder, so the map never pretends to be a chart. -->
+  <text class="lbl-s" x="30" y="722" fill="#4A5054">DRAWN FOR THIS LESSON · NOT TO NAVIGATIONAL SCALE</text>
+</svg>

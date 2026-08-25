@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My work | BeCurrent</title>
+<meta name="description" content="Everything you have written in this investigation, saved on this device.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<link rel="stylesheet" href="assets/css/bc2.css">
+<link rel="stylesheet" href="assets/css/bc2-investigation.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body data-mode="student">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<p class="proto-flag">BeCurrent 2.0 — design prototype <span>· not the live student site</span></p>
+
+<header class="masthead bc-dark" id="masthead"></header>
+
+<main id="main-content">
+  <section class="sec sec-paper" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">My work</p>
+        <h1 id="work-h">Everything you’ve written</h1>
+        <p class="standfirst">Saved on this device, in this browser. Nothing here has been sent anywhere.</p>
+      </div>
+
+      <div id="progress-body"></div>
+      <div id="work-body"></div>
+
+      <!-- The honest note. This prototype does NOT do the Canvas step,
+           and saying so is better than a Submit button that lies. -->
+      <div class="capture-note">
+        <p class="cn-head">Where this goes</p>
+        <p id="capture-note-body"></p>
+        <p>In the live course, work reaches your teacher one way: you copy it and paste it into the Canvas assignment. No page in BeCurrent sends your writing anywhere on its own.</p>
+      </div>
+
+      <p style="margin-top:30px">
+        <button type="button" class="btn-quiet" id="clear-btn">Clear my saved work on this device</button>
+      </p>
+      <p class="save-state" id="clear-state" role="status"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer bc-dark" id="site-footer"></footer>
+
+<script src="assets/data/iran-history.js"></script>
+<script src="assets/data/iran-current.js"></script>
+<script src="assets/data/iran-investigation.js"></script>
+<script src="assets/js/bc2-store.js"></script>
+<script src="assets/js/bc2-components.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var inv = window.BC_INVESTIGATION;
+  var C   = window.BC2;
+  var S   = window.BC2Store;
+  var esc = C.esc;
+
+  C.mount('masthead', C.masthead({ nav: C.NAV, current: 'work' }));
+  C.mount('site-footer', C.footer());
+  document.getElementById('capture-note-body').textContent = inv.teacher.canvas;
+
+  /* Which named surfaces we expect to find work in. The labels come
+     from the content model so a new question added to the investigation
+     shows up here without editing this page. */
+  var fields = [];
+  inv.primarySource.questions.forEach(function (q) { fields.push({ id: q.id, label: q.label }); });
+  fields.push({ id: inv.claim.field.id, label: inv.claim.field.label });
+  inv.reflection.prompts.forEach(function (q) { fields.push({ id: q.id, label: q.label }); });
+
+  /* Progress. Named steps reached, never a percentage. */
+  var prog = S.progress(inv.id);
+  var steps = inv.steps.map(function (s) {
+    var done = prog.reached.indexOf(s.id) !== -1;
+    return '<li data-done="' + (done ? 'true' : 'false') + '">' + esc(s.label) + '</li>';
+  }).join('');
+
+  C.mount('progress-body',
+    '<div class="work-progress">'
+    + '<p class="wp-head">How far you have got in ' + esc(inv.displayTitle) + '</p>'
+    + '<ul class="wp-steps">' + steps + '</ul>'
+    + '</div>');
+
+  /* Build the cards as ELEMENTS, because student writing goes to
+     textContent and never to innerHTML. */
+  var grid = document.createElement('div');
+  grid.className = 'work-grid';
+
+  // The prediction, which is choices rather than prose.
+  var predict = S.get('predict:' + inv.id, null);
+  var labels = {};
+  inv.prediction.options.forEach(function (o) { labels[o.id] = o.label; });
+
+  var pCard = document.createElement('div');
+  pCard.className = 'work-card';
+  var pHead = document.createElement('h3');
+  pHead.textContent = 'Your first prediction';
+  pCard.appendChild(pHead);
+
+  if (predict && predict.picked && predict.picked.length) {
+    var pBody = document.createElement('p');
+    pBody.className = 'wc-body';
+    pBody.textContent = predict.picked.map(function (id) { return labels[id] || id; }).join(' · ');
+    pCard.appendChild(pBody);
+  } else {
+    var pEmpty = document.createElement('p');
+    pEmpty.className = 'wc-empty';
+    pEmpty.textContent = 'Not recorded on this device yet.';
+    pCard.appendChild(pEmpty);
+  }
+  grid.appendChild(pCard);
+
+  fields.forEach(function (f) {
+    var value = S.get('write:' + inv.id + ':' + f.id, '');
+    var card = document.createElement('div');
+    card.className = 'work-card';
+
+    var h = document.createElement('h3');
+    h.textContent = f.label;
+    card.appendChild(h);
+
+    if (value && String(value).trim()) {
+      var body = document.createElement('p');
+      body.className = 'wc-body';
+      body.textContent = value;           // never innerHTML
+      card.appendChild(body);
+
+      var meta = document.createElement('p');
+      meta.className = 'wc-meta';
+      var words = String(value).trim().split(/\s+/).length;
+      meta.textContent = words + (words === 1 ? ' word' : ' words');
+      card.appendChild(meta);
+    } else {
+      var empty = document.createElement('p');
+      empty.className = 'wc-empty';
+      empty.textContent = 'Nothing written yet.';
+      card.appendChild(empty);
+    }
+    grid.appendChild(card);
+  });
+
+  var host = document.getElementById('work-body');
+  host.appendChild(grid);
+
+  if (!S.available()) {
+    var warn = document.createElement('p');
+    warn.className = 'save-state';
+    warn.textContent = 'This browser is not letting BeCurrent save anything on this device, so nothing will appear here. You can still work through the investigation, but copy your answers somewhere safe as you go.';
+    host.insertBefore(warn, grid);
+  }
+
+  /* Clearing is destructive and irreversible, so it confirms first. */
+  var state = document.getElementById('clear-state');
+  document.getElementById('clear-btn').addEventListener('click', function () {
+    var ok = window.confirm('This deletes everything you have written in BeCurrent on this device. It cannot be undone. Continue?');
+    if (!ok) return;
+    if (S.clearAll()) {
+      state.textContent = 'Cleared. Reload the page to see the empty state.';
+    } else {
+      state.textContent = 'Could not clear storage in this browser.';
+    }
+  });
+
+  S.wireModeToggle();
+})();
+</script>
+</body>
+</html>
