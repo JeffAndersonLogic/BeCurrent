@@ -47,11 +47,26 @@
   }
 
   /* ── MASTHEAD ─────────────────────────────────────────────────────
-     The wordmark is the logo: an oversized C between "Be" and "urrent".
-     It is reinterpreted in platinum and frosted rather than the old red,
-     and it is set in the display serif so it reads as a publication
-     rather than as an app. It survives being shrunk to a favicon, which
-     is the only real test of a mark. */
+     THE WORDMARK, reinterpreted from the existing BeCurrent logo.
+
+     Three things carry that mark's identity and all three are kept:
+
+       1. SMALL CAPS. It is B-e-C-urrent set as caps and small caps, not
+          title case. Rendering "urrent" in lowercase — which is what an
+          earlier pass here did — loses the logo at a glance even with the
+          C the right size. The small caps are real ones by construction:
+          uppercase text at a smaller size, rather than font-variant, so
+          they do not depend on a face that ships no true small caps.
+       2. THE OVERSIZED C, tucked slightly left so it nests against the E
+          the way the artwork does.
+       3. THE TAPERED BLADE beneath it, which is half the recognition and
+          was missing entirely.
+
+     What changes is only the colour. The red is gone: the letters are
+     ivory, the C is frosted, and the blade is a platinum-to-steel
+     gradient — metal suggested by tone rather than by a chrome bevel.
+     The teacher's brief asked for ivory text with a silver C and that is
+     what this is. */
   function masthead(opts) {
     var nav = opts.nav || [];
     var links = nav.map(function (n) {
@@ -64,7 +79,21 @@
       +   '<div class="masthead-top">'
       +     '<div>'
       +       '<a class="wordmark" href="index.html">'
-      +         '<span class="w-be">Be</span><span class="w-c">C</span><span class="w-urrent">urrent</span>'
+      // DOM text stays "BeCurrent" so the accessible name is the brand
+      // name and not "B E C U R R E N T". The caps are done with CSS.
+      +         '<span class="wm-word">'
+      +           '<span class="wm-cap">B</span><span class="wm-sc">e</span>'
+      +           '<span class="wm-c">C</span><span class="wm-sc">urrent</span>'
+      +         '</span>'
+      +         '<svg class="wm-blade" viewBox="0 0 100 4" preserveAspectRatio="none"'
+      +           ' aria-hidden="true" focusable="false">'
+      +           '<defs><linearGradient id="wmBlade" x1="0" y1="0" x2="1" y2="0">'
+      +             '<stop offset="0" stop-color="#B8BDC0"/>'
+      +             '<stop offset=".45" stop-color="#D9DCDE"/>'
+      +             '<stop offset="1" stop-color="#747B80"/>'
+      +           '</linearGradient></defs>'
+      +           '<path d="M20 3.4 L36 1.25 L100 .6 L60 3.9 Z" fill="url(#wmBlade)"/>'
+      +         '</svg>'
       +       '</a>'
       +       '<p class="masthead-tag">Understand today. Trace it back.</p>'
       +     '</div>'

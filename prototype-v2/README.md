@@ -73,6 +73,31 @@ A **new investigation** is a content file plus an entry in
 `assets/data/bc2-investigations.js`. Every treatment on the Iran page is a
 data-driven component in `assets/js/`; nothing in the renderers names Iran.
 
+## The wordmark
+
+Reinterpreted from the existing BeCurrent logo, not redrawn from scratch.
+Three things carry that mark and all three are kept: it is set in **caps and
+small caps** (BᴇCᴜʀʀᴇɴᴛ, not title case), the **C is oversized** and nested left
+against the E, and the **tapered blade** sits beneath it.
+
+Only the colour changed. The red is gone: letters in ivory, C in frosted
+silver, blade in a platinum-to-steel gradient — metal suggested by tone rather
+than by a chrome bevel.
+
+The small caps are built rather than requested. `font-variant: small-caps` is
+synthesised unevenly when a face ships no true small caps, and Playfair Display
+ships none, so these are capitals at 76% — which is what a synthesised small cap
+is anyway, minus the guesswork. The DOM text stays "BeCurrent" so a screen
+reader announces the brand name and not "B E C U R R E N T".
+
+`assets/favicon.svg` is the prototype's own mark, separate from the production
+red one, which the live site keeps until this is approved. It is **the C alone**:
+a first pass included the blade and at 16px it collided with the C's lower
+terminal and turned the tile to mush. Do not add it back without rendering at
+16px first. The tile is carbon, which is crisp on light browser chrome and
+disappears into dark chrome leaving the C to carry the mark — a real trade-off
+that red did not have and that Signal Silver has no way to avoid.
+
 ## Facts and sourcing
 
 Every current-event claim is sourced to a named outlet and carries a link. The

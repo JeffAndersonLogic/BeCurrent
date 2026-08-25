@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="BeCurrent">
+  <!--
+    The BeCurrent mark in Signal Silver, for the 2.0 prototype.
+
+    The production favicon at assets/favicon.svg is the same mark on signal
+    red. This is that idea recoloured, and it is a SEPARATE FILE rather than
+    an edit to that one: the live site still ships the red brand and keeps it
+    until the prototype is approved.
+
+    DRAWN AS A STROKED ARC, NOT A <text> ELEMENT — reasoning carried over
+    from the production file and still true. A favicon renders where no
+    particular font is guaranteed, and a glyph that falls back to a default
+    face has stopped being the brand mark. Width and height are explicit,
+    per the image contract in CLAUDE.md.
+
+    THE BLADE IS NOT HERE, and that was tested rather than assumed. The full
+    lockup's tapered underline is half its recognition, so a first pass
+    included it — and at 16px it collided with the C's lower terminal and
+    the whole tile turned to mush. The production file's instinct was right:
+    at favicon size the mark reduces to the one letter that carries it.
+    Do not add the blade back without rendering it at 16px first.
+
+    THE TILE TRADE-OFF, written down because it is real. Red read against
+    both light and dark browser chrome, which is why production uses it.
+    Signal Silver has no such colour, so this is a carbon tile with a
+    frosted C: crisp against light chrome, while against dark chrome the
+    tile edge disappears and the C alone carries the mark. Inverting to a
+    pale tile trades the same problem the other way round.
+  -->
+  <rect width="64" height="64" rx="13" fill="#0D0F10"/>
+  <path d="M44 21.5 A16.5 16.5 0 1 0 44 42.5"
+        fill="none" stroke="#D9DCDE" stroke-width="9" stroke-linecap="butt"/>
+</svg>
