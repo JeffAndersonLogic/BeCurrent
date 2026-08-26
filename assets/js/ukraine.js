@@ -97,8 +97,19 @@
     });
   });
 
-  // Topic 1 is the unit landing/reference page. Make the next classroom stop explicit
-  // without rewriting the historical/current layers students may revisit later.
+  // Turn the reverse-history rail into the unit's actual navigation.
+  const stopLinks=[null,'topic-02-2022.html','topic-03-2014.html','topic-04-direction.html','topic-05-independence.html','topic-06-memory.html'];
+  document.querySelectorAll('.reverse-stop').forEach((stop,index)=>{
+    const href=stopLinks[index];
+    if(!href)return;
+    stop.style.cursor='pointer';
+    stop.setAttribute('tabindex','0');
+    stop.setAttribute('role','link');
+    const go=()=>{location.href=href;};
+    stop.addEventListener('click',go);
+    stop.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+
   const navInner=document.querySelector('.nav .nav-inner');
   if(navInner&&!navInner.querySelector('[data-topic-two-link]')){
     const link=document.createElement('a');
@@ -107,6 +118,12 @@
     link.dataset.topicTwoLink='true';
     const sources=[...navInner.querySelectorAll('a')].find(a=>a.getAttribute('href')==='#sources');
     if(sources)navInner.insertBefore(link,sources);else navInner.appendChild(link);
+  }
+  if(navInner&&!navInner.querySelector('a[href="study-guide.html"]')){
+    const guide=document.createElement('a');
+    guide.href='study-guide.html';
+    guide.textContent='Study Guide';
+    navInner.appendChild(guide);
   }
   const nextStop=document.querySelector('.next-stop');
   if(nextStop&&!nextStop.querySelector('[data-open-topic-two]')){
