@@ -3,7 +3,7 @@
 
   const news=window.BECURRENT_DAILY_NEWS||{};
   const lead=news.lead||{};
-  const META_PREFIX='becurrent-desk-meta-';
+  const META_PREFIX='becurrent-meta-desk-';
   const DESK_PREFIX='becurrent-desk-';
   const ANCHOR_MONDAY='2026-08-24';
   const CYCLE_WEEKS=2;
@@ -137,7 +137,7 @@
   }
   function hasDeskState(state){
     if(!state||typeof state!=='object')return false;
-    return Object.values(state).some(v=>v&&typeof v.answer==='string'&&v.answer.trim());
+    return Object.entries(state).some(([key,v])=>/-(?:what|why)$/.test(key)&&v&&typeof v.answer==='string'&&v.answer.trim());
   }
 
   function renderJournal(){

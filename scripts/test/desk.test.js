@@ -285,7 +285,7 @@ function seededDay(tag) {
 
     const laneA = LANES[0];
     const typed = 'The town council voted to rezone the parcel on Oak Street.\n\n'
-      + 'Two of the five members had asked for a delay the week before.';
+      + 'Three council members had asked for a delay the week before.';
     await page.fill(`#answer-${laneA}-${FACTS[0]}`, 'Times Sentinel');
     await page.fill(`#answer-${laneA}-${FACTS[1]}`, 'September 8, 2026');
     await page.fill(`#answer-${laneA}-${QUESTIONS[0]}`, typed);

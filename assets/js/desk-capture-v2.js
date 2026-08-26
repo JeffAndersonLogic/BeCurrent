@@ -199,7 +199,7 @@
     return '<h3><span class="rec-day">' + bcEsc(row.banner) + '</span> ' + bcEsc(rest) + '</h3>';
   }
   function dayHasContent(dayState) {
-    return fieldIds().some(function (id) { return String((dayState[id] || {}).answer || '').trim(); });
+    return LANES.some(function (lane) { return QUESTIONS.some(function (q) { var id = lane.id + '-' + q.id; return String((dayState[id] || {}).answer || '').trim(); }); });
   }
   function gatheredDays() {
     var out = [];

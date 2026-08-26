@@ -22,7 +22,7 @@
   if(leadDek&&lead.dek)leadDek.textContent=lead.dek;
   if(leadMeta)leadMeta.textContent=[lead.category,lead.source,lead.published].filter(Boolean).join(' · ');
 
-  const briefing=[lead].concat(wire.slice(0,3));
+  const briefing=wire.slice(0,4);
   document.querySelectorAll('[data-daily-briefing]').forEach((card,i)=>{
     const item=briefing[i];
     if(!item)return;
