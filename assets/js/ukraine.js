@@ -97,5 +97,29 @@
     });
   });
 
+  // Topic 1 is the unit landing/reference page. Make the next classroom stop explicit
+  // without rewriting the historical/current layers students may revisit later.
+  const navInner=document.querySelector('.nav .nav-inner');
+  if(navInner&&!navInner.querySelector('[data-topic-two-link]')){
+    const link=document.createElement('a');
+    link.href='topic-02-2022.html';
+    link.textContent='Topic 2 · 2022';
+    link.dataset.topicTwoLink='true';
+    const sources=[...navInner.querySelectorAll('a')].find(a=>a.getAttribute('href')==='#sources');
+    if(sources)navInner.insertBefore(link,sources);else navInner.appendChild(link);
+  }
+  const nextStop=document.querySelector('.next-stop');
+  if(nextStop&&!nextStop.querySelector('[data-open-topic-two]')){
+    const link=document.createElement('a');
+    link.href='topic-02-2022.html';
+    link.className='uk-save';
+    link.dataset.openTopicTwo='true';
+    link.textContent='Open Topic 2 · The Full-Scale Invasion →';
+    link.style.display='inline-flex';
+    link.style.textDecoration='none';
+    link.style.marginTop='18px';
+    nextStop.appendChild(link);
+  }
+
   updateProgress();
 })();
