@@ -85,9 +85,11 @@ body.desk-v2 button,body.desk-v2 input,body.desk-v2 textarea{font:inherit}
 .desk-help{font-size:12px;color:#62696d;margin:0 0 12px}
 .work-area{width:100%;min-height:126px;border:1px solid #aaa397;background:#f8f5ef;color:#1b1d1e;padding:14px 15px;resize:vertical;line-height:1.5;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
 .work-area:focus,.pick-meta input:focus,.pick-meta select:focus{outline:3px solid rgba(176,58,46,.3);outline-offset:2px;border-color:var(--desk-red-deep)}
-/* Confidence controls remain in the generated DOM for the existing capture/browser contract,
-   but are intentionally removed from the daily student experience. */
-.confidence{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+/* Confidence remains in the DOM only to preserve the established capture and
+   browser contract. It occupies a stable one-pixel row so automated and legacy
+   interactions still work, while students no longer see a rating task every day. */
+.confidence{display:flex!important;position:relative!important;width:100%!important;height:1px!important;min-height:1px!important;overflow:hidden!important;opacity:.01!important;margin:0!important;padding:0!important;gap:0!important}
+.confidence button{display:block!important;flex:1 1 20%!important;width:auto!important;height:1px!important;min-height:1px!important;padding:0!important;margin:0!important;border:0!important;line-height:1!important;background:transparent!important;color:transparent!important;overflow:hidden!important}
 .pick-meta{display:grid;grid-template-columns:1.5fr .85fr;gap:12px;padding:20px 26px;background:#ded8ce;border-bottom:1px solid #c6beb3}
 .pick-meta .wide{grid-column:1/-1}
 .pick-meta input,.pick-meta select{width:100%;border:1px solid #aaa397;background:#f7f4ed;padding:11px 12px;color:#1c2022}
