@@ -1,7 +1,7 @@
 /* BeCurrent daily news desk.
    Hand-edited, not generated. One small file drives the homepage briefing,
    the Today board lead, and The Desk. Refresh the reporting here; do not put
-   student writing in this file. */
+   student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
   reviewed: '2026-08-26',
   lead: {
