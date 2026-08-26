@@ -1,0 +1,70 @@
+name: Apply Desk 2 polish
+
+on:
+  push:
+    branches:
+      - chatgpt/desk-2-polish
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Refine Desk typography, color, and Step 2 flow
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          const cssPath = 'assets/css/desk-2.css';
+          let css = fs.readFileSync(cssPath, 'utf8');
+          const cssReplacements = [
+            ["  --desk-red:#b03a2e;\n  --desk-red-deep:#8e2f26;", "  --desk-red:#a33125;\n  --desk-red-deep:#77221b;\n  --desk-copper:#c47b45;\n  --desk-copper-bright:#dfa06c;"],
+            [".desk-kicker{font:700 14px/1.25 var(--desk-sans);letter-spacing:.025em;color:#dc8b82}", ".desk-kicker{display:inline-flex;align-items:center;gap:8px;font:800 16px/1.08 var(--desk-serif);letter-spacing:.01em;color:var(--desk-copper);text-shadow:0 1px 0 rgba(0,0,0,.5)}\n.desk-kicker:before{content:'';width:4px;height:1.05em;border-radius:999px;background:linear-gradient(180deg,var(--desk-red),var(--desk-copper));box-shadow:0 0 14px rgba(196,123,69,.18);flex:0 0 auto}"],
+            ["color:#efaaa2!important", "color:var(--desk-copper-bright)!important"],
+            ["color:#e28e84;white-space:nowrap", "color:var(--desk-copper);white-space:nowrap"],
+            [".local-progress .met{color:#e7b0a9}", ".local-progress .met{color:var(--desk-copper-bright)}"]
+          ];
+          for (const [from, to] of cssReplacements) {
+            if (!css.includes(from)) throw new Error('CSS target not found: ' + from.slice(0, 70));
+            css = css.replace(from, to);
+          }
+          const cssInsertAfter = ".desk-card-head p{margin:0;color:#596064;font-size:14px;max-width:880px}";
+          if (!css.includes(cssInsertAfter)) throw new Error('CSS insertion point not found');
+          css = css.replace(cssInsertAfter, cssInsertAfter + "\n.desk-pick-launch{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px 14px;background:#d8d1c6;border-left:4px solid var(--desk-copper);color:#4d5356;font-size:13px}\n.desk-pick-launch span{font-weight:700}\n.desk-pick-launch a,.desk-return-link{font-weight:850;color:var(--desk-red-deep);text-decoration:none;border-bottom:1px solid rgba(119,34,27,.35)}\n.desk-pick-launch a:hover,.desk-return-link:hover{border-bottom-color:var(--desk-red-deep)}\n.desk-return-link{display:inline-block;margin-top:12px;color:var(--desk-copper-bright);border-bottom-color:rgba(223,160,108,.4)}\n.desk-return-link:hover{border-bottom-color:var(--desk-copper-bright)}\n#story-world,#sources{scroll-margin-top:92px}");
+          fs.writeFileSync(cssPath, css);
+
+          const pagePath = 'scripts/lib/desk-page.js';
+          let page = fs.readFileSync(pagePath, 'utf8');
+          const pickOld = `<article class="desk-lane-card pick-card" id="story-world"><span class="visually-hidden">Your Pick</span><div class="desk-card-head"><div class="desk-step-label"><span class="desk-step-number">Step 2</span><span class="desk-step-name">Your Pick</span><span class="desk-step-note">Choose the story that pulls you in</span></div><h3>Follow one story you actually care about.</h3><p>Politics is fine. So are science, technology, sports business, culture, courts, money, local government, war or something else worth knowing.</p></div>`;
+          const pickNew = `<article class="desk-lane-card pick-card" id="story-world"><span class="visually-hidden">Your Pick</span><div class="desk-card-head"><div class="desk-step-label"><span class="desk-step-number">Step 2</span><span class="desk-step-name">Your Pick</span><span class="desk-step-note">Choose the story that pulls you in</span></div><h3>Follow one story you actually care about.</h3><p>Politics is fine. So are science, technology, sports business, culture, courts, money, local government, war or something else worth knowing.</p><div class="desk-pick-launch"><span>Need a story before you can file?</span><a href="#sources">Browse the Source Shelf ↓</a></div></div>`;
+          if (!page.includes(pickOld)) throw new Error('Step 2 target not found');
+          page = page.replace(pickOld, pickNew);
+
+          const shelfOld = `<section class="desk-section" id="sources"><div class="desk-section-head"><div class="desk-kicker">Source Shelf</div><div><h2>Find the story. Do not get trapped in the directory.</h2><p>The Current Wire is the fastest scan. Open a shelf only when you need somewhere to look.</p></div></div>`;
+          const shelfNew = `<section class="desk-section" id="sources"><div class="desk-section-head"><div class="desk-kicker">Source Shelf</div><div><h2>Find the story. Do not get trapped in the directory.</h2><p>The Current Wire is the fastest scan. Open a shelf only when you need somewhere to look. Source links open in a new tab, so your Desk stays right where you left it.</p><a class="desk-return-link" href="#story-world">← Back to Your Pick</a></div></div>`;
+          if (!page.includes(shelfOld)) throw new Error('Source Shelf target not found');
+          page = page.replace(shelfOld, shelfNew);
+          fs.writeFileSync(pagePath, page);
+          NODE
+
+          node scripts/build-desk.js
+      - name: Commit polished Desk
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/css/desk-2.css scripts/lib/desk-page.js daily/index.html
+          git commit -m "Polish Desk typography and Step 2 source flow"
+          git push origin HEAD:chatgpt/desk-2-polish
