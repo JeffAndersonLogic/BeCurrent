@@ -1,6 +1,25 @@
 (()=>{
   'use strict';
 
+  /* Load the tiny visual patch from the existing generated Desk page without
+     changing the generated HTML contract. */
+  if(!document.querySelector('link[data-desk-patch]')){
+    const css=document.createElement('link');
+    css.rel='stylesheet';
+    css.href='../assets/css/desk-2-patch.css';
+    css.dataset.deskPatch='true';
+    document.head.appendChild(css);
+  }
+
+  const pickCard=document.querySelector('.pick-card');
+  const pickMeta=pickCard&&pickCard.querySelector('.pick-meta');
+  if(pickCard&&pickMeta&&!pickCard.querySelector('.desk-source-jump')){
+    const jump=document.createElement('div');
+    jump.className='desk-source-jump';
+    jump.innerHTML='<strong>Need a story before you can file?</strong><a href="#sources">Browse the Source Shelf ↓</a>';
+    pickMeta.parentNode.insertBefore(jump,pickMeta);
+  }
+
   const news=window.BECURRENT_DAILY_NEWS||{};
   const lead=news.lead||{};
   const META_PREFIX='becurrent-meta-desk-';
@@ -51,8 +70,6 @@
   const TODAY=dayKeyOf(new Date());
   let meta=parseStore(META_PREFIX+TODAY)||{};
 
-  /* One current-news source, frozen into today's local metadata so tomorrow's
-     refresh does not rewrite what a student saw today. */
   if(lead.headline&&!meta.leadHeadline)meta.leadHeadline=lead.headline;
   if(lead.source&&!meta.leadSource)meta.leadSource=lead.source;
   if(lead.published&&!meta.leadPublished)meta.leadPublished=lead.published;
@@ -68,7 +85,6 @@
   const leadLink=document.getElementById('desk-lead-link');
   if(leadLink&&lead.url){leadLink.href=lead.url;leadLink.target='_blank';leadLink.rel='noopener noreferrer';}
 
-  /* The current-wire shelf is a visual launcher, not a feed that receives student work. */
   const wireHost=document.getElementById('desk-current-wire');
   if(wireHost&&Array.isArray(news.wire)){
     news.wire.forEach(item=>{
@@ -79,8 +95,6 @@
     });
   }
 
-  /* The Lead's source facts use the existing capture slots. The capture block
-     has already attached autosave listeners by the time this file runs. */
   [
     ['answer-local-outlet',lead.source],
     ['answer-local-date',lead.published],
@@ -121,7 +135,6 @@
     el.addEventListener(el.type==='checkbox'?'change':'input',persistExtras);
   });
 
-  /* Keep the journal live when the four captured writing boxes change. */
   ['answer-local-what','answer-local-why','answer-world-what','answer-world-why'].forEach(id=>{
     const el=document.getElementById(id);if(el)el.addEventListener('input',()=>setTimeout(renderJournal,0));
   });
