@@ -11,7 +11,7 @@
     if(!document.querySelector('link[href="../assets/css/ukraine-position.css"]')){const link=document.createElement('link');link.rel='stylesheet';link.href='../assets/css/ukraine-position.css';document.head.appendChild(link);}
     const journey=document.querySelector('.sticky-journey');
     if(!journey||document.querySelector('.uk-position'))return;
-    const bar=document.createElement('div');bar.className='uk-position';bar.innerHTML='<div class="uk-position-inner"><div><div class="uk-position-series">THE WAR IN UKRAINE · REVERSE HISTORY INVESTIGATION</div><div class="uk-position-title">Lesson 1 · The War Right Now</div><span class="uk-position-sub">Current event anchor · 2026</span></div><div class="uk-position-count"><strong>1</strong> of 6 lessons</div></div>';
+    const bar=document.createElement('div');bar.className='uk-position';bar.innerHTML='<div class="uk-position-inner"><div><div class="uk-position-series">THE WAR IN UKRAINE · REVERSE HISTORY INVESTIGATION</div><div class="uk-position-title">Topic 1 · The War Right Now</div><span class="uk-position-sub">Current event anchor · 2026</span></div><div class="uk-position-count"><strong>1</strong> of 6 topics</div></div>';
     journey.insertAdjacentElement('afterend',bar);
   }
   installPosition();
@@ -26,9 +26,7 @@
   try{savedMode=localStorage.getItem(MODE_KEY)||'student';}catch(_){/* local-only mode */}
   setMode(savedMode);
 
-  function read(key){
-    try{const raw=localStorage.getItem(PREFIX+key);return raw===null?null:JSON.parse(raw);}catch(_){return null;}
-  }
+  function read(key){try{const raw=localStorage.getItem(PREFIX+key);return raw===null?null:JSON.parse(raw);}catch(_){return null;}}
   function write(key,value){try{localStorage.setItem(PREFIX+key,JSON.stringify(value));return true;}catch(_){return false;}}
   function remove(key){try{localStorage.removeItem(PREFIX+key);}catch(_){/* local-only mode */}}
   function groupValue(group){if(group.matches('textarea,input[type="text"],input[type="url"]'))return group.value;return [...group.querySelectorAll('input[type="checkbox"]:checked')].map(i=>i.value);}
