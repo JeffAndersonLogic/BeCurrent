@@ -35,5 +35,7 @@
     const done=KEYS.filter(filled).length;
     document.querySelectorAll('[data-t2-progress]').forEach(el=>el.textContent=`${done} of ${KEYS.length} saved`);
   }
+  const next=document.querySelector('.t2-next a');
+  if(next){next.href='topic-03-2014.html';next.textContent='Continue to Topic 3 · The War Before the War →';}
   updateProgress();
 })();
