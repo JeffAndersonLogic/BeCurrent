@@ -5,17 +5,11 @@
  *
  * The student experience is intentionally simpler than the original filing form:
  * one teacher-selected Lead, one student-selected Pick, one judgment, one journal.
- * The existing capture grammar stays intact underneath the redesign. The internal
- * lane ids remain local/world so old localStorage, the Canvas parser and the browser
- * contract keep working while the visible language changes.
- *
- * Current reporting is NOT hard-coded here. assets/data/daily-news.js is the one
- * teacher-maintained current layer shared by Home, Today and The Desk. That lets
- * the generated page remain dateless except for the News Log anchor required by the
- * capture block.
+ * The existing storage ids and Canvas record grammar stay stable underneath the
+ * redesign. Current reporting comes from assets/data/daily-news.js rather than
+ * being baked into this generated page.
  */
 
-const { deskCaptureBlock } = require('./desk-capture-block');
 const { CONFIDENCE_WORDS } = require('./brief-capture-block');
 
 function esc(s) {
@@ -43,7 +37,7 @@ ${(g.links || []).map(l => `            <a href="${esc(l.url)}" target="_blank" 
 
 function leadCard() {
   return `      <article class="desk-lane-card lead-card" id="story-local">
-        <span class="visually-hidden">Local</span>
+        <span class="visually-hidden">The Lead</span>
         <div class="desk-card-head">
           <div class="desk-card-label">The Lead · everybody files this story</div>
           <h3>Know the story the room shares.</h3>
@@ -77,7 +71,7 @@ ${confidenceRow('local-why', 'The Lead, why it matters')}
 
 function pickCard() {
   return `      <article class="desk-lane-card pick-card" id="story-world">
-        <span class="visually-hidden">National or International</span>
+        <span class="visually-hidden">Your Pick</span>
         <div class="desk-card-head">
           <div class="desk-card-label">Your Pick · choose what pulls you in</div>
           <h3>Follow one story you actually care about.</h3>
@@ -119,12 +113,20 @@ function renderDeskPage(desk) {
   const a = desk.accountability || {};
   const story = desk.story || {};
   const lanes = desk.lanes || [];
+  const cfg = {
+    lanes: lanes.map(l => ({ id: l.id, name: l.name })),
+    facts: (story.facts || []).map(f => ({ id: f.id, label: f.label })),
+    questions: (story.questions || []).map(q => ({ id: q.id, label: q.label })),
+    anchorMonday: (desk.log || {}).anchorMonday || '',
+    weeks: Number((desk.log || {}).weeks) || 1
+  };
 
   return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="becurrent-log-anchor" content="${esc(cfg.anchorMonday)}">
 <title>BeCurrent | The Desk</title>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/becurrent-2.css">
@@ -190,7 +192,7 @@ ${sourceShelf(desk)}
     </section>
 
     <section class="desk-section" id="journal">
-      <div class="desk-section-head"><div class="desk-kicker">My Desk</div><div><h2>Your two-week news journal.</h2><p>Instead of staring at a form after you file it, use this as the running front page of what you followed. Click nothing; it builds itself from work saved on this device.</p></div></div>
+      <div class="desk-section-head"><div class="desk-kicker">My Desk</div><div><h2>Your two-week news journal.</h2><p>Use this as the running front page of what you followed. It builds itself from work saved on this device.</p></div></div>
       <div class="journal-shell">
         <div class="journal-head"><div><div class="desk-kicker">Current News Log</div><h3>Stories you followed</h3></div><p>Lead on the left. Your Pick on the right.</p></div>
         <div class="journal-list" id="desk-journal-list"><div class="journal-empty">Your Desk is empty. File today’s Lead and Your Pick to begin.</div></div>
@@ -213,7 +215,8 @@ ${sourceShelf(desk)}
   <footer class="desk-footer"><div class="desk-footer-inner"><span>BeCurrent · The Desk</span><span>Know the Lead. Choose Your Pick. Decide what deserves attention. · <a href="../index.html">Back to Home</a></span></div></footer>
 </div>
 <script src="../assets/data/daily-news.js"></script>
-${deskCaptureBlock(lanes, story.facts, story.questions, desk.log)}
+<script>window.BECURRENT_DESK_CONFIG = ${JSON.stringify(cfg)};</script>
+<script src="../assets/js/desk-capture-v2.js"></script>
 <script src="../assets/js/desk-2.js"></script>
 </body>
 </html>
