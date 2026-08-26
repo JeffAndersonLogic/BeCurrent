@@ -25,9 +25,7 @@ const OUT = path.join('daily', 'index.html');
 
 const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
 
-const content = renderDeskPage(DESK)
-  .replace('</head>', '<link rel="stylesheet" href="../assets/css/desk-2-patch.css">\n</head>')
-  .replace('</body>', '<script src="../assets/js/desk-2-patch.js"></script>\n</body>');
+const content = renderDeskPage(DESK);
 const full = path.join(ROOT, OUT);
 const existing = fs.existsSync(full) ? fs.readFileSync(full, 'utf8') : null;
 
