@@ -14,7 +14,7 @@
     const pos=positions[topic];if(!pos)return;
     if(!document.querySelector('link[href="../assets/css/ukraine-position.css"]')){const link=document.createElement('link');link.rel='stylesheet';link.href='../assets/css/ukraine-position.css';document.head.appendChild(link);}
     const journey=document.querySelector('.sticky-journey');if(!journey||document.querySelector('.uk-position'))return;
-    const bar=document.createElement('div');bar.className='uk-position';bar.innerHTML=`<div class="uk-position-inner"><div><div class="uk-position-series">THE WAR IN UKRAINE · REVERSE HISTORY INVESTIGATION</div><div class="uk-position-title">Lesson ${pos.n} · ${pos.title}</div><span class="uk-position-sub">${pos.sub}</span></div><div class="uk-position-count"><strong>${pos.n}</strong> of 6 lessons</div></div>`;journey.insertAdjacentElement('afterend',bar);
+    const bar=document.createElement('div');bar.className='uk-position';bar.innerHTML=`<div class="uk-position-inner"><div><div class="uk-position-series">THE WAR IN UKRAINE · REVERSE HISTORY INVESTIGATION</div><div class="uk-position-title">Topic ${pos.n} · ${pos.title}</div><span class="uk-position-sub">${pos.sub}</span></div><div class="uk-position-count"><strong>${pos.n}</strong> of 6 topics</div></div>`;journey.insertAdjacentElement('afterend',bar);
   }
   installPosition();
   function setMode(mode){body.classList.toggle('teacher-on',mode==='teacher');modeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));try{localStorage.setItem('bcv2-mode',mode)}catch(_){}}
