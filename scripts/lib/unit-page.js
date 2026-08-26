@@ -104,7 +104,7 @@ ${criteria}
           </div>` : ''}
         </details>` : '';
 
-    return `      <li class="topic-card">
+    return `      <li class="topic-card" id="topic-${esc(String(b.n))}">
         <div class="topic-num">Topic ${esc(String(b.n))}</div>
         <h3>${raw(b.title)}</h3>
         <p class="topic-sub">${esc(b.subtitle || '')}</p>
@@ -116,6 +116,9 @@ ${actionRow}
   }).join('\n');
 
   const withBriefs = topics.filter(b => b.sections && b.sections.length).length;
+  const studyGuideButton = m.unitKey === 'social-media'
+    ? '      <a class="btn secondary" href="study-guide.html">Study Guide</a>\n'
+    : '';
 
   return `<!doctype html>
 <html lang="en">
@@ -153,7 +156,7 @@ ${actionRow}
     <div class="quick-nav">
       <a class="btn" href="#topics">The Topics</a>
       <a class="btn secondary" href="#question">The Question</a>
-    </div>
+${studyGuideButton}    </div>
   </section>
 
   <main>
@@ -173,7 +176,7 @@ ${actionRow}
     <section class="section" id="topics">
       <div class="section-header">
         <div class="eyebrow">The Arc</div>
-        <h2>Five topics, in order.</h2>
+        <h2>${esc(String(topics.length))} topics, in order.</h2>
         <p>Each one uses the earlier ones. The chain you draw in Topic 1 is what you check
           against a real document in Topic 4, so they are a sequence rather than a list.</p>
       </div>
