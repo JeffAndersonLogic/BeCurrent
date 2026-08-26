@@ -307,30 +307,34 @@ window.BECURRENT_ANNOUNCEMENTS = {
     "title": "The Desk",
     "routine": [
       {
-        "name": "Watch",
-        "what": "CNN 10, together, captions on, every class period."
+        "name": "Know the Lead",
+        "what": "Start with the teacher-selected story the whole room shares. Scan the reporting and identify the actual event."
       },
       {
-        "name": "Hunt",
-        "what": "Find two stories that interest you: one local, one national or international. The source buttons are the fast way."
+        "name": "Choose Your Pick",
+        "what": "Choose one other story that genuinely interests you. Use the Current Wire or Source Shelf when you need somewhere to look."
       },
       {
-        "name": "File",
-        "what": "Fill in both stories on this page: where it came from, what happened, and why it caught you. It saves as you type."
+        "name": "File Both",
+        "what": "Write what happened and why it matters. The Lead source facts are already supplied; add the source facts for Your Pick."
       },
       {
-        "name": "The Front Page",
-        "what": "Your teacher reads three or four filings aloud, names removed, and runs one question from Week 01 at them."
+        "name": "Make One Judgment",
+        "what": "Decide which of the two stories deserves more attention and explain why."
+      },
+      {
+        "name": "Copy My Desk",
+        "what": "Gather the growing two-week News Log and paste it into Canvas before leaving."
       }
     ],
     "lanes": [
       {
-        "name": "Local",
-        "question": "Who decided this, and could you go to the meeting where they decide the next one?"
+        "name": "The Lead",
+        "question": "What actually happened, and why does this story deserve the room’s attention?"
       },
       {
-        "name": "National or International",
-        "question": "What actually changed, as opposed to what was said, and how close is the person telling us to the thing itself?"
+        "name": "Your Pick",
+        "question": "What happened in the story you chose, and which of today’s two stories deserves more attention?"
       }
     ]
   }

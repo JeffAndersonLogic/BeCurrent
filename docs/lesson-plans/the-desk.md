@@ -50,61 +50,67 @@ Quiet partner talk is allowed, never required, never graded.
 
 ## The routine
 
-### Step 1. Watch · 10 min
+### Step 1. Know the Lead · 7 min
 
-CNN 10, together, captions on, every class period.
+Start with the teacher-selected story the whole room shares. Scan the reporting and identify the actual event.
 
-**Why.** It is ten minutes, it is built for this room, and it means every student starts the block having seen the same thing. That shared input is what makes the next step possible for a student who had no time, no device, and no news at home last night: the story they need is the one that just played.
+**Why.** A common Lead gives every student one piece of shared current knowledge without requiring prior news habits at home.
 
-### Step 2. Hunt · 5 min
+### Step 2. Choose Your Pick · 6 min
 
-Find two stories that interest you: one local, one national or international. The source buttons are the fast way.
+Choose one other story that genuinely interests you. Use the Current Wire or Source Shelf when you need somewhere to look.
 
-**Why.** Five minutes is deliberate, and the source buttons are what make it possible. A student handed the instruction "find a local story" with no starting point spends the whole period searching and files nothing, which looks like disengagement and is actually a missing address book. Every button is a stable homepage rather than an article link, because an article link rots inside a week and a homepage does not.
+**Why.** Choice keeps the daily habit broad enough for technology, culture, sports business, science, local government and other stories students actually notice.
 
-### Step 3. File · 12 min
+### Step 3. File Both · 11 min
 
-Fill in both stories on this page: where it came from, what happened, and why it caught you. It saves as you type.
+Write what happened and why it matters. The Lead source facts are already supplied; add the source facts for Your Pick.
 
-**Why.** Everyone, every day, privately. The three facts are lookups rather than writing, which is the point: a student who cannot yet write a paragraph about a story can still name the outlet and the date, and naming them is the sourcing habit this whole course is built on. Only the two questions ask for sentences, and two sentences is the whole job. Type it, dictate it, or hand in a paper card.
+**Why.** The daily product stays short. Source facts are lookups; the writing asks students to frame the event rather than retell an article.
 
-### Step 4. The Front Page · 5 min
+### Step 4. Make One Judgment · 4 min
 
-Your teacher reads three or four filings aloud, names removed, and runs one question from Week 01 at them.
+Decide which of the two stories deserves more attention and explain why.
 
-**Why.** The teacher does the talking. Hearing an expert reason out loud about work the room just produced is the modelling a struggling reader most needs and least often gets, and putting two filings on the same story side by side is Coverage Compare happening in miniature, every single day. Now that every student files both lanes, the local filings can also be read against each other, which is where the room finds out that two people watched the same meeting and heard different things.
+**Why.** A significance judgment turns headline collection into historical thinking without adding another long response.
+
+### Step 5. Copy My Desk · 4 min
+
+Gather the growing two-week News Log and paste it into Canvas before leaving.
+
+**Why.** Canvas is the backup. Student writing otherwise remains only in the browser where it was typed.
 
 ## The two lanes
 
 Every student files both, every day. There is no rotation and nothing to track.
 
-### Local
+### The Lead
 
-_Zionsville, Boone County, Indianapolis, Indiana._
+_One teacher-selected current story that everybody should know._
 
-> Who decided this, and could you go to the meeting where they decide the next one?
+> What actually happened, and why does this story deserve the room’s attention?
 
-**Why.** The lane with the shortest distance between a story and a student doing something about it. Local government publishes its agendas, its minutes and its budgets, which makes this the easiest lane to check and the one where a student is most likely to find that the reporting left something out.
+**Why.** The Lead replaces the old requirement that every student hunt for a local story every day. It creates common knowledge and removes repeated source-search friction.
 
-### National or International
+### Your Pick
 
-_The United States, or anywhere else. You choose which, every day._
+_One story you choose because it interests you: local, U.S., world, economy, technology, science, culture, sports business or another credible beat._
 
-> What actually changed, as opposed to what was said, and how close is the person telling us to the thing itself?
+> What happened in the story you chose, and which of today’s two stories deserves more attention?
 
-**Why.** One lane rather than two, so the student chooses and a quiet week in Washington is not a dead end. It carries both of the old lanes’ questions because both apply: a national story usually arrives pre-argued, so the discipline is separating the event from the reaction to it, and a story from eight time zones away has passed through several hands before it reaches this room, where the number of hands is the story. Today’s CNN 10 always counts here, which is the floor for a student who had no device last night.
+**Why.** Personal choice is the second half of the habit. At least one Your Pick per two-week News Log should be local, rather than forcing a local story every class period.
 
 ## What a student files, per story
 
-The same five boxes for each story. Three you look up, two you write.
+The Lead and Your Pick. Source facts are lookups; the writing stays short.
 
 | | Box | Asks |
 |---|---|---|
 | Look up | Outlet | Who reported it? |
-| Look up | Published | When did they publish it? |
-| Look up | Link | Paste the link, so you can find it again. |
-| Write | What happened | What happened? Two sentences, in your own words. The event, not the reaction to it. |
-| Write | Why it caught me | Why did this one catch you? One or two sentences. Who it affects, what it changes, or what you want to know next. |
+| Look up | Published | When was it published? |
+| Look up | Link | Paste the link so you can find it again. |
+| Write | What happened | What actually happened? Give the event in two sentences, in your own words. |
+| Write | Why it matters / attention | Explain why the story matters or why it deserves attention. |
 
 The split between the two kinds of box is the design. The facts are lookups, so they
 are answerable by every student in the room on every day, and they are exactly the
@@ -113,12 +119,12 @@ sentences is the cap.
 
 ### The questions, with both tiers
 
-1. **Framing.** What happened? Two sentences, in your own words. The event, not the reaction to it.
-   - START HERE: Two sentences is the whole job. If the story is about someone responding to something, the thing they are responding to is the event, and that is what goes here.
-   - PUSH FURTHER: Write the event the way the outlet wrote it, then the way you would write it. If those two are different, the difference is worth a sentence.
-2. **Generalizing from Evidence.** Why did this one catch you? One or two sentences. Who it affects, what it changes, or what you want to know next.
-   - START HERE: Finish one of these: this matters to me because ___ / this affects ___ / I want to know ___.
-   - PUSH FURTHER: Why is this being covered at all, and who benefits from the coverage?
+1. **Framing.** What actually happened? Give the event in two sentences, in your own words.
+   - START HERE: Name the change, decision, discovery or event. Do not retell the entire article.
+   - PUSH FURTHER: How did the outlet frame the event, and what would change if you described it more neutrally?
+2. **Significance.** Explain why the story matters or why it deserves attention.
+   - START HERE: Name who is affected, what changed, or what is likely to happen next.
+   - PUSH FURTHER: Why is this being covered at all, and what makes it more or less significant than another story today?
 
 Each question also carries the five-button confidence scale, the same scale the
 Briefs use, and the word the student pressed is what prints in the Canvas paste.
@@ -126,7 +132,7 @@ Briefs use, and the word the student pressed is what prints in the Canvas paste.
 ### Three ways to file, all equal
 
 - Type it on this page. It saves in this browser as you go.
-- Dictate it. Voice typing is a normal way to file, not a special arrangement.
+- Dictate it with voice typing.
 - Write it on a paper card and hand it in.
 
 **These are on this plan and not on the student page.** They are how a filing gets
@@ -144,40 +150,40 @@ Each group ends with something that cannot go stale.
 
 ### Start here
 
-_The two this class already uses._
+_Fast ways to scan before you choose Your Pick._
 
-- [CNN 10](https://www.cnn.com/cnn10): The ten-minute show we watch. Today’s episode always counts as your national or international story.
-- [The Week](https://theweek.com): Summarizes how several outlets covered the same story, on one page.
+- [CNN 10](https://www.cnn.com/cnn10): A short shared news overview.
+- [The Week](https://theweek.com): Summaries that often show how multiple outlets cover the same issue.
 
 ### Local
 
-_Zionsville, Boone County, Indiana._
+_Use this shelf when today is your local pick._
 
-- [Times Sentinel](https://www.timessentinel.com/): Zionsville’s paper of record.
-- [Current in Zionsville](https://youarecurrent.com/category/zionsville/): Community coverage: schools, town council, business.
-- [Search Zionsville news](https://news.google.com/search?q=Zionsville%20Indiana): Always works. Use this if a link above is dead.
+- [Times Sentinel](https://www.timessentinel.com/): Zionsville and Boone County reporting.
+- [Current in Zionsville](https://youarecurrent.com/category/zionsville/): Community coverage: schools, town government and local business.
+- [Search Zionsville news](https://news.google.com/search?q=Zionsville%20Indiana): Search recent Zionsville coverage across outlets.
 
 ### National or International
 
-_The United States, or anywhere else. Government, courts, economy, disasters, elections, war, money._
+_Wires, broadcasters and publications for U.S. and world reporting._
 
-- [Associated Press](https://apnews.com): US wire service.
-- [Reuters](https://www.reuters.com): UK wire service.
-- [NPR](https://www.npr.org): US public radio.
-- [CNN](https://www.cnn.com): US cable, centre left.
-- [Fox News](https://www.foxnews.com): US cable, right.
-- [NewsNation](https://www.newsnationnow.com): US cable.
-- [BBC News](https://www.bbc.com/news): UK public broadcaster. The one desk here that is not American.
-- [Newsweek](https://www.newsweek.com): US news magazine.
-- [Bloomberg](https://www.bloomberg.com): US business and markets. Good for the money behind a story.
-- [Forbes](https://www.forbes.com): US business. Check whether a piece is by staff or an outside contributor.
-- [Search the news](https://news.google.com): Always works. Good for one topic across many outlets.
+- [Associated Press](https://apnews.com): U.S. wire service.
+- [Reuters](https://www.reuters.com): International wire service.
+- [NPR](https://www.npr.org): U.S. public radio reporting.
+- [CNN](https://www.cnn.com): U.S. national and international reporting.
+- [Fox News](https://www.foxnews.com): U.S. national and international reporting.
+- [NewsNation](https://www.newsnationnow.com): U.S. national reporting.
+- [BBC News](https://www.bbc.com/news): U.K. public broadcaster with global coverage.
+- [Newsweek](https://www.newsweek.com): U.S. news magazine.
+- [Bloomberg](https://www.bloomberg.com): Business, markets and economic reporting.
+- [Forbes](https://www.forbes.com): Business coverage; check whether a piece is staff reporting or a contributor article.
+- [Search the news](https://news.google.com): Search one topic across multiple outlets.
 
 ## Where the work goes
 
-**Every class.** Two stories filed on this page, then Copy My Log and paste it into the current News Log in Canvas. Never spoken to the class, and never shown with your name on it unless you ask for it.
+**Every class.** File The Lead and Your Pick, make one significance judgment, then copy the growing News Log into Canvas.
 
-**Every 2 weeks, in Canvas.** One News Log every two weeks, in Canvas, about five class periods of filings. It is the same assignment for the whole two weeks, so paste your log into it again each day. The last paste is the one that gets graded.
+**Every 2 weeks, in Canvas.** One News Log every two weeks in Canvas. Paste the growing log into the same assignment again each class period; the last attempt is the graded artifact.
 
 The cycle is anchored on Monday `2026-08-24` and runs
 2 weeks, about 5 class periods. That anchor is the one date in
@@ -185,7 +191,7 @@ The cycle is anchored on Monday `2026-08-24` and runs
 button collects exactly the days that belong to the current News Log. Change it
 between cycles, never inside one: every boundary after it moves.
 
-The daily filings are the practice and the News Log is the graded artifact. Pasting every day is also your only backup: your work is saved in this browser and nowhere else until you copy it into Canvas.
+At least one Your Pick during each two-week News Log should be local. Pasting every class period is also the backup for work stored in the browser.
 
 The daily paste is not a tidiness step. A cycle of filings lives in one browser's
 `localStorage` and nowhere else until the student copies it out, and the privacy rule
@@ -195,7 +201,7 @@ exists. See `docs/CANVAS-CAPTURE.md`.
 
 ## House rules
 
-- **Your name is never on the board unless you put it there.** Filings are read aloud with names removed. You can ask to be named.
-- **Two sentences per question is the whole job.** It is short so that finishing is normal rather than impressive.
-- **Your work is saved in this browser only, until you copy it into Canvas.** That is why the last step every day is Copy My Week. Nothing you write here is sent anywhere on its own.
-- **Talking to one person is optional and never graded.** It helps some people think. It is not a requirement and nobody is tracking it.
+- **The Lead is shared; Your Pick is yours.** The class builds common current knowledge without giving up personal interest.
+- **At least one Your Pick per News Log is local.** Local news stays part of the course without turning every day into the same scavenger hunt.
+- **Your name is never put on a filing unless you choose that.** The teacher can discuss anonymous work without creating a daily public-speaking demand.
+- **Your work stays in this browser until you copy it into Canvas.** Nothing on The Desk sends student writing anywhere on its own.

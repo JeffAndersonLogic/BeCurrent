@@ -75,7 +75,7 @@ and the dates rather than pasting this eighteen times.
 
 ```html
 <h2>The Desk: your News Log for these two weeks</h2>
-<p><em>Watch the news. Find two stories, one local and one from further out. File them here, then copy your log into Canvas.</em></p>
+<p><em>Know the Lead. Choose Your Pick. File both, decide what deserves attention, and keep a two-week news journal.</em></p>
 
 <h3>Step 1 &mdash; Open the Desk</h3>
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/daily/index.html" target="_blank" rel="noopener">The Desk</a></p>
@@ -83,21 +83,21 @@ and the dates rather than pasting this eighteen times.
 
 <h3>Step 2 &mdash; File two stories, every class</h3>
 <ol>
-    <li><strong>Local.</strong> Zionsville, Boone County, Indianapolis, Indiana. Ask yourself: Who decided this, and could you go to the meeting where they decide the next one?</li>
-    <li><strong>National or International.</strong> The United States, or anywhere else. You choose which, every day. Ask yourself: What actually changed, as opposed to what was said, and how close is the person telling us to the thing itself?</li>
+    <li><strong>The Lead.</strong> One teacher-selected current story that everybody should know. Ask yourself: What actually happened, and why does this story deserve the room’s attention?</li>
+    <li><strong>Your Pick.</strong> One story you choose because it interests you: local, U.S., world, economy, technology, science, culture, sports business or another credible beat. Ask yourself: What happened in the story you chose, and which of today’s two stories deserves more attention?</li>
 </ol>
 <p>Five boxes for each story:</p>
 <ol>
     <li><strong>Outlet.</strong> Who reported it?</li>
-    <li><strong>Published.</strong> When did they publish it?</li>
-    <li><strong>Link.</strong> Paste the link, so you can find it again.</li>
-    <li><strong>What happened.</strong> What happened? Two sentences, in your own words. The event, not the reaction to it.</li>
-    <li><strong>Why it caught me.</strong> Why did this one catch you? One or two sentences. Who it affects, what it changes, or what you want to know next.</li>
+    <li><strong>Published.</strong> When was it published?</li>
+    <li><strong>Link.</strong> Paste the link so you can find it again.</li>
+    <li><strong>What happened.</strong> What actually happened? Give the event in two sentences, in your own words.</li>
+    <li><strong>Why it matters / attention.</strong> Explain why the story matters or why it deserves attention.</li>
 </ol>
 <p>Three ways to file, all equal:</p>
 <ul>
     <li>Type it on this page. It saves in this browser as you go.</li>
-    <li>Dictate it. Voice typing is a normal way to file, not a special arrangement.</li>
+    <li>Dictate it with voice typing.</li>
     <li>Write it on a paper card and hand it in.</li>
 </ul>
 
