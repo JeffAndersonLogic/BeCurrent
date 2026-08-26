@@ -1,3 +1,4 @@
+# one-time branch workflow; remove after candidate is built
 name: Apply Desk 2 polish
 
 on:
