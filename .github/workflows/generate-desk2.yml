@@ -1,0 +1,40 @@
+name: Sync Desk 2 generated files
+
+on:
+  push:
+    branches:
+      - chatgpt/desk-2-newsroom
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rebuild generated surfaces
+        run: |
+          node scripts/build-desk.js
+          node scripts/build-index.js
+          node scripts/build-lesson-plans.js
+          node scripts/build-announcements.js
+          node scripts/build-canvas-events.js
+          node scripts/build-units.js
+      - name: Commit generated results
+        run: |
+          if git diff --quiet; then
+            echo "Generated files already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily/index.html index.html docs/lesson-plans assets/data/announcements.js docs/canvas social-media
+          git commit -m "Sync Desk 2 generated surfaces"
+          git push origin HEAD:chatgpt/desk-2-newsroom
