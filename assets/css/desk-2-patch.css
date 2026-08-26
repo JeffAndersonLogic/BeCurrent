@@ -1,0 +1,15 @@
+/* Targeted Desk polish: keep the Step 2 source-shelf jump readable on warm paper. */
+.pick-card a[href="#sources"]{
+  color:#fff!important;
+  background:#8e2f26!important;
+  border:1px solid #8e2f26!important;
+  text-decoration:none!important;
+  font-weight:800!important;
+  box-shadow:0 5px 14px rgba(142,47,38,.18);
+}
+.pick-card a[href="#sources"]:hover,
+.pick-card a[href="#sources"]:focus-visible{
+  color:#fff!important;
+  background:#6f241d!important;
+  border-color:#6f241d!important;
+}
