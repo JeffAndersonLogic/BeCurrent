@@ -13,7 +13,9 @@
   function valueOf(group){if(group.matches('textarea,input[type="text"],input[type="url"]'))return group.value;return [...group.querySelectorAll('input:checked')].map(i=>i.value)}
   groups.forEach(group=>{const saved=read(group.dataset.group);if(saved===null)return;if(group.matches('textarea,input[type="text"],input[type="url"]'))group.value=saved||'';else if(Array.isArray(saved))group.querySelectorAll('input').forEach(i=>i.checked=saved.includes(i.value))});
   function filled(key){const v=read(key);return Array.isArray(v)?v.length>0:typeof v==='string'&&v.trim()!==''}
-  function update(){const keys=groups.map(g=>g.dataset.group);const done=[...new Set(keys)].filter(filled).length;document.querySelectorAll('[data-topic-progress]').forEach(el=>el.textContent=`${done} of ${[...new Set(keys)].length} saved`)}
+  function update(){const keys=[...new Set(groups.map(g=>g.dataset.group))];const done=keys.filter(filled).length;document.querySelectorAll('[data-topic-progress]').forEach(el=>el.textContent=`${done} of ${keys.length} saved`)}
   document.querySelectorAll('[data-save]').forEach(btn=>btn.addEventListener('click',()=>{const key=btn.dataset.save;const group=document.querySelector(`[data-group="${key}"]`);if(!group)return;const ok=write(key,valueOf(group));const status=document.querySelector(`[data-status="${key}"]`);if(status){status.textContent=ok?'Saved on this Chromebook':'Could not save in this browser';if(ok)setTimeout(()=>status.textContent='',2400)}update()}));
+  const nav=document.querySelector('.nav .nav-inner');
+  if(nav&&!nav.querySelector('a[href="study-guide.html"]')){const guide=document.createElement('a');guide.href='study-guide.html';guide.textContent='Study Guide';nav.appendChild(guide);}
   update();
 })();
