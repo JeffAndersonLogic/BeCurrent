@@ -10,7 +10,7 @@
     if(!document.querySelector('link[href="../assets/css/ukraine-position.css"]')){const link=document.createElement('link');link.rel='stylesheet';link.href='../assets/css/ukraine-position.css';document.head.appendChild(link);}
     const journey=document.querySelector('.sticky-journey');
     if(!journey||document.querySelector('.uk-position'))return;
-    const bar=document.createElement('div');bar.className='uk-position';bar.innerHTML='<div class="uk-position-inner"><div><div class="uk-position-series">THE WAR IN UKRAINE · REVERSE HISTORY INVESTIGATION</div><div class="uk-position-title">Lesson 2 · The Full-Scale Invasion</div><span class="uk-position-sub">Reverse History stop · 2022</span></div><div class="uk-position-count"><strong>2</strong> of 6 lessons</div></div>';
+    const bar=document.createElement('div');bar.className='uk-position';bar.innerHTML='<div class="uk-position-inner"><div><div class="uk-position-series">THE WAR IN UKRAINE · REVERSE HISTORY INVESTIGATION</div><div class="uk-position-title">Topic 2 · The Full-Scale Invasion</div><span class="uk-position-sub">Reverse History stop · 2022</span></div><div class="uk-position-count"><strong>2</strong> of 6 topics</div></div>';
     journey.insertAdjacentElement('afterend',bar);
   }
   installPosition();
