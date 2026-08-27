@@ -28,6 +28,15 @@
     anchor.insertAdjacentElement('afterend',bar);
   }
 
+  function installStudyGuide(){
+    const nav=document.querySelector('.nav .nav-inner');
+    if(!nav||nav.querySelector('a[href="study-guide.html"]'))return;
+    const guide=document.createElement('a');
+    guide.href='study-guide.html';
+    guide.textContent='Study Guide';
+    nav.appendChild(guide);
+  }
+
   function setMode(mode){
     body.classList.toggle('teacher-on',mode==='teacher');
     modeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
@@ -38,6 +47,7 @@
   modeButtons.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
   setMode(savedMode);
   installPosition();
+  installStudyGuide();
 
   const groups=[...document.querySelectorAll('[data-group]')];
 
