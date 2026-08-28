@@ -96,13 +96,26 @@ window.BECURRENT_SCHEDULE = {
     { date: '2026-08-26', topicTitle: 'Review / Study Guide',
       agenda: ['Review the unit: the six topics and the terms.',
                'Work through the study guide.'],
-      note: 'No new material today. The Social Media Assessment is Friday.' }
+      note: 'No new material today. The Social Media Assessment is Friday.' },
+
+    { date: '2026-08-28', topicTitle: 'Social Media Unit Exam',
+      agenda: ['Complete the Social Media Unit Exam.'],
+      note: 'Today is the Social Media Unit Exam. Our War in Iran unit begins Tuesday.' },
+
+    { date: '2026-09-01', topicTitle: 'War in Iran — Section 1',
+      agenda: ['Begin the War in Iran unit.',
+               'Complete Section 1.'],
+      note: 'New unit today: War in Iran.' },
+
+    { date: '2026-09-03', topicTitle: 'War in Iran — Section 2',
+      agenda: ['Continue the War in Iran unit.',
+               'Complete Section 2.'] }
   ],
 
   // Every quiz, test and exam. Past dates drop off the board on their own.
   // A date you have not set yet is fine: leave `date` out and it shows as TBD.
   assessments: [
-    { date: '2026-08-28', title: 'Social Media Assessment', type: 'Test' }
+    { date: '2026-08-28', title: 'Social Media Unit Exam', type: 'Test' }
   ],
 
   // Off by default. Add one and a Reminders slide joins the loop.
