@@ -120,6 +120,18 @@
     hero.insertAdjacentElement('afterend',section);
   }
 
+  function installStepPills(){
+    if(!document.getElementById('iran-step-pill-style')){
+      const style=document.createElement('style');
+      style.id='iran-step-pill-style';
+      style.textContent='.ir-step-pill{display:inline-flex!important;align-items:center;width:max-content;max-width:100%;padding:6px 11px;border-radius:999px;background:var(--ir-red,#8e2f26);color:#fff!important;letter-spacing:.06em;box-shadow:0 2px 0 rgba(0,0,0,.18)}';
+      document.head.appendChild(style);
+    }
+    document.querySelectorAll('.ir-kicker').forEach(el=>{
+      if(/^Step\s+\d+\b/i.test((el.textContent||'').trim()))el.classList.add('ir-step-pill');
+    });
+  }
+
   function installTopicOneMap(){
     if(topic!=='topic-01'||document.querySelector('.ir-regional-map'))return;
     const paper=document.querySelector('#map .ir-paper');
@@ -325,5 +337,6 @@
   decorateWork();
   installWorkSummary();
   installCompletion();
+  installStepPills();
   updateCompletion();
 })();
