@@ -42,10 +42,11 @@
       <dt>H or ?</dt><dd>Open or close controls</dd>
       <dt>Esc</dt><dd>Close controls</dd>
     </dl>
-    <p>Schedule, assignments and reminders still come from the generated announcements file. Today’s Lead comes from the same daily-news file used by Home and The Desk.</p>
+    <p>The live schedule supplies dates, agenda, homework and reminders immediately. Generated course data supplies lesson titles, learning targets and success criteria. Today’s Lead comes from the same daily-news file used by Home and The Desk.</p>
   </div>
 </div>
 
+<script src="assets/data/announcements-schedule.js"></script>
 <script src="assets/data/announcements.js"></script>
 <script src="assets/data/daily-news.js"></script>
 <script>
@@ -53,11 +54,35 @@
   'use strict';
 
   var RAW = window.BECURRENT_ANNOUNCEMENTS || {};
+  var SCHEDULE = window.BECURRENT_SCHEDULE || {};
   var NEWS = window.BECURRENT_DAILY_NEWS || {};
-  var SETTINGS = RAW.settings || {};
-  var DAYS = Array.isArray(RAW.days) ? RAW.days : [];
-  var ASSESSMENTS = Array.isArray(RAW.assessments) ? RAW.assessments : [];
-  var REMINDERS = Array.isArray(RAW.reminders) ? RAW.reminders : [];
+  var SETTINGS = Object.assign({}, RAW.settings || {}, SCHEDULE.settings || {});
+  var GENERATED_DAYS = Array.isArray(RAW.days) ? RAW.days : [];
+  var SCHEDULE_DAYS = Array.isArray(SCHEDULE.days) ? SCHEDULE.days : [];
+
+  // The hand-edited schedule is the live source for what happens on a date. The
+  // generated file still supplies curriculum-derived titles, targets and criteria.
+  // Merging them here means a schedule edit is visible on the projector immediately,
+  // even before the generated board file is rebuilt. The offline gate still requires
+  // both files to reproduce exactly before a normal push is considered green.
+  var generatedByDate = {};
+  GENERATED_DAYS.forEach(function (d) { if (d && d.date) generatedByDate[d.date] = d; });
+  var scheduledDates = {};
+  var DAYS = SCHEDULE_DAYS.map(function (entry) {
+    if (!entry || !entry.date) return null;
+    scheduledDates[entry.date] = true;
+    var day = Object.assign({}, generatedByDate[entry.date] || {}, { date: entry.date });
+    ['homework','homeworkDue','note','doNow','agenda','learningTargets','successCriteria'].forEach(function (key) {
+      if (Object.prototype.hasOwnProperty.call(entry, key)) day[key] = entry[key];
+    });
+    if (typeof entry.topicTitle === 'string' && entry.topicTitle.trim()) day.topic = entry.topicTitle.trim();
+    return day;
+  }).filter(Boolean);
+  GENERATED_DAYS.forEach(function (d) { if (d && d.date && !scheduledDates[d.date]) DAYS.push(d); });
+  DAYS.sort(function (a,b) { return String(a.date).localeCompare(String(b.date)); });
+
+  var ASSESSMENTS = Array.isArray(SCHEDULE.assessments) ? SCHEDULE.assessments : (Array.isArray(RAW.assessments) ? RAW.assessments : []);
+  var REMINDERS = Array.isArray(SCHEDULE.reminders) ? SCHEDULE.reminders : (Array.isArray(RAW.reminders) ? RAW.reminders : []);
   var SLIDE_MS = Math.max(4, Number(SETTINGS.slideSeconds) || 15) * 1000;
 
   var board = document.getElementById('board');
@@ -189,9 +214,27 @@
   function upcomingSlide() {
     var today = new Date(); today.setHours(12,0,0,0);
     function parse(v) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v||'')); return m ? new Date(Number(m[1]),Number(m[2])-1,Number(m[3]),12) : null; }
-    var items = ASSESSMENTS.map(function (a) { return {title:a.title || '',detail:a.detail || '',date:parse(a.date || a.due)}; })
-      .filter(function (x) { return has(x.title) && x.date && x.date >= today; })
-      .sort(function (a,b) { return a.date-b.date; }).slice(0,3);
+    var items = ASSESSMENTS.map(function (a) { return {title:a.title || '',detail:a.detail || '',date:parse(a.date || a.due),kind:a.type || 'Assessment'}; })
+      .filter(function (x) { return has(x.title) && x.date && x.date >= today; });
+
+    // Future class days belong on the same radar as assessments. This is what lets
+    // Friday's board tell students that Tuesday begins Iran and Thursday continues it,
+    // rather than storing those dates correctly but hiding them until each day arrives.
+    DAYS.forEach(function (d) {
+      var date = parse(d && d.date);
+      if (!date || date <= today || !has(d.topic)) return;
+      items.push({ title:d.topic, detail:has(d.note) ? d.note : '', date:date, kind:'Class' });
+    });
+
+    items.sort(function (a,b) { return a.date-b.date; });
+    var seen = {};
+    items = items.filter(function (x) {
+      var key = x.date.getTime() + '|' + x.title;
+      if (seen[key]) return false;
+      seen[key] = true;
+      return true;
+    }).slice(0,4);
+
     var reminders = REMINDERS.filter(function (r) { return r && (has(r.title)||has(r.detail)); }).slice(0,2);
     if (!items.length && !reminders.length) return null;
     var s = slide('content-slide'); s.appendChild(kicker('Looking ahead')); s.appendChild(el('h2','slide-title','Keep this on your radar.'));
