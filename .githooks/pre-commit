@@ -1,0 +1,44 @@
+#!/bin/sh
+# Keep the hand-edited TODAY schedule and its generated board data in one commit.
+#
+# The offline suite already rejects drift. This hook closes the earlier gap by
+# rebuilding assets/data/announcements.js before the commit is created, so a
+# normal local/Codex edit cannot leave main with an updated schedule and a stale
+# projector board.
+
+set -eu
+
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-commit: node not found; cannot rebuild TODAY board" >&2
+  exit 1
+fi
+
+STAGED="$(git diff --cached --name-only --diff-filter=ACMR)"
+
+if ! printf '%s\n' "$STAGED" | grep -Eq '^(assets/data/announcements-schedule\.js|scripts/build-announcements\.js|scripts/lib/unit-content/|scripts/lib/week-content/)'; then
+  exit 0
+fi
+
+# The builder reads the working tree. Refuse to mix an unstaged curriculum edit
+# into a generated file that would then be staged accidentally with this commit.
+UNSTAGED_RELEVANT="$(git diff --name-only -- \
+  assets/data/announcements-schedule.js \
+  scripts/build-announcements.js \
+  scripts/lib/unit-content \
+  scripts/lib/week-content)"
+
+if [ -n "$UNSTAGED_RELEVANT" ]; then
+  echo "pre-commit: TODAY board sources have unstaged changes:" >&2
+  printf '%s\n' "$UNSTAGED_RELEVANT" | sed 's/^/  - /' >&2
+  echo "Stage or stash those changes before committing so the generated board matches the commit exactly." >&2
+  exit 1
+fi
+
+echo "pre-commit: rebuilding TODAY board..."
+node scripts/build-announcements.js
+git add assets/data/announcements.js
+
+echo "pre-commit: TODAY board rebuilt and staged."
