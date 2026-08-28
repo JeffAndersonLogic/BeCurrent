@@ -293,12 +293,37 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Review the unit: the six topics and the terms.",
         "Work through the study guide."
       ]
+    },
+    {
+      "date": "2026-08-28",
+      "topic": "Social Media Unit Exam",
+      "note": "Today is the Social Media Unit Exam. Our War in Iran unit begins Tuesday.",
+      "agenda": [
+        "Complete the Social Media Unit Exam."
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "topic": "War in Iran — Section 1",
+      "note": "New unit today: War in Iran.",
+      "agenda": [
+        "Begin the War in Iran unit.",
+        "Complete Section 1."
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "topic": "War in Iran — Section 2",
+      "agenda": [
+        "Continue the War in Iran unit.",
+        "Complete Section 2."
+      ]
     }
   ],
   "assessments": [
     {
       "date": "2026-08-28",
-      "title": "Social Media Assessment",
+      "title": "Social Media Unit Exam",
       "type": "Test"
     }
   ],
