@@ -1,43 +1,43 @@
 /* BeCurrent daily news desk.
-   Hand-edited, not generated. One small file drives the homepage briefing,
+   Hand-edited or automation-refreshed. One small file drives the homepage briefing,
    the Today board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-08-28',
+  reviewed: '2026-08-31',
   lead: {
-    category: 'World',
-    headline: 'Iran war reaches six-month mark as U.S. strategy shifts',
-    dek: 'Six months after the U.S.-Israel war with Iran began, there is still no clear end point. U.S. policy has increasingly emphasized economic pressure while the Strait of Hormuz remains central to the conflict and global energy security.',
+    category: 'World / Economy',
+    headline: 'U.S.-Iran fighting resumes in the Strait of Hormuz as oil prices rise',
+    dek: 'The United States carried out its first known strikes on Iranian positions in nearly a month, and Iran responded with attacks on U.S. forces. The renewed fighting pushed oil prices higher and stocks lower, showing how the conflict continues to affect energy markets well beyond the region.',
     source: 'Associated Press',
-    published: 'August 28, 2026',
-    url: 'https://apnews.com/article/fa718f6f57b0be019a27c88b01df526d',
+    published: 'August 31, 2026',
+    url: 'https://apnews.com/article/00f872327d65e5330598054a234dc25a',
     image: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Tehran%20Skyline%20and%20Alborz%20Mountains.jpg',
     imageCredit: 'Julia Maudlin / Wikimedia Commons, CC BY 2.0'
   },
   wire: [
     {
-      category: 'World',
-      headline: 'Nepal-China border flood disaster leaves hundreds dead and thousands missing',
+      category: 'World / Disaster',
+      headline: 'Nepal-China flood death toll passes 950 as hundreds may be trapped in hydropower tunnels',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/ae9973b5fd2b1dc6d54c3e88b1b55bdc'
+      url: 'https://apnews.com/article/744fe6e15ae7751e15efcd6dff70170c'
     },
     {
-      category: 'Democracy',
-      headline: 'Federal judge again blocks limits on mail voting',
+      category: 'World / Security',
+      headline: 'Russia expands use of jet-powered drones as repeated strikes disrupt Kyiv',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/15cf1ec7dcdb8211bf6b624b75a7f4ab'
+      url: 'https://apnews.com/article/db2f55ab0c3bd5d091dd4338d8bd28c8'
     },
     {
-      category: 'Economy',
-      headline: 'Fed signals rate hikes may be needed as inflation stays elevated',
+      category: 'Weather',
+      headline: 'Hurricane Karina strengthens to Category 4 in the Pacific while remaining far from land',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/0a655f1c042b059279343443d5802907'
+      url: 'https://apnews.com/article/ae53ec6c000b92675fe8202d171d131c'
     },
     {
-      category: 'Security',
-      headline: 'U.S., South Korea and Japan plan new joint military drill',
+      category: 'U.S. / Economy',
+      headline: 'U.S. gas prices stayed above $4 a gallon throughout August for the first time',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/a953d60690bf861f134e36a021bdbd70'
+      url: 'https://apnews.com/article/645e30123c3a0633a306466af71c3fa1'
     }
   ]
 };
