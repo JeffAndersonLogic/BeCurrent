@@ -84,7 +84,14 @@
       return parsed && typeof parsed === 'object' ? parsed : null;
     } catch (e) { return null; }
   }
+  function activeMode() {
+    return window.BECURRENT_DESK_MODE === 'lead' ? 'lead' : 'full';
+  }
+  function lanesForState(dayState) {
+    return dayState && dayState._mode === 'lead' ? LANES.slice(0, 1) : LANES;
+  }
   function save(state) {
+    state._mode = activeMode();
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode */ }
   }
 
@@ -182,7 +189,7 @@
   }
   function rowsForDay(dayKey, dayState) {
     var when = dayBanner(dayKey), rows = [];
-    LANES.forEach(function (lane) {
+    lanesForState(dayState).forEach(function (lane) {
       rows.push({ord:'xx',id:'desk-' + lane.id + '-source',label:when + ' ' + lane.name + ' story, Source',prompt:'Outlet, publication date and link.',text:factLine(dayState,lane),confidence:''});
       QUESTIONS.forEach(function (q) {
         var id = lane.id + '-' + q.id, entry = dayState[id] || {};
@@ -199,7 +206,12 @@
     return '<h3><span class="rec-day">' + bcEsc(row.banner) + '</span> ' + bcEsc(rest) + '</h3>';
   }
   function dayHasContent(dayState) {
-    return LANES.some(function (lane) { return QUESTIONS.some(function (q) { var id = lane.id + '-' + q.id; return String((dayState[id] || {}).answer || '').trim(); }); });
+    return lanesForState(dayState).some(function (lane) {
+      return QUESTIONS.some(function (q) {
+        var id = lane.id + '-' + q.id;
+        return String((dayState[id] || {}).answer || '').trim();
+      });
+    });
   }
   function gatheredDays() {
     var out = [];
@@ -225,8 +237,8 @@
         + '<p><strong>My response:</strong></p>'
         + bcParagraphsHtml(r.text,'em');
     }).join('<hr>');
-    var manifest = bcRecordManifest(rows,{topic:'desk-log-' + start,expected:days.length * (LANES.length * (1 + QUESTIONS.length)),isoStamp:stamp.toISOString()});
-    var plain = ['CURRENT EVENTS \u00b7 The Desk \u00b7 News Log',rangeLabel(start,last),'Student work, copied ' + stamp.toLocaleString(),'Days filed: ' + filed,'']
+    var manifest = bcRecordManifest(rows,{topic:'desk-log-' + start,expected:rows.length,isoStamp:stamp.toISOString()});
+    var plain = ['CURRENT EVENTS · The Desk · News Log',rangeLabel(start,last),'Student work, copied ' + stamp.toLocaleString(),'Days filed: ' + filed,'']
       .concat(rows.map(function (r) {
         var lines = [r.label.toUpperCase()];
         if (r.first && r.banner) lines.push('='.repeat(r.label.length));
@@ -250,7 +262,7 @@
     out.dataset.plain = doc.plain;
     if (!doc.days) {
       if (dayKeyOf(cycleStart()) > TODAY) deskSay('The first News Log starts ' + dayBanner(dayKeyOf(cycleStart())) + '. Anything filed before then stays on this device but is not part of a log yet.','short');
-      else deskSay('Nothing filed in this log yet. File today’s stories, then gather again.','short');
+      else deskSay('Nothing filed in this log yet. File today’s Desk, then gather again.','short');
       return doc;
     }
     var blank = doc.total - doc.count;
