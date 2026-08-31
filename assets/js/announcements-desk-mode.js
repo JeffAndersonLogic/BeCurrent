@@ -13,31 +13,48 @@
     return entry && entry.deskMode === 'lead' ? 'lead' : 'full';
   }
 
+  function stepHtml(steps) {
+    return steps.map(function (step) {
+      return '<div class="desk-move"><span class="desk-move-num">' + step[0]
+        + '</span><strong class="desk-move-name">' + step[1]
+        + '</strong><span class="desk-move-note">' + step[2] + '</span></div>';
+    }).join('');
+  }
+
   function patch() {
-    if (modeToday() !== 'lead') return true;
     var slide = document.querySelector('.desk-slide-v2');
     if (!slide) return false;
 
+    var mode = modeToday();
     var kicker = slide.querySelector('.board-kicker');
     var heading = slide.querySelector('.slide-title');
     var intro = slide.querySelector('.slide-dek');
     var grid = slide.querySelector('.desk-move-grid');
 
-    if (kicker) kicker.textContent = 'The Desk · Lead Mode';
-    if (heading) heading.textContent = 'The Lead, then go deep';
-    if (intro) intro.textContent = 'Know the shared story, file what happened and why it matters, then protect sustained time for today’s investigation.';
-    if (grid) {
-      grid.innerHTML = [
-        ['01', 'Know the Lead', 'The story the room shares.'],
-        ['02', 'File the Lead', 'What happened. Why it matters.'],
-        ['03', 'Copy My Desk', 'Back up today’s one-story filing in Canvas.']
-      ].map(function (step) {
-        return '<div class="desk-move"><span class="desk-move-num">' + step[0]
-          + '</span><strong class="desk-move-name">' + step[1]
-          + '</strong><span class="desk-move-note">' + step[2] + '</span></div>';
-      }).join('');
+    if (mode === 'lead') {
+      if (kicker) kicker.textContent = 'The Desk · Lead Mode';
+      if (heading) heading.textContent = 'Read here. Write in Canvas.';
+      if (intro) intro.textContent = 'Open your Microsoft Education News Log, know the shared Lead, file what happened and why it matters, then move into today’s investigation.';
+      if (grid) grid.innerHTML = stepHtml([
+        ['01', 'Open Canvas', 'Launch your Microsoft Education News Log.'],
+        ['02', 'Know the Lead', 'Read the shared story and identify the event.'],
+        ['03', 'File the Lead', 'Write what happened and why it matters in Word.'],
+        ['04', 'Check Saved', 'Your Microsoft file is the record.']
+      ]);
+    } else {
+      if (kicker) kicker.textContent = 'The Desk · daily news habit';
+      if (heading) heading.textContent = 'Read here. Write in Canvas.';
+      if (intro) intro.textContent = 'Open your Microsoft Education News Log first. Know the Lead, choose Your Pick, make one judgment, and keep every graded response in the autosaving Word document.';
+      if (grid) grid.innerHTML = stepHtml([
+        ['01', 'Open Canvas', 'Launch your Microsoft Education News Log.'],
+        ['02', 'Know the Lead', 'One important story the room shares.'],
+        ['03', 'Choose Your Pick', 'Follow one story that genuinely interests you.'],
+        ['04', 'Make one judgment', 'Which story deserves more attention?'],
+        ['05', 'Check Saved', 'No gathering, copying or browser-only backup.']
+      ]);
     }
-    slide.dataset.deskMode = 'lead';
+
+    slide.dataset.deskMode = mode;
     return true;
   }
 
