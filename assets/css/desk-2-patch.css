@@ -1,44 +1,18 @@
-/* Targeted Desk polish: keep the Step 2 source-shelf jump readable on warm paper. */
-.desk-source-jump{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  margin:0;
-  padding:14px 16px;
-  background:#e7e1d7;
-  border-top:1px solid #cbc3b8;
-  border-bottom:1px solid #cbc3b8;
-  border-left:4px solid #c47b45;
-  color:#33383b;
-  font-size:14px;
-}
+/* The Desk — Canvas/Microsoft Education workflow patch.
+   Student writing no longer lives in browser storage. */
+.desk-source-value{display:block;color:#2e3336;font-size:15px;line-height:1.35}
+.desk-source-link{display:inline-block;color:#7d2a22!important;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(125,42,34,.35);font-size:15px}
+.desk-source-link:hover,.desk-source-link:focus-visible{border-bottom-color:#7d2a22}
+.desk-task{margin-top:14px;padding:12px 14px;background:#e0d9ce;border-left:4px solid #8e2f26;color:#34393c;font-size:12.5px;font-weight:850;letter-spacing:.025em;text-transform:uppercase}
+.desk-canvas-panel{position:relative;overflow:hidden}
+.desk-canvas-panel:after{content:'AUTOSAVE';position:absolute;right:-25px;top:24px;transform:rotate(33deg);background:#202529;color:#e9e4da;padding:7px 34px;font-size:11px;font-weight:900;letter-spacing:.11em}
+.desk-badge{display:inline-flex;align-items:center;padding:6px 9px;margin-bottom:12px;background:#202529;color:#f2eee6;font-size:11px;font-weight:850;letter-spacing:.07em}
+.desk-completion{margin-top:18px;padding:14px 16px;background:#f8f5ef;border:1px solid #b8b0a5;color:#41474a;font-size:14px}
+.desk-hero-action{margin-bottom:0}
+.desk-hero-action .desk-btn{display:inline-flex}
+.desk-actions a.desk-btn{display:inline-flex;align-items:center;justify-content:center}
+.desk-source-jump{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:22px 0 0;padding:14px 16px;background:#e7e1d7;border-top:1px solid #cbc3b8;border-bottom:1px solid #cbc3b8;border-left:4px solid #8e2f26;color:#33383b;font-size:14px}
 .desk-source-jump strong{font-weight:800}
-.desk-source-jump a,
-.pick-card a[href="#sources"]{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 auto;
-  min-height:42px;
-  padding:10px 16px;
-  border-radius:999px;
-  color:#fff!important;
-  background:#8e2f26!important;
-  border:1px solid #8e2f26!important;
-  text-decoration:none!important;
-  font-weight:800!important;
-  line-height:1.1;
-  box-shadow:0 5px 14px rgba(142,47,38,.18);
-}
-.desk-source-jump a:hover,
-.desk-source-jump a:focus-visible,
-.pick-card a[href="#sources"]:hover,
-.pick-card a[href="#sources"]:focus-visible{
-  color:#fff!important;
-  background:#6f241d!important;
-  border-color:#6f241d!important;
-}
-@media(max-width:700px){
-  .desk-source-jump{align-items:flex-start;flex-direction:column}
-}
+.desk-source-jump a{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:42px;padding:10px 16px;border-radius:999px;color:#fff!important;background:#8e2f26!important;border:1px solid #8e2f26!important;text-decoration:none!important;font-weight:800!important;line-height:1.1;box-shadow:0 5px 14px rgba(142,47,38,.18)}
+.desk-source-jump a:hover,.desk-source-jump a:focus-visible{color:#fff!important;background:#6f241d!important;border-color:#6f241d!important}
+@media(max-width:700px){.desk-source-jump{align-items:flex-start;flex-direction:column}.desk-canvas-panel:after{display:none}}
