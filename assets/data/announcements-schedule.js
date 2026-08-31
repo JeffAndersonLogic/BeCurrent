@@ -30,17 +30,14 @@
        homework     what leaves the room tonight. Yours to write, the
                     course data has no homework in it. One assignment can
                     be a plain string. Two or more go in a list and each
-                    gets its own numbered line on the screen:
-                        homework: ['Finish your three responses.',
-                                   'Bring a device Thursday.']
+                    gets its own numbered line on the screen.
        homeworkDue  optional, shows as a chip, e.g. 'Friday'
        note         optional one-line callout ('Bring your Chromebook')
        doNow        optional bell ringer, adds a slide
        agenda       optional list of steps, adds a numbered slide
        deskMode     optional. Omit it for the normal Full Desk. Set
                     deskMode: 'lead' only when the scheduled investigation
-                    needs sustained time. Lead Mode keeps the shared Lead,
-                    its event/significance filing and the Canvas backup,
+                    needs sustained time. Lead Mode keeps the shared Lead
                     but removes Your Pick for that date.
 
    OVERRIDES, for when the wording is too long to project
@@ -57,13 +54,9 @@ window.BECURRENT_SCHEDULE = {
 
   settings: {
     courseName: 'Current Events',
-    // Blank on purpose, so nothing personal projects on the screen.
     teacherName: '',
     roomName: '',
     slideSeconds: 15,
-    // The Desk begins every class. Full Desk is the default; individual dates can
-    // opt into Lead Mode with deskMode: 'lead' when the investigation needs more
-    // sustained time. No student-facing surface promises a fixed minute count.
     showDesk: true
   },
 
@@ -81,10 +74,6 @@ window.BECURRENT_SCHEDULE = {
       homework: 'Finish your three Brief responses and submit them in Canvas.',
       homeworkDue: 'the start of next class' },
 
-    // Two episodes of CNN 10 today rather than one. The shape of ONE day belongs
-    // here rather than in the topic's content module: the module is what gets
-    // taught again next year, and this is what is happening on this date. No
-    // timings, because this projects at students.
     { date: '2026-08-18', topic: 'SM4',
       note: 'Bring a device today. You are going to look yourself up.',
       agenda: ['The Desk. Two episodes of CNN 10 to catch us up, then file your two stories.',
@@ -103,43 +92,44 @@ window.BECURRENT_SCHEDULE = {
                'Work through the study guide.'],
       note: 'No new material today. The Social Media Assessment is Friday.' },
 
-    // Assessment day is the first scheduled example of Lead Mode: students still
-    // know and file the shared Lead, but Your Pick does not compete with the exam.
     { date: '2026-08-28', topicTitle: 'Social Media Unit Exam', deskMode: 'lead',
       agenda: ['Complete the Social Media Unit Exam.'],
-      note: 'Today is the Social Media Unit Exam. Our War in Iran unit begins Tuesday.' },
+      note: 'Today is the Social Media Unit Exam.' },
 
-    // The opening Iran sections stay Full Desk by default. When later Iran dates
-    // are added, use deskMode: 'lead' for the genuinely heavy synthesis days such
-    // as the nuclear-bargain lesson and the final causation synthesis.
-    { date: '2026-09-01', topicTitle: 'War in Iran — Section 1',
+    { date: '2026-09-01', topicTitle: 'The Desk — Current Events',
+      agenda: ['Open your Microsoft Education News Log in Canvas.',
+               'Work The Desk: file the shared Lead, choose Your Pick, and make today’s significance judgment.',
+               'Check that your Word document shows your work is saved before you leave.'],
+      note: 'This week is a live Current Events week. The War in Iran unit begins next week.' },
+
+    { date: '2026-09-03', topicTitle: 'The Desk — Current Events',
+      agenda: ['Open your Microsoft Education News Log in Canvas.',
+               'Work The Desk: file the shared Lead and Your Pick.',
+               'Use evidence to decide which story is likely to have the greater long-term consequence.',
+               'Check that your Word document shows your work is saved before you leave.'],
+      note: 'Second Desk day this week. The War in Iran unit begins next week.' },
+
+    { date: '2026-09-08', topicTitle: 'War in Iran — Section 1',
       agenda: ['Begin the War in Iran unit.',
                'Complete Section 1.'],
       note: 'New unit today: War in Iran.' },
 
-    { date: '2026-09-03', topicTitle: 'War in Iran — Section 2',
+    { date: '2026-09-10', topicTitle: 'War in Iran — Section 2',
       agenda: ['Continue the War in Iran unit.',
                'Complete Section 2.'] }
   ],
 
-  // Every quiz, test and exam. Past dates drop off the board on their own.
-  // A date you have not set yet is fine: leave `date` out and it shows as TBD.
   assessments: [
     { date: '2026-08-28', title: 'Social Media Unit Exam', type: 'Test' }
   ],
 
-  // Off by default. Add one and a Reminders slide joins the loop.
   reminders: [
     // { title: 'Chromebooks', detail: 'Charged, every day.' }
   ]
 };
 
-// The TODAY board is hand-authored and reads this schedule directly. Keep its Desk
-// slide synchronized with the date's mode without duplicating the mode decision in
-// generated course data. The Node announcement builder has no `document`, so this
-// browser-only helper is invisible to the build step.
 if (typeof document !== 'undefined' && /(?:^|\/)announcements\.html$/.test(location.pathname)) {
   var deskModePatch = document.createElement('script');
-  deskModePatch.src = 'assets/js/announcements-desk-mode.js';
+  deskModePatch.src = 'assets/js/announcements-desk-mode.js?v=20260831-desk';
   document.head.appendChild(deskModePatch);
 }
