@@ -37,6 +37,11 @@
        note         optional one-line callout ('Bring your Chromebook')
        doNow        optional bell ringer, adds a slide
        agenda       optional list of steps, adds a numbered slide
+       deskMode     optional. Omit it for the normal Full Desk. Set
+                    deskMode: 'lead' only when the scheduled investigation
+                    needs sustained time. Lead Mode keeps the shared Lead,
+                    its event/significance filing and the Canvas backup,
+                    but removes Your Pick for that date.
 
    OVERRIDES, for when the wording is too long to project
 
@@ -56,9 +61,9 @@ window.BECURRENT_SCHEDULE = {
     teacherName: '',
     roomName: '',
     slideSeconds: 15,
-    // The Desk runs the first 25 minutes of every class, so its slide is
-    // built from scripts/lib/desk-content.js rather than typed per day.
-    // Set false to drop it from the loop.
+    // The Desk begins every class. Full Desk is the default; individual dates can
+    // opt into Lead Mode with deskMode: 'lead' when the investigation needs more
+    // sustained time. No student-facing surface promises a fixed minute count.
     showDesk: true
   },
 
@@ -98,10 +103,15 @@ window.BECURRENT_SCHEDULE = {
                'Work through the study guide.'],
       note: 'No new material today. The Social Media Assessment is Friday.' },
 
-    { date: '2026-08-28', topicTitle: 'Social Media Unit Exam',
+    // Assessment day is the first scheduled example of Lead Mode: students still
+    // know and file the shared Lead, but Your Pick does not compete with the exam.
+    { date: '2026-08-28', topicTitle: 'Social Media Unit Exam', deskMode: 'lead',
       agenda: ['Complete the Social Media Unit Exam.'],
       note: 'Today is the Social Media Unit Exam. Our War in Iran unit begins Tuesday.' },
 
+    // The opening Iran sections stay Full Desk by default. When later Iran dates
+    // are added, use deskMode: 'lead' for the genuinely heavy synthesis days such
+    // as the nuclear-bargain lesson and the final causation synthesis.
     { date: '2026-09-01', topicTitle: 'War in Iran — Section 1',
       agenda: ['Begin the War in Iran unit.',
                'Complete Section 1.'],
@@ -123,3 +133,13 @@ window.BECURRENT_SCHEDULE = {
     // { title: 'Chromebooks', detail: 'Charged, every day.' }
   ]
 };
+
+// The TODAY board is hand-authored and reads this schedule directly. Keep its Desk
+// slide synchronized with the date's mode without duplicating the mode decision in
+// generated course data. The Node announcement builder has no `document`, so this
+// browser-only helper is invisible to the build step.
+if (typeof document !== 'undefined' && /(?:^|\/)announcements\.html$/.test(location.pathname)) {
+  var deskModePatch = document.createElement('script');
+  deskModePatch.src = 'assets/js/announcements-desk-mode.js';
+  document.head.appendChild(deskModePatch);
+}
