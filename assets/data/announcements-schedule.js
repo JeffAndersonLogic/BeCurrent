@@ -96,20 +96,20 @@ window.BECURRENT_SCHEDULE = {
       agenda: ['Complete the Social Media Unit Exam.'],
       note: 'Today is the Social Media Unit Exam.' },
 
-    { date: '2026-09-01', topicTitle: 'The Desk — Current Events',
+    { date: '2026-09-01', topicTitle: 'The Desk | Week of September 1',
       agenda: ['Watch two episodes of CNN 10 to catch up on current events.',
-               'Open your Microsoft Education News Log in Canvas.',
+               'Open The Desk | Week of September 1 in Canvas and launch your Microsoft Education News Log.',
                'Work The Desk: file the shared Lead, choose Your Pick, and make today’s significance judgment.',
                'Check that your Word document shows your work is saved before you leave.'],
-      note: 'Two CNN 10 episodes + The Desk today. The War in Iran unit begins next week.' },
+      note: 'Two CNN 10 episodes + The Desk today. Keep the same weekly News Log open for Thursday.' },
 
-    { date: '2026-09-03', topicTitle: 'The Desk — Current Events',
+    { date: '2026-09-03', topicTitle: 'The Desk | Week of September 1',
       agenda: ['Watch two episodes of CNN 10 to catch up on current events.',
-               'Open your Microsoft Education News Log in Canvas.',
+               'Reopen The Desk | Week of September 1 in Canvas and continue the same Microsoft Education News Log.',
                'Work The Desk: file the shared Lead and Your Pick.',
                'Use evidence to decide which story is likely to have the greater long-term consequence.',
-               'Check that your Word document shows your work is saved before you leave.'],
-      note: 'Two CNN 10 episodes + The Desk today. The War in Iran unit begins next week.' },
+               'Confirm both dated entries are saved, then submit The Desk | Week of September 1.'],
+      note: 'Finish and submit The Desk | Week of September 1 today. The War in Iran unit begins next week.' },
 
     { date: '2026-09-08', topicTitle: 'War in Iran — Section 1',
       agenda: ['Begin the War in Iran unit.',
@@ -130,7 +130,7 @@ window.BECURRENT_SCHEDULE = {
   ]
 };
 
-if (typeof document !== 'undefined' && /(?:^|\/)announcements\.html$/.test(location.pathname)) {
+if (typeof document !== 'undefined' && /(?:^|\\/)announcements\\.html$/.test(location.pathname)) {
   var deskModePatch = document.createElement('script');
   deskModePatch.src = 'assets/js/announcements-desk-mode.js?v=20260831-desk';
   document.head.appendChild(deskModePatch);
