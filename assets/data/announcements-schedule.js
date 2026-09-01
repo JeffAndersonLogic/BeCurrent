@@ -129,8 +129,8 @@ window.BECURRENT_SCHEDULE = {
   ]
 };
 
-if (typeof document !== 'undefined' && /(?:^|\\/)announcements\\.html$/.test(location.pathname)) {
+if (typeof document !== 'undefined' && /(?:^|\/)announcements\.html$/.test(location.pathname)) {
   var deskModePatch = document.createElement('script');
-  deskModePatch.src = 'assets/js/announcements-desk-mode.js?v=20260831-desk';
+  deskModePatch.src = 'assets/js/announcements-desk-mode.js?v=20260901';
   document.head.appendChild(deskModePatch);
 }
