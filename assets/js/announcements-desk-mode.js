@@ -5,6 +5,10 @@
     return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   }
 
+  function hourKey() {
+    return Math.floor(Date.now() / 3600000);
+  }
+
   function modeToday() {
     var schedule = window.BECURRENT_SCHEDULE || {};
     var days = Array.isArray(schedule.days) ? schedule.days : [];
@@ -21,7 +25,37 @@
     }).join('');
   }
 
-  function patch() {
+  function refreshLead() {
+    var news = window.BECURRENT_DAILY_NEWS || {};
+    var lead = news.lead || {};
+    var slide = document.querySelector('.lead-slide');
+    if (!slide || !lead.headline) return;
+
+    var headline = slide.querySelector('.lead-headline');
+    var dek = slide.querySelector('.lead-dek');
+    var meta = slide.querySelector('.lead-meta');
+    var media = slide.querySelector('.lead-media');
+    var kicker = slide.querySelector('.board-kicker');
+
+    if (kicker) kicker.textContent = 'Today’s Lead · ' + (lead.category || 'News');
+    if (headline) headline.textContent = lead.headline;
+    if (dek) dek.textContent = lead.dek || '';
+    if (media && lead.image) media.style.backgroundImage = 'url("' + String(lead.image).replace(/"/g, '') + '")';
+    if (meta) {
+      meta.textContent = [lead.source, lead.published].filter(Boolean).join(' · ');
+      if (lead.url) {
+        var link = document.createElement('a');
+        link.className = 'lead-link';
+        link.href = lead.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Open the reporting →';
+        meta.appendChild(link);
+      }
+    }
+  }
+
+  function patchDesk() {
     var slide = document.querySelector('.desk-slide-v2');
     if (!slide) return false;
 
@@ -58,13 +92,28 @@
     return true;
   }
 
-  function start() {
-    if (patch()) return;
+  function patchWhenReady() {
+    if (patchDesk()) {
+      refreshLead();
+      return;
+    }
     var tries = 0;
     var timer = setInterval(function () {
       tries += 1;
-      if (patch() || tries > 40) clearInterval(timer);
+      if (patchDesk() || tries > 40) {
+        clearInterval(timer);
+        refreshLead();
+      }
     }, 50);
+  }
+
+  function start() {
+    var fresh = document.createElement('script');
+    fresh.src = 'assets/data/daily-news.js?v=hour-' + hourKey();
+    fresh.async = false;
+    fresh.onload = patchWhenReady;
+    fresh.onerror = patchWhenReady;
+    document.head.appendChild(fresh);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
