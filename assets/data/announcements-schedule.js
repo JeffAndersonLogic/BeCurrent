@@ -131,6 +131,6 @@ window.BECURRENT_SCHEDULE = {
 
 if (typeof document !== 'undefined' && /(?:^|\/)announcements\.html$/.test(location.pathname)) {
   var deskModePatch = document.createElement('script');
-  deskModePatch.src = 'assets/js/announcements-desk-mode.js?v=20260901';
+  deskModePatch.src = 'assets/js/announcements-desk-mode.js?v=20260903-hourly';
   document.head.appendChild(deskModePatch);
 }
