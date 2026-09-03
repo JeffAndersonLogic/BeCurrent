@@ -3,41 +3,41 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-01',
+  reviewed: '2026-09-03',
   lead: {
-    category: 'World / Diplomacy',
-    headline: 'Iran says it would return to the June ceasefire if the United States does too',
-    dek: 'Iranian President Masoud Pezeshkian said Tehran is prepared to return to the June ceasefire agreement if Washington also resumes its commitments. The statement creates a possible diplomatic opening after renewed U.S.-Iran fighting and continued tension around the Strait of Hormuz.',
+    category: 'U.S. / Constitution',
+    headline: 'Federal judge blocks new effort to limit birthright citizenship',
+    dek: 'A federal judge in Maryland temporarily blocked the latest executive order seeking to restrict birthright citizenship. The judge cited Supreme Court precedent and the 14th Amendment, keeping the new restrictions from taking effect while a class-action lawsuit proceeds.',
     source: 'Associated Press',
-    published: 'September 1, 2026',
-    url: 'https://apnews.com/article/9342eb46aedd484cdf58895c8a116677',
-    image: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Tehran%20Skyline%20and%20Alborz%20Mountains.jpg',
-    imageCredit: 'Julia Maudlin / Wikimedia Commons, CC BY 2.0'
+    published: 'September 3, 2026',
+    url: 'https://apnews.com/article/69de0a404602a6e648b35f6a852c833d',
+    image: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Capitol_west_side.JPG',
+    imageCredit: 'Wikimedia Commons'
   },
   wire: [
     {
+      category: 'Indiana / Economy',
+      headline: 'Childcare aid waitlists leave hundreds of thousands of eligible children waiting, including many in Indiana',
+      source: 'Associated Press',
+      url: 'https://apnews.com/article/2ceccc0e30baf7187857c968e631ba77'
+    },
+    {
       category: 'World / Security',
-      headline: 'Russia launches a sixth straight day of heavy strikes on Kyiv',
+      headline: 'Ukraine’s summer drone campaign brings growing disruption inside Russia',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/7564a892bfb99a853aa150c8710b7985'
+      url: 'https://apnews.com/article/2367e71fc35353e92dc4884028ba403b'
     },
     {
-      category: 'U.S. / Economy',
-      headline: 'Rising oil prices push bond yields higher and weigh on U.S. stocks',
+      category: 'Technology / Environment',
+      headline: 'EPA proposal could reduce required public notice for air permits at AI data centers',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/775d7cf741349c7c8e689c0beb57f074'
+      url: 'https://apnews.com/article/947eb927ae81162ad4cc3e828915c804'
     },
     {
-      category: 'U.S. / Democracy',
-      headline: 'Whistleblower raises concerns about rushed Postal Service mail-voting system',
+      category: 'World / Climate',
+      headline: 'Pacific island nations push for more funding as climate risks intensify',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/7f7cf4fdf2e9cf369ae96f96fbda03f2'
-    },
-    {
-      category: 'Weather',
-      headline: 'Tropical Storm Edouard approaches Texas and Louisiana with flooding risk',
-      source: 'Associated Press',
-      url: 'https://apnews.com/article/947df7d220e9793e353631f51e40a06c'
+      url: 'https://apnews.com/article/01d2818e230cf866382b65c769456bc5'
     }
   ]
 };
