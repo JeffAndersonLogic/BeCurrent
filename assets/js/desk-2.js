@@ -5,10 +5,23 @@
     return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
   }
 
+  function hourKey(){
+    return Math.floor(Date.now()/3600000);
+  }
+
   function loadSchedule(done){
     if(window.BECURRENT_SCHEDULE){done();return;}
     var script=document.createElement('script');
     script.src='../assets/data/announcements-schedule.js?v=20260831-desk';
+    script.async=false;
+    script.onload=done;
+    script.onerror=done;
+    document.head.appendChild(script);
+  }
+
+  function loadNews(done){
+    var script=document.createElement('script');
+    script.src='../assets/data/daily-news.js?v=hour-'+hourKey();
     script.async=false;
     script.onload=done;
     script.onerror=done;
@@ -112,6 +125,7 @@
 
     var wireHost=document.getElementById('desk-current-wire');
     if(wireHost&&Array.isArray(news.wire)&&mode==='full'){
+      Array.from(wireHost.querySelectorAll('a')).forEach(function(link){link.remove();});
       news.wire.forEach(function(item){
         if(!item||!item.url||!item.headline)return;
         var a=document.createElement('a');
@@ -124,5 +138,5 @@
     }
   }
 
-  loadSchedule(hydrate);
+  loadSchedule(function(){loadNews(hydrate);});
 })();
