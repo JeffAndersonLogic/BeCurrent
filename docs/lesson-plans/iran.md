@@ -37,8 +37,9 @@ version of the argument against them.
 | Topic 7 | The Hormuz Lever | Reverse History | 3 |
 | Topic 8 | When Did This War Really Begin? | Reverse History | 3 |
 
-Each topic uses the earlier ones. The chain drawn in Topic 1 is what gets checked
-against a real document in Topic 4, so they are a sequence rather than a list.
+Each topic tests a different part of the same causal chain. Students begin with
+a hypothesis about the current conflict, then revise the weight they give to earlier
+turning points before making a ranked causal argument in the final topic.
 
 ## Assessed against
 
