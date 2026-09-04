@@ -140,9 +140,12 @@ working branch, let Validate go green, then fast-forward `main` to that commit.
 
 ## Status
 
-Both suites are green: 416 structural checks and 39 browser assertions. The Desk,
-the orientation week and the Social Media unit are complete. The other five units
-are on the front door as planned cards with no content modules yet, and the weekly
-News Log the Desk promises has not been built, so nothing from the daily half
-reaches Canvas. The teacher-facing Skills Lens has not been built. The full list of known gaps is at the bottom of `CLAUDE.md` under "What
-is missing", so nobody has to guess what is covered.
+The offline suite is green: 906 structural checks plus reproducibility, capture,
+Canvas and unit-contract tests. The Desk, its two-week News Log, the orientation
+week, Social Media and the eight-topic Iran at War Reverse History investigation
+are complete. Iran carries 41 recoverable filing responses, generated lesson-plan
+and Canvas materials, and the `IR1` through `IR8` TODAY-board codes. War in Ukraine,
+Midterm Elections, Artificial Intelligence and Immigration remain planned rather
+than built. The teacher-facing Skills Lens has not been built. The full list of
+known gaps is at the bottom of `CLAUDE.md` under "What is missing", so nobody has
+to guess what is covered.

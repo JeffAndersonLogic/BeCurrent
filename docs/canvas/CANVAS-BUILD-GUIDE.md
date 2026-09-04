@@ -44,7 +44,8 @@ lesson cannot drift apart without someone noticing.
 | Assignment (Canvas **and** PowerSchool) | `<CODE> - <Short Title>` | `SM3 - Inside the Algorithm` |
 
 The code is the unit's `meta.code` plus the topic number. Social Media is `SM`,
-so its topics are `SM1` through `SM6`. It is the same code the TODAY board's
+so its topics are `SM1` through `SM6`; Iran at War is `IR`, so its topics are
+`IR1` through `IR8`. It is the same code the TODAY board's
 schedule uses, so one identifier covers the projector, the calendar and the
 gradebook.
 

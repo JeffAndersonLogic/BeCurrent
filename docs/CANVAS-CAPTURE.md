@@ -14,7 +14,7 @@ Four files have to agree, and a change to any one breaks the others:
 
 ## Three gather surfaces, one grammar
 
-There are **three** gather buttons, and which one a student uses depends on which
+There are **four** gather surfaces, and which one a student uses depends on which
 page they are on:
 
 - **The week page's panel** collects every module slot, the brief's three answers
@@ -24,11 +24,15 @@ page they are on:
   on a unit page opens the brief directly, with no week shell behind it and no
   panel on any page above it. Before it existed, every unit topic answer was
   written to `localStorage` and stranded there with every structural check green.
+- **A Reverse History topic's panel**, labelled **Gather This Topic**, collects
+  the filings from that bespoke investigation page. Iran uses this path for all
+  eight topics: 41 canonical responses in total, each carrying the shared record
+  footer for the parser.
 - **The Desk's panel**, labelled **Gather My Log**, collects the daily filings for
   the current two-week News Log cycle. This is also the only route there is, and it
   is the one that carries work every single class period. See "The Desk" below.
 
-All three write the same footer, because `canvas-parse-core.js` is one parser. The
+All four write the same footer, because `canvas-parse-core.js` is one parser. The
 grammar therefore lives in **one** file, `scripts/lib/canvas-record-block.js`, and
 is inlined into all three writers:
 
@@ -38,6 +42,8 @@ is inlined into all three writers:
 - into every generated brief by `brief-capture-block.js`, which `validate.js`
   re-derives and compares byte for byte.
 - into the Desk by `desk-capture-block.js`, likewise re-derived and compared.
+- into Iran's generated browser layer by `iran-topic-page.js`, with
+  `scripts/build-iran.js --check` guarding the result.
 
 More copies would mean more answers to "did this student edit their work"
 depending on which button was pressed, with nothing able to say which had drifted.

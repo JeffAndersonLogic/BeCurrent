@@ -37,18 +37,28 @@
   });
 
   function updateProgress(){
-    const keys=['iran-prediction','iran-evidence','iran-claim','iran-reflection'];
-    const done=keys.filter(k=>{
-      const v=localStorage.getItem('bcv2-'+k);
+    const config=window.BECURRENT_IRAN_PROGRESS||{total:0,prefix:'bcv2-iran-topic-'};
+    const keys=[];
+    for(let i=0;i<localStorage.length;i++){
+      const key=localStorage.key(i);
+      if(key&&key.startsWith(config.prefix))keys.push(key);
+    }
+    const done=keys.filter(key=>{
+      const v=localStorage.getItem(key);
       return v&&v!=='""'&&v!=='[]';
     }).length;
-    document.querySelectorAll('[data-progress]').forEach(el=>el.textContent=`${done} of ${keys.length} saved`);
+    document.querySelectorAll('[data-progress]').forEach(el=>el.textContent=`${done} of ${config.total} saved`);
   }
   updateProgress();
 
   document.querySelectorAll('[data-clear-work]').forEach(btn=>btn.addEventListener('click',()=>{
     if(!confirm('Clear your BeCurrent work on this Chromebook?'))return;
-    ['iran-prediction','iran-evidence','iran-claim','iran-reflection'].forEach(k=>localStorage.removeItem('bcv2-'+k));
+    const prefix=(window.BECURRENT_IRAN_PROGRESS||{}).prefix||'bcv2-iran-topic-';
+    const keys=[];
+    for(let i=0;i<localStorage.length;i++){
+      const key=localStorage.key(i);if(key&&key.startsWith(prefix))keys.push(key);
+    }
+    keys.forEach(key=>localStorage.removeItem(key));
     location.reload();
   }));
 

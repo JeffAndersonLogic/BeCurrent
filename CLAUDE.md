@@ -919,9 +919,10 @@ Honest list, so nobody assumes coverage that does not exist:
    for real, and keep both.
 5. **No real map artwork.** Week 01 has no map because the orientation week has no
    single place. A real lesson needs a real map in the `where` slot.
-6. **One unit of six.** Social Media exists, five topics deep. War in Iran, War in Ukraine, Midterm
-   Elections, Artificial Intelligence and Immigration are on the front door as
-   planned cards and have no content modules yet.
+6. **Two units of six.** Social Media and the eight-topic Iran at War Reverse
+   History investigation exist. War in Ukraine, Midterm Elections, Artificial
+   Intelligence and Immigration are on the front door as planned cards and have
+   no content modules yet.
 7. **The News Log has no real Canvas round trip yet.** It exists: the Desk gathers
    it, `docs/canvas/news-log.md` is the generated assignment, and
    `scripts/test/desk.test.js` proves a two-day week parses back through the real
@@ -943,6 +944,14 @@ this course fills the unit half of one 90-minute block. Content lives in
 <unit>/topic-NN-brief-<slug>.html       a Brief, only for topics that carry one
 <unit>/topic-NN-brief-<slug>-capture.html
 ```
+
+Iran uses `meta.renderer: 'reverse-history'`. Its narrative pages are deliberately
+bespoke rather than generated Briefs, so `scripts/build-units.js` validates their
+existence and refuses to overwrite them. `scripts/build-iran.js` generates the
+shared browser layer and homepage progress data, and verifies that every page's
+`data-group` sequence matches the 41 canonical questions in
+`scripts/lib/unit-content/iran.js`. Lesson plans, the TODAY board and Canvas still
+consume that same content module.
 
 **The word is "topic", not "block", and the distinction is load-bearing.** A block
 is a unit of *time*, the 90-minute meeting the Desk and the unit split between them.

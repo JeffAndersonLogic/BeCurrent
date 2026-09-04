@@ -56,15 +56,30 @@ function numbered(items) {
   return items.length ? items.map((it, i) => `${i + 1}. ${it}`).join('\n') : '_None._';
 }
 
+function hasOnlineArtifact(topic) {
+  return !!((topic.sections && topic.sections.length) || topic.page);
+}
+
+function artifactLabel(topic) {
+  if (topic.page) return `Reverse History page, \`${topic.page}\``;
+  if (topic.sections && topic.sections.length) return `The Brief, \`${briefName(topic)}\``;
+  return 'On paper in class, nothing to open';
+}
+
 // A topic's route to Canvas, in the words the teacher needs at the moment a student
-// asks "where does this go". A topic with no Brief has no route, and saying so is
-// the point: it stops a paper day being marked missing in the gradebook.
+// asks "where does this go". A topic with no online artifact has no route, and saying
+// so is the point: it stops a paper day being marked missing in the gradebook.
 function canvasRoute(topic) {
-  if (!(topic.sections && topic.sections.length)) {
+  if (!hasOnlineArtifact(topic)) {
     return 'Nothing. This topic is done on paper in class and has no online artifact, '
       + 'so there is no submission to collect and nothing to chase.';
   }
   const n = (topic.questions || []).length;
+  if (topic.page) {
+    return `The Reverse History page's Gather This Topic panel. ${n} response${n === 1 ? '' : 's'}, `
+      + 'copied by the student and pasted into Canvas as Text Entry. The page saves on '
+      + 'the Chromebook while the student works; the gathered record is the submission.';
+  }
   return `The Brief's own Gather All My Work panel. ${n} response${n === 1 ? '' : 's'} plus `
     + `${n === 1 ? 'its' : 'their'} confidence rating${n === 1 ? '' : 's'}, copied by the `
     + 'student and pasted into Canvas as Text Entry. That panel is the only route these '
@@ -74,6 +89,7 @@ function canvasRoute(topic) {
 function renderTopic(unit, topic) {
   const m = unit.meta;
   const hasBrief = !!(topic.sections && topic.sections.length);
+  const online = hasOnlineArtifact(topic);
   const out = [];
 
   out.push(`## ${plain(topic.topic)}. ${plain(topic.title)}`);
@@ -86,10 +102,10 @@ function renderTopic(unit, topic) {
 
   out.push('| | |');
   out.push('|---|---|');
-  out.push(`| Artifact | ${hasBrief ? `The Brief, \`${briefName(topic)}\`` : 'On paper in class, nothing to open'} |`);
+  out.push(`| Artifact | ${artifactLabel(topic)} |`);
   out.push(`| Skills | ${(topic.skillTags || []).map(plain).join(', ') || 'See the competencies below'} |`);
   out.push(`| Indiana 1512 | ${comps.join('; ') || 'None recorded'} |`);
-  out.push(`| Reaches Canvas | ${hasBrief ? 'Yes, through the Brief' : 'No'} |`);
+  out.push(`| Reaches Canvas | ${online ? (topic.page ? 'Yes, through Gather This Topic' : 'Yes, through the Brief') : 'No'} |`);
   out.push('');
 
   if (topic.overview) {
@@ -163,7 +179,10 @@ function renderTopic(unit, topic) {
       out.push('');
     }
 
-    out.push('### The questions');
+  }
+
+  if (online && (topic.questions || []).length) {
+    out.push(topic.page ? '### The filings' : '### The questions');
     out.push('');
     (topic.questions || []).forEach((q, i) => {
       out.push(`${i + 1}. **${plain(q.skill)}.** ${plain(q.text)}`);
@@ -199,7 +218,7 @@ function briefName(topic) {
 function renderPlan(unit) {
   const m = unit.meta;
   const topics = unit.topics || [];
-  const withBriefs = topics.filter(t => t.sections && t.sections.length).length;
+  const onlineTopics = topics.filter(hasOnlineArtifact).length;
 
   const out = [];
   out.push(`# ${plain(m.unit)}, the lesson plan`);
@@ -216,7 +235,7 @@ function renderPlan(unit) {
   out.push('```');
   out.push('');
   out.push(`${plain(m.course)} · ${topics.length} topics · `
-    + `${withBriefs} with a Brief, ${topics.length - withBriefs} on paper`);
+    + `${onlineTopics} online, ${topics.length - onlineTopics} on paper`);
   out.push('');
 
   if (m.overview) {
@@ -243,7 +262,8 @@ function renderPlan(unit) {
   out.push('|---|---|---|---|');
   topics.forEach(t => {
     const hasBrief = !!(t.sections && t.sections.length);
-    out.push(`| ${plain(t.topic)} | ${plain(t.title)} | ${hasBrief ? 'Brief' : 'On paper'} `
+    const artifact = t.page ? 'Reverse History' : (hasBrief ? 'Brief' : 'On paper');
+    out.push(`| ${plain(t.topic)} | ${plain(t.title)} | ${artifact} `
       + `| ${(t.learningTargets || []).length} |`);
   });
   out.push('');

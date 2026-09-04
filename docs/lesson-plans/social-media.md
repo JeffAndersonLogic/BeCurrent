@@ -10,7 +10,7 @@ node scripts/build-lesson-plans.js          # write
 node scripts/build-lesson-plans.js --check  # fail on drift, write nothing
 ```
 
-CURRENT EVENTS · 6 topics · 4 with a Brief, 2 on paper
+CURRENT EVENTS · 6 topics · 4 online, 2 on paper
 
 ## What the unit is
 

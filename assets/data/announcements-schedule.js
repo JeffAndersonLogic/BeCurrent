@@ -16,7 +16,8 @@
 
        topic: 'SM3'     a unit topic. The letters are the unit's `code`
                         in its content module, the number is the topic.
-                        Social Media is SM, so SM1 to SM6.
+                        Social Media is SM, so SM1 to SM6. Iran at War is
+                        IR, so IR1 to IR8.
        week: '01'       an orientation week, from scripts/lib/week-content/.
 
    Either one fills in the unit or week name, the title, the learning
@@ -92,32 +93,37 @@ window.BECURRENT_SCHEDULE = {
                'Work through the study guide.'],
       note: 'No new material today. The Social Media Assessment is Friday.' },
 
-    { date: '2026-08-28', topicTitle: 'Social Media Unit Exam', deskMode: 'lead',
-      agenda: ['Complete the Social Media Unit Exam.'],
-      note: 'Today is the Social Media Unit Exam.' },
+    { date: '2026-09-08', topic: 'IR1',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
 
-    { date: '2026-09-01', topicTitle: 'The Desk | Week of September 1',
-      agenda: ['Begin class with CNN 10 to catch up on current events.',
-               'Open The Desk | Week of September 1 in Canvas and launch your Microsoft Education News Log.',
-               'Complete The Desk: file the shared Lead, choose Your Pick, and make today’s significance judgment.',
-               'Before you leave, confirm that your Word document shows your work is saved.'],
-      note: 'CNN 10 first. Then The Desk. Keep the same weekly News Log for Thursday.' },
+    { date: '2026-09-10', topic: 'IR2',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
 
-    { date: '2026-09-03', topicTitle: 'The Desk | Week of September 1',
-      agenda: ['Begin class with CNN 10 to catch up on current events.',
-               'Reopen The Desk | Week of September 1 in Canvas and continue the same Microsoft Education News Log.',
-               'Complete The Desk: file the shared Lead, choose Your Pick, and make today’s significance judgment.',
-               'Confirm both Desk entries are saved, then submit The Desk | Week of September 1.'],
-      note: 'CNN 10 first. Then The Desk. Finish and submit the weekly News Log today.' },
+    { date: '2026-09-14', topic: 'IR3',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
 
-    { date: '2026-09-08', topicTitle: 'War in Iran — Section 1',
-      agenda: ['Begin the War in Iran unit.',
-               'Complete Section 1.'],
-      note: 'New unit today: War in Iran.' },
+    { date: '2026-09-16', topic: 'IR4',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
 
-    { date: '2026-09-10', topicTitle: 'War in Iran — Section 2',
-      agenda: ['Continue the War in Iran unit.',
-               'Complete Section 2.'] }
+    { date: '2026-09-18', topic: 'IR5',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
+
+    { date: '2026-09-22', topic: 'IR6',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
+
+    { date: '2026-09-24', topic: 'IR7',
+      homework: 'Finish this topic\'s filings and submit them in Canvas.',
+      homeworkDue: 'the start of next class' },
+
+    { date: '2026-09-28', topic: 'IR8',
+      homework: 'Finish the final causation argument and submit it in Canvas.',
+      homeworkDue: 'the start of next class' }
   ],
 
   assessments: [

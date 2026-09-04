@@ -36,7 +36,8 @@ targets and the success criteria. A day with neither is fine; write the fields
 yourself.
 
 **The code lives in the unit's content module**, as `meta.code`. Social Media is
-`SM`, so its six topics are `SM1` through `SM6`. Two units sharing a code is
+`SM`, so its six topics are `SM1` through `SM6`; Iran at War is `IR`, so its eight
+topics are `IR1` through `IR8`. Two units sharing a code is
 fatal at build time rather than a warning, because the second one would silently
 win and project one unit's targets under another unit's name. `validate.js`
 catches the other half of that, a unit with no code at all.

@@ -628,7 +628,7 @@ unitDirs.forEach(key => {
       `topic card links ${target}, which was not generated`);
   });
 
-  assert(/class="topic-card"/.test(src), page, 'unit page lists no topics');
+  assert(/class="topic-card"|class="ir-stop"/.test(src), page, 'unit page lists no topics');
 
   // A topic may declare `withholdTitles`: names that must not appear on any
   // student-facing page in the unit. Social Media Topic 2 uses it for the film.

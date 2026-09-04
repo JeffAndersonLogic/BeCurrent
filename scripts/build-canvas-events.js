@@ -72,7 +72,15 @@ const ASSIGNMENTS = {
   SM3: { name: 'SM3 - Inside the Algorithm', points: 20 },
   SM4: { name: 'SM4 - Effects and Your Footprint', points: 20 },
   SM5: { name: 'SM5 - How a Lie Travels', points: 20 },
-  SM6: { name: 'SM6 - Who Decides', points: 20 }
+  SM6: { name: 'SM6 - Who Decides', points: 20 },
+  IR1: { name: 'IR1 - The War They Are Watching', points: 20 },
+  IR2: { name: 'IR2 - The 1953 Coup', points: 20 },
+  IR3: { name: 'IR3 - Revolution and Hostages', points: 20 },
+  IR4: { name: 'IR4 - Security Strategy', points: 20 },
+  IR5: { name: 'IR5 - The Nuclear Bargain', points: 20 },
+  IR6: { name: 'IR6 - Shadow War to Open War', points: 20 },
+  IR7: { name: 'IR7 - The Hormuz Lever', points: 20 },
+  IR8: { name: 'IR8 - Final Causation Argument', points: 30 }
 };
 
 const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
@@ -115,9 +123,19 @@ function briefFileFor(topic) {
   return `topic-${nn}-brief-${topic.slug}.html`;
 }
 
+function hasOnlineArtifact(topic) {
+  return !!((topic.sections && topic.sections.length) || topic.page);
+}
+
+function artifactUrl(unit, topic) {
+  if (topic.page) return `${SITE}/${unit.meta.unitKey}/${topic.page}`;
+  return `${SITE}/${unit.meta.unitKey}/${briefFileFor(topic).replace(/\.html$/, '-capture.html')}`;
+}
+
 function eventTable(unit, topic, code) {
   const m = unit.meta;
   const hasBrief = !!(topic.sections && topic.sections.length);
+  const hasReverseHistory = !!topic.page;
   const assignment = ASSIGNMENTS[code];
 
   const targets = (topic.learningTargets || [])
@@ -128,16 +146,20 @@ function eventTable(unit, topic, code) {
   const unitUrl = `${SITE}/${m.unitKey}/index.html`;
   const links = [`                <p><a class="inline_disabled" href="${unitUrl}" target="_blank" rel="noopener">${esc(objectName(m.unit))}, the unit page</a></p>`];
   if (hasBrief) {
-    const briefUrl = `${SITE}/${m.unitKey}/${briefFileFor(topic).replace(/\.html$/, '-capture.html')}`;
-    links.push(`                <p><a class="inline_disabled" href="${briefUrl}" target="_blank" rel="noopener">The Brief for this topic</a></p>`);
+    links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">The Brief for this topic</a></p>`);
+  } else if (hasReverseHistory) {
+    links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">The Reverse History investigation for this topic</a></p>`);
   }
 
   // What the student does with their work. A topic with no Brief has no route to
   // Canvas at all, and saying so plainly is the point: it stops a paper day
   // being chased as missing work.
+  const gatherLabel = hasReverseHistory ? 'Gather This Topic' : 'Gather All My Work';
+  const artifactName = hasReverseHistory ? 'Reverse History page' : 'Brief';
+  const responseName = hasReverseHistory ? 'filing' : 'question';
   const assignmentCell = assignment
     ? `                <p>[INSERT ASSIGNMENT LINK]</p>
-                <p>Open the Brief, answer every question, then use <strong>Gather All My Work</strong> and <strong>Copy to Clipboard</strong> at the end of it. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>`
+                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong> and <strong>Copy to Clipboard</strong> at the end of it. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>`
     : `                <p><strong>Nothing to submit.</strong> This topic is done on paper in class. There is no Canvas assignment for it and nothing to hand in.</p>`;
 
   const rows = [
@@ -167,7 +189,8 @@ ${rows.join('\n')}
 function assignmentBody(unit, topic, code) {
   const m = unit.meta;
   const a = ASSIGNMENTS[code];
-  const briefUrl = `${SITE}/${m.unitKey}/${briefFileFor(topic).replace(/\.html$/, '-capture.html')}`;
+  const reverseHistory = !!topic.page;
+  const pageUrl = artifactUrl(unit, topic);
   const unitUrl = `${SITE}/${m.unitKey}/index.html`;
   const questions = topic.questions || [];
 
@@ -180,8 +203,8 @@ function assignmentBody(unit, topic, code) {
   return `<h2>${esc(objectName(m.unit))}, ${esc(plain(topic.topic))}: ${esc(objectName(topic.title))}</h2>
 <p><em>${esc(plain(topic.subtitle))}</em></p>
 
-<h3>Step 1 &mdash; Open the Brief</h3>
-<p><a class="inline_disabled" href="${briefUrl}" target="_blank" rel="noopener">${esc(objectName(topic.title))}</a></p>
+<h3>Step 1 &mdash; Open the ${reverseHistory ? 'investigation' : 'Brief'}</h3>
+<p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener">${esc(objectName(topic.title))}</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all ${questions.length}</h3>
@@ -189,13 +212,13 @@ function assignmentBody(unit, topic, code) {
 <ol>
 ${qs}
 </ol>
-<p>Every question has a <strong>START HERE</strong> card and a <strong>PUSH FURTHER</strong> card. START HERE is the whole answer, not a lesser one. Take PUSH FURTHER when you have the first part down.</p>
-<p><strong>Type a real answer in every box.</strong> Gather All My Work collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
+${reverseHistory ? '' : '<p>Every question has a <strong>START HERE</strong> card and a <strong>PUSH FURTHER</strong> card. START HERE is the whole answer, not a lesser one. Take PUSH FURTHER when you have the first part down.</p>'}
+<p><strong>Type a real answer in every box.</strong> ${reverseHistory ? 'Gather This Topic' : 'Gather All My Work'} collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
 
 <h3>Step 3 &mdash; Submit in Canvas</h3>
 <ol>
-    <li>Scroll to the <strong>Save Your Work</strong> panel at the end of the Brief.</li>
-    <li>Click <strong>Gather All My Work</strong>. This pulls every response you typed into one block.</li>
+    <li>Scroll to the <strong>${reverseHistory ? 'Gather and submit' : 'Save Your Work'}</strong> panel at the end of the page.</li>
+    <li>Click <strong>${reverseHistory ? 'Gather This Topic' : 'Gather All My Work'}</strong>. This pulls every response you typed into one block.</li>
     <li>Click <strong>Copy to Clipboard</strong>.</li>
     <li>Paste it into the submission box below and click Submit.</li>
 </ol>
@@ -215,14 +238,14 @@ ${criteria}
 function renderAssignments(unit) {
   const m = unit.meta;
   const code = String(m.code || '').toUpperCase();
-  const topics = (unit.topics || []).filter(t => ASSIGNMENTS[code + t.n]);
+  const topics = (unit.topics || []).filter(t => ASSIGNMENTS[code + t.n] && hasOnlineArtifact(t));
   const out = [];
 
   out.push(`# ${objectName(m.unit)} Assignments, Paste-Ready`);
   out.push('');
   out.push('**Generated by `scripts/build-canvas-events.js`. Do not hand-edit.**');
   out.push('The overview, the questions and the success criteria are the same text the');
-  out.push('Brief shows, read out of the content module rather than retyped, so a student');
+  out.push('online lesson shows, read out of the content module rather than retyped, so a student');
   out.push('cannot be assessed against a criterion they were never shown.');
   out.push('');
   out.push('Topics with no entry here are done on paper and deliberately have no Canvas');
@@ -563,7 +586,7 @@ function renderUnit(unit) {
     out.push(`**Source:** \`scripts/lib/unit-content/${m.unitKey}.js\`, ${plain(t.topic)}  `);
     out.push('');
 
-    if (t.n === 1) {
+    if (t.n === 1 && m.renderer !== 'reverse-history') {
       out.push(DECK_URL
         ? `The slide deck for this topic: <${DECK_URL}>`
         : '> **The slide deck link is still pending.** Set `DECK_URL` at the top of'

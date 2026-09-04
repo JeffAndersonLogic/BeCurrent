@@ -8,8 +8,9 @@
  * reader that quietly drops one entry costs one student their whole submission
  * with nothing on screen to say so.
  *
- * So this tests against zips written by real tools, `zip(1)` and Python's
- * zipfile, rather than against a zip this repository wrote itself. A reader
+ * So this tests against zips written by real platform tools: `zip(1)` where it
+ * exists and Python's zipfile everywhere else, rather than against a zip this
+ * repository wrote itself. A reader
  * tested only against its own writer agrees with its own assumptions.
  *
  * The cases that matter, each a real shape Canvas or a teacher can produce:
@@ -39,7 +40,7 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { execFileSync } = require('child_process');
+const { execFileSync, spawnSync } = require('child_process');
 
 const ZIP = require('../lib/canvas-zip');
 const CORE = require('../lib/canvas-parse-core');
@@ -52,6 +53,53 @@ function check(name, pass, detail) {
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'bh-zip-'));
 function cleanup() { fs.rmSync(tmp, { recursive: true, force: true }); }
+
+function works(exe, args) {
+  const r = spawnSync(exe, args, { stdio: 'ignore' });
+  return !r.error && r.status === 0;
+}
+
+function pythonCommand() {
+  const bundled = process.platform === 'win32'
+    ? path.resolve(path.dirname(process.execPath), '..', '..', 'python', 'python.exe')
+    : '';
+  const candidates = [
+    { exe: 'python3', pre: [] },
+    { exe: 'python', pre: [] },
+    { exe: 'py', pre: ['-3'] },
+    ...(bundled && fs.existsSync(bundled) ? [{ exe: bundled, pre: [] }] : [])
+  ];
+  return candidates.find(c => works(c.exe, c.pre.concat(['--version']))) || null;
+}
+
+const PYTHON = pythonCommand();
+if (!PYTHON) {
+  cleanup();
+  console.error('canvas-zip.test.js needs Python 3 to create standards-compliant fixtures.');
+  process.exit(1);
+}
+
+function runPython(code) {
+  execFileSync(PYTHON.exe, PYTHON.pre.concat(['-c', code]));
+}
+
+function zipDirectory(dir, out, stored = false) {
+  // Keep testing a second, independent writer on Unix when zip(1) is present.
+  if (works('zip', ['-v'])) {
+    execFileSync('zip', ['-q', ...(stored ? ['-0'] : []), '-r', out, '.'], { cwd: dir });
+    return;
+  }
+  runPython(`
+import os, zipfile
+root = ${JSON.stringify(dir)}
+mode = zipfile.ZIP_STORED if ${stored ? 'True' : 'False'} else zipfile.ZIP_DEFLATED
+with zipfile.ZipFile(${JSON.stringify(out)}, 'w', mode) as z:
+    for base, dirs, files in os.walk(root):
+        for name in files:
+            full = os.path.join(base, name)
+            z.write(full, os.path.relpath(full, root))
+`);
+}
 
 // ── A submission with a real manifest, so the parser has something to verify ──
 function submission(topic, slots) {
@@ -130,10 +178,10 @@ const REAL = path.join(__dirname, 'fixtures', 'canvas-download-studenttest.html'
   const flat = path.join(tmp, 'flat');
   stage(flat, STUDENTS);
   const deflated = path.join(tmp, 'deflate.zip');
-  execFileSync('zip', ['-q', '-r', deflated, '.'], { cwd: flat });
+  zipDirectory(flat, deflated);
 
   let r = await readZip(deflated);
-  check('zip(1) deflate, all three submissions read',
+  check('platform deflate writer, all three submissions read',
     r.files.length === 3, `${r.files.length} files, ${r.skipped.length} skipped`);
   check('text survives the inflate byte for byte',
     r.files.every(f => f.text === STUDENTS.find(s => s[0] === CORE.baseName(f.name))[1]));
@@ -152,7 +200,7 @@ const REAL = path.join(__dirname, 'fixtures', 'canvas-download-studenttest.html'
 
   // ── zip(1), stored ─────────────────────────────────────────────────────────
   const stored = path.join(tmp, 'stored.zip');
-  execFileSync('zip', ['-q', '-0', '-r', stored, '.'], { cwd: flat });
+  zipDirectory(flat, stored, true);
   r = await readZip(stored);
   check('stored entries (method 0) read without inflating', r.files.length === 3,
     `${r.files.length} files`);
@@ -161,7 +209,7 @@ const REAL = path.join(__dirname, 'fixtures', 'canvas-download-studenttest.html'
   // Python writes these when the file object is not seekable. The sizes in the
   // local header are zero and the truth is only in the central directory.
   const streamed = path.join(tmp, 'streamed.zip');
-  execFileSync('python3', ['-c', `
+  runPython(`
 import zipfile, sys, io
 class NoSeek(io.RawIOBase):
     def __init__(self, f): self.f = f
@@ -172,7 +220,7 @@ with open(${JSON.stringify(streamed)}, 'wb') as raw:
     with zipfile.ZipFile(NoSeek(raw), 'w', zipfile.ZIP_DEFLATED) as z:
         for name, text in ${JSON.stringify(STUDENTS)}:
             z.writestr(name, text)
-`]);
+`);
   const streamedEntries = ZIP.listEntries(new Uint8Array(fs.readFileSync(streamed)));
   r = await readZip(streamed);
   check('data-descriptor zip, sizes taken from the central directory',
@@ -183,7 +231,7 @@ with open(${JSON.stringify(streamed)}, 'wb') as raw:
   const nested = path.join(tmp, 'nested');
   stage(nested, STUDENTS.map(([n, t]) => ['submissions/' + n, t]));
   const nestedZip = path.join(tmp, 'nested.zip');
-  execFileSync('zip', ['-q', '-r', nestedZip, '.'], { cwd: nested });
+  zipDirectory(nested, nestedZip);
   r = await readZip(nestedZip);
   table = CORE.buildTable(r.files);
   check('a zipped folder still yields clean student names',
@@ -199,7 +247,7 @@ with open(${JSON.stringify(streamed)}, 'wb') as raw:
     ['.DS_Store', 'junk']
   ]));
   const macZip = path.join(tmp, 'mac.zip');
-  execFileSync('zip', ['-q', '-r', macZip, '.'], { cwd: macish });
+  zipDirectory(macish, macZip);
   r = await readZip(macZip);
   table = CORE.buildTable(r.files);
   check('__MACOSX and dotfiles are excluded, not turned into students',
@@ -211,12 +259,12 @@ with open(${JSON.stringify(streamed)}, 'wb') as raw:
   // ── A zip comment after the end-of-directory record ────────────────────────
   const commented = path.join(tmp, 'commented.zip');
   fs.copyFileSync(deflated, commented);
-  execFileSync('python3', ['-c', `
+  runPython(`
 import zipfile
 z = zipfile.ZipFile(${JSON.stringify(commented)}, 'a')
 z.comment = b'x' * 900
 z.close()
-`]);
+`);
   r = await readZip(commented);
   check('a trailing zip comment does not hide the directory', r.files.length === 3,
     `${r.files.length} files, comment 900 bytes`);
@@ -244,7 +292,7 @@ z.close()
   const odd = path.join(tmp, 'odd');
   stage(odd, [['submission_310529', realText]]);
   const oddZip = path.join(tmp, 'odd.zip');
-  execFileSync('zip', ['-q', '-r', oddZip, '.'], { cwd: odd });
+  zipDirectory(odd, oddZip);
 
   const byName = await readZipByNameOnly(oddZip);
   check('name filter alone finds nothing in it, which was the bug',
@@ -262,7 +310,7 @@ z.close()
   const junk = path.join(tmp, 'junk');
   stage(junk, [['notes.rtf', 'just some notes'], ['essay.docx', 'PK not really'], ['photo.png', 'binary-ish']]);
   const junkZip = path.join(tmp, 'junk.zip');
-  execFileSync('zip', ['-q', '-r', junkZip, '.'], { cwd: junk });
+  zipDirectory(junk, junkZip);
   r = await readZip(junkZip);
   check('a zip of unrelated files is still rejected', r.files.length === 0,
     `${r.files.length} files`);

@@ -67,6 +67,20 @@ files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
   const dir = unit.meta.unitKey;
 
+  // Reverse History units deliberately keep bespoke narrative pages. They still
+  // participate in every shared data pipeline, but this generic Brief builder
+  // must never flatten or overwrite their investigation design.
+  if (unit.meta.renderer === 'reverse-history') {
+    (unit.topics || []).forEach(topic => {
+      const rel = path.join(dir, topic.page || '');
+      if (topic.page && fs.existsSync(path.join(ROOT, rel))) return;
+      const reason = topic.page ? 'missing custom topic page' : 'missing topic.page contract';
+      if (CHECK) drift.push({ rel: topic.page ? rel : `${dir}/topic-${topic.n}`, reason });
+      else throw new Error(`${file}: Topic ${topic.n} ${reason}.`);
+    });
+    return;
+  }
+
   // The unit page is the map of the whole arc and always exists.
   emit(path.join(dir, 'index.html'), renderUnitPage(unit));
 
