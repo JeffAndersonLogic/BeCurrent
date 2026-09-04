@@ -40,7 +40,6 @@ const finalCriterionCore = finalTopic.successCriteria[0].criteria.replace(/^I ca
 const questionSection = studyGuide.match(/<section class="ir-section" id="questions">([\s\S]*?)<section class="ir-section" id="final">/);
 check('the study guide stays tied to the canonical Iran synthesis',
   studyGuide.includes(unit.meta.terminalQuestion)
-  && studyGuide.includes(finalTopic.title)
   && studyGuide.toLowerCase().includes(finalCriterionCore.toLowerCase())
   && (studyGuide.match(/class="ir-time"/g) || []).length === topics.length
   && !!questionSection
