@@ -267,8 +267,14 @@ function renderPlan(unit) {
       + `| ${(t.learningTargets || []).length} |`);
   });
   out.push('');
-  out.push('Each topic uses the earlier ones. The chain drawn in Topic 1 is what gets checked');
-  out.push('against a real document in Topic 4, so they are a sequence rather than a list.');
+  if (m.renderer === 'reverse-history') {
+    out.push('Each topic tests a different part of the same causal chain. Students begin with');
+    out.push('a hypothesis about the current conflict, then revise the weight they give to earlier');
+    out.push('turning points before making a ranked causal argument in the final topic.');
+  } else {
+    out.push('Each topic uses the earlier ones. The chain drawn in Topic 1 is what gets checked');
+    out.push('against a real document in Topic 4, so they are a sequence rather than a list.');
+  }
   out.push('');
 
   out.push('## Assessed against');
