@@ -28,7 +28,14 @@
     anchor.insertAdjacentElement('afterend',bar);
   }
 
-  body.classList.add('iran-academic-v2');
+  function installStudyGuide(){
+    const nav=document.querySelector('.nav .nav-inner');
+    if(!nav||nav.querySelector('a[href="study-guide.html"]'))return;
+    const guide=document.createElement('a');
+    guide.href='study-guide.html';
+    guide.textContent='Study Guide';
+    nav.appendChild(guide);
+  }
 
   function installObjectives(){
     if(document.getElementById('objectives'))return;
@@ -127,7 +134,7 @@
       status.textContent=ok?'Saved on this Chromebook':'Could not save in this browser';
       if(ok)setTimeout(()=>{status.textContent=''},2400);
     }
-    updateCompletion();
+    updateProgress();
   }));
 
   // ── The Canvas record grammar ─────────────────────────────────────────────────

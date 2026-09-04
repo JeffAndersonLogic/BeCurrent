@@ -93,6 +93,24 @@ window.BECURRENT_SCHEDULE = {
                'Work through the study guide.'],
       note: 'No new material today. The Social Media Assessment is Friday.' },
 
+    { date: '2026-08-28', topicTitle: 'Social Media Unit Exam', deskMode: 'lead',
+      agenda: ['Complete the Social Media Unit Exam.'],
+      note: 'Today is the Social Media Unit Exam.' },
+
+    { date: '2026-09-01', topicTitle: 'The Desk | Week of September 1',
+      agenda: ['Begin class with CNN 10 to catch up on current events.',
+               'Open The Desk | Week of September 1 in Canvas and launch your Microsoft Education News Log.',
+               'Complete The Desk: file the shared Lead, choose Your Pick, and make today\'s significance judgment.',
+               'Before you leave, confirm that your Word document shows your work is saved.'],
+      note: 'CNN 10 first. Then The Desk. Keep the same weekly News Log for Thursday.' },
+
+    { date: '2026-09-03', topicTitle: 'The Desk | Week of September 1',
+      agenda: ['Begin class with CNN 10 to catch up on current events.',
+               'Reopen The Desk | Week of September 1 in Canvas and continue the same Microsoft Education News Log.',
+               'Complete The Desk: file the shared Lead, choose Your Pick, and make today\'s significance judgment.',
+               'Confirm both Desk entries are saved, then submit The Desk | Week of September 1.'],
+      note: 'CNN 10 first. Then The Desk. Finish and submit the weekly News Log today.' },
+
     { date: '2026-09-08', topic: 'IR1',
       homework: 'Finish this topic\'s filings and submit them in Canvas.',
       homeworkDue: 'the start of next class' },
