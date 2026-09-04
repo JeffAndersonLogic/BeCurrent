@@ -34,6 +34,18 @@ topics.forEach(topic => {
 });
 check('each page exposes exactly the filings declared by its topic', pageContract);
 
+const studyGuide = fs.readFileSync(path.join(ROOT, 'iran', 'study-guide.html'), 'utf8');
+const finalTopic = topics[topics.length - 1];
+const finalCriterionCore = finalTopic.successCriteria[0].criteria.replace(/^I can /, '');
+const questionSection = studyGuide.match(/<section class="ir-section" id="questions">([\s\S]*?)<section class="ir-section" id="final">/);
+check('the study guide stays tied to the canonical Iran synthesis',
+  studyGuide.includes(unit.meta.terminalQuestion)
+  && studyGuide.includes(finalTopic.title)
+  && studyGuide.toLowerCase().includes(finalCriterionCore.toLowerCase())
+  && (studyGuide.match(/class="ir-time"/g) || []).length === topics.length
+  && !!questionSection
+  && (questionSection[1].match(/class="ir-scan-card"/g) || []).length === topics.length);
+
 const browser = fs.readFileSync(path.join(ROOT, 'assets', 'js', 'iran-topics.js'), 'utf8');
 const data = fs.readFileSync(path.join(ROOT, 'assets', 'data', 'iran-unit.js'), 'utf8');
 check('the browser layer reproduces exactly from the content module', browser === renderIranBrowser(unit));
