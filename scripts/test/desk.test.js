@@ -251,9 +251,16 @@ function seededDay(tag) {
     // ── The dated sheet on a dateless page ────────────────────────────────────
     group('The dated sheet on a dateless page');
 
+    // The capture runtime stamps the compact date synchronously; the Desk news
+    // hydrator then replaces it with the spelled-out display date. Wait for the
+    // final UI state so this assertion cannot race those two correct writers.
+    await page.waitForFunction(expected => {
+      const el = document.getElementById('desk-today');
+      return !!el && String(el.textContent || '').trim() === expected;
+    }, dayLabelFull(TODAY));
     const printed = (await page.textContent('#desk-today') || '').trim();
     check('the page tells the student which day it is filing under',
-      printed === dayLabel(TODAY), `${printed} vs ${dayLabel(TODAY)}`);
+      printed === dayLabelFull(TODAY), `${printed} vs ${dayLabelFull(TODAY)}`);
 
     // The build must never stamp the CURRENT day into the page. That is the whole
     // reason one generated page can serve 180 class periods: the browser stamps the
