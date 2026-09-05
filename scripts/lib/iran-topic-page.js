@@ -2,14 +2,6 @@
 
 const { recordBlockSource } = require('./canvas-record-block');
 
-/**
- * Browser layer for the Reverse History renderer.
- *
- * The narrative HTML remains deliberately bespoke, but its topic identity,
- * targets, criteria, filing prompts, progress, and Canvas record all come from
- * scripts/lib/unit-content/iran.js. This is the contract that keeps those pages
- * in the same course system as generated Briefs without flattening their design.
- */
 function renderIranBrowser(unit) {
   const publicTopics = {};
   (unit.topics || []).forEach(t => {
@@ -156,8 +148,6 @@ function renderIranBrowser(unit) {
     document.querySelectorAll('[data-topic-progress]').forEach(el=>el.textContent=done+' of '+keys.length+' saved');
   }
 
-  // Save continuously so leaving the page after typing cannot strand the last
-  // paragraph. The visible buttons remain as an explicit reassurance and status.
   groups.forEach(group=>{
     const eventName=group.matches('textarea,input[type="text"],input[type="url"]')?'input':'change';
     group.addEventListener(eventName,()=>{
@@ -179,7 +169,89 @@ function renderIranBrowser(unit) {
     updateProgress();
   }));
 
-${recordBlockSource('  ')}
+  var BC_RECORD_VERSION = 1;
+  var BC_RECORD_OPEN = "--- BECURRENT RECORD, do not edit ---";
+  var BC_RECORD_CLOSE = "--- END BECURRENT RECORD ---";
+
+  function bcEsc(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function bcNormalizeForHash(value) {
+    return String(value == null ? '' : value).replace(/\\s+/g, ' ').trim();
+  }
+
+  function bcHash(value) {
+    var s = bcNormalizeForHash(value);
+    var h = 0x811c9dc5;
+    for (var i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+    }
+    return ('0000000' + h.toString(16)).slice(-8);
+  }
+
+  function bcWordCount(value) {
+    var s = bcNormalizeForHash(value);
+    return s ? s.split(' ').length : 0;
+  }
+
+  function bcField(value) {
+    return String(value == null ? '' : value).replace(/[|\\r\\n]+/g, ' ').trim();
+  }
+
+  function bcParagraphsHtml(text, wrap) {
+    var open = wrap ? '<' + wrap + '>' : '';
+    var close = wrap ? '</' + wrap + '>' : '';
+    var parts = String(text || '').split(/\\n{2,}/).map(function (p) { return p.trim(); })
+      .filter(Boolean);
+    return parts.map(function (p) {
+      return '<p>' + open + bcEsc(p).replace(/\\n/g, '<br>') + close + '</p>';
+    }).join('');
+  }
+
+  function bcRecordManifest(work, opts) {
+    var o = opts || {};
+    var rows = work.map(function (w) {
+      return {
+        ord: bcField(w.ord || 'xx'),
+        slot: bcField(w.id),
+        label: bcField(w.label),
+        words: bcWordCount(w.text),
+        chars: bcNormalizeForHash(w.text).length,
+        promptHash: bcHash(w.prompt),
+        responseHash: bcHash(w.text),
+        confidence: w.confidence || ''
+      };
+    });
+    var sum = bcHash(rows.map(function (r) { return r.slot + ':' + r.responseHash; }).join('|'));
+    var header = '#BHV|v=' + BC_RECORD_VERSION
+      + '|topic=' + bcField(o.topic)
+      + '|copied=' + o.isoStamp
+      + '|items=' + rows.length
+      + '|expected=' + Number(o.expected || 0)
+      + '|sum=' + sum + '|#';
+    var lines = rows.map(function (r) {
+      return '#BHR|i=' + r.ord
+        + '|slot=' + r.slot
+        + '|lab=' + r.label
+        + '|w=' + r.words
+        + '|c=' + r.chars
+        + '|ph=' + r.promptHash
+        + '|rh=' + r.responseHash
+        + '|cf=' + r.confidence + '|#';
+    });
+    return [BC_RECORD_OPEN, header].concat(lines).concat([BC_RECORD_CLOSE]);
+  }
+
+  function bcRecordFooterHtml(lines) {
+    return '<hr>' + lines.map(function (line) {
+      return '<p style="font-family:monospace;font-size:.68rem;opacity:.6;margin:.15rem 0;">'
+        + bcEsc(line) + '</p>';
+    }).join('');
+  }
 
   function gatherRows(){
     return meta.questions.map((q,i)=>{
@@ -270,8 +342,6 @@ ${recordBlockSource('  ')}
     });
   }
 
-  // Remote historical images degrade to a local, labelled fallback instead of
-  // leaving a broken frame on a student page.
   document.querySelectorAll('.ir-map img[src^="http"]').forEach(img=>img.addEventListener('error',()=>{
     img.src=img.alt&&/map|strait|gulf/i.test(img.alt)?'../assets/images/week-art/map-fallback.svg':'../assets/images/week-art/card-fallback.svg';
     img.alt='Local fallback illustration; the remote historical image is unavailable.';
