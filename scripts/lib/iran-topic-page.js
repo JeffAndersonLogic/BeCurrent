@@ -83,6 +83,14 @@ function renderIranBrowser(unit) {
     hero.insertAdjacentElement('afterend',section);
   }
 
+  function installVideoForward(){
+    if(document.querySelector('script[data-iran-video-forward]'))return;
+    const script=document.createElement('script');
+    script.src='../assets/js/iran-video-forward.js?v=20260904';
+    script.dataset.iranVideoForward='';
+    document.body.appendChild(script);
+  }
+
   function setMode(mode){
     body.classList.toggle('teacher-on',mode==='teacher');
     modeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
@@ -95,6 +103,7 @@ function renderIranBrowser(unit) {
   installPosition();
   installStudyGuide();
   installObjectives();
+  installVideoForward();
 
   const groups=[...document.querySelectorAll('[data-group]')];
 
