@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const catalog = require('./lib/unit-content/iran-videos');
+const catalog = require('./lib/iran-video-content');
 
 const ROOT = path.resolve(__dirname, '..');
 const CHECK = process.argv.includes('--check');
@@ -11,14 +11,14 @@ const browserTarget = path.join(ROOT, 'assets', 'data', 'iran-videos.js');
 const planTarget = path.join(ROOT, 'docs', 'lesson-plans', 'iran-videos.md');
 
 function browserSource(){
-  return `// GENERATED from scripts/lib/unit-content/iran-videos.js.\n// Rebuild with node scripts/build-iran-videos.js. Do not hand-edit.\nwindow.BECURRENT_IRAN_VIDEOS=${JSON.stringify(catalog)};\n`;
+  return `// GENERATED from scripts/lib/iran-video-content.js.\n// Rebuild with node scripts/build-iran-videos.js. Do not hand-edit.\nwindow.BECURRENT_IRAN_VIDEOS=${JSON.stringify(catalog)};\n`;
 }
 
 function planSource(){
   const lines = [
     '# Iran at War — Video Launch Plan',
     '',
-    '**Generated from `scripts/lib/unit-content/iran-videos.js`. Do not hand-edit.**',
+    '**Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**',
     '',
     `Last launch audit: **${catalog.reviewed}**`,
     '',
@@ -42,15 +42,8 @@ const expected = [[browserTarget, browserSource()], [planTarget, planSource()]];
 let drift = false;
 for (const [target, text] of expected) {
   const existing = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : '';
-  if (existing === text) {
-    console.log(`✓ ${path.relative(ROOT, target)} up to date`);
-  } else if (CHECK) {
-    drift = true;
-    console.error(`✗ ${path.relative(ROOT, target)} has drifted; run node scripts/build-iran-videos.js`);
-  } else {
-    fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, text, 'utf8');
-    console.log(`wrote ${path.relative(ROOT, target)}`);
-  }
+  if (existing === text) console.log(`✓ ${path.relative(ROOT, target)} up to date`);
+  else if (CHECK) { drift = true; console.error(`✗ ${path.relative(ROOT, target)} has drifted; run node scripts/build-iran-videos.js`); }
+  else { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, text, 'utf8'); console.log(`wrote ${path.relative(ROOT, target)}`); }
 }
 if (drift) process.exit(1);
