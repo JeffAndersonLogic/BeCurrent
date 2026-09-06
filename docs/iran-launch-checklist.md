@@ -65,7 +65,9 @@ The teacher cockpit should launch the student Video Pathway rather than storing 
 
 Canonical video metadata lives in:
 
-`scripts/lib/unit-content/iran-videos.js`
+`scripts/lib/iran-video-content.js`
+
+It is intentionally outside `scripts/lib/unit-content/` because files in that folder are auto-discovered as complete course units.
 
 Derived outputs:
 
