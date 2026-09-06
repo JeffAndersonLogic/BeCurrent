@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const catalog = require('./lib/unit-content/iran-videos');
+const catalog = require('./lib/iran-video-content');
 const live = process.argv.includes('--live');
 const requiredOnly = process.argv.includes('--required-only');
 const allowed = new Set(['REQUIRED','REQUIRED EXCERPT','OPTIONAL EXTEND','OPTIONAL CURRENT UPDATE','TEACHER CHOICE']);
@@ -26,15 +26,9 @@ for (const [topicId, topic] of topics) {
     }
     if (!allowed.has(v.status)) fail(`${tag} has unsupported status ${v.status}`);
     if (!Array.isArray(v.listen) || v.listen.length < 2) fail(`${tag} needs at least two listen-for cues`);
-    if (external(v.url) && !/^https:\/\/(www\.)?(pbs\.org|youtube\.com)\//.test(v.url)) {
-      fail(`${tag} uses an unapproved external host: ${v.url}`);
-    }
-    if (/pbs\.org/.test(v.url) && /full-episode/i.test(v.url)) {
-      fail(`${tag} points at a PBS full-episode URL instead of a direct segment: ${v.url}`);
-    }
-    if (/youtube\.com/.test(v.url) && !/[?&]v=[A-Za-z0-9_-]{6,}/.test(v.url)) {
-      fail(`${tag} does not look like a direct YouTube watch URL: ${v.url}`);
-    }
+    if (external(v.url) && !/^https:\/\/(www\.)?(pbs\.org|youtube\.com)\//.test(v.url)) fail(`${tag} uses an unapproved external host: ${v.url}`);
+    if (/pbs\.org/.test(v.url) && /full-episode/i.test(v.url)) fail(`${tag} points at a PBS full-episode URL instead of a direct segment: ${v.url}`);
+    if (/youtube\.com/.test(v.url) && !/[?&]v=[A-Za-z0-9_-]{6,}/.test(v.url)) fail(`${tag} does not look like a direct YouTube watch URL: ${v.url}`);
     rows.push({topicId, index:i + 1, ...v});
   }
 }
@@ -56,32 +50,19 @@ async function checkOne(row){
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   try {
-    const response = await fetch(row.url, {
-      method:'GET',
-      redirect:'follow',
-      headers:{'user-agent':'Mozilla/5.0 BeCurrent launch-readiness check'},
-      signal:controller.signal
-    });
+    const response = await fetch(row.url, {method:'GET',redirect:'follow',headers:{'user-agent':'Mozilla/5.0 BeCurrent launch-readiness check'},signal:controller.signal});
     return {row, ok:response.ok, status:response.status, finalUrl:response.url};
   } catch (error) {
     return {row, ok:false, status:error.name || 'ERROR', error:String(error.message || error)};
-  } finally {
-    clearTimeout(timeout);
-  }
+  } finally { clearTimeout(timeout); }
 }
 
 (async()=>{
-  if (problems.length) {
-    problems.forEach(p => console.error(`✗ ${p}`));
-    process.exit(1);
-  }
+  if (problems.length) { problems.forEach(p => console.error(`✗ ${p}`)); process.exit(1); }
   const candidates = rows.filter(r => !requiredOnly || /^REQUIRED/.test(r.status));
   console.log(`Checking ${candidates.length} ${requiredOnly ? 'required ' : ''}Iran video/resource links...`);
-  const results = [];
-  const queue = candidates.slice();
-  async function worker(){
-    while (queue.length) results.push(await checkOne(queue.shift()));
-  }
+  const results = [], queue = candidates.slice();
+  async function worker(){ while (queue.length) results.push(await checkOne(queue.shift())); }
   await Promise.all(Array.from({length:Math.min(4, queue.length || 1)}, worker));
   results.sort((a,b)=>a.row.topicId.localeCompare(b.row.topicId)||a.row.index-b.row.index);
   let failed = 0;
@@ -90,9 +71,6 @@ async function checkOne(row){
     if (result.ok) console.log(`✓ ${label} — ${result.status} — ${result.row.title}`);
     else { failed++; console.error(`✗ ${label} — ${result.status} — ${result.row.url}`); }
   }
-  if (failed) {
-    console.error(`\n${failed} link(s) failed live launch readiness.`);
-    process.exit(1);
-  }
+  if (failed) { console.error(`\n${failed} link(s) failed live launch readiness.`); process.exit(1); }
   console.log(`\n✓ All ${results.length} checked links responded successfully.`);
 })();
