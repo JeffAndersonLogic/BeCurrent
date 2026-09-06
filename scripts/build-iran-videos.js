@@ -22,16 +22,20 @@ function planSource(){
     '',
     `Last launch audit: **${catalog.reviewed}**`,
     '',
-    'This is the video companion to `docs/lesson-plans/iran.md`. It exists separately so the main lesson-plan generator can remain focused on targets, criteria, and filings while all video metadata still has exactly one source of truth.',
+    'This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.',
     ''
   ];
   Object.entries(catalog.topics).forEach(([id, topic]) => {
-    lines.push(`## ${id.replace('topic-0','Topic ').replace('topic-','Topic ')} — ${topic.heading}`, '', topic.intro, '');
-    topic.videos.forEach((v, i) => {
-      lines.push(`### ${i + 1}. ${v.title}`, '', `- **Status:** ${v.status}`, `- **Source:** ${v.source}`, `- **Runtime:** ${v.runtime}`, `- **URL:** ${v.url}`, `- **Why:** ${v.why}`, `- **Listen for:** ${v.listen.join(' · ')}`, `- **After watching:** ${v.after}`, `- **Last verified:** ${v.verified || catalog.reviewed}`, '');
+    const n = Number(id.slice(-2));
+    lines.push(`## Topic ${n} — ${topic.heading}`, '', topic.intro, '');
+    topic.videos.forEach(v => {
+      lines.push(`- **${v.status} · ${v.runtime} · ${v.source}** — ${v.title}`);
+      lines.push(`  ${v.url}`);
     });
+    lines.push('');
   });
-  return lines.join('\n') + '\n';
+  lines.push('## Pre-unit launch check', '', '```bash', 'node scripts/check-iran-videos.js', 'node scripts/check-iran-videos.js --live', 'node scripts/check-iran-videos.js --live --required-only', '```', '', 'The live check confirms configured URLs respond. Always do one final student-Chromebook check for district filtering, authentication, captions, and YouTube restrictions.', '');
+  return lines.join('\n');
 }
 
 const expected = [[browserTarget, browserSource()], [planTarget, planSource()]];
