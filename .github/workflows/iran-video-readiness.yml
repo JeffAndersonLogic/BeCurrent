@@ -1,0 +1,24 @@
+name: Iran Video Readiness
+
+# Deliberately manual: routine validation must not depend on third-party uptime.
+# Run this before the Iran unit launches, or after changing any video URL.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-links:
+    name: Live Iran video links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static video metadata check
+        run: node scripts/check-iran-videos.js
+      - name: Live required and optional link check
+        run: node scripts/check-iran-videos.js --live
