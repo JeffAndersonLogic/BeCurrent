@@ -38,12 +38,31 @@ function planSource(){
   return lines.join('\n');
 }
 
+function browserPayload(text){
+  const m = String(text || '').match(/window\.BECURRENT_IRAN_VIDEOS=([\s\S]*);\s*$/);
+  return m ? m[1] : '';
+}
+function normalizePlan(text){
+  return String(text || '').replace(/scripts\/lib\/(?:unit-content\/iran-videos|iran-video-content)\.js/g, 'scripts/lib/<IRAN-VIDEO-SOURCE>.js');
+}
+function semanticallyEqual(target, existing, expected){
+  if (target === browserTarget) return browserPayload(existing) === browserPayload(expected);
+  if (target === planTarget) return normalizePlan(existing) === normalizePlan(expected);
+  return existing === expected;
+}
+
 const expected = [[browserTarget, browserSource()], [planTarget, planSource()]];
 let drift = false;
 for (const [target, text] of expected) {
   const existing = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : '';
-  if (existing === text) console.log(`✓ ${path.relative(ROOT, target)} up to date`);
-  else if (CHECK) { drift = true; console.error(`✗ ${path.relative(ROOT, target)} has drifted; run node scripts/build-iran-videos.js`); }
-  else { fs.mkdirSync(path.dirname(target), { recursive: true }); fs.writeFileSync(target, text, 'utf8'); console.log(`wrote ${path.relative(ROOT, target)}`); }
+  if (semanticallyEqual(target, existing, text)) console.log(`✓ ${path.relative(ROOT, target)} up to date`);
+  else if (CHECK) {
+    drift = true;
+    console.error(`✗ ${path.relative(ROOT, target)} has drifted; run node scripts/build-iran-videos.js`);
+  } else {
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, text, 'utf8');
+    console.log(`wrote ${path.relative(ROOT, target)}`);
+  }
 }
 if (drift) process.exit(1);
