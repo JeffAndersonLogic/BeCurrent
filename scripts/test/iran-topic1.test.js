@@ -46,10 +46,12 @@ function serve(){ return new Promise(resolve=>{ const server=http.createServer((
     check('all six filings persist to localStorage', await page.evaluate(()=>['geography','prediction','reverse-reason','evidence','perspective','claim'].every(k=>localStorage.getItem('bcv2-iran-topic-01-'+k)!==null)));
 
     await page.locator('[data-gather-topic]').click();
-    check('Gather This Topic reports six of six', /Gathered 6 of 6 filings/.test(await page.locator('#iran-gather-status').innerText()), await page.locator('#iran-gather-status').innerText());
+    const gatherStatus=await page.locator('#iran-gather-status').innerText();
+    check('Gather This Topic reports six of six', /Gathered 6 of 6 filings/.test(gatherStatus), gatherStatus);
     const gathered=await page.locator('#iran-gather-output').innerText();
     check('gathered record carries BeCurrent manifest', gathered.includes('--- BECURRENT RECORD, do not edit ---') && gathered.includes('#BHV|'));
-    check('Canvas submission directions are present', /Canvas/i.test(await page.locator('#submit').innerText()));
+    const gatherText=await page.locator('#gather').innerText();
+    check('Canvas submission directions are present', /paste (it )?into (the )?Canvas assignment/i.test(gatherText) || /paste it into Canvas/i.test(gatherText), gatherText.replace(/\s+/g,' ').slice(0,160));
 
     await page.setViewportSize({width:768,height:900});
     await page.waitForTimeout(50);
