@@ -72,7 +72,7 @@
     if (!entry || !entry.date) return null;
     scheduledDates[entry.date] = true;
     var day = Object.assign({}, generatedByDate[entry.date] || {}, { date: entry.date });
-    ['homework','homeworkDue','note','doNow','agenda','learningTargets','successCriteria'].forEach(function (key) {
+    ['homework','homeworkDue','note','doNow','agenda','learningTargets','successCriteria','deskMode'].forEach(function (key) {
       if (Object.prototype.hasOwnProperty.call(entry, key)) day[key] = entry[key];
     });
     if (typeof entry.topicTitle === 'string' && entry.topicTitle.trim()) day.topic = entry.topicTitle.trim();
@@ -162,7 +162,10 @@
     s.appendChild(list); return s;
   }
 
-  function deskSlide() {
+  function deskSlide(day) {
+    // The Desk is opt-in. A date must explicitly carry deskMode:'full' or
+    // deskMode:'lead' in announcements-schedule.js or it never enters the rotation.
+    if (!day || (day.deskMode !== 'full' && day.deskMode !== 'lead')) return null;
     var s = slide('desk-slide-v2');
     s.appendChild(kicker('The Desk · daily news habit'));
     s.appendChild(el('h2','slide-title','The Lead + Your Pick'));
@@ -247,7 +250,7 @@
   function buildSlides() {
     stage.innerHTML = ''; slides = [];
     var day = currentDay();
-    [titleSlide(day),leadSlide(),agendaSlide(day),deskSlide(),
+    [titleSlide(day),leadSlide(),agendaSlide(day),deskSlide(day),
       listSlide('Learning targets','What you are learning',day && day.learningTargets,'targets'),
       listSlide('Success criteria','You have it when',day && day.successCriteria,'criteria'),
       homeworkSlide(day),upcomingSlide()].forEach(function (s) { if (s) { stage.appendChild(s); slides.push(s); } });
