@@ -1,43 +1,33 @@
 # Iran at War — Video Launch Plan
 
-**Generated from `scripts/lib/unit-content/iran-videos.js`. Do not hand-edit.**
+**Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-06**
+Last launch audit: **2026-09-07**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
-## Topic 1 — Watch the war before you explain it.
+## Topic 1 — One documentary. One current-event anchor.
 
-Use current reporting to establish what happened, what remains uncertain, and why geography matters before tracing the conflict backward.
+FRONTLINE carries the current narrative today. The visual orientation comes first; there are no extra Day 1 clips.
 
-- **REQUIRED · 9:19 · PBS NewsHour** — As Iran expands retaliatory attacks, U.S. urges Americans to leave Middle East
-  https://www.pbs.org/video/iran-war-sot-nick-live-tag-1772489548/
-- **TEACHER CHOICE · 9:09 · PBS NewsHour** — Expert panel breaks down U.S. objectives in Iran war
-  https://www.pbs.org/video/war-with-iran-panel-1772489436/
-- **OPTIONAL EXTEND · 7:17 · PBS NewsHour** — How the war in Iran is impacting global energy markets
-  https://www.pbs.org/video/energy-risks-1772489465/
+- **REQUIRED · ~55 min today / 1h 54m total · PBS FRONTLINE** — Remaking the Middle East: The U.S., Israel & Iran
+  https://www.youtube.com/watch?v=vWaoon6lZM0
 
-## Topic 2 — See the coup, then test what the archive proves.
+## Topic 2 — Finish the current story before reversing it.
 
-The videos carry most of the narrative. The declassified record remains the evidence you use to verify U.S. involvement.
+Continue the same FRONTLINE documentary. Treat it as a deeply reported starting interpretation, then turn its unanswered questions into the launch point for Reverse History.
+
+- **REQUIRED · ~59 min remaining / 1h 54m total · PBS FRONTLINE** — Remaking the Middle East: The U.S., Israel & Iran
+  https://www.youtube.com/watch?v=vWaoon6lZM0
+
+## Topic 3 — Now answer the first historical question.
+
+Two short historical clips support a single reverse move: 2026 → 1979 → 1953. The class should spend more time weighing the two turning points than watching more video.
 
 - **REQUIRED · 6:08 · PBS American Experience** — Operation Ajax
   https://www.pbs.org/video/operation-ajax/
-- **REQUIRED · 10:07 · PBS American Experience** — Taken Hostage, Part 1 — Chapter 1
-  https://www.pbs.org/video/chapter-1-taken-hostage-part-1/
-- **OPTIONAL EXTEND · Long-form · PBS American Experience** — Taken Hostage
-  https://www.pbs.org/wgbh/americanexperience/films/taken-hostage/
-
-## Topic 3 — Watch an alliance collapse.
-
-Use archival storytelling to understand the revolution and hostage crisis, then compare the different historical memories each country carried forward.
-
-- **REQUIRED EXCERPT · Teacher-selected replay from 10:07 · PBS American Experience** — Taken Hostage, Part 1 — Chapter 1
-  https://www.pbs.org/video/chapter-1-taken-hostage-part-1/
-- **REQUIRED · 10:34 · PBS American Experience** — Taken Hostage, Part 2 — Chapter 1
+- **TEACHER CHOICE · 10:34 · PBS American Experience** — Taken Hostage, Part 2 — Chapter 1
   https://www.pbs.org/video/chapter-1-taken-hostage-part-2/
-- **OPTIONAL EXTEND · Long-form · PBS American Experience** — Taken Hostage — Part 2
-  https://www.pbs.org/wgbh/americanexperience/films/taken-hostage/
 
 ## Topic 4 — Experience the war, then examine the strategy it helped shape.
 

@@ -14,7 +14,7 @@ CURRENT EVENTS · 8 topics · 8 online, 0 on paper
 
 ## What the unit is
 
-Start with the war students are watching, then trace the conflict backward through geography, foreign intervention, revolution, invasion, regional strategy, nuclear diplomacy, and direct escalation. The unit ends with a ranked causal argument rather than a hunt for one magic cause.
+Begin with the war students are watching through a two-day FRONTLINE documentary orientation, then reverse into the two turning points that transformed U.S.-Iran relations before tracing security strategy, nuclear diplomacy, direct escalation, and the Strait of Hormuz. The unit ends with a ranked causal argument rather than a hunt for one magic cause.
 
 ## The question it ends on
 
@@ -28,9 +28,9 @@ version of the argument against them.
 
 | Topic | Title | Artifact | Targets |
 |---|---|---|---|
-| Topic 1 | The War They Are Watching | Reverse History | 3 |
-| Topic 2 | The Coup | Reverse History | 3 |
-| Topic 3 | The Ally Becomes the Enemy | Reverse History | 3 |
+| Topic 1 | The War Now | Reverse History | 3 |
+| Topic 2 | The Road to War | Reverse History | 3 |
+| Topic 3 | Why the U.S. and Iran Became Enemies | Reverse History | 3 |
 | Topic 4 | Why Fight Far From Home? | Reverse History | 3 |
 | Topic 5 | The Nuclear Bargain | Reverse History | 3 |
 | Topic 6 | From Shadow War to Open War | Reverse History | 3 |
@@ -53,135 +53,126 @@ Indiana 1512, Current Problems, Issues, and Events.
 
 ---
 
-## Topic 1. The War They Are Watching
+## Topic 1. The War Now
 
-_Current anchor · 2026_
+_Current anchor · FRONTLINE Part I_
 
 | | |
 |---|---|
 | Artifact | Reverse History page, `index.html` |
-| Skills | Geography and Power, Sourcing and Evidence, Hypotheses |
+| Skills | Geography and Power, Current Context, Question Formation |
 | Indiana 1512 | 2, Sourcing and evidence; 4, Geography and power; 5, Constructing arguments |
 | Reaches Canvas | Yes, through Gather This Topic |
 
 ### Overview
 
-Establish what is happening now, locate the pressure points, and separate the immediate trigger from the deeper conditions students will test across the unit.
+Orient students to the current war before asking them to explain it: key people, regional armed partners, Iran and the Strait of Hormuz, then the first half of FRONTLINE’s Remaking the Middle East.
 
 ### Learning targets
 
-1. **Geography and Power.** I can explain how Iran, Israel, U.S. regional positions, and the Strait of Hormuz shape the conflict.
-2. **Sourcing and Evidence.** I can separate a verifiable event from a claim about why a government acted.
-3. **Hypotheses.** I can propose a starting explanation and identify what evidence could change it.
+1. **Geography and Power.** I can locate Iran and the Strait of Hormuz and explain why the chokepoint matters.
+2. **Current Context.** I can identify the major state leaders and regional armed groups I will encounter in the documentary.
+3. **Question Formation.** I can name one relationship in the current war that needs a historical explanation.
 
 ### Success criteria
 
-1. **Geography and Power.** I can connect one location to a specific military, economic, or diplomatic consequence.
-2. **Sourcing and Evidence.** I can name one verified fact, one interpretation, and one unanswered historical question.
-3. **Hypotheses.** I can rank up to three possible causes and explain why one currently deserves the most weight.
+1. **Geography and Power.** I can connect the Strait of Hormuz to military or economic leverage.
+2. **Current Context.** I can distinguish Iran’s government and military from armed partners such as Hezbollah and the Houthis.
+3. **Question Formation.** I can leave class with one specific historical question raised by the documentary.
 
 ### What happens in class
 
-Map the conflict, build a starting hypothesis, distinguish facts from claims about motive, and identify the historical question that most needs an answer.
+Use an eight-minute visual orientation, establish the difference between a proxy and an armed partner, watch roughly the first half of FRONTLINE, and leave one low-load exit response.
 
 ### The filings
 
-1. **Geography and Power.** Which piece of geography gives Iran the most leverage?
-2. **Hypotheses.** What do you think best explains how this conflict became possible?
-3. **Cause and Effect.** Why did you choose those explanations?
-4. **Sourcing and Evidence.** Name one fact and one unanswered question.
-5. **Perspective and Interpretation.** What evidence would help test either frame?
-6. **Constructing Arguments.** What part of this conflict most needs a historical explanation?
+1. **Question Formation.** What relationship, person, or location from today most needs a historical explanation?
 
 ### Where the work goes
 
-The Reverse History page's Gather This Topic panel. 6 responses, copied by the student and pasted into Canvas as Text Entry. The page saves on the Chromebook while the student works; the gathered record is the submission.
+The Reverse History page's Gather This Topic panel. 1 response, copied by the student and pasted into Canvas as Text Entry. The page saves on the Chromebook while the student works; the gathered record is the submission.
 
 ---
 
-## Topic 2. The Coup
+## Topic 2. The Road to War
 
-_Reverse History stop · 1951–1953_
+_Current anchor · FRONTLINE Part II_
 
 | | |
 |---|---|
 | Artifact | Reverse History page, `topic-02-1953.html` |
-| Skills | Sourcing and Evidence, Cause and Effect, Contingency |
-| Indiana 1512 | 1, Cause and effect; 2, Sourcing and evidence; 3, Perspective and interpretation; 5, Constructing arguments |
+| Skills | Sourcing and Evidence, Cause and Effect, Question Formation |
+| Indiana 1512 | 1, Cause and effect; 2, Sourcing and evidence; 5, Constructing arguments |
 | Reaches Canvas | Yes, through Gather This Topic |
 
 ### Overview
 
-Examine oil nationalization, the political crisis around Mohammad Mosaddegh, documented U.S. and British covert involvement, and the event's long afterlife in Iranian political memory.
+Finish FRONTLINE’s current-conflict narrative, treating the documentary as a starting account rather than the final word, then identify the historical question the rest of the unit must answer.
 
 ### Learning targets
 
-1. **Sourcing and Evidence.** I can use a declassified record to establish U.S. involvement without claiming the document proves everything about the coup.
-2. **Cause and Effect.** I can explain how oil, sovereignty, domestic politics, and Cold War fears interacted.
-3. **Contingency.** I can identify a decision that could plausibly have gone another way and explain why that matters.
+1. **Sourcing and Evidence.** I can treat a documentary as a sourced interpretation rather than as unquestionable truth.
+2. **Cause and Effect.** I can distinguish the 2026 war’s immediate trigger from deeper causes developed over decades.
+3. **Question Formation.** I can turn something I noticed in the film into a historical question the unit can investigate.
 
 ### Success criteria
 
-1. **Sourcing and Evidence.** I can state one claim the archive supports and one claim it cannot establish by itself.
-2. **Cause and Effect.** I can connect the 1953 intervention to later distrust through a clear mechanism rather than calling later conflict inevitable.
-3. **Perspective and Interpretation.** I can explain why U.S. Cold War and Iranian sovereignty frames could both persist.
+1. **Sourcing and Evidence.** I can name one claim the documentary supports with reporting and one claim I would still want to test.
+2. **Cause and Effect.** I can explain why the date fighting began is not automatically the date the conflict began.
+3. **Question Formation.** I can write a specific backward-looking question that could be answered with historical evidence.
 
 ### What happens in class
 
-Read a declassified American record, compare competing frames, test a counterfactual, and make a proportional claim about the weight 1953 should carry.
+Briefly retrieve the people, places, and proxy network from Day 1, finish FRONTLINE, separate what the film documents from the arguments it advances, and write one question that points backward.
 
 ### The filings
 
-1. **Cause and Effect.** Why might nationalizing oil be more than an economic decision?
-2. **Sourcing and Evidence.** What can the declassified record prove?
-3. **Perspective and Interpretation.** Why could both frames persist?
-4. **Contingency.** What decision seems most contingent?
-5. **Constructing Arguments.** How much weight should 1953 carry in an explanation of the 2026 war?
+1. **Question Formation.** After FRONTLINE, what is the most important historical question you need answered before you can explain the 2026 war?
 
 ### Where the work goes
 
-The Reverse History page's Gather This Topic panel. 5 responses, copied by the student and pasted into Canvas as Text Entry. The page saves on the Chromebook while the student works; the gathered record is the submission.
+The Reverse History page's Gather This Topic panel. 1 response, copied by the student and pasted into Canvas as Text Entry. The page saves on the Chromebook while the student works; the gathered record is the submission.
 
 ---
 
-## Topic 3. The Ally Becomes the Enemy
+## Topic 3. Why the U.S. and Iran Became Enemies
 
-_Reverse History stop · 1979_
+_Reverse History stop · 1979 → 1953_
 
 | | |
 |---|---|
 | Artifact | Reverse History page, `topic-03-1979.html` |
-| Skills | Cause and Effect, Perspective and Interpretation, Comparison |
+| Skills | Cause and Effect, Sourcing and Evidence, Comparison |
 | Indiana 1512 | 1, Cause and effect; 2, Sourcing and evidence; 3, Perspective and interpretation; 5, Constructing arguments |
 | Reaches Canvas | Yes, through Gather This Topic |
 
 ### Overview
 
-Trace how opposition to the Shah became a broad revolution, how the Islamic Republic emerged, and how the hostage crisis created a powerful American grievance alongside Iran's memory of 1953.
+Answer the first major question created by FRONTLINE by reversing from the 1979 revolution and hostage crisis to the 1953 overthrow of Mohammad Mosaddegh. Students compare two powerful historical memories without treating either event as destiny.
 
 ### Learning targets
 
-1. **Cause and Effect.** I can explain how repression, rapid modernization, inequality, religion, and foreign influence combined in the revolution.
-2. **Perspective and Interpretation.** I can distinguish the Iranian grievance associated with 1953 from the American grievance created in 1979.
-3. **Comparison.** I can compare 1953 and 1979 using evidence and a causal mechanism.
+1. **Cause and Effect.** I can explain how 1979 changed the U.S.-Iran relationship and why 1953 mattered to Iranian revolutionary memory.
+2. **Sourcing and Evidence.** I can use a declassified record to establish foreign intervention without claiming one source explains every Iranian action.
+3. **Comparison.** I can compare 1953 and 1979 by explaining the different grievances each event created or reinforced.
 
 ### Success criteria
 
-1. **Cause and Effect.** I can explain why several groups opposed the Shah without pretending they wanted the same future.
-2. **Sourcing and Evidence.** I can use the opening-day hostage-crisis memorandum for what U.S. officials knew without treating it as proof of every participant's motive.
+1. **Cause and Effect.** I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.
+2. **Sourcing and Evidence.** I can state one claim the historical record supports and one claim it cannot establish by itself.
 3. **Comparison.** I can use one specific fact from each turning point to defend which changed the relationship more.
 
 ### What happens in class
 
-Analyze several pressures behind the revolution, distinguish the two countries' historical memories, and compare the explanatory power of 1953 and 1979.
+Move backward from 1979 to 1953, examine the Shah, Khomeini, Mosaddegh, and the hostage crisis, test a declassified record, and decide which turning point transformed the relationship more.
 
 ### The filings
 
-1. **Cause and Effect.** Why can support for an ally create resentment toward the ally's supporter?
-2. **Cause and Effect.** Which pressure best explains why so many different groups could oppose the Shah at the same time?
-3. **Sourcing and Evidence.** How did the hostage crisis add something new to the relationship?
-4. **Perspective and Interpretation.** Which memory would make compromise harder later?
-5. **Comparison.** Which transformed U.S.-Iran relations more: 1953 or 1979?
+1. **Cause and Effect.** What changed in 1979 that made the United States and Iran adversaries rather than allies?
+2. **Perspective and Interpretation.** Why did 1953 remain politically powerful during and after the revolution?
+3. **Sourcing and Evidence.** What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?
+4. **Comparison.** What did the hostage crisis add to American historical memory that 1953 had added to Iranian memory?
+5. **Constructing Arguments.** Which transformed U.S.-Iran relations more: 1953 or 1979?
 
 ### Where the work goes
 
@@ -226,7 +217,7 @@ Build a causal mechanism from wartime experience to later deterrence, test the w
 2. **Cause and Effect.** What is the mechanism connecting the Iran-Iraq War to later deterrence?
 3. **Sourcing and Evidence.** Why is “proxy” useful — and where can the word mislead?
 4. **Perspective and Interpretation.** Can both descriptions be true at the same time?
-5. **Constructing Arguments.** To what extent can Iran's modern regional military strategy be explained by the Iran-Iraq War?
+5. **Constructing Arguments.** To what extent can Iran’s modern regional military strategy be explained by the Iran-Iraq War?
 
 ### Where the work goes
 
@@ -247,7 +238,7 @@ _Reverse History thread · 1957–2018_
 
 ### Overview
 
-Follow Iran's nuclear program from U.S.-Iranian cooperation through the JCPOA, U.S. withdrawal, restored sanctions, reduced compliance, and the return of coercive pressure.
+Follow Iran’s nuclear program from U.S.-Iranian cooperation through the JCPOA, U.S. withdrawal, restored sanctions, reduced compliance, and the return of coercive pressure.
 
 ### Learning targets
 
@@ -259,11 +250,11 @@ Follow Iran's nuclear program from U.S.-Iranian cooperation through the JCPOA, U
 
 1. **Sourcing and Evidence.** I can describe the bargain as nuclear restrictions and monitoring in exchange for nuclear-related sanctions relief.
 2. **Cause and Effect.** I can identify the strongest and weakest arrows in the post-2018 causal chain.
-3. **Constructing Arguments.** I can argue whether the agreement's collapse made war more likely while acknowledging at least one other cause.
+3. **Constructing Arguments.** I can argue whether the agreement’s collapse made war more likely while acknowledging at least one other cause.
 
 ### What happens in class
 
-Identify the JCPOA's actual trade, separate verification from political judgment, test the causal chain after 2018, and weigh the risks of an imperfect agreement against abandoning verified limits.
+Identify the JCPOA’s actual trade, separate verification from political judgment, test the causal chain after 2018, and weigh the risks of an imperfect agreement against abandoning verified limits.
 
 ### The filings
 
@@ -337,7 +328,7 @@ _Geography becomes power_
 
 ### Overview
 
-Connect the Strait of Hormuz's chokepoint geography to the 1980s Tanker War, the measured collapse in 2026 oil flows, and the waterway's military, economic, and diplomatic uses.
+Connect the Strait of Hormuz’s chokepoint geography to the 1980s Tanker War, the measured collapse in 2026 oil flows, and the waterway’s military, economic, and diplomatic uses.
 
 ### Learning targets
 

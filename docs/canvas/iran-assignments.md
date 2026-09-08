@@ -27,31 +27,26 @@ unattributable rows in `exceptions.csv`.
 
 ---
 
-## IR1 - The War They Are Watching
+## IR1 - The War Now
 
-**Assignment name, Canvas and PowerSchool, character for character:** `IR1 - The War They Are Watching`  
+**Assignment name, Canvas and PowerSchool, character for character:** `IR1 - The War Now`  
 **Points:** 20  
-**Calendar event it belongs to:** `CE - IR1 - The War They Are Watching`  
+**Calendar event it belongs to:** `CE - IR1 - The War Now`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Iran at War, Topic 1: The War They Are Watching</h2>
-<p><em>Current anchor · 2026</em></p>
+<h2>Iran at War, Topic 1: The War Now</h2>
+<p><em>Current anchor · FRONTLINE Part I</em></p>
 
 <h3>Step 1 &mdash; Open the investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The War They Are Watching</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The War Now</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
-<h3>Step 2 &mdash; Read it and answer all 6</h3>
-<p>Establish what is happening now, locate the pressure points, and separate the immediate trigger from the deeper conditions students will test across the unit.</p>
+<h3>Step 2 &mdash; Read it and answer all 1</h3>
+<p>Orient students to the current war before asking them to explain it: key people, regional armed partners, Iran and the Strait of Hormuz, then the first half of FRONTLINE’s Remaking the Middle East.</p>
 <ol>
-    <li><strong>Geography and Power.</strong> Which piece of geography gives Iran the most leverage?</li>
-    <li><strong>Hypotheses.</strong> What do you think best explains how this conflict became possible?</li>
-    <li><strong>Cause and Effect.</strong> Why did you choose those explanations?</li>
-    <li><strong>Sourcing and Evidence.</strong> Name one fact and one unanswered question.</li>
-    <li><strong>Perspective and Interpretation.</strong> What evidence would help test either frame?</li>
-    <li><strong>Constructing Arguments.</strong> What part of this conflict most needs a historical explanation?</li>
+    <li><strong>Question Formation.</strong> What relationship, person, or location from today most needs a historical explanation?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -70,9 +65,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can connect one location to a specific military, economic, or diplomatic consequence.</li>
-    <li>I can name one verified fact, one interpretation, and one unanswered historical question.</li>
-    <li>I can rank up to three possible causes and explain why one currently deserves the most weight.</li>
+    <li>I can connect the Strait of Hormuz to military or economic leverage.</li>
+    <li>I can distinguish Iran’s government and military from armed partners such as Hezbollah and the Houthis.</li>
+    <li>I can leave class with one specific historical question raised by the documentary.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The whole Iran at War unit, if you missed a topic</a></p>
@@ -80,30 +75,26 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
-## IR2 - The 1953 Coup
+## IR2 - The Road to War
 
-**Assignment name, Canvas and PowerSchool, character for character:** `IR2 - The 1953 Coup`  
+**Assignment name, Canvas and PowerSchool, character for character:** `IR2 - The Road to War`  
 **Points:** 20  
-**Calendar event it belongs to:** `CE - IR2 - The Coup`  
+**Calendar event it belongs to:** `CE - IR2 - The Road to War`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Iran at War, Topic 2: The Coup</h2>
-<p><em>Reverse History stop · 1951–1953</em></p>
+<h2>Iran at War, Topic 2: The Road to War</h2>
+<p><em>Current anchor · FRONTLINE Part II</em></p>
 
 <h3>Step 1 &mdash; Open the investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-02-1953.html" target="_blank" rel="noopener">The Coup</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-02-1953.html" target="_blank" rel="noopener">The Road to War</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
-<h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Examine oil nationalization, the political crisis around Mohammad Mosaddegh, documented U.S. and British covert involvement, and the event's long afterlife in Iranian political memory.</p>
+<h3>Step 2 &mdash; Read it and answer all 1</h3>
+<p>Finish FRONTLINE’s current-conflict narrative, treating the documentary as a starting account rather than the final word, then identify the historical question the rest of the unit must answer.</p>
 <ol>
-    <li><strong>Cause and Effect.</strong> Why might nationalizing oil be more than an economic decision?</li>
-    <li><strong>Sourcing and Evidence.</strong> What can the declassified record prove?</li>
-    <li><strong>Perspective and Interpretation.</strong> Why could both frames persist?</li>
-    <li><strong>Contingency.</strong> What decision seems most contingent?</li>
-    <li><strong>Constructing Arguments.</strong> How much weight should 1953 carry in an explanation of the 2026 war?</li>
+    <li><strong>Question Formation.</strong> After FRONTLINE, what is the most important historical question you need answered before you can explain the 2026 war?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -122,9 +113,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can state one claim the archive supports and one claim it cannot establish by itself.</li>
-    <li>I can connect the 1953 intervention to later distrust through a clear mechanism rather than calling later conflict inevitable.</li>
-    <li>I can explain why U.S. Cold War and Iranian sovereignty frames could both persist.</li>
+    <li>I can name one claim the documentary supports with reporting and one claim I would still want to test.</li>
+    <li>I can explain why the date fighting began is not automatically the date the conflict began.</li>
+    <li>I can write a specific backward-looking question that could be answered with historical evidence.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The whole Iran at War unit, if you missed a topic</a></p>
@@ -132,30 +123,30 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
-## IR3 - Revolution and Hostages
+## IR3 - 1979 and 1953 Origins
 
-**Assignment name, Canvas and PowerSchool, character for character:** `IR3 - Revolution and Hostages`  
+**Assignment name, Canvas and PowerSchool, character for character:** `IR3 - 1979 and 1953 Origins`  
 **Points:** 20  
-**Calendar event it belongs to:** `CE - IR3 - The Ally Becomes the Enemy`  
+**Calendar event it belongs to:** `CE - IR3 - Why the U.S. and Iran Became Enemies`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Iran at War, Topic 3: The Ally Becomes the Enemy</h2>
-<p><em>Reverse History stop · 1979</em></p>
+<h2>Iran at War, Topic 3: Why the U.S. and Iran Became Enemies</h2>
+<p><em>Reverse History stop · 1979 → 1953</em></p>
 
 <h3>Step 1 &mdash; Open the investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-03-1979.html" target="_blank" rel="noopener">The Ally Becomes the Enemy</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-03-1979.html" target="_blank" rel="noopener">Why the U.S. and Iran Became Enemies</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Trace how opposition to the Shah became a broad revolution, how the Islamic Republic emerged, and how the hostage crisis created a powerful American grievance alongside Iran's memory of 1953.</p>
+<p>Answer the first major question created by FRONTLINE by reversing from the 1979 revolution and hostage crisis to the 1953 overthrow of Mohammad Mosaddegh. Students compare two powerful historical memories without treating either event as destiny.</p>
 <ol>
-    <li><strong>Cause and Effect.</strong> Why can support for an ally create resentment toward the ally's supporter?</li>
-    <li><strong>Cause and Effect.</strong> Which pressure best explains why so many different groups could oppose the Shah at the same time?</li>
-    <li><strong>Sourcing and Evidence.</strong> How did the hostage crisis add something new to the relationship?</li>
-    <li><strong>Perspective and Interpretation.</strong> Which memory would make compromise harder later?</li>
-    <li><strong>Comparison.</strong> Which transformed U.S.-Iran relations more: 1953 or 1979?</li>
+    <li><strong>Cause and Effect.</strong> What changed in 1979 that made the United States and Iran adversaries rather than allies?</li>
+    <li><strong>Perspective and Interpretation.</strong> Why did 1953 remain politically powerful during and after the revolution?</li>
+    <li><strong>Sourcing and Evidence.</strong> What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?</li>
+    <li><strong>Comparison.</strong> What did the hostage crisis add to American historical memory that 1953 had added to Iranian memory?</li>
+    <li><strong>Constructing Arguments.</strong> Which transformed U.S.-Iran relations more: 1953 or 1979?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -174,8 +165,8 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can explain why several groups opposed the Shah without pretending they wanted the same future.</li>
-    <li>I can use the opening-day hostage-crisis memorandum for what U.S. officials knew without treating it as proof of every participant's motive.</li>
+    <li>I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.</li>
+    <li>I can state one claim the historical record supports and one claim it cannot establish by itself.</li>
     <li>I can use one specific fact from each turning point to defend which changed the relationship more.</li>
 </ol>
 
@@ -207,7 +198,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
     <li><strong>Cause and Effect.</strong> What is the mechanism connecting the Iran-Iraq War to later deterrence?</li>
     <li><strong>Sourcing and Evidence.</strong> Why is “proxy” useful — and where can the word mislead?</li>
     <li><strong>Perspective and Interpretation.</strong> Can both descriptions be true at the same time?</li>
-    <li><strong>Constructing Arguments.</strong> To what extent can Iran's modern regional military strategy be explained by the Iran-Iraq War?</li>
+    <li><strong>Constructing Arguments.</strong> To what extent can Iran’s modern regional military strategy be explained by the Iran-Iraq War?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -253,7 +244,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Follow Iran's nuclear program from U.S.-Iranian cooperation through the JCPOA, U.S. withdrawal, restored sanctions, reduced compliance, and the return of coercive pressure.</p>
+<p>Follow Iran’s nuclear program from U.S.-Iranian cooperation through the JCPOA, U.S. withdrawal, restored sanctions, reduced compliance, and the return of coercive pressure.</p>
 <ol>
     <li><strong>Historical Context.</strong> Why does the U.S.-supported origin complicate a simple “Iran versus the world” nuclear story?</li>
     <li><strong>Sourcing and Evidence.</strong> What problem did the JCPOA solve, and what problems did it deliberately leave outside the deal?</li>
@@ -280,7 +271,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <ol>
     <li>I can describe the bargain as nuclear restrictions and monitoring in exchange for nuclear-related sanctions relief.</li>
     <li>I can identify the strongest and weakest arrows in the post-2018 causal chain.</li>
-    <li>I can argue whether the agreement's collapse made war more likely while acknowledging at least one other cause.</li>
+    <li>I can argue whether the agreement’s collapse made war more likely while acknowledging at least one other cause.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The whole Iran at War unit, if you missed a topic</a></p>
@@ -357,7 +348,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Connect the Strait of Hormuz's chokepoint geography to the 1980s Tanker War, the measured collapse in 2026 oil flows, and the waterway's military, economic, and diplomatic uses.</p>
+<p>Connect the Strait of Hormuz’s chokepoint geography to the 1980s Tanker War, the measured collapse in 2026 oil flows, and the waterway’s military, economic, and diplomatic uses.</p>
 <ol>
     <li><strong>Geography and Power.</strong> Explain the chokepoint mechanism.</li>
     <li><strong>Comparison.</strong> What does the Tanker War help explain about 2026?</li>

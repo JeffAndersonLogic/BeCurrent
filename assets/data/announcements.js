@@ -326,102 +326,116 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-09-08",
-      "topic": "The War They Are Watching",
+      "topic": "Iran at War | The War Now",
       "unit": "Iran at War",
-      "subtitle": "Current anchor · 2026",
+      "subtitle": "Current anchor · FRONTLINE Part I",
       "learningTargets": [
         {
-          "text": "I can explain how Iran, Israel, U.S. regional positions, and the Strait of Hormuz shape the conflict.",
-          "label": "Geography and Power"
+          "text": "Identify the key decision-makers and regional armed groups in the current conflict.",
+          "label": ""
         },
         {
-          "text": "I can separate a verifiable event from a claim about why a government acted.",
-          "label": "Sourcing and Evidence"
+          "text": "Locate Iran and the Strait of Hormuz and explain why the chokepoint matters.",
+          "label": ""
         },
         {
-          "text": "I can propose a starting explanation and identify what evidence could change it.",
-          "label": "Hypotheses"
+          "text": "Turn one part of the current war into a historical question.",
+          "label": ""
         }
       ],
       "successCriteria": [
         {
-          "text": "I can connect one location to a specific military, economic, or diplomatic consequence.",
-          "label": "Geography and Power"
+          "text": "I can explain why “Iran-backed” does not always mean “Iran-controlled.”",
+          "label": ""
         },
         {
-          "text": "I can name one verified fact, one interpretation, and one unanswered historical question.",
-          "label": "Sourcing and Evidence"
+          "text": "I can connect Hormuz geography to military or economic leverage.",
+          "label": ""
         },
         {
-          "text": "I can rank up to three possible causes and explain why one currently deserves the most weight.",
-          "label": "Hypotheses"
+          "text": "I leave with one specific backward-looking question, not a film summary.",
+          "label": ""
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "No additional homework. Be ready to finish FRONTLINE next class.",
+      "note": "NEW UNIT: visual orientation first, then PBS FRONTLINE. Today is intentionally light on reading and writing.",
+      "doNow": "Look at the map and faces on the Iran page. Which person or place do you already recognize?",
+      "agenda": [
+        "Visual orientation: key people, Iran-aligned armed groups, and what “proxy” means.",
+        "Map Iran and the Strait of Hormuz.",
+        "Watch FRONTLINE: Remaking the Middle East — Part I.",
+        "Complete one exit ticket: what most needs a historical explanation?"
+      ]
     },
     {
       "date": "2026-09-10",
-      "topic": "The Coup",
+      "topic": "Iran at War | The Road to War",
       "unit": "Iran at War",
-      "subtitle": "Reverse History stop · 1951–1953",
+      "subtitle": "Current anchor · FRONTLINE Part II",
       "learningTargets": [
         {
-          "text": "I can use a declassified record to establish U.S. involvement without claiming the document proves everything about the coup.",
-          "label": "Sourcing and Evidence"
+          "text": "Distinguish the 2026 war’s immediate trigger from deeper causes.",
+          "label": ""
         },
         {
-          "text": "I can explain how oil, sovereignty, domestic politics, and Cold War fears interacted.",
-          "label": "Cause and Effect"
+          "text": "Treat FRONTLINE as a strong secondary source rather than the final answer.",
+          "label": ""
         },
         {
-          "text": "I can identify a decision that could plausibly have gone another way and explain why that matters.",
-          "label": "Contingency"
+          "text": "Create a historical question the rest of the unit can investigate.",
+          "label": ""
         }
       ],
       "successCriteria": [
         {
-          "text": "I can state one claim the archive supports and one claim it cannot establish by itself.",
-          "label": "Sourcing and Evidence"
+          "text": "I can identify a recent trigger and an older unresolved condition.",
+          "label": ""
         },
         {
-          "text": "I can connect the 1953 intervention to later distrust through a clear mechanism rather than calling later conflict inevitable.",
-          "label": "Cause and Effect"
+          "text": "I can name one documentary claim I would still want to test.",
+          "label": ""
         },
         {
-          "text": "I can explain why U.S. Cold War and Iranian sovereignty frames could both persist.",
-          "label": "Perspective and Interpretation"
+          "text": "My exit question points backward to evidence, not sideways to an unrelated historical analogy.",
+          "label": ""
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "No additional homework. Monday we reverse to 1979 and 1953.",
+      "note": "FRONTLINE Part II today. No traditional note packet; listen for causes, turning points, and unanswered historical questions.",
+      "doNow": "Without reopening Topic 1, name two leaders, two armed partners, and the Strait of Hormuz.",
+      "agenda": [
+        "Three-minute retrieval from Day 1.",
+        "Finish FRONTLINE: Remaking the Middle East — Part II.",
+        "Source check: what can a documentary establish, and what still needs testing?",
+        "Write one question that points backward into the history."
+      ]
     },
     {
       "date": "2026-09-14",
-      "topic": "The Ally Becomes the Enemy",
+      "topic": "Iran at War | Why the U.S. and Iran Became Enemies",
       "unit": "Iran at War",
-      "subtitle": "Reverse History stop · 1979",
+      "subtitle": "Reverse History stop · 1979 → 1953",
       "learningTargets": [
         {
-          "text": "I can explain how repression, rapid modernization, inequality, religion, and foreign influence combined in the revolution.",
+          "text": "I can explain how 1979 changed the U.S.-Iran relationship and why 1953 mattered to Iranian revolutionary memory.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can distinguish the Iranian grievance associated with 1953 from the American grievance created in 1979.",
-          "label": "Perspective and Interpretation"
+          "text": "I can use a declassified record to establish foreign intervention without claiming one source explains every Iranian action.",
+          "label": "Sourcing and Evidence"
         },
         {
-          "text": "I can compare 1953 and 1979 using evidence and a causal mechanism.",
+          "text": "I can compare 1953 and 1979 by explaining the different grievances each event created or reinforced.",
           "label": "Comparison"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can explain why several groups opposed the Shah without pretending they wanted the same future.",
+          "text": "I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can use the opening-day hostage-crisis memorandum for what U.S. officials knew without treating it as proof of every participant's motive.",
+          "text": "I can state one claim the historical record supports and one claim it cannot establish by itself.",
           "label": "Sourcing and Evidence"
         },
         {
@@ -429,12 +443,21 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Comparison"
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "Finish Topic 3 filings and submit the gathered Topic 3 record in Canvas.",
+      "homeworkDue": "the start of next class",
+      "note": "Reverse History begins: 2026 → 1979 → 1953. Two turning points, two national memories, one comparison.",
+      "doNow": "From FRONTLINE: why do Iran and the United States appear to distrust each other so deeply?",
+      "agenda": [
+        "Reverse to 1979: revolution, the Shah, Khomeini, and the hostage crisis.",
+        "Reverse again to 1953: Mosaddegh, oil nationalization, and U.S.-British covert intervention.",
+        "Test what the declassified record proves—and what it does not.",
+        "Compare the two historical memories.",
+        "Claim: which transformed U.S.-Iran relations more, 1953 or 1979?"
+      ]
     },
     {
       "date": "2026-09-16",
-      "topic": "Why Fight Far From Home?",
+      "topic": "Iran at War | Why Fight Far From Home?",
       "unit": "Iran at War",
       "subtitle": "Reverse History stop · 1980–1988",
       "learningTargets": [
@@ -465,12 +488,20 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Perspective and Interpretation"
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "Finish Topic 4 filings and submit them in Canvas.",
+      "homeworkDue": "the start of next class",
+      "note": "Today connects the Iran-Iraq War to deterrence, the IRGC, missiles, and Iran’s regional armed network.",
+      "agenda": [
+        "1980: Iraq invades revolutionary Iran.",
+        "Build the vulnerability → deterrence mechanism.",
+        "IRGC and Quds Force: institutions of asymmetric strategy.",
+        "Test the word “proxy” against real differences among armed partners.",
+        "Claim: deterrence, power projection, or both?"
+      ]
     },
     {
       "date": "2026-09-18",
-      "topic": "The Nuclear Bargain",
+      "topic": "Iran at War | The Nuclear Bargain",
       "unit": "Iran at War",
       "subtitle": "Reverse History thread · 1957–2018",
       "learningTargets": [
@@ -497,16 +528,24 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Cause and Effect"
         },
         {
-          "text": "I can argue whether the agreement's collapse made war more likely while acknowledging at least one other cause.",
+          "text": "I can argue whether the agreement’s collapse made war more likely while acknowledging at least one other cause.",
           "label": "Constructing Arguments"
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "Finish Topic 5 filings and submit them in Canvas.",
+      "homeworkDue": "the start of next class",
+      "note": "Follow the nuclear story from U.S.-Iranian cooperation to the JCPOA, withdrawal, sanctions, and renewed pressure.",
+      "agenda": [
+        "Start with the surprise: the United States once helped Iran build a civilian nuclear program.",
+        "Break down the JCPOA bargain and verification system.",
+        "Trace the post-2018 causal chain.",
+        "Policy tradeoff: imperfect agreement vs. abandoning verified limits.",
+        "Claim: did the deal’s collapse make war substantially more likely?"
+      ]
     },
     {
       "date": "2026-09-22",
-      "topic": "From Shadow War to Open War",
+      "topic": "Iran at War | From Shadow War to Open War",
       "unit": "Iran at War",
       "subtitle": "Reverse History stop · 2023–2026",
       "learningTargets": [
@@ -537,12 +576,20 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Constructing Arguments"
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "Finish Topic 6 filings and submit them in Canvas.",
+      "homeworkDue": "the start of next class",
+      "note": "Today is about thresholds: when did direct state-to-state attack become an available option?",
+      "agenda": [
+        "Define shadow war and why rivals may prefer it.",
+        "2024: direct Iran-Israel attacks cross a threshold.",
+        "2025–26: compare size, precedent, retaliation, and path dependence.",
+        "Perspective check: deterrence as restraint vs. escalation ladder.",
+        "Choose the turning point when full-scale war became substantially more likely."
+      ]
     },
     {
       "date": "2026-09-24",
-      "topic": "The Hormuz Lever",
+      "topic": "Iran at War | The Hormuz Lever",
       "unit": "Iran at War",
       "subtitle": "Geography becomes power",
       "learningTargets": [
@@ -573,12 +620,20 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Constructing Arguments"
         }
       ],
-      "homework": "Finish this topic's filings and submit them in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homework": "Finish Topic 7 filings and submit them in Canvas.",
+      "homeworkDue": "the start of next class",
+      "note": "Return to the map from Day 1. Now explain how geography becomes military, economic, and diplomatic leverage.",
+      "agenda": [
+        "Map the chokepoint mechanism.",
+        "Compare the 1980s Tanker War with 2026.",
+        "Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.",
+        "Separate what the data proves from what it cannot prove.",
+        "Rank Hormuz as military, economic, or diplomatic leverage."
+      ]
     },
     {
       "date": "2026-09-28",
-      "topic": "When Did This War Really Begin?",
+      "topic": "Iran at War | When Did This War Really Begin?",
       "unit": "Iran at War",
       "subtitle": "Causation synthesis",
       "learningTargets": [
@@ -610,7 +665,15 @@ window.BECURRENT_ANNOUNCEMENTS = {
         }
       ],
       "homework": "Finish the final causation argument and submit it in Canvas.",
-      "homeworkDue": "the start of next class"
+      "homeworkDue": "the start of next class",
+      "note": "Synthesis day. The literal start is Feb. 28, 2026; your job is to defend the explanatory beginning.",
+      "agenda": [
+        "Rebuild the causal chain from the current war backward.",
+        "Rank the three turning points that do the most explanatory work.",
+        "Write the strongest counterargument to your #1 choice.",
+        "Define exactly what your chosen “beginning” explains.",
+        "Complete and submit the final causation argument."
+      ]
     }
   ],
   "assessments": [

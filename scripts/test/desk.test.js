@@ -352,11 +352,27 @@ function seededDay(tag) {
 
     await page.click('button:has-text("Gather My Log")');
 
+    // A News Log can contain both Full Desk and Lead Mode days. Compute
+    // the expected record count from the mode saved with each filed day.
+    const expectedFiledKeys = [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : []).sort();
+    const expectedRowsPerDay = await page.evaluate(args => args.keys.map(key => {
+      const raw = localStorage.getItem(args.prefix + key);
+      const dayState = raw ? JSON.parse(raw) : {};
+      const lanes = dayState && dayState._mode === 'lead' ? 1 : args.fullLaneCount;
+      return lanes * (1 + args.questionCount);
+    }), {
+      prefix: STORAGE_PREFIX,
+      keys: expectedFiledKeys,
+      fullLaneCount: LANES.length,
+      questionCount: QUESTIONS.length
+    });
+    const EXPECT_ROWS = expectedRowsPerDay.reduce((sum, n) => sum + n, 0);
+
     const status = (await page.textContent('#desk-gather-status') || '').trim();
     check('the status names how many days it gathered',
       new RegExp(`Gathered ${EXPECT_DAYS} days,`).test(status), status);
     check('and how many boxes of how many are filled, rather than hiding a short log',
-      new RegExp(`of ${PER_DAY * EXPECT_DAYS} boxes filled`).test(status), status);
+      new RegExp(`of ${EXPECT_ROWS} boxes filled`).test(status), status);
 
     const shape = await page.$eval('#desk-gather-output', out => ({
       heads: Array.from(out.querySelectorAll('h3')).map(h => h.textContent.trim()),
@@ -387,8 +403,8 @@ function seededDay(tag) {
       !shape.text.includes('lastcycle'), `${dayLabel(LAST_CYCLE)} excluded`);
 
     check('a day with nothing in it is not printed as blanks',
-      shape.heads.length === PER_DAY * EXPECT_DAYS,
-      `${shape.heads.length} headings, expected ${PER_DAY * EXPECT_DAYS}`);
+      shape.heads.length === EXPECT_ROWS,
+      `${shape.heads.length} headings, expected ${EXPECT_ROWS}`);
 
     // Within a day, no two question headings may read the same. Across days they
     // may: the day's first heading drops the date because the <h2> banner directly
@@ -397,9 +413,11 @@ function seededDay(tag) {
     // correct paste, which is why the real invariant, label uniqueness, is checked
     // against the manifest further down instead.
     const perDayHeads = [];
-    for (let i = 0; i < shape.heads.length; i += PER_DAY) {
-      perDayHeads.push(shape.heads.slice(i, i + PER_DAY));
-    }
+    let headOffset = 0;
+    expectedRowsPerDay.forEach(rowsForDay => {
+      perDayHeads.push(shape.heads.slice(headOffset, headOffset + rowsForDay));
+      headOffset += rowsForDay;
+    });
     check('within one day, no two question headings read the same',
       perDayHeads.every(block => new Set(block).size === block.length),
       perDayHeads.map(b => `${new Set(b).size}/${b.length}`).join(' '));
@@ -493,8 +511,8 @@ function seededDay(tag) {
     check('it reports the cycle this log belongs to',
       parsed.topicId === 'desk-log-' + CYCLE_START_KEY, parsed.topicId);
     check('it recovers every record every gathered day defines',
-      parsed.responses.length === PER_DAY * EXPECT_DAYS,
-      `${parsed.responses.length} of ${PER_DAY * EXPECT_DAYS}`);
+      parsed.responses.length === EXPECT_ROWS,
+      `${parsed.responses.length} of ${EXPECT_ROWS}`);
 
     // The real uniqueness invariant, and it lives in the manifest rather than in the
     // rendered headings. Every record declares a date-qualified label, which is what
@@ -510,8 +528,8 @@ function seededDay(tag) {
 
     const declaredExpected = (shape.text.match(/\|expected=(\d+)\|/) || [])[1];
     check('the expected count is computed from the days actually filed, never a literal',
-      Number(declaredExpected) === PER_DAY * EXPECT_DAYS,
-      `expected=${declaredExpected}, ${EXPECT_DAYS} days x ${PER_DAY}`);
+      Number(declaredExpected) === EXPECT_ROWS,
+      `expected=${declaredExpected}, rows/day ${expectedRowsPerDay.join("/")}`);
 
     // THE assertion. If the three facts were printed as a loose line above the
     // questions instead of being a record of their own, that line would fall

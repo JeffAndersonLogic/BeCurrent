@@ -31,9 +31,9 @@ Every link below points at the live GitHub Pages build:
 
 | Event title | Assignment to link | Submits |
 |---|---|---|
-| `CE - IR1 - The War They Are Watching` | `IR1 - The War They Are Watching` | Yes |
-| `CE - IR2 - The Coup` | `IR2 - The 1953 Coup` | Yes |
-| `CE - IR3 - The Ally Becomes the Enemy` | `IR3 - Revolution and Hostages` | Yes |
+| `CE - IR1 - The War Now` | `IR1 - The War Now` | Yes |
+| `CE - IR2 - The Road to War` | `IR2 - The Road to War` | Yes |
+| `CE - IR3 - Why the U.S. and Iran Became Enemies` | `IR3 - 1979 and 1953 Origins` | Yes |
 | `CE - IR4 - Why Fight Far From Home?` | `IR4 - Security Strategy` | Yes |
 | `CE - IR5 - The Nuclear Bargain` | `IR5 - The Nuclear Bargain` | Yes |
 | `CE - IR6 - From Shadow War to Open War` | `IR6 - Shadow War to Open War` | Yes |
@@ -42,10 +42,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - IR1 - The War They Are Watching
+## CE - IR1 - The War Now
 
-**Event title:** `CE - IR1 - The War They Are Watching`  
-**Assignment to link:** `IR1 - The War They Are Watching`  
+**Event title:** `CE - IR1 - The War Now`  
+**Assignment to link:** `IR1 - The War Now`  
 **Source:** `scripts/lib/unit-content/iran.js`, Topic 1  
 
 ```html
@@ -56,7 +56,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Establish what is happening now, locate the pressure points, and separate the immediate trigger from the deeper conditions students will test across the unit.</p>
+                <p>Orient students to the current war before asking them to explain it: key people, regional armed partners, Iran and the Strait of Hormuz, then the first half of FRONTLINE’s Remaking the Middle East.</p>
             </td>
         </tr>
         <tr>
@@ -65,9 +65,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can explain how Iran, Israel, U.S. regional positions, and the Strait of Hormuz shape the conflict.</li>
-                    <li>I can separate a verifiable event from a claim about why a government acted.</li>
-                    <li>I can propose a starting explanation and identify what evidence could change it.</li>
+                    <li>I can locate Iran and the Strait of Hormuz and explain why the chokepoint matters.</li>
+                    <li>I can identify the major state leaders and regional armed groups I will encounter in the documentary.</li>
+                    <li>I can name one relationship in the current war that needs a historical explanation.</li>
                 </ol>
             </td>
         </tr>
@@ -77,9 +77,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can connect one location to a specific military, economic, or diplomatic consequence.</li>
-                    <li>I can name one verified fact, one interpretation, and one unanswered historical question.</li>
-                    <li>I can rank up to three possible causes and explain why one currently deserves the most weight.</li>
+                    <li>I can connect the Strait of Hormuz to military or economic leverage.</li>
+                    <li>I can distinguish Iran’s government and military from armed partners such as Hezbollah and the Houthis.</li>
+                    <li>I can leave class with one specific historical question raised by the documentary.</li>
                 </ol>
             </td>
         </tr>
@@ -107,10 +107,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - IR2 - The Coup
+## CE - IR2 - The Road to War
 
-**Event title:** `CE - IR2 - The Coup`  
-**Assignment to link:** `IR2 - The 1953 Coup`  
+**Event title:** `CE - IR2 - The Road to War`  
+**Assignment to link:** `IR2 - The Road to War`  
 **Source:** `scripts/lib/unit-content/iran.js`, Topic 2  
 
 ```html
@@ -121,7 +121,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Examine oil nationalization, the political crisis around Mohammad Mosaddegh, documented U.S. and British covert involvement, and the event's long afterlife in Iranian political memory.</p>
+                <p>Finish FRONTLINE’s current-conflict narrative, treating the documentary as a starting account rather than the final word, then identify the historical question the rest of the unit must answer.</p>
             </td>
         </tr>
         <tr>
@@ -130,9 +130,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can use a declassified record to establish U.S. involvement without claiming the document proves everything about the coup.</li>
-                    <li>I can explain how oil, sovereignty, domestic politics, and Cold War fears interacted.</li>
-                    <li>I can identify a decision that could plausibly have gone another way and explain why that matters.</li>
+                    <li>I can treat a documentary as a sourced interpretation rather than as unquestionable truth.</li>
+                    <li>I can distinguish the 2026 war’s immediate trigger from deeper causes developed over decades.</li>
+                    <li>I can turn something I noticed in the film into a historical question the unit can investigate.</li>
                 </ol>
             </td>
         </tr>
@@ -142,9 +142,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can state one claim the archive supports and one claim it cannot establish by itself.</li>
-                    <li>I can connect the 1953 intervention to later distrust through a clear mechanism rather than calling later conflict inevitable.</li>
-                    <li>I can explain why U.S. Cold War and Iranian sovereignty frames could both persist.</li>
+                    <li>I can name one claim the documentary supports with reporting and one claim I would still want to test.</li>
+                    <li>I can explain why the date fighting began is not automatically the date the conflict began.</li>
+                    <li>I can write a specific backward-looking question that could be answered with historical evidence.</li>
                 </ol>
             </td>
         </tr>
@@ -172,10 +172,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - IR3 - The Ally Becomes the Enemy
+## CE - IR3 - Why the U.S. and Iran Became Enemies
 
-**Event title:** `CE - IR3 - The Ally Becomes the Enemy`  
-**Assignment to link:** `IR3 - Revolution and Hostages`  
+**Event title:** `CE - IR3 - Why the U.S. and Iran Became Enemies`  
+**Assignment to link:** `IR3 - 1979 and 1953 Origins`  
 **Source:** `scripts/lib/unit-content/iran.js`, Topic 3  
 
 ```html
@@ -186,7 +186,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Trace how opposition to the Shah became a broad revolution, how the Islamic Republic emerged, and how the hostage crisis created a powerful American grievance alongside Iran's memory of 1953.</p>
+                <p>Answer the first major question created by FRONTLINE by reversing from the 1979 revolution and hostage crisis to the 1953 overthrow of Mohammad Mosaddegh. Students compare two powerful historical memories without treating either event as destiny.</p>
             </td>
         </tr>
         <tr>
@@ -195,9 +195,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can explain how repression, rapid modernization, inequality, religion, and foreign influence combined in the revolution.</li>
-                    <li>I can distinguish the Iranian grievance associated with 1953 from the American grievance created in 1979.</li>
-                    <li>I can compare 1953 and 1979 using evidence and a causal mechanism.</li>
+                    <li>I can explain how 1979 changed the U.S.-Iran relationship and why 1953 mattered to Iranian revolutionary memory.</li>
+                    <li>I can use a declassified record to establish foreign intervention without claiming one source explains every Iranian action.</li>
+                    <li>I can compare 1953 and 1979 by explaining the different grievances each event created or reinforced.</li>
                 </ol>
             </td>
         </tr>
@@ -207,8 +207,8 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can explain why several groups opposed the Shah without pretending they wanted the same future.</li>
-                    <li>I can use the opening-day hostage-crisis memorandum for what U.S. officials knew without treating it as proof of every participant's motive.</li>
+                    <li>I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.</li>
+                    <li>I can state one claim the historical record supports and one claim it cannot establish by itself.</li>
                     <li>I can use one specific fact from each turning point to defend which changed the relationship more.</li>
                 </ol>
             </td>
@@ -316,7 +316,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Follow Iran's nuclear program from U.S.-Iranian cooperation through the JCPOA, U.S. withdrawal, restored sanctions, reduced compliance, and the return of coercive pressure.</p>
+                <p>Follow Iran’s nuclear program from U.S.-Iranian cooperation through the JCPOA, U.S. withdrawal, restored sanctions, reduced compliance, and the return of coercive pressure.</p>
             </td>
         </tr>
         <tr>
@@ -339,7 +339,7 @@ Every link below points at the live GitHub Pages build:
                 <ol>
                     <li>I can describe the bargain as nuclear restrictions and monitoring in exchange for nuclear-related sanctions relief.</li>
                     <li>I can identify the strongest and weakest arrows in the post-2018 causal chain.</li>
-                    <li>I can argue whether the agreement's collapse made war more likely while acknowledging at least one other cause.</li>
+                    <li>I can argue whether the agreement’s collapse made war more likely while acknowledging at least one other cause.</li>
                 </ol>
             </td>
         </tr>
@@ -446,7 +446,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Connect the Strait of Hormuz's chokepoint geography to the 1980s Tanker War, the measured collapse in 2026 oil flows, and the waterway's military, economic, and diplomatic uses.</p>
+                <p>Connect the Strait of Hormuz’s chokepoint geography to the 1980s Tanker War, the measured collapse in 2026 oil flows, and the waterway’s military, economic, and diplomatic uses.</p>
             </td>
         </tr>
         <tr>
