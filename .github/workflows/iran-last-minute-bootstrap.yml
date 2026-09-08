@@ -171,7 +171,7 @@ jobs:
           if(!s.includes(oldAnchor)) throw new Error('Desk gather anchor not found');
           s=s.replace(oldAnchor,newAnchor);
           const stale=(s.match(/PER_DAY \* EXPECT_DAYS/g)||[]).length;
-          if(stale!==4) throw new Error('Expected four fixed Desk row-count assumptions, found '+stale);
+          if(stale!==6) throw new Error('Expected six fixed Desk row-count assumptions, found '+stale);
           s=s.replace(/PER_DAY \* EXPECT_DAYS/g,'EXPECT_ROWS');
           const oldGrouping=[
             '    const perDayHeads = [];',
