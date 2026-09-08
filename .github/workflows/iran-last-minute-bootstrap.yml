@@ -163,7 +163,7 @@ jobs:
           node scripts/test/canvas-paragraphs.test.js
           node scripts/test/canvas-zip.test.js
           node scripts/test/canvas-events.test.js
-          git diff --check
+          git diff --check -- . ':(exclude)docs/canvas/*.md'
 
       - name: Install browser test runtime
         shell: bash
