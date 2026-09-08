@@ -138,6 +138,59 @@ jobs:
           p.write_text(s)
           PY
 
+      - name: Keep Desk browser contract mode-aware
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const p='scripts/test/desk.test.js';
+          let s=fs.readFileSync(p,'utf8');
+          const oldAnchor='    await page.click(\'button:has-text("Gather My Log")\');\n\n    const status = (await page.textContent(\'#desk-gather-status\') || \'\').trim();';
+          const newAnchor=`    await page.click('button:has-text("Gather My Log")');
+
+    // A News Log can now contain both Full Desk and Lead Mode days. The expected
+    // record count therefore comes from the mode saved with each filed day rather
+    // than assuming every day exposes both lanes.
+    const expectedFiledKeys = [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : []).sort();
+    const expectedRowsPerDay = await page.evaluate(args => args.keys.map(key => {
+      const raw = localStorage.getItem(args.prefix + key);
+      const dayState = raw ? JSON.parse(raw) : {};
+      const lanes = dayState && dayState._mode === 'lead' ? 1 : args.fullLaneCount;
+      return lanes * (1 + args.questionCount);
+    }), {
+      prefix: STORAGE_PREFIX,
+      keys: expectedFiledKeys,
+      fullLaneCount: LANES.length,
+      questionCount: QUESTIONS.length
+    });
+    const EXPECT_ROWS = expectedRowsPerDay.reduce((sum, n) => sum + n, 0);
+
+    const status = (await page.textContent('#desk-gather-status') || '').trim();`;
+          if(!s.includes(oldAnchor)) throw new Error('Desk gather anchor not found');
+          s=s.replace(oldAnchor,newAnchor);
+
+          const stale=(s.match(/PER_DAY \* EXPECT_DAYS/g)||[]).length;
+          if(stale!==4) throw new Error('Expected four fixed Desk row-count assumptions, found '+stale);
+          s=s.replace(/PER_DAY \* EXPECT_DAYS/g,'EXPECT_ROWS');
+
+          const oldGrouping=`    const perDayHeads = [];
+    for (let i = 0; i < shape.heads.length; i += PER_DAY) {
+      perDayHeads.push(shape.heads.slice(i, i + PER_DAY));
+    }`;
+          const newGrouping=`    const perDayHeads = [];
+    let headOffset = 0;
+    expectedRowsPerDay.forEach(rowsForDay => {
+      perDayHeads.push(shape.heads.slice(headOffset, headOffset + rowsForDay));
+      headOffset += rowsForDay;
+    });`;
+          if(!s.includes(oldGrouping)) throw new Error('Desk per-day heading grouping not found');
+          s=s.replace(oldGrouping,newGrouping);
+
+          s=s.replace('`expected=${declaredExpected}, ${EXPECT_DAYS} days x ${PER_DAY}`',
+            '`expected=${declaredExpected}, rows/day ${expectedRowsPerDay.join("/")}`');
+          fs.writeFileSync(p,s);
+          NODE
+
       - name: Rebuild every derived surface
         shell: bash
         run: |
