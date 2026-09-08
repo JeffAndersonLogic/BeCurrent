@@ -3,41 +3,41 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-03',
+  reviewed: '2026-09-08',
   lead: {
-    category: 'U.S. / Constitution',
-    headline: 'Federal judge blocks new effort to limit birthright citizenship',
-    dek: 'A federal judge in Maryland temporarily blocked the latest executive order seeking to restrict birthright citizenship. The judge cited Supreme Court precedent and the 14th Amendment, keeping the new restrictions from taking effect while a class-action lawsuit proceeds.',
+    category: 'World / Iran',
+    headline: 'Economic pressure deepens in Iran as the war disrupts a major port city',
+    dek: 'In Bandar Abbas on the Strait of Hormuz, the U.S. blockade and recent strikes are disrupting shipping, jobs and everyday commerce. The story gives students a civilian-level view of how the Iran war and pressure on a critical global waterway reach beyond the battlefield.',
     source: 'Associated Press',
-    published: 'September 3, 2026',
-    url: 'https://apnews.com/article/69de0a404602a6e648b35f6a852c833d',
+    published: 'September 8, 2026',
+    url: 'https://apnews.com/article/552b1ebe9ae8a9628bad089c9e87493f',
     image: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Capitol_west_side.JPG',
     imageCredit: 'Wikimedia Commons'
   },
   wire: [
     {
-      category: 'Indiana / Economy',
-      headline: 'Childcare aid waitlists leave hundreds of thousands of eligible children waiting, including many in Indiana',
-      source: 'Associated Press',
-      url: 'https://apnews.com/article/2ceccc0e30baf7187857c968e631ba77'
-    },
-    {
       category: 'World / Security',
-      headline: 'Ukraine’s summer drone campaign brings growing disruption inside Russia',
+      headline: 'Houthi attacks ignite fires at Saudi oil facilities and wound dozens',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/2367e71fc35353e92dc4884028ba403b'
+      url: 'https://apnews.com/article/4ad9446f0bb8c096750c84b6e1ba86b8'
     },
     {
-      category: 'Technology / Environment',
-      headline: 'EPA proposal could reduce required public notice for air permits at AI data centers',
+      category: 'Trade / Economy',
+      headline: 'Canada retaliates with tariffs on about $20 billion in U.S. goods',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/947eb927ae81162ad4cc3e828915c804'
+      url: 'https://apnews.com/article/4620ffb5ecc029322217207fa6758431'
     },
     {
-      category: 'World / Climate',
-      headline: 'Pacific island nations push for more funding as climate risks intensify',
+      category: 'Economy / Energy',
+      headline: 'Oil prices climb again as widening Middle East conflict pressures markets',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/01d2818e230cf866382b65c769456bc5'
+      url: 'https://apnews.com/article/d3d6157a534584985987f828a940cffa'
+    },
+    {
+      category: 'U.S. / Education',
+      headline: 'AP finds at least 40 states expect or suggest schools teach about 9/11',
+      source: 'Associated Press',
+      url: 'https://apnews.com/article/5bbe944901f47ae0b87d09ef3300a608'
     }
   ]
 };
