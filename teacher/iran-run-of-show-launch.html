@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Iran at War · Run of Show Launcher | BeCurrent Teacher</title>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#1A1C1D;overflow:hidden}
+iframe{display:block;width:100%;height:100%;border:0;background:#1A1C1D}
+#fallback{position:fixed;inset:auto 1rem 1rem 1rem;z-index:10;display:none;background:#F7F3EC;color:#17191a;border-left:5px solid #B03A2E;border-radius:8px;padding:.8rem 1rem;font:600 14px/1.4 Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+#fallback a{color:#1B3A5C;font-weight:800}
+</style>
+</head>
+<body>
+<div id="fallback" role="status">The requested class day could not be selected automatically. <a href="iran-run-of-show.html">Open the Iran Run of Show directly.</a></div>
+<iframe id="ros" src="iran-run-of-show.html" title="Iran at War teacher Run of Show"></iframe>
+<script>
+(function(){
+  'use strict';
+  var params=new URLSearchParams(window.location.search);
+  var requested=parseInt(params.get('day')||'1',10);
+  if(!Number.isInteger(requested)||requested<1||requested>8)requested=1;
+  var openMustHaves=params.get('view')==='musthaves';
+  var frame=document.getElementById('ros');
+  var fallback=document.getElementById('fallback');
+
+  function selectRequestedDay(){
+    try{
+      var doc=frame.contentDocument;
+      if(!doc)throw new Error('No frame document');
+      var days=doc.querySelectorAll('#days button');
+      if(days.length<requested)throw new Error('Requested day not available');
+      days[requested-1].click();
+      if(openMustHaves){
+        var must=doc.querySelector('#phases button.musthaves');
+        if(must)must.click();
+      }
+      document.title='Iran at War · Day '+requested+' Run of Show | BeCurrent Teacher';
+    }catch(err){
+      fallback.style.display='block';
+    }
+  }
+
+  frame.addEventListener('load',function(){
+    window.setTimeout(selectRequestedDay,0);
+  });
+})();
+</script>
+</body>
+</html>
