@@ -31,6 +31,15 @@ jobs:
         with:
           node-version: '22'
 
+      # announcements-schedule.js is the authored source and a separate verified
+      # workflow commits announcements.js immediately after main changes. Build
+      # the generated board in this main-push workspace first so validation does
+      # not fail during that few-second handoff. Pull requests remain strict and
+      # still fail when their committed generated file drifts from the source.
+      - name: Build announcements for main validation
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: node scripts/build-announcements.js
+
       - name: Structure, capture wiring, reproducibility, Canvas round trip
         run: node scripts/run-tests.js offline
 
