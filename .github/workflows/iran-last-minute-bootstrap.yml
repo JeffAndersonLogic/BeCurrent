@@ -96,7 +96,17 @@ jobs:
         run: node scripts/validate.js
 
       - name: Validate revised Iran contract
-        run: node scripts/test/iran-unit.test.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -n -E 'proxy-language|study guide|studyGuide|proxy language|proxy' scripts/test/iran-unit.test.js || true
+          node - <<'NODE'
+          const fs=require('fs');
+          const s=fs.readFileSync('iran/study-guide.html','utf8');
+          console.log('study-guide ir-time count:',(s.match(/class="ir-time"/g)||[]).length);
+          console.log('study-guide ir-scan-card count:',(s.match(/class="ir-scan-card"/g)||[]).length);
+          NODE
+          node scripts/test/iran-unit.test.js
 
       - name: Validate remaining offline contracts
         shell: bash
