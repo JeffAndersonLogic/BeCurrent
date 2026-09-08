@@ -30,6 +30,42 @@ jobs:
           echo '5693004296e7f0040d5a85807c8d40ee0ec9722cd1016a3e9e7fa83c30cb5e4f  /tmp/iran-revision.tar.gz' | sha256sum -c -
           tar -xzf /tmp/iran-revision.tar.gz
 
+      - name: Restore eight-stop Reverse History journey
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('iran/index.html')
+          s = p.read_text()
+          if 'class="ir-stop"' in s:
+              raise SystemExit('Iran landing page already contains an ir-stop journey; refusing to duplicate it')
+
+          rail = '''
+<section class="ir-section" id="journey" aria-labelledby="journey-title">
+  <div class="ir-head"><div class="ir-kicker">The Reverse History route</div><div><h2 id="journey-title">Start with the war. Then keep asking what made the next step possible.</h2><p>You are not memorizing eight isolated topics. Each stop adds a piece of the causal chain you will weigh on the final day.</p></div></div>
+  <div class="ir-rail" aria-label="Iran at War Reverse History topic sequence">
+    <a class="ir-stop active" href="index.html"><div class="year">2026</div><strong>1 · The War Now</strong><span>Who is fighting, where is the pressure, and what still needs explaining?</span></a>
+    <a class="ir-stop" href="topic-02-1953.html"><div class="year">NOW ←</div><strong>2 · The Road to War</strong><span>What does FRONTLINE explain—and what historical questions remain?</span></a>
+    <a class="ir-stop" href="topic-03-1979.html"><div class="year">1979 ← 1953</div><strong>3 · Origins of Distrust</strong><span>Which transformed U.S.-Iran relations more: revolution or intervention?</span></a>
+    <a class="ir-stop" href="topic-04-security.html"><div class="year">1980–88</div><strong>4 · Security Strategy</strong><span>How did invasion and vulnerability shape deterrence and regional partnerships?</span></a>
+    <a class="ir-stop" href="topic-05-nuclear.html"><div class="year">2015 → 2018</div><strong>5 · The Nuclear Bargain</strong><span>Why did a negotiated limit form, and what changed when the bargain broke?</span></a>
+    <a class="ir-stop" href="topic-06-escalation.html"><div class="year">2024–26</div><strong>6 · Open Escalation</strong><span>When did shadow conflict become direct state-to-state war?</span></a>
+    <a class="ir-stop" href="topic-07-hormuz.html"><div class="year">HORMUZ</div><strong>7 · Geographic Leverage</strong><span>How does one narrow waterway turn geography into military and economic power?</span></a>
+    <a class="ir-stop" href="topic-08-synthesis.html"><div class="year">WHY?</div><strong>8 · Decide</strong><span>When did this war really begin—and which turning point deserves the most weight?</span></a>
+  </div>
+</section>
+'''
+
+          pattern = re.compile(r'(</div>\s*</main>)', re.I)
+          match = pattern.search(s)
+          if not match:
+              raise SystemExit('could not locate Iran landing-page shell close before </main>')
+          s = s[:match.start()] + rail + s[match.start():]
+          p.write_text(s)
+          PY
+
       - name: Keep Canvas identifiers aligned
         shell: bash
         run: |
