@@ -1,0 +1,54 @@
+name: Sync generated announcements
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/data/announcements-schedule.js'
+      - 'scripts/build-announcements.js'
+      - 'scripts/lib/unit-content/**'
+      - 'scripts/lib/week-content/**'
+      - 'scripts/lib/desk-content.js'
+      - '.github/workflows/announcements-sync.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: becurrent-announcements-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build announcements
+        run: node scripts/build-announcements.js
+
+      - name: Verify generated board
+        run: node scripts/build-announcements.js --check
+
+      - name: Commit generated file when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- assets/data/announcements.js; then
+            echo "Announcements already in sync."
+            exit 0
+          fi
+          git config user.name "BeCurrent Announcements Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/data/announcements.js
+          git commit -m "Sync generated announcements"
+          git push origin HEAD:main
