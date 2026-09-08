@@ -1,0 +1,68 @@
+name: Daily News Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron is UTC. Running both times handles Indianapolis DST/standard time.
+    # The timezone gate below allows only the 6:15 a.m. local run to continue.
+    - cron: '15 10 * * 1-5'
+    - cron: '15 11 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: becurrent-daily-news-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Indianapolis time
+        id: localtime
+        shell: bash
+        run: |
+          LOCAL_HOUR=$(TZ=America/Indiana/Indianapolis date +%H)
+          echo "hour=$LOCAL_HOUR" >> "$GITHUB_OUTPUT"
+          echo "Indianapolis hour: $LOCAL_HOUR"
+
+      - name: Checkout main
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+        run: npm ci
+
+      - name: Refresh approved-source headlines
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+        run: node scripts/refresh-daily-news.js
+
+      - name: Validate BeCurrent
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+        run: npm test
+
+      - name: Commit refreshed headlines to main
+        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+        shell: bash
+        run: |
+          if git diff --quiet -- assets/data/daily-news.js; then
+            echo "No headline changes to commit."
+            exit 0
+          fi
+          git config user.name "BeCurrent News Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/data/daily-news.js
+          git commit -m "Refresh BeCurrent daily headlines"
+          git push origin HEAD:main
