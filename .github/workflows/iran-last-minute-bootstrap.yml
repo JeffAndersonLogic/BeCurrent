@@ -63,7 +63,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          npm ci
+          npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
 
       - name: Validate structure and browser behavior
@@ -72,7 +72,7 @@ jobs:
           set -euo pipefail
           node scripts/run-tests.js offline
           node scripts/run-tests.js browser --strict
-          PW_CHROME="$(node -e "console.log(require('playwright-core').chromium.executablePath())")" node scripts/test/iran-topic1.test.js
+          node scripts/test/iran-topic1.test.js
           git diff --check
 
       - name: Publish coherent revision to main
