@@ -63,6 +63,62 @@ jobs:
           p.write_text(s)
           PY
 
+      - name: Align proxy language and synthesis guide
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const unit=require('./scripts/lib/unit-content/iran');
+          const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+          let intro=fs.readFileSync('iran/index.html','utf8');
+          if(!/proxy ≠ puppet|proxy.*puppet|support.*control every/i.test(intro)){
+            const box=[
+              '<section class="ir-section" id="proxy-language" aria-labelledby="proxy-language-title">',
+              '  <div class="ir-head"><div class="ir-kicker">Language matters</div><div><h2 id="proxy-language-title">Proxy ≠ puppet.</h2><p>Iran can provide weapons, money, training, intelligence, or political support to an armed group without controlling every decision that group makes. In this unit, <strong>Iran-backed</strong>, <strong>Iran-aligned</strong>, and <strong>armed partner</strong> are often more precise than assuming direct command.</p></div></div>',
+              '  <div class="ir-paper"><p><strong>Use the evidence, not the label:</strong> ask what support is documented, what interests the group has of its own, and how much operational control Iran can actually be shown to exercise.</p></div>',
+              '</section>',
+              ''
+            ].join('\n');
+            const marker='<section class="ir-section" id="journey"';
+            if(!intro.includes(marker)) throw new Error('journey marker missing while inserting proxy-language guidance');
+            intro=intro.replace(marker,box+marker);
+            fs.writeFileSync('iran/index.html',intro);
+          }
+
+          let guide=fs.readFileSync('iran/study-guide.html','utf8');
+          const cards=unit.topics.map((t,i)=>{
+            const prompt=(t.questions||[]).length?t.questions[t.questions.length-1].text:t.overview;
+            return '<article class="ir-scan-card"><div class="big">'+String(i+1).padStart(2,'0')+'</div><h3>'+esc(t.title)+'</h3><p>'+esc(prompt)+'</p></article>';
+          }).join('');
+          const qSection=[
+            '<section class="ir-section" id="questions">',
+            '  <div class="ir-head"><div class="ir-kicker">Eight checks</div><div><h2>If you can answer these without the site open, you understand the unit.</h2><p>Each card comes directly from the current eight-day investigation. Focus on causation: event → change → consequence.</p></div></div>',
+            '  <div class="ir-grid-2">'+cards+'</div>',
+            '</section>',
+            ''
+          ].join('\n');
+          const qRe=/<section class="ir-section" id="questions">[\s\S]*?(?=<section class="ir-section" id="final">)/;
+          if(!qRe.test(guide)) throw new Error('study-guide questions section not found');
+          guide=guide.replace(qRe,qSection);
+
+          const finalTopic=unit.topics[unit.topics.length-1];
+          const finalCriterionCore=finalTopic.successCriteria[0].criteria.replace(/^I can /,'');
+          const finalMarker='<section class="ir-section" id="final">';
+          if(!guide.includes(finalMarker)) throw new Error('study-guide final section not found');
+          if(!guide.includes(unit.meta.terminalQuestion)||!guide.toLowerCase().includes(finalCriterionCore.toLowerCase())){
+            const canon=[
+              '<div class="ir-paper" style="margin-bottom:16px">',
+              '  <div class="ir-kicker red">Canonical synthesis</div>',
+              '  <h3>'+esc(unit.meta.terminalQuestion)+'</h3>',
+              '  <p>Your final response succeeds when you '+esc(finalCriterionCore)+'.</p>',
+              '</div>'
+            ].join('\n');
+            guide=guide.replace(finalMarker,finalMarker+'\n'+canon);
+          }
+          fs.writeFileSync('iran/study-guide.html',guide);
+          NODE
+
       - name: Keep Canvas identifiers aligned
         shell: bash
         run: |
@@ -96,17 +152,7 @@ jobs:
         run: node scripts/validate.js
 
       - name: Validate revised Iran contract
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -n -E 'proxy-language|study guide|studyGuide|proxy language|proxy' scripts/test/iran-unit.test.js || true
-          node - <<'NODE'
-          const fs=require('fs');
-          const s=fs.readFileSync('iran/study-guide.html','utf8');
-          console.log('study-guide ir-time count:',(s.match(/class="ir-time"/g)||[]).length);
-          console.log('study-guide ir-scan-card count:',(s.match(/class="ir-scan-card"/g)||[]).length);
-          NODE
-          node scripts/test/iran-unit.test.js
+        run: node scripts/test/iran-unit.test.js
 
       - name: Validate remaining offline contracts
         shell: bash
