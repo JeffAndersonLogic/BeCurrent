@@ -59,6 +59,23 @@ jobs:
           npm run build:canvas
           node scripts/check-iran-videos.js
 
+      - name: Validate global structure
+        run: node scripts/validate.js
+
+      - name: Validate revised Iran contract
+        run: node scripts/test/iran-unit.test.js
+
+      - name: Validate remaining offline contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/test/weeks-reproducible.test.js
+          node scripts/test/video-block.test.js
+          node scripts/test/canvas-paragraphs.test.js
+          node scripts/test/canvas-zip.test.js
+          node scripts/test/canvas-events.test.js
+          git diff --check
+
       - name: Install browser test runtime
         shell: bash
         run: |
@@ -66,14 +83,11 @@ jobs:
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
 
-      - name: Validate structure and browser behavior
-        shell: bash
-        run: |
-          set -euo pipefail
-          node scripts/run-tests.js offline
-          node scripts/run-tests.js browser --strict
-          node scripts/test/iran-topic1.test.js
-          git diff --check
+      - name: Validate browser contracts
+        run: node scripts/run-tests.js browser --strict
+
+      - name: Validate Iran Topic 1 on Chromium
+        run: node scripts/test/iran-topic1.test.js
 
       - name: Publish coherent revision to main
         shell: bash
