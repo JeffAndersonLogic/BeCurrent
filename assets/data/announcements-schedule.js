@@ -34,33 +34,54 @@ window.BECURRENT_SCHEDULE={
    note:'Reverse History begins: 2026 → 1979 → 1953. Two turning points, two national memories, one comparison.',
    doNow:'From FRONTLINE: why do Iran and the United States appear to distrust each other so deeply?',
    agenda:['Reverse to 1979: revolution, the Shah, Khomeini, and the hostage crisis.','Reverse again to 1953: Mosaddegh, oil nationalization, and U.S.-British covert intervention.','Test what the declassified record proves—and what it does not.','Compare the two historical memories.','Claim: which transformed U.S.-Iran relations more, 1953 or 1979?'],
-   homework:'Finish Topic 3 filings and submit the gathered Topic 3 record in Canvas.',homeworkDue:'the start of next class'},
+   homework:'Finish all five Topic 3 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 3 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-16',topic:'IR4',topicTitle:'Iran at War | Why Fight Far From Home?',
    note:'Today connects the Iran-Iraq War to deterrence, the IRGC, missiles, and Iran’s regional armed network.',
+   doNow:'If Iran had survived an eight-year invasion, what security lesson might its leaders carry forward?',
    agenda:['1980: Iraq invades revolutionary Iran.','Build the vulnerability → deterrence mechanism.','IRGC and Quds Force: institutions of asymmetric strategy.','Test the word “proxy” against real differences among armed partners.','Claim: deterrence, power projection, or both?'],
-   homework:'Finish Topic 4 filings and submit them in Canvas.',homeworkDue:'the start of next class'},
+   homework:'Finish all five Topic 4 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 4 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-18',topic:'IR5',topicTitle:'Iran at War | The Nuclear Bargain',
    note:'Follow the nuclear story from U.S.-Iranian cooperation to the JCPOA, withdrawal, sanctions, and renewed pressure.',
+   doNow:'Why might it matter that the United States once helped Iran build a civilian nuclear program?',
    agenda:['Start with the surprise: the United States once helped Iran build a civilian nuclear program.','Break down the JCPOA bargain and verification system.','Trace the post-2018 causal chain.','Policy tradeoff: imperfect agreement vs. abandoning verified limits.','Claim: did the deal’s collapse make war substantially more likely?'],
-   homework:'Finish Topic 5 filings and submit them in Canvas.',homeworkDue:'the start of next class'},
+   homework:'Finish all five Topic 5 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 5 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-22',topic:'IR6',topicTitle:'Iran at War | From Shadow War to Open War',
    note:'Today is about thresholds: when did direct state-to-state attack become an available option?',
+   doNow:'Why might two rivals prefer a shadow war to direct war?',
    agenda:['Define shadow war and why rivals may prefer it.','2024: direct Iran-Israel attacks cross a threshold.','2025–26: compare size, precedent, retaliation, and path dependence.','Perspective check: deterrence as restraint vs. escalation ladder.','Choose the turning point when full-scale war became substantially more likely.'],
-   homework:'Finish Topic 6 filings and submit them in Canvas.',homeworkDue:'the start of next class'},
+   homework:'Finish all five Topic 6 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 6 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-24',topic:'IR7',topicTitle:'Iran at War | The Hormuz Lever',
    note:'Return to the map from Day 1. Now explain how geography becomes military, economic, and diplomatic leverage.',
+   doNow:'How can a narrow waterway create power for a country that does not have the world’s strongest navy?',
    agenda:['Map the chokepoint mechanism.','Compare the 1980s Tanker War with 2026.','Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.','Separate what the data proves from what it cannot prove.','Rank Hormuz as military, economic, or diplomatic leverage.'],
-   homework:'Finish Topic 7 filings and submit them in Canvas.',homeworkDue:'the start of next class'},
+   homework:'Finish all five Topic 7 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 7 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-28',topic:'IR8',topicTitle:'Iran at War | When Did This War Really Begin?',
    note:'Synthesis day. The literal start is Feb. 28, 2026; your job is to defend the explanatory beginning.',
+   doNow:'Without notes, name three turning points from the unit that could plausibly be called the beginning of the war.',
    agenda:['Rebuild the causal chain from the current war backward.','Rank the three turning points that do the most explanatory work.','Write the strongest counterargument to your #1 choice.','Define exactly what your chosen “beginning” explains.','Complete and submit the final causation argument.'],
-   homework:'Finish the final causation argument and submit it in Canvas.',homeworkDue:'the start of next class'}
+   homework:'Finish all five Topic 8 filings and the final causation argument. Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the final Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
+
+  {date:'2026-09-30',topicTitle:'Iran at War | Study Guide Work Day',
+   note:'No new content today. Use the study guide to identify what you know, what you need to review, and which causal connections still need work before Friday’s exam.',
+   doNow:'Without opening the unit, write the major Iran topics or turning points you remember. Then check yourself against the study guide.',
+   agenda:['Open the Iran at War Study Guide.','Review the eight unit topics and the major people, places, agreements, and turning points.','Work through the study guide independently, then verify weak spots with the BeCurrent lesson pages.','Pay special attention to causal chains, source limits, comparisons, and the final question: when did this war really begin?','Use remaining time to ask targeted questions and finish your study guide.'],
+   learningTargets:['Review the major people, places, agreements, and turning points from the Iran at War unit.','Connect individual events into causal chains rather than memorizing isolated dates.','Identify which evidence best supports competing explanations for when the war really began.'],
+   successCriteria:['I can explain each major unit stop in one or two sentences without reading the lesson page.','I can connect at least three turning points through cause and effect.','I can identify what I still need to study before Friday’s exam.'],
+   homework:'Finish the Iran at War Study Guide and prepare for the unit exam on Friday, October 2.'},
+
+  {date:'2026-10-02',topicTitle:'Iran at War | Unit Exam',
+   note:'Today is the Iran at War Unit Exam. Show that you can explain the conflict using evidence, chronology, sourcing, and causation—not just recall isolated facts.',
+   doNow:'Get settled, open Canvas only when instructed, and make sure you are ready to begin the Iran at War Unit Exam.',
+   agenda:['Complete the Iran at War Unit Exam.','Use the full class period as needed.','Submit your exam in Canvas before leaving.'],
+   learningTargets:['Demonstrate understanding of the major events and turning points in the Iran at War unit.','Use evidence and causal reasoning to explain how earlier events shaped the 2026 conflict.','Distinguish chronology, causation, perspective, and source limits when analyzing the conflict.'],
+   successCriteria:['I can answer questions using specific evidence from across the unit.','I can distinguish a turning point from an event that merely happened earlier or later.','I can explain causal relationships without treating any single event as inevitable destiny.'],
+   homework:'No additional homework.'}
  ],
- assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'}],reminders:[]
+ assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[]
 };
 if(typeof document!=='undefined'&&/(?:^|\/)announcements\.html$/.test(location.pathname)){var deskModePatch=document.createElement('script');deskModePatch.src='assets/js/announcements-desk-mode.js?v=20260903-hourly';document.head.appendChild(deskModePatch);}
