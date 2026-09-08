@@ -70,7 +70,6 @@ jobs:
           const fs=require('fs');
           const unit=require('./scripts/lib/unit-content/iran');
           const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-
           let intro=fs.readFileSync('iran/index.html','utf8');
           if(!/proxy ≠ puppet|proxy.*puppet|support.*control every/i.test(intro)){
             const box=[
@@ -85,7 +84,6 @@ jobs:
             intro=intro.replace(marker,box+marker);
             fs.writeFileSync('iran/index.html',intro);
           }
-
           let guide=fs.readFileSync('iran/study-guide.html','utf8');
           const cards=unit.topics.map((t,i)=>{
             const prompt=(t.questions||[]).length?t.questions[t.questions.length-1].text:t.overview;
@@ -101,7 +99,6 @@ jobs:
           const qRe=/<section class="ir-section" id="questions">[\s\S]*?(?=<section class="ir-section" id="final">)/;
           if(!qRe.test(guide)) throw new Error('study-guide questions section not found');
           guide=guide.replace(qRe,qSection);
-
           const finalTopic=unit.topics[unit.topics.length-1];
           const finalCriterionCore=finalTopic.successCriteria[0].criteria.replace(/^I can /,'');
           const finalMarker='<section class="ir-section" id="final">';
@@ -145,49 +142,57 @@ jobs:
           const fs=require('fs');
           const p='scripts/test/desk.test.js';
           let s=fs.readFileSync(p,'utf8');
-          const oldAnchor='    await page.click(\'button:has-text("Gather My Log")\');\n\n    const status = (await page.textContent(\'#desk-gather-status\') || \'\').trim();';
-          const newAnchor=`    await page.click('button:has-text("Gather My Log")');
-
-    // A News Log can now contain both Full Desk and Lead Mode days. The expected
-    // record count therefore comes from the mode saved with each filed day rather
-    // than assuming every day exposes both lanes.
-    const expectedFiledKeys = [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : []).sort();
-    const expectedRowsPerDay = await page.evaluate(args => args.keys.map(key => {
-      const raw = localStorage.getItem(args.prefix + key);
-      const dayState = raw ? JSON.parse(raw) : {};
-      const lanes = dayState && dayState._mode === 'lead' ? 1 : args.fullLaneCount;
-      return lanes * (1 + args.questionCount);
-    }), {
-      prefix: STORAGE_PREFIX,
-      keys: expectedFiledKeys,
-      fullLaneCount: LANES.length,
-      questionCount: QUESTIONS.length
-    });
-    const EXPECT_ROWS = expectedRowsPerDay.reduce((sum, n) => sum + n, 0);
-
-    const status = (await page.textContent('#desk-gather-status') || '').trim();`;
+          const oldAnchor=[
+            '    await page.click(\'button:has-text("Gather My Log")\');',
+            '',
+            '    const status = (await page.textContent(\'#desk-gather-status\') || \'\').trim();'
+          ].join('\n');
+          const newAnchor=[
+            '    await page.click(\'button:has-text("Gather My Log")\');',
+            '',
+            '    // A News Log can contain both Full Desk and Lead Mode days. Compute',
+            '    // the expected record count from the mode saved with each filed day.',
+            '    const expectedFiledKeys = [SEED_A, SEED_B].concat(TODAY_IN_CYCLE ? [TODAY] : []).sort();',
+            '    const expectedRowsPerDay = await page.evaluate(args => args.keys.map(key => {',
+            '      const raw = localStorage.getItem(args.prefix + key);',
+            '      const dayState = raw ? JSON.parse(raw) : {};',
+            '      const lanes = dayState && dayState._mode === \'lead\' ? 1 : args.fullLaneCount;',
+            '      return lanes * (1 + args.questionCount);',
+            '    }), {',
+            '      prefix: STORAGE_PREFIX,',
+            '      keys: expectedFiledKeys,',
+            '      fullLaneCount: LANES.length,',
+            '      questionCount: QUESTIONS.length',
+            '    });',
+            '    const EXPECT_ROWS = expectedRowsPerDay.reduce((sum, n) => sum + n, 0);',
+            '',
+            '    const status = (await page.textContent(\'#desk-gather-status\') || \'\').trim();'
+          ].join('\n');
           if(!s.includes(oldAnchor)) throw new Error('Desk gather anchor not found');
           s=s.replace(oldAnchor,newAnchor);
-
           const stale=(s.match(/PER_DAY \* EXPECT_DAYS/g)||[]).length;
           if(stale!==4) throw new Error('Expected four fixed Desk row-count assumptions, found '+stale);
           s=s.replace(/PER_DAY \* EXPECT_DAYS/g,'EXPECT_ROWS');
-
-          const oldGrouping=`    const perDayHeads = [];
-    for (let i = 0; i < shape.heads.length; i += PER_DAY) {
-      perDayHeads.push(shape.heads.slice(i, i + PER_DAY));
-    }`;
-          const newGrouping=`    const perDayHeads = [];
-    let headOffset = 0;
-    expectedRowsPerDay.forEach(rowsForDay => {
-      perDayHeads.push(shape.heads.slice(headOffset, headOffset + rowsForDay));
-      headOffset += rowsForDay;
-    });`;
+          const oldGrouping=[
+            '    const perDayHeads = [];',
+            '    for (let i = 0; i < shape.heads.length; i += PER_DAY) {',
+            '      perDayHeads.push(shape.heads.slice(i, i + PER_DAY));',
+            '    }'
+          ].join('\n');
+          const newGrouping=[
+            '    const perDayHeads = [];',
+            '    let headOffset = 0;',
+            '    expectedRowsPerDay.forEach(rowsForDay => {',
+            '      perDayHeads.push(shape.heads.slice(headOffset, headOffset + rowsForDay));',
+            '      headOffset += rowsForDay;',
+            '    });'
+          ].join('\n');
           if(!s.includes(oldGrouping)) throw new Error('Desk per-day heading grouping not found');
           s=s.replace(oldGrouping,newGrouping);
-
-          s=s.replace('`expected=${declaredExpected}, ${EXPECT_DAYS} days x ${PER_DAY}`',
-            '`expected=${declaredExpected}, rows/day ${expectedRowsPerDay.join("/")}`');
+          const oldDetail='`expected=${declaredExpected}, ${EXPECT_DAYS} days x ${PER_DAY}`';
+          const newDetail='`expected=${declaredExpected}, rows/day ${expectedRowsPerDay.join("/")}`';
+          if(!s.includes(oldDetail)) throw new Error('Desk expected-count detail not found');
+          s=s.replace(oldDetail,newDetail);
           fs.writeFileSync(p,s);
           NODE
 
