@@ -25,7 +25,7 @@ function serve(){return new Promise(resolve=>{const server=http.createServer((re
    check('Topic 1 declares one student filing group',await page.locator('[data-group]').count()===1,`${await page.locator('[data-group]').count()} group`);
    check('four current decision-maker portraits render in the orientation board',await page.locator('.ir-person').count()===4,`${await page.locator('.ir-person').count()} people`);
    check('regional armed-partner orientation renders four group cards',await page.locator('.ir-network-card').count()===4,`${await page.locator('.ir-network-card').count()} groups`);
-   check('high-resolution Hormuz map is present',await page.locator('#map img').count()===1&&(await page.locator('#map img').getAttribute('src')).includes('Strait_of_Hormuz'));
+   check('high-resolution Hormuz map is present',await page.locator('#map img[src*="Strait_of_Hormuz"]').count()===1);
    check('FRONTLINE is the only watch card',await page.locator('.ir-watch').count()===1,`${await page.locator('.ir-watch').count()} card`);
    const card=page.locator('.ir-watch').first();
    check('FRONTLINE card is REQUIRED',(await card.locator('.ir-watch-status').innerText()).trim()==='REQUIRED');
