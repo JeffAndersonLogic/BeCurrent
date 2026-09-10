@@ -3,41 +3,45 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-08',
+  reviewed: '2026-09-10',
   lead: {
-    category: 'World / Iran',
-    headline: 'Economic pressure deepens in Iran as the war disrupts a major port city',
-    dek: 'In Bandar Abbas on the Strait of Hormuz, the U.S. blockade and recent strikes are disrupting shipping, jobs and everyday commerce. The story gives students a civilian-level view of how the Iran war and pressure on a critical global waterway reach beyond the battlefield.',
+    category: 'Economy / Energy',
+    headline: 'Oil prices top $100 again as the Iran war strains global supplies',
+    dek: 'Crude prices climbed sharply as conflict around Iran continued to disrupt shipping through the Strait of Hormuz. The story connects a distant war to inflation, gasoline prices, financial markets and decisions by central banks.',
     source: 'Associated Press',
-    published: 'September 8, 2026',
-    url: 'https://apnews.com/article/552b1ebe9ae8a9628bad089c9e87493f',
-    image: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Capitol_west_side.JPG',
-    imageCredit: 'Wikimedia Commons'
+    published: 'September 10, 2026',
+    url: 'https://apnews.com/article/7fbc77061abd778608068d3beb1bbbaf',
+    image: '',
+    imageCredit: ''
   },
   wire: [
     {
-      category: 'World / Security',
-      headline: 'Houthi attacks ignite fires at Saudi oil facilities and wound dozens',
+      category: 'U.S. / Democracy',
+      headline: 'Supreme Court rejects another effort to use a new Missouri congressional map',
+      dek: 'The ruling keeps an older map in place as a fight over district lines, election rules and control of the House continues ahead of the midterms.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/4ad9446f0bb8c096750c84b6e1ba86b8'
+      url: 'https://apnews.com/article/c505162fe7880f60eb4dd587bc51d313'
     },
     {
-      category: 'Trade / Economy',
-      headline: 'Canada retaliates with tariffs on about $20 billion in U.S. goods',
+      category: 'World / Ukraine',
+      headline: 'Zelenskyy visits Canada seeking more military support for Ukraine',
+      dek: 'Ukraine is asking allies for help defending its airspace and energy system as Russian drone and missile attacks intensify before winter.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/4620ffb5ecc029322217207fa6758431'
+      url: 'https://apnews.com/article/2a74de6552061bda57a1c5aa4464db52'
     },
     {
-      category: 'Economy / Energy',
-      headline: 'Oil prices climb again as widening Middle East conflict pressures markets',
+      category: 'Climate / Asia',
+      headline: 'Japan sends forces to Indonesia as Borneo wildfires spread toxic haze',
+      dek: 'The disaster has crossed borders through smoke and school disruptions, showing how climate, public health and international cooperation can collide in one event.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/d3d6157a534584985987f828a940cffa'
+      url: 'https://apnews.com/article/4e422e76372f15bbf6d6e09265d1f39c'
     },
     {
-      category: 'U.S. / Education',
-      headline: 'AP finds at least 40 states expect or suggest schools teach about 9/11',
+      category: 'World / Economy',
+      headline: 'European Central Bank raises interest rates as energy costs drive inflation',
+      dek: 'European policymakers raised borrowing costs as expensive oil from the Middle East conflict pushed inflation above the bank\'s target.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/5bbe944901f47ae0b87d09ef3300a608'
+      url: 'https://apnews.com/article/de62b59fba535fccaf6f75e52d037c63'
     }
   ]
 };
