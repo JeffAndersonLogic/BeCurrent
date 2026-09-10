@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Run of Show | Teacher | BeCurrent</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/becurrent-brand.css">
+  <style>
+    :root{
+      --steel:#1A1C1D;--steel-mid:#22262B;--steel-light:#2C3138;
+      --ink:#1B3A5C;--ink-light:#3a6fa8;--red:#B03A2E;
+      --cream:#EDE8DC;--cream-dim:#C8C2B2;--iron:#5A5F5C;
+      --line:rgba(237,232,220,.14);--good:#7f9f86;--warn:#c59a58;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--steel);color:var(--cream);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+    a{color:inherit}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:#111;padding:10px}
+    .topbar{background:#111416;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+    .topbar-inner{max-width:1480px;margin:auto;padding:13px 28px;display:flex;gap:22px;align-items:center}
+    .brand{display:flex;align-items:center;text-decoration:none;min-width:150px}.brand img{width:148px;max-height:42px}
+    .crumb{font:600 11px/1.3 "Courier New",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim)}
+    .crumb strong{color:var(--cream)}
+    .home-link{margin-left:auto;font:700 11px "Courier New",monospace;text-decoration:none;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--line);padding:9px 12px}
+    .hero{border-bottom:1px solid var(--line);background:linear-gradient(120deg,#1a1c1d 0%,#22262b 58%,#1b3a5c 140%)}
+    .hero-inner{max-width:1480px;margin:auto;padding:54px 28px 42px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.7fr);gap:48px}
+    .eyebrow,.label{font:700 11px/1.2 "Courier New",monospace;letter-spacing:.14em;text-transform:uppercase;color:#d8a39d}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;margin:0}
+    h1{font-size:clamp(42px,6vw,78px);line-height:.95;letter-spacing:-.035em;margin-top:10px}
+    .dek{font-size:19px;color:var(--cream-dim);max-width:760px;margin:22px 0 0}
+    .hero-note{border-left:4px solid var(--red);background:rgba(0,0,0,.18);padding:20px 22px;align-self:end}
+    .hero-note strong{display:block;font-size:18px;margin:7px 0}.hero-note p{margin:0;color:var(--cream-dim);font-size:14px}
+    .shell{max-width:1480px;margin:auto;padding:30px 28px 72px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:34px}
+    .rail{position:sticky;top:82px;align-self:start;border:1px solid var(--line);background:var(--steel-mid)}
+    .rail-head{padding:15px 16px;border-bottom:1px solid var(--line)}
+    .rail a{display:block;padding:13px 16px;border-bottom:1px solid var(--line);text-decoration:none;font:700 12px/1.3 "Courier New",monospace;color:var(--cream-dim)}
+    .rail a:hover{background:var(--steel-light);color:var(--cream)}
+    .rail .active{color:var(--cream);border-left:3px solid var(--red)}
+    .content{min-width:0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin:5px 0 18px}
+    .section-head h2{font-size:32px;line-height:1}.section-head p{margin:0;color:var(--cream-dim);font-size:14px;max-width:620px}
+    .status-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+    .chip{font:700 10px "Courier New",monospace;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:6px 8px;color:var(--cream-dim)}
+    .chip.live{border-color:rgba(127,159,134,.65);color:#b9d2bf}.chip.build{border-color:rgba(197,154,88,.7);color:#e0bc83}
+    .unit{border-top:4px solid var(--ink-light);margin-bottom:48px}
+    .unit-title{display:grid;grid-template-columns:1fr auto;gap:20px;padding:19px 0 17px;border-bottom:1px solid var(--line);align-items:end}
+    .unit-title h3{font-size:27px}.unit-title .dates{font:700 11px "Courier New",monospace;color:var(--cream-dim);text-transform:uppercase;letter-spacing:.08em}
+    .ros-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:16px}
+    .day{background:var(--steel-mid);border:1px solid var(--line);display:grid;grid-template-columns:82px 1fr;min-height:188px;overflow:hidden}
+    .day-no{background:#17191b;border-right:1px solid var(--line);padding:18px 12px;text-align:center}
+    .day-no .num{font:bold 34px/1 "Courier New",monospace;color:var(--cream)}
+    .day-no .word{font:700 9px "Courier New",monospace;color:var(--cream-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+    .day-body{padding:17px 18px 16px;display:flex;flex-direction:column}
+    .day-body h4{font-size:21px;line-height:1.08;margin:6px 0 8px}.day-body p{font-size:13px;color:var(--cream-dim);margin:0 0 12px}
+    .focus{font:700 10px/1.4 "Courier New",monospace;text-transform:uppercase;letter-spacing:.08em;color:#c7d6e6;margin-top:auto}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+    .btn{font:700 10px "Courier New",monospace;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;padding:8px 10px;border:1px solid rgba(58,111,168,.85);background:rgba(27,58,92,.35)}
+    .btn:hover{background:var(--ink)}
+    .btn.secondary{border-color:var(--line);background:transparent;color:var(--cream-dim)}
+    .btn.disabled{pointer-events:none;opacity:.45}
+    .teacher-rule{margin:26px 0 0;padding:18px 20px;border:1px solid var(--line);border-left:4px solid var(--red);background:#17191b}
+    .teacher-rule h3{font-size:18px;margin-bottom:5px}.teacher-rule p{margin:0;color:var(--cream-dim);font-size:14px}
+    .future{margin-top:52px;border:1px dashed rgba(237,232,220,.22);padding:25px;background:rgba(255,255,255,.015)}
+    .future h2{font-size:27px;margin-bottom:8px}.future p{color:var(--cream-dim);margin:0;max-width:800px}
+    footer{border-top:1px solid var(--line);padding:24px 28px;color:var(--cream-dim);font:11px "Courier New",monospace;text-align:center}
+    @media(max-width:980px){.hero-inner{grid-template-columns:1fr}.shell{grid-template-columns:1fr}.rail{position:static;display:none}.ros-grid{grid-template-columns:1fr}}
+    @media(max-width:560px){.topbar-inner,.hero-inner,.shell{padding-left:17px;padding-right:17px}.day{grid-template-columns:64px 1fr}.day-no{padding-left:7px;padding-right:7px}.unit-title{grid-template-columns:1fr}.unit-title .dates{text-align:left}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to Run of Show</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../index.html"><img src="../../assets/images/brand/becurrent-logo.svg" alt="BeCurrent"></a>
+    <div class="crumb">Teacher Tools / <strong>Run of Show</strong></div>
+    <a class="home-link" href="../../index.html">Student Site ↗</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Teacher Command Layer</div>
+      <h1>Run of Show</h1>
+      <p class="dek">Your pre-class control board. See the sequence, know the purpose of each day, open the student lesson, and jump into a dedicated teacher Run of Show when one is available.</p>
+    </div>
+    <aside class="hero-note">
+      <div class="label">Operating Principle</div>
+      <strong>The lesson page is what students see. The Run of Show is what you need to teach it.</strong>
+      <p>Timing, transitions, discussion moves, video cues, likely trouble spots, and what can be cut when the block runs short belong here—not on the student page.</p>
+    </aside>
+  </div>
+</section>
+<main id="main" class="shell">
+  <aside class="rail" aria-label="Run of Show navigation">
+    <div class="rail-head"><div class="label">Course Index</div></div>
+    <a class="active" href="#iran">Iran at War</a>
+    <a href="#future">Future Units</a>
+    <a href="../../daily/index.html">Daily Briefing ↗</a>
+    <a href="../../index.html">BeCurrent Home ↗</a>
+  </aside>
+  <div class="content">
+    <div class="section-head">
+      <div><div class="label">Current Teaching Sequence</div><h2>Course Run of Show Index</h2></div>
+      <p>This page is teacher-facing. It is designed to become the permanent index for every BeCurrent unit, regardless of whether a unit is Reverse History, a current-conflict deep dive, or another event-driven sequence.</p>
+    </div>
+
+    <div class="status-row" aria-label="status legend">
+      <span class="chip live">Student lesson live</span>
+      <span class="chip build">Teacher ROS to build</span>
+    </div>
+
+    <section class="unit" id="iran">
+      <div class="unit-title">
+        <div><div class="label">Current Unit</div><h3>Iran at War</h3></div>
+        <div class="dates">8-part sequence · current build</div>
+      </div>
+
+      <div class="ros-grid">
+        <article class="day">
+          <div class="day-no"><div class="num">01</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Current Anchor</div><h4>The War Now</h4><p>Orient students to the decision-makers, Iran-backed armed partners, regional geography, and the Strait of Hormuz. Begin the PBS FRONTLINE documentary with minimal note-taking.</p><div class="focus">Teaching focus: comprehension before historical explanation</div><div class="actions"><a class="btn" href="../../iran/index.html">Open Lesson ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">02</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Documentary</div><h4>Finish the Current Story</h4><p>Continue FRONTLINE. Use short pauses only when students need help locating a person, place, or relationship. Preserve the film as the main cognitive load for the day.</p><div class="focus">Teaching focus: build the “How did we get here?” questions</div><div class="actions"><a class="btn" href="../../iran/index.html#film">Open Film Section ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">03</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Historical Reverse</div><h4>1953 + 1979</h4><p>Trace the current U.S.–Iran relationship backward through the 1953 coup and the 1979 Iranian Revolution. Make the causal chain visible without turning the day into a chronology dump.</p><div class="focus">Teaching focus: why mistrust became durable</div><div class="actions"><a class="btn" href="../../iran/topic-02-1953.html">1953 ↗</a><a class="btn" href="../../iran/topic-03-1979.html">1979 ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">04</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Regional Power</div><h4>Security & the Proxy Network</h4><p>Examine how Iran built security through regional partners and how its rivals interpret that network. Keep the distinction between “Iran-backed” and “Iran-controlled” explicit.</p><div class="focus">Teaching focus: competing definitions of security</div><div class="actions"><a class="btn" href="../../iran/topic-04-security.html">Open Lesson ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">05</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Nuclear Question</div><h4>The Nuclear Dispute</h4><p>Move from slogans to the actual dispute: enrichment, inspections, deterrence, sanctions, diplomacy, and why each side reads the same capabilities differently.</p><div class="focus">Teaching focus: capability, intent, and uncertainty</div><div class="actions"><a class="btn" href="../../iran/topic-05-nuclear.html">Open Lesson ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">06</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Escalation</div><h4>From Shadow War to Open War</h4><p>Track the escalation chain that moved Israel, Iran, and the United States from indirect confrontation toward direct military conflict.</p><div class="focus">Teaching focus: identify turning points, not just events</div><div class="actions"><a class="btn" href="../../iran/topic-06-escalation.html">Open Lesson ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">07</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Global Stakes</div><h4>The Strait of Hormuz</h4><p>Use the chokepoint to connect regional conflict to global shipping, energy markets, military strategy, and the risks of widening war.</p><div class="focus">Teaching focus: geography as power</div><div class="actions"><a class="btn" href="../../iran/topic-07-hormuz.html">Open Lesson ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+
+        <article class="day">
+          <div class="day-no"><div class="num">08</div><div class="word">Day</div></div>
+          <div class="day-body"><div class="label">Synthesis</div><h4>What Explains the War?</h4><p>Return to the unit question and require students to weigh recent decisions against longer historical causes. The goal is explanation, not a single approved verdict.</p><div class="focus">Teaching focus: causal weighting + evidence</div><div class="actions"><a class="btn" href="../../iran/topic-08-synthesis.html">Open Lesson ↗</a><span class="btn secondary disabled">ROS Page — Next</span></div></div>
+        </article>
+      </div>
+
+      <div class="teacher-rule">
+        <h3>Run of Show standard for every lesson</h3>
+        <p>Each dedicated teacher page should eventually include: before-class setup, target timing by segment, exact transition language where useful, video start/stop cues, discussion prompts, likely misconceptions, IEP/504 load-reduction options, what to cut first if time runs short, and the one thing students must leave understanding.</p>
+      </div>
+    </section>
+
+    <section class="future" id="future">
+      <div class="label">Index Architecture</div>
+      <h2>Future units plug in here.</h2>
+      <p>Each new BeCurrent unit should receive one unit section on this page and one dedicated teacher Run of Show page per class meeting. That keeps the student experience clean while giving the teacher-facing layer a stable home at <strong>/teacher/run-of-show/</strong>.</p>
+    </section>
+  </div>
+</main>
+<footer>BeCurrent · Teacher Tools · Run of Show Index</footer>
+</body>
+</html>
