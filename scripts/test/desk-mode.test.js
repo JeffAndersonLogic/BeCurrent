@@ -5,9 +5,9 @@
  * Lead Mode browser contract.
  *
  * The full Desk remains the default. A dated schedule entry may deliberately set
- * deskMode: 'lead' for a high-cognitive-load investigation day. This test freezes
- * the browser on the scheduled Aug. 28 example and proves that the mode changes the
- * student surface AND the Canvas record rather than merely hiding a card.
+ * deskMode: 'lead' for a high-cognitive-load investigation day. This test uses an
+ * isolated Aug. 28 Lead Mode fixture so changes to the live class calendar cannot
+ * silently invalidate the browser contract it is meant to prove.
  */
 
 const http = require('http');
@@ -72,6 +72,7 @@ function check(name,pass,detail){
         static UTC(...args){ return RealDate.UTC(...args); }
       }
       window.Date=FakeDate;
+      window.BECURRENT_SCHEDULE={days:[{date:'2026-08-28',deskMode:'lead'}]};
     },{stamp:'2026-08-28T12:00:00-04:00'});
 
     await page.goto(`http://127.0.0.1:${port}/daily/index.html`,{waitUntil:'domcontentloaded'});
