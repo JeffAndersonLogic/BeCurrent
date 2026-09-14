@@ -140,7 +140,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
+<p>Answer the first major question created by FRONTLINE by briefly clarifying that Iran was not created by the post-World War I Mandate System, then establishing the 1953 overthrow of Mohammad Mosaddegh before moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
 <ol>
     <li><strong>Perspective and Interpretation.</strong> Why could the 1953 coup become a lasting reason for Iranians to distrust the United States?</li>
     <li><strong>Sourcing and Evidence.</strong> What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?</li>

@@ -186,7 +186,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
+                <p>Answer the first major question created by FRONTLINE by briefly clarifying that Iran was not created by the post-World War I Mandate System, then establishing the 1953 overthrow of Mohammad Mosaddegh before moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
             </td>
         </tr>
         <tr>

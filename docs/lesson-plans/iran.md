@@ -148,7 +148,7 @@ _Historical roots · 1953 → 1979_
 
 ### Overview
 
-Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.
+Answer the first major question created by FRONTLINE by briefly clarifying that Iran was not created by the post-World War I Mandate System, then establishing the 1953 overthrow of Mohammad Mosaddegh before moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.
 
 ### Learning targets
 
@@ -164,7 +164,7 @@ Answer the first major question created by FRONTLINE by establishing the 1953 ov
 
 ### What happens in class
 
-Begin with oil nationalization, Mosaddegh, Operation TPAJAX, and the strengthened Shah. Then move to the Shah’s U.S. alliance, the 1978–1979 revolution, Khomeini, and the hostage crisis before deciding which turning point transformed the relationship more.
+Open with a brief contrast between the mandate states and Iran’s separate path into the Pahlavi monarchy. Then move to oil nationalization, Mosaddegh, Operation TPAJAX, and the strengthened Shah before covering the Shah’s U.S. alliance, the 1978–1979 revolution, Khomeini, and the hostage crisis.
 
 ### The filings
 
