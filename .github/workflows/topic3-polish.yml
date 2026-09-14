@@ -18,47 +18,8 @@ jobs:
         with:
           ref: main
 
-      - name: Rebuild the Topic 3 source check and layout hooks
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          path = Path('iran/topic-03-1979.html')
-          text = path.read_text(encoding='utf-8')
-
-          css_link = '<link rel="stylesheet" href="../assets/css/iran-topic3.css?v=20260914">'
-          if css_link not in text:
-              needle = '<link rel="stylesheet" href="../assets/css/iran-intro.css?v=20260907"></head>'
-              if needle not in text:
-                  raise SystemExit('Could not find the Topic 3 stylesheet insertion point.')
-              text = text.replace(needle, '<link rel="stylesheet" href="../assets/css/iran-intro.css?v=20260907">' + css_link + '</head>', 1)
-
-          # A single video card should span the row rather than leave two empty grey columns.
-          text = text.replace('<div class="ir-source-grid" style="margin-top:1rem"><article class="ir-source ir-watch">',
-                              '<div class="ir-source-grid topic3-single" style="margin-top:1rem"><article class="ir-source ir-watch">')
-          text = text.replace('<div class="ir-source-grid"><article class="ir-source ir-watch">',
-                              '<div class="ir-source-grid topic3-single"><article class="ir-source ir-watch">')
-
-          evidence = '''<section class="ir-section" id="evidence"><div class="ir-head"><div class="ir-kicker">Source check · 1953</div><div><h2>Did the United States actually participate in 1953?</h2><p>Use the official U.S. record to verify one narrow claim: American and British officials were not simply watching the crisis. They planned and authorized a covert operation. Your job here is to identify what that evidence proves — and where the evidence stops.</p></div></div>
-<div class="topic3-source-task"><div class="topic3-task-label">Your job · about 3 minutes</div><div><h3>Verify the claim. Do not read 29 pages.</h3><p>You are <strong>not</strong> expected to read either government document from beginning to end. The two cards below pull out the evidence you need. The original archive links are there only if you want to verify the source yourself.</p><div class="topic3-steps"><div class="topic3-step">Read the two evidence cards below.</div><div class="topic3-step">Notice what each record establishes about U.S. and British involvement.</div><div class="topic3-step">Use the CAN / CANNOT evidence boxes to answer Filing 2.</div></div></div></div>
-<div class="ir-source-grid topic3-two"><article class="ir-source"><div class="ir-kicker red">Document 221 · CIA record</div><h3>Draft Operational Plan</h3><p>The official collection identifies this as a <strong>secret draft operational plan for TPAJAX</strong>. In other words, the CIA's own files contain an operational plan for the covert effort surrounding Mosaddegh.</p><div class="topic3-notice"><strong>What to notice:</strong> the United States was not merely observing the crisis; U.S. officials were planning a covert operation.</div><a class="topic3-optional" href="https://history.state.gov/historicaldocuments/frus1951-54Iran/d221" target="_blank" rel="noopener noreferrer">View the original U.S. record (optional) ↗</a></article><article class="ir-source"><div class="ir-kicker red">Document 225 · State Department record</div><h3>Authorization and implementation</h3><p>The Office of the Historian cites a chronology stating that the <strong>State Department and British Foreign Office authorized implementation of TPAJAX on July 11, 1953</strong>. The note also says no written presidential authorization has been found.</p><div class="topic3-notice"><strong>What to notice:</strong> the operation moved beyond a draft plan into high-level authorization and implementation.</div><a class="topic3-optional" href="https://history.state.gov/historicaldocuments/frus1951-54Iran/d225" target="_blank" rel="noopener noreferrer">View the original U.S. record (optional) ↗</a></article></div>
-<div class="topic3-proof-grid"><div class="topic3-proof can"><div class="ir-kicker">The record CAN establish</div><h3>Foreign intervention was real.</h3><ul><li>U.S. and British officials planned and authorized Operation TPAJAX.</li><li>The covert operation was intended to change Iran's political situation and remove Mosaddegh.</li><li>American involvement is therefore a documented part of the 1953 story.</li></ul></div><div class="topic3-proof cannot"><div class="ir-kicker red">The record CANNOT establish by itself</div><h3>It does not explain everything.</h3><ul><li>That the CIA controlled every Iranian who participated.</li><li>That foreign intervention was the coup's only cause.</li><li>That 1953 automatically made the 1979 Revolution — or the 2026 war — inevitable.</li></ul></div></div>
-<div class="topic3-filing-cue"><strong>Now write Filing 2:</strong> one sentence explaining what the record proves, then one sentence explaining what it cannot prove by itself.</div>
-'''
-
-          pattern = r'<section class="ir-section" id="evidence">.*?(?=<div class="ir-work"><div class="ir-kicker red">Filing 2)'
-          text, n = re.subn(pattern, evidence, text, count=1, flags=re.S)
-          if n != 1:
-              raise SystemExit(f'Expected to replace the evidence station once, replaced {n} times.')
-
-          filing2 = '<h3>What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?</h3><textarea'
-          if filing2 in text:
-              text = text.replace(filing2, '<h3>What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?</h3><p>Aim for 2–4 sentences: make one supported claim, then name one limit of the evidence.</p><textarea', 1)
-
-          path.write_text(text, encoding='utf-8')
-          PY
+      - name: Apply Topic 3 rebuild
+        run: python scripts/patch-topic3.py
 
       - name: Verify the student-page contract
         run: |
