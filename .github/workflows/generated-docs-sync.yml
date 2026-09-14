@@ -1,5 +1,7 @@
 name: Sync generated lesson and Canvas docs
 
+# Keeps teacher-facing lesson plans and paste-ready Canvas artifacts aligned with
+# the same unit-content modules that drive the student lessons.
 on:
   push:
     branches: [main]
