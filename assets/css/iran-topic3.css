@@ -1,0 +1,233 @@
+/* Topic 3 visual polish. Scoped to the Iran origins investigation so the other
+   Reverse History pages keep their established layout. */
+body[data-topic="topic-03"] .ir-paper .ir-grid-4,
+body[data-topic="topic-03"] .ir-paper .ir-grid-3{
+  gap:14px;
+  background:transparent;
+  border:0;
+  align-items:stretch;
+}
+body[data-topic="topic-03"] .ir-paper .ir-grid-4>div,
+body[data-topic="topic-03"] .ir-paper .ir-grid-3>div{
+  position:relative;
+  min-width:0;
+  padding:20px 20px 22px;
+  background:linear-gradient(180deg,#fffdf9 0%,#f3ede3 100%);
+  border:1px solid #d3c9bc;
+  border-top:4px solid var(--signal);
+  box-shadow:0 8px 20px rgba(29,27,24,.08);
+}
+body[data-topic="topic-03"] .ir-paper .ir-grid-4>div .ir-kicker,
+body[data-topic="topic-03"] .ir-paper .ir-grid-3>div .ir-kicker{
+  display:inline-flex;
+  align-items:center;
+  min-height:27px;
+  margin-bottom:2px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:rgba(176,58,46,.10);
+  color:var(--signal);
+  letter-spacing:.045em;
+}
+body[data-topic="topic-03"] .ir-paper .ir-grid-4>div h4,
+body[data-topic="topic-03"] .ir-paper .ir-grid-3>div h4{
+  margin:15px 0 9px;
+  font:700 18px/1.25 var(--body);
+  color:#202426;
+}
+body[data-topic="topic-03"] .ir-paper .ir-grid-4>div p,
+body[data-topic="topic-03"] .ir-paper .ir-grid-3>div p{
+  margin:0;
+  font:400 14px/1.62 var(--body);
+  color:#4c5559;
+}
+
+/* One required clip should read as one purposeful feature card, not a third of a
+   three-column row with empty grey space beside it. */
+body[data-topic="topic-03"] .ir-source-grid.topic3-single{
+  grid-template-columns:1fr;
+  gap:0;
+  background:transparent;
+  border:0;
+}
+body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:
+    "meta action"
+    "title action"
+    "body action"
+    "cue action";
+  column-gap:34px;
+  align-items:center;
+  padding:25px 28px;
+  border-left:5px solid var(--signal);
+  box-shadow:0 12px 28px rgba(0,0,0,.17);
+}
+body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch .ir-kicker{grid-area:meta}
+body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch h3{grid-area:title;font-size:27px}
+body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch p:first-of-type{grid-area:body;max-width:760px}
+body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch p:last-of-type{grid-area:cue;margin-top:8px}
+body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch .ir-watch-link{
+  grid-area:action;
+  align-self:center;
+  min-width:205px;
+  margin:0;
+  padding:14px 18px;
+  text-align:center;
+  border-radius:8px;
+  background:var(--signal);
+  color:white;
+}
+
+/* Source check: the student task is the visual priority; the archive links are
+   supporting verification, not an implied 29-page reading assignment. */
+body[data-topic="topic-03"] .topic3-source-task{
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  gap:24px;
+  margin-bottom:16px;
+  padding:25px 28px;
+  background:var(--newsprint);
+  color:var(--ink);
+  border-top:5px solid var(--signal);
+  box-shadow:0 18px 42px rgba(0,0,0,.16);
+}
+body[data-topic="topic-03"] .topic3-task-label{
+  font:800 12px/1.3 var(--ui);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--signal);
+}
+body[data-topic="topic-03"] .topic3-source-task h3{
+  margin:0 0 8px;
+  font:700 31px/1.05 var(--body);
+  letter-spacing:-.025em;
+}
+body[data-topic="topic-03"] .topic3-source-task p{
+  margin:0;
+  max-width:850px;
+  color:#4d565a;
+  font:400 15px/1.6 var(--body);
+}
+body[data-topic="topic-03"] .topic3-steps{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:18px;
+  counter-reset:source-step;
+}
+body[data-topic="topic-03"] .topic3-step{
+  counter-increment:source-step;
+  position:relative;
+  padding:15px 15px 15px 48px;
+  background:#fffdf9;
+  border:1px solid #d4cabc;
+  color:#3f484c;
+  font:650 13px/1.5 var(--ui);
+}
+body[data-topic="topic-03"] .topic3-step:before{
+  content:counter(source-step);
+  position:absolute;
+  left:14px;
+  top:14px;
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--signal);
+  color:#fff;
+  font:800 12px/1 var(--ui);
+}
+body[data-topic="topic-03"] .ir-source-grid.topic3-two{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  background:transparent;
+  border:0;
+}
+body[data-topic="topic-03"] .ir-source-grid.topic3-two .ir-source{
+  border:1px solid #d0c6b9;
+  border-top:4px solid var(--signal);
+  box-shadow:0 8px 22px rgba(0,0,0,.10);
+}
+body[data-topic="topic-03"] .topic3-notice{
+  margin-top:12px;
+  padding:11px 13px;
+  background:#eee6da;
+  border-left:4px solid #1a1c1d;
+  color:#3d464a;
+  font:700 12.5px/1.48 var(--ui);
+}
+body[data-topic="topic-03"] .topic3-optional{
+  color:#656d71;
+  font-weight:700;
+}
+body[data-topic="topic-03"] .topic3-proof-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:16px;
+}
+body[data-topic="topic-03"] .topic3-proof{
+  padding:22px 24px;
+  background:var(--clean-paper);
+  color:var(--ink);
+  border:1px solid #d0c6b9;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+body[data-topic="topic-03"] .topic3-proof.can{border-top:5px solid #1a1c1d}
+body[data-topic="topic-03"] .topic3-proof.cannot{border-top:5px solid var(--signal)}
+body[data-topic="topic-03"] .topic3-proof h3{
+  margin:0 0 11px;
+  font:700 25px/1.06 var(--body);
+}
+body[data-topic="topic-03"] .topic3-proof ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+body[data-topic="topic-03"] .topic3-proof li{
+  position:relative;
+  margin:9px 0;
+  padding-left:27px;
+  color:#475055;
+  font:400 14px/1.55 var(--body);
+}
+body[data-topic="topic-03"] .topic3-proof.can li:before,
+body[data-topic="topic-03"] .topic3-proof.cannot li:before{
+  position:absolute;
+  left:0;
+  top:0;
+  font:900 15px/1.4 var(--ui);
+}
+body[data-topic="topic-03"] .topic3-proof.can li:before{content:'✓';color:#1a1c1d}
+body[data-topic="topic-03"] .topic3-proof.cannot li:before{content:'—';color:var(--signal)}
+body[data-topic="topic-03"] .topic3-filing-cue{
+  margin:14px 0 0;
+  padding:15px 17px;
+  background:#e7dfd3;
+  border-left:4px solid var(--signal);
+  color:#394145;
+  font:750 13px/1.5 var(--ui);
+}
+
+@media(max-width:900px){
+  body[data-topic="topic-03"] .ir-paper .ir-grid-4{grid-template-columns:1fr 1fr}
+  body[data-topic="topic-03"] .topic3-steps{grid-template-columns:1fr}
+  body[data-topic="topic-03"] .topic3-source-task{grid-template-columns:1fr}
+  body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch{
+    grid-template-columns:1fr;
+    grid-template-areas:"meta" "title" "body" "cue" "action";
+    row-gap:0;
+  }
+  body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch .ir-watch-link{margin-top:16px;width:max-content;min-width:0}
+}
+@media(max-width:680px){
+  body[data-topic="topic-03"] .ir-paper .ir-grid-4,
+  body[data-topic="topic-03"] .ir-paper .ir-grid-3,
+  body[data-topic="topic-03"] .ir-source-grid.topic3-two,
+  body[data-topic="topic-03"] .topic3-proof-grid{grid-template-columns:1fr}
+  body[data-topic="topic-03"] .topic3-source-task{padding:22px}
+  body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch{padding:22px}
+}
