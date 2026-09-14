@@ -78,7 +78,7 @@ function renderIranBrowser(unit) {
   function installVideoForward(){
     if(document.querySelector('script[data-iran-video-forward]'))return;
     const script=document.createElement('script');
-    script.src='../assets/js/iran-video-forward.js?v=20260904';
+    script.src='../assets/js/iran-video-forward.js?v=20260914';
     script.dataset.iranVideoForward='';
     document.body.appendChild(script);
   }
@@ -335,8 +335,11 @@ function renderIranBrowser(unit) {
     const section=document.createElement('section');
     section.className='ir-section';section.id='gather';
     section.innerHTML='<div class="ir-gather"><div class="ir-kicker red">Save your work</div><h2>Gather This Topic</h2><p>Your filings save only in this browser on this device. Gather them into one checked record, copy it, and paste it into the Canvas assignment.</p><div class="ir-gather-actions"><button class="ir-save" type="button" data-gather-topic>Gather This Topic</button><button class="ir-save secondary" type="button" data-copy-topic>Copy to Clipboard</button><button class="ir-clear" type="button" data-clear-topic>Clear This Topic</button><span class="ir-progress" data-topic-progress></span></div><p id="iran-gather-status" class="ir-status" role="status" aria-live="polite"></p><div id="iran-gather-output" class="ir-gather-output" tabindex="0" aria-label="Gathered work"><p class="ir-gather-placeholder">Gather your filings, copy them, then paste into Canvas.</p></div></div>';
+    const nextCard=document.querySelector('.ir-next');
+    const nextSection=nextCard&&nextCard.closest('.ir-section');
     const sources=document.getElementById('sources');
-    if(sources)sources.insertAdjacentElement('beforebegin',section);
+    if(nextSection)nextSection.insertAdjacentElement('beforebegin',section);
+    else if(sources)sources.insertAdjacentElement('beforebegin',section);
     else document.querySelector('.ir-shell').appendChild(section);
     section.querySelector('[data-gather-topic]').addEventListener('click',gather);
     section.querySelector('[data-copy-topic]').addEventListener('click',copy);
