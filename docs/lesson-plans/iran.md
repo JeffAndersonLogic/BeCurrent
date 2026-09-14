@@ -168,7 +168,7 @@ Begin with oil nationalization, Mosaddegh, Operation TPAJAX, and the strengthene
 
 ### The filings
 
-1. **Perspective and Interpretation.** Why did 1953 become politically powerful during and after the 1979 revolution?
+1. **Perspective and Interpretation.** Why could the 1953 coup become a lasting reason for Iranians to distrust the United States?
 2. **Sourcing and Evidence.** What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?
 3. **Cause and Effect.** What changed in 1979 that made the United States and Iran adversaries rather than allies?
 4. **Comparison.** What did the hostage crisis add to American historical memory that 1953 had added to Iranian historical memory?

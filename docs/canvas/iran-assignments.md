@@ -142,7 +142,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
 <p>Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
 <ol>
-    <li><strong>Perspective and Interpretation.</strong> Why did 1953 become politically powerful during and after the 1979 revolution?</li>
+    <li><strong>Perspective and Interpretation.</strong> Why could the 1953 coup become a lasting reason for Iranians to distrust the United States?</li>
     <li><strong>Sourcing and Evidence.</strong> What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?</li>
     <li><strong>Cause and Effect.</strong> What changed in 1979 that made the United States and Iran adversaries rather than allies?</li>
     <li><strong>Comparison.</strong> What did the hostage crisis add to American historical memory that 1953 had added to Iranian historical memory?</li>
