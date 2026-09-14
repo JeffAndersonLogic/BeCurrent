@@ -200,10 +200,17 @@
     return rows;
   }
   function dayBannerHtml(row) {
-    if (!row.banner) return '<h3>' + bcEsc(row.label) + '</h3>';
+    var dayStyle = 'font-size:18pt;line-height:1.2;margin:18pt 0 6pt;';
+    var topicStyle = 'font-size:15pt;line-height:1.25;margin:10pt 0 6pt;';
+    var repeatedDayStyle = 'font-size:10pt;font-weight:600;';
+    if (!row.banner) return '<h3 style="' + topicStyle + '">' + bcEsc(row.label) + '</h3>';
     var rest = row.label.slice(row.banner.length).replace(/^\s+/, '');
-    if (row.first) return '<h2>' + bcEsc(row.banner) + '</h2><h3>' + bcEsc(rest) + '</h3>';
-    return '<h3><span class="rec-day">' + bcEsc(row.banner) + '</span> ' + bcEsc(rest) + '</h3>';
+    if (row.first) {
+      return '<h2 style="' + dayStyle + '">' + bcEsc(row.banner) + '</h2>'
+        + '<h3 style="' + topicStyle + '">' + bcEsc(rest) + '</h3>';
+    }
+    return '<h3 style="' + topicStyle + '"><span class="rec-day" style="' + repeatedDayStyle + '">'
+      + bcEsc(row.banner) + '</span> ' + bcEsc(rest) + '</h3>';
   }
   function dayHasContent(dayState) {
     return lanesForState(dayState).some(function (lane) {
@@ -226,10 +233,10 @@
     var days = gatheredDays(), stamp = new Date(), start = dayKeyOf(cycleStart()), keys = cycleKeys(), last = keys[keys.length - 1], rows = [];
     days.forEach(function (day) { rowsForDay(day.key, day.state).forEach(function (r) { rows.push(r); }); });
     var filed = days.length ? days.map(function (d) { return dayLabel(d.key); }).join(', ') : 'none yet';
-    var head = '<p><strong>CURRENT EVENTS &middot; The Desk &middot; News Log</strong></p>'
-      + '<h2>' + bcEsc(rangeLabel(start,last)) + '</h2>'
-      + '<p><em>Student work, copied ' + bcEsc(stamp.toLocaleString()) + '</em></p>'
-      + '<p>Days filed: ' + bcEsc(filed) + '</p><hr>';
+    var head = '<p style="font-size:10pt;font-weight:700;letter-spacing:.04em;margin:0 0 4pt;">CURRENT EVENTS &middot; The Desk &middot; News Log</p>'
+      + '<h1 style="font-size:24pt;line-height:1.15;margin:0 0 8pt;">' + bcEsc(rangeLabel(start,last)) + '</h1>'
+      + '<p style="font-size:10pt;margin:0 0 4pt;"><em>Student work, copied ' + bcEsc(stamp.toLocaleString()) + '</em></p>'
+      + '<p style="font-size:10pt;margin:0 0 12pt;">Days filed: ' + bcEsc(filed) + '</p><hr>';
     var body = rows.map(function (r) {
       return dayBannerHtml(r)
         + '<p>Confidence: ' + bcEsc(confidencePhrase(r.confidence)) + '</p>'
