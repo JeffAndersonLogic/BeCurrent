@@ -133,19 +133,19 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ```html
 <h2>Iran at War, Topic 3: Why the U.S. and Iran Became Enemies</h2>
-<p><em>Reverse History stop · 1979 → 1953</em></p>
+<p><em>Historical roots · 1953 → 1979</em></p>
 
 <h3>Step 1 &mdash; Open the investigation</h3>
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-03-1979.html" target="_blank" rel="noopener">Why the U.S. and Iran Became Enemies</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Answer the first major question created by FRONTLINE by reversing from the 1979 revolution and hostage crisis to the 1953 overthrow of Mohammad Mosaddegh. Students compare two powerful historical memories without treating either event as destiny.</p>
+<p>Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
 <ol>
-    <li><strong>Cause and Effect.</strong> What changed in 1979 that made the United States and Iran adversaries rather than allies?</li>
-    <li><strong>Perspective and Interpretation.</strong> Why did 1953 remain politically powerful during and after the revolution?</li>
+    <li><strong>Perspective and Interpretation.</strong> Why did 1953 become politically powerful during and after the 1979 revolution?</li>
     <li><strong>Sourcing and Evidence.</strong> What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?</li>
-    <li><strong>Comparison.</strong> What did the hostage crisis add to American historical memory that 1953 had added to Iranian memory?</li>
+    <li><strong>Cause and Effect.</strong> What changed in 1979 that made the United States and Iran adversaries rather than allies?</li>
+    <li><strong>Comparison.</strong> What did the hostage crisis add to American historical memory that 1953 had added to Iranian historical memory?</li>
     <li><strong>Constructing Arguments.</strong> Which transformed U.S.-Iran relations more: 1953 or 1979?</li>
 </ol>
 
@@ -165,7 +165,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.</li>
+    <li>I can connect 1953 to 1979 through a clear chain of intervention, alliance, revolution, and reaction without calling later war inevitable.</li>
     <li>I can state one claim the historical record supports and one claim it cannot establish by itself.</li>
     <li>I can use one specific fact from each turning point to defend which changed the relationship more.</li>
 </ol>

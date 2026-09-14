@@ -137,7 +137,7 @@ The Reverse History page's Gather This Topic panel. 1 response, copied by the st
 
 ## Topic 3. Why the U.S. and Iran Became Enemies
 
-_Reverse History stop · 1979 → 1953_
+_Historical roots · 1953 → 1979_
 
 | | |
 |---|---|
@@ -148,30 +148,30 @@ _Reverse History stop · 1979 → 1953_
 
 ### Overview
 
-Answer the first major question created by FRONTLINE by reversing from the 1979 revolution and hostage crisis to the 1953 overthrow of Mohammad Mosaddegh. Students compare two powerful historical memories without treating either event as destiny.
+Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.
 
 ### Learning targets
 
-1. **Cause and Effect.** I can explain how 1979 changed the U.S.-Iran relationship and why 1953 mattered to Iranian revolutionary memory.
-2. **Sourcing and Evidence.** I can use a declassified record to establish foreign intervention without claiming one source explains every Iranian action.
+1. **Cause and Effect.** I can explain why 1953 mattered to Iranian revolutionary memory and how 1979 changed the U.S.-Iran relationship.
+2. **Sourcing and Evidence.** I can use specific declassified records to establish foreign intervention without claiming one source explains every Iranian action.
 3. **Comparison.** I can compare 1953 and 1979 by explaining the different grievances each event created or reinforced.
 
 ### Success criteria
 
-1. **Cause and Effect.** I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.
+1. **Cause and Effect.** I can connect 1953 to 1979 through a clear chain of intervention, alliance, revolution, and reaction without calling later war inevitable.
 2. **Sourcing and Evidence.** I can state one claim the historical record supports and one claim it cannot establish by itself.
 3. **Comparison.** I can use one specific fact from each turning point to defend which changed the relationship more.
 
 ### What happens in class
 
-Move backward from 1979 to 1953, examine the Shah, Khomeini, Mosaddegh, and the hostage crisis, test a declassified record, and decide which turning point transformed the relationship more.
+Begin with oil nationalization, Mosaddegh, Operation TPAJAX, and the strengthened Shah. Then move to the Shah’s U.S. alliance, the 1978–1979 revolution, Khomeini, and the hostage crisis before deciding which turning point transformed the relationship more.
 
 ### The filings
 
-1. **Cause and Effect.** What changed in 1979 that made the United States and Iran adversaries rather than allies?
-2. **Perspective and Interpretation.** Why did 1953 remain politically powerful during and after the revolution?
-3. **Sourcing and Evidence.** What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?
-4. **Comparison.** What did the hostage crisis add to American historical memory that 1953 had added to Iranian memory?
+1. **Perspective and Interpretation.** Why did 1953 become politically powerful during and after the 1979 revolution?
+2. **Sourcing and Evidence.** What can the declassified record prove about U.S. involvement in 1953, and what can it not prove by itself?
+3. **Cause and Effect.** What changed in 1979 that made the United States and Iran adversaries rather than allies?
+4. **Comparison.** What did the hostage crisis add to American historical memory that 1953 had added to Iranian historical memory?
 5. **Constructing Arguments.** Which transformed U.S.-Iran relations more: 1953 or 1979?
 
 ### Where the work goes

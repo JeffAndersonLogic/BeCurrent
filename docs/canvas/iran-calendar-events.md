@@ -186,7 +186,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Answer the first major question created by FRONTLINE by reversing from the 1979 revolution and hostage crisis to the 1953 overthrow of Mohammad Mosaddegh. Students compare two powerful historical memories without treating either event as destiny.</p>
+                <p>Answer the first major question created by FRONTLINE by establishing the 1953 overthrow of Mohammad Mosaddegh first, then moving forward to the 1979 Islamic Revolution and hostage crisis. Students compare two powerful historical memories without treating either event as destiny.</p>
             </td>
         </tr>
         <tr>
@@ -195,8 +195,8 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can explain how 1979 changed the U.S.-Iran relationship and why 1953 mattered to Iranian revolutionary memory.</li>
-                    <li>I can use a declassified record to establish foreign intervention without claiming one source explains every Iranian action.</li>
+                    <li>I can explain why 1953 mattered to Iranian revolutionary memory and how 1979 changed the U.S.-Iran relationship.</li>
+                    <li>I can use specific declassified records to establish foreign intervention without claiming one source explains every Iranian action.</li>
                     <li>I can compare 1953 and 1979 by explaining the different grievances each event created or reinforced.</li>
                 </ol>
             </td>
@@ -207,7 +207,7 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.</li>
+                    <li>I can connect 1953 to 1979 through a clear chain of intervention, alliance, revolution, and reaction without calling later war inevitable.</li>
                     <li>I can state one claim the historical record supports and one claim it cannot establish by itself.</li>
                     <li>I can use one specific fact from each turning point to defend which changed the relationship more.</li>
                 </ol>
