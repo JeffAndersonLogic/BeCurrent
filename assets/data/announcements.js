@@ -414,14 +414,14 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-14",
       "topic": "Iran at War | Why the U.S. and Iran Became Enemies",
       "unit": "Iran at War",
-      "subtitle": "Reverse History stop · 1979 → 1953",
+      "subtitle": "Historical roots · 1953 → 1979",
       "learningTargets": [
         {
-          "text": "I can explain how 1979 changed the U.S.-Iran relationship and why 1953 mattered to Iranian revolutionary memory.",
+          "text": "I can explain why 1953 mattered to Iranian revolutionary memory and how 1979 changed the U.S.-Iran relationship.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can use a declassified record to establish foreign intervention without claiming one source explains every Iranian action.",
+          "text": "I can use specific declassified records to establish foreign intervention without claiming one source explains every Iranian action.",
           "label": "Sourcing and Evidence"
         },
         {
@@ -431,7 +431,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "successCriteria": [
         {
-          "text": "I can connect 1979 to 1953 through a clear chain of memory, alliance, intervention, and reaction without calling later war inevitable.",
+          "text": "I can connect 1953 to 1979 through a clear chain of intervention, alliance, revolution, and reaction without calling later war inevitable.",
           "label": "Cause and Effect"
         },
         {
