@@ -686,17 +686,19 @@ function buildGatherDocument() {
 
   // The heading the parser's no-manifest fallback path looks for. It should
   // never be needed, but a paste that lost its footer is still identifiable.
+  const weekLabel = `CURRENT EVENTS, WEEK ${esc(String(meta.weekNumber || '').padStart(2, '0'))}`;
   const head = [
-    `<p><strong>CURRENT EVENTS, WEEK ${esc(String(meta.weekNumber || '').padStart(2, '0'))}</strong></p>`,
-    `<p><em>Student work, copied ${stamp.toLocaleString()}</em></p>`,
+    `<p style="font-size:10pt;font-weight:700;margin:0 0 4pt;">${weekLabel}</p>`,
+    meta.title ? `<h1 style="font-size:24pt;line-height:1.15;margin:0 0 8pt;">${esc(meta.title)}</h1>` : '',
+    `<p style="font-size:10pt;margin:0 0 12pt;"><em>Student work, copied ${stamp.toLocaleString()}</em></p>`,
     '<hr>'
-  ];
+  ].filter(Boolean);
 
   const body = work.map(w => [
-    `<p><strong>${esc(w.label)}</strong></p>`,
-    `<p><strong>Question:</strong> <em>${esc(w.prompt)}</em></p>`,
-    '<p><strong>My response:</strong></p>',
-    bcParagraphsHtml(w.text, '')
+    `<h2 style="font-size:16pt;line-height:1.2;margin:16pt 0 6pt;">${esc(w.label)}</h2>`,
+    `<p style="font-size:11pt;line-height:1.4;margin:0 0 6pt;"><strong>Question:</strong> <em>${esc(w.prompt)}</em></p>`,
+    '<p style="font-size:10.5pt;margin:0 0 4pt;"><strong>My response:</strong></p>',
+    `<div style="font-size:11pt;line-height:1.45;margin:0 0 8pt;">${bcParagraphsHtml(w.text, '')}</div>`
   ].join('\n')).join('\n<hr>\n');
 
   // The denominator is computed, never a literal. A hard-coded count would report
@@ -708,14 +710,29 @@ function buildGatherDocument() {
   });
   const footer = bcRecordFooterHtml(manifest);
 
+  const plain = [weekLabel, meta.title || '', `Student work, copied ${stamp.toLocaleString()}`, '']
+    .filter(Boolean)
+    .concat(work.map(w => [
+      w.label.toUpperCase(),
+      'Question: ' + w.prompt,
+      'My response:',
+      w.text,
+      ''
+    ].join('\n')))
+    .concat(manifest)
+    .join('\n');
+
   const filled = work.filter(w => w.text).length;
-  return { html: head.join('\n') + body + footer, count: filled, work: work };
+  return { html: head.join('\n') + body + footer, plain: plain, count: filled, work: work };
 }
 
 function gatherAllWork() {
   const doc = buildGatherDocument();
   const out = byId('gather-output');
-  if (out) out.value = doc.html.replace(/<\/p>/g, '</p>\n');
+  if (out) {
+    out.value = doc.plain;
+    out.dataset.html = doc.html;
+  }
 
   const status = byId('gather-status');
   if (status) {
@@ -728,19 +745,58 @@ function gatherAllWork() {
   return doc;
 }
 
+function copyGatheredRichFallback(html, plain) {
+  const host = document.createElement('div');
+  host.setAttribute('contenteditable', 'true');
+  host.setAttribute('aria-hidden', 'true');
+  host.style.position = 'fixed';
+  host.style.left = '-10000px';
+  host.style.top = '0';
+  host.innerHTML = html;
+  document.body.appendChild(host);
+  const range = document.createRange();
+  range.selectNodeContents(host);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  let copied = false;
+  try { copied = document.execCommand('copy'); } catch (e) { copied = false; }
+  sel.removeAllRanges();
+  host.remove();
+  if (copied) {
+    byId('gather-status').textContent = 'Copied with formatting. Paste it into the Canvas assignment.';
+    return;
+  }
+  const out = byId('gather-output');
+  if (out) out.select();
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(plain).then(() => {
+      byId('gather-status').textContent = 'Copied as plain text. Paste it into the Canvas assignment.';
+    }).catch(() => {
+      byId('gather-status').textContent = 'Copy is blocked. Press Ctrl+C (or Cmd+C) to copy the selected plain text.';
+    });
+  } else {
+    byId('gather-status').textContent = 'Press Ctrl+C (or Cmd+C) to copy the selected plain text.';
+  }
+}
+
 async function copyGathered() {
   const out = byId('gather-output');
-  if (!out || !out.value) gatherAllWork();
-  const text = byId('gather-output').value;
-  try {
-    await navigator.clipboard.writeText(text);
-    byId('gather-status').textContent = 'Copied. Paste it into the Canvas assignment.';
-  } catch (e) {
-    // Clipboard is blocked on some managed devices, so fall back to selecting
-    // the text and telling the student what to press.
-    byId('gather-output').select();
-    byId('gather-status').textContent = 'Select-all done, now press Ctrl+C (or Cmd+C) to copy.';
+  if (!out || !out.value || !out.dataset.html) gatherAllWork();
+  const current = byId('gather-output');
+  const html = current.dataset.html || '';
+  const plain = current.value || '';
+  if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], { type: 'text/html' }),
+        'text/plain': new Blob([plain], { type: 'text/plain' })
+      })]);
+      byId('gather-status').textContent = 'Copied with formatting. Paste it into the Canvas assignment.';
+      return;
+    } catch (e) { }
   }
+  copyGatheredRichFallback(html, plain);
 }
 
 // ── Page build ────────────────────────────────────────────────────────────────

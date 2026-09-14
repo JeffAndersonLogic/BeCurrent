@@ -272,8 +272,13 @@ function renderIranBrowser(unit) {
     const rows=gatherRows();
     const stamp=new Date();
     const dateline=UNIT.course+' · '+UNIT.unit+' · Topic '+meta.n;
-    const head='<p><strong>'+esc(dateline)+'</strong></p><h2>'+esc(meta.title)+'</h2><p><em>Student work, copied '+esc(stamp.toLocaleString())+'</em></p><hr>';
-    const bodyHtml=rows.map(r=>'<h3>'+esc(r.label)+'</h3><p><strong>Question: '+esc(r.prompt)+'</strong></p><p><strong>My response:</strong></p>'+bcParagraphsHtml(r.text,'em')).join('<hr>');
+    const head='<p style="font-size:10pt;font-weight:700;margin:0 0 4pt;">'+esc(dateline)+'</p>'
+      + '<h1 style="font-size:24pt;line-height:1.15;margin:0 0 8pt;">'+esc(meta.title)+'</h1>'
+      + '<p style="font-size:10pt;margin:0 0 12pt;"><em>Student work, copied '+esc(stamp.toLocaleString())+'</em></p><hr>';
+    const bodyHtml=rows.map(r=>'<h2 style="font-size:16pt;line-height:1.2;margin:16pt 0 6pt;">'+esc(r.label)+'</h2>'
+      + '<p style="font-size:11pt;line-height:1.4;margin:0 0 6pt;"><strong>Question: '+esc(r.prompt)+'</strong></p>'
+      + '<p style="font-size:10.5pt;margin:0 0 4pt;"><strong>My response:</strong></p>'
+      + '<div style="font-size:11pt;line-height:1.45;margin:0 0 8pt;">'+bcParagraphsHtml(r.text,'em')+'</div>').join('<hr>');
     const manifest=bcRecordManifest(rows,{topic:meta.key,expected:rows.length,isoStamp:stamp.toISOString()});
     const plain=[dateline,meta.title,'Student work, copied '+stamp.toLocaleString(),'']
       .concat(rows.map(r=>[r.label.toUpperCase(),'Question: '+r.prompt,'My response:',r.text,''].join('\\n')))

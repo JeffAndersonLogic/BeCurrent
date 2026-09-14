@@ -486,9 +486,9 @@
       dateline = ['CURRENT EVENTS', dateline].filter(Boolean).join(' \u00b7 ');
     }
 
-    var head = '<p><strong>' + bcEsc(dateline) + '</strong></p>'
-      + (title ? '<h2>' + bcEsc(title) + '</h2>' : '')
-      + '<p><em>Student work, copied ' + bcEsc(stamp.toLocaleString()) + '</em></p>'
+    var head = '<p style="font-size:10pt;font-weight:700;margin:0 0 4pt;">' + bcEsc(dateline) + '</p>'
+      + (title ? '<h1 style="font-size:24pt;line-height:1.15;margin:0 0 8pt;">' + bcEsc(title) + '</h1>' : '')
+      + '<p style="font-size:10pt;margin:0 0 12pt;"><em>Student work, copied ' + bcEsc(stamp.toLocaleString()) + '</em></p>'
       + '<hr>';
 
     // Four lines per question, and the order is fixed by the parser rather than by
@@ -499,11 +499,11 @@
     // as edited. 'Question:' and 'My response:' are the markers extractPrompt and
     // extractResponse in scripts/lib/canvas-parse-core.js look for.
     var body = rows.map(function (r) {
-      return '<h3>' + bcEsc(r.label) + '</h3>'
-        + '<p>Confidence: ' + bcEsc(confidencePhrase(r.confidence)) + '</p>'
-        + '<p><strong>Question: ' + bcEsc(r.prompt) + '</strong></p>'
-        + '<p><strong>My response:</strong></p>'
-        + bcParagraphsHtml(r.text, 'em');
+      return '<h3 style="font-size:16pt;line-height:1.2;margin:16pt 0 6pt;">' + bcEsc(r.label) + '</h3>'
+        + '<p style="font-size:9.5pt;margin:0 0 5pt;">Confidence: ' + bcEsc(confidencePhrase(r.confidence)) + '</p>'
+        + '<p style="font-size:11pt;line-height:1.4;margin:0 0 6pt;"><strong>Question: ' + bcEsc(r.prompt) + '</strong></p>'
+        + '<p style="font-size:10.5pt;margin:0 0 4pt;"><strong>My response:</strong></p>'
+        + '<div style="font-size:11pt;line-height:1.45;margin:0 0 8pt;">' + bcParagraphsHtml(r.text, 'em') + '</div>';
     }).join('<hr>');
 
     // The denominator is how many questions this Brief carries, counted from the
