@@ -8,7 +8,7 @@ html = html_path.read_text(encoding='utf-8')
 needle = "</p></div></div></div></section>\n\n<section class=\"ir-section\" id=\"1953\">"
 figure = '''</p></div></div></div>
 <figure class="topic3-mandate-map">
-  <img src="../assets/images/iran/mandates-1920.jpg" alt="League of Nations mandates in the Middle East in 1920, showing French mandates in Syria and Lebanon, British mandates in Palestine, Transjordan, and Iraq, with Iran visible to the east outside the mandate territories.">
+  <img src="../assets/images/iran/mandates-1920.webp" alt="League of Nations mandates in the Middle East in 1920, showing French mandates in Syria and Lebanon, British mandates in Palestine, Transjordan, and Iraq, with Iran visible to the east outside the mandate territories.">
   <figcaption><strong>What to notice:</strong> Iran is on the map, but it is not shaded or labeled as a British or French mandate. That is the key distinction students need before moving into the 1953 sovereignty crisis.</figcaption>
 </figure>
 </section>
