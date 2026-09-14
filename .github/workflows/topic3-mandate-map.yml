@@ -18,15 +18,13 @@ jobs:
         with:
           ref: topic3-mandate-map
 
-      - name: Download classroom map
+      - name: Restore uploaded classroom map
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p assets/images/iran
-          curl -L --fail --retry 2 \
-            'https://lostislamichistory.com/wp-content/uploads/2012/12/mandate.jpg' \
-            -o assets/images/iran/mandates-1920.jpg
-          test -s assets/images/iran/mandates-1920.jpg
+          { head -c 18000 tmp/mandates_webp_00.b64; head -c 17816 tmp/mandates_webp_01.b64; } | base64 -d > assets/images/iran/mandates-1920.webp
+          echo '9a19ee9fd65fd80841f857c2e1c182acd79752809243ac02efa7280e44b2514f  assets/images/iran/mandates-1920.webp' | sha256sum -c -
 
       - name: Patch Topic 3
         run: python scripts/patch-topic3-mandate-map.py
@@ -46,8 +44,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          rm -rf tmp
+          rm scripts/patch-topic3-mandate-map.py
+          rm .github/workflows/topic3-mandate-map.yml
           git config user.name 'BeCurrent Topic 3 Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add iran/topic-03-1979.html assets/css/iran-topic3.css assets/images/iran/mandates-1920.jpg scripts/lib/unit-content/iran.js assets/js/iran-topics.js assets/data/iran-unit.js docs/lesson-plans/iran.md
+          git add -A
           git commit -m 'Add mandate system map to Topic 3'
           git push origin HEAD:topic3-mandate-map
