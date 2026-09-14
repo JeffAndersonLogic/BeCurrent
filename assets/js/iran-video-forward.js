@@ -88,7 +88,7 @@
     }
 
     function installVideos(){
-      if(document.querySelector('.ir-video-forward'))return;
+      if(topic==='topic-03'||document.querySelector('.ir-video-forward'))return;
       const section=document.createElement('section');
       section.className='ir-video-forward';
       section.id='video-forward';
