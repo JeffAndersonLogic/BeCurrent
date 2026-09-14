@@ -1,6 +1,6 @@
 // BeCurrent Iran at War — video-forward accessibility layer
 // Presentation only. Canonical video metadata lives in
-// scripts/lib/unit-content/iran-videos.js and is generated to
+// scripts/lib/iran-video-content.js and is generated to
 // assets/data/iran-videos.js by scripts/build-iran-videos.js.
 (()=>{
   'use strict';
@@ -12,6 +12,13 @@
     if(!guide)return;
 
     const css=`
+    .ir-topic-nav{margin:0;background:#121517;border-bottom:1px solid rgba(237,232,220,.16);box-shadow:0 8px 24px rgba(0,0,0,.16)}
+    .ir-topic-nav-inner{max-width:1500px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:10px;overflow-x:auto;scrollbar-width:thin}
+    .ir-topic-nav-label{flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#c8c2b2;margin-right:2px}
+    .ir-topic-nav a{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid rgba(237,232,220,.14);background:#1a1c1d;color:#ede8dc;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:.72rem;line-height:1.1;border-radius:2px}
+    .ir-topic-nav a:hover,.ir-topic-nav a:focus{background:#244d78;border-color:#3a6fa8;outline:none}
+    .ir-topic-nav a[aria-current="page"]{background:#b03a2e;border-color:#b03a2e;color:#fff;font-weight:700}
+    .ir-topic-nav a strong{font-size:.78rem}
     .ir-video-forward{margin:24px 0 34px;border:1px solid rgba(237,232,220,.16);background:linear-gradient(180deg,rgba(27,58,92,.34),rgba(26,28,29,.96));box-shadow:0 18px 40px rgba(0,0,0,.18)}
     .ir-video-forward-head{padding:22px 24px;border-bottom:1px solid rgba(237,232,220,.12)}
     .ir-video-forward-head h2{margin:.2rem 0 .45rem;font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem)}
@@ -36,13 +43,49 @@
     details.ir-full-background{margin-top:10px;border:1px solid rgba(237,232,220,.14);background:#22262b}
     details.ir-full-background>summary{cursor:pointer;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#c8c2b2}
     details.ir-full-background .ir-reading{margin:0;border:0;box-shadow:none}
-    @media(max-width:900px){.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}}
+    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}}
     `;
-    const style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
+    if(!document.getElementById('iran-video-forward-style')){
+      const style=document.createElement('style');style.id='iran-video-forward-style';style.textContent=css;document.head.appendChild(style);
+    }
 
     const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     const statusClass=s=>/OPTIONAL/.test(s)?'optional':/CHOICE/.test(s)?'choice':'';
     const card=v=>`<article class="ir-watch"><div class="ir-watch-meta"><span>${esc(v.label)}</span><span class="ir-watch-status ${statusClass(v.status)}">${esc(v.status)}</span></div><h3>${esc(v.title)}</h3><div class="ir-watch-source">${esc(v.source)} · ${esc(v.runtime)}</div><p><strong>Why you’re watching:</strong> ${esc(v.why)}</p><div class="ir-watch-cues"><strong>Listen for</strong>${v.listen.map(esc).join(' · ')}</div><p><strong>After watching:</strong> ${esc(v.after)}</p><a class="ir-watch-link" href="${esc(v.url)}" ${/^https?:/.test(v.url)?'target="_blank" rel="noopener noreferrer"':''}>Open video / resource →</a></article>`;
+
+    function installTopicNavigator(){
+      if(document.querySelector('.ir-topic-nav'))return;
+      const topics=[
+        ['topic-01','index.html','The War Now'],
+        ['topic-02','topic-02-1953.html','The Road to War'],
+        ['topic-03','topic-03-1979.html','Why Enemies?'],
+        ['topic-04','topic-04-security.html','Security Strategy'],
+        ['topic-05','topic-05-nuclear.html','Nuclear Bargain'],
+        ['topic-06','topic-06-escalation.html','Escalation'],
+        ['topic-07','topic-07-hormuz.html','Hormuz'],
+        ['topic-08','topic-08-synthesis.html','Synthesis']
+      ];
+      const nav=document.createElement('nav');
+      nav.className='ir-topic-nav';
+      nav.setAttribute('aria-label','Iran at War topics');
+      nav.innerHTML='<div class="ir-topic-nav-inner"><span class="ir-topic-nav-label">Jump to topic</span>'+topics.map((row,i)=>{
+        const current=row[0]===topic?' aria-current="page"':'';
+        return '<a href="'+row[1]+'"'+current+'><strong>'+(i+1)+'</strong><span>'+esc(row[2])+'</span></a>';
+      }).join('')+'</div>';
+      const position=document.querySelector('.ir-position');
+      const sticky=document.querySelector('.sticky-journey');
+      const anchor=position||sticky||document.querySelector('.mast');
+      if(anchor)anchor.insertAdjacentElement('afterend',nav);
+    }
+
+    function relocateGather(){
+      const gather=document.getElementById('gather');
+      const nextCard=document.querySelector('.ir-next');
+      const nextSection=nextCard&&nextCard.closest('.ir-section');
+      if(gather&&nextSection&&gather.nextElementSibling!==nextSection){
+        nextSection.insertAdjacentElement('beforebegin',gather);
+      }
+    }
 
     function installVideos(){
       if(document.querySelector('.ir-video-forward'))return;
@@ -71,14 +114,17 @@
       details.appendChild(original);
     }
 
+    installTopicNavigator();
     installVideos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
+    relocateGather();
+    setTimeout(relocateGather,0);
   }
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260906';
+  script.src='../assets/data/iran-videos.js?v=20260914';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
