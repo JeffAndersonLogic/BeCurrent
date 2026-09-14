@@ -24,7 +24,7 @@ jobs:
           set -euo pipefail
           mkdir -p assets/images/iran
           curl -L --fail --retry 2 \
-            'https://usercontent1.hubstatic.com/9082060_f520.jpg' \
+            'https://lostislamichistory.com/wp-content/uploads/2012/12/mandate.jpg' \
             -o assets/images/iran/mandates-1920.jpg
           test -s assets/images/iran/mandates-1920.jpg
 
