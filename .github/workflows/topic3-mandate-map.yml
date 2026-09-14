@@ -1,0 +1,53 @@
+name: Apply Topic 3 mandate map
+
+on:
+  push:
+    branches: [topic3-mandate-map]
+    paths:
+      - '.github/workflows/topic3-mandate-map.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: topic3-mandate-map
+
+      - name: Download classroom map
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images/iran
+          curl -L --fail --retry 2 \
+            'https://usercontent1.hubstatic.com/9082060_f520.jpg' \
+            -o assets/images/iran/mandates-1920.jpg
+          test -s assets/images/iran/mandates-1920.jpg
+
+      - name: Patch Topic 3
+        run: python scripts/patch-topic3-mandate-map.py
+
+      - name: Rebuild generated Iran materials
+        run: |
+          node scripts/build-iran.js
+          node scripts/build-lesson-plans.js
+
+      - name: Verify
+        run: |
+          node scripts/build-iran.js --check
+          node scripts/test/iran-unit.test.js
+          node scripts/validate.js
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'BeCurrent Topic 3 Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add iran/topic-03-1979.html assets/css/iran-topic3.css assets/images/iran/mandates-1920.jpg scripts/lib/unit-content/iran.js assets/js/iran-topics.js assets/data/iran-unit.js docs/lesson-plans/iran.md
+          git commit -m 'Add mandate system map to Topic 3'
+          git push origin HEAD:topic3-mandate-map
