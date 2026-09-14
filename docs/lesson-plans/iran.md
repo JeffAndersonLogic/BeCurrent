@@ -164,7 +164,7 @@ Answer the first major question created by FRONTLINE by briefly clarifying that 
 
 ### What happens in class
 
-Open with a brief contrast between the mandate states and Iran’s separate path into the Pahlavi monarchy. Then move to oil nationalization, Mosaddegh, Operation TPAJAX, and the strengthened Shah before covering the Shah’s U.S. alliance, the 1978–1979 revolution, Khomeini, and the hostage crisis.
+Open with the mandate-system map and a brief contrast between the mandate states and Iran’s separate path into the Pahlavi monarchy. Then move to oil nationalization, Mosaddegh, Operation TPAJAX, and the strengthened Shah before covering the Shah’s U.S. alliance, the 1978–1979 revolution, Khomeini, and the hostage crisis.
 
 ### The filings
 

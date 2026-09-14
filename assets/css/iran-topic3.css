@@ -231,3 +231,32 @@ body[data-topic="topic-03"] .topic3-filing-cue{
   body[data-topic="topic-03"] .topic3-source-task{padding:22px}
   body[data-topic="topic-03"] .ir-source-grid.topic3-single .ir-watch{padding:22px}
 }
+
+/* Mandate-system visual: keep the historical distinction obvious at a glance. */
+body[data-topic="topic-03"] .topic3-mandate-map{
+  margin:18px 0 0;
+  padding:0;
+  overflow:hidden;
+  background:#111416;
+  border:1px solid rgba(237,232,220,.18);
+  box-shadow:0 16px 38px rgba(0,0,0,.22);
+}
+body[data-topic="topic-03"] .topic3-mandate-map img{
+  display:block;
+  width:100%;
+  max-height:680px;
+  object-fit:contain;
+  background:#111416;
+}
+body[data-topic="topic-03"] .topic3-mandate-map figcaption{
+  margin:0;
+  padding:16px 20px 18px;
+  background:var(--clean-paper);
+  color:#3f484c;
+  border-top:4px solid var(--signal);
+  font:500 14px/1.55 var(--body);
+}
+body[data-topic="topic-03"] .topic3-mandate-map figcaption strong{
+  color:var(--signal);
+  font-weight:800;
+}
