@@ -2,7 +2,7 @@
 
 **Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-07**
+Last launch audit: **2026-09-15**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
@@ -31,7 +31,7 @@ Two short historical clips support a single reverse move: 2026 → 1979 → 1953
 
 ## Topic 4 — Experience the war, then examine the strategy it helped shape.
 
-The first documentary excerpt makes the Iran-Iraq War concrete. The second clip helps you test how that experience connects to Iran’s later regional network.
+Start with four facts: Iraq invaded Iran in 1980, the war lasted eight years, Iranian cities came under missile attack, and Iraqi forces used chemical weapons. Watch the war excerpt for vulnerability, then use a clearly dated 2024 network snapshot to see the strategy Iran built over time.
 
 - **REQUIRED EXCERPT · 13:11 excerpt (3:52–17:03) · BBC World Service** — The untold story of the Iran-Iraq war’s frontline children
   https://www.youtube.com/watch?v=aHZRvpuW8QM&t=232s
