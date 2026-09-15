@@ -193,7 +193,7 @@ _Reverse History stop · 1980–1988_
 
 ### Overview
 
-Use the Iran-Iraq War to investigate why invasion, isolation, the IRGC, missiles, and relationships with armed groups became central to Iranian security strategy.
+Reconnect the 2026 direct conflict to the security logic Iran built after the Iran-Iraq War, then test whether missiles and armed partnerships are best understood as deterrence, power projection, or both.
 
 ### Learning targets
 
@@ -204,20 +204,20 @@ Use the Iran-Iraq War to investigate why invasion, isolation, the IRGC, missiles
 ### Success criteria
 
 1. **Cause and Effect.** I can write the mechanism connecting invasion and isolation to later missiles or regional armed partnerships.
-2. **Sourcing and Evidence.** I can use a specific wartime or institutional fact instead of relying on the label proxy.
+2. **Sourcing and Evidence.** I can use specific evidence from wartime vulnerability and a later regional partnership instead of relying on the label proxy.
 3. **Perspective and Interpretation.** I can acknowledge evidence for both deterrence and power projection before weighing them.
 
 ### What happens in class
 
-Build a causal mechanism from wartime experience to later deterrence, test the word proxy, and weigh defensive and power-projection interpretations.
+Re-anchor in 2026, define deterrence, asymmetric strategy, and power projection, build a causal mechanism from wartime vulnerability to later strategy, test the word proxy, and separate Iranian security intent from regional effects.
 
 ### The filings
 
 1. **Cause and Effect.** What lesson might leaders draw from surviving a long invasion?
 2. **Cause and Effect.** What is the mechanism connecting the Iran-Iraq War to later deterrence?
-3. **Sourcing and Evidence.** Why is “proxy” useful — and where can the word mislead?
+3. **Sourcing and Evidence.** Why is “proxy” useful, and where can the word mislead?
 4. **Perspective and Interpretation.** Can both descriptions be true at the same time?
-5. **Constructing Arguments.** To what extent can Iran’s modern regional military strategy be explained by the Iran-Iraq War?
+5. **Constructing Arguments.** To what extent is Iran’s regional military strategy best understood as deterrence, power projection, or both, and how much of that strategy can be traced to the Iran-Iraq War?
 
 ### Where the work goes
 

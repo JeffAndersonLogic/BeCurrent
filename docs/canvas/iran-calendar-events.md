@@ -251,7 +251,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Use the Iran-Iraq War to investigate why invasion, isolation, the IRGC, missiles, and relationships with armed groups became central to Iranian security strategy.</p>
+                <p>Reconnect the 2026 direct conflict to the security logic Iran built after the Iran-Iraq War, then test whether missiles and armed partnerships are best understood as deterrence, power projection, or both.</p>
             </td>
         </tr>
         <tr>
@@ -273,7 +273,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <ol>
                     <li>I can write the mechanism connecting invasion and isolation to later missiles or regional armed partnerships.</li>
-                    <li>I can use a specific wartime or institutional fact instead of relying on the label proxy.</li>
+                    <li>I can use specific evidence from wartime vulnerability and a later regional partnership instead of relying on the label proxy.</li>
                     <li>I can acknowledge evidence for both deterrence and power projection before weighing them.</li>
                 </ol>
             </td>

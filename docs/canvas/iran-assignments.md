@@ -192,13 +192,13 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Use the Iran-Iraq War to investigate why invasion, isolation, the IRGC, missiles, and relationships with armed groups became central to Iranian security strategy.</p>
+<p>Reconnect the 2026 direct conflict to the security logic Iran built after the Iran-Iraq War, then test whether missiles and armed partnerships are best understood as deterrence, power projection, or both.</p>
 <ol>
     <li><strong>Cause and Effect.</strong> What lesson might leaders draw from surviving a long invasion?</li>
     <li><strong>Cause and Effect.</strong> What is the mechanism connecting the Iran-Iraq War to later deterrence?</li>
-    <li><strong>Sourcing and Evidence.</strong> Why is “proxy” useful — and where can the word mislead?</li>
+    <li><strong>Sourcing and Evidence.</strong> Why is “proxy” useful, and where can the word mislead?</li>
     <li><strong>Perspective and Interpretation.</strong> Can both descriptions be true at the same time?</li>
-    <li><strong>Constructing Arguments.</strong> To what extent can Iran’s modern regional military strategy be explained by the Iran-Iraq War?</li>
+    <li><strong>Constructing Arguments.</strong> To what extent is Iran’s regional military strategy best understood as deterrence, power projection, or both, and how much of that strategy can be traced to the Iran-Iraq War?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -218,7 +218,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <h3>Success criteria</h3>
 <ol>
     <li>I can write the mechanism connecting invasion and isolation to later missiles or regional armed partnerships.</li>
-    <li>I can use a specific wartime or institutional fact instead of relying on the label proxy.</li>
+    <li>I can use specific evidence from wartime vulnerability and a later regional partnership instead of relying on the label proxy.</li>
     <li>I can acknowledge evidence for both deterrence and power projection before weighing them.</li>
 </ol>
 
