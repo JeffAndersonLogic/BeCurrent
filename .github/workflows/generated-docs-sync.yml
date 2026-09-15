@@ -1,14 +1,18 @@
 name: Sync generated lesson and Canvas docs
 
-# Keeps teacher-facing lesson plans and paste-ready Canvas artifacts aligned with
-# the same unit-content modules that drive the student lessons.
+# Keeps teacher-facing lesson plans, Canvas artifacts, and Iran browser/video
+# payloads aligned with the same canonical sources that drive student lessons.
 on:
   push:
     branches: [main]
     paths:
       - 'scripts/lib/unit-content/**'
+      - 'scripts/lib/iran-video-content.js'
+      - 'scripts/lib/iran-topic-page.js'
       - 'scripts/build-lesson-plans.js'
       - 'scripts/build-canvas-events.js'
+      - 'scripts/build-iran-videos.js'
+      - 'scripts/build-iran.js'
       - '.github/workflows/generated-docs-sync.yml'
   workflow_dispatch:
 
@@ -33,13 +37,17 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Build generated teacher and Canvas docs
+      - name: Build generated lesson, Iran, and Canvas artifacts
         run: |
+          node scripts/build-iran-videos.js
+          node scripts/build-iran.js
           node scripts/build-lesson-plans.js
           node scripts/build-canvas-events.js
 
-      - name: Verify generated docs
+      - name: Verify generated artifacts
         run: |
+          node scripts/build-iran-videos.js --check
+          node scripts/build-iran.js --check
           node scripts/build-lesson-plans.js --check
           node scripts/build-canvas-events.js --check
 
@@ -47,12 +55,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- docs/lesson-plans docs/canvas; then
-            echo "Generated docs already in sync."
+          if git diff --quiet -- assets/js/iran-topics.js assets/data/iran-unit.js assets/data/iran-videos.js docs/lesson-plans docs/canvas; then
+            echo "Generated artifacts already in sync."
             exit 0
           fi
           git config user.name "BeCurrent Generated Docs Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/lesson-plans docs/canvas
+          git add assets/js/iran-topics.js assets/data/iran-unit.js assets/data/iran-videos.js docs/lesson-plans docs/canvas
           git commit -m "Sync generated lesson and Canvas docs"
           git push origin HEAD:main
