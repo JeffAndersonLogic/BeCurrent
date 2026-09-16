@@ -35,8 +35,8 @@ Start with four facts: Iraq invaded Iran in 1980, the war lasted eight years, Ir
 
 - **REQUIRED · Short documentary · HISTORY** — What Happened in the Iran-Iraq War?
   https://youtu.be/R9PT45EJdrM
-- **REQUIRED · Short explainer · BBC News** — What is Iran’s “Axis of Resistance”?
-  https://www.youtube.com/watch?v=gtLlqDGQItw
+- **REQUIRED · ~5 min · The Wall Street Journal** — Hamas, Hezbollah and Houthis: Iran’s “Axis of Resistance,” Explained
+  https://youtu.be/ek7P0hFzoNM
 - **OPTIONAL EXTEND · Teacher-selected chapter from 50+ min program · BBC World Service** — Hamas, Hezbollah, Houthis — Iran’s proxies at work
   https://www.youtube.com/watch?v=C2wTk6b9Wgc
 
