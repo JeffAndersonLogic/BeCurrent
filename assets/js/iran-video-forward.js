@@ -57,7 +57,10 @@
     .ir-missile-visual figure{max-width:770px;margin:18px auto 0}
     .ir-missile-visual img{display:block;width:100%;height:auto;background:#232f3a}
     .ir-missile-visual figcaption{margin-top:8px;color:#5a5f5c;font-family:'IBM Plex Mono',monospace;font-size:.68rem;line-height:1.45}
-    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}details.ir-section-background .ir-reading,details.ir-intro-background .ir-reading{padding:22px}}
+    .ir-network-visual{margin:18px 0 24px;padding:18px;background:#f7f3ec;border-left:5px solid #b03a2e;overflow:hidden}
+    .ir-network-visual figure{max-width:980px;margin:0 auto}
+    .ir-network-visual img{display:block;width:100%;height:auto;background:#fff}
+    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}.ir-network-visual{padding:10px}details.ir-section-background .ir-reading,details.ir-intro-background .ir-reading{padding:22px}}
     `;
     if(!document.getElementById('iran-video-forward-style')){
       const style=document.createElement('style');style.id='iran-video-forward-style';style.textContent=css;document.head.appendChild(style);
@@ -178,6 +181,19 @@
       ]);
     }
 
+    function installNetworkGraphic(){
+      if(topic!=='topic-04'||document.querySelector('.ir-network-visual'))return;
+      const section=document.getElementById('network');
+      const head=section&&section.querySelector(':scope > .ir-head');
+      if(!head)return;
+      const visual=document.createElement('div');
+      visual.className='ir-network-visual';
+      visual.innerHTML='<figure><img src="../assets/images/iran/ac-17_04-iran-proxies-v2-map_4d0b79.webp?v=20260916" width="1500" height="1949" loading="lazy" alt="Infographic mapping Iran-aligned armed groups across the Middle East, including Hezbollah in Lebanon, Hamas in Gaza, militias in Syria and Iraq, and the Houthis in Yemen."></figure>';
+      const img=visual.querySelector('img');
+      img.addEventListener('error',()=>visual.remove(),{once:true});
+      head.insertAdjacentElement('afterend',visual);
+    }
+
     function installMissileGraphic(){
       if(topic!=='topic-04'||document.querySelector('.ir-missile-visual'))return;
       const scaffold=document.querySelector('#irgc .ir-scaffold');
@@ -196,6 +212,7 @@
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
     installTopic4Backgrounds();
+    installNetworkGraphic();
     installMissileGraphic();
     relocateGather();
     setTimeout(relocateGather,0);
