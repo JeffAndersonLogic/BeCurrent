@@ -33,8 +33,8 @@ Two short historical clips support a single reverse move: 2026 → 1979 → 1953
 
 Start with four facts: Iraq invaded Iran in 1980, the war lasted eight years, Iranian cities came under missile attack, and Iraqi forces used chemical weapons. Watch the war excerpt for vulnerability, then use a clearly dated 2024 network snapshot to see the strategy Iran built over time.
 
-- **REQUIRED EXCERPT · 13:11 excerpt (3:52–17:03) · BBC World Service** — The untold story of the Iran-Iraq war’s frontline children
-  https://www.youtube.com/watch?v=aHZRvpuW8QM&t=232s
+- **REQUIRED · Short documentary · HISTORY** — What Happened in the Iran-Iraq War?
+  https://youtu.be/R9PT45EJdrM
 - **REQUIRED · Short explainer · BBC News** — What is Iran’s “Axis of Resistance”?
   https://www.youtube.com/watch?v=gtLlqDGQItw
 - **OPTIONAL EXTEND · Teacher-selected chapter from 50+ min program · BBC World Service** — Hamas, Hezbollah, Houthis — Iran’s proxies at work
