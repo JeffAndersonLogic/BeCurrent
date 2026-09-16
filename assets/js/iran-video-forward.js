@@ -47,13 +47,17 @@
     details.ir-section-background .ir-reading{padding:28px 32px}
     details.ir-section-background .ir-reading h3{font-size:30px}
     details.ir-section-background .ir-reading p{max-width:900px}
+    details.ir-intro-background{margin:18px 0 8px}
+    details.ir-intro-background .ir-reading{padding:30px 34px}
+    details.ir-intro-background .ir-reading h3{font-size:32px}
+    details.ir-intro-background .ir-reading p{max-width:920px}
     .ir-missile-visual{margin:16px 0 20px;padding:20px 22px;background:#f7f3ec;color:#17191a;border-left:5px solid #b03a2e}
     .ir-missile-visual h3{margin:4px 0 7px;color:#17191a;font-family:'Playfair Display',Georgia,serif;font-size:1.65rem}
     .ir-missile-visual>p{max-width:72ch;margin:0;color:#3c444c;line-height:1.55}
     .ir-missile-visual figure{max-width:770px;margin:18px auto 0}
     .ir-missile-visual img{display:block;width:100%;height:auto;background:#232f3a}
     .ir-missile-visual figcaption{margin-top:8px;color:#5a5f5c;font-family:'IBM Plex Mono',monospace;font-size:.68rem;line-height:1.45}
-    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}details.ir-section-background .ir-reading{padding:22px}}
+    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}details.ir-section-background .ir-reading,details.ir-intro-background .ir-reading{padding:22px}}
     `;
     if(!document.getElementById('iran-video-forward-style')){
       const style=document.createElement('style');style.id='iran-video-forward-style';style.textContent=css;document.head.appendChild(style);
@@ -119,7 +123,7 @@
       original.insertAdjacentElement('beforebegin',box);
       const details=document.createElement('details');
       details.className='ir-full-background';
-      details.innerHTML='<summary>Read the full background (optional)</summary>';
+      details.innerHTML='<summary>Read the full background</summary>';
       original.parentNode.insertBefore(details,original);
       details.appendChild(original);
     }
@@ -130,12 +134,23 @@
       if(!head)return;
       const details=document.createElement('details');
       details.className='ir-full-background ir-section-background';
-      details.innerHTML='<summary>Read the background (optional)</summary><div class="ir-reading"><h3>'+esc(title)+'</h3>'+paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div>';
+      details.innerHTML='<summary>Read the background</summary><div class="ir-reading"><h3>'+esc(title)+'</h3>'+paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div>';
       head.insertAdjacentElement('afterend',details);
+    }
+
+    function addIntroBackground(){
+      if(topic!=='topic-04'||document.querySelector('.ir-intro-background'))return;
+      const hero=document.querySelector('.ir-hero');
+      if(!hero)return;
+      const details=document.createElement('details');
+      details.className='ir-full-background ir-intro-background';
+      details.innerHTML='<summary>Read the background</summary><div class="ir-reading"><h3>Why Iran fights beyond its borders</h3><p>Today’s lesson starts with a puzzle: why would a country build missiles and relationships with armed groups far from home? Part of the answer comes from what Iran experienced after the 1979 revolution, especially the eight-year war that began when Iraq invaded in 1980.</p><p>Iranian leaders came out of that war focused on vulnerability. They had seen cities hit by missiles, chemical weapons used in the conflict, and outside powers shape the region around them. Over time, Iran built a strategy designed to make attacks more costly, push pressure farther from its borders, and avoid fighting stronger rivals only on those rivals’ terms. As you move through this topic, keep asking whether that strategy is best understood as deterrence, power projection, or both.</p></div>';
+      hero.insertAdjacentElement('afterend',details);
     }
 
     function installTopic4Backgrounds(){
       if(topic!=='topic-04')return;
+      addIntroBackground();
       addBackground(document.getElementById('strategy-terms'),'Why these three strategy terms matter',[
         'Countries build military strategies around their strengths, weaknesses, geography, and the threats they expect to face. Iran has often faced rivals with stronger air forces and more advanced conventional weapons, so Iranian planners developed ways to raise the cost of an attack without trying to match those rivals weapon for weapon.',
         'Deterrence means trying to prevent an attack by making the cost look too high. Asymmetric strategy means competing in different ways instead of fighting only where an opponent is strongest. Power projection means using force or influence beyond your own borders. One action can fit more than one of these ideas at the same time.'
