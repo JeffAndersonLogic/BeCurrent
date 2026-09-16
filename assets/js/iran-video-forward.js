@@ -43,7 +43,13 @@
     details.ir-full-background{margin-top:10px;border:1px solid rgba(237,232,220,.14);background:#22262b}
     details.ir-full-background>summary{cursor:pointer;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#c8c2b2}
     details.ir-full-background .ir-reading{margin:0;border:0;box-shadow:none}
-    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}}
+    .ir-missile-visual{margin:16px 0 20px;padding:20px 22px;background:#f7f3ec;color:#17191a;border-left:5px solid #b03a2e}
+    .ir-missile-visual h3{margin:4px 0 7px;color:#17191a;font-family:'Playfair Display',Georgia,serif;font-size:1.65rem}
+    .ir-missile-visual>p{max-width:72ch;margin:0;color:#3c444c;line-height:1.55}
+    .ir-missile-visual figure{max-width:770px;margin:18px auto 0}
+    .ir-missile-visual img{display:block;width:100%;height:auto;background:#232f3a}
+    .ir-missile-visual figcaption{margin-top:8px;color:#5a5f5c;font-family:'IBM Plex Mono',monospace;font-size:.68rem;line-height:1.45}
+    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}}
     `;
     if(!document.getElementById('iran-video-forward-style')){
       const style=document.createElement('style');style.id='iran-video-forward-style';style.textContent=css;document.head.appendChild(style);
@@ -114,10 +120,24 @@
       details.appendChild(original);
     }
 
+    function installMissileGraphic(){
+      if(topic!=='topic-04'||document.querySelector('.ir-missile-visual'))return;
+      const scaffold=document.querySelector('#irgc .ir-scaffold');
+      const details=document.querySelector('#irgc details.ir-full-background');
+      if(!scaffold&&!details)return;
+      const visual=document.createElement('section');
+      visual.className='ir-missile-visual';
+      visual.setAttribute('aria-labelledby','missile-visual-title');
+      visual.innerHTML='<div class="ir-kicker red">Visual guide</div><h3 id="missile-visual-title">How ballistic missiles work</h3><p>Notice the three flight phases and how range changes the distance a missile can reach.</p><figure><img src="../assets/images/iran/ballistic-missile-phases-aljazeera-2024.webp" width="770" height="962" loading="lazy" alt="Al Jazeera infographic showing boost, midcourse, and terminal phases of a ballistic missile, with range categories from battlefield range to intercontinental range."><figcaption>Graphic: Al Jazeera Labs, Oct. 2, 2024. Source shown in graphic: Space.com.</figcaption></figure>';
+      if(scaffold)scaffold.insertAdjacentElement('afterend',visual);
+      else details.insertAdjacentElement('beforebegin',visual);
+    }
+
     installTopicNavigator();
     installVideos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
+    installMissileGraphic();
     relocateGather();
     setTimeout(relocateGather,0);
   }
