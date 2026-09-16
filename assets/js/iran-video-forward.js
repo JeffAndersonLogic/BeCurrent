@@ -43,13 +43,17 @@
     details.ir-full-background{margin-top:10px;border:1px solid rgba(237,232,220,.14);background:#22262b}
     details.ir-full-background>summary{cursor:pointer;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:#c8c2b2}
     details.ir-full-background .ir-reading{margin:0;border:0;box-shadow:none}
+    details.ir-section-background{margin:18px 0 24px}
+    details.ir-section-background .ir-reading{padding:28px 32px}
+    details.ir-section-background .ir-reading h3{font-size:30px}
+    details.ir-section-background .ir-reading p{max-width:900px}
     .ir-missile-visual{margin:16px 0 20px;padding:20px 22px;background:#f7f3ec;color:#17191a;border-left:5px solid #b03a2e}
     .ir-missile-visual h3{margin:4px 0 7px;color:#17191a;font-family:'Playfair Display',Georgia,serif;font-size:1.65rem}
     .ir-missile-visual>p{max-width:72ch;margin:0;color:#3c444c;line-height:1.55}
     .ir-missile-visual figure{max-width:770px;margin:18px auto 0}
     .ir-missile-visual img{display:block;width:100%;height:auto;background:#232f3a}
     .ir-missile-visual figcaption{margin-top:8px;color:#5a5f5c;font-family:'IBM Plex Mono',monospace;font-size:.68rem;line-height:1.45}
-    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}}
+    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}details.ir-section-background .ir-reading{padding:22px}}
     `;
     if(!document.getElementById('iran-video-forward-style')){
       const style=document.createElement('style');style.id='iran-video-forward-style';style.textContent=css;document.head.appendChild(style);
@@ -120,6 +124,45 @@
       details.appendChild(original);
     }
 
+    function addBackground(section,title,paragraphs){
+      if(!section||section.querySelector(':scope > .ir-section-background'))return;
+      const head=section.querySelector(':scope > .ir-head');
+      if(!head)return;
+      const details=document.createElement('details');
+      details.className='ir-full-background ir-section-background';
+      details.innerHTML='<summary>Read the background (optional)</summary><div class="ir-reading"><h3>'+esc(title)+'</h3>'+paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div>';
+      head.insertAdjacentElement('afterend',details);
+    }
+
+    function installTopic4Backgrounds(){
+      if(topic!=='topic-04')return;
+      addBackground(document.getElementById('strategy-terms'),'Why these three strategy terms matter',[
+        'Countries build military strategies around their strengths, weaknesses, geography, and the threats they expect to face. Iran has often faced rivals with stronger air forces and more advanced conventional weapons, so Iranian planners developed ways to raise the cost of an attack without trying to match those rivals weapon for weapon.',
+        'Deterrence means trying to prevent an attack by making the cost look too high. Asymmetric strategy means competing in different ways instead of fighting only where an opponent is strongest. Power projection means using force or influence beyond your own borders. One action can fit more than one of these ideas at the same time.'
+      ]);
+      addBackground(document.getElementById('invasion'),'Why the 1980 invasion mattered',[
+        'Iraq invaded Iran in September 1980, less than two years after Iran’s revolution. Iran survived the opening attack, but the war lasted eight years. Iranian cities came under missile attack, Iraqi forces used chemical weapons, and the conflict caused enormous human and economic damage.',
+        'A government that survives that kind of war may decide it needs ways to stop danger before it reaches its own cities. That helps explain why later Iranian leaders placed so much value on missiles, strategic depth, and other forms of deterrence. The war was important, but it was not the only cause of Iran’s later strategy.'
+      ]);
+      addBackground(document.getElementById('evidence'),'How the evidence fits together',[
+        'The three evidence cards do different jobs. Missile development shows how Iran responded to a wartime weakness. Chemical-weapons use shows how serious the threat inside Iran became. Hezbollah shows the limit of a one-cause explanation because events in Lebanon, revolutionary ideology, and regional competition also shaped Iran’s choices.',
+        'Your job is not to prove that the Iran-Iraq War caused everything that came later. Build a chain from wartime experience to perceived vulnerability to a later strategic response, then identify what that chain cannot explain by itself.'
+      ]);
+      addBackground(document.getElementById('network'),'Why build influence beyond Iran?',[
+        'Over time, Iran developed relationships with armed groups and political actors across the Middle East. The Quds Force became the main IRGC organization for many of these outside relationships. Support can include weapons, training, money, advice, or political backing, but the amount of Iranian control is not the same in every case.',
+        'These partnerships can push pressure farther from Iran’s borders and make retaliation against Iran more complicated. That can serve deterrence, but it can also expand Iranian influence inside other countries. This is why the same network can be described as defensive by Iran and threatening by its rivals.'
+      ]);
+      const perspective=document.querySelector('.ir-faultline')?.closest('.ir-section');
+      addBackground(perspective,'Why both sides can feel less safe',[
+        'A security dilemma happens when one country tries to make itself safer but causes another country to feel more threatened. The second country responds, and both sides may end up less secure even if neither side originally wanted a larger conflict.',
+        'Iran can view missiles and regional partners as ways to discourage attacks on Iran. Israel, the United States, and Gulf states can view those same tools as threats operating closer to them. To understand the strategy, separate Iran’s possible purpose from the effects other countries experience.'
+      ]);
+      addBackground(document.getElementById('claim'),'How to build today’s claim',[
+        'Do not choose one label and stop. First, weigh the evidence for deterrence. Then weigh the evidence for power projection. A strong answer can conclude that both are present if the evidence supports that position.',
+        'Next, explain how much of the strategy can be traced to the Iran-Iraq War. Include at least one cause beyond the war, such as revolutionary ideology, Lebanon, later U.S. military deployments, or regional competition. Your claim should show both what the war helps explain and what it does not.'
+      ]);
+    }
+
     function installMissileGraphic(){
       if(topic!=='topic-04'||document.querySelector('.ir-missile-visual'))return;
       const scaffold=document.querySelector('#irgc .ir-scaffold');
@@ -128,7 +171,7 @@
       const visual=document.createElement('section');
       visual.className='ir-missile-visual';
       visual.setAttribute('aria-labelledby','missile-visual-title');
-      visual.innerHTML='<div class="ir-kicker red">Visual guide</div><h3 id="missile-visual-title">How ballistic missiles work</h3><p>Notice the three flight phases and how range changes the distance a missile can reach.</p><figure><img src="../assets/images/iran/ballistic-missile-phases-aljazeera-2024.webp" width="770" height="962" loading="lazy" alt="Al Jazeera infographic showing boost, midcourse, and terminal phases of a ballistic missile, with range categories from battlefield range to intercontinental range."><figcaption>Graphic: Al Jazeera Labs, Oct. 2, 2024. Source shown in graphic: Space.com.</figcaption></figure>';
+      visual.innerHTML='<div class="ir-kicker red">Visual guide</div><h3 id="missile-visual-title">How ballistic missiles work</h3><p>Notice the three flight phases and how range changes the distance a missile can reach.</p><figure><img src="../assets/images/iran/ballistic-missile-phases-aljazeera-2024.webp?v=20260916" width="770" height="962" loading="lazy" alt="Al Jazeera infographic showing boost, midcourse, and terminal phases of a ballistic missile, with range categories from battlefield range to intercontinental range."><figcaption>Graphic: Al Jazeera Labs, Oct. 2, 2024. Source shown in graphic: Space.com.</figcaption></figure>';
       if(scaffold)scaffold.insertAdjacentElement('afterend',visual);
       else details.insertAdjacentElement('beforebegin',visual);
     }
@@ -137,6 +180,7 @@
     installVideos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
+    installTopic4Backgrounds();
     installMissileGraphic();
     relocateGather();
     setTimeout(relocateGather,0);
