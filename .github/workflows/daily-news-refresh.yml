@@ -5,8 +5,8 @@ on:
   schedule:
     # GitHub cron is UTC. Running both times handles Indianapolis DST/standard time.
     # The timezone gate below allows only the 6:15 a.m. local run to continue.
-    - cron: '15 10 * * 1-5'
-    - cron: '15 11 * * 1-5'
+    - cron: '15 10 * * *'
+    - cron: '15 11 * * *'
 
 permissions:
   contents: write
