@@ -3,45 +3,45 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-14',
+  reviewed: '2026-09-16',
   lead: {
-    category: 'World / Economy',
-    headline: 'Oil jumps again as hopes for ending the Iran war dim',
-    dek: 'Brent crude climbed above $109 a barrel as fighting in the Middle East kept squeezing global oil supplies. Damage to a major Saudi pipeline and continued disruption around the Strait of Hormuz are tying the war directly to energy prices, inflation and household costs.',
+    category: 'U.S. / Iran War',
+    headline: 'House votes for a third time to end the Iran war as conflict drags on',
+    dek: 'The House approved another war powers resolution seeking to halt U.S. military operations against Iran without congressional authorization. The 220-204 vote puts Congress and the White House back at the center of the debate over who controls the use of military force.',
     source: 'Associated Press',
-    published: 'September 14, 2026',
-    url: 'https://apnews.com/article/0b44bfb43960c6ae850567c0c4e5003a',
+    published: 'September 16, 2026',
+    url: 'https://apnews.com/article/8519dae8197214b4edf2192e174c82f4',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
-      category: 'U.S. / Democracy',
-      headline: 'Second federal judge freezes Trump mail-ballot order as Supreme Court weighs the dispute',
-      dek: 'The rulings have temporarily blocked new Postal Service rules that challengers say could cause valid absentee and mail ballots to go uncounted before the midterm elections.',
+      category: 'World / Security',
+      headline: 'EU chief calls for a new security mechanism to respond to drone incidents and sabotage',
+      dek: 'European Commission President Ursula von der Leyen proposed a NATO-like consultation mechanism for drone incursions, sabotage and cyberattacks that threaten European security without reaching the level of open armed aggression.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/906aa1247f096609e61a1bd2369a57e9'
+      url: 'https://apnews.com/article/4ce4fef2ba8e3866e436655075afc6d3'
     },
     {
-      category: 'Technology / Government',
-      headline: 'Trump rejects calls for new AI guardrails as debate over safety intensifies',
-      dek: 'The president argued that tighter rules could weaken the United States in its technology competition with China, while AI leaders and lawmakers continue debating safety, cybersecurity and government oversight.',
+      category: 'Climate / Science',
+      headline: 'Satellites show Greenland and Antarctica lost more than 12 trillion tons of ice in 47 years',
+      dek: 'A new analysis using decades of satellite and survey data found accelerating ice loss from the two major ice sheets, adding to global sea-level rise and long-term flooding risk.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/b85df16775ff7e9611a456b061a0e4b9'
+      url: 'https://apnews.com/article/4721be25690317bc8f7bd9699b6f41f1'
     },
     {
-      category: 'World / Ukraine',
-      headline: 'NATO promises more support for Ukraine after Russian drone strikes near Poland',
-      dek: 'Strikes close to NATO territory are increasing concern about escalation and pushing Poland and other allies to strengthen border defenses while continuing military support for Ukraine.',
+      category: 'World / South Asia',
+      headline: 'India summons Pakistan\'s top diplomat after a naval collision in international waters',
+      dek: 'India protested after Pakistani naval units and an Indian vessel collided in the northern Arabian Sea. No major damage was reported, but the incident adds another point of tension between the nuclear-armed neighbors.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/dbba56f09562f337aa731f7d4bbd1235'
+      url: 'https://apnews.com/article/494234c16afbd84ee06032785db43c93'
     },
     {
-      category: 'Climate / U.S.',
-      headline: 'Flash flooding hits parts of Connecticut, New York and New Jersey',
-      dek: 'Heavy rain caused water rescues, road closures and rail disruptions across parts of the Northeast, offering another example of how extreme weather can quickly affect transportation and public safety.',
+      category: 'U.S. / Public Safety',
+      headline: 'Three people killed when news helicopter crashes while covering a Los Angeles bus collision',
+      dek: 'A helicopter operated for NBC and Telemundo crashed in the Chatsworth area while covering a separate deadly traffic collision. Federal aviation investigators are examining what caused the crash.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/0eb9d3e5b487825ff0873f0b72465e40'
+      url: 'https://apnews.com/article/7bf9274cd463e4c53b122ff958b0ed9f'
     }
   ]
 };
