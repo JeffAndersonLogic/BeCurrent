@@ -44,6 +44,8 @@ Start with four facts: Iraq invaded Iran in 1980, the war lasted eight years, Ir
 
 Topic 5 keeps video inside the chapter it explains instead of using a separate video-forward pathway.
 
+- **REQUIRED · Teacher-selected clip · YouTube** — Chapter 1 · U.S.-Iran nuclear origins
+  https://youtu.be/scMCjOYIcaQ
 - **REQUIRED · ~3 min · The Wall Street Journal** — The Iran Nuclear Deal Explained
   https://youtu.be/03JdbYggUTs
 - **REQUIRED · 3 min · Vox** — How the Iran nuclear deal works, explained in 3 minutes
