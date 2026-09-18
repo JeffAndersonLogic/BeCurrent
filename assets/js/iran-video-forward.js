@@ -125,6 +125,7 @@
     function installTopic5Videos(){
       if(topic!=='topic-05')return;
       const placements=[
+        {id:'surprise',title:'Watch how the nuclear story began',anchor:'.ir-timeline'},
         {id:'bargain',title:'Watch the 2015 bargain take shape',anchor:'.ir-faultline'},
         {id:'breakdown',title:'Watch the agreement break down',anchor:'.ir-faultline'},
         {id:'today',title:'Watch the dispute move from diplomacy to force',anchor:'.ir-timeline'}
@@ -287,7 +288,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260918b';
+  script.src='../assets/data/iran-videos.js?v=20260918c';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
