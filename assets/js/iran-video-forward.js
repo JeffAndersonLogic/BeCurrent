@@ -66,7 +66,7 @@
     .ir-network-visual{margin:18px 0 24px;padding:18px;background:#f7f3ec;border-left:5px solid #b03a2e;overflow:hidden}
     .ir-network-visual figure{max-width:980px;margin:0 auto}
     .ir-network-visual img{display:block;width:100%;height:auto;background:#fff}
-    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}.ir-network-visual{padding:10px}details.ir-section-background .ir-reading,details.ir-intro-background .ir-reading{padding:22px}}
+    @media(max-width:900px){.ir-topic-nav-inner{padding:9px 12px}.ir-watch-grid,.ir-chapter-videos .ir-watch-grid{grid-template-columns:1fr}.ir-watch{min-height:0}.ir-video-forward-head{padding:18px}.ir-video-audit{padding:0 18px 16px}.ir-missile-visual{padding:16px}.ir-network-visual{padding:10px}details.ir-section-background .ir-reading,details.ir-intro-background .ir-reading{padding:22px}}
     `;
     if(!document.getElementById('iran-video-forward-style')){
       const style=document.createElement('style');style.id='iran-video-forward-style';style.textContent=css;document.head.appendChild(style);
