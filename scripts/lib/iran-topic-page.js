@@ -71,14 +71,21 @@ function renderIranBrowser(unit) {
     section.id='objectives';
     const targets=meta.learningTargets.map(t=>'<li><strong>'+esc(t.skill)+'.</strong> '+esc(t.target)+'</li>').join('');
     const criteria=meta.successCriteria.map(c=>'<li><strong>'+esc(c.skill)+'.</strong> '+esc(c.criteria)+'</li>').join('');
-    section.innerHTML='<details><summary><span><span class="ir-kicker red">Today\\'s direction</span><strong>Learning targets and success criteria</strong></span><span aria-hidden="true">+</span></summary><div class="ir-objective-grid"><div><h2>Learning targets</h2><ol>'+targets+'</ol></div><div><h2>Success criteria</h2><ol>'+criteria+'</ol></div></div></details>';
-    hero.insertAdjacentElement('afterend',section);
+    const overviewTarget=topic==='topic-05'?document.getElementById('topic-overview-objectives'):null;
+    if(overviewTarget){
+      section.className='ir-story-objectives';
+      section.innerHTML='<div class="ir-kicker red">What you should know by the end</div><div class="ir-objective-grid"><div><h2>Learning targets</h2><ol>'+targets+'</ol></div><div><h2>Success criteria</h2><ol>'+criteria+'</ol></div></div>';
+      overviewTarget.appendChild(section);
+    }else{
+      section.innerHTML='<details><summary><span><span class="ir-kicker red">Today\\'s direction</span><strong>Learning targets and success criteria</strong></span><span aria-hidden="true">+</span></summary><div class="ir-objective-grid"><div><h2>Learning targets</h2><ol>'+targets+'</ol></div><div><h2>Success criteria</h2><ol>'+criteria+'</ol></div></div></details>';
+      hero.insertAdjacentElement('afterend',section);
+    }
   }
 
   function installVideoForward(){
     if(document.querySelector('script[data-iran-video-forward]'))return;
     const script=document.createElement('script');
-    script.src='../assets/js/iran-video-forward.js?v=20260918c';
+    script.src='../assets/js/iran-video-forward.js?v=20260918d';
     script.dataset.iranVideoForward='';
     document.body.appendChild(script);
   }
