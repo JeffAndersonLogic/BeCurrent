@@ -2,7 +2,7 @@
 
 **Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-15**
+Last launch audit: **2026-09-18**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
@@ -40,16 +40,18 @@ Start with four facts: Iraq invaded Iran in 1980, the war lasted eight years, Ir
 - **OPTIONAL EXTEND · Teacher-selected chapter from 50+ min program · BBC World Service** — Hamas, Hezbollah, Houthis — Iran’s proxies at work
   https://www.youtube.com/watch?v=C2wTk6b9Wgc
 
-## Topic 5 — Understand the bargain before judging why it failed.
+## Topic 5 — Put each clip where it belongs in the story.
 
-Use the videos for the diplomatic story. Keep the IAEA evidence and the post-2018 causal chain for your own analysis.
+Topic 5 keeps video inside the chapter it explains instead of using a separate video-forward pathway.
 
-- **REQUIRED · 7:27 · PBS NewsHour** — What’s in the Iran nuclear framework agreement?
-  https://www.pbs.org/video/iran-nuclear-agreement-sets-path-for-final-accord-1435189432/
-- **REQUIRED EXCERPT · 16:35 excerpt (1:25–18:00) · BBC News / The Global Story** — Why was the last US nuclear deal with Iran ripped up?
-  https://www.youtube.com/watch?v=-6TVgqxi7q0&t=85s
-- **OPTIONAL EXTEND · ~5 min from 18:00 · BBC News / The Global Story** — How 2015 compares with the 2026 negotiating environment
-  https://www.youtube.com/watch?v=-6TVgqxi7q0&t=1080s
+- **REQUIRED · ~3 min · The Wall Street Journal** — The Iran Nuclear Deal Explained
+  https://youtu.be/03JdbYggUTs
+- **REQUIRED · 3 min · Vox** — How the Iran nuclear deal works, explained in 3 minutes
+  https://youtu.be/oqvghou5m3U
+- **REQUIRED · Short explainer · Vox** — Trump quits Iran nuclear deal, undoing years of diplomacy
+  https://youtu.be/U-mwFoev3OQ
+- **REQUIRED · 4:02 · The Wall Street Journal** — The Tactics Behind Trump’s Bombing of Iran’s Nuclear Facilities
+  https://youtu.be/7gj5EKYr_bo
 
 ## Topic 6 — Watch the threshold move.
 
