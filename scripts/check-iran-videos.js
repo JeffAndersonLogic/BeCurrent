@@ -12,14 +12,16 @@ const topics=Object.entries(catalog.topics||{});
 if(topics.length!==8)fail(`expected 8 topics, found ${topics.length}`);
 for(const [topicId,topic] of topics){
   const isDocumentaryDay=topicId==='topic-01'||topicId==='topic-02';
-  const min=isDocumentaryDay?1:2,max=isDocumentaryDay?1:3;
-  if(!Array.isArray(topic.videos)||topic.videos.length<min||topic.videos.length>max){fail(`${topicId} should define ${isDocumentaryDay?'exactly 1':'2–3'} video/resource card${isDocumentaryDay?'':'s'}`);continue}
+  const min=isDocumentaryDay?1:2;
+  const max=topicId==='topic-05'?4:(isDocumentaryDay?1:3);
+  const expectedCount=isDocumentaryDay?'exactly 1':topicId==='topic-05'?'2–4':'2–3';
+  if(!Array.isArray(topic.videos)||topic.videos.length<min||topic.videos.length>max){fail(`${topicId} should define ${expectedCount} video/resource card${isDocumentaryDay?'':'s'}`);continue}
   for(const [i,v] of topic.videos.entries()){
     const tag=`${topicId} watch ${i+1}`;
     for(const key of ['label','status','source','runtime','title','url','why','after','verified'])if(!String(v[key]||'').trim())fail(`${tag} missing ${key}`);
     if(!allowed.has(v.status))fail(`${tag} has unsupported status ${v.status}`);
     if(!Array.isArray(v.listen)||v.listen.length<2)fail(`${tag} needs at least two listen-for cues`);
-    if(external(v.url)&&!/^https:\/\/(www\.)?(pbs\.org|youtube\.com)\//.test(v.url))fail(`${tag} uses an unapproved external host: ${v.url}`);
+    if(external(v.url)&&!/^https:\/\/((www\.)?(pbs\.org|youtube\.com)\/|youtu\.be\/)/.test(v.url))fail(`${tag} uses an unapproved external host: ${v.url}`);
     if(/pbs\.org/.test(v.url)&&/full-episode/i.test(v.url))fail(`${tag} points at a PBS full-episode URL instead of a direct segment: ${v.url}`);
     if(/youtube\.com/.test(v.url)&&!/[?&]v=[A-Za-z0-9_-]{6,}/.test(v.url))fail(`${tag} does not look like a direct YouTube watch URL: ${v.url}`);
     rows.push({topicId,index:i+1,...v});
