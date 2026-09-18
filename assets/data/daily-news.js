@@ -3,45 +3,45 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-16',
+  reviewed: '2026-09-18',
   lead: {
-    category: 'U.S. / Iran War',
-    headline: 'House votes for a third time to end the Iran war as conflict drags on',
-    dek: 'The House approved another war powers resolution seeking to halt U.S. military operations against Iran without congressional authorization. The 220-204 vote puts Congress and the White House back at the center of the debate over who controls the use of military force.',
+    category: 'World / Iran War',
+    headline: 'Iran says it struck an oil tanker in the Strait of Hormuz',
+    dek: 'Iran said its Revolutionary Guard struck the Togo-flagged tanker Trend after what it called an unauthorized transit attempt. Maritime authorities also reported other incidents in the strait as the war continues to disrupt a major global shipping route.',
     source: 'Associated Press',
-    published: 'September 16, 2026',
-    url: 'https://apnews.com/article/8519dae8197214b4edf2192e174c82f4',
+    published: 'September 18, 2026',
+    url: 'https://apnews.com/article/024350a0820dfc5dd433b4e13445fab5',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
-      category: 'World / Security',
-      headline: 'EU chief calls for a new security mechanism to respond to drone incidents and sabotage',
-      dek: 'European Commission President Ursula von der Leyen proposed a NATO-like consultation mechanism for drone incursions, sabotage and cyberattacks that threaten European security without reaching the level of open armed aggression.',
+      category: 'World / Iran War',
+      headline: 'Iran says it struck an oil tanker in the Strait of Hormuz',
+      dek: 'Iran said its Revolutionary Guard struck the Togo-flagged tanker Trend after what it called an unauthorized transit attempt. The incident highlights continuing risks to one of the world\'s most important oil-shipping routes.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/4ce4fef2ba8e3866e436655075afc6d3'
+      url: 'https://apnews.com/article/024350a0820dfc5dd433b4e13445fab5'
     },
     {
-      category: 'Climate / Science',
-      headline: 'Satellites show Greenland and Antarctica lost more than 12 trillion tons of ice in 47 years',
-      dek: 'A new analysis using decades of satellite and survey data found accelerating ice loss from the two major ice sheets, adding to global sea-level rise and long-term flooding risk.',
+      category: 'U.S. / Elections',
+      headline: 'Early voting begins in the 2026 midterm elections',
+      dek: 'In-person voting opened Friday in Virginia, while voters in several other states can begin casting absentee ballots. The November 3 elections will determine control of Congress.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/4721be25690317bc8f7bd9699b6f41f1'
+      url: 'https://apnews.com/article/10a3e620ce194144ce1af5e9d4fb6786'
     },
     {
-      category: 'World / South Asia',
-      headline: 'India summons Pakistan\'s top diplomat after a naval collision in international waters',
-      dek: 'India protested after Pakistani naval units and an Indian vessel collided in the northern Arabian Sea. No major damage was reported, but the incident adds another point of tension between the nuclear-armed neighbors.',
+      category: 'Economy / Inflation',
+      headline: 'Federal Reserve raises interest rates as inflation stays high',
+      dek: 'The Fed raised its benchmark rate to about 3.9%, its first increase since 2023. Officials pointed to persistent inflation, stronger economic growth and higher energy prices tied to the Iran war.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/494234c16afbd84ee06032785db43c93'
+      url: 'https://apnews.com/article/cbf10411b50040aed24ec5a28e4c0c5a'
     },
     {
-      category: 'U.S. / Public Safety',
-      headline: 'Three people killed when news helicopter crashes while covering a Los Angeles bus collision',
-      dek: 'A helicopter operated for NBC and Telemundo crashed in the Chatsworth area while covering a separate deadly traffic collision. Federal aviation investigators are examining what caused the crash.',
+      category: 'Technology / AI',
+      headline: 'Anthropic says Claude is helping build the next version of itself',
+      dek: 'Anthropic says Claude now handles large portions of its model research and development under human supervision, adding urgency to debates over how quickly advanced AI should develop and how closely it should be monitored.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/7bf9274cd463e4c53b122ff958b0ed9f'
+      url: 'https://apnews.com/article/4d3a7430f57cbc7c39e1c5f2b7d7e132'
     }
   ]
 };
