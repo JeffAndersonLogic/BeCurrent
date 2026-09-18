@@ -37,6 +37,12 @@
     .ir-watch a.ir-watch-link{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:11px 13px;background:#1b3a5c;color:#fff;text-decoration:none;font-weight:700;border-radius:2px}
     .ir-watch a.ir-watch-link:hover,.ir-watch a.ir-watch-link:focus{background:#244d78}
     .ir-video-audit{padding:0 24px 18px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#8f918e}
+    .ir-chapter-videos{margin:18px 0 22px;border:1px solid rgba(237,232,220,.16);background:#171b1f;box-shadow:0 12px 28px rgba(0,0,0,.14)}
+    .ir-chapter-videos-head{padding:16px 20px;border-bottom:1px solid rgba(237,232,220,.12)}
+    .ir-chapter-videos-head h3{margin:.2rem 0 0;font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;color:#fff}
+    .ir-chapter-videos .ir-watch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .ir-chapter-videos.single .ir-watch-grid{grid-template-columns:minmax(0,1fr)}
+    .ir-chapter-videos .ir-video-audit{padding:10px 20px 14px}
     .ir-scaffold{margin:16px 0;padding:18px 20px;background:#f7f3ec;color:#17191a;border-left:5px solid #1b3a5c}
     .ir-scaffold h3{color:#17191a;margin:0 0 8px}
     .ir-scaffold ul{margin:0;padding-left:1.25rem}.ir-scaffold li{margin:.38rem 0;line-height:1.45}
@@ -105,7 +111,7 @@
     }
 
     function installVideos(){
-      if(topic==='topic-03'||document.querySelector('.ir-video-forward'))return;
+      if(topic==='topic-03'||topic==='topic-05'||document.querySelector('.ir-video-forward'))return;
       const section=document.createElement('section');
       section.className='ir-video-forward';
       section.id='video-forward';
@@ -114,6 +120,26 @@
       const objectives=document.getElementById('objectives');
       const hero=document.querySelector('.ir-hero');
       (objectives||hero)?.insertAdjacentElement('afterend',section);
+    }
+
+    function installTopic5Videos(){
+      if(topic!=='topic-05')return;
+      const placements=[
+        {id:'bargain',title:'Watch the 2015 bargain take shape',anchor:'.ir-faultline'},
+        {id:'breakdown',title:'Watch the agreement break down',anchor:'.ir-faultline'},
+        {id:'today',title:'Watch the dispute move from diplomacy to force',anchor:'.ir-timeline'}
+      ];
+      placements.forEach(place=>{
+        const section=document.getElementById(place.id);
+        if(!section||section.querySelector(':scope > .ir-chapter-videos'))return;
+        const videos=(guide.videos||[]).filter(v=>v.chapter===place.id);
+        if(!videos.length)return;
+        const block=document.createElement('div');
+        block.className='ir-chapter-videos'+(videos.length===1?' single':'');
+        block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Video in context</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">These clips are part of this chapter, not a separate pathway. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
+        const anchor=section.querySelector(place.anchor)||section.querySelector(':scope > .ir-head');
+        if(anchor)anchor.insertAdjacentElement('afterend',block);
+      });
     }
 
     function installScaffold(spec){
@@ -181,6 +207,45 @@
       ]);
     }
 
+    function installTopic5Backgrounds(){
+      if(topic!=='topic-05')return;
+      const hero=document.querySelector('.ir-hero');
+      if(hero&&!document.querySelector('.ir-intro-background')){
+        const intro=document.createElement('details');
+        intro.className='ir-full-background ir-intro-background';
+        intro.innerHTML='<summary>Read the background</summary><div class="ir-reading"><h3>Why the nuclear issue became so important</h3><p>Iran’s nuclear program began when Iran and the United States were partners, but the 1979 revolution turned the two governments into adversaries. The technology did not disappear when the political relationship changed. Over time, the same enrichment technology that can support civilian nuclear energy also raised concern because much higher enrichment can support a weapons program.</p><p>That is the problem behind Topic 5: how do countries reduce the risk of a nuclear weapon when they do not trust one another? The 2015 agreement tried to answer that question with measurable limits, international inspections, and sanctions relief. The later breakdown helps explain why the nuclear dispute moved back toward pressure and eventually military force.</p></div>';
+        hero.insertAdjacentElement('afterend',intro);
+      }
+      addBackground(document.getElementById('surprise'),'Why the United States helped Iran start a nuclear program',[
+        'During the Cold War, Shah Mohammad Reza Pahlavi was a close U.S. partner. American policy promoted peaceful nuclear technology to allied countries, and Iran wanted nuclear energy as part of a broader modernization program.',
+        'That origin matters because the program did not begin as a secret anti-American weapons project. The political meaning of the program changed later as Iran’s government, regional relationships, and security concerns changed.'
+      ]);
+      addBackground(document.getElementById('break'),'Why 1979 changed the nuclear story',[
+        'The Iranian Revolution overthrew the Shah and replaced a U.S.-aligned monarchy with an Islamic Republic that openly rejected American influence. Cooperation between Washington and Tehran collapsed, but Iran retained scientists, technical knowledge, and nuclear infrastructure.',
+        'From that point forward, U.S. officials no longer viewed Iranian nuclear development through the lens of an allied modernization program. The same technology now existed inside a hostile political relationship shaped by the hostage crisis, war, sanctions, and deep mistrust.'
+      ]);
+      addBackground(document.getElementById('fear'),'Why uranium enrichment created international concern',[
+        'A civilian nuclear program can enrich uranium to low levels for reactor fuel. The concern is that the same basic enrichment process can be continued to much higher levels. That means the number and efficiency of centrifuges, the size of an enriched-uranium stockpile, and the level of enrichment all affect how quickly a country could move toward weapons-grade material.',
+        'Iran said its program was peaceful. Other governments focused on whether inspections and limits were strong enough to verify that claim and keep the time needed to produce enough weapons-grade material from becoming dangerously short.'
+      ]);
+      addBackground(document.getElementById('bargain'),'How the 2015 nuclear bargain worked',[
+        'The Joint Comprehensive Plan of Action, or JCPOA, was negotiated by Iran, the United States, Britain, France, Germany, Russia, China, and the European Union. Iran accepted limits on enrichment, centrifuges, its enriched-uranium stockpile, and other nuclear activities. The International Atomic Energy Agency received expanded monitoring responsibilities.',
+        'In return, nuclear-related sanctions were lifted or suspended as Iran met its commitments. The agreement was intentionally narrow. It addressed the nuclear program, not Iran’s missile program, armed partners, human-rights disputes, or the wider U.S.-Iran rivalry. Supporters saw that focus as practical. Critics saw it as a major weakness.'
+      ]);
+      addBackground(document.getElementById('breakdown'),'Why the United States left the agreement in 2018',[
+        'President Donald Trump argued that the JCPOA was too limited and that some restrictions would expire over time. His administration also objected that the agreement did not address Iran’s ballistic missiles or regional armed partners. The United States withdrew in May 2018 and restored sanctions.',
+        'Supporters of staying in the deal argued that verified nuclear limits were valuable even if the agreement did not solve every dispute with Iran. After the U.S. withdrawal and the return of sanctions, Iran later moved beyond several JCPOA limits. The key causal question is whether withdrawal reduced nuclear risk or helped create a more dangerous cycle of pressure and response.'
+      ]);
+      addBackground(document.getElementById('today'),'How the dispute moved from diplomacy to force',[
+        'By 2025, the nuclear dispute was no longer being managed mainly through the 2015 framework. Israel attacked Iranian nuclear and military targets, and the United States later struck the Fordow, Natanz, and Isfahan nuclear sites. Military action could damage facilities, but it could not by itself recreate the inspection and verification system that had existed under the JCPOA.',
+        'That difference matters for today’s question. A negotiated agreement tries to manage risk through rules, monitoring, and incentives. A military strike tries to reduce capability through force. Both approaches have limits, and neither automatically resolves the larger conflict between Iran, Israel, and the United States.'
+      ]);
+      addBackground(document.getElementById('claim'),'How to judge whether the breakdown mattered',[
+        'Do not treat the 2018 withdrawal as the only possible cause of later war. Instead, ask whether it changed the path: Did nuclear limits weaken? Did mistrust increase? Did sanctions, enrichment, threats, and military pressure become more important after the agreement stopped functioning?',
+        'Then compare that factor with other causes already covered in the unit, including missiles, regional armed groups, Iran-Israel hostility, and direct attacks. A strong claim explains whether the collapse of the bargain substantially increased the risk of war without pretending that war became inevitable.'
+      ]);
+    }
+
     function installNetworkGraphic(){
       if(topic!=='topic-04'||document.querySelector('.ir-network-visual'))return;
       const section=document.getElementById('network');
@@ -209,9 +274,11 @@
 
     installTopicNavigator();
     installVideos();
+    installTopic5Videos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
     installTopic4Backgrounds();
+    installTopic5Backgrounds();
     installNetworkGraphic();
     installMissileGraphic();
     relocateGather();
@@ -220,7 +287,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260914';
+  script.src='../assets/data/iran-videos.js?v=20260918';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
