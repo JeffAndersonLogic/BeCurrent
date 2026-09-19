@@ -36,7 +36,9 @@
     "parse:canvas": "node scripts/parse-canvas-submissions.js",
     "serve": "node scripts/serve-local.js",
     "hooks:install": "git config core.hooksPath .githooks && echo \"pre-push hook active: npm test runs before every push\"",
-    "prepare": "git config core.hooksPath .githooks || true"
+    "prepare": "git config core.hooksPath .githooks || true",
+    "build:assets": "node scripts/build-asset-version.js && node scripts/build-index.js && node scripts/build-iran.js && node scripts/build-asset-version.js",
+    "check:assets": "node scripts/build-asset-version.js --check"
   },
   "devDependencies": {
     "playwright": "^1.49.0"

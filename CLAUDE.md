@@ -145,6 +145,11 @@ push. That keeps the record of what it would have caught.
   `scripts/lib/desk-capture-block.js`; never hand-edit the generated page. See "The
   Block Has Two Halves" below for why the daily half is one page and the units are
   not, and `docs/CANVAS-CAPTURE.md` for the capture contract.
+- `node scripts/build-asset-version.js`, stamp every local `?v=` cache-buster with
+  a hash of the file it points at. `--check` fails on drift, which is what the
+  offline suite runs. Use `npm run build:assets`, which also reruns the two
+  generators whose templates carry a stamp, in the order that converges. Never
+  hand-type a `?v=` value. See "Cache Stamps" below.
 - `node scripts/parse-canvas-submissions.js <dir>`, turn an unzipped Canvas
   "Download Submissions" folder into `responses.csv` (one row per student per
   module response) and `exceptions.csv`. Reads and writes local files only, never
@@ -687,6 +692,54 @@ This repo is **public**, because GitHub Pages serves it. Therefore:
   container until the picture is letterboxed off-screen. `validate.js` enforces it.
 - **Never commit a placeholder image file.** `validate.js` checks magic bytes; a
   text file named `.jpg` fails the build.
+
+## Cache Stamps
+
+A `?v=` on a stylesheet or a script is what tells a browser its cached copy is
+stale. **The value is derived, never typed**, and it is eight hex characters of
+the referenced file's own bytes, written by `scripts/build-asset-version.js`.
+
+**Typing it by hand put five different versions of one file in front of students.**
+Until 2026-09-19 each page carried its own stamp, so a shared asset had as many
+stamps as it had callers and nothing knew they were the same fact. On 2026-09-18
+`assets/js/iran-topics.js` was loaded by the eight Iran pages under five stamps at
+once (`20260904`, `20260907`, `20260914-topic3`, `20260915`, `20260918d`), and
+`iran-unit.css` under four. That is not untidiness: the stamp decides which cached
+copy a browser runs, so the topic a student happened to open decided which version
+of the lesson JavaScript they got. **Every structural check was green through all of
+it**, because each stamp is a well-formed string and every page renders.
+
+It is also what made a one-line change cost fifteen commits in nine minutes: change
+the shared file, refresh, see the old version, bump the stamp on the page in front
+of you, refresh, find another page still stale, bump that one. The stamps were
+found one at a time because nothing could say they belonged together.
+
+**A hash, rather than one shared date, because it removes the remembering.** Change
+an asset, run `npm run build:assets`, and every page that loads it follows; forget,
+and the push fails. Two pages cannot disagree, because neither page holds the value.
+Only what actually changed is busted, so a CSS edit does not re-download every image
+on a school network. And it reproduces in a fresh clone, which a date or an mtime
+does not, so `--check` means the same thing in CI as on a laptop.
+
+**A remote URL is never stamped.** YouTube's own `?v=` is the video id, so rewriting
+it would point every clip on the site at a video that does not exist. Only paths
+resolving to a file inside this repository are touched.
+
+**A generator declares the directory its links resolve against**, because a
+template's links are relative to where its *output* lands, not to the template. The
+two are listed in `GENERATED_SOURCES`. `iran-topic-page.js` resolves against `iran/`
+rather than its own folder, because the `script.src` it writes is resolved by the
+browser against the page that loads it. Written the obvious way instead, the first
+run reported the entire site missing.
+
+**`npm run build:assets` runs the stamper twice on purpose.** `iran-topics.js` is
+itself generated, so stamping its generator changes its bytes, which changes its
+hash, which the eight pages loading it must then pick up. Stamp, rebuild, stamp
+again converges in exactly two passes and is idempotent after that.
+
+**A link to an asset that is not there fails the run** rather than being quietly
+stamped, because a dead stylesheet renders as an unstyled page with no error in the
+console, which is the same silent shape as everything else in this section.
 
 ## The Mark, the Palette, and the Faces
 
