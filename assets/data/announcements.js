@@ -480,7 +480,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Cause and Effect"
         },
         {
-          "text": "I can use a specific wartime or institutional fact instead of relying on the label proxy.",
+          "text": "I can use specific evidence from wartime vulnerability and a later regional partnership instead of relying on the label proxy.",
           "label": "Sourcing and Evidence"
         },
         {
