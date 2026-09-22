@@ -59,9 +59,9 @@ Topic 5 keeps video inside the chapter it explains instead of using a separate v
 
 Topic 6 keeps video inside the step it explains instead of using a separate video-forward pathway.
 
-- **REQUIRED · Teacher-selected clip · CRUX News** — CRUX News · Iran-Israel shadow war background
+- **REQUIRED · 6:12 · The New York Times** — We Tracked Iran's Covert Military Unit on Social Media, Here's What We Found | Visual Investigations
   https://youtu.be/V4-ycdxqimA
-- **REQUIRED · Teacher-selected clip · CRUX News** — CRUX News · Iran-Israel conflict before direct exchange
+- **REQUIRED · Short explainer · NBC News** — Hezbollah explained: The Lebanese militant group targeted with exploding walkie-talkies
   https://youtu.be/d1p9gTlt4Ng
 - **REQUIRED · 6:08 · PBS NewsHour** — War erupts as Israel retaliates after surprise Hamas attack
   https://www.pbs.org/video/israel-palestine-1696707142/
