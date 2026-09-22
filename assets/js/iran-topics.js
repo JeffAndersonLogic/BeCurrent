@@ -51,6 +51,10 @@
       section.className='ir-story-objectives';
       section.innerHTML='<div class="ir-kicker red">What you should know by the end</div><div class="ir-objective-grid"><div><h2>Learning targets</h2><ol>'+targets+'</ol></div><div><h2>Success criteria</h2><ol>'+criteria+'</ol></div></div>';
       overviewTarget.appendChild(section);
+    }else if(topic==='topic-06'){
+      section.className='ir-section ir-objectives';
+      section.innerHTML='<div class="ir-kicker red">What you should know by the end</div><div class="ir-objective-grid"><div><h2>Learning targets</h2><ol>'+targets+'</ol></div><div><h2>Success criteria</h2><ol>'+criteria+'</ol></div></div>';
+      hero.insertAdjacentElement('afterend',section);
     }else{
       section.innerHTML='<details><summary><span><span class="ir-kicker red">Today\'s direction</span><strong>Learning targets and success criteria</strong></span><span aria-hidden="true">+</span></summary><div class="ir-objective-grid"><div><h2>Learning targets</h2><ol>'+targets+'</ol></div><div><h2>Success criteria</h2><ol>'+criteria+'</ol></div></div></details>';
       hero.insertAdjacentElement('afterend',section);
@@ -60,7 +64,7 @@
   function installVideoForward(){
     if(document.querySelector('script[data-iran-video-forward]'))return;
     const script=document.createElement('script');
-    script.src='../assets/js/iran-video-forward.js?v=20260918d';
+    script.src='../assets/js/iran-video-forward.js?v=20260922a';
     script.dataset.iranVideoForward='';
     document.body.appendChild(script);
   }
