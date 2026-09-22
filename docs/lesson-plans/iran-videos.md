@@ -59,6 +59,10 @@ Topic 5 keeps video inside the chapter it explains instead of using a separate v
 
 Topic 6 keeps video inside the step it explains instead of using a separate video-forward pathway.
 
+- **REQUIRED · Teacher-selected clip · CRUX News** — CRUX News · Iran-Israel shadow war background
+  https://youtu.be/V4-ycdxqimA
+- **REQUIRED · Teacher-selected clip · CRUX News** — CRUX News · Iran-Israel conflict before direct exchange
+  https://youtu.be/d1p9gTlt4Ng
 - **REQUIRED · 6:08 · PBS NewsHour** — War erupts as Israel retaliates after surprise Hamas attack
   https://www.pbs.org/video/israel-palestine-1696707142/
 - **REQUIRED · 11:04 · PBS NewsHour** — Israel weighs its response to Iran’s attack
