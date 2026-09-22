@@ -111,7 +111,7 @@
     }
 
     function installVideos(){
-      if(topic==='topic-03'||topic==='topic-05'||document.querySelector('.ir-video-forward'))return;
+      if(topic==='topic-03'||topic==='topic-05'||topic==='topic-06'||document.querySelector('.ir-video-forward'))return;
       const section=document.createElement('section');
       section.className='ir-video-forward';
       section.id='video-forward';
@@ -138,6 +138,25 @@
         const block=document.createElement('div');
         block.className='ir-chapter-videos'+(videos.length===1?' single':'');
         block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Video in context</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">These clips are part of this chapter, not a separate pathway. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
+        const anchor=section.querySelector(place.anchor)||section.querySelector(':scope > .ir-head');
+        if(anchor)anchor.insertAdjacentElement('afterend',block);
+      });
+    }
+
+    function installTopic6Videos(){
+      if(topic!=='topic-06')return;
+      const placements=[
+        {id:'direct',title:'Watch the regional pressure turn into direct attack',anchor:'.ir-timeline'},
+        {id:'war',title:'Watch direct war widen and reach the present',anchor:'.ir-grid-3'}
+      ];
+      placements.forEach(place=>{
+        const section=document.getElementById(place.id);
+        if(!section||section.querySelector(':scope > .ir-chapter-videos'))return;
+        const videos=(guide.videos||[]).filter(v=>v.chapter===place.id);
+        if(!videos.length)return;
+        const block=document.createElement('div');
+        block.className='ir-chapter-videos'+(videos.length===1?' single':'');
+        block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Video in context</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">These clips are part of this step, not a separate pathway. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
         const anchor=section.querySelector(place.anchor)||section.querySelector(':scope > .ir-head');
         if(anchor)anchor.insertAdjacentElement('afterend',block);
       });
@@ -247,6 +266,31 @@
       ]);
     }
 
+    function installTopic6Backgrounds(){
+      if(topic!=='topic-06')return;
+      addBackground(document.getElementById('shadow'),'What was the Iran-Israel shadow war?',[
+        'Iran and Israel were already in conflict long before they began openly firing large numbers of missiles at one another. Israel carried out strikes on Iranian-linked forces and weapons transfers in Syria, while Iran supported armed groups such as Hezbollah and developed missile, drone, and cyber capabilities. Both sides were trying to weaken or deter the other without creating a sustained direct war between the two states.',
+        'This is why the phrase shadow war matters. The conflict was real, but much of it stayed indirect, covert, or outside the two countries themselves. Keeping the fighting below the level of open state-to-state war gave leaders room to act while limiting the risk of a much larger regional conflict.'
+      ]);
+      addBackground(document.getElementById('direct'),'Why October 7 changed the regional environment',[
+        'On October 7, 2023, Hamas-led militants attacked Israel from Gaza, killing about 1,200 people and taking roughly 250 hostages, according to Israeli authorities. Israel then launched a major war in Gaza. Fighting also intensified between Israel and Hezbollah in Lebanon, while the Houthis in Yemen and other Iran-aligned groups carried out attacks elsewhere in the region.',
+        'Iran did not directly control every decision made by these groups, but the wider fighting increased pressure between Iran and Israel. The key question for Topic 6 is not whether October 7 automatically caused later Iran-Israel war. It is how the regional conflict created more opportunities for retaliation, miscalculation, and direct confrontation.'
+      ]);
+      addBackground(document.getElementById('war'),'How direct exchanges became sustained war',[
+        'In April 2024, Iran launched its first direct military attack on Israel from Iranian territory after a strike on an Iranian diplomatic compound in Damascus killed senior Revolutionary Guard officers. Israel responded in a limited way. In October, Iran launched another large direct missile attack and Israel answered with strikes on military targets inside Iran. A line that had once been unusual had now been crossed more than once.',
+        'In June 2025, the pattern changed again. Israel launched a sustained campaign against Iranian nuclear and military targets, Iran repeatedly retaliated, and the United States later struck the Fordow, Natanz, and Isfahan nuclear sites. On February 28, 2026, the United States and Israel launched a new joint attack on Iran, and Iran retaliated across the region. The important historical question is how each earlier exchange changed what leaders considered possible in the next one.'
+      ]);
+      const perspective=document.querySelector('.ir-faultline')?.closest('.ir-section');
+      addBackground(perspective,'How deterrence can restrain conflict or push it upward',[
+        'Deterrence means trying to prevent an opponent from acting by convincing that opponent the cost will be too high. A limited strike can sometimes restore a boundary because both sides demonstrate capability and then stop. That is one way to read the April 2024 exchange.',
+        'The danger is that each successful round can also create a precedent. If leaders conclude that they can survive direct attacks and retaliation without losing control, the next direct attack may become easier to authorize. That is the escalation-ladder problem: an action intended to deter the next strike can also help normalize it.'
+      ]);
+      addBackground(document.getElementById('claim'),'How to identify a turning point',[
+        'Do not automatically choose the largest attack. A turning point matters because it changes the path that follows. Ask what became newly possible after the event, what expectations changed, and whether later leaders were making decisions in a different environment because that event had already happened.',
+        'Your answer can begin in 2018, 2023, 2024, 2025, or 2026. The strongest claim will connect the chosen turning point to at least two later events and explain why another plausible turning point is less important. Avoid saying that war became inevitable. Leaders still had choices at every stage.'
+      ]);
+    }
+
     function installNetworkGraphic(){
       if(topic!=='topic-04'||document.querySelector('.ir-network-visual'))return;
       const section=document.getElementById('network');
@@ -276,10 +320,12 @@
     installTopicNavigator();
     installVideos();
     installTopic5Videos();
+    installTopic6Videos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
     installTopic4Backgrounds();
     installTopic5Backgrounds();
+    installTopic6Backgrounds();
     installNetworkGraphic();
     installMissileGraphic();
     relocateGather();
@@ -288,7 +334,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260918c';
+  script.src='../assets/data/iran-videos.js?v=20260922a';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
