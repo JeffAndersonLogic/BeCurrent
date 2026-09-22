@@ -3,45 +3,45 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-18',
+  reviewed: '2026-09-22',
   lead: {
-    category: 'World / Iran War',
-    headline: 'Iran says it struck an oil tanker in the Strait of Hormuz',
-    dek: 'Iran said its Revolutionary Guard struck the Togo-flagged tanker Trend after what it called an unauthorized transit attempt. Maritime authorities also reported other incidents in the strait as the war continues to disrupt a major global shipping route.',
+    category: 'World / Diplomacy',
+    headline: 'Trump returns to the U.N. as leaders confront Iran, AI and global instability',
+    dek: 'President Donald Trump is addressing the United Nations General Assembly as world leaders debate the Iran war, artificial intelligence, Ukraine and the future role of the U.N.',
     source: 'Associated Press',
-    published: 'September 18, 2026',
-    url: 'https://apnews.com/article/024350a0820dfc5dd433b4e13445fab5',
+    published: 'September 22, 2026',
+    url: 'https://apnews.com/article/692e1e171a791be0c9b9c1f56718a0d0',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
-      category: 'World / Iran War',
-      headline: 'Iran says it struck an oil tanker in the Strait of Hormuz',
-      dek: 'Iran said its Revolutionary Guard struck the Togo-flagged tanker Trend after what it called an unauthorized transit attempt. The incident highlights continuing risks to one of the world\'s most important oil-shipping routes.',
+      category: 'World / Diplomacy',
+      headline: 'Trump returns to the U.N. as leaders confront Iran, AI and global instability',
+      dek: 'The U.N. General Assembly opens amid war, economic pressure and debate over whether international institutions can still manage major global crises.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/024350a0820dfc5dd433b4e13445fab5'
+      url: 'https://apnews.com/article/692e1e171a791be0c9b9c1f56718a0d0'
     },
     {
-      category: 'U.S. / Elections',
-      headline: 'Early voting begins in the 2026 midterm elections',
-      dek: 'In-person voting opened Friday in Virginia, while voters in several other states can begin casting absentee ballots. The November 3 elections will determine control of Congress.',
+      category: 'U.S.-China / Technology',
+      headline: 'Trump and Xi seek stability as tensions rise over AI, trade and Iran',
+      dek: 'The U.S. and Chinese leaders are preparing to meet in Washington as the two countries compete over artificial intelligence and trade while trying to keep their broader relationship from worsening.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/10a3e620ce194144ce1af5e9d4fb6786'
+      url: 'https://apnews.com/article/e560910c897fedb0448eda4cdbfdbaea'
     },
     {
-      category: 'Economy / Inflation',
-      headline: 'Federal Reserve raises interest rates as inflation stays high',
-      dek: 'The Fed raised its benchmark rate to about 3.9%, its first increase since 2023. Officials pointed to persistent inflation, stronger economic growth and higher energy prices tied to the Iran war.',
+      category: 'Economy / Energy',
+      headline: 'Oil prices and bond yields fall again as Wall Street edges higher',
+      dek: 'Oil prices retreated for a fifth straight day and Treasury yields eased, reducing some of the pressure that high energy costs and borrowing rates have placed on markets.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/cbf10411b50040aed24ec5a28e4c0c5a'
+      url: 'https://apnews.com/article/de8c5f9659e44556e40e661f794b48ad'
     },
     {
-      category: 'Technology / AI',
-      headline: 'Anthropic says Claude is helping build the next version of itself',
-      dek: 'Anthropic says Claude now handles large portions of its model research and development under human supervision, adding urgency to debates over how quickly advanced AI should develop and how closely it should be monitored.',
+      category: 'Climate / Food',
+      headline: 'Worsening El Niño raises drought and food-price risks across Asia',
+      dek: 'Scientists and governments are watching a strengthening El Niño that could worsen drought, damage crops and add pressure to global food prices.',
       source: 'Associated Press',
-      url: 'https://apnews.com/article/4d3a7430f57cbc7c39e1c5f2b7d7e132'
+      url: 'https://apnews.com/article/31c88df9ce8f67bcbfe3ea7f39431d57'
     }
   ]
 };
