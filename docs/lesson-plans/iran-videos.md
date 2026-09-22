@@ -63,10 +63,8 @@ Topic 6 keeps video inside the step it explains instead of using a separate vide
   https://www.pbs.org/video/israel-palestine-1696707142/
 - **REQUIRED · 11:04 · PBS NewsHour** — Israel weighs its response to Iran’s attack
   https://www.pbs.org/video/attack-on-israel-1713123325/
-- **REQUIRED · 4:52 · PBS NewsHour** — A look inside the U.S.’ unprecedented direct attack on Iran
-  https://www.pbs.org/video/a-look-inside-the-u-s-unprecedented-direct-attack-on-iran-1750626633/
-- **REQUIRED · 9:18 · Reuters World News** — US and Israel attack Iran; Tehran retaliates
-  https://www.youtube.com/watch?v=F8f12-zRcFg
+- **REQUIRED EXCERPT · Teacher-selected 8–10 min from 26:45 · PBS NewsHour** — War with Iran | PBS News Special Report
+  https://www.pbs.org/video/war-with-iran-a-pbs-news-special-report-da07ca/
 
 ## Topic 7 — See how geography becomes leverage.
 
