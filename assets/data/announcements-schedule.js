@@ -51,7 +51,7 @@ window.BECURRENT_SCHEDULE={
   {date:'2026-09-22',topic:'IR6',topicTitle:'Iran at War | From Shadow War to Open War',
    note:'Today is about thresholds: when did direct state-to-state attack become an available option?',
    doNow:'Why might two rivals prefer a shadow war to direct war?',
-   agenda:['Define shadow war and why rivals may prefer it.','2024: direct Iran-Israel attacks cross a threshold.','2025–26: compare size, precedent, retaliation, and path dependence.','Perspective check: deterrence as restraint vs. escalation ladder.','Choose the turning point when full-scale war became substantially more likely.'],
+   agenda:['CNN 10 · Sept. 18: Japan Has More Living 100-Year-Olds Than Ever Before.','CNN 10 · Sept. 21: New Fossil Analysis Confirms Tyrannosaurus Rex Was Warm-Blooded.','Define shadow war and why rivals may prefer it.','2024: direct Iran-Israel attacks cross a threshold.','2025–26: compare size, precedent, retaliation, and path dependence.','Perspective check: deterrence as restraint vs. escalation ladder.','Choose the turning point when full-scale war became substantially more likely.'],
    homework:'Finish all five Topic 6 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 6 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-24',topic:'IR7',topicTitle:'Iran at War | The Hormuz Lever',
