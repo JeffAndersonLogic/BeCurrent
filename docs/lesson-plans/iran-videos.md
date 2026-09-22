@@ -2,7 +2,7 @@
 
 **Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-18**
+Last launch audit: **2026-09-22**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
@@ -55,16 +55,18 @@ Topic 5 keeps video inside the chapter it explains instead of using a separate v
 - **REQUIRED · 4:02 · The Wall Street Journal** — The Tactics Behind Trump’s Bombing of Iran’s Nuclear Facilities
   https://youtu.be/7gj5EKYr_bo
 
-## Topic 6 — Watch the threshold move.
+## Topic 6 — Put each clip where it belongs in the escalation story.
 
-The key question is not simply which attack was biggest. Watch for the moment direct state-to-state attacks became an available response.
+Topic 6 keeps video inside the step it explains instead of using a separate video-forward pathway.
 
-- **REQUIRED · 8:47 · PBS NewsHour** — Middle East experts on Israel’s response to Iran’s attack
-  https://www.pbs.org/video/region-on-edge-1713387563/
-- **REQUIRED · 11:05 · PBS NewsHour** — Middle East again on edge after largest aerial attack ever launched against Israel
-  https://www.pbs.org/video/lebanon-tape-1727817864/
-- **OPTIONAL EXTEND · 7:55 · PBS NewsHour** — What’s next after Iran’s missile barrage on Israel? Mideast experts weigh in
-  https://www.pbs.org/video/lebanon-guest-dis-1727818135/
+- **REQUIRED · 6:08 · PBS NewsHour** — War erupts as Israel retaliates after surprise Hamas attack
+  https://www.pbs.org/video/israel-palestine-1696707142/
+- **REQUIRED · 11:04 · PBS NewsHour** — Israel weighs its response to Iran’s attack
+  https://www.pbs.org/video/attack-on-israel-1713123325/
+- **REQUIRED · 4:52 · PBS NewsHour** — A look inside the U.S.’ unprecedented direct attack on Iran
+  https://www.pbs.org/video/a-look-inside-the-u-s-unprecedented-direct-attack-on-iran-1750626633/
+- **REQUIRED · 9:18 · Reuters World News** — US and Israel attack Iran; Tehran retaliates
+  https://www.youtube.com/watch?v=F8f12-zRcFg
 
 ## Topic 7 — See how geography becomes leverage.
 
