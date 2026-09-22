@@ -146,6 +146,7 @@
     function installTopic6Videos(){
       if(topic!=='topic-06')return;
       const placements=[
+        {id:'shadow',title:'Watch the shadow war before direct exchange',anchor:'.ir-grid-3'},
         {id:'direct',title:'Watch the regional pressure turn into direct attack',anchor:'.ir-timeline'},
         {id:'war',title:'Watch direct war widen and reach the present',anchor:'.ir-grid-3'}
       ];
@@ -334,7 +335,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260922a';
+  script.src='../assets/data/iran-videos.js?v=20260922b';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
