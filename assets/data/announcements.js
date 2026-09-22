@@ -583,6 +583,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "Today is about thresholds: when did direct state-to-state attack become an available option?",
       "doNow": "Why might two rivals prefer a shadow war to direct war?",
       "agenda": [
+        "CNN 10 · Sept. 18: Japan Has More Living 100-Year-Olds Than Ever Before.",
+        "CNN 10 · Sept. 21: New Fossil Analysis Confirms Tyrannosaurus Rex Was Warm-Blooded.",
         "Define shadow war and why rivals may prefer it.",
         "2024: direct Iran-Israel attacks cross a threshold.",
         "2025–26: compare size, precedent, retaliation, and path dependence.",
