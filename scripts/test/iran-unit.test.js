@@ -59,7 +59,7 @@ let payload=null;try{payload=payloadMatch?JSON.parse(payloadMatch[1]):null}catch
 const teacher=fs.readFileSync(path.join(ROOT,'teacher','iran-run-of-show.html'),'utf8');
 check('video metadata covers all eight topics',videoTopics.length===8,`${videoTopics.length} topics`);
 check('Days 1 and 2 each contain one required FRONTLINE card',videos.topics['topic-01'].videos.length===1&&videos.topics['topic-02'].videos.length===1&&videos.topics['topic-01'].videos[0].status==='REQUIRED'&&videos.topics['topic-02'].videos[0].status==='REQUIRED'&&videos.topics['topic-01'].videos[0].url.includes('vWaoon6lZM0')&&videos.topics['topic-02'].videos[0].url.includes('vWaoon6lZM0'));
-check('Days 3–8 keep two or three targeted support resources',videoTopics.slice(2).every(([,t])=>t.videos.length>=2&&t.videos.length<=3));
+check('Days 3–8 each keep at least two support resources (no ceiling: clip count is a teaching call)',videoTopics.slice(2).every(([,t])=>t.videos.length>=2));
 check('every external video/resource has a 2026 launch-audit date',rows.filter(v=>/^https:/.test(v.url)).every(v=>/^2026-\d\d-\d\d$/.test(v.verified||'')));
 check('generated browser video payload reproduces exactly from canonical metadata',payload&&JSON.stringify(payload)===JSON.stringify(videos));
 check('the teacher cockpit launches student pages rather than duplicating external video URLs',!/https:\/\/(www\.)?(pbs\.org|youtube\.com)/.test(teacher));

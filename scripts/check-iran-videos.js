@@ -13,8 +13,10 @@ if(topics.length!==8)fail(`expected 8 topics, found ${topics.length}`);
 for(const [topicId,topic] of topics){
   const isDocumentaryDay=topicId==='topic-01'||topicId==='topic-02';
   const min=isDocumentaryDay?1:2;
-  const max=topicId==='topic-05'?5:(isDocumentaryDay?1:3);
-  const expectedCount=isDocumentaryDay?'exactly 1':topicId==='topic-05'?'2–5':'2–3';
+  // No ceiling on Days 3 to 8: how many clips a lesson uses is a teaching call (CLAUDE.md,
+  // "hard on plumbing and silent on pedagogy"). The floor stays so an emptied topic still fails.
+  const max=isDocumentaryDay?1:Infinity;
+  const expectedCount=isDocumentaryDay?'exactly 1':'at least 2';
   if(!Array.isArray(topic.videos)||topic.videos.length<min||topic.videos.length>max){fail(`${topicId} should define ${expectedCount} video/resource card${isDocumentaryDay?'':'s'}`);continue}
   for(const [i,v] of topic.videos.entries()){
     const tag=`${topicId} watch ${i+1}`;
