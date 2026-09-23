@@ -111,7 +111,7 @@
     }
 
     function installVideos(){
-      if(topic==='topic-03'||topic==='topic-05'||topic==='topic-06'||document.querySelector('.ir-video-forward'))return;
+      if(topic==='topic-03'||topic==='topic-05'||topic==='topic-06'||topic==='topic-07'||document.querySelector('.ir-video-forward'))return;
       const section=document.createElement('section');
       section.className='ir-video-forward';
       section.id='video-forward';
@@ -149,6 +149,25 @@
         {id:'shadow',title:'Watch the shadow war before direct exchange',anchor:'.ir-grid-3'},
         {id:'direct',title:'Watch the regional pressure turn into direct attack',anchor:'.ir-timeline'},
         {id:'war',title:'Watch direct war widen and reach the present',anchor:'.ir-grid-3'}
+      ];
+      placements.forEach(place=>{
+        const section=document.getElementById(place.id);
+        if(!section||section.querySelector(':scope > .ir-chapter-videos'))return;
+        const videos=(guide.videos||[]).filter(v=>v.chapter===place.id);
+        if(!videos.length)return;
+        const block=document.createElement('div');
+        block.className='ir-chapter-videos'+(videos.length===1?' single':'');
+        block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Video in context</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">These clips are part of this step, not a separate pathway. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
+        const anchor=section.querySelector(place.anchor)||section.querySelector(':scope > .ir-head');
+        if(anchor)anchor.insertAdjacentElement('afterend',block);
+      });
+    }
+
+    function installTopic7Videos(){
+      if(topic!=='topic-07')return;
+      const placements=[
+        {id:'map',title:'Watch why a narrow route creates power',anchor:'.ir-map'},
+        {id:'today',title:'Watch why reopening the strait is so hard',anchor:'.ir-grid-2'}
       ];
       placements.forEach(place=>{
         const section=document.getElementById(place.id);
@@ -292,6 +311,31 @@
       ]);
     }
 
+    function installTopic7Backgrounds(){
+      if(topic!=='topic-07')return;
+      addBackground(document.getElementById('map'),'Why a narrow strait gives Iran leverage',[
+        'The Strait of Hormuz is about 21 miles wide at its narrowest point, and the shipping lanes that large tankers use are only about two miles wide in each direction. Every tanker leaving the Persian Gulf by sea has to pass through it. Before the 2026 war, about one-fifth of the oil the world uses each day moved through this one passage, along with a large share of the world’s liquefied natural gas from Qatar.',
+        'A narrow route is easier to threaten than an open ocean. Iran does not need a navy as large as the U.S. Navy to make shipping dangerous. Mines, fast attack boats, drones and missiles fired from the coast can convince ship owners and insurance companies that the trip is too risky. When that happens, ships stop coming even if the strait is not physically blocked. That is the chokepoint mechanism: a risk in one narrow place creates effects everywhere the oil was supposed to go.',
+        'Saudi Arabia and the United Arab Emirates have pipelines that carry some oil to ports outside the strait. Those pipelines help, but they cannot carry anything close to everything that normally passes through Hormuz, and Kuwait and Qatar have no other sea route at all.'
+      ]);
+      addBackground(document.getElementById('tankers'),'What happened in the Tanker War',[
+        'Iraq invaded Iran in 1980, as you saw in Topic 4. By 1984 the fighting on land had become a bloody stalemate, so both sides went after the other’s oil money. Iraq attacked tankers loading oil at Iranian terminals such as Kharg Island. Iran struck back at ships trading with Kuwait and Saudi Arabia, which were lending money to Iraq. Over the next four years, hundreds of commercial ships were attacked in the Gulf.',
+        'In 1987 Kuwait asked outside powers to protect its tankers. The United States agreed to register Kuwaiti tankers as American ships and escort them with Navy warships, an operation called Earnest Will. It became the largest U.S. naval convoy operation since World War II. The danger came from both sides: in May 1987 an Iraqi missile hit the USS Stark, killing 37 American sailors, and on one of the first escorted convoys the tanker Bridgeton struck a mine.',
+        'In April 1988 the U.S. warship Samuel B. Roberts hit an Iranian mine. Days later the U.S. Navy struck Iranian oil platforms and warships in Operation Praying Mantis. In July 1988 the USS Vincennes shot down Iran Air Flight 655, a civilian airliner, killing all 290 people on board; the United States said the crew mistook it for a military jet. Iranians still remember that event. A ceasefire ended the war in August 1988.',
+        'The pattern to notice: a war between two neighbors pulled in outside navies because much of the world’s oil was passing through the same water.'
+      ]);
+      const perspective=document.querySelector('textarea[data-group="perspective"]')?.closest('.ir-section');
+      addBackground(perspective,'Who depends on Hormuz?',[
+        'Most of the oil that moves through Hormuz goes east, not west. In recent years the large majority of crude oil passing through the strait was headed to buyers in Asia, especially China, India, Japan and South Korea. A long closure hits those economies first.',
+        'The exporters behind the strait depend on it too. For Kuwait and Qatar it is the only sea route out, and most of Iran’s own oil exports also pass through it, so a long closure costs Iran money as well. That is part of why Iran’s leverage works best as a threat or a partial disruption rather than a permanent shutdown.',
+        'The United States buys relatively little oil from the Gulf today, but Americans still pay higher prices when world supply drops, and Washington has long treated freedom of navigation as a core security interest. When you answer, think about who loses the most money, security or bargaining power the longer the strait stays closed.'
+      ]);
+      addBackground(document.getElementById('claim'),'How to rank the three kinds of leverage',[
+        'Military leverage means Iran can raise the cost of attacking it and keep stronger navies tied down. Economic leverage means disrupting shipping can raise prices and hurt countries far away, which puts pressure on their governments. Diplomatic leverage means Iran can offer to reopen or protect shipping in exchange for something, such as a ceasefire, sanctions relief or a say in how the strait is managed, like the shipping corridor Iran and Oman proposed in August 2026.',
+        'The three are connected, so your job is to decide which one does the most work. Ask what Iran actually gets from Hormuz, and which kind of pressure makes the others possible. Use evidence from the map, the Tanker War and the EIA numbers, then explain how a second kind of leverage strengthens your main one.'
+      ]);
+    }
+
     function installNetworkGraphic(){
       if(topic!=='topic-04'||document.querySelector('.ir-network-visual'))return;
       const section=document.getElementById('network');
@@ -322,11 +366,13 @@
     installVideos();
     installTopic5Videos();
     installTopic6Videos();
+    installTopic7Videos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
     installTopic4Backgrounds();
     installTopic5Backgrounds();
     installTopic6Backgrounds();
+    installTopic7Backgrounds();
     installNetworkGraphic();
     installMissileGraphic();
     relocateGather();
@@ -335,7 +381,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260922c';
+  script.src='../assets/data/iran-videos.js?v=20260923a';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);

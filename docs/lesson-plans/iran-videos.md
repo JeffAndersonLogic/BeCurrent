@@ -2,7 +2,7 @@
 
 **Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-22**
+Last launch audit: **2026-09-23**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
@@ -70,16 +70,14 @@ Topic 6 keeps video inside the step it explains instead of using a separate vide
 - **REQUIRED EXCERPT · Teacher-selected 8–10 min from 26:45 · PBS NewsHour** — War with Iran | PBS News Special Report
   https://www.pbs.org/video/war-with-iran-a-pbs-news-special-report-da07ca/
 
-## Topic 7 — See how geography becomes leverage.
+## Topic 7 — Put each clip where it belongs in the Hormuz story.
 
-Use the map, two BBC explainers, and the EIA numbers to connect a narrow waterway to military, economic, and diplomatic power.
+Topic 7 keeps video inside the step it explains instead of using a separate video-forward pathway.
 
 - **REQUIRED · Short explainer · BBC News** — What is the Strait of Hormuz?
   https://www.youtube.com/watch?v=vMn6K1COWqQ
 - **REQUIRED · Short explainer · BBC News** — Why it’s so hard for US to regain Strait of Hormuz from Iran
   https://www.youtube.com/watch?v=zMS3_5O8kF0
-- **TEACHER CHOICE · 5–10 min discussion · Topic 7 Tanker War timeline + source desk** — Tanker War comparison
-  #tankers
 
 ## Topic 8 — Reset, retrieve, then argue.
 
