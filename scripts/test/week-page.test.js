@@ -150,11 +150,14 @@ function weekDirs() {
         await page.getAttribute('#pop-modal', 'aria-modal') === 'true'
         && await page.getAttribute('#pop-modal', 'aria-labelledby') === 'pop-title');
 
+      // bcOpenModal focuses the dialog a tick late, on purpose, so reading
+      // activeElement straight away races that tick and fails on a fast runner.
+      // Wait for it instead: a dialog that never takes focus still fails here.
       check('focus moves into the dialog',
-        await page.evaluate(() => {
+        await page.waitForFunction(() => {
           const modal = document.getElementById('pop-modal');
           return modal.contains(document.activeElement) || document.activeElement === modal;
-        }));
+        }, null, { timeout: 2000 }).then(() => true, () => false));
 
       // Behavioural, not textual. The style string being right is not the claim;
       // the claim is that wheeling does not drag the lesson out from under the
