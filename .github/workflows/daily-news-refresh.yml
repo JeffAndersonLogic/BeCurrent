@@ -1,12 +1,12 @@
 name: Daily News Refresh
 
 on:
+  # Manual only. The schedule was removed on 2026-09-23: GitHub started the runs
+  # hours late, the 6 a.m. gate below then skipped every step, and each run still
+  # reported success, so no headline was ever refreshed by it. Headlines now come
+  # from a Claude Code routine that drafts the day on a working branch for Jeff to
+  # review, because the Lead story is a teaching choice, not a keyword match.
   workflow_dispatch:
-  schedule:
-    # GitHub cron is UTC. Running both times handles Indianapolis DST/standard time.
-    # The timezone gate below allows only the 6:15 a.m. local run to continue.
-    - cron: '15 10 * * *'
-    - cron: '15 11 * * *'
 
 permissions:
   contents: write
