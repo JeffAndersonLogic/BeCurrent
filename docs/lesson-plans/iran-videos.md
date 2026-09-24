@@ -82,6 +82,8 @@ Topic 7 keeps video inside the step it explains instead of using a separate vide
   https://www.youtube.com/watch?v=cUBg6Qp_N98
 - **REQUIRED · Short explainer · BBC News** — Why it’s so hard for US to regain Strait of Hormuz from Iran
   https://www.youtube.com/watch?v=zMS3_5O8kF0
+- **REQUIRED · Apr. 2026 explainer · Vox** — Iran’s strongest weapon
+  https://www.youtube.com/watch?v=Rn69xI61Chs
 
 ## Topic 8 — Reset, retrieve, then argue.
 

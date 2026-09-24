@@ -177,7 +177,7 @@
       const placements=[
         {id:'map',title:'Watch why a narrow route creates power',anchor:'.ir-map'},
         {id:'tankers',title:'Watch how old the fight over this water is',anchor:'.ir-timeline',position:'beforebegin'},
-        {id:'today',title:'Watch why reopening the strait is so hard',anchor:'.ir-grid-2'}
+        {id:'today',title:'Watch why the strait is so hard to reopen, and what the closure is doing',anchor:'.ir-grid-2'}
       ];
       placements.forEach(place=>{
         const section=document.getElementById(place.id);
@@ -391,7 +391,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260924b';
+  script.src='../assets/data/iran-videos.js?v=20260924c';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
