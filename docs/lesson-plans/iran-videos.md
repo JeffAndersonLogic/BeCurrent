@@ -2,7 +2,7 @@
 
 **Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-23**
+Last launch audit: **2026-09-24**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
@@ -74,6 +74,8 @@ Topic 6 keeps video inside the step it explains instead of using a separate vide
 
 Topic 7 keeps video inside the step it explains instead of using a separate video-forward pathway.
 
+- **REQUIRED · 9:30 · Capital Case** — Strait of Hormuz Explained Like You’re 5
+  https://www.youtube.com/watch?v=0k5C-MrLjAI
 - **REQUIRED · Short explainer · BBC News** — What is the Strait of Hormuz?
   https://www.youtube.com/watch?v=vMn6K1COWqQ
 - **REQUIRED · Short explainer · BBC News** — Why it’s so hard for US to regain Strait of Hormuz from Iran

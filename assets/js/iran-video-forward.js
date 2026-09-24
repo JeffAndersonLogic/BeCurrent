@@ -165,6 +165,15 @@
 
     function installTopic7Videos(){
       if(topic!=='topic-07')return;
+      const opening=(guide.videos||[]).filter(v=>v.chapter==='opening');
+      if(opening.length&&!document.getElementById('opening-video')){
+        const section=document.createElement('section');
+        section.className='ir-section';
+        section.id='opening-video';
+        section.innerHTML='<div class="ir-chapter-videos'+(opening.length===1?' single':'')+'"><div class="ir-chapter-videos-head"><div class="ir-kicker red">Start here</div><h3>Watch this before Step 1</h3></div><div class="ir-watch-grid">'+opening.map(card).join('')+'</div><div class="ir-video-audit">An overview to start the lesson. The steps below carry the evidence. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div></div>';
+        const anchor=document.getElementById('objectives')||document.querySelector('.ir-hero');
+        if(anchor)anchor.insertAdjacentElement('afterend',section);
+      }
       const placements=[
         {id:'map',title:'Watch why a narrow route creates power',anchor:'.ir-map'},
         {id:'today',title:'Watch why reopening the strait is so hard',anchor:'.ir-grid-2'}
@@ -381,7 +390,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260923a';
+  script.src='../assets/data/iran-videos.js?v=20260924a';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);
