@@ -226,6 +226,10 @@
     DAYS.forEach(function (d) {
       var date = parse(d && d.date);
       if (!date || date <= today || !has(d.topic)) return;
+      // An exam is listed in assessments and again as that day's class, usually
+      // under slightly different titles, so merge them into the class day's card.
+      var same = items.filter(function (x) { return x.date.getTime() === date.getTime(); })[0];
+      if (same) { same.title = d.topic; if (has(d.note)) same.detail = d.note; return; }
       items.push({ title:d.topic, detail:has(d.note) ? d.note : '', date:date, kind:'Class' });
     });
 
