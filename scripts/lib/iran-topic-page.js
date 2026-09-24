@@ -89,7 +89,7 @@ function renderIranBrowser(unit) {
   function installVideoForward(){
     if(document.querySelector('script[data-iran-video-forward]'))return;
     const script=document.createElement('script');
-    script.src='../assets/js/iran-video-forward.js?v=20260924a';
+    script.src='../assets/js/iran-video-forward.js?v=20260924b';
     script.dataset.iranVideoForward='';
     document.body.appendChild(script);
   }

@@ -78,6 +78,8 @@ Topic 7 keeps video inside the step it explains instead of using a separate vide
   https://www.youtube.com/watch?v=0k5C-MrLjAI
 - **REQUIRED · Short explainer · BBC News** — What is the Strait of Hormuz?
   https://www.youtube.com/watch?v=vMn6K1COWqQ
+- **REQUIRED · Aug. 2019 explainer · Vox** — Why the US and Iran are fighting over this tiny waterway
+  https://www.youtube.com/watch?v=cUBg6Qp_N98
 - **REQUIRED · Short explainer · BBC News** — Why it’s so hard for US to regain Strait of Hormuz from Iran
   https://www.youtube.com/watch?v=zMS3_5O8kF0
 
