@@ -57,7 +57,7 @@ window.BECURRENT_SCHEDULE={
   {date:'2026-09-24',topic:'IR7',topicTitle:'Iran at War | The Hormuz Lever',
    note:'Return to the map from Day 1. Now explain how geography becomes military, economic, and diplomatic leverage.',
    doNow:'How can a narrow waterway create power for a country that does not have the world’s strongest navy?',
-   agenda:['Map the chokepoint mechanism.','Compare the 1980s Tanker War with 2026.','Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.','Separate what the data proves from what it cannot prove.','Rank Hormuz as military, economic, or diplomatic leverage.'],
+   agenda:['CNN 10 · Sept. 22: What to Expect at the UN General Assembly, the Biggest Event in World Diplomacy.','CNN 10 · Sept. 23: The First New Species of Cat to Be Discovered in More Than 100 Years.','Map the chokepoint mechanism.','Compare the 1980s Tanker War with 2026.','Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.','Separate what the data proves from what it cannot prove.','Rank Hormuz as military, economic, or diplomatic leverage.'],
    homework:'Finish all five Topic 7 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 7 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-28',topic:'IR8',topicTitle:'Iran at War | When Did This War Really Begin?',

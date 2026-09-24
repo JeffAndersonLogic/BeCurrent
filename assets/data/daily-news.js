@@ -3,45 +3,31 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-22',
+  reviewed: '2026-09-24',
   lead: {
-    category: 'World / Diplomacy',
-    headline: 'Trump returns to the U.N. as leaders confront Iran, AI and global instability',
-    dek: 'President Donald Trump is addressing the United Nations General Assembly as world leaders debate the Iran war, artificial intelligence, Ukraine and the future role of the U.N.',
-    source: 'Associated Press',
-    published: 'September 22, 2026',
-    url: 'https://apnews.com/article/692e1e171a791be0c9b9c1f56718a0d0',
+    category: 'World / Security',
+    headline: 'Iran reviewing US response to its proposal to end war',
+    dek: 'Iran says it is studying the United States\' answer to its plan to end the war, and that reopening the Strait of Hormuz and lifting the U.S. blockade of Iranian ports were part of the talks.',
+    source: 'NewsNation',
+    published: 'September 23, 2026',
+    url: 'https://www.newsnationnow.com/world/us-iran-strait-of-hormuz-un-general-assembly/',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
       category: 'World / Diplomacy',
-      headline: 'Trump returns to the U.N. as leaders confront Iran, AI and global instability',
-      dek: 'The U.N. General Assembly opens amid war, economic pressure and debate over whether international institutions can still manage major global crises.',
-      source: 'Associated Press',
-      url: 'https://apnews.com/article/692e1e171a791be0c9b9c1f56718a0d0'
+      headline: 'Trump warns he could ‘annihilate’ Iran without peace deal in UN speech',
+      dek: 'At the United Nations, President Trump said the U.S. faces a choice between a deal with Iran and much wider military action.',
+      source: 'NewsNation',
+      url: 'https://www.newsnationnow.com/world/g7-iran-houthis-yemen-red-sea-saudi-arabia/'
     },
     {
-      category: 'U.S.-China / Technology',
-      headline: 'Trump and Xi seek stability as tensions rise over AI, trade and Iran',
-      dek: 'The U.S. and Chinese leaders are preparing to meet in Washington as the two countries compete over artificial intelligence and trade while trying to keep their broader relationship from worsening.',
-      source: 'Associated Press',
-      url: 'https://apnews.com/article/e560910c897fedb0448eda4cdbfdbaea'
-    },
-    {
-      category: 'Economy / Energy',
-      headline: 'Oil prices and bond yields fall again as Wall Street edges higher',
-      dek: 'Oil prices retreated for a fifth straight day and Treasury yields eased, reducing some of the pressure that high energy costs and borrowing rates have placed on markets.',
-      source: 'Associated Press',
-      url: 'https://apnews.com/article/de8c5f9659e44556e40e661f794b48ad'
-    },
-    {
-      category: 'Climate / Food',
-      headline: 'Worsening El Niño raises drought and food-price risks across Asia',
-      dek: 'Scientists and governments are watching a strengthening El Niño that could worsen drought, damage crops and add pressure to global food prices.',
-      source: 'Associated Press',
-      url: 'https://apnews.com/article/31c88df9ce8f67bcbfe3ea7f39431d57'
+      category: 'Climate / Environment',
+      headline: 'Hurricane Polo \'one of the strongest storms ever\'',
+      dek: 'A rare Category 5 hurricane is churning off Mexico\'s Pacific coast, and forecasters warn its heavy rain could cause dangerous flooding and mudslides.',
+      source: 'NewsNation',
+      url: 'https://www.newsnationnow.com/weather/hurricane-polo-mexico-one-of-strongest-storms-ever/'
     }
   ]
 };

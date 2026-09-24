@@ -630,6 +630,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "Return to the map from Day 1. Now explain how geography becomes military, economic, and diplomatic leverage.",
       "doNow": "How can a narrow waterway create power for a country that does not have the world’s strongest navy?",
       "agenda": [
+        "CNN 10 · Sept. 22: What to Expect at the UN General Assembly, the Biggest Event in World Diplomacy.",
+        "CNN 10 · Sept. 23: The First New Species of Cat to Be Discovered in More Than 100 Years.",
         "Map the chokepoint mechanism.",
         "Compare the 1980s Tanker War with 2026.",
         "Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.",
