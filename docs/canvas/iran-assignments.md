@@ -387,26 +387,24 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 **Assignment name, Canvas and PowerSchool, character for character:** `IR8 - Final Causation Argument`  
 **Points:** 30  
-**Calendar event it belongs to:** `CE - IR8 - When Did This War Really Begin?`  
+**Calendar event it belongs to:** `CE - IR8 - Back to the Headline`  
 
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Iran at War, Topic 8: When Did This War Really Begin?</h2>
-<p><em>Causation synthesis</em></p>
+<h2>Iran at War, Topic 8: Back to the Headline</h2>
+<p><em>Causation synthesis · closing the loop</em></p>
 
 <h3>Step 1 &mdash; Open the investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-08-synthesis.html" target="_blank" rel="noopener">When Did This War Really Begin?</a></p>
+<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/topic-08-synthesis.html" target="_blank" rel="noopener">Back to the Headline</a></p>
 <p>Everything happens on the website. There is nothing to download.</p>
 
-<h3>Step 2 &mdash; Read it and answer all 5</h3>
-<p>Rebuild the entire causal chain, rank the most important turning points, test the strongest competing explanation, and write a final answer to the unit question.</p>
+<h3>Step 2 &mdash; Read it and answer all 3</h3>
+<p>Close the loop. Reread a real headline from this week with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, and answer the unit question in one framed argument.</p>
 <ol>
-    <li><strong>Cause and Effect.</strong> Choose three consecutive stops and write the arrows between them.</li>
-    <li><strong>Causal Ranking.</strong> Rank your three strongest turning points and explain why each belongs where it does.</li>
-    <li><strong>Counterargument.</strong> Write the best case for a turning point you did not rank first.</li>
-    <li><strong>Scope and Definition.</strong> What exactly does your chosen “beginning” explain?</li>
+    <li><strong>Causal Ranking.</strong> Name your top three turning points in order, and give one reason for your #1.</li>
     <li><strong>Constructing Arguments.</strong> Was the 2026 Iran War mainly the result of recent decisions, or decades of unresolved conflict?</li>
+    <li><strong>Current Context.</strong> Pick one detail in this week’s headline. Which turning point explains it, and what would you have missed about it before this unit?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -425,9 +423,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 <h3>Success criteria</h3>
 <ol>
-    <li>I can use at least three specific pieces of evidence from different points in the chain.</li>
-    <li>I can explain why a competing turning point matters before showing why mine carries more weight.</li>
-    <li>I can name an explanatory beginning, define what it explains, and connect each piece of evidence to the final claim.</li>
+    <li>I can use at least three specific turning points from different points in the chain.</li>
+    <li>I can name a turning point someone else might rank first and give one reason mine still explains more.</li>
+    <li>I can point to one detail in this week’s headline and name the turning point that explains it.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The whole Iran at War unit, if you missed a topic</a></p>

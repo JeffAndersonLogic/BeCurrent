@@ -16,7 +16,7 @@ const questions=topics.flatMap(t=>t.questions||[]);
 check('the investigation still has exactly eight class-day topics',topics.length===8,`${topics.length} topics`);
 check('all topic keys and pages are unique',new Set(topics.map(t=>t.key)).size===8&&new Set(topics.map(t=>t.page)).size===8);
 check('every topic has three learning targets and three success criteria',topics.every(t=>t.learningTargets.length===3&&t.successCriteria.length===3));
-check('the accessible filing contract is 32 total responses',questions.length===32,`${questions.length} filings`);
+check('the accessible filing contract is 30 total responses',questions.length===30,`${questions.length} filings`);
 check('Days 1 and 2 each require only one written filing',topics[0].questions.length===1&&topics[1].questions.length===1,`${topics[0].questions.length}+${topics[1].questions.length}`);
 check('Day 3 combines 1979 and 1953 as one scoped origins investigation',/1979/.test(topics[2].subtitle)&&/1953/.test(topics[2].subtitle)&&/1953 or 1979/.test(topics[2].questions.at(-1).text));
 

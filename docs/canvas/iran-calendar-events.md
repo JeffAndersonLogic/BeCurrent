@@ -38,7 +38,7 @@ Every link below points at the live GitHub Pages build:
 | `CE - IR5 - The Nuclear Bargain` | `IR5 - The Nuclear Bargain` | Yes |
 | `CE - IR6 - From Shadow War to Open War` | `IR6 - Shadow War to Open War` | Yes |
 | `CE - IR7 - The Hormuz Lever` | `IR7 - The Hormuz Lever` | Yes |
-| `CE - IR8 - When Did This War Really Begin?` | `IR8 - Final Causation Argument` | Yes |
+| `CE - IR8 - Back to the Headline` | `IR8 - Final Causation Argument` | Yes |
 
 ---
 
@@ -497,9 +497,9 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - IR8 - When Did This War Really Begin?
+## CE - IR8 - Back to the Headline
 
-**Event title:** `CE - IR8 - When Did This War Really Begin?`  
+**Event title:** `CE - IR8 - Back to the Headline`  
 **Assignment to link:** `IR8 - Final Causation Argument`  
 **Source:** `scripts/lib/unit-content/iran.js`, Topic 8  
 
@@ -511,7 +511,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Rebuild the entire causal chain, rank the most important turning points, test the strongest competing explanation, and write a final answer to the unit question.</p>
+                <p>Close the loop. Reread a real headline from this week with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, and answer the unit question in one framed argument.</p>
             </td>
         </tr>
         <tr>
@@ -521,8 +521,8 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <ol>
                     <li>I can connect evidence from several points in the chain through explicit causal mechanisms.</li>
-                    <li>I can state the strongest case for a turning point I did not rank first.</li>
-                    <li>I can distinguish the literal beginning of war from the explanatory beginning I defend.</li>
+                    <li>I can decide how much of the war comes from recent decisions and how much from decades of unresolved conflict.</li>
+                    <li>I can use the unit’s history to explain a detail in this week’s news about the war.</li>
                 </ol>
             </td>
         </tr>
@@ -532,9 +532,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can use at least three specific pieces of evidence from different points in the chain.</li>
-                    <li>I can explain why a competing turning point matters before showing why mine carries more weight.</li>
-                    <li>I can name an explanatory beginning, define what it explains, and connect each piece of evidence to the final claim.</li>
+                    <li>I can use at least three specific turning points from different points in the chain.</li>
+                    <li>I can name a turning point someone else might rank first and give one reason mine still explains more.</li>
+                    <li>I can point to one detail in this week’s headline and name the turning point that explains it.</li>
                 </ol>
             </td>
         </tr>

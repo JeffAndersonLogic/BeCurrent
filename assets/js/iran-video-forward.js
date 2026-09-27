@@ -86,7 +86,7 @@
         ['topic-05','topic-05-nuclear.html','Nuclear Bargain'],
         ['topic-06','topic-06-escalation.html','Escalation'],
         ['topic-07','topic-07-hormuz.html','Hormuz'],
-        ['topic-08','topic-08-synthesis.html','Synthesis']
+        ['topic-08','topic-08-synthesis.html','Back to the Headline']
       ];
       const nav=document.createElement('nav');
       nav.className='ir-topic-nav';
@@ -111,7 +111,7 @@
     }
 
     function installVideos(){
-      if(topic==='topic-03'||topic==='topic-05'||topic==='topic-06'||topic==='topic-07'||document.querySelector('.ir-video-forward'))return;
+      if(topic==='topic-03'||topic==='topic-05'||topic==='topic-06'||topic==='topic-07'||topic==='topic-08'||document.querySelector('.ir-video-forward'))return;
       const section=document.createElement('section');
       section.className='ir-video-forward';
       section.id='video-forward';
@@ -189,6 +189,26 @@
         block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Video in context</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">These clips are part of this step, not a separate pathway. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
         const anchor=section.querySelector(place.anchor)||section.querySelector(':scope > .ir-head');
         if(anchor)anchor.insertAdjacentElement(place.position||'afterend',block);
+      });
+    }
+
+    function installTopic8Videos(){
+      if(topic!=='topic-08')return;
+      const placements=[
+        {id:'headline',title:'Optional: how earlier talks went, and what is still unknown',anchor:'.ir-headline-card'},
+        {id:'argument',title:'Optional: rewatch the clip for your #1 turning point',anchor:'.ir-frame'}
+      ];
+      placements.forEach(place=>{
+        const section=document.getElementById(place.id);
+        if(!section||section.querySelector('.ir-chapter-videos'))return;
+        const videos=(guide.videos||[]).filter(v=>v.chapter===place.id);
+        if(!videos.length)return;
+        const block=document.createElement('div');
+        block.className='ir-chapter-videos'+(videos.length===1?' single':'');
+        block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Optional video</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">No clip is required today. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
+        const found=section.querySelector(place.anchor);
+        const anchor=(found&&found.closest('.ir-paper'))||section.querySelector(':scope > .ir-head');
+        if(anchor)anchor.insertAdjacentElement('afterend',block);
       });
     }
 
@@ -346,6 +366,22 @@
       ]);
     }
 
+    function installTopic8Backgrounds(){
+      if(topic!=='topic-08')return;
+      addBackground(document.getElementById('headline'),'How to read a peace-plan headline',[
+        'A peace plan is an opening offer, not a finished deal. What each side asks for tells you what it cares about most and what it thinks it can get. Iran asked for money, oil sales and an end to the blockade, which are all forms of economic pressure. What Iran offered in return was the Strait of Hormuz.',
+        'Notice what the headline does not say, too. It does not explain why the two sides distrust each other, why Hormuz is worth so much, or why direct strikes are on the table at all. Those are the questions this unit answered. That is the difference between reading the news and understanding it.'
+      ]);
+      addBackground(document.getElementById('sort'),'Why the two piles overlap',[
+        'A long-running conflict is made of decisions. Somebody chose to back the 1953 coup, and somebody chose to take hostages in 1979. What makes a card belong in the long-running pile is that its effects kept going for decades after the choice was made.',
+        'A recent decision is still shaped by old conflict. The leaders who left the nuclear deal in 2018 or launched strikes in 2024 were acting inside a relationship that already had decades of distrust in it. So the real question is not which pile a card belongs in. It is where each card does most of its work.'
+      ]);
+      addBackground(document.getElementById('argument'),'How to argue “both” without dodging',[
+        'Saying “both matter” is true of almost every war, so on its own it does not answer the question. A strong “both” answer still makes a choice: it says which side does more of the explaining and why.',
+        'One way to do that: decide what the old conflict made possible and what the recent decisions actually triggered. For example, decades of distrust might explain why a deal was fragile, while a recent choice explains why war came in 2026 and not in 2016. Then say which of those two things you think matters more.'
+      ]);
+    }
+
     function installNetworkGraphic(){
       if(topic!=='topic-04'||document.querySelector('.ir-network-visual'))return;
       const section=document.getElementById('network');
@@ -377,12 +413,14 @@
     installTopic5Videos();
     installTopic6Videos();
     installTopic7Videos();
+    installTopic8Videos();
     installScaffold(guide.scaffold);
     installScaffold(guide.scaffold2);
     installTopic4Backgrounds();
     installTopic5Backgrounds();
     installTopic6Backgrounds();
     installTopic7Backgrounds();
+    installTopic8Backgrounds();
     installNetworkGraphic();
     installMissileGraphic();
     relocateGather();
@@ -391,7 +429,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260924c';
+  script.src='../assets/data/iran-videos.js?v=20260927';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);

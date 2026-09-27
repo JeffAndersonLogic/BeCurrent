@@ -85,15 +85,15 @@ Topic 7 keeps video inside the step it explains instead of using a separate vide
 - **REQUIRED · Apr. 2026 explainer · Vox** — Iran’s strongest weapon
   https://www.youtube.com/watch?v=Rn69xI61Chs
 
-## Topic 8 — Reset, retrieve, then argue.
+## Topic 8 — Optional clips, placed where they help.
 
-Today is a synthesis day. Use one current reset, then rewatch the earlier clip tied to the turning point you rank first.
+Today is a reading and writing day, so no clip is required. Use a clip only when it helps a student read the headline or find evidence for the argument.
 
-- **REQUIRED EXCERPT · Teacher selects 8–12 min from 26:46 · PBS Compass Points** — What war in Iran has revealed and what remains unknown
-  https://www.pbs.org/video/what-war-in-iran-has-revealed-and-what-remains-unknown-wewkol/
 - **OPTIONAL CURRENT UPDATE · 9:59 · PBS NewsHour** — Where Iran war stands as 60-day negotiating window expires
   https://www.pbs.org/video/war-with-iran-1786999739/
-- **REQUIRED · Rewatch 5–15 min · Student choice** — Rewatch the earlier video tied to your #1 turning point
+- **OPTIONAL EXTEND · Teacher selects 8–12 min from 26:46 · PBS Compass Points** — What war in Iran has revealed and what remains unknown
+  https://www.pbs.org/video/what-war-in-iran-has-revealed-and-what-remains-unknown-wewkol/
+- **OPTIONAL EXTEND · Rewatch 3–10 min · Student choice** — Rewatch the earlier clip tied to your #1 turning point
   index.html
 
 ## Pre-unit launch check

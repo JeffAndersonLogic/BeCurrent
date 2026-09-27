@@ -949,7 +949,7 @@ Iran uses `meta.renderer: 'reverse-history'`. Its narrative pages are deliberate
 bespoke rather than generated Briefs, so `scripts/build-units.js` validates their
 existence and refuses to overwrite them. `scripts/build-iran.js` generates the
 shared browser layer and homepage progress data, and verifies that every page's
-`data-group` sequence matches the 41 canonical questions in
+`data-group` sequence matches the 30 canonical questions in
 `scripts/lib/unit-content/iran.js`. Lesson plans, the TODAY board and Canvas still
 consume that same content module.
 

@@ -641,47 +641,47 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-09-28",
-      "topic": "Iran at War | When Did This War Really Begin?",
+      "topic": "Iran at War | Back to the Headline",
       "unit": "Iran at War",
-      "subtitle": "Causation synthesis",
+      "subtitle": "Causation synthesis · closing the loop",
       "learningTargets": [
         {
           "text": "I can connect evidence from several points in the chain through explicit causal mechanisms.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can state the strongest case for a turning point I did not rank first.",
-          "label": "Counterargument"
+          "text": "I can decide how much of the war comes from recent decisions and how much from decades of unresolved conflict.",
+          "label": "Causal Ranking"
         },
         {
-          "text": "I can distinguish the literal beginning of war from the explanatory beginning I defend.",
-          "label": "Constructing Arguments"
+          "text": "I can use the unit’s history to explain a detail in this week’s news about the war.",
+          "label": "Current Context"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can use at least three specific pieces of evidence from different points in the chain.",
+          "text": "I can use at least three specific turning points from different points in the chain.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can explain why a competing turning point matters before showing why mine carries more weight.",
+          "text": "I can name a turning point someone else might rank first and give one reason mine still explains more.",
           "label": "Counterargument"
         },
         {
-          "text": "I can name an explanatory beginning, define what it explains, and connect each piece of evidence to the final claim.",
-          "label": "Constructing Arguments"
+          "text": "I can point to one detail in this week’s headline and name the turning point that explains it.",
+          "label": "Current Context"
         }
       ],
-      "homework": "Finish all five Topic 8 filings and the final causation argument. Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the final Canvas Text Entry assignment.",
+      "homework": "Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
-      "note": "Synthesis day. The literal start is Feb. 28, 2026; your job is to defend the explanatory beginning.",
-      "doNow": "Without notes, name three turning points from the unit that could plausibly be called the beginning of the war.",
+      "note": "Lead Mode Desk today: everyone files the same war headline. Then we read it again with the whole unit behind us.",
+      "doNow": "Without notes: name three turning points from this unit that help explain why the war is still going.",
       "agenda": [
-        "Rebuild the causal chain from the current war backward.",
-        "Rank the three turning points that do the most explanatory work.",
-        "Write the strongest counterargument to your #1 choice.",
-        "Define exactly what your chosen “beginning” explains.",
-        "Complete and submit the final causation argument."
+        "The Desk, Lead Mode: file this week’s war headline.",
+        "Read the headline again: find the unit’s topics inside it.",
+        "Card sort: long-running conflict or recent decision? Rank your top three.",
+        "One framed paragraph: recent decisions, or decades of unresolved conflict?",
+        "Back to the headline: what can you read in it now that you could not before?"
       ]
     },
     {
@@ -722,7 +722,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Open the Iran at War Study Guide.",
         "Review the eight unit topics and the major people, places, agreements, and turning points.",
         "Work through the study guide independently, then verify weak spots with the BeCurrent lesson pages.",
-        "Pay special attention to causal chains, source limits, comparisons, and the final question: when did this war really begin?",
+        "Pay special attention to causal chains, source limits, comparisons, and the unit question: recent decisions, or decades of unresolved conflict?",
         "Use remaining time to ask targeted questions and finish your study guide."
       ]
     },

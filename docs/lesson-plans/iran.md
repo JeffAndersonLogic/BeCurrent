@@ -14,7 +14,7 @@ CURRENT EVENTS · 8 topics · 8 online, 0 on paper
 
 ## What the unit is
 
-Begin with the war students are watching through a two-day FRONTLINE documentary orientation, then reverse into the two turning points that transformed U.S.-Iran relations before tracing security strategy, nuclear diplomacy, direct escalation, and the Strait of Hormuz. The unit ends with a ranked causal argument rather than a hunt for one magic cause.
+Begin with the war students are watching through a two-day FRONTLINE documentary orientation, then reverse into the two turning points that transformed U.S.-Iran relations before tracing security strategy, nuclear diplomacy, direct escalation, and the Strait of Hormuz. The unit ends back at this week’s headline, with a ranked causal argument rather than a hunt for one magic cause.
 
 ## The question it ends on
 
@@ -35,7 +35,7 @@ version of the argument against them.
 | Topic 5 | The Nuclear Bargain | Reverse History | 3 |
 | Topic 6 | From Shadow War to Open War | Reverse History | 3 |
 | Topic 7 | The Hormuz Lever | Reverse History | 3 |
-| Topic 8 | When Did This War Really Begin? | Reverse History | 3 |
+| Topic 8 | Back to the Headline | Reverse History | 3 |
 
 Each topic tests a different part of the same causal chain. Students begin with
 a hypothesis about the current conflict, then revise the weight they give to earlier
@@ -360,45 +360,43 @@ The Reverse History page's Gather This Topic panel. 5 responses, copied by the s
 
 ---
 
-## Topic 8. When Did This War Really Begin?
+## Topic 8. Back to the Headline
 
-_Causation synthesis_
+_Causation synthesis · closing the loop_
 
 | | |
 |---|---|
 | Artifact | Reverse History page, `topic-08-synthesis.html` |
-| Skills | Cause and Effect, Counterargument, Constructing Arguments |
+| Skills | Cause and Effect, Causal Ranking, Current Context |
 | Indiana 1512 | 1, Cause and effect; 2, Sourcing and evidence; 3, Perspective and interpretation; 5, Constructing arguments |
 | Reaches Canvas | Yes, through Gather This Topic |
 
 ### Overview
 
-Rebuild the entire causal chain, rank the most important turning points, test the strongest competing explanation, and write a final answer to the unit question.
+Close the loop. Reread a real headline from this week with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, and answer the unit question in one framed argument.
 
 ### Learning targets
 
 1. **Cause and Effect.** I can connect evidence from several points in the chain through explicit causal mechanisms.
-2. **Counterargument.** I can state the strongest case for a turning point I did not rank first.
-3. **Constructing Arguments.** I can distinguish the literal beginning of war from the explanatory beginning I defend.
+2. **Causal Ranking.** I can decide how much of the war comes from recent decisions and how much from decades of unresolved conflict.
+3. **Current Context.** I can use the unit’s history to explain a detail in this week’s news about the war.
 
 ### Success criteria
 
-1. **Cause and Effect.** I can use at least three specific pieces of evidence from different points in the chain.
-2. **Counterargument.** I can explain why a competing turning point matters before showing why mine carries more weight.
-3. **Constructing Arguments.** I can name an explanatory beginning, define what it explains, and connect each piece of evidence to the final claim.
+1. **Cause and Effect.** I can use at least three specific turning points from different points in the chain.
+2. **Counterargument.** I can name a turning point someone else might rank first and give one reason mine still explains more.
+3. **Current Context.** I can point to one detail in this week’s headline and name the turning point that explains it.
 
 ### What happens in class
 
-Move from chronology to causal ranking. Students must distinguish the literal start date from the earlier turning point that best explains it and address a serious counterargument.
+Run the Desk in Lead Mode on this week’s war headline, reread it against the unit’s topics, sort and rank the eight turning point cards on paper or on screen, write one framed argument, then return to the headline and explain one detail students could not have read before the unit.
 
 ### The filings
 
-1. **Cause and Effect.** Choose three consecutive stops and write the arrows between them.
-2. **Causal Ranking.** Rank your three strongest turning points and explain why each belongs where it does.
-3. **Counterargument.** Write the best case for a turning point you did not rank first.
-4. **Scope and Definition.** What exactly does your chosen “beginning” explain?
-5. **Constructing Arguments.** Was the 2026 Iran War mainly the result of recent decisions, or decades of unresolved conflict?
+1. **Causal Ranking.** Name your top three turning points in order, and give one reason for your #1.
+2. **Constructing Arguments.** Was the 2026 Iran War mainly the result of recent decisions, or decades of unresolved conflict?
+3. **Current Context.** Pick one detail in this week’s headline. Which turning point explains it, and what would you have missed about it before this unit?
 
 ### Where the work goes
 
-The Reverse History page's Gather This Topic panel. 5 responses, copied by the student and pasted into Canvas as Text Entry. The page saves on the Chromebook while the student works; the gathered record is the submission.
+The Reverse History page's Gather This Topic panel. 3 responses, copied by the student and pasted into Canvas as Text Entry. The page saves on the Chromebook while the student works; the gathered record is the submission.
