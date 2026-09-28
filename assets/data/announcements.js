@@ -677,6 +677,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "Lead Mode Desk today: everyone files the same war headline. Then we read it again with the whole unit behind us.",
       "doNow": "Without notes: name three turning points from this unit that help explain why the war is still going.",
       "agenda": [
+        "CNN 10 · Sept. 24: His Trumpet Stopped Working, but the Anthem Sang On.",
+        "CNN 10 · Sept. 25: How a Historic El Niño Is Supercharging the Pacific Storm Season.",
         "The Desk, Lead Mode: file this week’s war headline.",
         "Read the headline again: find the unit’s topics inside it.",
         "Card sort: long-running conflict or recent decision? Rank your top three.",

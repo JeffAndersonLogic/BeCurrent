@@ -63,7 +63,7 @@ window.BECURRENT_SCHEDULE={
   {date:'2026-09-28',topic:'IR8',deskMode:'lead',topicTitle:'Iran at War | Back to the Headline',
    note:'Lead Mode Desk today: everyone files the same war headline. Then we read it again with the whole unit behind us.',
    doNow:'Without notes: name three turning points from this unit that help explain why the war is still going.',
-   agenda:['The Desk, Lead Mode: file this week\u2019s war headline.','Read the headline again: find the unit\u2019s topics inside it.','Card sort: long-running conflict or recent decision? Rank your top three.','One framed paragraph: recent decisions, or decades of unresolved conflict?','Back to the headline: what can you read in it now that you could not before?'],
+   agenda:['CNN 10 · Sept. 24: His Trumpet Stopped Working, but the Anthem Sang On.','CNN 10 · Sept. 25: How a Historic El Niño Is Supercharging the Pacific Storm Season.','The Desk, Lead Mode: file this week\u2019s war headline.','Read the headline again: find the unit\u2019s topics inside it.','Card sort: long-running conflict or recent decision? Rank your top three.','One framed paragraph: recent decisions, or decades of unresolved conflict?','Back to the headline: what can you read in it now that you could not before?'],
    homework:'Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-30',topicTitle:'Iran at War | Study Guide Work Day',
