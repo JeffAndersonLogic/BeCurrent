@@ -14,7 +14,7 @@ CURRENT EVENTS · 8 topics · 8 online, 0 on paper
 
 ## What the unit is
 
-Begin with the war students are watching through a two-day FRONTLINE documentary orientation, then reverse into the two turning points that transformed U.S.-Iran relations before tracing security strategy, nuclear diplomacy, direct escalation, and the Strait of Hormuz. The unit ends back at this week’s headline, with a ranked causal argument rather than a hunt for one magic cause.
+Begin with the war students are watching through a two-day FRONTLINE documentary orientation, then reverse into the two turning points that transformed U.S.-Iran relations before tracing security strategy, nuclear diplomacy, direct escalation, and the Strait of Hormuz. The unit ends back at this week’s news, with a ranked causal argument rather than a hunt for one magic cause.
 
 ## The question it ends on
 
@@ -373,7 +373,7 @@ _Causation synthesis · closing the loop_
 
 ### Overview
 
-Close the loop. Reread a real headline from this week with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, and answer the unit question in one framed argument.
+Close the loop. Watch this week’s biggest Iran story with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, answer the unit question in one framed argument, and bring the story up to date with today’s news.
 
 ### Learning targets
 
@@ -385,17 +385,17 @@ Close the loop. Reread a real headline from this week with the whole unit behind
 
 1. **Cause and Effect.** I can use at least three specific turning points from different points in the chain.
 2. **Counterargument.** I can name a turning point someone else might rank first and give one reason mine still explains more.
-3. **Current Context.** I can point to one detail in this week’s headline and name the turning point that explains it.
+3. **Current Context.** I can point to one detail in this week’s news and name the turning point that explains it.
 
 ### What happens in class
 
-Run the Desk in Lead Mode on this week’s war headline, reread it against the unit’s topics, sort and rank the eight turning point cards on paper or on screen, write one framed argument, then return to the headline and explain one detail students could not have read before the unit.
+Open with two short videos on Iran’s peace proposal and President Trump’s rejection of it, read the story against the unit’s topics, sort and rank the eight turning point cards on screen, write one framed argument, then read three newer stories from today’s briefing and explain one detail students could not have read before the unit.
 
 ### The filings
 
 1. **Causal Ranking.** Name your top three turning points in order, and give one reason for your #1.
 2. **Constructing Arguments.** Was the 2026 Iran War mainly the result of recent decisions, or decades of unresolved conflict?
-3. **Current Context.** Pick one detail in this week’s headline. Which turning point explains it, and what would you have missed about it before this unit?
+3. **Current Context.** Pick one detail from this week’s story or today’s briefing. Which turning point explains it, and what would you have missed about it before this unit?
 
 ### Where the work goes
 

@@ -195,19 +195,19 @@
     function installTopic8Videos(){
       if(topic!=='topic-08')return;
       const placements=[
-        {id:'headline',title:'Optional: how earlier talks went, and what is still unknown',anchor:'.ir-headline-card'},
-        {id:'argument',title:'Optional: rewatch the clip for your #1 turning point',anchor:'.ir-frame'}
+        {chapter:'watch',id:'headline',kicker:'Start here',title:'Watch the proposal, then the answer',anchor:':scope > .ir-head',audit:'Watch these two first, in this order.'},
+        {chapter:'headline',id:'headline',kicker:'Optional video',title:'Optional: how earlier talks went, and what is still unknown',anchor:'.ir-headline-card',audit:'Optional. Use one if it helps.'}
       ];
       placements.forEach(place=>{
         const section=document.getElementById(place.id);
-        if(!section||section.querySelector('.ir-chapter-videos'))return;
-        const videos=(guide.videos||[]).filter(v=>v.chapter===place.id);
+        if(!section||section.querySelector('[data-video-chapter="'+place.chapter+'"]'))return;
+        const videos=(guide.videos||[]).filter(v=>v.chapter===place.chapter);
         if(!videos.length)return;
         const block=document.createElement('div');
         block.className='ir-chapter-videos'+(videos.length===1?' single':'');
-        block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">Optional video</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">No clip is required today. Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
-        const found=section.querySelector(place.anchor);
-        const anchor=(found&&found.closest('.ir-paper'))||section.querySelector(':scope > .ir-head');
+        block.setAttribute('data-video-chapter',place.chapter);
+        block.innerHTML='<div class="ir-chapter-videos-head"><div class="ir-kicker red">'+esc(place.kicker)+'</div><h3>'+esc(place.title)+'</h3></div><div class="ir-watch-grid">'+videos.map(card).join('')+'</div><div class="ir-video-audit">'+esc(place.audit)+' Video links audited '+esc(window.BECURRENT_IRAN_VIDEOS.reviewed)+'.</div>';
+        const anchor=section.querySelector(place.anchor);
         if(anchor)anchor.insertAdjacentElement('afterend',block);
       });
     }
@@ -368,10 +368,15 @@
 
     function installTopic8Backgrounds(){
       if(topic!=='topic-08')return;
-      addBackground(document.getElementById('headline'),'How to read a peace-plan headline',[
+      addBackground(document.getElementById('headline'),'How to read a peace-plan story',[
         'A peace plan is an opening offer, not a finished deal. What each side asks for tells you what it cares about most and what it thinks it can get. Iran asked for money, oil sales and an end to the blockade, which are all forms of economic pressure. What Iran offered in return was the Strait of Hormuz.',
-        'Notice what the headline does not say, too. It does not explain why the two sides distrust each other, why Hormuz is worth so much, or why direct strikes are on the table at all. Those are the questions this unit answered. That is the difference between reading the news and understanding it.'
+        'Notice what the reports do not say, too. They do not explain why the two sides distrust each other, why Hormuz is worth so much, or why direct strikes are on the table at all. Those are the questions this unit answered. That is the difference between reading the news and understanding it.'
       ]);
+      // The class opens on the two videos, so they sit above the background note.
+      const step1=document.getElementById('headline');
+      const watch=step1&&step1.querySelector('[data-video-chapter="watch"]');
+      const head=step1&&step1.querySelector(':scope > .ir-head');
+      if(watch&&head)head.insertAdjacentElement('afterend',watch);
       addBackground(document.getElementById('sort'),'Why the two piles overlap',[
         'A long-running conflict is made of decisions. Somebody chose to back the 1953 coup, and somebody chose to take hostages in 1979. What makes a card belong in the long-running pile is that its effects kept going for decades after the choice was made.',
         'A recent decision is still shaped by old conflict. The leaders who left the nuclear deal in 2018 or launched strikes in 2024 were acting inside a relationship that already had decades of distrust in it. So the real question is not which pile a card belongs in. It is where each card does most of its work.'
@@ -429,7 +434,7 @@
 
   if(window.BECURRENT_IRAN_VIDEOS){start();return;}
   const script=document.createElement('script');
-  script.src='../assets/data/iran-videos.js?v=20260927';
+  script.src='../assets/data/iran-videos.js?v=20260928';
   script.onload=start;
   script.onerror=()=>console.warn('BeCurrent: Iran video metadata could not be loaded; core lesson remains available.');
   document.head.appendChild(script);

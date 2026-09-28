@@ -511,7 +511,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Close the loop. Reread a real headline from this week with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, and answer the unit question in one framed argument.</p>
+                <p>Close the loop. Watch this week’s biggest Iran story with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, answer the unit question in one framed argument, and bring the story up to date with today’s news.</p>
             </td>
         </tr>
         <tr>
@@ -534,7 +534,7 @@ Every link below points at the live GitHub Pages build:
                 <ol>
                     <li>I can use at least three specific turning points from different points in the chain.</li>
                     <li>I can name a turning point someone else might rank first and give one reason mine still explains more.</li>
-                    <li>I can point to one detail in this week’s headline and name the turning point that explains it.</li>
+                    <li>I can point to one detail in this week’s news and name the turning point that explains it.</li>
                 </ol>
             </td>
         </tr>

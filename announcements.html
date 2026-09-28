@@ -72,7 +72,7 @@
     if (!entry || !entry.date) return null;
     scheduledDates[entry.date] = true;
     var day = Object.assign({}, generatedByDate[entry.date] || {}, { date: entry.date });
-    ['homework','homeworkDue','note','doNow','agenda','learningTargets','successCriteria','deskMode'].forEach(function (key) {
+    ['homework','homeworkDue','note','doNow','agenda','learningTargets','successCriteria','deskMode','showLead'].forEach(function (key) {
       if (Object.prototype.hasOwnProperty.call(entry, key)) day[key] = entry[key];
     });
     if (typeof entry.topicTitle === 'string' && entry.topicTitle.trim()) day.topic = entry.topicTitle.trim();
@@ -129,7 +129,10 @@
     return s;
   }
 
-  function leadSlide() {
+  function leadSlide(day) {
+    // A day can drop the Lead slide with showLead:false, for a class that does
+    // not use the Lead, so the board does not project a story nobody is filing.
+    if (day && day.showLead === false) return null;
     var lead = NEWS.lead || null;
     if (!lead || !has(lead.headline)) return null;
     var s = slide('lead-slide');
@@ -254,7 +257,7 @@
   function buildSlides() {
     stage.innerHTML = ''; slides = [];
     var day = currentDay();
-    [titleSlide(day),leadSlide(),agendaSlide(day),deskSlide(day),
+    [titleSlide(day),leadSlide(day),agendaSlide(day),deskSlide(day),
       listSlide('Learning targets','What you are learning',day && day.learningTargets,'targets'),
       listSlide('Success criteria','You have it when',day && day.successCriteria,'criteria'),
       homeworkSlide(day),upcomingSlide()].forEach(function (s) { if (s) { stage.appendChild(s); slides.push(s); } });

@@ -135,3 +135,10 @@ different one.
 So every target and criterion on the board is lifted out of the unit content
 module. Change a target there, rerun the build, and the screen changes with it.
 `npm test` fails while the generated file and the course data disagree.
+
+## Days without the Lead
+
+The board shows today's Lead from `assets/data/daily-news.js` every class day. A
+schedule entry with `showLead:false` drops that slide, for a class that does not
+use the Lead, so the board does not project a story nobody is filing. The Desk
+slide is already opt-in: a date without `deskMode` gets no Desk slide.

@@ -2,7 +2,7 @@
 
 **Generated from `scripts/lib/iran-video-content.js`. Do not hand-edit.**
 
-Last launch audit: **2026-09-24**
+Last launch audit: **2026-09-28**
 
 This is the video companion to `docs/lesson-plans/iran.md`. The main lesson plan remains focused on targets, criteria, and filings; this file carries the shared video pacing and launch metadata used by the student video-forward layer.
 
@@ -85,16 +85,18 @@ Topic 7 keeps video inside the step it explains instead of using a separate vide
 - **REQUIRED · Apr. 2026 explainer · Vox** — Iran’s strongest weapon
   https://www.youtube.com/watch?v=Rn69xI61Chs
 
-## Topic 8 — Optional clips, placed where they help.
+## Topic 8 — Start with this week’s story on video.
 
-Today is a reading and writing day, so no clip is required. Use a clip only when it helps a student read the headline or find evidence for the argument.
+Two reports open the lesson, in the order the story happened: Iran’s proposal, then President Trump’s answer. The optional clips help a student who wants the longer picture.
 
+- **REQUIRED · 15:54 · BBC News** — Iran’s foreign minister submits new plan to reopen Strait of Hormuz | BBC News
+  https://youtu.be/ZPv0-GeYEhw
+- **REQUIRED · 2:16 · Reuters** — Trump rejects Iranian proposal to open Hormuz and end fighting
+  https://youtu.be/gpon3v9Q5II
 - **OPTIONAL CURRENT UPDATE · 9:59 · PBS NewsHour** — Where Iran war stands as 60-day negotiating window expires
   https://www.pbs.org/video/war-with-iran-1786999739/
 - **OPTIONAL EXTEND · Teacher selects 8–12 min from 26:46 · PBS Compass Points** — What war in Iran has revealed and what remains unknown
   https://www.pbs.org/video/what-war-in-iran-has-revealed-and-what-remains-unknown-wewkol/
-- **OPTIONAL EXTEND · Rewatch 3–10 min · Student choice** — Rewatch the earlier clip tied to your #1 turning point
-  index.html
 
 ## Pre-unit launch check
 

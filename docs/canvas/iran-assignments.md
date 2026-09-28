@@ -400,11 +400,11 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <p>Everything happens on the website. There is nothing to download.</p>
 
 <h3>Step 2 &mdash; Read it and answer all 3</h3>
-<p>Close the loop. Reread a real headline from this week with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, and answer the unit question in one framed argument.</p>
+<p>Close the loop. Watch this week’s biggest Iran story with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, answer the unit question in one framed argument, and bring the story up to date with today’s news.</p>
 <ol>
     <li><strong>Causal Ranking.</strong> Name your top three turning points in order, and give one reason for your #1.</li>
     <li><strong>Constructing Arguments.</strong> Was the 2026 Iran War mainly the result of recent decisions, or decades of unresolved conflict?</li>
-    <li><strong>Current Context.</strong> Pick one detail in this week’s headline. Which turning point explains it, and what would you have missed about it before this unit?</li>
+    <li><strong>Current Context.</strong> Pick one detail from this week’s story or today’s briefing. Which turning point explains it, and what would you have missed about it before this unit?</li>
 </ol>
 
 <p><strong>Type a real answer in every box.</strong> Gather This Topic collects exactly what you typed and nothing else. An empty box is an empty box in your submission, and it is the only record I see.</p>
@@ -425,7 +425,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 <ol>
     <li>I can use at least three specific turning points from different points in the chain.</li>
     <li>I can name a turning point someone else might rank first and give one reason mine still explains more.</li>
-    <li>I can point to one detail in this week’s headline and name the turning point that explains it.</li>
+    <li>I can point to one detail in this week’s news and name the turning point that explains it.</li>
 </ol>
 
 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">The whole Iran at War unit, if you missed a topic</a></p>

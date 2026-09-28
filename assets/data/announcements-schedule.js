@@ -60,10 +60,10 @@ window.BECURRENT_SCHEDULE={
    agenda:['CNN 10 · Sept. 22: What to Expect at the UN General Assembly, the Biggest Event in World Diplomacy.','CNN 10 · Sept. 23: The First New Species of Cat to Be Discovered in More Than 100 Years.','Map the chokepoint mechanism.','Compare the 1980s Tanker War with 2026.','Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.','Separate what the data proves from what it cannot prove.','Rank Hormuz as military, economic, or diplomatic leverage.'],
    homework:'Finish all five Topic 7 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 7 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
-  {date:'2026-09-28',topic:'IR8',deskMode:'lead',topicTitle:'Iran at War | Back to the Headline',
-   note:'Lead Mode Desk today: everyone files the same war headline. Then we read it again with the whole unit behind us.',
+  {date:'2026-09-28',topic:'IR8',showLead:false,topicTitle:'Iran at War | Back to the Headline',
+   note:'We open with this week\u2019s biggest Iran story on video, then read it with the whole unit behind us.',
    doNow:'Without notes: name three turning points from this unit that help explain why the war is still going.',
-   agenda:['CNN 10 · Sept. 24: His Trumpet Stopped Working, but the Anthem Sang On.','CNN 10 · Sept. 25: How a Historic El Niño Is Supercharging the Pacific Storm Season.','The Desk, Lead Mode: file this week\u2019s war headline.','Read the headline again: find the unit\u2019s topics inside it.','Card sort: long-running conflict or recent decision? Rank your top three.','One framed paragraph: recent decisions, or decades of unresolved conflict?','Back to the headline: what can you read in it now that you could not before?'],
+   agenda:['CNN 10 · Sept. 28: How five pivotal elections helped shape American History.','Watch: Iran\u2019s peace plan (BBC News), then President Trump\u2019s answer (Reuters).','Read it again: find the unit\u2019s topics inside the story.','Card sort on screen: long-running conflict or recent decision? Rank your top three.','One framed paragraph: recent decisions, or decades of unresolved conflict?','Bring it up to date: read three newer stories from today\u2019s briefing.'],
    homework:'Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-30',topicTitle:'Iran at War | Study Guide Work Day',

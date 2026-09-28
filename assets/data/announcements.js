@@ -668,22 +668,21 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Counterargument"
         },
         {
-          "text": "I can point to one detail in this week’s headline and name the turning point that explains it.",
+          "text": "I can point to one detail in this week’s news and name the turning point that explains it.",
           "label": "Current Context"
         }
       ],
       "homework": "Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
-      "note": "Lead Mode Desk today: everyone files the same war headline. Then we read it again with the whole unit behind us.",
+      "note": "We open with this week’s biggest Iran story on video, then read it with the whole unit behind us.",
       "doNow": "Without notes: name three turning points from this unit that help explain why the war is still going.",
       "agenda": [
-        "CNN 10 · Sept. 24: His Trumpet Stopped Working, but the Anthem Sang On.",
-        "CNN 10 · Sept. 25: How a Historic El Niño Is Supercharging the Pacific Storm Season.",
-        "The Desk, Lead Mode: file this week’s war headline.",
-        "Read the headline again: find the unit’s topics inside it.",
-        "Card sort: long-running conflict or recent decision? Rank your top three.",
+        "CNN 10 · Sept. 28: How five pivotal elections helped shape American History.",
+        "Watch: Iran’s peace plan (BBC News), then President Trump’s answer (Reuters).",
+        "Read it again: find the unit’s topics inside the story.",
+        "Card sort on screen: long-running conflict or recent decision? Rank your top three.",
         "One framed paragraph: recent decisions, or decades of unresolved conflict?",
-        "Back to the headline: what can you read in it now that you could not before?"
+        "Bring it up to date: read three newer stories from today’s briefing."
       ]
     },
     {
