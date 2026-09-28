@@ -643,14 +643,14 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-28",
       "topic": "Iran at War | Back to the Headline",
       "unit": "Iran at War",
-      "subtitle": "Causation synthesis · closing the loop",
+      "subtitle": "Unit review and final argument",
       "learningTargets": [
         {
-          "text": "I can connect evidence from several points in the chain through explicit causal mechanisms.",
+          "text": "I can explain how events from different parts of the unit led to later events.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can decide how much of the war comes from recent decisions and how much from decades of unresolved conflict.",
+          "text": "I can decide whether the war was caused more by recent decisions or by decades of unresolved conflict.",
           "label": "Causal Ranking"
         },
         {
@@ -660,11 +660,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "successCriteria": [
         {
-          "text": "I can use at least three specific turning points from different points in the chain.",
+          "text": "I can use at least three turning points from different parts of the unit as evidence.",
           "label": "Cause and Effect"
         },
         {
-          "text": "I can name a turning point someone else might rank first and give one reason mine still explains more.",
+          "text": "I can name a turning point someone else might rank first and give one reason my choice explains more.",
           "label": "Counterargument"
         },
         {
@@ -674,15 +674,15 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "homework": "Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
-      "note": "We open with this week’s biggest Iran story on video, then read it with the whole unit behind us.",
-      "doNow": "Without notes: name three turning points from this unit that help explain why the war is still going.",
+      "note": "Class starts with two news videos about Iran’s peace plan. Then we connect the story to the whole unit.",
+      "doNow": "Without notes, name three turning points from this unit that help explain why the war continues.",
       "agenda": [
         "CNN 10 · Sept. 28: How five pivotal elections helped shape American History.",
         "Watch: Iran’s peace plan (BBC News), then President Trump’s answer (Reuters).",
-        "Read it again: find the unit’s topics inside the story.",
-        "Card sort on screen: long-running conflict or recent decision? Rank your top three.",
-        "One framed paragraph: recent decisions, or decades of unresolved conflict?",
-        "Bring it up to date: read three newer stories from today’s briefing."
+        "Connect the story to earlier topics in the unit.",
+        "Sort eight turning points into long-running conflict or recent decision. Rank your top three.",
+        "Write one paragraph: Was the war caused more by recent decisions or by decades of unresolved conflict?",
+        "Read three newer news stories. Connect one detail to the unit."
       ]
     },
     {

@@ -61,9 +61,9 @@ window.BECURRENT_SCHEDULE={
    homework:'Finish all five Topic 7 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 7 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-28',topic:'IR8',showLead:false,topicTitle:'Iran at War | Back to the Headline',
-   note:'We open with this week\u2019s biggest Iran story on video, then read it with the whole unit behind us.',
-   doNow:'Without notes: name three turning points from this unit that help explain why the war is still going.',
-   agenda:['CNN 10 · Sept. 28: How five pivotal elections helped shape American History.','Watch: Iran\u2019s peace plan (BBC News), then President Trump\u2019s answer (Reuters).','Read it again: find the unit\u2019s topics inside the story.','Card sort on screen: long-running conflict or recent decision? Rank your top three.','One framed paragraph: recent decisions, or decades of unresolved conflict?','Bring it up to date: read three newer stories from today\u2019s briefing.'],
+   note:'Class starts with two news videos about Iran\u2019s peace plan. Then we connect the story to the whole unit.',
+   doNow:'Without notes, name three turning points from this unit that help explain why the war continues.',
+   agenda:['CNN 10 · Sept. 28: How five pivotal elections helped shape American History.','Watch: Iran\u2019s peace plan (BBC News), then President Trump\u2019s answer (Reuters).','Connect the story to earlier topics in the unit.','Sort eight turning points into long-running conflict or recent decision. Rank your top three.','Write one paragraph: Was the war caused more by recent decisions or by decades of unresolved conflict?','Read three newer news stories. Connect one detail to the unit.'],
    homework:'Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.',homeworkDue:'the start of next class'},
 
   {date:'2026-09-30',topicTitle:'Iran at War | Study Guide Work Day',

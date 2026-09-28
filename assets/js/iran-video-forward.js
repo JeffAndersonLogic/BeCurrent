@@ -195,8 +195,8 @@
     function installTopic8Videos(){
       if(topic!=='topic-08')return;
       const placements=[
-        {chapter:'watch',id:'headline',kicker:'Start here',title:'Watch the proposal, then the answer',anchor:':scope > .ir-head',audit:'Watch these two first, in this order.'},
-        {chapter:'headline',id:'headline',kicker:'Optional video',title:'Optional: how earlier talks went, and what is still unknown',anchor:'.ir-headline-card',audit:'Optional. Use one if it helps.'}
+        {chapter:'watch',id:'headline',kicker:'Start here',title:'Watch the proposal, then the answer',anchor:':scope > .ir-head',audit:'Watch these two videos first, in this order.'},
+        {chapter:'headline',id:'headline',kicker:'Optional video',title:'Optional: earlier peace talks and unanswered questions',anchor:'.ir-headline-card',audit:'These videos are optional.'}
       ];
       placements.forEach(place=>{
         const section=document.getElementById(place.id);
@@ -368,22 +368,22 @@
 
     function installTopic8Backgrounds(){
       if(topic!=='topic-08')return;
-      addBackground(document.getElementById('headline'),'How to read a peace-plan story',[
-        'A peace plan is an opening offer, not a finished deal. What each side asks for tells you what it cares about most and what it thinks it can get. Iran asked for money, oil sales and an end to the blockade, which are all forms of economic pressure. What Iran offered in return was the Strait of Hormuz.',
-        'Notice what the reports do not say, too. They do not explain why the two sides distrust each other, why Hormuz is worth so much, or why direct strikes are on the table at all. Those are the questions this unit answered. That is the difference between reading the news and understanding it.'
+      addBackground(document.getElementById('headline'),'How to read a news story about a peace plan',[
+        'A peace plan is a first offer, not a final agreement. The demands in a plan show what each side wants most. Iran asked for money, the right to sell oil, and an end to the U.S. blockade. These are all economic demands. In return, Iran offered to reopen the Strait of Hormuz.',
+        'A news report also leaves things out. These reports do not explain why Iran and the U.S. distrust each other, why the Strait of Hormuz is so valuable, or why direct attacks are now possible. This unit explained those causes. Knowing the causes is the difference between reading the news and understanding it.'
       ]);
       // The class opens on the two videos, so they sit above the background note.
       const step1=document.getElementById('headline');
       const watch=step1&&step1.querySelector('[data-video-chapter="watch"]');
       const head=step1&&step1.querySelector(':scope > .ir-head');
       if(watch&&head)head.insertAdjacentElement('afterend',watch);
-      addBackground(document.getElementById('sort'),'Why the two piles overlap',[
-        'A long-running conflict is made of decisions. Somebody chose to back the 1953 coup, and somebody chose to take hostages in 1979. What makes a card belong in the long-running pile is that its effects kept going for decades after the choice was made.',
-        'A recent decision is still shaped by old conflict. The leaders who left the nuclear deal in 2018 or launched strikes in 2024 were acting inside a relationship that already had decades of distrust in it. So the real question is not which pile a card belongs in. It is where each card does most of its work.'
+      addBackground(document.getElementById('sort'),'Why some cards fit both groups',[
+        'Long-running conflicts began with decisions. Leaders chose to support the 1953 coup. Iranian students chose to take American hostages in 1979. These events belong in the long-running group because their effects lasted for decades.',
+        'Recent decisions are also shaped by old conflicts. The leaders who left the nuclear deal in 2018 or ordered attacks in 2024 acted after decades of distrust. For each card, choose the group where the event had its biggest effect.'
       ]);
-      addBackground(document.getElementById('argument'),'How to argue “both” without dodging',[
-        'Saying “both matter” is true of almost every war, so on its own it does not answer the question. A strong “both” answer still makes a choice: it says which side does more of the explaining and why.',
-        'One way to do that: decide what the old conflict made possible and what the recent decisions actually triggered. For example, decades of distrust might explain why a deal was fragile, while a recent choice explains why war came in 2026 and not in 2016. Then say which of those two things you think matters more.'
+      addBackground(document.getElementById('argument'),'How to write a strong “both” answer',[
+        'Almost every war has both long-term causes and recent causes. For that reason, “both” is not a complete answer by itself. A strong “both” answer states which kind of cause explains more, and why.',
+        'One method: explain what the long-term conflict made possible, then explain what the recent decisions caused. For example, decades of distrust may explain why agreements kept failing. A recent decision may explain why the war started in 2026 instead of 2016. Then state which of the two matters more.'
       ]);
     }
 

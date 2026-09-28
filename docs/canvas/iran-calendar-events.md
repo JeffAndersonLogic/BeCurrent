@@ -511,7 +511,7 @@ Every link below points at the live GitHub Pages build:
                 <h3>OVERVIEW</h3>
             </td>
             <td style="vertical-align: top;">
-                <p>Close the loop. Watch this week’s biggest Iran story with the whole unit behind you, sort the eight turning points into long-running conflict and recent decisions, rank the three that explain the most, answer the unit question in one framed argument, and bring the story up to date with today’s news.</p>
+                <p>Watch this week’s main news story about Iran and connect it to the unit. Sort the eight turning points into long-running conflict and recent decisions. Rank the three that explain the war best, and answer the unit question in one paragraph. Then read three newer news stories and explain one detail.</p>
             </td>
         </tr>
         <tr>
@@ -520,8 +520,8 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can connect evidence from several points in the chain through explicit causal mechanisms.</li>
-                    <li>I can decide how much of the war comes from recent decisions and how much from decades of unresolved conflict.</li>
+                    <li>I can explain how events from different parts of the unit led to later events.</li>
+                    <li>I can decide whether the war was caused more by recent decisions or by decades of unresolved conflict.</li>
                     <li>I can use the unit’s history to explain a detail in this week’s news about the war.</li>
                 </ol>
             </td>
@@ -532,8 +532,8 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top;">
                 <ol>
-                    <li>I can use at least three specific turning points from different points in the chain.</li>
-                    <li>I can name a turning point someone else might rank first and give one reason mine still explains more.</li>
+                    <li>I can use at least three turning points from different parts of the unit as evidence.</li>
+                    <li>I can name a turning point someone else might rank first and give one reason my choice explains more.</li>
                     <li>I can point to one detail in this week’s news and name the turning point that explains it.</li>
                 </ol>
             </td>

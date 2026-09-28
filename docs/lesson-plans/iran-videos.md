@@ -85,9 +85,9 @@ Topic 7 keeps video inside the step it explains instead of using a separate vide
 - **REQUIRED · Apr. 2026 explainer · Vox** — Iran’s strongest weapon
   https://www.youtube.com/watch?v=Rn69xI61Chs
 
-## Topic 8 — Start with this week’s story on video.
+## Topic 8 — This week’s story on video
 
-Two reports open the lesson, in the order the story happened: Iran’s proposal, then President Trump’s answer. The optional clips help a student who wants the longer picture.
+Two news reports open the lesson. They are in the order the events happened: first Iran’s proposal, then President Trump’s answer. The optional videos give more background.
 
 - **REQUIRED · 15:54 · BBC News** — Iran’s foreign minister submits new plan to reopen Strait of Hormuz | BBC News
   https://youtu.be/ZPv0-GeYEhw
@@ -95,7 +95,7 @@ Two reports open the lesson, in the order the story happened: Iran’s proposal,
   https://youtu.be/gpon3v9Q5II
 - **OPTIONAL CURRENT UPDATE · 9:59 · PBS NewsHour** — Where Iran war stands as 60-day negotiating window expires
   https://www.pbs.org/video/war-with-iran-1786999739/
-- **OPTIONAL EXTEND · Teacher selects 8–12 min from 26:46 · PBS Compass Points** — What war in Iran has revealed and what remains unknown
+- **OPTIONAL EXTEND · 8 to 12 minutes, chosen by the teacher, from 26:46 · PBS Compass Points** — What war in Iran has revealed and what remains unknown
   https://www.pbs.org/video/what-war-in-iran-has-revealed-and-what-remains-unknown-wewkol/
 
 ## Pre-unit launch check
