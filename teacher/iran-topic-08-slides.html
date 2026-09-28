@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Topic 8 Slides | Iran at War | BeCurrent Teacher</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/becurrent-brand.css">
+<style>
+/* A projected deck. Reading slides are newsprint under ink, per the course's
+   polarity rule; only the title and closing slides are dark, because they are
+   scanned rather than read. Slides are laid out on a fixed 1600x900 stage and
+   scaled to fit, so a projector at any resolution shows the same slide. */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--black-900);overflow:hidden}
+body{font-family:var(--body);color:var(--ink)}
+.viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.stage{width:1600px;height:900px;position:relative;flex:none;transform-origin:center center}
+.slide{position:absolute;inset:0;background:var(--newsprint);padding:70px 96px 80px;display:none;flex-direction:column;overflow:hidden}
+.slide.on{display:flex}
+.slide.dark{background:var(--black-900);color:var(--clean-paper)}
+.kicker{font:800 20px/1.2 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--signal-deep);margin:0 0 14px}
+.dark .kicker{color:var(--clean-paper);opacity:.8}
+h1{font-family:var(--display);font-weight:700;margin:0;line-height:1.05}
+/* Slide headings are sentences, so they are body bold, not Cinzel. */
+h2{font:700 54px/1.15 var(--body);margin:0;margin-bottom:34px;max-width:1300px}
+.lede{font-size:30px;line-height:1.45;max-width:1200px;margin:0}
+.foot{position:absolute;left:96px;right:96px;bottom:30px;display:flex;justify-content:space-between;font:700 16px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.dark .foot{color:var(--black-500)}
+.bigline{font:700 34px/1.35 var(--body);margin-top:auto;padding-top:24px;border-top:3px solid var(--signal);max-width:1400px}
+.dark .bigline{border-top-color:var(--signal)}
+
+/* Title */
+.title-slide{padding:0}
+.title-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.title-slide::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,17,.96) 0%,rgba(17,17,17,.9) 38%,rgba(17,17,17,0) 62%);z-index:1}
+.title-slide .copy,.title-slide .credit{z-index:2}
+.title-slide .copy{position:relative;padding:120px 96px;max-width:760px}
+.title-slide h1{font-size:96px;color:var(--clean-paper);margin:10px 0 30px}
+.title-slide .lede{color:var(--clean-paper);font-size:32px}
+.title-slide .credit{position:absolute;right:28px;bottom:24px;font:600 14px/1 var(--ui);color:var(--clean-paper);background:rgba(17,17,17,.85);padding:6px 10px}
+
+/* Cards and grids */
+.grid{display:grid;gap:26px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--clean-paper);border:2px solid var(--paper-line);padding:26px 28px}
+.card .tag{font:800 17px/1.2 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:10px}
+.card h3{font:700 30px/1.2 var(--body);margin:0 0 10px}
+.card p{font-size:23px;line-height:1.45;margin:0}
+.card.ink{background:var(--ink);color:var(--clean-paper);border-color:var(--ink)}
+.card.ink .tag{color:var(--clean-paper);opacity:.75}
+.year{font:800 38px/1 var(--ui);color:var(--signal-deep);margin-bottom:8px}
+
+/* The question */
+.question{font:700 54px/1.25 var(--body);max-width:1350px;margin:0 0 34px}
+.rule{display:flex;gap:28px;align-items:center;background:var(--ink);color:var(--clean-paper);padding:30px 36px;margin-top:auto}
+.rule .tag{font:800 20px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.rule p{font:700 34px/1.3 var(--body);margin:0}
+
+/* Headline */
+.headline{display:grid;grid-template-columns:1fr;gap:0;background:var(--clean-paper);border:2px solid var(--paper-line);padding:34px 40px}
+.headline .src{font:800 20px/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:12px}
+.headline h3{font:700 48px/1.15 var(--body);margin:0 0 20px}
+.headline ul{margin:0;padding-left:28px}
+.headline li{font-size:24px;line-height:1.45;margin:0 0 12px}
+
+/* Echo cards */
+.echo .card{padding:22px 26px}
+.echo .card h3{font-size:26px}
+.echo .card p{font-size:21px}
+.echo .card .topic{font:800 16px/1.2 var(--ui);letter-spacing:.08em;text-transform:uppercase;margin-top:12px;color:var(--ink-soft)}
+
+/* Eight turning points */
+.chain{grid-template-columns:repeat(4,1fr);gap:20px}
+.chain .card{padding:20px 22px}
+.chain .card h3{font-size:25px;margin-bottom:6px}
+.chain .card p{font-size:19px;line-height:1.4}
+
+/* Refresher slides */
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;flex:1;min-height:0}
+.split img{width:100%;height:100%;max-height:560px;object-fit:contain;display:block}
+.figure{display:flex;flex-direction:column;min-height:0}
+.figure figcaption{font:600 15px/1.35 var(--ui);color:var(--ink-soft);margin-top:10px}
+.stack{display:flex;flex-direction:column;gap:22px}
+.stat{display:flex;align-items:baseline;gap:18px}
+.stat b{font:800 96px/1 var(--ui);color:var(--signal-deep)}
+.stat span{font:600 24px/1.3 var(--ui)}
+.stat.after b{color:var(--ink)}
+
+/* Numbered moves */
+.moves .card .n{font:800 56px/1 var(--ui);color:var(--signal-deep);margin-bottom:8px}
+
+/* Frame */
+.frame{background:var(--clean-paper);border:2px solid var(--paper-line);padding:30px 36px;font:400 30px/1.6 var(--body)}
+.frame .tag{font:800 19px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:14px}
+.blank{display:inline-block;min-width:150px;border-bottom:3px solid var(--ink);vertical-align:baseline}
+
+/* Controls */
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:10px;opacity:0;transition:opacity .2s}
+body:hover .bar,.bar:focus-within{opacity:1}
+.bar button,.bar a{font:700 15px/1 var(--ui);padding:10px 14px;border:0;background:var(--black-800);color:var(--clean-paper);cursor:pointer;text-decoration:none}
+.bar button:focus-visible,.bar a:focus-visible{outline:3px solid var(--focus-invert);outline-offset:2px}
+.bar .count{font:700 15px/1 var(--ui);color:var(--black-500);min-width:70px;text-align:center}
+.notes{position:fixed;left:0;right:0;bottom:0;max-height:38vh;overflow:auto;background:var(--clean-paper);color:var(--ink);border-top:4px solid var(--signal);padding:18px 28px 64px;font:16px/1.6 var(--body);display:none}
+.notes.on{display:block}
+.notes h2{font:800 14px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;color:var(--signal-deep)}
+.notes p{margin:0 0 8px;max-width:95ch}
+.slide aside{display:none}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff}
+  .viewport{position:static;display:block}
+  .stage{transform:none!important;width:auto;height:auto}
+  .slide{display:flex;position:relative;width:1600px;height:900px;page-break-after:always;zoom:.6}
+  .bar,.notes{display:none!important}
+}
+</style>
+</head>
+<body>
+<div class="viewport"><main class="stage" id="stage" aria-live="polite">
+
+<section class="slide dark title-slide" aria-label="Slide 1">
+  <img src="../assets/images/iran/topic-08-cover-illustration.webp" width="1600" height="900" alt="">
+  <div class="copy">
+    <p class="kicker">Iran at War · Topic 8</p>
+    <h1>Back to the Headline</h1>
+    <p class="lede">On the first day you watched the war without its history. Today you read one headline from this week with eight turning points behind you.</p>
+  </div>
+  <span class="credit">Cover: AI-generated illustration, not a photograph.</span>
+  <aside>
+    <p>Opening. Name the arc out loud: Topic 1 was the war now; Topic 8 is the war now again, read with seven topics of history behind it.</p>
+    <p>The cover is an AI-generated editorial illustration. Say so if anyone asks; it is not a historical photograph.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 2">
+  <p class="kicker">The unit question</p>
+  <p class="question">Was the 2026 Iran War mainly the result of recent decisions, or decades of unresolved conflict?</p>
+  <p class="lede">You are graded on your reasons, not on which side you pick. “Both” is allowed if you say which one does more of the work.</p>
+  <div class="rule"><span class="tag">The rule</span><p>A date becomes a cause only when you can explain the mechanism.</p></div>
+  <aside>
+    <p>Read the question and the rule aloud. Key term: a causal mechanism is the process that connects one development to the next.</p>
+    <p>Quick think-aloud: if a car crash happens at 3:14 p.m., naming the time does not explain the crash. A start date and a cause answer different questions.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 3">
+  <p class="kicker">Step 1 · This week's headline</p>
+  <h2>Start where the unit started: the war now.</h2>
+  <div class="headline">
+    <div class="src">NPR · September 26, 2026</div>
+    <h3>Trump rejects plan to reopen Strait of Hormuz</h3>
+    <ul>
+      <li>At the United Nations, Iran offered a “concrete seven-day plan” to reopen the Strait of Hormuz and restart negotiations with the United States, if the U.S. met its conditions.</li>
+      <li>President Trump rejected it. “They want to make a deal where they open the strait immediately because they’re losing so badly,” he said.</li>
+      <li>The plan is similar to an agreement from June. It collapsed over vague wording, including who would control the strait, and the strikes started again.</li>
+      <li>Iran’s president told CBS the U.S. must show “that it does not intend to overthrow our government.”</li>
+    </ul>
+  </div>
+  <aside>
+    <p>Lead Mode Desk. This is the same story students file as today's Lead, so the Desk and the lesson open on one headline. Students file what happened and why it matters; there is no Your Pick today.</p>
+    <p>Ask the room, and answer it yourself as a think-aloud: what is each side asking for, and what is each side offering? Listen in the filings for Hormuz, sanctions, the blockade and the failed June deal.</p>
+    <p>Source: NPR, Sept. 26, 2026. Compare CBS News live updates if the story has moved. If it has, keep this headline anyway: the lesson is about reading it with history, not about the latest update.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 4">
+  <p class="kicker">Read it again</p>
+  <h2>Almost every topic in this unit is inside this one story.</h2>
+  <div class="grid g3 echo">
+    <div class="card"><h3>Reopen Hormuz</h3><p>Iran is offering open water in exchange for relief from the blockade and sanctions.</p><div class="topic">Topic 7 · The Hormuz Lever</div></div>
+    <div class="card"><h3>Sanctions and inspectors</h3><p>Pressure relief for a nuclear promise and inspections is the JCPOA bargain again.</p><div class="topic">Topic 5 · The Nuclear Bargain</div></div>
+    <div class="card"><h3>“Does not intend to overthrow our government”</h3><p>Iran’s president is talking about 1953.</p><div class="topic">Topic 3 · 1953 and 1979</div></div>
+    <div class="card"><h3>The June deal collapsed</h3><p>A deal was made, then fell apart. Again. Each side expects the other to break its word.</p><div class="topic">Topics 3 and 5 · Distrust</div></div>
+    <div class="card"><h3>Including Lebanon</h3><p>Iran’s plan also asked for an end to fighting across the region, where its armed partner Hezbollah operates.</p><div class="topic">Topic 4 · Why Fight Far From Home?</div></div>
+    <div class="card"><h3>The strikes started again</h3><p>After 2024 and 2025, direct strikes are a normal option. That changes what leaders bargain over.</p><div class="topic">Topic 6 · Shadow War to Open War</div></div>
+  </div>
+  <aside>
+    <p>Walk the six cards aloud. Think one all the way through: Pezeshkian asking for proof the U.S. will not overthrow Iran’s government is 1953 in this week’s news. Then let students scan the rest silently. No writing yet.</p>
+    <p>Question to put to the room, then answer yourself: which piece of this headline would have made no sense to you on Day 1?</p>
+    <p>Optional corroboration aside: NPR says the plan called for reopening the strait and resuming talks; CBS adds a region-wide ceasefire including Lebanon; Al Jazeera frames it as a “seven-day roadmap to end war.”</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 5">
+  <p class="kicker">Step 2 · The card sort</p>
+  <h2>Long-running conflict, or recent decision?</h2>
+  <div class="grid g2" style="margin-bottom:30px">
+    <div class="card ink"><div class="tag">Pile 1</div><h3>Long-running conflict</h3><p>A fear or grudge that kept going for decades.</p></div>
+    <div class="card ink"><div class="tag">Pile 2</div><h3>Recent decision</h3><p>A choice leaders made in the last few years that could have gone another way.</p></div>
+  </div>
+  <div class="grid g3 moves">
+    <div class="card"><div class="n">1</div><h3>Sort</h3><p>Put each of the eight cards in one of the two piles, where it does most of its work.</p></div>
+    <div class="card"><div class="n">2</div><h3>Choose</h3><p>Pick the three cards that do the most to explain this week’s headline.</p></div>
+    <div class="card"><div class="n">3</div><h3>Rank</h3><p>Put your three in order. Older is not automatically more important. Neither is newer.</p></div>
+  </div>
+  <aside>
+    <p>Paper cards for anyone who wants them: print the Topic 8 card sort sheet. On paper or on screen both count.</p>
+    <p>Circulate and ask each student privately for the reason behind one placement: why is that card in that pile? Listen for a reason, not a date.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 6">
+  <p class="kicker">The eight cards</p>
+  <h2>Every one of these helped make this war possible.</h2>
+  <div class="grid chain">
+    <div class="card"><div class="year">1953</div><h3>Coup removes Mosaddegh</h3><p>The U.S. and Britain help overthrow Iran’s prime minister.</p></div>
+    <div class="card"><div class="year">1979</div><h3>Revolution and hostage crisis</h3><p>Allies become enemies. Each side remembers the other as the aggressor.</p></div>
+    <div class="card"><div class="year">1980–88</div><h3>Iran-Iraq War</h3><p>Iran builds missiles, the IRGC and armed partners so it is never that exposed again.</p></div>
+    <div class="card"><div class="year">2015</div><h3>The nuclear deal</h3><p>Limits and inspections for sanctions relief. A deal turns out to be possible.</p></div>
+    <div class="card"><div class="year">2018</div><h3>U.S. leaves the deal</h3><p>Sanctions return. Iran later exceeds the nuclear limits, and trust drops further.</p></div>
+    <div class="card"><div class="year">2024</div><h3>First direct attacks</h3><p>Iran and Israel strike each other’s territory. The shadow war becomes open.</p></div>
+    <div class="card"><div class="year">2025</div><h3>A bigger war</h3><p>A sustained Israel-Iran war, and U.S. strikes on Iranian nuclear sites.</p></div>
+    <div class="card"><div class="year">Feb 2026</div><h3>The current war begins</h3><p>A joint U.S.-Israeli offensive. Iran retaliates and Hormuz traffic collapses.</p></div>
+  </div>
+  <aside>
+    <p>These match the printed card sort sheet and the Topic 8 student page.</p>
+    <p>The pile a student chooses for 1979 or 2018 is not the point; the reason is. A student can reasonably rank 2018 or 2024 above 1953. Do not reward “older = deeper = more important.”</p>
+    <p>The next five slides are an optional refresher on the turning points. Skip straight to the top three if the room is ready.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 7">
+  <p class="kicker">Refresher · 1953</p>
+  <h2>Foreign intervention changed Iranian political memory.</h2>
+  <div class="split">
+    <div class="stack">
+      <div class="card"><div class="tag">What happened</div><p>Iran nationalized its oil industry. U.S. and British covert support helped remove Prime Minister Mohammad Mosaddegh and strengthened the Shah.</p></div>
+      <div class="card"><div class="tag">Why it matters later</div><p>For many Iranians, 1953 became evidence that foreign powers would interfere when Iran challenged their interests.</p></div>
+      <p class="lede" style="font-size:26px"><b>1953 helps explain distrust. It does not make later war inevitable.</b></p>
+    </div>
+    <figure class="figure" style="margin:0">
+      <img src="../assets/images/iran/mosaddegh-1951.webp" width="434" height="576" alt="Black and white portrait of Mohammad Mosaddegh in 1951.">
+      <figcaption>Mohammad Mosaddegh, 1951. Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+  <aside>
+    <p>Optional refresher. Emphasize proportional causation: a historical grievance can shape later expectations without controlling every later decision.</p>
+    <p>Question to think aloud: what is the mechanism between a 1953 intervention and distrust decades later?</p>
+    <p>Source: U.S. Office of the Historian, FRUS Iran 1951 to 1954, history.state.gov/historicaldocuments/frus1951-54IranEd2/d363. Image: Wikimedia Commons, Category: Mohammad Mosaddegh in 1951.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 8">
+  <p class="kicker">Refresher · 1979</p>
+  <h2>The alliance collapsed and distrust became mutual.</h2>
+  <p class="lede" style="margin-bottom:34px">The revolution removed the Shah and created the Islamic Republic. Soon afterward, Iranian students seized the U.S. embassy and held American hostages.</p>
+  <div class="grid g2">
+    <div class="card"><div class="tag">Iranian memory</div><p>1953 represented foreign interference and support for an unpopular ruler.</p></div>
+    <div class="card ink"><div class="tag">American memory</div><p>The hostage crisis represented an attack on Americans and the collapse of a former alliance.</p></div>
+  </div>
+  <p class="bigline">Later negotiations carried both memories into the room.</p>
+  <aside>
+    <p>Optional refresher. Avoid presenting either memory as the complete story. The goal is perspective, and the way competing grievances reinforce one another.</p>
+    <p>Question to think aloud: which memory would make later compromise harder, and why?</p>
+    <p>Source: U.S. Office of the Historian, Nov. 4, 1979 hostage-crisis record, history.state.gov/historicaldocuments/frus1977-80v11p1/d1.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 9">
+  <p class="kicker">Refresher · 1980–88 and 2015–18</p>
+  <h2>A security strategy, then a guardrail that failed.</h2>
+  <div class="grid g3">
+    <div class="card"><div class="year">1980–88</div><h3>Invasion and new tools</h3><p>Iran survived a long invasion feeling surrounded. The IRGC grew. Missiles and armed regional partners became more important.</p></div>
+    <div class="card"><div class="year">2015</div><h3>The JCPOA</h3><p>Iran accepted nuclear limits and inspections. Other governments provided nuclear-related sanctions relief. Compromise was possible.</p></div>
+    <div class="card"><div class="year">2018</div><h3>U.S. withdrawal</h3><p>The United States left the agreement and restored sanctions. Iran later moved beyond several nuclear limits.</p></div>
+  </div>
+  <p class="bigline">The 2015 deal shows that later escalation was not automatic.</p>
+  <aside>
+    <p>Optional refresher. Deterrence means discouraging attack by making the cost look too high. The same strategy can feel defensive from inside Iran and threatening from outside it.</p>
+    <p>Stress scope: the JCPOA covered nuclear limits and inspections. It did not settle the wider rivalry, missiles, or regional armed partners.</p>
+    <p>Source: IAEA verification report, iaea.org/sites/default/files/documents/gov2017-10.pdf.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 10">
+  <p class="kicker">Refresher · 2024–26</p>
+  <h2>Direct attacks crossed lines leaders had avoided.</h2>
+  <div class="grid g3">
+    <div class="card"><div class="year">2024</div><h3>Direct exchanges</h3><p>Iran and Israel attack one another directly more than once.</p></div>
+    <div class="card"><div class="year">2025</div><h3>A larger war</h3><p>Direct military action grows. U.S. strikes hit Iranian nuclear sites.</p></div>
+    <div class="card ink"><div class="year" style="color:var(--clean-paper)">2026</div><h3>The current war</h3><p>A joint U.S.-Israeli offensive begins February 28. Iran retaliates.</p></div>
+  </div>
+  <p class="bigline">Threshold: the line between actions leaders think are possible and actions they think are too dangerous.</p>
+  <aside>
+    <p>Optional refresher. The size of an attack matters, but so does the precedent: each round changes what leaders expect in the next.</p>
+    <p>Question to think aloud: which mattered more, the size of an escalation or the precedent it created?</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 11">
+  <p class="kicker">Refresher · Hormuz</p>
+  <h2>Geography gives Iran leverage without naval equality.</h2>
+  <div class="split">
+    <div class="stack">
+      <p class="kicker" style="margin:0">Estimated oil flows through the strait</p>
+      <div class="stat"><b>21.6</b><span>million barrels per day<br>Q4 2025</span></div>
+      <div class="stat after"><b>4.9</b><span>million barrels per day<br>Q2 2026</span></div>
+      <p class="lede" style="font-size:26px"><b>The numbers show disruption. They do not prove why leaders acted.</b></p>
+    </div>
+    <figure class="figure" style="margin:0">
+      <img src="../assets/images/iran/strait-of-hormuz-map.webp" width="1264" height="1005" alt="Map of the Strait of Hormuz between Iran and Oman, with the shipping lanes marked.">
+      <figcaption>Strait of Hormuz. Wikimedia Commons. Data: U.S. Energy Information Administration, Aug. 2026.</figcaption>
+    </figure>
+  </div>
+  <aside>
+    <p>Optional refresher. Trace the mechanism: a narrow route concentrates shipping, disruption raises risk and cost, and those costs reach governments far from the Gulf. That is why the headline’s offer to reopen the strait is a bargaining chip.</p>
+    <p>Data: U.S. EIA, Aug. 2026, eia.gov/outlooks/steo/report/energysecurity/article.php. Map: Wikimedia Commons, File:Strait_of_Hormuz-svg-en.svg.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 12">
+  <p class="kicker">Filing 1 · My top three</p>
+  <h2>Name your top three turning points, in order.</h2>
+  <div class="grid g3 moves">
+    <div class="card"><div class="n">#1</div><h3>The one that explains the most</h3><p>Give one reason for this one.</p></div>
+    <div class="card"><div class="n">#2</div><h3>Second</h3><p>The year is enough.</p></div>
+    <div class="card"><div class="n">#3</div><h3>Third</h3><p>The year is enough.</p></div>
+  </div>
+  <p class="bigline">Only your #1 needs a reason.</p>
+  <aside>
+    <p>Filing 1 on the Topic 8 page. Circulate while students file.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 13">
+  <p class="kicker">Step 3 · Decide</p>
+  <h2>One war, two beginnings.</h2>
+  <div class="grid g2">
+    <div class="card ink"><div class="tag">When the fighting started</div><h3 style="font-size:44px">February 28, 2026</h3><p>That is when this war began as a military event. It answers “when did the shooting start?”</p></div>
+    <div class="card"><div class="tag">What explains it</div><h3 style="font-size:44px">An earlier turning point</h3><p>That answers a different question: when did something change that made this war more likely?</p></div>
+  </div>
+  <p class="bigline">A date becomes a cause only when you can explain the mechanism.</p>
+  <aside>
+    <p>Students should hold both ideas at once: a war has a literal start date and an explanatory history.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 14">
+  <p class="kicker">The strongest case against you</p>
+  <h2>Borrow one for your “some people would say” sentence.</h2>
+  <div class="grid g3">
+    <div class="card"><div class="tag">Deep · long roots</div><p>Without the collapse of trust after 1953 and 1979, later nuclear and military crises might have been easier to manage.</p></div>
+    <div class="card"><div class="tag">Mid · the broken deal</div><p>The 2015 deal showed war was not inevitable, so the 2018 breakdown may matter more than older grievances.</p></div>
+    <div class="card"><div class="tag">Near · recent escalation</div><p>Whatever the older history, choices in 2024 to 2026 crossed lines that earlier leaders had managed to avoid.</p></div>
+  </div>
+  <p class="bigline">If your answer only survives because the other side sounds silly, it has not been tested.</p>
+  <aside>
+    <p>These are the three rival explanations from the Topic 8 page. Model one aloud if it helps: “The 2018 withdrawal increased the risk of war because it removed verified limits, restored sanctions, and returned the dispute to pressure.” Do not model a full student answer.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 15">
+  <p class="kicker">Filing 2 · Final argument</p>
+  <h2>Recent decisions, or decades of unresolved conflict?</h2>
+  <div class="frame">
+    <div class="tag">Start here</div>
+    The 2026 Iran War was mainly the result of <span class="blank"></span> (recent decisions / decades of unresolved conflict). The most important turning point was <span class="blank"></span>, because it changed <span class="blank"></span>. That led to <span class="blank"></span>, which made war more likely because <span class="blank"></span>. Some people would point to <span class="blank"></span> instead, but <span class="blank"></span>.
+  </div>
+  <p class="bigline"><span style="color:var(--signal-deep)">Push further:</span> argue that both matter, then say which does more of the work and why.</p>
+  <aside>
+    <p>This is the one real paragraph of the day. Protect the time for it. Their Filing 1 is their evidence, and the Start here frame plus Filing 1 is a complete answer.</p>
+    <p>No debate, and nobody reports out: the unit ends with individual judgment. Typing, dictation and a paper copy all count.</p>
+  </aside>
+</section>
+
+<section class="slide" aria-label="Slide 16">
+  <p class="kicker">Step 4 · Filing 3 · Read it again</p>
+  <h2>Back to the headline, one last time.</h2>
+  <p class="lede" style="margin-bottom:30px">Pick one detail in this week’s headline. Which turning point explains it, and what would you have missed about it before this unit?</p>
+  <div class="frame">
+    <div class="tag">Two sentences is plenty</div>
+    In the headline, <span class="blank"></span>. That makes sense because of <span class="blank"></span>, when <span class="blank"></span>.
+  </div>
+  <aside>
+    <p>Send students back to the headline on the Topic 8 page. Then read three or four filings aloud with names removed. You voice the discussion; no student speaks to the room.</p>
+    <p>Listen for a headline detail tied to a named turning point.</p>
+  </aside>
+</section>
+
+<section class="slide dark" aria-label="Slide 17">
+  <p class="kicker">Before you leave</p>
+  <h2 style="color:var(--clean-paper)">Gather This Topic, then submit in Canvas.</h2>
+  <div class="grid g3 moves">
+    <div class="card ink" style="border-color:var(--black-700)"><div class="n" style="color:var(--signal)">1</div><h3>Gather</h3><p>On the Topic 8 page, click Gather This Topic and confirm 3 of 3.</p></div>
+    <div class="card ink" style="border-color:var(--black-700)"><div class="n" style="color:var(--signal)">2</div><h3>Copy</h3><p>Click Copy to Clipboard.</p></div>
+    <div class="card ink" style="border-color:var(--black-700)"><div class="n" style="color:var(--signal)">3</div><h3>Paste</h3><p>Paste the complete record into the Topic 8 Canvas Text Entry assignment.</p></div>
+  </div>
+  <p class="bigline" style="color:var(--clean-paper)">Your filings live only in this browser until you paste them into Canvas.</p>
+  <aside>
+    <p>Homework on the board: finish all three Topic 8 filings, gather, copy, and paste into the Topic 8 Canvas Text Entry assignment, due at the start of next class.</p>
+  </aside>
+</section>
+
+</main></div>
+
+<nav class="bar" aria-label="Slide controls">
+  <a href="iran-run-of-show.html">Run of Show</a>
+  <button type="button" id="prev" aria-label="Previous slide">&larr;</button>
+  <span class="count" id="count" aria-live="polite"></span>
+  <button type="button" id="next" aria-label="Next slide">&rarr;</button>
+  <button type="button" id="notesBtn" aria-pressed="false">Notes (N)</button>
+  <button type="button" id="fsBtn">Full screen (F)</button>
+</nav>
+<section class="notes" id="notes" aria-label="Speaker notes"><h2>Speaker notes</h2><div id="notesBody"></div></section>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var stage = document.getElementById('stage');
+  var count = document.getElementById('count');
+  var notes = document.getElementById('notes');
+  var notesBody = document.getElementById('notesBody');
+  var notesBtn = document.getElementById('notesBtn');
+  var index = 0;
+
+  // Every slide gets the same footer, so the deck never drifts from its title.
+  slides.forEach(function (s, i) {
+    if (s.classList.contains('title-slide')) return;
+    var f = document.createElement('div');
+    f.className = 'foot';
+    f.innerHTML = '<span>Iran at War · Back to the Headline</span><span>' + (i + 1) + '</span>';
+    s.appendChild(f);
+  });
+
+  function fit() {
+    var scale = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    stage.style.transform = 'scale(' + scale + ')';
+  }
+
+  function show(i) {
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, n) { s.classList.toggle('on', n === index); });
+    count.textContent = (index + 1) + ' / ' + slides.length;
+    var aside = slides[index].querySelector('aside');
+    notesBody.innerHTML = aside ? aside.innerHTML : '<p>No notes for this slide.</p>';
+    if (location.hash !== '#' + (index + 1)) history.replaceState(null, '', '#' + (index + 1));
+  }
+
+  function toggleNotes() {
+    var on = !notes.classList.contains('on');
+    notes.classList.toggle('on', on);
+    notesBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) { if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); }
+    else if (document.exitFullscreen) document.exitFullscreen();
+  }
+
+  document.getElementById('prev').addEventListener('click', function () { show(index - 1); });
+  document.getElementById('next').addEventListener('click', function () { show(index + 1); });
+  notesBtn.addEventListener('click', toggleNotes);
+  document.getElementById('fsBtn').addEventListener('click', toggleFullscreen);
+  stage.addEventListener('click', function (e) {
+    if (e.target.closest('a,button')) return;
+    show(index + (e.clientX < window.innerWidth / 3 ? -1 : 1));
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.closest && e.target.closest('button,a')) { if (e.key === ' ' || e.key === 'Enter') return; }
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(index + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(index - 1); }
+    else if (k === 'Home') { e.preventDefault(); show(0); }
+    else if (k === 'End') { e.preventDefault(); show(slides.length - 1); }
+    else if (k === 'n' || k === 'N') toggleNotes();
+    else if (k === 'f' || k === 'F') toggleFullscreen();
+  });
+
+  window.addEventListener('hashchange', function () { var h = parseInt(location.hash.slice(1), 10); if (!isNaN(h) && h - 1 !== index) show(h - 1); });
+  window.addEventListener('resize', fit);
+  fit();
+  var start = parseInt(location.hash.slice(1), 10);
+  show(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+</body>
+</html>
