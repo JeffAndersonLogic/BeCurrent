@@ -98,9 +98,16 @@ cost is that a guide you have not graded yet keeps a student locked out.
 
 ## What the limits can and cannot do
 
+Every box has one locked font and size, takes plain text only, and stops
+typing at its edge. Each character limit is measured at build time as what
+that box can show, so a student can fill a box but a paste cannot hide text
+below it. The file is permission-locked: it opens with no password and its
+boxes can be filled, but the form, its fields and its fonts cannot be edited.
+
 Chrome's PDF viewer, which is what a Chromebook uses, and Adobe Acrobat and
-Reader enforce the locked font size and every character limit, and a paste
-is cut off at the limit rather than squeezed in. A tool that writes on top
+Reader enforce all of that, and a paste is cut off at the limit rather than
+squeezed in. Check one Test Student submission opens in SpeedGrader before
+the class submits, since the file is locked. A tool that writes on top
 of a PDF instead of filling its boxes, such as Kami or the Canvas annotation
 tools, does not. A guide with typing outside the boxes, or a different file
 entirely, is not this guide: open a few submissions before the test.

@@ -473,9 +473,16 @@ function renderReferenceGuide(unit, g) {
   out.push('');
   out.push('## What the limits can and cannot do');
   out.push('');
+  out.push('Every box has one locked font and size, takes plain text only, and stops');
+  out.push('typing at its edge. Each character limit is measured at build time as what');
+  out.push('that box can show, so a student can fill a box but a paste cannot hide text');
+  out.push('below it. The file is permission-locked: it opens with no password and its');
+  out.push('boxes can be filled, but the form, its fields and its fonts cannot be edited.');
+  out.push('');
   out.push('Chrome\'s PDF viewer, which is what a Chromebook uses, and Adobe Acrobat and');
-  out.push('Reader enforce the locked font size and every character limit, and a paste');
-  out.push('is cut off at the limit rather than squeezed in. A tool that writes on top');
+  out.push('Reader enforce all of that, and a paste is cut off at the limit rather than');
+  out.push('squeezed in. Check one Test Student submission opens in SpeedGrader before');
+  out.push('the class submits, since the file is locked. A tool that writes on top');
   out.push('of a PDF instead of filling its boxes, such as Kami or the Canvas annotation');
   out.push('tools, does not. A guide with typing outside the boxes, or a different file');
   out.push('entirely, is not this guide: open a few submissions before the test.');
