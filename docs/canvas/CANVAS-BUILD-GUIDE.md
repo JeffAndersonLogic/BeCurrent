@@ -376,6 +376,37 @@ day that *was* filed arrives as a `BLANK` exception. See `docs/CANVAS-CAPTURE.md
 
 ---
 
+## Section 7c, A unit test's reference guide
+
+A unit test may allow a one-page, student-built reference guide. It is a Canvas
+assignment that **must be submitted before the test opens**, and Canvas enforces
+that rather than you: the guide and the test share their own module, with
+sequential requirements, so the test stays locked for a student until their guide
+is in. The submitted file is the only version a student may use on the test.
+
+`docs/canvas/<unit>-reference-guide.md` is generated per unit and carries the
+paste-ready body, the settings table and the module steps. Iran at War has one;
+its blank is `docs/assessments/iran-reference-sheet.pdf`, built by
+`scripts/build-iran-reference-sheet.py`.
+
+| Setting | Value |
+|---|---|
+| Submission type | Online, then **File Uploads**, restricted to `pdf` |
+| Attempts | Unlimited |
+| Available until | The moment the test opens |
+
+**This is the one File Upload assignment in the course, on purpose.** The artifact
+is a limited fillable PDF: every box has a locked font size, a character limit and
+"do not scroll", so a student has to choose what goes in rather than paste a study
+guide into it. A Text Entry box can enforce none of that. The parser does not read
+the upload and does not need to.
+
+**Submitting unlocks the test, not a good guide.** An empty upload unlocks it too.
+To require a reviewed guide, set the requirement to score at least a value and
+grade the guides before the test opens.
+
+---
+
 ## Section 8, The order to build a unit in
 
 Assignment creation comes before event construction, because the course-links
