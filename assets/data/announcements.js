@@ -687,44 +687,45 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-09-30",
-      "topic": "Iran at War | Study Guide Work Day",
+      "topic": "Iran at War | Reference Guide Work Day",
       "learningTargets": [
         {
-          "text": "Review the major people, places, agreements, and turning points from the Iran at War unit.",
+          "text": "Choose the most important people, events, and ideas from each Iran at War topic.",
           "label": ""
         },
         {
-          "text": "Connect individual events into causal chains rather than memorizing isolated dates.",
+          "text": "Connect turning points from different topics with cause-and-effect chains.",
           "label": ""
         },
         {
-          "text": "Identify which evidence best supports competing explanations for when the war really began.",
+          "text": "Build a one-page reference guide that is ready to use on Friday’s exam.",
           "label": ""
         }
       ],
       "successCriteria": [
         {
-          "text": "I can explain each major unit stop in one or two sentences without reading the lesson page.",
+          "text": "I can fill every box on my guide with notes I chose, in my own words.",
           "label": ""
         },
         {
-          "text": "I can connect at least three turning points through cause and effect.",
+          "text": "I can write at least three causal chains that connect turning points.",
           "label": ""
         },
         {
-          "text": "I can identify what I still need to study before Friday’s exam.",
+          "text": "I can save my guide with my notes and turn it in on Canvas before the exam.",
           "label": ""
         }
       ],
-      "homework": "Finish the Iran at War Study Guide and prepare for the unit exam on Friday, October 2.",
-      "note": "No new content today. Use the study guide to identify what you know, what you need to review, and which causal connections still need work before Friday’s exam.",
-      "doNow": "Without opening the unit, write the major Iran topics or turning points you remember. Then check yourself against the study guide.",
+      "homework": "Finish your Test Reference Guide and turn it in on Canvas before the exam opens on Friday, October 2.",
+      "note": "No new content today. Build your one-page Test Reference Guide for Friday’s exam, save it with your notes in it, and turn it in on Canvas. The exam stays locked until you do.",
+      "doNow": "Without notes, list three turning points from the unit. Circle the one you understand least. That is the first box you will work on.",
       "agenda": [
-        "Open the Iran at War Study Guide.",
-        "Review the eight unit topics and the major people, places, agreements, and turning points.",
-        "Work through the study guide independently, then verify weak spots with the BeCurrent lesson pages.",
-        "Pay special attention to causal chains, source limits, comparisons, and the unit question: recent decisions, or decades of unresolved conflict?",
-        "Use remaining time to ask targeted questions and finish your study guide."
+        "Start with the Desk.",
+        "Download the blank Test Reference Guide from the Canvas assignment and open it in Chrome.",
+        "Use the Iran at War Study Guide to decide what goes in each box.",
+        "Check weak spots on the BeCurrent lesson page for that topic.",
+        "Fill every box, then save the guide with your notes in it.",
+        "Turn in the saved guide on Canvas and check that your notes show up."
       ]
     },
     {

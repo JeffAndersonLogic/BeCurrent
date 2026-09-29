@@ -360,9 +360,44 @@ const REFERENCE_GUIDES = {
     pdf: 'docs/assessments/iran-reference-sheet.pdf',
     builder: 'scripts/build-iran-reference-sheet.py',
     studyGuide: 'iran/study-guide.html',
-    test: 'IR - Unit Test'
+    test: 'IR - Unit Test',
+    // Both read from assets/data/announcements-schedule.js, so the calendar event,
+    // the assignment's due line and the TODAY board cannot name different days.
+    workDay: '2026-09-30',
+    examTitle: 'Iran at War Unit Exam'
   }
 };
+
+const SCHEDULE_FILE = path.join(ROOT, 'assets', 'data', 'announcements-schedule.js');
+
+// The schedule is a browser file that assigns to `window`; build-announcements.js
+// reads it the same way, so there is still only one copy of it.
+function loadSchedule() {
+  const vm = require('vm');
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync(SCHEDULE_FILE, 'utf8'), sandbox, { filename: SCHEDULE_FILE });
+  return sandbox.window.BECURRENT_SCHEDULE;
+}
+
+function longDate(iso) {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US',
+    { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+
+// The work day and the exam, or a refusal: a guide doc whose dates came from
+// nowhere would be the one Canvas document in the repo nothing checks.
+function guideDates(g) {
+  const schedule = loadSchedule();
+  const day = (schedule.days || []).find(d => d.date === g.workDay);
+  const exam = (schedule.assessments || []).find(a => a.title === g.examTitle);
+  if (!day) throw new Error(`${g.workDay} is not in the schedule; the work-day event has no source.`);
+  if (!exam) throw new Error(`"${g.examTitle}" is not in the schedule's assessments.`);
+  for (const k of ['note', 'agenda', 'learningTargets', 'successCriteria']) {
+    if (!day[k] || !day[k].length) throw new Error(`${g.workDay} has no ${k} in the schedule.`);
+  }
+  return { day, exam, examLong: longDate(exam.date), dayLong: longDate(day.date) };
+}
 
 // Student-facing, and written for a 9th grader on a Chromebook: one action per
 // step, the exact button names, and a fix for each way it commonly goes wrong.
@@ -371,9 +406,11 @@ const REFERENCE_GUIDES = {
 function referenceGuideBody(unit, g) {
   const m = unit.meta;
   const unitName = esc(objectName(m.unit));
+  const { examLong } = guideDates(g);
   const box = 'border-left: 5px solid #CE1400; background-color: #f4f2ed; padding: 10px 14px; margin: 12px 0;';
   return `<h2>${unitName}: Test Reference Guide</h2>
 <p><strong>What this is:</strong> a one-page guide you fill in with your own notes. You may use it on the ${unitName} unit test.</p>
+<p><strong>Due:</strong> ${esc(examLong)}, before the test opens.</p>
 <div style="${box}">
 <p><strong>Two rules to know before you start</strong></p>
 <ol>
@@ -442,6 +479,37 @@ function referenceGuideBody(unit, g) {
 </ul>`;
 }
 
+// The work-day calendar event: the course's five-row table, filled from the
+// schedule's entry for that day. The day's plan sits under OVERVIEW because the
+// table has exactly five rows, and a sixth would break the shape every other
+// event teaches students to read.
+function referenceGuideEvent(unit, g) {
+  const m = unit.meta;
+  const { day, examLong } = guideDates(g);
+  const li = xs => xs.map(x => `                    <li>${esc(plain(x))}</li>`).join('\n');
+  const rows = [
+    row('OVERVIEW', `                <p>${esc(plain(day.note))}</p>
+                <p><strong>In class today:</strong></p>
+                <ol>\n${li(day.agenda)}\n                </ol>`),
+    row('LEARNING TARGETS', `                <ol>\n${li(day.learningTargets)}\n                </ol>`),
+    row('SUCCESS CRITERIA', `                <ol>\n${li(day.successCriteria)}\n                </ol>`),
+    row('BeCurrent Link', `                <p><a class="inline_disabled" href="${SITE}/${g.studyGuide}" target="_blank" rel="noopener">${esc(objectName(m.unit))} Study Guide</a></p>
+                <p><a class="inline_disabled" href="${SITE}/${m.unitKey}/index.html" target="_blank" rel="noopener">${esc(objectName(m.unit))}, the unit page</a></p>`),
+    row('ASSIGNMENT', `                <p>[INSERT ASSIGNMENT LINK]</p>
+                <p>Fill in your Test Reference Guide, save it with your notes in it, and upload it to the assignment linked above. <strong>Due ${esc(examLong)}, before the exam opens.</strong> The exam stays locked until you turn in your guide.</p>`)
+  ];
+  return `<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+    <tbody>
+${rows.join('\n')}
+    </tbody>
+</table>`;
+}
+
+function referenceGuideEventTitle(unit, g) {
+  const title = plain(guideDates(g).day.topicTitle || '').split('|').pop().trim();
+  return `${PREFIX} - ${String(unit.meta.code).toUpperCase()} - ${objectName(title)}`;
+}
+
 function renderReferenceGuide(unit, g) {
   const m = unit.meta;
   const unitName = objectName(m.unit);
@@ -490,6 +558,21 @@ function renderReferenceGuide(unit, g) {
   out.push('');
   out.push('```html');
   out.push(referenceGuideBody(unit, g));
+  out.push('```');
+  out.push('');
+  const { dayLong } = guideDates(g);
+  out.push('## The work-day calendar event');
+  out.push('');
+  out.push(`**Event title:** \`${referenceGuideEventTitle(unit, g)}\`  `);
+  out.push(`**Date:** ${dayLong}, 2026  `);
+  out.push('');
+  out.push('Built from that day\'s entry in `assets/data/announcements-schedule.js`, the');
+  out.push('same entry the TODAY board projects. Create the assignment first, then build');
+  out.push('this event and replace `[INSERT ASSIGNMENT LINK]` from the course-links panel,');
+  out.push('never a hand-typed link (Section 5 of `CANVAS-BUILD-GUIDE.md`).');
+  out.push('');
+  out.push('```html');
+  out.push(referenceGuideEvent(unit, g));
   out.push('```');
   out.push('');
   out.push('## Lock the test until the guide is submitted');
@@ -1219,6 +1302,8 @@ files.forEach(file => {
       // RCE HTML editor. One builder, two files, so they cannot disagree.
       emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-reference-guide-body.html`),
         referenceGuideBody(unit, guide) + '\n', unit);
+      emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-reference-guide-event.html`),
+        referenceGuideEvent(unit, guide) + '\n', unit);
     }
   }
 });

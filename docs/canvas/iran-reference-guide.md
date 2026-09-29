@@ -43,6 +43,7 @@ submitted is the one that counts.
 ```html
 <h2>Iran at War: Test Reference Guide</h2>
 <p><strong>What this is:</strong> a one-page guide you fill in with your own notes. You may use it on the Iran at War unit test.</p>
+<p><strong>Due:</strong> Friday, October 2, before the test opens.</p>
 <div style="border-left: 5px solid #CE1400; background-color: #f4f2ed; padding: 10px 14px; margin: 12px 0;">
 <p><strong>Two rules to know before you start</strong></p>
 <ol>
@@ -109,6 +110,82 @@ submitted is the one that counts.
     <li><strong>Canvas will not take my file.</strong> It must be the PDF from Step 4. Other file types are not accepted.</li>
     <li><strong>Still stuck?</strong> Ask me before the test, not during it.</li>
 </ul>
+```
+
+## The work-day calendar event
+
+**Event title:** `CE - IR - Reference Guide Work Day`  
+**Date:** Wednesday, September 30, 2026  
+
+Built from that day's entry in `assets/data/announcements-schedule.js`, the
+same entry the TODAY board projects. Create the assignment first, then build
+this event and replace `[INSERT ASSIGNMENT LINK]` from the course-links panel,
+never a hand-typed link (Section 5 of `CANVAS-BUILD-GUIDE.md`).
+
+```html
+<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+    <tbody>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p>No new content today. Build your one-page Test Reference Guide for Friday’s exam, save it with your notes in it, and turn it in on Canvas. The exam stays locked until you do.</p>
+                <p><strong>In class today:</strong></p>
+                <ol>
+                    <li>Start with the Desk.</li>
+                    <li>Download the blank Test Reference Guide from the Canvas assignment and open it in Chrome.</li>
+                    <li>Use the Iran at War Study Guide to decide what goes in each box.</li>
+                    <li>Check weak spots on the BeCurrent lesson page for that topic.</li>
+                    <li>Fill every box, then save the guide with your notes in it.</li>
+                    <li>Turn in the saved guide on Canvas and check that your notes show up.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>LEARNING TARGETS</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <ol>
+                    <li>Choose the most important people, events, and ideas from each Iran at War topic.</li>
+                    <li>Connect turning points from different topics with cause-and-effect chains.</li>
+                    <li>Build a one-page reference guide that is ready to use on Friday’s exam.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <ol>
+                    <li>I can fill every box on my guide with notes I chose, in my own words.</li>
+                    <li>I can write at least three causal chains that connect turning points.</li>
+                    <li>I can save my guide with my notes and turn it in on Canvas before the exam.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>BeCurrent Link</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/study-guide.html" target="_blank" rel="noopener">Iran at War Study Guide</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/iran/index.html" target="_blank" rel="noopener">Iran at War, the unit page</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>ASSIGNMENT</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p>[INSERT ASSIGNMENT LINK]</p>
+                <p>Fill in your Test Reference Guide, save it with your notes in it, and upload it to the assignment linked above. <strong>Due Friday, October 2, before the exam opens.</strong> The exam stays locked until you turn in your guide.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 ```
 
 ## Lock the test until the guide is submitted
