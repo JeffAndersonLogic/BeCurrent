@@ -364,35 +364,82 @@ const REFERENCE_GUIDES = {
   }
 };
 
+// Student-facing, and written for a 9th grader on a Chromebook: one action per
+// step, the exact button names, and a fix for each way it commonly goes wrong.
+// The one place a student can lose their work is saving without their changes,
+// so that step is spelled out twice, once to do it and once to check it.
 function referenceGuideBody(unit, g) {
   const m = unit.meta;
-  return `<h2>${esc(objectName(m.unit))}: Test Reference Guide</h2>
-<p><em>One page. Your notes. The version you submit here is the only version you may use on the test.</em></p>
-
-<h3>The test opens after you submit this</h3>
-<p>The ${esc(objectName(m.unit))} unit test is locked until this assignment is submitted. Submit your guide and the test unlocks for you.</p>
+  const unitName = esc(objectName(m.unit));
+  const box = 'border-left: 5px solid #CE1400; background-color: #f4f2ed; padding: 10px 14px; margin: 12px 0;';
+  return `<h2>${unitName}: Test Reference Guide</h2>
+<p><strong>What this is:</strong> a one-page guide you fill in with your own notes. You may use it on the ${unitName} unit test.</p>
+<div style="${box}">
+<p><strong>Two rules to know before you start</strong></p>
+<ol>
+    <li><strong>The test stays locked until you turn this in.</strong> Once you submit your guide here, the test opens for you.</li>
+    <li><strong>You may only use the guide you turn in here.</strong> Not a different copy, and not other notes.</li>
+</ol>
+</div>
 
 <h3>Step 1: Download the blank guide</h3>
 <p>[INSERT BLANK PDF FROM THE DOCUMENTS PANEL]</p>
-<p>Open it in Chrome so the boxes work. Kami and the Canvas preview do not fill it in correctly.</p>
-
-<h3>Step 2: Fill it in</h3>
-<ul>
-    <li>Use the <a class="inline_disabled" href="${SITE}/${g.studyGuide}" target="_blank" rel="noopener">${esc(objectName(m.unit))} study guide</a> to decide what earns a spot.</li>
-    <li>Every box has a set font size and a character limit. When a box stops taking text, it is full. Choose what matters most instead of pasting.</li>
-    <li>Keywords, arrows, abbreviations, and cause-and-effect chains fit best.</li>
-    <li>The unit question is at the top of the page: ${esc(plain(m.terminalQuestion))}</li>
-</ul>
-
-<h3>Step 3: Save and submit</h3>
 <ol>
-    <li>Save the PDF with your notes in it. Press Ctrl+S, or use the download button and choose <strong>With your changes</strong>.</li>
-    <li>Click <strong>Start Assignment</strong>, upload the saved PDF, and click <strong>Submit Assignment</strong>.</li>
-    <li>Open your submission and check that your notes are there. An empty upload is an empty guide.</li>
+    <li>Click the link above.</li>
+    <li>Click <strong>Download</strong>. The file saves to the <strong>Downloads</strong> folder on your Chromebook.</li>
 </ol>
 
+<h3>Step 2: Open it in Google Chrome</h3>
+<ol>
+    <li>Open the <strong>Files</strong> app and click <strong>Downloads</strong>.</li>
+    <li>Right-click the guide (tap with two fingers), then choose <strong>Open with</strong> and <strong>Google Chrome</strong>.</li>
+</ol>
+<p>Use Chrome. The boxes do not work correctly in Kami or in the Canvas preview.</p>
+
+<h3>Step 3: Fill in the boxes</h3>
+<ul>
+    <li>Click inside a box and type. Press <strong>Tab</strong> to jump to the next box.</li>
+    <li>Every box has a size limit. <strong>When a box stops taking text, it is full.</strong> Pick what matters most.</li>
+    <li>The font and text size are locked. You cannot change them, and you cannot paste more than a box can show.</li>
+    <li>Short notes fit best: keywords, arrows (like 1953 &rarr; distrust), and abbreviations.</li>
+    <li>Not sure what to include? Use the <a class="inline_disabled" href="${SITE}/${g.studyGuide}" target="_blank" rel="noopener">${unitName} study guide</a>.</li>
+</ul>
+
+<h3>Step 4: Save it with your notes in it</h3>
+<ol>
+    <li>Click the <strong>Download</strong> button (the arrow pointing down) in the top right corner of Chrome. You can also press <strong>Ctrl + S</strong>.</li>
+    <li>If Chrome asks, choose <strong>With your changes</strong>.</li>
+    <li>Name the file with your name, like <strong>Lastname Firstname Reference Guide</strong>, and click <strong>Save</strong>.</li>
+</ol>
+<p><strong>Do not just close the tab.</strong> If you close it without saving, your notes are gone.</p>
+
+<h3>Step 5: Check your saved copy</h3>
+<p>Open the file you just saved (Files, then Downloads). Make sure your notes are in the boxes. If the boxes are empty, go back to Step 4 and save again.</p>
+
+<h3>Step 6: Upload it here</h3>
+<ol>
+    <li>At the top of this page, click <strong>Start Assignment</strong>.</li>
+    <li>Click <strong>Upload File</strong> and choose the guide you saved in Step 4.</li>
+    <li>Click <strong>Submit Assignment</strong>.</li>
+</ol>
+
+<h3>Step 7: Check what you turned in</h3>
+<p>After you submit, click your file&rsquo;s name on the right side of this page. Make sure your notes show up. This is the guide you will use on the test, so check it now.</p>
+
+<h3>Need to fix something?</h3>
+<p>You can turn in a new version until the test opens. Open your saved file in Chrome, make your changes, save it again (Step 4), and upload it again (Step 6). The last file you turn in is the one you use.</p>
+
 <h3>On test day</h3>
-<p>You may use the guide you submitted here, and only that one. You can resubmit until the test opens. The last file you submit is the one you use.</p>`;
+<p>Open this assignment and click your file&rsquo;s name to open your guide. Use only this guide.</p>
+
+<h3>If something goes wrong</h3>
+<ul>
+    <li><strong>I cannot type in the boxes.</strong> You are not in Chrome. Go back to Step 2.</li>
+    <li><strong>A box stopped taking text.</strong> The box is full. Shorten what you wrote.</li>
+    <li><strong>My notes disappeared.</strong> The file was saved without your changes. Fill it in again and follow Step 4 carefully.</li>
+    <li><strong>Canvas will not take my file.</strong> It must be the PDF from Step 4. Other file types are not accepted.</li>
+    <li><strong>Still stuck?</strong> Ask me before the test, not during it.</li>
+</ul>`;
 }
 
 function renderReferenceGuide(unit, g) {
@@ -435,7 +482,7 @@ function renderReferenceGuide(unit, g) {
   out.push('');
   out.push('### Put the blank PDF in the body');
   out.push('');
-  out.push('1. Paste the block below through the RCE **`</>`** HTML editor.');
+  out.push(`1. Paste the block below, or all of \`docs/canvas/${m.unitKey}-reference-guide-body.html\`, through the RCE **\`</>\`** HTML editor.`);
   out.push('2. Switch back to the visual editor and select the line');
   out.push('   `[INSERT BLANK PDF FROM THE DOCUMENTS PANEL]`.');
   out.push(`3. In the RCE toolbar choose **Documents**, then **Upload Document**, and upload \`${g.pdf}\`.`);
@@ -1168,6 +1215,10 @@ files.forEach(file => {
     } else {
       emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-reference-guide.md`),
         renderReferenceGuide(unit, guide), unit);
+      // The same body alone, so it can be opened and copied straight into the
+      // RCE HTML editor. One builder, two files, so they cannot disagree.
+      emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-reference-guide-body.html`),
+        referenceGuideBody(unit, guide) + '\n', unit);
     }
   }
 });
