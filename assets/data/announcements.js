@@ -720,6 +720,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "No new content today. Use the study guide to identify what you know, what you need to review, and which causal connections still need work before Friday’s exam.",
       "doNow": "Without opening the unit, write the major Iran topics or turning points you remember. Then check yourself against the study guide.",
       "agenda": [
+        "CNN 10 · Sept. 29: Panda Diplomacy: Two new bears arrive in the US in a rare loan from China.",
         "Open the Iran at War Study Guide.",
         "Review the eight unit topics and the major people, places, agreements, and turning points.",
         "Work through the study guide independently, then verify weak spots with the BeCurrent lesson pages.",
