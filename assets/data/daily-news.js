@@ -3,31 +3,31 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-09-27',
+  reviewed: '2026-10-02',
   lead: {
-    category: 'World / Security',
-    headline: 'Trump rejects plan to reopen Strait of Hormuz',
-    dek: 'Iran offered a seven-day plan to reopen the Strait of Hormuz and restart talks with the United States. President Trump rejected it, and the plan closely resembles a June agreement that collapsed.',
-    source: 'NPR',
-    published: 'September 26, 2026',
-    url: 'https://www.npr.org/2026/09/26/nx-s1-5981990/trump-rejects-iranian-deal-strait-of-hormuz',
+    category: 'World / Education',
+    headline: 'France gripped by spreading student protests as PM calls crisis meeting',
+    dek: 'France\'s prime minister held a crisis meeting as protests by high school students spread across the country. The students are protesting under-resourced schools, long school days and other complaints.',
+    source: 'NewsNation',
+    published: 'October 1, 2026',
+    url: 'https://www.newsnationnow.com/world/international-headlines/ap-france-gripped-by-spreading-student-protests-as-pm-calls-crisis-meeting/',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
-      category: 'World / Diplomacy',
-      headline: 'Iran says it is awaiting a \u2018definitive\u2019 US response despite Trump rejecting latest proposal',
-      dek: 'Iran\'s foreign minister said no rejection had arrived through the mediators, even after President Trump publicly turned down the plan.',
-      source: 'CNN',
-      url: 'https://www.cnn.com/2026/09/26/middleeast/trump-rejects-iran-proposal-hormuz-intl'
+      category: 'World / Security',
+      headline: 'As the last US troops exit Iraq, Kurdish fears rise and militias celebrate',
+      dek: 'The last U.S. troops are leaving Iraq. Iran-backed armed groups are celebrating, while leaders in Iraq\'s Kurdish region worry about losing U.S. air defenses.',
+      source: 'NewsNation',
+      url: 'https://www.newsnationnow.com/world/international-headlines/ap-as-the-last-us-troops-exit-iraq-kurdish-fears-rise-and-militias-celebrate/'
     },
     {
-      category: 'World / Diplomacy',
-      headline: 'Trump expects talks with Iran to resume after rejecting proposal',
-      dek: 'President Trump told Axios he expects talks with Iran to resume in the coming week.',
-      source: 'CBS News',
-      url: 'https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-7-day-proposal/'
+      category: 'World / Security',
+      headline: 'Iran spokesperson says country is ready for renewed strikes after US rejects deal',
+      dek: 'After the United States rejected Iran\'s peace plan, an Iranian army spokesperson said Iran is ready for more fighting.',
+      source: 'NewsNation',
+      url: 'https://www.newsnationnow.com/politics/iran-country-renewed-strikes/'
     }
   ]
 };

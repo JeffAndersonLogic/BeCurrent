@@ -762,6 +762,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "Today is the Iran at War Unit Exam. Show that you can explain the conflict using evidence, chronology, sourcing, and causation—not just recall isolated facts.",
       "doNow": "Get settled, open Canvas only when instructed, and make sure you are ready to begin the Iran at War Unit Exam.",
       "agenda": [
+        "CNN 10 · Oct. 1: Why a Major Theme Park Is Permanently Closing This Controversial Roller Coaster.",
         "Complete the Iran at War Unit Exam.",
         "Use the full class period as needed.",
         "Submit your exam in Canvas before leaving."

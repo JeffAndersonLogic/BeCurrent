@@ -77,7 +77,7 @@ window.BECURRENT_SCHEDULE={
   {date:'2026-10-02',topicTitle:'Iran at War | Unit Exam',
    note:'Today is the Iran at War Unit Exam. Show that you can explain the conflict using evidence, chronology, sourcing, and causation—not just recall isolated facts.',
    doNow:'Get settled, open Canvas only when instructed, and make sure you are ready to begin the Iran at War Unit Exam.',
-   agenda:['Complete the Iran at War Unit Exam.','Use the full class period as needed.','Submit your exam in Canvas before leaving.'],
+   agenda:['CNN 10 · Oct. 1: Why a Major Theme Park Is Permanently Closing This Controversial Roller Coaster.','Complete the Iran at War Unit Exam.','Use the full class period as needed.','Submit your exam in Canvas before leaving.'],
    learningTargets:['Demonstrate understanding of the major events and turning points in the Iran at War unit.','Use evidence and causal reasoning to explain how earlier events shaped the 2026 conflict.','Distinguish chronology, causation, perspective, and source limits when analyzing the conflict.'],
    successCriteria:['I can answer questions using specific evidence from across the unit.','I can distinguish a turning point from an event that merely happened earlier or later.','I can explain causal relationships without treating any single event as inevitable destiny.'],
    homework:'No additional homework.'}
