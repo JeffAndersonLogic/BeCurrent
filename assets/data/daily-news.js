@@ -5,22 +5,22 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: '2026-10-02',
   lead: {
-    category: 'World / Education',
-    headline: 'France gripped by spreading student protests as PM calls crisis meeting',
-    dek: 'France\'s prime minister held a crisis meeting as protests by high school students spread across the country. The students are protesting under-resourced schools, long school days and other complaints.',
+    category: 'World / Security',
+    headline: 'As the last US troops exit Iraq, Kurdish fears rise and militias celebrate',
+    dek: 'The last U.S. troops are leaving Iraq under an agreement between Baghdad and Washington. Iran-backed armed groups are celebrating, while leaders in Iraq\'s Kurdish region worry about losing U.S. air defenses.',
     source: 'NewsNation',
-    published: 'October 1, 2026',
-    url: 'https://www.newsnationnow.com/world/international-headlines/ap-france-gripped-by-spreading-student-protests-as-pm-calls-crisis-meeting/',
+    published: 'September 30, 2026',
+    url: 'https://www.newsnationnow.com/world/international-headlines/ap-as-the-last-us-troops-exit-iraq-kurdish-fears-rise-and-militias-celebrate/',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
-      category: 'World / Security',
-      headline: 'As the last US troops exit Iraq, Kurdish fears rise and militias celebrate',
-      dek: 'The last U.S. troops are leaving Iraq. Iran-backed armed groups are celebrating, while leaders in Iraq\'s Kurdish region worry about losing U.S. air defenses.',
+      category: 'World / Education',
+      headline: 'France gripped by spreading student protests as PM calls crisis meeting',
+      dek: 'France\'s prime minister held a crisis meeting as protests by high school students spread across the country. The students are protesting under-resourced schools, long school days and other complaints.',
       source: 'NewsNation',
-      url: 'https://www.newsnationnow.com/world/international-headlines/ap-as-the-last-us-troops-exit-iraq-kurdish-fears-rise-and-militias-celebrate/'
+      url: 'https://www.newsnationnow.com/world/international-headlines/ap-france-gripped-by-spreading-student-protests-as-pm-calls-crisis-meeting/'
     },
     {
       category: 'World / Security',
