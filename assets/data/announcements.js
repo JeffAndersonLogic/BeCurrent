@@ -763,7 +763,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "doNow": "Get settled, open Canvas only when instructed, and make sure you are ready to begin the Iran at War Unit Exam.",
       "agenda": [
         "Complete the Iran at War Unit Exam in Canvas. Your one-page reference guide is allowed ONLY if you submitted it to Canvas.",
-        "After the exam: two episodes of CNN 10.",
+        "After the exam, watch CNN 10 · Oct. 2: Special Edition: Dive Behind the Scenes at One of the World’s Largest Aquariums.",
+        "Then watch The World from A to Z with Carl Azuz: How Americans View the Freedom of the Press.",
         "Then browse the latest edition of The Week."
       ],
       "slides": [
