@@ -202,6 +202,7 @@ function buildDays(schedule, index) {
     if (has(entry.note)) day.note = entry.note.trim();
     if (has(entry.doNow)) day.doNow = entry.doNow.trim();
     if (Array.isArray(entry.agenda) && entry.agenda.length) day.agenda = entry.agenda;
+    if (Array.isArray(entry.slides) && entry.slides.length) day.slides = entry.slides;
 
     return day;
   }).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date));

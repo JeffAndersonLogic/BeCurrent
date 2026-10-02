@@ -72,7 +72,7 @@
     if (!entry || !entry.date) return null;
     scheduledDates[entry.date] = true;
     var day = Object.assign({}, generatedByDate[entry.date] || {}, { date: entry.date });
-    ['homework','homeworkDue','note','doNow','agenda','learningTargets','successCriteria','deskMode','showLead'].forEach(function (key) {
+    ['homework','homeworkDue','note','doNow','agenda','slides','learningTargets','successCriteria','deskMode','showLead'].forEach(function (key) {
       if (Object.prototype.hasOwnProperty.call(entry, key)) day[key] = entry[key];
     });
     if (typeof entry.topicTitle === 'string' && entry.topicTitle.trim()) day.topic = entry.topicTitle.trim();
@@ -165,6 +165,28 @@
     s.appendChild(list); return s;
   }
 
+  // A day can carry its own standalone slides, each { kicker, title, bullets },
+  // for instructions that need a card of their own rather than an agenda line.
+  function extraSlides(day) {
+    var list = day && Array.isArray(day.slides) ? day.slides : [];
+    return list.map(function (x) {
+      if (!x || !has(x.title)) return null;
+      var bullets = Array.isArray(x.bullets) ? x.bullets.filter(has) : [];
+      var s = slide('content-slide');
+      s.appendChild(kicker(has(x.kicker) ? x.kicker : 'Today'));
+      s.appendChild(el('h2','slide-title',x.title));
+      if (bullets.length) {
+        var ul = el('ul','target-list');
+        bullets.forEach(function (text) {
+          var li = el('li','target-item'); var body = el('div','target-body');
+          body.appendChild(el('span','entry-text',text)); li.appendChild(body); ul.appendChild(li);
+        });
+        s.appendChild(ul);
+      }
+      return s;
+    }).filter(Boolean);
+  }
+
   function deskSlide(day) {
     // The Desk is opt-in. A date must explicitly carry deskMode:'full' or
     // deskMode:'lead' in announcements-schedule.js or it never enters the rotation.
@@ -245,7 +267,8 @@
       return true;
     }).slice(0,4);
 
-    var reminders = REMINDERS.filter(function (r) { return r && (has(r.title)||has(r.detail)); }).slice(0,2);
+    // A reminder with an `until` date drops off the board after that day.
+    var reminders = REMINDERS.filter(function (r) { var u = parse(r && r.until); return r && (has(r.title)||has(r.detail)) && (!u || u >= today); }).slice(0,2);
     if (!items.length && !reminders.length) return null;
     var s = slide('content-slide'); s.appendChild(kicker('Looking ahead')); s.appendChild(el('h2','slide-title','Keep this on your radar.'));
     var grid = el('div','upcoming-grid');
@@ -257,10 +280,10 @@
   function buildSlides() {
     stage.innerHTML = ''; slides = [];
     var day = currentDay();
-    [titleSlide(day),leadSlide(day),agendaSlide(day),deskSlide(day),
+    [titleSlide(day),leadSlide(day),agendaSlide(day)].concat(extraSlides(day)).concat([deskSlide(day),
       listSlide('Learning targets','What you are learning',day && day.learningTargets,'targets'),
       listSlide('Success criteria','You have it when',day && day.successCriteria,'criteria'),
-      homeworkSlide(day),upcomingSlide()].forEach(function (s) { if (s) { stage.appendChild(s); slides.push(s); } });
+      homeworkSlide(day),upcomingSlide()]).forEach(function (s) { if (s) { stage.appendChild(s); slides.push(s); } });
     if (!slides.length) { var empty=slide('content-slide'); empty.appendChild(kicker('Today')); empty.appendChild(el('h2','slide-title','No board items are scheduled.')); stage.appendChild(empty); slides.push(empty); }
     dots.innerHTML=''; slides.forEach(function (_,i) { var b=el('button','dot'); b.type='button'; b.setAttribute('aria-label','Show card ' + (i+1)); b.addEventListener('click',function(){show(i);}); dots.appendChild(b); });
     index = Math.min(index,slides.length-1); show(index,true);

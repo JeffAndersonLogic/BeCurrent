@@ -759,12 +759,25 @@ window.BECURRENT_ANNOUNCEMENTS = {
         }
       ],
       "homework": "No additional homework.",
-      "note": "Today is the Iran at War Unit Exam. Show that you can explain the conflict using evidence, chronology, sourcing, and causation—not just recall isolated facts.",
+      "note": "Today is the Iran at War Unit Exam. You may use your one-page reference guide ONLY if you submitted it to Canvas.",
       "doNow": "Get settled, open Canvas only when instructed, and make sure you are ready to begin the Iran at War Unit Exam.",
       "agenda": [
-        "Complete the Iran at War Unit Exam.",
-        "Use the full class period as needed.",
-        "Submit your exam in Canvas before leaving."
+        "Complete the Iran at War Unit Exam in Canvas. Your one-page reference guide is allowed ONLY if you submitted it to Canvas.",
+        "After the exam: two episodes of CNN 10.",
+        "Then browse the latest edition of The Week."
+      ],
+      "slides": [
+        {
+          "kicker": "Your reference guide",
+          "title": "How to open your guide",
+          "bullets": [
+            "Open Canvas, then Assignments.",
+            "Click Reference Guide.",
+            "Click Submission Details.",
+            "Click your file to open it.",
+            "Do not click Download."
+          ]
+        }
       ]
     }
   ],
@@ -780,7 +793,13 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "type": "Test"
     }
   ],
-  "reminders": [],
+  "reminders": [
+    {
+      "title": "Next week: The Desk",
+      "detail": "Daily news stories via The Desk.",
+      "until": "2026-10-09"
+    }
+  ],
   "desk": {
     "title": "The Desk",
     "routine": [
