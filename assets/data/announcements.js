@@ -780,6 +780,18 @@ window.BECURRENT_ANNOUNCEMENTS = {
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-06",
+      "topic": "The Desk | Week of October 5",
+      "note": "CNN 10 first. Then The Desk. Keep the same weekly News Log for Thursday.",
+      "doNow": "Think back to the Iran at War unit. Name one turning point from the unit that still shows up in this week’s news.",
+      "agenda": [
+        "CNN 10 · Oct. 5: Why making cafeteria lunches from scratch is harder than it sounds.",
+        "Open The Desk | Week of October 5 in Canvas and launch your Microsoft Education News Log.",
+        "Complete The Desk: file the shared Lead, choose Your Pick, and make today's significance judgment.",
+        "Before you leave, confirm that your Word document shows your work is saved."
+      ]
     }
   ],
   "assessments": [

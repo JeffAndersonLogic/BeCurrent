@@ -81,7 +81,12 @@ window.BECURRENT_SCHEDULE={
    slides:[{kicker:'Your reference guide',title:'How to open your guide',bullets:['Open Canvas, then Assignments.','Click Reference Guide.','Click Submission Details.','Click your file to open it.','Do not click Download.']}],
    learningTargets:['Demonstrate understanding of the major events and turning points in the Iran at War unit.','Use evidence and causal reasoning to explain how earlier events shaped the 2026 conflict.','Distinguish chronology, causation, perspective, and source limits when analyzing the conflict.'],
    successCriteria:['I can answer questions using specific evidence from across the unit.','I can distinguish a turning point from an event that merely happened earlier or later.','I can explain causal relationships without treating any single event as inevitable destiny.'],
-   homework:'No additional homework.'}
+   homework:'No additional homework.'},
+
+  {date:'2026-10-06',topicTitle:'The Desk | Week of October 5',deskMode:'full',
+   doNow:'Think back to the Iran at War unit. Name one turning point from the unit that still shows up in this week\u2019s news.',
+   agenda:['CNN 10 · Oct. 5: Why making cafeteria lunches from scratch is harder than it sounds.','Open The Desk | Week of October 5 in Canvas and launch your Microsoft Education News Log.','Complete The Desk: file the shared Lead, choose Your Pick, and make today\'s significance judgment.','Before you leave, confirm that your Word document shows your work is saved.'],
+   note:'CNN 10 first. Then The Desk. Keep the same weekly News Log for Thursday.'}
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Next week: The Desk',detail:'Daily news stories via The Desk.',until:'2026-10-09'}]
 };

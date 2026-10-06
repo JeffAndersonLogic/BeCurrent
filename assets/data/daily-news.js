@@ -3,31 +3,31 @@
    the Announcements board lead, and The Desk. Refresh the reporting here; do not put
    student writing in this file. This is the single current-news layer. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-10-02',
+  reviewed: '2026-10-06',
   lead: {
-    category: 'World / Security',
-    headline: 'As the last US troops exit Iraq, Kurdish fears rise and militias celebrate',
-    dek: 'The last U.S. troops are leaving Iraq under an agreement between Baghdad and Washington. Iran-backed armed groups are celebrating, while leaders in Iraq\'s Kurdish region worry about losing U.S. air defenses.',
+    category: 'World / Economy',
+    headline: 'US-Iran war updates: Iran\'s oil minister resigns as US sends new proposals through mediators',
+    dek: 'Iran\'s oil minister resigned as the U.S. naval blockade has stopped most of Iran\'s oil exports. Iran also says the United States has sent new proposals through mediators.',
     source: 'NewsNation',
-    published: 'September 30, 2026',
-    url: 'https://www.newsnationnow.com/world/international-headlines/ap-as-the-last-us-troops-exit-iraq-kurdish-fears-rise-and-militias-celebrate/',
+    published: 'October 5, 2026',
+    url: 'https://www.newsnationnow.com/world/us-iran-war-strait-of-hormuz-oil-yemen-houthis/',
     image: '',
     imageCredit: ''
   },
   wire: [
     {
-      category: 'World / Education',
-      headline: 'France gripped by spreading student protests as PM calls crisis meeting',
-      dek: 'France\'s prime minister held a crisis meeting as protests by high school students spread across the country. The students are protesting under-resourced schools, long school days and other complaints.',
+      category: 'U.S. / Government',
+      headline: 'Supreme Court\'s new term puts focus on immigration, firearm cases',
+      dek: 'The Supreme Court began its new term on Monday, with major cases on immigration and guns already on its schedule.',
       source: 'NewsNation',
-      url: 'https://www.newsnationnow.com/world/international-headlines/ap-france-gripped-by-spreading-student-protests-as-pm-calls-crisis-meeting/'
+      url: 'https://www.newsnationnow.com/politics/supreme-court-opens-new-term-with-shaky-trump-relationship/'
     },
     {
-      category: 'World / Security',
-      headline: 'Iran spokesperson says country is ready for renewed strikes after US rejects deal',
-      dek: 'After the United States rejected Iran\'s peace plan, an Iranian army spokesperson said Iran is ready for more fighting.',
+      category: 'Health / Science',
+      headline: 'CDC \'closely\' monitoring suspected Russia pneumonic plague lab leak with State Department',
+      dek: 'U.S. health officials are watching a suspected plague case linked to a Russian laboratory.',
       source: 'NewsNation',
-      url: 'https://www.newsnationnow.com/politics/iran-country-renewed-strikes/'
+      url: 'https://www.newsnationnow.com/health/cdc-suspected-russia-pneumonic-plague-leak/'
     }
   ]
 };
