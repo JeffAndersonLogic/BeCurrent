@@ -118,7 +118,8 @@ const DESK = {
       what: 'Fast ways to scan before you choose Your Pick.',
       links: [
         { name: 'CNN 10', url: 'https://www.cnn.com/cnn10', note: 'A short shared news overview.' },
-        { name: 'The Week', url: 'https://theweek.com', note: 'Summaries that often show how multiple outlets cover the same issue.' }
+        { name: 'The Week', url: 'https://theweek.com', note: 'Summaries that often show how multiple outlets cover the same issue.' },
+        { name: 'The Week: Oct. 2 issue', url: 'https://usmagazine.theweek.com/full_page_image/the-week-us-2026-10-02-page-1/content.html', note: 'Class subscription: open this week\'s full magazine issue.' }
       ]
     },
     {
