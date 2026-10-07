@@ -780,6 +780,17 @@ window.BECURRENT_ANNOUNCEMENTS = {
           ]
         }
       ]
+    },
+    {
+      "date": "2026-10-07",
+      "topic": "The Desk | October 7",
+      "note": "Today's Lead: media ownership. Distinguish what happened from predictions about what comes next.",
+      "agenda": [
+        "Begin with CNN 10 to catch up on current events.",
+        "Open today's Lead and read the linked reporting.",
+        "File the Lead, choose Your Pick, and make today's significance judgment.",
+        "Check the outlet, publication date and link for each story. Save your News Log work."
+      ]
     }
   ],
   "assessments": [

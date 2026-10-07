@@ -282,7 +282,17 @@ function seededDay(tag) {
     // computes its day key as dayKeyOf(new Date()) in the browser, so there is no
     // path by which the build could be writing it.
     const shipped = fs.readFileSync(path.join(ROOT, 'daily', 'index.html'), 'utf8');
-    const datesInPage = [...new Set(shipped.match(/\b20\d{2}-\d{2}-\d{2}\b/g) || [])];
+    // A configured magazine issue may carry its publication date in its URL.
+    // Exclude only those exact hrefs; dates in filing content still fail.
+    let filingMarkup = shipped;
+    const sourceLinks = DESK.sources.flatMap(group => group.links || []);
+    for (const link of sourceLinks) {
+      const href = link.url.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+      filingMarkup = filingMarkup.split(`href="${href}"`).join('href="SOURCE"');
+    }
+    check('every configured source link survives the Desk build',
+      sourceLinks.every(link => shipped.includes(`href="${link.url.replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"`)));
+    const datesInPage = [...new Set(filingMarkup.match(/\b20\d{2}-\d{2}-\d{2}\b/g) || [])];
     check('the only date in the generated file is the cycle anchor',
       datesInPage.length === 1 && datesInPage[0] === DESK.log.anchorMonday,
       datesInPage.join(', ') || 'none');

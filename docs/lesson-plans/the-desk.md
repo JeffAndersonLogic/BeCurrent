@@ -154,6 +154,7 @@ _Fast ways to scan before you choose Your Pick._
 
 - [CNN 10](https://www.cnn.com/cnn10): A short shared news overview.
 - [The Week](https://theweek.com): Summaries that often show how multiple outlets cover the same issue.
+- [The Week: Oct. 2 issue](https://usmagazine.theweek.com/full_page_image/the-week-us-2026-10-02-page-1/content.html): Class subscription: open this week's full magazine issue.
 
 ### Local
 
