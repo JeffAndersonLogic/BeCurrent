@@ -209,7 +209,7 @@ async function description(url) {
 }
 
 function score(a) {
-  const ageHours = Math.max(0, (Date.now() - a.seen.getTime()) / 3600000);
+  const ageHours = Math.max(0, (Date.now() - (a.published || a.seen).getTime()) / 3600000);
   return a.source.priority * 10 - ageHours;
 }
 
