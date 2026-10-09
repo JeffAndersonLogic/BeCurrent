@@ -14,16 +14,25 @@ const SOURCES = [
   { domain: 'newsnationnow.com', name: 'NewsNation', priority: 2 }
 ];
 
+// Each feed represents a useful classroom news beat; avoid general UK
+// front-page feeds that mix domestic celebrity and match reports with news.
 const FEEDS = [
-  { url: 'https://feeds.bbci.co.uk/news/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
-  { url: 'https://feeds.bbci.co.uk/news/world/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
-  { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
-  { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
-  { url: 'https://www.newsnationnow.com/feed/', domain: 'newsnationnow.com', name: 'NewsNation', priority: 2 }
+  { url: 'https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 4, beat: 'U.S. / National' },
+  { url: 'https://feeds.bbci.co.uk/news/world/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 4, beat: 'World / International' },
+  { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3, beat: 'Economy' },
+  { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3, beat: 'Technology' },
+  { url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3, beat: 'Science / Environment' },
+  { url: 'https://www.newsnationnow.com/feed/', domain: 'newsnationnow.com', name: 'NewsNation', priority: 4, beat: 'U.S. / National' }
 ];
 const MAX_AGE_HOURS = 60;
 
-const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe)\b/i;
+const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe|formula one|formula 1|premier league|football club|man city|manchester united|sprint pole|verstappen|grand prix)\b/i;
+function acceptableArticle(title, url) {
+  try {
+    const pathname = new URL(url).pathname;
+    return !EXCLUDE.test(title) && !/\/(?:sport|football|formula1|cricket|tennis)\//i.test(pathname);
+  } catch (_) { return false; }
+}
 const FALLBACK_IMAGES = {
   'U.S. / Democracy': 'https://commons.wikimedia.org/wiki/Special:Redirect/file/United_States_Capitol_west_front_edit2.jpg',
   'U.S. / Government': 'https://commons.wikimedia.org/wiki/Special:Redirect/file/US_Capitol_west_side.JPG',
@@ -60,6 +69,11 @@ function category(title) {
   if (/ai\b|artificial intelligence|technology|tech\b|cyber|data center|social media/.test(t)) return 'Technology';
   if (/climate|wildfire|hurricane|flood|storm|environment|epa\b|heat/.test(t)) return 'Climate / Environment';
   return 'Current Events';
+}
+
+function storyCategory(article) {
+  const derived = category(article.title);
+  return derived !== 'Current Events' ? derived : (article.source.beat || derived);
 }
 
 function words(title) {
@@ -137,7 +151,7 @@ async function discoverFeed(source) {
     source,
     fromFeed: true
   })).filter(a => a.title.length >= 20 && a.title.length <= 180 &&
-    !EXCLUDE.test(a.title) && validUrl(a.url, source.domain) && recent(a.published));
+    acceptableArticle(a.title, a.url) && validUrl(a.url, source.domain) && recent(a.published));
 }
 function publisherDate(html) {
   const metas = html.match(/<meta\b[^>]*>/gi) || [];
@@ -201,7 +215,7 @@ async function discover(source) {
     image: String(article.socialimage || ''),
     seen: parseSeenDate(article.seendate),
     source
-  })).filter(a => a.title.length >= 20 && a.title.length <= 180 && !EXCLUDE.test(a.title) && validUrl(a.url, source.domain));
+  })).filter(a => a.title.length >= 20 && a.title.length <= 180 && acceptableArticle(a.title, a.url) && validUrl(a.url, source.domain));
 }
 
 async function description(url) {
@@ -222,25 +236,45 @@ async function description(url) {
 
 function score(a) {
   const ageHours = Math.max(0, (Date.now() - (a.published || a.seen).getTime()) / 3600000);
-  return a.source.priority * 10 - ageHours;
+  const beat = storyCategory(a);
+  const classroomWeight = /^U\.S\./.test(beat) || /^World/.test(beat) ? 24
+    : /Economy|Technology|Science|Climate/.test(beat) ? 15 : -14;
+  return a.source.priority * 10 + classroomWeight - ageHours / 3;
 }
-
 function choose(candidates) {
-  const sorted = candidates.sort((a, b) => score(b) - score(a));
-  for (const [sourceLimit, categoryLimit] of [[2, 2], [3, 3], [5, 5]]) {
-    const chosen = [], sourceCounts = new Map(), categoryCounts = new Map();
-    for (const item of sorted) {
-      if (chosen.some(c => c.url === item.url || similar(c.title, item.title))) continue;
-      const cat = category(item.title);
-      if ((sourceCounts.get(item.source.name) || 0) >= sourceLimit) continue;
-      if ((categoryCounts.get(cat) || 0) >= categoryLimit) continue;
-      chosen.push({ ...item, category: cat });
-      sourceCounts.set(item.source.name, (sourceCounts.get(item.source.name) || 0) + 1);
-      categoryCounts.set(cat, (categoryCounts.get(cat) || 0) + 1);
-      if (chosen.length === 5) return chosen;
-    }
+  const sorted = [...candidates].filter(s => acceptableArticle(s.title, s.url))
+    .sort((a, b) => score(b) - score(a));
+  const chosen = [];
+  function take(predicate) {
+    const next = sorted.find(s =>
+      predicate(storyCategory(s)) &&
+      !chosen.some(c => c.url === s.url || similar(c.title, s.title)));
+    if (next) chosen.push({ ...next, category: storyCategory(next) });
+    return !!next;
   }
-  throw new Error('Safety stop: fewer than five fresh, verified articles. Existing daily-news.js left untouched.');
+  // Editorial gate: the shared Lead must concern U.S. or world affairs.
+  if (!take(beat => /^U\.S\./.test(beat) || /^World/.test(beat))) {
+    throw new Error('Safety stop: no substantial U.S. or world lead found.');
+  }
+  // A usable classroom Wire must contain both U.S. and world coverage,
+  // plus a third beat. Fail closed instead of displaying five UK sports/party items.
+  if (!chosen.some(s => /^U\.S\./.test(s.category)) && !take(beat => /^U\.S\./.test(beat))) {
+    throw new Error('Safety stop: no fresh U.S. story found.');
+  }
+  if (!chosen.some(s => /^World/.test(s.category)) && !take(beat => /^World/.test(beat))) {
+    throw new Error('Safety stop: no fresh world story found.');
+  }
+  if (!chosen.some(s => /Economy|Technology|Science|Climate/.test(s.category)) &&
+      !take(beat => /Economy|Technology|Science|Climate/.test(beat))) {
+    throw new Error('Safety stop: no fresh economy, science or technology story found.');
+  }
+  while (chosen.length < 5) {
+    const counts = new Map();
+    chosen.forEach(s => counts.set(s.category, (counts.get(s.category) || 0) + 1));
+    if (!take(beat => (counts.get(beat) || 0) < 2)) break;
+  }
+  if (chosen.length < 5) throw new Error('Safety stop: fewer than five distinct classroom-relevant stories.');
+  return chosen;
 }
 
 function jsString(value) {
@@ -261,11 +295,27 @@ async function main() {
   for (const item of gathered) {
     if (!unique.has(item.url) || (item.fromFeed && !unique.get(item.url).fromFeed)) unique.set(item.url, item);
   }
-  const candidates = [...unique.values()].sort((a, b) => {
+  const ranked = [...unique.values()].sort((a, b) => {
     const da = a.published || a.seen, db = b.published || b.seen;
     return (b.source.priority * 10 - (Date.now() - db) / 14400000) -
            (a.source.priority * 10 - (Date.now() - da) / 14400000);
   });
+  // Round-robin by outlet + feed beat. A flood of BBC or AP headlines
+  // must not crowd U.S., world, science and NewsNation out of verification.
+  const groups = new Map();
+  for (const item of ranked) {
+    const key = item.source.name + ':' + (item.source.beat || 'index');
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  }
+  const candidates = [];
+  for (let round = 0; candidates.length < 72; round++) {
+    let added = 0;
+    for (const group of groups.values()) {
+      if (group[round]) { candidates.push(group[round]); added++; }
+    }
+    if (!added) break;
+  }
 
   const verified = [];
   // Verify in small batches. Invalid, blocked or undated pages are excluded.
@@ -281,10 +331,10 @@ async function main() {
   const lead = stories[0];
   const dek = (lead.dek || 'Read the original reporting to identify what happened and why it matters.').slice(0, 320);
   const image = /^https:\/\/[^"' ]+$/.test(lead.image || '') ? lead.image :
-    FALLBACK_IMAGES[category(lead.title)] || FALLBACK_IMAGES['Current Events'];
+    FALLBACK_IMAGES[storyCategory(lead)] || FALLBACK_IMAGES['Current Events'];
   const reviewed = localDate();
   const wire = stories.slice(1).map(s => '    {\n' +
-    '      category: ' + jsString(category(s.title)) + ',\n' +
+    '      category: ' + jsString(storyCategory(s)) + ',\n' +
     '      headline: ' + jsString(s.title) + ',\n' +
     '      dek: ' + jsString((s.dek || 'Open the original report and examine the evidence.').slice(0, 300)) + ',\n' +
     '      source: ' + jsString(s.source.name) + ',\n' +
@@ -295,7 +345,7 @@ async function main() {
     'window.BECURRENT_DAILY_NEWS = {',
     '  reviewed: ' + jsString(reviewed) + ',',
     '  lead: {',
-    '    category: ' + jsString(category(lead.title)) + ',',
+    '    category: ' + jsString(storyCategory(lead)) + ',',
     '    headline: ' + jsString(lead.title) + ',',
     '    dek: ' + jsString(dek) + ',',
     '    source: ' + jsString(lead.source.name) + ',',
@@ -323,4 +373,4 @@ async function main() {
 if (require.main === module) {
   main().catch(err => { console.error(err.stack || err.message); process.exitCode = 1; });
 }
-module.exports = { validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, localDate };
+module.exports = { validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, storyCategory, acceptableArticle, localDate };
