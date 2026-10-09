@@ -50,7 +50,34 @@
   if(next)next.addEventListener('click',()=>{teacherIndex=Math.min(stages.length-1,teacherIndex+1);renderTeacher()});
   renderTeacher();
 
+  // Presentation mode has one screen at a time; fullscreen removes browser chrome
+  // while keeping the controls and teacher cues on the same screen.
+  const fullscreen=document.getElementById('teacher-fullscreen');
+  if(fullscreen)fullscreen.addEventListener('click',async()=>{
+    try{
+      if(document.fullscreenElement===teacher)await document.exitFullscreen();
+      else if(teacher.requestFullscreen)await teacher.requestFullscreen();
+    }catch(_){fullscreen.textContent='Fullscreen unavailable';}
+  });
+  document.addEventListener('fullscreenchange',()=>{
+    if(!fullscreen)return;
+    const on=document.fullscreenElement===teacher;
+    fullscreen.textContent=on?'Exit fullscreen ↙':'Expand ↗';
+    fullscreen.setAttribute('aria-label',on?'Exit fullscreen presentation':'Expand presentation to full screen');
+  });
+  document.addEventListener('keydown',event=>{
+    if(teacher.hidden||event.altKey||event.ctrlKey||event.metaKey)return;
+    const el=event.target;
+    if(el&&el.closest&&el.closest('a,button,input,textarea,select,summary'))return;
+    if(event.key==='ArrowRight'&&teacherIndex<stages.length-1){teacherIndex++;renderTeacher();event.preventDefault()}
+    if(event.key==='ArrowLeft'&&teacherIndex>0){teacherIndex--;renderTeacher();event.preventDefault()}
+  });
+
+  // Return students to their last open chapter after an accidental refresh.
+  try {const saved=Number(localStorage.getItem(prefix+'current-chapter'));if(Number.isInteger(saved)&&saved>=0&&saved<chapters.length)studentIndex=saved;} catch(_){}
+
   function renderStudent(){
+    storage.put('current-chapter',String(studentIndex));
     chapters.forEach((s,i)=>{s.hidden=i!==studentIndex});
     nav.forEach((b,i)=>b.setAttribute('aria-current',i===studentIndex?'step':'false'));
     const previous=document.getElementById('student-prev'),following=document.getElementById('student-next');
