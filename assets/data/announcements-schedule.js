@@ -88,9 +88,31 @@ window.BECURRENT_SCHEDULE={
            'Open today\'s Lead and read the linked reporting.',
            'File the Lead, choose Your Pick, and make today\'s significance judgment.',
            'Check the outlet, publication date and link for each story. Save your News Log work.'],
-   note:'Today\'s Lead: media ownership. Distinguish what happened from predictions about what comes next.'}
+   note:'Today\'s Lead: media ownership. Distinguish what happened from predictions about what comes next.'},
+
+  {date:'2026-10-09',topicTitle:'Current Events | The Desk + The Week',deskMode:'full',
+   note:'Last class before fall break. Start with today\'s news, then use The Week and The Desk to practice summarizing, sourcing, and significance.',
+   doNow:'Read today\'s top-story headline. What happened, and why might people outside that country care?',
+   agenda:[
+     'Watch CNN 10. Identify one major story and one question you still have.',
+     'Open today\'s BeCurrent Lead. Read the original reporting and record what happened.',
+     'Browse The Week magazine and choose a current article that interests you for Your Pick.',
+     'In The Desk, record each outlet, date, link, a short summary, and why the story matters.',
+     'Compare the Lead and Your Pick. Explain which deserves more attention and why.',
+     'Check that today\'s News Log work is saved in your Canvas Microsoft Education assignment.'
+   ],
+   learningTargets:[
+     'I can identify the main event and source in a current news story.',
+     'I can summarize an article from The Week using facts in my own words.',
+     'I can explain why one story deserves attention using specific evidence.'
+   ],
+   successCriteria:[
+     'I can identify what happened, who was involved, and when the Lead was reported.',
+     'I can record the outlet, date, link, and a clear short summary for the Lead and Your Pick.',
+     'I can support my significance judgment with a specific detail from the reporting.'
+   ]}
 
  ],
- assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Next week: The Desk',detail:'Daily news stories via The Desk.',until:'2026-10-09'}]
+ assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]
 };
 if(typeof document!=='undefined'&&/(?:^|\/)announcements\.html$/.test(location.pathname)){var deskModePatch=document.createElement('script');deskModePatch.src='assets/js/announcements-desk-mode.js?v=20260903-hourly';document.head.appendChild(deskModePatch);}
