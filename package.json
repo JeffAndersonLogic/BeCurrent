@@ -36,7 +36,9 @@
     "parse:canvas": "node scripts/parse-canvas-submissions.js",
     "serve": "node scripts/serve-local.js",
     "hooks:install": "git config core.hooksPath .githooks && echo \"pre-push hook active: npm test runs before every push\"",
-    "prepare": "git config core.hooksPath .githooks || true"
+    "prepare": "git config core.hooksPath .githooks || true",
+    "build:video-first": "node scripts/build-video-first.js",
+    "check:video-first": "node scripts/build-video-first.js --check"
   },
   "devDependencies": {
     "playwright": "^1.49.0"
