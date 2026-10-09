@@ -14,12 +14,12 @@ window.BECURRENT_DAILY_NEWS = {
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "ICE agent shoots man in New York City",
-      dek: "The mayor of New York expressed outrage at the shooting which the Department of Homeland Security said happened during the arrest of a \"criminal illegal alien\".",
-      source: "BBC News",
+      category: "U.S. / Government",
+      headline: "Watch live: Trump touts Columbus Day at White House",
+      dek: "President Trump is hosting a Columbus Day celebration at the White House on Friday, renewing his push to honor the Italian explorer amid years of debate over his legacy. The event comes months after Trump installed a 13-foot statue of Christopher Columbus on White House grounds — a replica of a monu",
+      source: "NewsNation",
       published: "October 9, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c59vzk9yypn3o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.newsnationnow.com/politics/watch-live-trump-touts-columbus-day-at-white-house/"
     },
     {
       category: "Climate / Environment",
@@ -31,11 +31,11 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "World / International",
-      headline: "Two Renoir paintings stolen from French museum are recovered",
-      dek: "The two works were seized last month when thieves cut through a fence and smashed a window at the Renoir Museum on the French Riviera.",
+      headline: "Ethiopia and Eritrea accuse each other of starting conflict after troops cross border",
+      dek: "Truckloads of Eritrean soldiers have been seen driving into Ethiopia, which has reportedly responded with drone strikes.",
       source: "BBC News",
       published: "October 9, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cwkg50v1vn07o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/c65ynvw250y1o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / Security",
