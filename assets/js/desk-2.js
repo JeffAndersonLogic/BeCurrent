@@ -101,6 +101,10 @@
     var mode=scheduledMode(today);
     var news=window.BECURRENT_DAILY_NEWS||{};
     var lead=news.lead||{};
+    var reviewed=String(news.reviewed||'');
+    var age=/^\d{4}-\d{2}-\d{2}$/.test(reviewed)
+      ? Date.now()-new Date(reviewed+'T12:00:00').getTime() : Infinity;
+    var overdue=!Number.isFinite(age)||age>48*3600000;
 
     window.BECURRENT_DESK_MODE=mode;
     applyCanvasLinks();
@@ -114,6 +118,18 @@
     var visual=document.querySelector('[data-lead-image]');
     if(visual&&lead.image){visual.style.backgroundImage='url("'+String(lead.image).replace(/"/g,'')+'")';}
 
+    if(overdue){
+      var kicker=document.querySelector('.desk-lead-copy .desk-kicker');
+      if(kicker)kicker.textContent='Refresh delayed · Last reviewed '+(reviewed||'unknown');
+      var intro=document.querySelector('.desk-lead-copy');
+      if(intro&&!intro.querySelector('[data-news-stale]')){
+        var note=document.createElement('p');
+        note.dataset.newsStale='true';
+        note.setAttribute('role','status');
+        note.textContent='This lead has not been refreshed recently. Check the article date before filing it as current.';
+        intro.appendChild(note);
+      }
+    }
     setText('desk-lead-headline',lead.headline||'Today’s lead story');
     setText('desk-lead-dek',lead.dek||'Open the reporting, identify what actually happened, and file what matters in your Canvas notebook.');
     setText('desk-lead-source',lead.source||'Teacher-selected source');
