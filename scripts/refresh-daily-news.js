@@ -241,7 +241,8 @@ function score(a) {
     : /Economy|Technology|Science|Climate/.test(beat) ? 15 : -14;
   // Prioritize consequential civic and international events over niche
   // sensational/crime stories that are less suitable as a shared 9th-grade Lead.
-  const major = /\bnobel peace prize\b|\bsupreme court\b|\bpresidential election\b|\belection result\b|\bceasefire\b|\bpeace agreement\b|\bmajor hurricane\b|\bclimate summit\b|\bcongress\b|\bgovernment shutdown\b/i.test(a.title) ? 35 : 0;
+  const major = /\bnobel peace prize\b/i.test(a.title) ? 50 :
+    /\bsupreme court\b|\bpresidential election\b|\belection result\b|\bceasefire\b|\bpeace agreement\b|\bmajor hurricane\b|\bclimate summit\b|\bcongress\b|\bgovernment shutdown\b/i.test(a.title) ? 35 : 0;
   const nicheCrime = /\bmurder\b|\bexecution\b|\bhomicide\b|\bcrime\b/i.test(a.title) ? -25 : 0;
   return a.source.priority * 10 + classroomWeight + major + nicheCrime - ageHours / 3;
 }
