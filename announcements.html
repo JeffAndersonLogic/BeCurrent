@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Today | BeCurrent</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/becurrent-announcements.css">
+  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261009-lead">
   <link rel="stylesheet" href="assets/css/becurrent-announcements-projector.css?v=20260826">
 </head>
 <body>
@@ -46,8 +46,8 @@
   </div>
 </div>
 
-<script src="assets/data/announcements-schedule.js"></script>
-<script src="assets/data/announcements.js"></script>
+<script src="assets/data/announcements-schedule.js?v=20261009"></script>
+<script src="assets/data/announcements.js?v=20261009"></script>
 <script src="assets/data/daily-news.js"></script>
 <script>
 (function () {
@@ -148,7 +148,14 @@
     if (has(lead.url)) {
       var a = el('a','lead-link','Open the reporting →'); a.href = lead.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; meta.appendChild(a);
     }
-    copy.appendChild(meta); shade.appendChild(copy); media.appendChild(shade); s.appendChild(media);
+    copy.appendChild(meta);
+    if (has(lead.imageCredit)) {
+      var credit = el('a','lead-photo-credit',lead.imageCredit);
+      credit.href = has(lead.imageCreditUrl) ? lead.imageCreditUrl : (lead.url || '#');
+      credit.target = '_blank'; credit.rel = 'noopener noreferrer';
+      copy.appendChild(credit);
+    }
+    shade.appendChild(copy); media.appendChild(shade); s.appendChild(media);
     return s;
   }
 
