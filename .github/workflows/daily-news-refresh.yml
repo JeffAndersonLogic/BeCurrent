@@ -3,6 +3,11 @@ name: Daily News Refresh
 # GitHub cron is best-effort and can start late. Never gate on the local hour:
 # a delayed run must still do the work, not silently report green after skipping.
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-news-refresh.yml'
+      - 'scripts/refresh-daily-news.js'
   schedule:
     - cron: '15 10 * * 1-5' # 6:15 a.m. EDT / 5:15 a.m. EST
     - cron: '15 12 * * 1-5' # backup: 8:15 a.m. EDT / 7:15 a.m. EST
