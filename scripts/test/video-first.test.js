@@ -29,7 +29,7 @@ new vm.Script(script);
 new vm.Script(read('assets/js/video-first-record.js'));
 assert(script.includes('bcRecordManifest('),'Canvas record manifest missing');
 assert(script.includes('bcRecordFooterHtml('),'Canvas HTML footer missing');
-assert(!/\\bfetch\\s*\\(|XMLHttpRequest|<form\\s+action/i.test(page+script),'student page makes outbound request');
+assert(!['fetch(', 'XMLHttpRequest', '<form action'].some(bad=>(page+script).includes(bad)),'student page makes outbound request');
 const r=spawnSync(process.execPath,['scripts/build-video-first.js','--check'],{cwd:ROOT,encoding:'utf8'});
 assert.strictEqual(r.status,0,(r.stdout||'')+(r.stderr||''));
 console.log('OK: video-first pilot, both modes, student captures, video links, and canonical record grammar.');
