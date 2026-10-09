@@ -81,6 +81,19 @@ files.forEach(file => {
     return;
   }
 
+  // Video-first units have a bespoke presentation/student experience.
+  // Validate only the published topic pages; planned topics intentionally have no link.
+  if (unit.meta.renderer === 'video-first') {
+    const pages = ['index.html'].concat((unit.topics || []).filter(t => t.page).map(t => t.page));
+    pages.forEach(page => {
+      const rel = path.join(dir, page);
+      if (fs.existsSync(path.join(ROOT, rel))) return;
+      if (CHECK) drift.push({ rel, reason:'missing video-first page' });
+      else throw new Error(file + ': required video-first page missing: ' + rel);
+    });
+    return;
+  }
+
   // The unit page is the map of the whole arc and always exists.
   emit(path.join(dir, 'index.html'), renderUnitPage(unit));
 
