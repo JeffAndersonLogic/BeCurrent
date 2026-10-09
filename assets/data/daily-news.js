@@ -2,23 +2,23 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-09",
   lead: {
-    category: "U.S. / National",
-    headline: "Christa Pike walking and taking 'limited steps' after failed execution",
-    dek: "On the day of her execution, staff used at least seven needles in an effort to find a vein for the lethal injection.",
-    source: "NewsNation",
+    category: "World / International",
+    headline: "Navi Pillay, former UN human rights chief, wins Nobel Peace Prize",
+    dek: "Pillay is recognised for her \"efforts to promote peace and international law\", the Norwegian Nobel Committee says.",
+    source: "BBC News",
     published: "October 9, 2026",
-    url: "https://www.newsnationnow.com/crime/christa-pike-walking-failed-execution/",
+    url: "https://www.bbc.co.uk/news/articles/cm9wz5kng0x1o?at_medium=RSS&at_campaign=rss",
     image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/World_Map_Blank.svg",
     imageCredit: "Wikimedia Commons"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "Two Renoir paintings stolen from French museum are recovered",
-      dek: "The two works were seized last month when thieves cut through a fence and smashed a window at the Renoir Museum on the French Riviera.",
+      category: "U.S. / National",
+      headline: "ICE agent shoots man in New York City",
+      dek: "The mayor of New York expressed outrage at the shooting which the Department of Homeland Security said happened during the arrest of a \"criminal illegal alien\".",
       source: "BBC News",
       published: "October 9, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cwkg50v1vn07o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/c59vzk9yypn3o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Climate / Environment",
@@ -30,11 +30,11 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "World / International",
-      headline: "Navi Pillay, former UN human rights chief, wins Nobel Peace Prize",
-      dek: "Pillay is recognised for her \"efforts to promote peace and international law\", the Norwegian Nobel Committee says.",
+      headline: "Two Renoir paintings stolen from French museum are recovered",
+      dek: "The two works were seized last month when thieves cut through a fence and smashed a window at the Renoir Museum on the French Riviera.",
       source: "BBC News",
       published: "October 9, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm9wz5kng0x1o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cwkg50v1vn07o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / Security",
