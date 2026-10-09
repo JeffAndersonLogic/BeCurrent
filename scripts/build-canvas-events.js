@@ -1003,6 +1003,8 @@ if (!files.length) {
 
 files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
+  // Pilot video-first units are not scheduled in Canvas until the pilot is approved.
+  if (unit.meta.renderer === 'video-first') return;
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.md`), renderUnit(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.html`), renderUnitHtml(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-assignments.md`), renderAssignments(unit), unit);
