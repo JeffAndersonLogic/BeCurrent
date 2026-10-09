@@ -791,6 +791,48 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "File the Lead, choose Your Pick, and make today's significance judgment.",
         "Check the outlet, publication date and link for each story. Save your News Log work."
       ]
+    },
+    {
+      "date": "2026-10-09",
+      "topic": "Current Events | The Desk + The Week",
+      "learningTargets": [
+        {
+          "text": "I can identify the main event and source in a current news story.",
+          "label": ""
+        },
+        {
+          "text": "I can summarize an article from The Week using facts in my own words.",
+          "label": ""
+        },
+        {
+          "text": "I can explain why one story deserves attention using specific evidence.",
+          "label": ""
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can identify what happened, who was involved, and when the Lead was reported.",
+          "label": ""
+        },
+        {
+          "text": "I can record the outlet, date, link, and a clear short summary for the Lead and Your Pick.",
+          "label": ""
+        },
+        {
+          "text": "I can support my significance judgment with a specific detail from the reporting.",
+          "label": ""
+        }
+      ],
+      "note": "Last class before fall break. Start with today's news, then use The Week and The Desk to practice summarizing, sourcing, and significance.",
+      "doNow": "Read today's top-story headline. What happened, and why might people outside that country care?",
+      "agenda": [
+        "Watch CNN 10. Identify one major story and one question you still have.",
+        "Open today's BeCurrent Lead. Read the original reporting and record what happened.",
+        "Browse The Week magazine and choose a current article that interests you for Your Pick.",
+        "In The Desk, record each outlet, date, link, a short summary, and why the story matters.",
+        "Compare the Lead and Your Pick. Explain which deserves more attention and why.",
+        "Check that today's News Log work is saved in your Canvas Microsoft Education assignment."
+      ]
     }
   ],
   "assessments": [
@@ -807,8 +849,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
   ],
   "reminders": [
     {
-      "title": "Next week: The Desk",
-      "detail": "Daily news stories via The Desk.",
+      "title": "Fall break: October 12–16",
+      "detail": "No regular classes next week.",
       "until": "2026-10-09"
     }
   ],
