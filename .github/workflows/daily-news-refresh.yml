@@ -1,15 +1,18 @@
 name: Daily News Refresh
 
+# GitHub cron is best-effort and can start late. Never gate on the local hour:
+# a delayed run must still do the work, not silently report green after skipping.
 on:
-  # Manual only. The schedule was removed on 2026-09-23: GitHub started the runs
-  # hours late, the 6 a.m. gate below then skipped every step, and each run still
-  # reported success, so no headline was ever refreshed by it. Headlines now come
-  # from a Claude Code routine that drafts the day on a working branch for Jeff to
-  # review, because the Lead story is a teaching choice, not a keyword match.
+  schedule:
+    - cron: '15 10 * * 1-5' # 6:15 a.m. EDT / 5:15 a.m. EST
+    - cron: '15 12 * * 1-5' # backup: 8:15 a.m. EDT / 7:15 a.m. EST
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
+  checks: read
+  issues: write
 
 concurrency:
   group: becurrent-daily-news-refresh
@@ -18,51 +21,96 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 50
     steps:
-      - name: Check Indianapolis time
-        id: localtime
-        shell: bash
-        run: |
-          LOCAL_HOUR=$(TZ=America/Indiana/Indianapolis date +%H)
-          echo "hour=$LOCAL_HOUR" >> "$GITHUB_OUTPUT"
-          echo "Indianapolis hour: $LOCAL_HOUR"
-
-      - name: Checkout main
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+      - name: Checkout published branch
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
 
       - name: Setup Node
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: npm
+          node-version: '22'
 
-      - name: Install dependencies
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
-        run: npm ci
-
-      - name: Refresh approved-source headlines
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+      - name: Discover and verify fresh news from approved outlets
         run: node scripts/refresh-daily-news.js
 
-      - name: Validate BeCurrent
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+      - name: Run offline build and student-work safety checks
         run: npm test
 
-      - name: Commit refreshed headlines to main
-        if: github.event_name == 'workflow_dispatch' || steps.localtime.outputs.hour == '06'
+      # GitHub's GITHUB_TOKEN does not trigger normal push workflows. Push a
+      # temporary branch and explicitly dispatch Validate there; required
+      # status checks must pass BEFORE fast-forwarding the protected main branch.
+      - name: Validate news commit and publish to main
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
+          set -euo pipefail
           if git diff --quiet -- assets/data/daily-news.js; then
-            echo "No headline changes to commit."
+            echo "News is already current; no commit needed."
             exit 0
           fi
           git config user.name "BeCurrent News Bot"
           git config user.email "actions@users.noreply.github.com"
           git add assets/data/daily-news.js
-          git commit -m "Refresh BeCurrent daily headlines"
+          git commit -m "Refresh verified BeCurrent headlines"
+          SHA="$(git rev-parse HEAD)"
+          BRANCH="automation/daily-news-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          gh workflow run validate.yml --ref "$BRANCH"
+          echo "Waiting for the existing full Validate workflow for $SHA"
+          passed=false
+          for attempt in $(seq 1 100); do
+            checks="$(gh api "repos/$GITHUB_REPOSITORY/commits/$SHA/check-runs?per_page=100")"
+            ok="$(echo "$checks" | jq '[.check_runs[] | select((.name == "Structure and offline tests" or .name == "Browser contracts") and .conclusion == "success")] | length')"
+            bad="$(echo "$checks" | jq '[.check_runs[] | select((.name == "Structure and offline tests" or .name == "Browser contracts") and (.conclusion == "failure" or .conclusion == "cancelled" or .conclusion == "timed_out"))] | length')"
+            if [ "$bad" -gt 0 ]; then
+              echo "::error::Required Validate check failed. Refusing to publish."
+              exit 1
+            fi
+            if [ "$ok" -eq 2 ]; then passed=true; break; fi
+            echo "Validate pending: $ok/2 checks passed; attempt $attempt"
+            sleep 20
+          done
+          if [ "$passed" != true ]; then
+            echo "::error::Validate checks did not complete; refusing to publish."
+            exit 1
+          fi
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::main advanced during validation; refusing to overwrite it."
+            exit 1
+          fi
           git push origin HEAD:main
+          echo "Published $SHA to main after required checks passed."
+          git push origin --delete "$BRANCH" || true
+
+      - name: Create or update a visible GitHub failure alert
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          title="BeCurrent Daily News Refresh failed"
+          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          number="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty' 2>/dev/null || true)"
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "Another scheduled refresh failed: $url"
+          else
+            gh issue create --title "$title" --body "The scheduled news update failed. Yesterday's stories may still be displayed. Check the failing run: $url"
+          fi
+
+      - name: Close a previous failure alert after recovery
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          number="$(gh issue list --state open --search 'BeCurrent Daily News Refresh failed in:title' --json number --jq '.[0].number // empty' 2>/dev/null || true)"
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "The news refresh completed successfully: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            gh issue close "$number" --reason completed
+          fi
