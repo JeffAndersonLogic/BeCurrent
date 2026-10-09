@@ -8,8 +8,9 @@ window.BECURRENT_DAILY_NEWS = {
     source: "BBC News",
     published: "October 9, 2026",
     url: "https://www.bbc.co.uk/news/articles/cm9wz5kng0x1o?at_medium=RSS&at_campaign=rss",
-    image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/World_Map_Blank.svg",
-    imageCredit: "Wikimedia Commons"
+    image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Navanethem_Pillay.jpg",
+    imageCredit: "File photo (2009): Antônio Cruz / Agência Brasil · CC BY 3.0 BR",
+    imageCreditUrl: "https://commons.wikimedia.org/wiki/File:Navanethem_Pillay.jpg"
   },
   wire: [
     {
