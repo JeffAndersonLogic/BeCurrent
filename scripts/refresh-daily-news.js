@@ -160,7 +160,19 @@ function publisherSummary(html) {
   return '';
 }
 async function verifyArticle(article) {
-  const res = await fetchPage(article.url, 'text/html');
+  let res;
+  try {
+    res = await fetchPage(article.url, 'text/html');
+  } catch (err) {
+    // Some publishers block automated article reads while publishing valid RSS.
+    // Their own signed-off RSS <link> and <pubDate> remain a direct source,
+    // unlike GDELT's unverified discovery timestamp.
+    if (article.fromFeed && validUrl(article.url, article.source.domain) && recent(article.published)) {
+      console.warn('Publisher RSS used without page read: ' + article.url + ' (' + err.message + ')');
+      return { ...article, dek: article.dek || '' };
+    }
+    throw err;
+  }
   if (!validUrl(res.url, article.source.domain)) return null;
   if (!(res.headers.get('content-type') || '').includes('html')) return null;
   const html = (await res.text()).slice(0, 600000);
@@ -215,7 +227,7 @@ function score(a) {
 
 function choose(candidates) {
   const sorted = candidates.sort((a, b) => score(b) - score(a));
-  for (const [sourceLimit, categoryLimit] of [[2, 2], [3, 3], [5, 3]]) {
+  for (const [sourceLimit, categoryLimit] of [[2, 2], [3, 3], [5, 5]]) {
     const chosen = [], sourceCounts = new Map(), categoryCounts = new Map();
     for (const item of sorted) {
       if (chosen.some(c => c.url === item.url || similar(c.title, item.title))) continue;
