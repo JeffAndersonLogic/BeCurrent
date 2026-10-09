@@ -826,12 +826,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "Last class before fall break. Start with today's news, then use The Week and The Desk to practice summarizing, sourcing, and significance.",
       "doNow": "Read today's top-story headline. What happened, and why might people outside that country care?",
       "agenda": [
-        "Watch CNN 10. Identify one major story and one question you still have.",
-        "Open today's BeCurrent Lead. Read the original reporting and record what happened.",
-        "Browse The Week magazine and choose a current article that interests you for Your Pick.",
-        "In The Desk, record each outlet, date, link, a short summary, and why the story matters.",
-        "Compare the Lead and Your Pick. Explain which deserves more attention and why.",
-        "Check that today's News Log work is saved in your Canvas Microsoft Education assignment."
+        "Watch CNN 10 and identify one major news story.",
+        "Open today's top story and file The Lead.",
+        "Read The Week. Choose one article for Your Pick.",
+        "In The Desk, record sources, dates, links, and summaries.",
+        "Explain which story matters more. Confirm your Canvas work is saved."
       ]
     }
   ],
