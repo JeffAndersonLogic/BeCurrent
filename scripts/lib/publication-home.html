@@ -6,7 +6,7 @@
   <title>BeCurrent | Home</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/becurrent-2.css">
-  <link rel="stylesheet" href="assets/css/publication-home.css?v=20260826-production">
+  <link rel="stylesheet" href="assets/css/publication-home.css?v=20261009-lead">
 </head>
 <body class="publication-home">
 <a class="skip" href="#main">Skip to content</a>
@@ -39,12 +39,16 @@
 
 <main id="main"><div class="page">
   <section class="home-hero" aria-labelledby="featured-title">
-    <div class="home-feature">
+    <div class="home-feature" data-daily-hero>
       <div class="home-feature-copy">
-        <div class="home-kicker">Today's featured investigation</div>
-        <h1 id="featured-title">Why is there war with Iran?</h1>
-        <p>One major story. Several decades of history. Start with what is happening now, then trace the conflict backward through the choices and turning points that built it.</p>
-        <a class="cta" href="iran/index.html">Explore the investigation →</a>
+        <div class="home-kicker" data-daily-lead-kicker>Today's top story</div>
+        <h1 id="featured-title" data-daily-lead-title>Today's top story</h1>
+        <p data-daily-lead-dek>Open the latest verified reporting, then decide why the story matters.</p>
+        <div class="home-lead-footer">
+          <span class="home-lead-source" data-daily-lead-meta>BeCurrent News Desk</span>
+          <a class="cta" data-daily-lead-link href="daily/index.html">Read today's reporting →</a>
+        </div>
+        <a class="home-photo-credit" data-daily-image-credit href="#" target="_blank" rel="noopener noreferrer" hidden></a>
       </div>
     </div>
     <aside class="home-briefing" aria-label="Today's briefing">
@@ -118,7 +122,7 @@
 </div>
 <script src="assets/data/daily-news.js"></script>
 <script src="assets/data/iran-unit.js"></script>
-<script src="assets/js/daily-news-hydrate.js"></script>
+<script src="assets/js/daily-news-hydrate.js?v=20261009-lead"></script>
 <script src="assets/js/becurrent-2.js"></script>
 </body>
 </html>
