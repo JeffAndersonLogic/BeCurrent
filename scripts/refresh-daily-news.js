@@ -139,6 +139,35 @@ function rssTag(item, name) {
   const match = item.match(new RegExp('<' + name + '(?:\\s[^>]*)?>([\\s\\S]*?)<\\/' + name + '>', 'i'));
   return match ? stripMarkup(match[1]) : '';
 }
+function safePhotoUrl(value) {
+  try {
+    const url = new URL(stripMarkup(value));
+    const domains = ['bbc.co.uk', 'bbc.com', 'bbci.co.uk', 'bbci.com',
+      'apnews.com', 'reuters.com', 'newsnationnow.com', 'wikimedia.org', 'wp.com'];
+    return url.protocol === 'https:' &&
+      domains.some(domain => url.hostname === domain || url.hostname.endsWith('.' + domain))
+      ? url.href : '';
+  } catch (_) { return ''; }
+}
+function publisherPhoto(html) {
+  const metas = html.match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of metas) {
+    if (!/(?:name|property)=["'](?:og:image|twitter:image)["']/i.test(tag)) continue;
+    const value = (tag.match(/\bcontent=["']([^"']+)["']/i) || [])[1];
+    const url = safePhotoUrl(value);
+    if (url) return url;
+  }
+  return '';
+}
+function feedPhoto(item) {
+  for (const tag of item.match(/<media:(?:thumbnail|content)\b[^>]*>/gi) || []) {
+    const value = (tag.match(/\burl=["']([^"']+)["']/i) || [])[1];
+    const url = safePhotoUrl(value);
+    if (url) return url;
+  }
+  return '';
+}
+
 async function discoverFeed(source) {
   const res = await fetchPage(source.url, 'application/rss+xml, application/xml, text/xml');
   const xml = await res.text();
@@ -147,6 +176,7 @@ async function discoverFeed(source) {
     title: rssTag(item, 'title'),
     url: rssTag(item, 'link'),
     dek: rssTag(item, 'description').slice(0, 300),
+    image: feedPhoto(item),
     published: new Date(rssTag(item, 'pubDate')),
     source,
     fromFeed: true
@@ -195,7 +225,8 @@ async function verifyArticle(article) {
   const published = article.fromFeed ? article.published : publisherDate(html);
   if (!recent(published)) return null;
   return { ...article, url: res.url, published,
-    dek: publisherSummary(html) || article.dek || '' };
+    dek: publisherSummary(html) || article.dek || '',
+    image: publisherPhoto(html) || safePhotoUrl(article.image) };
 }
 
 async function discover(source) {
@@ -335,8 +366,19 @@ async function main() {
   const stories = choose(verified);
   const lead = stories[0];
   const dek = (lead.dek || 'Read the original reporting to identify what happened and why it matters.').slice(0, 320);
-  const image = /^https:\/\/[^"' ]+$/.test(lead.image || '') ? lead.image :
-    FALLBACK_IMAGES[storyCategory(lead)] || FALLBACK_IMAGES['Current Events'];
+  // Use the story's own publisher photo where available, not an unrelated
+  // Tehran skyline or generic world map. This licensed archival portrait is
+  // specifically for Navi Pillay when she is the lead, not a recurring stock photo.
+  const naviArchive = /navi pillay/i.test(lead.title) && /nobel peace prize/i.test(lead.title);
+  const image = naviArchive
+    ? 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Navanethem_Pillay.jpg'
+    : safePhotoUrl(lead.image);
+  const imageCredit = naviArchive
+    ? 'File photo (2009): Antônio Cruz / Agência Brasil · CC BY 3.0 BR'
+    : (image ? 'Image: ' + lead.source.name : '');
+  const imageCreditUrl = naviArchive
+    ? 'https://commons.wikimedia.org/wiki/File:Navanethem_Pillay.jpg'
+    : (image ? lead.url : '');
   const reviewed = localDate();
   const wire = stories.slice(1).map(s => '    {\n' +
     '      category: ' + jsString(storyCategory(s)) + ',\n' +
@@ -357,8 +399,8 @@ async function main() {
     '    published: ' + jsString(prettyDate(lead.published)) + ',',
     '    url: ' + jsString(lead.url) + ',',
     '    image: ' + jsString(image) + ',',
-    '    imageCredit: ' + jsString(/^https:\/\/[^"' ]+$/.test(lead.image || '') ?
-      lead.source.name : 'Wikimedia Commons'),
+    '    imageCredit: ' + jsString(imageCredit) + ',',
+    '    imageCreditUrl: ' + jsString(imageCreditUrl),
     '  },',
     '  wire: [',
     wire,
@@ -378,4 +420,4 @@ async function main() {
 if (require.main === module) {
   main().catch(err => { console.error(err.stack || err.message); process.exitCode = 1; });
 }
-module.exports = { validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, storyCategory, acceptableArticle, localDate };
+module.exports = { validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, storyCategory, acceptableArticle, localDate, safePhotoUrl, publisherPhoto, feedPhoto };
