@@ -95,11 +95,21 @@ window.BECURRENT_SCHEDULE={
    doNow:'Read today\'s top-story headline. What happened, and why might people outside that country care?',
    agenda:[
      "Watch CNN 10 and identify one major news story.",
+     "Watch PBS NewsHour (Oct. 8), first 10:18 only.",
      "Open today's top story and file The Lead.",
      "Read The Week. Choose one article for Your Pick.",
      "In The Desk, record sources, dates, links, and summaries.",
      "Explain which story matters more. Confirm your Canvas work is saved."
    ],
+   slides:[{
+     kicker:'Video clip · 10 minutes, 18 seconds',
+     title:'PBS NewsHour | October 8, 2026',
+     bullets:[
+       'Play from 0:00. Stop at 10:18.',
+       'Identify one major event and one supporting detail.'
+     ],
+     videoUrl:'https://www.pbs.org/newshour/show/october-8-2026-pbs-news-hour-full-episode'
+   }],
    learningTargets:[
      'I can identify the main event and source in a current news story.',
      'I can summarize an article from The Week using facts in my own words.',
