@@ -31,6 +31,9 @@ function serve(){return new Promise(resolve=>{
   page.on('pageerror',e=>errors.push(e.message));
   try{
     await page.goto('http://127.0.0.1:'+port+'/midterms/block-01.html');
+    const headingFont=await page.$eval('.hero h1',el=>getComputedStyle(el).fontFamily);
+    if(/Cinzel|Montserrat|Libre Baskerville/i.test(headingFont))throw Error('pilot still inherits BeHistorical display typography: '+headingFont);
+    if(!(await page.isVisible('#student-flow')))throw Error('student experience not visible');
     if(!(await page.isVisible('#student-flow')))throw Error('student experience not visible by default');
     await page.getByRole('button',{name:'Teacher presentation'}).click();
     if(!(await page.isVisible('#teacher-flow')))throw Error('teacher presentation does not open');
@@ -38,7 +41,7 @@ function serve(){return new Promise(resolve=>{
     if(!/2 \/ 6/.test(await page.textContent('#teacher-counter')))throw Error('teacher progression failed');
     await page.getByRole('button',{name:'Student investigation'}).first().click();
     if(!(await page.isVisible('#student-flow')))throw Error('student investigation does not open');
-    await page.getByRole('button',{name:'2 · Congress'}).click();
+    await page.locator('[data-student-nav]').nth(1).click();
     await page.selectOption('#sort-1','House');
     await page.selectOption('#sort-2','Senate');
     await page.selectOption('#sort-3','Senate');
@@ -46,15 +49,15 @@ function serve(){return new Promise(resolve=>{
     await page.selectOption('#sort-5','Both');
     await page.click('#check-sort');
     if(!/5 of 5 correct/.test(await page.textContent('#sort-feedback')))throw Error('sort scoring failed');
-    await page.getByRole('button',{name:'3 · 2026'}).click();
+    await page.locator('[data-student-nav]').nth(2).click();
     await page.fill('#report-response','The news reports primary results, but November winners were not settled.');
-    await page.getByRole('button',{name:'4 · Decide'}).click();
+    await page.locator('[data-student-nav]').nth(3).click();
     await page.fill('#scenario-response','The House could change leaders. The president would remain in office.');
-    await page.getByRole('button',{name:'5 · Submit'}).click();
+    await page.locator('[data-student-nav]').nth(4).click();
     await page.fill('#exit-response','Congress is elected in midterms. A new majority can change what bills and investigations it prioritizes.');
     if(!/4 of 4/.test(await page.textContent('[data-work-progress]')))throw Error('progress denominator failed');
     await page.reload();
-    await page.getByRole('button',{name:'5 · Submit'}).click();
+    await page.locator('[data-student-nav]').nth(4).click();
     if(!(await page.inputValue('#exit-response')).includes('Congress is elected'))throw Error('autosave failed after reload');
     await page.click('#gather-work');
     await page.waitForFunction(()=>document.getElementById('copy-preview').value.includes('#BHV|'));
