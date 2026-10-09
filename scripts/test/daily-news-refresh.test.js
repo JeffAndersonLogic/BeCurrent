@@ -63,7 +63,18 @@ async function main() {
     url: 'https://example.com/' + i,
     source: sources[i % sources.length]
   }));
-  assert.equal(news.choose(items).length, 5);
+  const picked = news.choose(items);
+  assert.equal(picked.length, 5);
+  assert.ok(picked.some(s => s.category.startsWith('U.S.')));
+  assert.ok(picked.some(s => s.category.startsWith('World')));
+  assert.ok(picked.some(s => /Economy|Technology|Science|Climate/.test(s.category)));
+  assert.match(picked[0].category, /^(U\.S\.|World)/);
+  assert.equal(news.acceptableArticle('Verstappen on sprint pole after qualifying',
+    'https://www.bbc.co.uk/sport/formula1/articles/example'), false);
+  assert.throws(() => news.choose(items.map(s => ({
+    ...s, title: 'Football manager reacts to Premier League news',
+    url: 'https://www.bbc.co.uk/sport/football/articles/c123'
+  }))), /Safety stop/);
   assert.throws(() => news.choose(items.slice(0, 4)), /Safety stop/);
   assert.match(news.localDate(), /^\d{4}-\d{2}-\d{2}$/);
   console.log('PASS daily-news-refresh: publisher domains, RSS fallback, date validation, diversity and safety stop');
