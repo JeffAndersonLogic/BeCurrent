@@ -26,7 +26,7 @@ const FEEDS = [
 ];
 const MAX_AGE_HOURS = 60;
 
-const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe|formula one|formula 1|premier league|football club|man city|manchester united|sprint pole|verstappen|grand prix)\b/i;
+const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe|formula one|formula 1|premier league|football club|man city|manchester united|sprint pole|verstappen|grand prix|lethal injection|failed execution|execution attempt|death row)\b/i;
 function acceptableArticle(title, url) {
   try {
     const pathname = new URL(url).pathname;
@@ -239,7 +239,11 @@ function score(a) {
   const beat = storyCategory(a);
   const classroomWeight = /^U\.S\./.test(beat) || /^World/.test(beat) ? 24
     : /Economy|Technology|Science|Climate/.test(beat) ? 15 : -14;
-  return a.source.priority * 10 + classroomWeight - ageHours / 3;
+  // Prioritize consequential civic and international events over niche
+  // sensational/crime stories that are less suitable as a shared 9th-grade Lead.
+  const major = /\bnobel peace prize\b|\bsupreme court\b|\bpresidential election\b|\belection result\b|\bceasefire\b|\bpeace agreement\b|\bmajor hurricane\b|\bclimate summit\b|\bcongress\b|\bgovernment shutdown\b/i.test(a.title) ? 35 : 0;
+  const nicheCrime = /\bmurder\b|\bexecution\b|\bhomicide\b|\bcrime\b/i.test(a.title) ? -25 : 0;
+  return a.source.priority * 10 + classroomWeight + major + nicheCrime - ageHours / 3;
 }
 function choose(candidates) {
   const sorted = [...candidates].filter(s => acceptableArticle(s.title, s.url))
