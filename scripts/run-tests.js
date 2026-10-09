@@ -34,6 +34,7 @@ const W = '\x1b[1m', D = '\x1b[2m', X = '\x1b[0m';
 const SUITES = {
   offline: [
     ['scripts/validate.js', 'structure, capture wiring, image integrity'],
+    ['scripts/test/daily-news-refresh.test.js', 'news: publisher dates, approved links, RSS fallback and safety stop'],
     ['scripts/test/weeks-reproducible.test.js', 'generated weeks match their content modules'],
     ['scripts/test/iran-unit.test.js', 'Iran: eight topics, 30 filings, gather/record contract'],
     ['scripts/test/video-first.test.js', 'midterms video-first: teacher/student modes and Canvas record integrity'],
