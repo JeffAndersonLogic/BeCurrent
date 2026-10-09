@@ -38,7 +38,9 @@
     "hooks:install": "git config core.hooksPath .githooks && echo \"pre-push hook active: npm test runs before every push\"",
     "prepare": "git config core.hooksPath .githooks || true",
     "build:video-first": "node scripts/build-video-first.js",
-    "check:video-first": "node scripts/build-video-first.js --check"
+    "check:video-first": "node scripts/build-video-first.js --check",
+    "build:control-room": "node scripts/build-control-room.js",
+    "check:control-room": "node scripts/build-control-room.js --check"
   },
   "devDependencies": {
     "playwright": "^1.49.0"
