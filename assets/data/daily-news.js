@@ -1,49 +1,48 @@
-/* BeCurrent daily news desk.
-   Hand-edited or automation-refreshed. One small file drives the homepage briefing,
-   the Announcements board lead, and The Desk. Refresh the reporting here; do not put
-   student writing in this file. This is the single current-news layer. */
+/* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: '2026-10-09',
+  reviewed: "2026-10-09",
   lead: {
-    category: 'World / Nobel Peace Prize',
-    headline: 'Human rights jurist Navi Pillay wins the 2026 Nobel Peace Prize',
-    dek: 'The Nobel committee honored South African-born jurist Navi Pillay for her work defending human rights and international law. Her career includes fighting apartheid and investigating alleged abuses during conflicts. The award raises a question for students: how can international law help hold powerful people and governments accountable?',
-    source: 'Associated Press',
-    published: 'October 9, 2026',
-    url: 'https://apnews.com/article/f60744c07df969e50e9e69786fdb7de1'
+    category: "Current Events",
+    headline: "Verstappen on sprint pole after another settings issue",
+    dek: "Red Bull's Max Verstappen beats Mercedes driver George Russell to sprint pole at the Singapore Grand Prix.",
+    source: "BBC News",
+    published: "October 9, 2026",
+    url: "https://www.bbc.co.uk/sport/formula1/articles/ck62y7jz1qqro?at_medium=RSS&at_campaign=rss",
+    image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/World_Map_Blank.svg",
+    imageCredit: "Wikimedia Commons"
   },
   wire: [
     {
-      category: 'Indiana / Education',
-      headline: 'Indianapolis schools consider changes to charter partnerships',
-      dek: 'Indianapolis Public Schools is considering partnership changes but says no terminations have been announced for this school year.',
-      source: 'Axios Indianapolis',
-      published: 'October 7, 2026',
-      url: 'https://www.axios.com/local/indianapolis/2026/10/07/ips-plans-to-cancel-charter-school-agreements-innovation-network'
+      category: "Current Events",
+      headline: "Lib Dem MP quits frontbench job over Ed Davey's leadership",
+      dek: "Deputy party leader Daisy Cooper says \"the vast majority of our MPs support Ed... and are furious at this distraction.\"",
+      source: "BBC News",
+      published: "October 9, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cw4g13j4mdxjo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: 'U.S. / Immigration',
-      headline: 'New York mayor calls for ICE operations to stop after federal officer shoots man',
-      dek: 'The mayor criticized the shooting during an attempted arrest. Federal officials say the man endangered officers. Their accounts and responses are central to the developing story.',
-      source: 'Associated Press',
-      published: 'October 9, 2026',
-      url: 'https://apnews.com/article/e3b5d3e000f4803d3bda8c6de93f1c5b'
+      category: "Economy",
+      headline: "Ex-Deutsche Bank trader jailed for rigging rates has conviction overturned",
+      dek: "The Court of Appeal quashes the conviction of Christian Bittar, a former Deutsche Bank trader jailed in 2018.",
+      source: "BBC News",
+      published: "October 9, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cqgkvj10k6lno?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: 'Economy / Energy',
-      headline: 'U.S. stocks edge higher as oil prices remain unsettled',
-      dek: 'Markets rose modestly Friday, while uncertainty about the war with Iran continued to affect oil prices and borrowing costs.',
-      source: 'Associated Press',
-      published: 'October 9, 2026',
-      url: 'https://apnews.com/article/5d0f953dbf96febb0690c1aef23fa8a9'
+      category: "Current Events",
+      headline: "Widdecombe suspect had 'particular hostility to Reform', court told",
+      dek: "Kerry is charged with the murder of the 78-year-old former Conservative minister and Reform UK spokeswoman.",
+      source: "BBC News",
+      published: "October 9, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cmkgknz19z7po?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: 'Sports / Government',
-      headline: 'Trump says baseball star Roger Clemens will receive Medal of Freedom',
-      dek: 'The president announced the honor for the seven-time Cy Young Award winner, whose Hall of Fame case has long prompted debate over suspected steroid use.',
-      source: 'Associated Press',
-      published: 'October 8, 2026',
-      url: 'https://apnews.com/article/2eaf5ec5a1a31e0e37ec82c0f65764aa'
+      category: "Current Events",
+      headline: "I've got my own questions on Man City case - Carrick",
+      dek: "Manchester United boss Michael Carrick says he was personally affected by the Manchester City case which has seen the club found guilty of breaching Premier League financial rules and still has questions about the matter.",
+      source: "BBC News",
+      published: "October 9, 2026",
+      url: "https://www.bbc.co.uk/sport/football/articles/ck5ynv45lymdo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
