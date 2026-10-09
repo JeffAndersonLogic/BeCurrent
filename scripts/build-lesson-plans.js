@@ -527,6 +527,8 @@ emit(path.join('docs', 'lesson-plans', 'the-desk.md'),
 
 files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
+  // Pilot video-first units carry the complete run of show in their teacher view.
+  if (unit.meta.renderer === 'video-first') return;
   emit(path.join('docs', 'lesson-plans', `${unit.meta.unitKey}.md`), renderPlan(unit));
 });
 
