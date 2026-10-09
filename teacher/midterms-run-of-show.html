@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="BeCurrent teacher-only classroom cockpit for Who Has the Power? Block 1.">
+<title>Who Has the Power? · Control Room | BeCurrent</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/teacher-control-room.css?v=20261009">
+</head>
+<body data-role="cockpit">
+<a class="skip" href="#main">Skip to classroom controls</a>
+<header class="shellbar"><div class="inner">
+<a class="wordmark" href="../index.html" aria-label="BeCurrent home">BeCurrent</a>
+<span class="divide" aria-hidden="true"></span>
+<span class="descriptor">Teacher Control Room</span>
+<nav aria-label="Teacher navigation"><a href="index.html">Course hub</a><a href="../midterms/index.html">Unit map</a><a href="../daily/index.html">The Desk</a></nav>
+</div></header>
+<main id="main" class="outer">
+ <div class="cockpit-intro">
+  <div>
+   <p class="eyebrow">WHO HAS THE POWER? / 2026 MIDTERMS</p>
+   <h1>The Election Nobody Understands</h1>
+   <p>One 90-minute class. The Desk first, then a shared video-led investigation. Your teacher cues change with each phase.</p>
+  </div>
+  <div class="class-actions">
+    <a class="btn ghost" href="../midterms/block-01.html" target="_blank" rel="noopener noreferrer">Student view ↗</a>
+    <a class="btn" href="midterms-projector.html" id="open-projector" target="_blank" rel="noopener noreferrer">Open projector ↗</a>
+  </div>
+ </div>
+ <section class="runline" aria-labelledby="run-heading">
+  <div class="runline-head"><strong id="run-heading">Run of show</strong><span class="mini">Choose a phase to jump ahead · 90 minutes</span></div>
+  <nav id="phase-nav" class="phase-strip" aria-label="Lesson run of show"></nav>
+ </section>
+ <div class="cockpit-grid">
+  <section class="theater" aria-label="Current presentation preview">
+   <div class="theater-scene" aria-live="polite">
+     <div>
+      <p class="eyebrow" id="scene-eyebrow"></p>
+      <h2 id="scene-title"></h2>
+      <p class="desc" id="scene-description"></p>
+      <a id="scene-action" class="scene-cta" target="_blank" rel="noopener noreferrer" hidden><span aria-hidden="true">↗</span><span id="scene-action-text"></span></a>
+     </div>
+     <div class="scene-footer"><span id="scene-footer-label"></span><span id="scene-footer-number"></span></div>
+   </div>
+   <div class="transport" aria-label="Slide navigation">
+     <div class="transport-left">
+       <button class="btn ghost slim" id="teacher-prev" type="button">← Previous</button>
+       <span class="number" id="teacher-count" aria-live="polite">1 / 7</span>
+       <button class="btn slim" id="teacher-next" type="button">Next →</button>
+     </div>
+     <a class="btn quiet slim" href="../midterms/block-01.html" target="_blank" rel="noopener noreferrer">Open student activity ↗</a>
+   </div>
+   <div class="timerline" aria-label="Phase timer">
+     <span class="kicker">Phase timer</span>
+     <span class="clock" id="timer-clock" aria-live="off">00:00</span>
+     <span class="pace" id="timer-pace">Ready</span>
+     <span class="mini" id="timer-target">Target: 25 minutes</span>
+     <button class="btn ghost slim" type="button" id="timer-toggle">Start</button>
+     <button class="btn ghost slim" type="button" id="timer-reset">Reset</button>
+   </div>
+  </section>
+  <aside class="intel" aria-label="Teacher Intelligence">
+    <div class="intel-header">
+      <p class="eyebrow">TEACHER INTELLIGENCE</p>
+      <h2 id="intel-title">The Desk</h2>
+      <p id="intel-phase"></p>
+    </div>
+    <div class="intel-body">
+      <section class="intel-cue"><b>LAND / Essential understanding</b><p id="intel-land"></p></section>
+      <section class="intel-cue"><b>ASK / One good question</b><p id="intel-ask"></p></section>
+      <section class="intel-cue listening"><b>LISTEN FOR / Evidence of learning</b><p id="intel-listen"></p></section>
+      <section class="intel-cue"><b>PROTECT / Must happen</b><p id="intel-protect"></p></section>
+      <section class="intel-cue cut"><b>CUT / If time runs short</b><p id="intel-cut"></p></section>
+    </div>
+  </aside>
+ </div>
+ <div class="support-zone">
+  <section>
+    <p class="eyebrow">YOUR TEACHING MOVE</p>
+    <h3>Exactly what to do next</h3>
+    <div class="instructions"><p id="intel-move"></p></div>
+    <details class="teacher-optional">
+      <summary>How the two screens stay aligned</summary>
+      <p class="intel-note">Keep the Control Room on your computer and open <strong>Projector</strong> in a second browser tab or window on the same computer. Advancing either window updates the other through browser storage. Different devices are not synchronized. Teacher guidance is shown only in the Control Room.</p>
+    </details>
+    <details class="teacher-optional">
+      <summary>What happens to student work?</summary>
+      <p class="intel-note">The existing student page autosaves locally on each Chromebook. Students gather their answers and submit in Canvas Text Entry. This teacher page does not collect student answers or make Canvas assignments.</p>
+    </details>
+  </section>
+  <section>
+    <p class="eyebrow">TEACHER FIELD NOTES</p>
+    <h3>Where did we leave off?</h3>
+    <p>Keep a quick record of what worked, what needs reteaching, or where you stopped.</p>
+    <label for="teacher-notes" class="mini">Private to this browser profile, not transmitted or shared with students.</label>
+    <textarea id="teacher-notes" placeholder="What students understood, where you stopped, or what to revisit..."></textarea>
+    <p id="notes-status" class="save-state" aria-live="polite">Notes are saved only on this device.</p>
+    <div class="tools">
+      <a class="btn ghost slim" href="../daily/index.html" target="_blank" rel="noopener noreferrer">The Desk ↗</a>
+      <a class="btn ghost slim" href="../midterms/block-01.html" target="_blank" rel="noopener noreferrer">Student lesson ↗</a>
+    </div>
+  </section>
+ </div>
+ <p class="footline">BeCurrent / Classroom intelligence, not a student dashboard. No student data is collected here. The lesson content drives both the teacher preview and the note-free projector.</p>
+</main>
+<footer class="footer">BeCurrent Control Room · Midterms Block 1 Pilot · October 2026</footer>
+<script src="data/midterms-block-01.js?v=20261009"></script>
+<script src="../assets/js/teacher-control-room.js?v=20261009"></script>
+</body></html>
