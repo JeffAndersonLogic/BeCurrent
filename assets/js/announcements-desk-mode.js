@@ -36,11 +36,21 @@
     var meta = slide.querySelector('.lead-meta');
     var media = slide.querySelector('.lead-media');
     var kicker = slide.querySelector('.board-kicker');
+    var credit = slide.querySelector('.lead-photo-credit');
 
     if (kicker) kicker.textContent = 'Today’s Lead · ' + (lead.category || 'News');
     if (headline) headline.textContent = lead.headline;
     if (dek) dek.textContent = lead.dek || '';
     if (media && lead.image) media.style.backgroundImage = 'url("' + String(lead.image).replace(/"/g, '') + '")';
+    if (credit) {
+      if (lead.imageCredit) {
+        credit.textContent = lead.imageCredit;
+        credit.href = lead.imageCreditUrl || lead.url || '#';
+        credit.hidden = false;
+      } else {
+        credit.hidden = true;
+      }
+    }
     if (meta) {
       meta.textContent = [lead.source, lead.published].filter(Boolean).join(' · ');
       if (lead.url) {
