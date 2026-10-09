@@ -69,6 +69,18 @@ async function main() {
   assert.ok(picked.some(s => s.category.startsWith('World')));
   assert.ok(picked.some(s => /Economy|Technology|Science|Climate/.test(s.category)));
   assert.match(picked[0].category, /^(U\.S\.|World)/);
+  assert.equal(news.acceptableArticle('Christa Pike walking after failed execution',
+    'https://www.newsnationnow.com/crime/execution-attempt/'), false);
+  const significant = news.choose([
+    ...items.filter(s => !/Congress/i.test(s.title)),
+    { title: 'Navi Pillay wins Nobel Peace Prize for international law',
+      url: 'https://www.bbc.com/news/articles/cnobel', source: { name: 'BBC News', priority: 4, beat: 'World / International' },
+      published: yesterday, seen: yesterday },
+    { title: 'States enact new election security guidelines before voting',
+      url: 'https://www.newsnationnow.com/us/voting-guidelines', source: { name: 'NewsNation', priority: 4, beat: 'U.S. / National' },
+      published: yesterday, seen: yesterday }
+  ]);
+  assert.match(significant[0].title, /Nobel Peace Prize/);
   assert.equal(news.acceptableArticle('Verstappen on sprint pole after qualifying',
     'https://www.bbc.co.uk/sport/formula1/articles/example'), false);
   assert.throws(() => news.choose(items.map(s => ({
