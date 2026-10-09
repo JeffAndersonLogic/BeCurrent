@@ -19,6 +19,39 @@
       el.rel='noopener';
     });
 
+    // The large newsroom hero and the shared Desk Lead are one story.
+    // Never keep an old investigation headline or background image in this slot.
+    const hero=document.querySelector('[data-daily-hero]');
+    const kicker=document.querySelector('[data-daily-lead-kicker]');
+    const credit=document.querySelector('[data-daily-image-credit]');
+    function trustedPhoto(value){
+      try {
+        const url=new URL(String(value||''));
+        const domains=['wikimedia.org','bbci.co.uk','bbci.com','bbc.co.uk','bbc.com',
+          'reuters.com','apnews.com','newsnationnow.com','wp.com'];
+        if(url.protocol!=='https:'||!/^(?:[^.]+\.)*[^.]+\.[^.]+$/.test(url.hostname))return '';
+        if(!domains.some(domain=>url.hostname===domain||url.hostname.endsWith('.'+domain)))return '';
+        if(/World_Map_Blank\.svg/i.test(url.pathname))return '';
+        return url.href;
+      } catch(_){return '';}
+    }
+    const photo=trustedPhoto(lead.image);
+    if(hero){
+      hero.dataset.hasPhoto=photo?'true':'false';
+      hero.style.backgroundImage=photo?'url('+JSON.stringify(photo)+')':'';
+    }
+    if(credit){
+      if(photo&&lead.imageCredit){
+        credit.textContent=lead.imageCredit;
+        credit.href=lead.imageCreditUrl||lead.url||photo;
+        credit.hidden=false;
+      }else{
+        credit.hidden=true;
+        credit.removeAttribute('href');
+      }
+    }
+    if(kicker)kicker.textContent='Today’s top story'+(lead.category?' · '+lead.category:'');
+
     const leadLink=document.querySelector('[data-daily-lead-link]');
     const leadTitle=document.querySelector('[data-daily-lead-title]');
     const leadDek=document.querySelector('[data-daily-lead-dek]');
@@ -53,6 +86,7 @@
       if(outdated)el.setAttribute('role','status');
     });
     if(outdated){
+      if(kicker)kicker.textContent='Refresh delayed · Last reviewed '+(data.reviewed||'unknown');
       const headline=document.querySelector('.home-briefing h2');
       if(headline)headline.textContent='News refresh delayed. Check article dates before using these stories.';
     }
