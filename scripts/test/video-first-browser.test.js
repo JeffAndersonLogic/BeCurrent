@@ -26,6 +26,7 @@ function serve(){return new Promise(resolve=>{
   const {server,port}=await serve();
   const browser=await chromium.launch(process.env.PW_CHROME?{executablePath:process.env.PW_CHROME}:{});
   const page=await browser.newPage();
+  page.setDefaultTimeout(8000);
   const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   try{
@@ -45,7 +46,6 @@ function serve(){return new Promise(resolve=>{
     await page.selectOption('#sort-5','Both');
     await page.click('#check-sort');
     if(!/5 of 5 correct/.test(await page.textContent('#sort-feedback')))throw Error('sort scoring failed');
-    await page.fill('#evidence-response','Americans elect a new House and some senators, but not the president.');
     await page.getByRole('button',{name:'3 · 2026'}).click();
     await page.fill('#report-response','The news reports primary results, but November winners were not settled.');
     await page.getByRole('button',{name:'4 · Decide'}).click();
