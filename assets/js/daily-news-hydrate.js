@@ -41,9 +41,21 @@
       if(dek)dek.textContent=item.dek||'Open the reporting and decide what actually changed.';
     });
 
+    // An outage must never be presented to a classroom as today's verified news.
+    const dateIsValid=/^\d{4}-\d{2}-\d{2}$/.test(data.reviewed||'');
+    const reviewedAt=dateIsValid?new Date(data.reviewed+'T12:00:00'):null;
+    const outdated=!reviewedAt||!Number.isFinite(reviewedAt.getTime())||
+      Date.now()-reviewedAt.getTime()>48*3600000;
     document.querySelectorAll('[data-daily-reviewed]').forEach(el=>{
-      if(data.reviewed)el.textContent=`Daily desk reviewed ${data.reviewed}`;
+      el.textContent=outdated
+        ? 'News refresh delayed · Last reviewed '+(data.reviewed||'unknown')
+        : 'Daily desk reviewed '+data.reviewed;
+      if(outdated)el.setAttribute('role','status');
     });
+    if(outdated){
+      const headline=document.querySelector('.home-briefing h2');
+      if(headline)headline.textContent='News refresh delayed. Check article dates before using these stories.';
+    }
   }
 
   const fresh=document.createElement('script');
