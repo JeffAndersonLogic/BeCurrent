@@ -14,6 +14,15 @@ const SOURCES = [
   { domain: 'newsnationnow.com', name: 'NewsNation', priority: 2 }
 ];
 
+const FEEDS = [
+  { url: 'https://feeds.bbci.co.uk/news/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
+  { url: 'https://feeds.bbci.co.uk/news/world/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
+  { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
+  { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3 },
+  { url: 'https://www.newsnationnow.com/feed/', domain: 'newsnationnow.com', name: 'NewsNation', priority: 2 }
+];
+const MAX_AGE_HOURS = 60;
+
 const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe)\b/i;
 const FALLBACK_IMAGES = {
   'U.S. / Democracy': 'https://commons.wikimedia.org/wiki/Special:Redirect/file/United_States_Capitol_west_front_edit2.jpg',
@@ -68,16 +77,99 @@ function similar(a, b) {
 function validUrl(url, expectedDomain) {
   try {
     const u = new URL(url);
-    return u.protocol === 'https:' && (u.hostname === expectedDomain || u.hostname.endsWith('.' + expectedDomain));
+    const domains = expectedDomain === 'bbc.com' || expectedDomain === 'bbc.co.uk'
+      ? ['bbc.com', 'bbc.co.uk'] : [expectedDomain];
+    return u.protocol === 'https:' && domains.some(d => u.hostname === d || u.hostname.endsWith('.' + d));
   } catch {
     return false;
   }
 }
 
+async function fetchPage(url, accept) {
+  let lastError;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 12000);
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal, redirect: 'follow',
+        headers: { 'user-agent': 'BeCurrent educational news refresher', accept: accept || '*/*' }
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + url);
+      return res;
+    } catch (err) {
+      lastError = err;
+      if (attempt === 0) await new Promise(done => setTimeout(done, 1000));
+    } finally { clearTimeout(timer); }
+  }
+  throw lastError;
+}
 async function fetchJson(url) {
-  const res = await fetch(url, { headers: { 'user-agent': 'BeCurrent/1.0 educational-news-refresh' } });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  const res = await fetchPage(url, 'application/json');
   return res.json();
+}
+function recent(date, now = new Date()) {
+  return date instanceof Date && Number.isFinite(date.getTime()) &&
+    date.getTime() <= now.getTime() + 5 * 60000 &&
+    now.getTime() - date.getTime() <= MAX_AGE_HOURS * 3600000;
+}
+function stripMarkup(value) {
+  return String(value || '').replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
+    .replace(/<[^>]*>/g, ' ').replace(/&#(x[0-9a-f]+|\d+);/gi, (_, raw) => {
+      const point = raw[0].toLowerCase() === 'x' ? parseInt(raw.slice(1), 16) : parseInt(raw, 10);
+      return point > 0 && point <= 0x10ffff ? String.fromCodePoint(point) : '';
+    }).replace(/&amp;/g, '&').replace(/&quot;/g, '"')
+    .replace(/&apos;|&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+function rssTag(item, name) {
+  const match = item.match(new RegExp('<' + name + '(?:\\s[^>]*)?>([\\s\\S]*?)<\\/' + name + '>', 'i'));
+  return match ? stripMarkup(match[1]) : '';
+}
+async function discoverFeed(source) {
+  const res = await fetchPage(source.url, 'application/rss+xml, application/xml, text/xml');
+  const xml = await res.text();
+  if (!/<rss[\s>]/i.test(xml)) throw new Error('Invalid RSS feed');
+  return (xml.match(/<item(?:\s[^>]*)?>[\s\S]*?<\/item>/gi) || []).map(item => ({
+    title: rssTag(item, 'title'),
+    url: rssTag(item, 'link'),
+    dek: rssTag(item, 'description').slice(0, 300),
+    published: new Date(rssTag(item, 'pubDate')),
+    source,
+    fromFeed: true
+  })).filter(a => a.title.length >= 20 && a.title.length <= 180 &&
+    !EXCLUDE.test(a.title) && validUrl(a.url, source.domain) && recent(a.published));
+}
+function publisherDate(html) {
+  const metas = html.match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of metas) {
+    if (!/(?:article:published_time|datePublished|pubdate|publish-date)/i.test(tag)) continue;
+    const match = tag.match(/\bcontent=["']([^"']+)["']/i);
+    if (match && recent(new Date(match[1]))) return new Date(match[1]);
+  }
+  const jsonDate = html.match(/["']datePublished["']\s*:\s*["']([^"']+)["']/i);
+  if (jsonDate && recent(new Date(jsonDate[1]))) return new Date(jsonDate[1]);
+  return null;
+}
+function publisherSummary(html) {
+  const metas = html.match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of metas) {
+    if (!/(?:name|property)=["'](?:description|og:description)["']/i.test(tag)) continue;
+    const match = tag.match(/\bcontent=["']([^"']+)["']/i);
+    if (match) return stripMarkup(match[1]).slice(0, 300);
+  }
+  return '';
+}
+async function verifyArticle(article) {
+  const res = await fetchPage(article.url, 'text/html');
+  if (!validUrl(res.url, article.source.domain)) return null;
+  if (!(res.headers.get('content-type') || '').includes('html')) return null;
+  const html = (await res.text()).slice(0, 600000);
+  // GDELT's 'seendate' is discovery time, not publication time. Never
+  // display it as the outlet's publication date.
+  const published = article.fromFeed ? article.published : publisherDate(html);
+  if (!recent(published)) return null;
+  return { ...article, url: res.url, published,
+    dek: publisherSummary(html) || article.dek || '' };
 }
 
 async function discover(source) {
@@ -85,7 +177,7 @@ async function discover(source) {
     query: `domainis:${source.domain}`,
     mode: 'artlist',
     maxrecords: '35',
-    timespan: '36h',
+    timespan: '60h',
     sort: 'datedesc',
     format: 'json'
   });
@@ -123,21 +215,20 @@ function score(a) {
 
 function choose(candidates) {
   const sorted = candidates.sort((a, b) => score(b) - score(a));
-  const chosen = [];
-  const sourceCounts = new Map();
-  const categoryCounts = new Map();
-  for (const item of sorted) {
-    if (chosen.some(c => similar(c.title, item.title))) continue;
-    const cat = category(item.title);
-    if ((sourceCounts.get(item.source.name) || 0) >= 2) continue;
-    if ((categoryCounts.get(cat) || 0) >= 2) continue;
-    chosen.push({ ...item, category: cat });
-    sourceCounts.set(item.source.name, (sourceCounts.get(item.source.name) || 0) + 1);
-    categoryCounts.set(cat, (categoryCounts.get(cat) || 0) + 1);
-    if (chosen.length === 5) break;
+  for (const [sourceLimit, categoryLimit] of [[2, 2], [3, 3], [5, 3]]) {
+    const chosen = [], sourceCounts = new Map(), categoryCounts = new Map();
+    for (const item of sorted) {
+      if (chosen.some(c => c.url === item.url || similar(c.title, item.title))) continue;
+      const cat = category(item.title);
+      if ((sourceCounts.get(item.source.name) || 0) >= sourceLimit) continue;
+      if ((categoryCounts.get(cat) || 0) >= categoryLimit) continue;
+      chosen.push({ ...item, category: cat });
+      sourceCounts.set(item.source.name, (sourceCounts.get(item.source.name) || 0) + 1);
+      categoryCounts.set(cat, (categoryCounts.get(cat) || 0) + 1);
+      if (chosen.length === 5) return chosen;
+    }
   }
-  if (chosen.length < 5) throw new Error(`Safety stop: only ${chosen.length} diverse approved-source stories found. Existing daily-news.js left untouched.`);
-  return chosen;
+  throw new Error('Safety stop: fewer than five fresh, verified articles. Existing daily-news.js left untouched.');
 }
 
 function jsString(value) {
@@ -145,36 +236,79 @@ function jsString(value) {
 }
 
 async function main() {
-  const batches = [];
-  for (const source of SOURCES) {
-    try {
-      batches.push(...await discover(source));
-    } catch (err) {
-      console.warn(`Discovery failed for ${source.name} (${source.domain}): ${err.message}`);
+  const jobs = [...FEEDS.map(discoverFeed), ...SOURCES.map(discover)];
+  const results = await Promise.allSettled(jobs);
+  const gathered = [];
+  results.forEach((r, i) => {
+    if (r.status === 'fulfilled') gathered.push(...r.value);
+    else console.warn('Discovery source ' + i + ' failed: ' + r.reason.message);
+  });
+  if (gathered.length < 5) throw new Error('Safety stop: insufficient publisher/index candidates.');
+
+  const unique = new Map();
+  for (const item of gathered) {
+    if (!unique.has(item.url) || (item.fromFeed && !unique.get(item.url).fromFeed)) unique.set(item.url, item);
+  }
+  const candidates = [...unique.values()].sort((a, b) => {
+    const da = a.published || a.seen, db = b.published || b.seen;
+    return (b.source.priority * 10 - (Date.now() - db) / 14400000) -
+           (a.source.priority * 10 - (Date.now() - da) / 14400000);
+  });
+
+  const verified = [];
+  // Verify in small batches. Invalid, blocked or undated pages are excluded.
+  for (let i = 0; i < Math.min(candidates.length, 72) && verified.length < 20; i += 8) {
+    const batch = await Promise.allSettled(candidates.slice(i, i + 8).map(verifyArticle));
+    for (const result of batch) {
+      if (result.status !== 'fulfilled' || !result.value) continue;
+      const item = result.value;
+      if (!verified.some(s => s.url === item.url || similar(s.title, item.title))) verified.push(item);
     }
   }
-  if (batches.length < 5) throw new Error('Safety stop: insufficient approved-source candidates. Existing file left untouched.');
-
-  const stories = choose(batches);
+  const stories = choose(verified);
   const lead = stories[0];
-  const meta = await description(lead.url);
-  const dek = meta || `A major developing story reported by ${lead.source.name}. Open the full report for verified details, evidence and context.`;
-  const image = /^https:\/\//.test(lead.image) ? lead.image : FALLBACK_IMAGES[lead.category] || FALLBACK_IMAGES['Current Events'];
+  const dek = (lead.dek || 'Read the original reporting to identify what happened and why it matters.').slice(0, 320);
+  const image = /^https:\/\/[^"' ]+$/.test(lead.image || '') ? lead.image :
+    FALLBACK_IMAGES[category(lead.title)] || FALLBACK_IMAGES['Current Events'];
   const reviewed = localDate();
-
-  const wire = stories.slice(1).map(s => `    {\n      category: ${jsString(s.category)},\n      headline: ${jsString(s.title)},\n      source: ${jsString(s.source.name)},\n      url: ${jsString(s.url)}\n    }`).join(',\n');
-
-  const output = `/* BeCurrent daily news desk.\n   AUTO-REFRESHED by scripts/refresh-daily-news.js and .github/workflows/daily-news-refresh.yml.\n   Discovery uses GDELT only to locate recent coverage; every published link points directly\n   to an approved BeCurrent news source. If refresh validation fails, this file is not committed. */\nwindow.BECURRENT_DAILY_NEWS = {\n  reviewed: ${jsString(reviewed)},\n  lead: {\n    category: ${jsString(lead.category)},\n    headline: ${jsString(lead.title)},\n    dek: ${jsString(dek)},\n    source: ${jsString(lead.source.name)},\n    published: ${jsString(prettyDate(lead.seen))},\n    url: ${jsString(lead.url)},\n    image: ${jsString(image)},\n    imageCredit: ${jsString(/^https:\/\//.test(lead.image) ? lead.source.name : 'Wikimedia Commons')}\n  },\n  wire: [\n${wire}\n  ]\n};\n`;
-
-  const hostChecks = stories.every(s => SOURCES.some(src => validUrl(s.url, src.domain)));
-  if (!hostChecks || output.includes('javascript:')) throw new Error('Safety stop: source validation failed.');
-
+  const wire = stories.slice(1).map(s => '    {\n' +
+    '      category: ' + jsString(category(s.title)) + ',\n' +
+    '      headline: ' + jsString(s.title) + ',\n' +
+    '      dek: ' + jsString((s.dek || 'Open the original report and examine the evidence.').slice(0, 300)) + ',\n' +
+    '      source: ' + jsString(s.source.name) + ',\n' +
+    '      published: ' + jsString(prettyDate(s.published)) + ',\n' +
+    '      url: ' + jsString(s.url) + '\n    }').join(',\n');
+  const output = [
+    '/* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */',
+    'window.BECURRENT_DAILY_NEWS = {',
+    '  reviewed: ' + jsString(reviewed) + ',',
+    '  lead: {',
+    '    category: ' + jsString(category(lead.title)) + ',',
+    '    headline: ' + jsString(lead.title) + ',',
+    '    dek: ' + jsString(dek) + ',',
+    '    source: ' + jsString(lead.source.name) + ',',
+    '    published: ' + jsString(prettyDate(lead.published)) + ',',
+    '    url: ' + jsString(lead.url) + ',',
+    '    image: ' + jsString(image) + ',',
+    '    imageCredit: ' + jsString(/^https:\/\/[^"' ]+$/.test(lead.image || '') ?
+      lead.source.name : 'Wikimedia Commons'),
+    '  },',
+    '  wire: [',
+    wire,
+    '  ]',
+    '};',
+    ''
+  ].join('\n');
+  if (!stories.every(s => SOURCES.some(src => validUrl(s.url, src.domain)) && recent(s.published))) {
+    throw new Error('Safety stop: output failed publisher or publication-date validation.');
+  }
+  // Write only when the entire selection is valid; failures never partially publish.
   fs.writeFileSync(OUT, output, 'utf8');
-  console.log(`Refreshed ${OUT} for ${reviewed}: ${lead.title}`);
-  for (const s of stories) console.log(`- ${s.source.name} | ${s.category} | ${s.title}`);
+  console.log('Verified refresh for ' + reviewed + ': ' + lead.title);
+  stories.forEach(s => console.log('- ' + s.source.name + ' | ' + prettyDate(s.published) + ' | ' + s.title));
 }
 
-main().catch(err => {
-  console.error(err.stack || err.message);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => { console.error(err.stack || err.message); process.exitCode = 1; });
+}
+module.exports = { validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, localDate };
