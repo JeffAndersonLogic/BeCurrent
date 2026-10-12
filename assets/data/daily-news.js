@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-12",
   lead: {
-    category: "World / Security",
-    headline: "Six Ukrainian energy sites hit by Russia since Trump announced ceasefire, Zelensky says",
-    dek: "Despite the US president announcing energy infrastructure would not be targeted strikes have continued, Ukraine says.",
+    category: "World / Diplomacy",
+    headline: "Why Moscow is staying tight-lipped on Trump's energy ceasefire",
+    dek: "While Ukraine's Volodymyr Zelensky suggests he would sign up to a ceasefire on energy infrastructure, Russia has said little.",
     source: "BBC News",
     published: "October 12, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/fbda/live/375348b0-c659-11f1-8600-efb62b613ab5.jpg",
+    url: "https://www.bbc.co.uk/news/articles/cjx2359qekrdo?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/6601/live/5861b070-c670-11f1-8c1b-356b863d8549.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cjx2359qekrdo?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Diddy taken out of prison and hospitalized for head injury: Reports",
-      dek: "Combs is serving a 50-month sentence at a low-security prison in New Jersey.",
+      headline: "Dan Levy slams Shane Gillis over ‘misogynist’ ‘SNL’ monologue",
+      dek: "Dan Levy wondered how Shane Gillis' monologue was able to air on live TV.",
       source: "NewsNation",
       published: "October 12, 2026",
-      url: "https://www.newsnationnow.com/crime/diddy-out-of-prison-hospitalized-head-injury-reports/"
+      url: "https://www.newsnationnow.com/entertainment-news/dan-levy-shane-gillis-snl-misogyny-monologue/"
     },
     {
-      category: "Climate / Environment",
-      headline: "Storm Rachel batters Southern California, brings flooding to Las Vegas",
-      dek: "Large waves from the post-tropical cyclone battered homes in Long Beach, and brought flooding to parts of Las Vegas near the famed Strip.",
+      category: "Economy",
+      headline: "What are your rights on auto-renew subscriptions?",
+      dek: "Martin has advice for listeners caught out by auto-renewing subscriptions, explaining what rights consumers have and whether there's a way to challenge the renewal or cancel.",
       source: "BBC News",
       published: "October 12, 2026",
-      url: "https://www.bbc.co.uk/news/videos/cmj47n488v47o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/videos/c63dj8gx1jkno?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / Security",
-      headline: "Watch: What could Trump's energy ceasefire mean for Ukraine?",
-      dek: "The BBC's Dan Johnson reports from Kyiv, where Ukrainians face another winter with electricity outages.",
+      headline: "Six Ukrainian energy sites hit by Russia since Trump announced ceasefire, Zelensky says",
+      dek: "Despite the US president announcing energy infrastructure would not be targeted strikes have continued, Ukraine says.",
       source: "BBC News",
       published: "October 12, 2026",
-      url: "https://www.bbc.co.uk/news/videos/crd9321ygqw8o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / International",
-      headline: "Pupil arrested after two teachers shot at French school",
-      dek: "A 14-year-old was detained after the middle-school principal and teacher were injured.",
+      category: "U.S. / Democracy",
+      headline: "Analysis: Trump's global headaches worsen weeks before crucial elections",
+      dek: "US President Donald Trump has had a whirlwind weekend, announcing a diesel deal with Russia and an energy ceasefire between Russia and Ukraine. With the midterms coming up, it looks like Trump is turning overseas for help.",
       source: "BBC News",
       published: "October 12, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm2keg7910gvo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cqgm087rkze2o?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
