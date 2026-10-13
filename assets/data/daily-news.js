@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-12",
+  reviewed: "2026-10-13",
   lead: {
-    category: "World / Diplomacy",
-    headline: "Why Moscow is staying tight-lipped on Trump's energy ceasefire",
-    dek: "While Ukraine's Volodymyr Zelensky suggests he would sign up to a ceasefire on energy infrastructure, Russia has said little.",
-    source: "BBC News",
-    published: "October 12, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cjx2359qekrdo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/6601/live/5861b070-c670-11f1-8c1b-356b863d8549.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cjx2359qekrdo?at_medium=RSS&at_campaign=rss"
+    category: "U.S. / Government",
+    headline: "Iowa Senate candidates prepare to face off in second debate",
+    dek: "The latest Decision Desk HQ polling average shows Turek narrowly leading Hinson, 46.2% to 45.2%.",
+    source: "NewsNation",
+    published: "October 13, 2026",
+    url: "https://www.newsnationnow.com/politics/2026-midterm-elections/iowa-senate-candidates-second-debate/",
+    image: "",
+    imageCredit: "",
+    imageCreditUrl: ""
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Dan Levy slams Shane Gillis over ‘misogynist’ ‘SNL’ monologue",
-      dek: "Dan Levy wondered how Shane Gillis' monologue was able to air on live TV.",
-      source: "NewsNation",
-      published: "October 12, 2026",
-      url: "https://www.newsnationnow.com/entertainment-news/dan-levy-shane-gillis-snl-misogyny-monologue/"
-    },
-    {
-      category: "Economy",
-      headline: "What are your rights on auto-renew subscriptions?",
-      dek: "Martin has advice for listeners caught out by auto-renewing subscriptions, explaining what rights consumers have and whether there's a way to challenge the renewal or cancel.",
-      source: "BBC News",
-      published: "October 12, 2026",
-      url: "https://www.bbc.co.uk/news/videos/c63dj8gx1jkno?at_medium=RSS&at_campaign=rss"
-    },
-    {
       category: "World / Security",
-      headline: "Six Ukrainian energy sites hit by Russia since Trump announced ceasefire, Zelensky says",
-      dek: "Despite the US president announcing energy infrastructure would not be targeted strikes have continued, Ukraine says.",
-      source: "BBC News",
-      published: "October 12, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cvlyd4pdlwkxo?at_medium=RSS&at_campaign=rss"
+      headline: "Social Security's 2027 COLA: What to know ahead of the announcement",
+      dek: "Retirees will find out Wednesday how much their Social Security checks are going up next year.",
+      source: "NewsNation",
+      published: "October 13, 2026",
+      url: "https://www.newsnationnow.com/business/your-money/social-security-2027-cola-announcement/"
     },
     {
-      category: "U.S. / Democracy",
-      headline: "Analysis: Trump's global headaches worsen weeks before crucial elections",
-      dek: "US President Donald Trump has had a whirlwind weekend, announcing a diesel deal with Russia and an energy ceasefire between Russia and Ukraine. With the midterms coming up, it looks like Trump is turning overseas for help.",
+      category: "Technology",
+      headline: "AI researchers smoke because they think cancer will be cured: Palantir CTO",
+      dek: "Shyam Shankar brought up researchers' smoking habits while discussing \"mass psychosis\" and \"social delusion\" surrounding AI.",
+      source: "NewsNation",
+      published: "October 13, 2026",
+      url: "https://www.newsnationnow.com/business/tech/ai/ai-researchers-smoke-cancer-cured-palantir-cto/"
+    },
+    {
+      category: "U.S. / National",
+      headline: "Horrified witnesses recount fatal rollercoaster incident at Six Flags",
+      dek: "Police say preliminary information suggests the man who died at the Georgia amusement park fell from a ride.",
       source: "BBC News",
-      published: "October 12, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cqgm087rkze2o?at_medium=RSS&at_campaign=rss"
+      published: "October 13, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c6n4ejx8x1z7o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "U.S. / Government",
+      headline: "Watch: Inside Katie Zacharia's very brief White House briefing",
+      dek: "The BBC's Sarah Smith reports on the the briefest briefing she has ever seen at the White House. Katie Zacharia took questions from three journalists on her first day on the job.",
+      source: "BBC News",
+      published: "October 13, 2026",
+      url: "https://www.bbc.co.uk/news/videos/cxm235y4l54lo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
