@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-13",
   lead: {
-    category: "U.S. / Government",
-    headline: "Iowa Senate candidates prepare to face off in second debate",
-    dek: "The latest Decision Desk HQ polling average shows Turek narrowly leading Hinson, 46.2% to 45.2%.",
-    source: "NewsNation",
+    category: "World / International",
+    headline: "Saudi coalition strikes fuel depot near Yemen's capital",
+    dek: "The Houthis have warned Saudi Arabia that they will retaliate by targeting the Saudi cities of Riyadh and Dammam.",
+    source: "BBC News",
     published: "October 13, 2026",
-    url: "https://www.newsnationnow.com/politics/2026-midterm-elections/iowa-senate-candidates-second-debate/",
-    image: "",
-    imageCredit: "",
-    imageCreditUrl: ""
+    url: "https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/eff9/live/16b445b0-c720-11f1-a64c-550be9e3c66b.jpg",
+    imageCredit: "Image: BBC News",
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
-      category: "World / Security",
-      headline: "Social Security's 2027 COLA: What to know ahead of the announcement",
-      dek: "Retirees will find out Wednesday how much their Social Security checks are going up next year.",
-      source: "NewsNation",
+      category: "U.S. / National",
+      headline: "Trump ousts Kimberly Guilfoyle as US ambassador to Greece after corruption allegations",
+      dek: "Guilfoyle the allegations of improper conduct are \"false\" and being ambassador was the \"honour of a lifetime\".",
+      source: "BBC News",
       published: "October 13, 2026",
-      url: "https://www.newsnationnow.com/business/your-money/social-security-2027-cola-announcement/"
+      url: "https://www.bbc.co.uk/news/articles/cr5ynplvpg7lo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "Technology",
-      headline: "AI researchers smoke because they think cancer will be cured: Palantir CTO",
-      dek: "Shyam Shankar brought up researchers' smoking habits while discussing \"mass psychosis\" and \"social delusion\" surrounding AI.",
-      source: "NewsNation",
+      category: "Economy",
+      headline: "Argentina targets UK in legal claim over Falklands oil exploration",
+      dek: "The action filed with an international maritime tribunal is the latest development in an escalating row over the Falkland Islands.",
+      source: "BBC News",
       published: "October 13, 2026",
-      url: "https://www.newsnationnow.com/business/tech/ai/ai-researchers-smoke-cancer-cured-palantir-cto/"
+      url: "https://www.bbc.co.uk/news/articles/cmp3g14p3z2ko?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "U.S. / National",
-      headline: "Horrified witnesses recount fatal rollercoaster incident at Six Flags",
-      dek: "Police say preliminary information suggests the man who died at the Georgia amusement park fell from a ride.",
+      headline: "Cornell bans all fraternity parties over gang sex assault allegations",
+      dek: "The school has faced an uproar over how it handled assault allegations brought by a woman known as Jane Doe.",
       source: "BBC News",
       published: "October 13, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c6n4ejx8x1z7o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cw8dzg094zd9o?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "U.S. / Government",
-      headline: "Watch: Inside Katie Zacharia's very brief White House briefing",
-      dek: "The BBC's Sarah Smith reports on the the briefest briefing she has ever seen at the White House. Katie Zacharia took questions from three journalists on her first day on the job.",
+      category: "World / International",
+      headline: "Pope's surgery to remove lump on lung 'concluded successfully', Vatican says",
+      dek: "Pope Leo has said the growth is \"contained\" and had been found \"at a very early stage\".",
       source: "BBC News",
       published: "October 13, 2026",
-      url: "https://www.bbc.co.uk/news/videos/cxm235y4l54lo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/ck1wvd9dvv22o?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
