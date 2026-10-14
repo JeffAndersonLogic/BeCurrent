@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-14",
   lead: {
-    category: "World / International",
-    headline: "Hundreds of thousands of workers on strike across Republic of Ireland",
-    dek: "It comes amidst an an ongoing pay dispute between public sector workers and the Irish government.",
-    source: "BBC News",
+    category: "World / Security",
+    headline: "Protesters removed from Hegseth panel on autonomous warfare",
+    dek: "At least five protesters were removed during Defense Secretary Pete Hegseth's panel on autonomous warfare.",
+    source: "NewsNation",
     published: "October 14, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cjn5vxlrgqn4o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/10bd/live/7b5c9150-c7b8-11f1-bc2e-018d645d8d21.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cjn5vxlrgqn4o?at_medium=RSS&at_campaign=rss"
+    url: "https://www.newsnationnow.com/politics/protesters-removed-hegseth-panel/",
+    image: "",
+    imageCredit: "",
+    imageCreditUrl: ""
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Pope Leo XIV's brother diagnosed with multiple myeloma: Report",
-      dek: "Louis Prevost was reportedly diagnosed with the blood cancer in 2017.",
+      headline: "How will Kimberly Guilfoyle’s departure impact US relations with Greece?",
+      dek: "Greek opposition parties called on the Foreign Ministry to summon Guilfoyle to respond to the allegations.",
       source: "NewsNation",
       published: "October 14, 2026",
-      url: "https://www.newsnationnow.com/health/pope-leo-bother-diagnosed-multiple-myeloma/"
+      url: "https://www.newsnationnow.com/politics/kimberly-guilfoyles-departure-us-greece/"
     },
     {
       category: "Economy",
-      headline: "US inflation rises more than expected - here's what is happening with prices",
-      dek: "The pace of price rises increased to 3.7% in the year to September, driving by higher motor fuel costs.",
+      headline: "'It's rough out here': Americans struggle with rising inflation",
+      dek: "US inflation continues to rise, and this month the jump was above forecasts. Here's how some are surviving.",
       source: "BBC News",
       published: "October 14, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cwy8lx3pg4k2o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/c305649p2d6o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "U.S. / National",
+      headline: "Netflix to lay off 1,000 staff in steepest cuts since 2022",
+      dek: "The cuts equate to around 6% of the streaming giant's total workforce worldwide.",
+      source: "BBC News",
+      published: "October 14, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c6zxj0gzk4x4o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / International",
-      headline: "Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines",
-      dek: "Four years after the attacks, Serhii Kuznetsov appears in court accused of a plot to destroy Russia's gas pipelines to Germany.",
+      headline: "Kenya confirms second Ebola case as relative of country's first victim",
+      dek: "It follows the death last week of a man who had arrived in Kenya after travelling from DR Congo.",
       source: "BBC News",
       published: "October 14, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      category: "World / Security",
-      headline: "Social Security announces COLA for 2027",
-      dek: "The Social Security cost-of-living adjustment for 2027 has been announced.",
-      source: "NewsNation",
-      published: "October 14, 2026",
-      url: "https://www.newsnationnow.com/business/your-money/social-security-cola-2027-3/"
+      url: "https://www.bbc.co.uk/news/articles/cw5yn8rn04ljo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
