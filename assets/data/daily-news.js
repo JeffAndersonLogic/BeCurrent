@@ -3,23 +3,23 @@ window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-15",
   lead: {
     category: "World / Security",
-    headline: "Seven crew missing after drone attack leaves tanker ablaze off Romania's coast",
-    dek: "A search and rescue operation is under way in the Black Sea after the latest attack in the area.",
+    headline: "Russia accuses Ukraine of attacking oil refinery after Zelensky says strikes to resume",
+    dek: "Ukraine's president says a pause on striking energy sites is over following fresh Russian attacks.",
     source: "BBC News",
     published: "October 15, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c60qkgpp592yo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bd7f/live/80f03ac0-c88c-11f1-9a39-31b474234113.jpg",
+    url: "https://www.bbc.co.uk/news/articles/cqwyrnwd9dw1o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9b54/live/4c6fe8b0-c899-11f1-a64c-550be9e3c66b.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c60qkgpp592yo?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cqwyrnwd9dw1o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Scientists hope to solve Mars' moon mystery with historic sample mission",
-      dek: "Japan plans to launch the spacecraft Oct. 19, with arrival at Mars expected in August 2027.",
+      headline: "Nolan Wells group chats reveal suspicion, confusion after disappearance",
+      dek: "The report includes messages sent after he disappeared.",
       source: "NewsNation",
       published: "October 15, 2026",
-      url: "https://www.newsnationnow.com/space/scientists-mars-moon-mystery-sample-mission/"
+      url: "https://www.newsnationnow.com/crime/nolan-wells-group-chats-reveal-suspicion-confusion-after-disappearance/"
     },
     {
       category: "Economy",
@@ -30,20 +30,20 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.bbc.co.uk/news/articles/cqzjx448vxkgo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "U.S. / Government",
-      headline: "Kamala Harris undecided on 2028 presidential run",
-      dek: "While still two years out from the next presidential election, Harris is seen as an early favorite to serve as Democrats' nominee, recent polls suggest.",
-      source: "NewsNation",
-      published: "October 15, 2026",
-      url: "https://www.newsnationnow.com/politics/kamala-harris-undecided-2028-presidential-run/"
-    },
-    {
       category: "World / International",
-      headline: "At least 33 pupils and teacher killed after school roof collapses in Pakistan",
-      dek: "Rescue officials fear more people are buried under the debris in the north-western city of Peshawar.",
+      headline: "School headscarf ban sparks rare protests in Azerbaijan and row with Turkey",
+      dek: "Protests have taken place over the rules which have seen pupils wearing hijabs turned away from schools.",
       source: "BBC News",
       published: "October 15, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cked326llddgo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cwly0g2r4k3po?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "U.S. / National",
+      headline: "Meghan and Harry get cold shoulder — few fans show up at Nottingham event",
+      dek: "Meghan and Harry's old celebrity circle is keeping its distance.",
+      source: "NewsNation",
+      published: "October 15, 2026",
+      url: "https://www.newsnationnow.com/entertainment-news/meghan-harry-nottingham-britain-freeze-fans/"
     }
   ]
 };
