@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-15",
+  reviewed: "2026-10-16",
   lead: {
     category: "World / Security",
-    headline: "Russia accuses Ukraine of attacking oil refinery after Zelensky says strikes to resume",
-    dek: "Ukraine's president says a pause on striking energy sites is over following fresh Russian attacks.",
+    headline: "Zelensky says Ukraine has right to defend itself after Trump calls latest strikes a 'disgrace'",
+    dek: "EU leaders rally around Ukraine's president after new criticism from Donald Trump, who says Zelensky is \"more difficult to work with than Putin\".",
     source: "BBC News",
-    published: "October 15, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cqwyrnwd9dw1o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/9b54/live/4c6fe8b0-c899-11f1-a64c-550be9e3c66b.jpg",
+    published: "October 16, 2026",
+    url: "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/32ee/live/b7238230-c96a-11f1-a6e6-417671ef62cb.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cqwyrnwd9dw1o?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Nolan Wells group chats reveal suspicion, confusion after disappearance",
-      dek: "The report includes messages sent after he disappeared.",
+      headline: "Vatican releases first photos of Pope Leo XIV after surgery, cancer diagnosis",
+      dek: "The Vatican shared pictures Friday of the pope celebrating Mass in a makeshift chapel set up at Gemelli Hospital in Rome.",
       source: "NewsNation",
-      published: "October 15, 2026",
-      url: "https://www.newsnationnow.com/crime/nolan-wells-group-chats-reveal-suspicion-confusion-after-disappearance/"
+      published: "October 16, 2026",
+      url: "https://www.newsnationnow.com/religion/vatican-photos-pope-leo-xiv-surgery-cancer/"
     },
     {
       category: "Economy",
-      headline: "AI giant Anthropic woos potential investors ahead of stock market debut",
-      dek: "It comes as some investors have become concerned about the amount of money being spent on AI infrastructure.",
+      headline: "Banks expect to be hit with higher taxes in Budget",
+      dek: "Senior banking executives have told the BBC they expect to be \"on the menu\" in the chancellor's Budget tax later this month.",
       source: "BBC News",
-      published: "October 15, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cqzjx448vxkgo?at_medium=RSS&at_campaign=rss"
+      published: "October 16, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c32l4k2xdvrzo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / International",
-      headline: "School headscarf ban sparks rare protests in Azerbaijan and row with Turkey",
-      dek: "Protests have taken place over the rules which have seen pupils wearing hijabs turned away from schools.",
+      headline: "Albanian protests turn violent: What we know",
+      dek: "Albania's capital Tirana has seen months of protests from an anti-government \"Flamingo\" movement, but what started on Tuesday this week was on a different scale.",
       source: "BBC News",
-      published: "October 15, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cwly0g2r4k3po?at_medium=RSS&at_campaign=rss"
+      published: "October 16, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cqdjv90d1jpko?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "U.S. / National",
-      headline: "Meghan and Harry get cold shoulder — few fans show up at Nottingham event",
-      dek: "Meghan and Harry's old celebrity circle is keeping its distance.",
-      source: "NewsNation",
-      published: "October 15, 2026",
-      url: "https://www.newsnationnow.com/entertainment-news/meghan-harry-nottingham-britain-freeze-fans/"
+      category: "World / Security",
+      headline: "Palestinians and US journalist injured by Israeli settlers in West Bank harvest attack",
+      dek: "The BBC sees masked settlers attack Palestinians trying to harvest olives, amid a surge in similar incidents.",
+      source: "BBC News",
+      published: "October 16, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c65ynk7212vqo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
