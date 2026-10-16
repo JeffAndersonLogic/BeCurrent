@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-16",
   lead: {
-    category: "World / Security",
-    headline: "Zelensky says Ukraine has right to defend itself after Trump calls latest strikes a 'disgrace'",
-    dek: "EU leaders rally around Ukraine's president after new criticism from Donald Trump, who says Zelensky is \"more difficult to work with than Putin\".",
-    source: "BBC News",
+    category: "U.S. / National",
+    headline: "Bones found at Philly 'Horror House' could be ‘one step closer’ to answers",
+    dek: "The bones will undergo forensic testing in order to find if the remains are human.",
+    source: "NewsNation",
     published: "October 16, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/32ee/live/b7238230-c96a-11f1-a6e6-417671ef62cb.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&at_campaign=rss"
+    url: "https://www.newsnationnow.com/us-news/northeast/bones-found-philadelphia-horror-house/",
+    image: "",
+    imageCredit: "",
+    imageCreditUrl: ""
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Vatican releases first photos of Pope Leo XIV after surgery, cancer diagnosis",
-      dek: "The Vatican shared pictures Friday of the pope celebrating Mass in a makeshift chapel set up at Gemelli Hospital in Rome.",
-      source: "NewsNation",
+      category: "World / Security",
+      headline: "Inside Ukrainian offensive pushing Russia back on front line where Starlink plays a key role",
+      dek: "The BBC joins Ukraine's Operation Vivaldi as it regains crucial territory in the Donbas, but optimism has been dampened by souring relations with President Trump.",
+      source: "BBC News",
       published: "October 16, 2026",
-      url: "https://www.newsnationnow.com/religion/vatican-photos-pope-leo-xiv-surgery-cancer/"
+      url: "https://www.bbc.co.uk/news/articles/cvx284w16z1po?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Economy",
@@ -30,20 +30,20 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.bbc.co.uk/news/articles/c32l4k2xdvrzo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / International",
-      headline: "Albanian protests turn violent: What we know",
-      dek: "Albania's capital Tirana has seen months of protests from an anti-government \"Flamingo\" movement, but what started on Tuesday this week was on a different scale.",
+      category: "World / Security",
+      headline: "Zelensky says Ukraine has right to defend itself after Trump calls latest strikes a 'disgrace'",
+      dek: "EU leaders rally around Ukraine's president after new criticism from Donald Trump, who says Zelensky is \"more difficult to work with than Putin\".",
       source: "BBC News",
       published: "October 16, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cqdjv90d1jpko?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / Security",
-      headline: "Palestinians and US journalist injured by Israeli settlers in West Bank harvest attack",
-      dek: "The BBC sees masked settlers attack Palestinians trying to harvest olives, amid a surge in similar incidents.",
-      source: "BBC News",
+      category: "U.S. / National",
+      headline: "King Charles may pay ex-Prince Andrew a $1.3M allowance: Royal biographer",
+      dek: "In 2025, the British monarch stripped Andrew of his remaining titles for his alleged ties to Jeffrey Epstein.",
+      source: "NewsNation",
       published: "October 16, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c65ynk7212vqo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.newsnationnow.com/entertainment-news/king-charles-prince-andrew-allowance-royal-lodge/"
     }
   ]
 };
