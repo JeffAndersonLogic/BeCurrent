@@ -1,13 +1,13 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-16",
+  reviewed: "2026-10-19",
   lead: {
     category: "U.S. / National",
-    headline: "Bones found at Philly 'Horror House' could be ‘one step closer’ to answers",
-    dek: "The bones will undergo forensic testing in order to find if the remains are human.",
+    headline: "The MAGA Majority: The GOP's new wave of House hopefuls",
+    dek: "Through its \"MAGA Majority\" program, the NRCC is backing contenders in battleground districts.",
     source: "NewsNation",
-    published: "October 16, 2026",
-    url: "https://www.newsnationnow.com/us-news/northeast/bones-found-philadelphia-horror-house/",
+    published: "October 19, 2026",
+    url: "https://www.newsnationnow.com/politics/2026-midterm-elections/maga-majority-gops-new-wave-house-hopefuls/",
     image: "",
     imageCredit: "",
     imageCreditUrl: ""
@@ -15,35 +15,35 @@ window.BECURRENT_DAILY_NEWS = {
   wire: [
     {
       category: "World / Security",
-      headline: "Inside Ukrainian offensive pushing Russia back on front line where Starlink plays a key role",
-      dek: "The BBC joins Ukraine's Operation Vivaldi as it regains crucial territory in the Donbas, but optimism has been dampened by souring relations with President Trump.",
+      headline: "Warning signs over threats to Australian politicians were rising before MP hit by car",
+      dek: "The apparent attack on MP Helen Haines suggests the worst fears of politicians and public figures appear to have been realised.",
       source: "BBC News",
-      published: "October 16, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cvx284w16z1po?at_medium=RSS&at_campaign=rss"
+      published: "October 19, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cq398rk4p3exo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "Economy",
-      headline: "Banks expect to be hit with higher taxes in Budget",
-      dek: "Senior banking executives have told the BBC they expect to be \"on the menu\" in the chancellor's Budget tax later this month.",
+      category: "Technology",
+      headline: "Ex-OpenAI worker accused of planting device had Saudi support says court filing",
+      dek: "The Saudi government did not immediately respond to BBC requests for comment.",
       source: "BBC News",
-      published: "October 16, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c32l4k2xdvrzo?at_medium=RSS&at_campaign=rss"
+      published: "October 19, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c6gel2dlyxvyo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / Security",
-      headline: "Zelensky says Ukraine has right to defend itself after Trump calls latest strikes a 'disgrace'",
-      dek: "EU leaders rally around Ukraine's president after new criticism from Donald Trump, who says Zelensky is \"more difficult to work with than Putin\".",
+      headline: "Houthi missile strike on Yemen camp kills 50 security recruits, local authorities say",
+      dek: "Three missiles hit a camp in government-controlled Shabwa province that officials say was being used as a training centre for new recruits.",
       source: "BBC News",
-      published: "October 16, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c58jz174w89ro?at_medium=RSS&at_campaign=rss"
+      published: "October 19, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "U.S. / National",
-      headline: "King Charles may pay ex-Prince Andrew a $1.3M allowance: Royal biographer",
-      dek: "In 2025, the British monarch stripped Andrew of his remaining titles for his alleged ties to Jeffrey Epstein.",
-      source: "NewsNation",
-      published: "October 16, 2026",
-      url: "https://www.newsnationnow.com/entertainment-news/king-charles-prince-andrew-allowance-royal-lodge/"
+      category: "World / International",
+      headline: "Kenya cult leader who told parents to starve children guilty of 191 murders",
+      dek: "Self-proclaimed pastor Paul Mackenzie was found guilty of 191 murder charges - all but one of them children.",
+      source: "BBC News",
+      published: "October 19, 2026",
+      url: "https://www.bbc.co.uk/news/articles/ckd6d2l3dz4xo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
