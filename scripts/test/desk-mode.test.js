@@ -57,7 +57,7 @@ function check(name,pass,detail){
   const {server,port}=await serve();
   const executablePath=process.env.PW_CHROME;
   const browser=await chromium.launch(executablePath?{executablePath}:{});
-  const page=await browser.newPage();
+  const page=await browser.newPage({timezoneId:'America/New_York'});
   const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
 

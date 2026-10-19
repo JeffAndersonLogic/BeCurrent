@@ -37,7 +37,7 @@ const SUITES = {
     ['scripts/test/daily-news-refresh.test.js', 'news: publisher dates, approved links, RSS fallback and safety stop'],
     ['scripts/test/weeks-reproducible.test.js', 'generated weeks match their content modules'],
     ['scripts/test/iran-unit.test.js', 'Iran: eight topics, 30 filings, gather/record contract'],
-    ['scripts/test/video-first.test.js', 'midterms video-first: teacher/student modes and Canvas record integrity'],
+    ['scripts/test/video-first.test.js', 'midterms: continuous student lessons and Canvas record integrity'],
     ['scripts/test/control-room.test.js', 'teacher Control Room: lesson timing, public projector, hub integrity'],
     ['scripts/test/video-block.test.js', 'video path through a brief, both states'],
     ['scripts/test/canvas-paragraphs.test.js', 'Canvas blank-line round trip, both course sentinels'],
@@ -49,7 +49,7 @@ const SUITES = {
     ['scripts/test/brief-gather.test.js', 'the brief\'s own route to Canvas: formatting, footer, parser round trip'],
     ['scripts/test/desk.test.js', 'the Desk: dated sheet, reload, weekly gather, parser round trip'],
     ['scripts/test/desk-mode.test.js', 'Lead Mode: scheduled UI reduction and three-record Canvas filing'],
-    ['scripts/test/video-first-browser.test.js', 'midterms video-first: modes, autosave, and Canvas gathering'],
+    ['scripts/test/video-first-browser.test.js', 'midterms: lesson flow, target layout, autosave, and Canvas gathering'],
     ['scripts/test/control-room-browser.test.js', 'teacher Control Room: synchronized projector, timer and saved notes']
   ]
 };
