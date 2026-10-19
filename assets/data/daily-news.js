@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-19",
   lead: {
-    category: "U.S. / National",
-    headline: "The MAGA Majority: The GOP's new wave of House hopefuls",
-    dek: "Through its \"MAGA Majority\" program, the NRCC is backing contenders in battleground districts.",
+    category: "U.S. / Democracy",
+    headline: "The richest members of Congress in 2026",
+    dek: "Congress' wealthiest members, according to the most recently published live net worth estimates tracked by Quiver Quantitative.",
     source: "NewsNation",
     published: "October 19, 2026",
-    url: "https://www.newsnationnow.com/politics/2026-midterm-elections/maga-majority-gops-new-wave-house-hopefuls/",
+    url: "https://www.newsnationnow.com/politics/2026-midterm-elections/richest-members-of-congress-2026-midterms/",
     image: "",
     imageCredit: "",
     imageCreditUrl: ""
   },
   wire: [
     {
-      category: "World / Security",
-      headline: "Warning signs over threats to Australian politicians were rising before MP hit by car",
-      dek: "The apparent attack on MP Helen Haines suggests the worst fears of politicians and public figures appear to have been realised.",
+      category: "World / International",
+      headline: "Ukrainians dying because US restricting intelligence sharing, Zelensky adviser tells BBC",
+      dek: "Serhii Beskrestnov says there has not been enough time to warn people about incoming missile attacks.",
       source: "BBC News",
       published: "October 19, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cq398rk4p3exo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cmj47yx572z5o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Technology",
@@ -31,19 +31,19 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "World / Security",
-      headline: "Houthi missile strike on Yemen camp kills 50 security recruits, local authorities say",
-      dek: "Three missiles hit a camp in government-controlled Shabwa province that officials say was being used as a training centre for new recruits.",
+      headline: "Deadly fire at Canada military base moved a kilometre 'in 30 to 60 seconds'",
+      dek: "The blaze that killed four men and injured dozens of others spread with alarming speed, accounts suggest.",
       source: "BBC News",
       published: "October 19, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/ckj0ly6qnp1lo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / International",
-      headline: "Kenya cult leader who told parents to starve children guilty of 191 murders",
-      dek: "Self-proclaimed pastor Paul Mackenzie was found guilty of 191 murder charges - all but one of them children.",
+      category: "World / Security",
+      headline: "What we know so far about deadly fire at Canadian military base",
+      dek: "At least four people are confirmed to have died after a huge fire swept through the base.",
       source: "BBC News",
       published: "October 19, 2026",
-      url: "https://www.bbc.co.uk/news/articles/ckd6d2l3dz4xo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cmgelrq8x92do?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
