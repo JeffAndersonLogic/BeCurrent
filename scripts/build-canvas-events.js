@@ -88,6 +88,40 @@ const ASSIGNMENTS = {
   IR8: { name: 'IR8 - Final Causation Argument', points: 30 }
 };
 
+// ── The class calendar ───────────────────────────────────────────────────────
+//
+// When a topic is taught, when its assignment is due, and the exact title of the
+// Canvas event that already holds the day. Like ASSIGNMENTS this is the LMS layer:
+// dates and Canvas titles are scheduling, not course content. A topic with an
+// entry here gets its date printed on the paste document and its due date
+// written into the event and the assignment, so a student reads the same
+// deadline in both places. A topic without one keeps the generic wording.
+//
+// `event` is the title the event already carries in Canvas, so the document
+// tells you which event to open rather than inventing a new name for it. Due is
+// the start of the next class period (green days), Jeff's rule for this unit.
+const CALENDAR = {
+  WP1: { date: '2026-10-20', due: '2026-10-22', event: 'CE - Midterms 1 - Intro to the Midterm Elections' },
+  WP2: { date: '2026-10-22', due: '2026-10-26', event: 'CE - Midterms 2 - The Battle for Congress' },
+  WP3: { date: '2026-10-26', due: '2026-10-28', event: 'CE - Midterms 3 - The Power to Stop a President' },
+  WP4: { date: '2026-10-28', due: '2026-10-30', event: 'CE - Midterms 4 - The Fight for Your Vote' },
+  WP5: { date: '2026-11-05', due: '2026-11-09', event: 'CE - Midterms 6 - Election Results' }
+};
+
+// "2026-10-22" -> "Thursday, October 22". Plain-date arithmetic, no timezone.
+function longDate(iso) {
+  const [y, mo, d] = String(iso).split('-').map(Number);
+  const day = new Date(y, mo - 1, d);
+  const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+  return `${DAYS[day.getDay()]}, ${MONTHS[mo - 1]} ${d}`;
+}
+
+function eventTitleFor(code, topic) {
+  return (CALENDAR[code] && CALENDAR[code].event) || `${PREFIX} - ${code} - ${objectName(topic.title)}`;
+}
+
 const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
 
 // Titles carry <em> for the accent word. Canvas object names take the words.
@@ -165,7 +199,8 @@ function eventTable(unit, topic, code) {
   const responseName = hasReverseHistory ? 'filing' : 'question';
   const assignmentCell = assignment
     ? `                <p>[INSERT ASSIGNMENT LINK]</p>
-                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong>${videoFirst ? ' to copy the investigation, with the manual-copy box as a backup' : ' and <strong>Copy to Clipboard</strong> at the end of it'}. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>`
+                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong>${videoFirst ? ' to copy the investigation, with the manual-copy box as a backup' : ' and <strong>Copy to Clipboard</strong> at the end of it'}. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>${CALENDAR[code] && CALENDAR[code].due ? `
+                <p><strong>Due:</strong> the start of class on ${longDate(CALENDAR[code].due)}.</p>` : ''}`
     : `                <p><strong>Nothing to submit.</strong> This topic is done on paper in class. There is no Canvas assignment for it and nothing to hand in.</p>`;
 
   const rows = [
@@ -195,6 +230,7 @@ ${rows.join('\n')}
 function assignmentBody(unit, topic, code) {
   if(unit.meta.renderer==='video-first'){
     const pageUrl=artifactUrl(unit,topic);
+    const due=CALENDAR[code]&&CALENDAR[code].due;
     return `<h2>${esc(objectName(unit.meta.unit))}, Topic ${topic.n}: ${esc(objectName(topic.title))}</h2>
 <p>${esc(plain(topic.overview))}</p>
 <h3>Step 1 &mdash; Open the civics investigation</h3>
@@ -203,8 +239,9 @@ function assignmentBody(unit, topic, code) {
 <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. ${topic.resultsNotebook?'Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.':'Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.'}</p>
 <ol>${topic.questions.filter(q=>!q.optional).map(q=>'<li>'+esc(plain(q.text))+'</li>').join('')}</ol>
 <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit before lunch</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+<h3>Step 3 &mdash; Gather and submit${due ? '' : ' before lunch'}</h3>
+<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>${due ? `
+<p>Aim to submit before lunch. <strong>Due: the start of class on ${longDate(due)}.</strong></p>` : ''}
 <h3>Success criteria</h3><ol>${topic.successCriteria.map(c=>'<li>'+esc(plain(c.criteria))+'</li>').join('')}</ol>
 <h3>Scoring / ${topic.rubric.reduce((n,r)=>n+r.points,0)} points</h3><ul>${topic.rubric.map(r=>'<li><strong>'+esc(r.label)+' ('+r.points+')</strong>: '+esc(r.description)+'</li>').join('')}</ul>
 ${topic.afterElection?'<p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>':''}
@@ -301,7 +338,11 @@ function renderAssignments(unit) {
     out.push('');
     out.push(`**Assignment name, Canvas and PowerSchool, character for character:** \`${a.name}\`  `);
     out.push(`**Points:** ${a.points}  `);
-    out.push(`**Calendar event it belongs to:** \`${PREFIX} - ${c} - ${objectName(t.title)}\`  `);
+    out.push(`**Calendar event it belongs to:** \`${eventTitleFor(c, t)}\`  `);
+    if (CALENDAR[c]) {
+      out.push(`**Taught:** ${longDate(CALENDAR[c].date)}  `);
+      out.push(`**Due date in Canvas:** ${longDate(CALENDAR[c].due)}, set to the start time of your class period  `);
+    }
     out.push('');
     out.push('Paste the block below through the RCE **`</>`** HTML editor, never the visual one.');
     out.push('');
@@ -586,12 +627,16 @@ function renderUnit(unit) {
 
   out.push('## The events at a glance');
   out.push('');
-  out.push('| Event title | Assignment to link | Submits |');
-  out.push('|---|---|---|');
+  const dated = topics.some(t => CALENDAR[code + t.n]);
+  out.push(dated ? '| Date | Event title | Assignment to link | Due |' : '| Event title | Assignment to link | Submits |');
+  out.push(dated ? '|---|---|---|---|' : '|---|---|---|');
   topics.forEach(t => {
     const c = code + t.n;
     const a = ASSIGNMENTS[c];
-    out.push(`| \`${PREFIX} - ${c} - ${objectName(t.title)}\` | ${a ? `\`${a.name}\`` : 'none, on paper' } | ${a ? 'Yes' : 'No'} |`);
+    const cal = CALENDAR[c];
+    out.push(dated
+      ? `| ${cal ? longDate(cal.date) : ''} | \`${eventTitleFor(c, t)}\` | ${a ? `\`${a.name}\`` : 'none, on paper' } | ${cal && a ? longDate(cal.due) : ''} |`
+      : `| \`${eventTitleFor(c, t)}\` | ${a ? `\`${a.name}\`` : 'none, on paper' } | ${a ? 'Yes' : 'No'} |`);
   });
   out.push('');
   out.push('---');
@@ -600,11 +645,11 @@ function renderUnit(unit) {
   topics.forEach((t, i) => {
     const c = code + t.n;
     const a = ASSIGNMENTS[c];
-    const title = objectName(t.title);
 
-    out.push(`## ${PREFIX} - ${c} - ${title}`);
+    out.push(`## ${eventTitleFor(c, t)}`);
     out.push('');
-    out.push(`**Event title:** \`${PREFIX} - ${c} - ${title}\`  `);
+    if (CALENDAR[c]) out.push(`**Class date:** ${longDate(CALENDAR[c].date)}  `);
+    out.push(`**Event title:** \`${eventTitleFor(c, t)}\`  `);
     out.push(`**Assignment to link:** ${a ? `\`${a.name}\`` : '_none, this topic is done on paper_'}  `);
     out.push(`**Source:** \`scripts/lib/unit-content/${m.unitKey}.js\`, ${plain(t.topic)}  `);
     out.push('');
@@ -672,8 +717,8 @@ function renderUnitHtml(unit) {
   const sections = topics.map(t => {
     const c = code + t.n;
     const a = ASSIGNMENTS[c];
-    const title = objectName(t.title);
-    const eventTitle = `${PREFIX} - ${c} - ${title}`;
+    const eventTitle = eventTitleFor(c, t);
+    const cal = CALENDAR[c];
     const table = eventTable(unit, t, c);
     const withheld = (t.withholdTitles || []).length;
 
@@ -685,10 +730,11 @@ function renderUnitHtml(unit) {
     ${t.subtitle ? `<p class="event-sub">${esc(plain(t.subtitle))}</p>` : ''}
   </div>
 
-  <dl class="meta">
+  <dl class="meta">${cal ? `
+    <dt>Class date</dt><dd>${esc(longDate(cal.date))}</dd>` : ''}
     <dt>Event title</dt><dd><code>${esc(eventTitle)}</code></dd>
     <dt>Assignment to link</dt><dd>${a
-      ? `<code>${esc(a.name)}</code> <span class="muted">&middot; ${a.points} points</span>`
+      ? `<code>${esc(a.name)}</code> <span class="muted">&middot; ${a.points} points${cal ? ` &middot; due ${esc(longDate(cal.due))}, start of class` : ''}</span>`
       : '<span class="muted">none, this topic is done on paper</span>'}</dd>
   </dl>
 ${withheld ? `

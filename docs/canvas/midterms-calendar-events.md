@@ -29,19 +29,20 @@ Every link below points at the live GitHub Pages build:
 
 ## The events at a glance
 
-| Event title | Assignment to link | Submits |
-|---|---|---|
-| `CE - WP1 - The Election Nobody Understands` | `WP1 - What Midterms Change` | Yes |
-| `CE - WP2 - The Battle for Congress` | `WP2 - The Battle for Congress` | Yes |
-| `CE - WP3 - The Power to Stop a President` | `WP3 - Checks and Governing` | Yes |
-| `CE - WP4 - The Fight for Your Vote` | `WP4 - Election Messages` | Yes |
-| `CE - WP5 - Election Night: What Happens Next?` | `WP5 - Results and Impact` | Yes |
+| Date | Event title | Assignment to link | Due |
+|---|---|---|---|
+| Tuesday, October 20 | `CE - Midterms 1 - Intro to the Midterm Elections` | `WP1 - What Midterms Change` | Thursday, October 22 |
+| Thursday, October 22 | `CE - Midterms 2 - The Battle for Congress` | `WP2 - The Battle for Congress` | Monday, October 26 |
+| Monday, October 26 | `CE - Midterms 3 - The Power to Stop a President` | `WP3 - Checks and Governing` | Wednesday, October 28 |
+| Wednesday, October 28 | `CE - Midterms 4 - The Fight for Your Vote` | `WP4 - Election Messages` | Friday, October 30 |
+| Thursday, November 5 | `CE - Midterms 6 - Election Results` | `WP5 - Results and Impact` | Monday, November 9 |
 
 ---
 
-## CE - WP1 - The Election Nobody Understands
+## CE - Midterms 1 - Intro to the Midterm Elections
 
-**Event title:** `CE - WP1 - The Election Nobody Understands`  
+**Class date:** Tuesday, October 20  
+**Event title:** `CE - Midterms 1 - Intro to the Midterm Elections`  
 **Assignment to link:** `WP1 - What Midterms Change`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 1  
 
@@ -96,6 +97,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+                <p><strong>Due:</strong> the start of class on Thursday, October 22.</p>
             </td>
         </tr>
     </tbody>
@@ -104,9 +106,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - WP2 - The Battle for Congress
+## CE - Midterms 2 - The Battle for Congress
 
-**Event title:** `CE - WP2 - The Battle for Congress`  
+**Class date:** Thursday, October 22  
+**Event title:** `CE - Midterms 2 - The Battle for Congress`  
 **Assignment to link:** `WP2 - The Battle for Congress`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 2  
 
@@ -161,6 +164,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+                <p><strong>Due:</strong> the start of class on Monday, October 26.</p>
             </td>
         </tr>
     </tbody>
@@ -169,9 +173,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - WP3 - The Power to Stop a President
+## CE - Midterms 3 - The Power to Stop a President
 
-**Event title:** `CE - WP3 - The Power to Stop a President`  
+**Class date:** Monday, October 26  
+**Event title:** `CE - Midterms 3 - The Power to Stop a President`  
 **Assignment to link:** `WP3 - Checks and Governing`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 3  
 
@@ -226,6 +231,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+                <p><strong>Due:</strong> the start of class on Wednesday, October 28.</p>
             </td>
         </tr>
     </tbody>
@@ -234,9 +240,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - WP4 - The Fight for Your Vote
+## CE - Midterms 4 - The Fight for Your Vote
 
-**Event title:** `CE - WP4 - The Fight for Your Vote`  
+**Class date:** Wednesday, October 28  
+**Event title:** `CE - Midterms 4 - The Fight for Your Vote`  
 **Assignment to link:** `WP4 - Election Messages`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 4  
 
@@ -291,6 +298,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+                <p><strong>Due:</strong> the start of class on Friday, October 30.</p>
             </td>
         </tr>
     </tbody>
@@ -299,9 +307,10 @@ Every link below points at the live GitHub Pages build:
 
 ---
 
-## CE - WP5 - Election Night: What Happens Next?
+## CE - Midterms 6 - Election Results
 
-**Event title:** `CE - WP5 - Election Night: What Happens Next?`  
+**Class date:** Thursday, November 5  
+**Event title:** `CE - Midterms 6 - Election Results`  
 **Assignment to link:** `WP5 - Results and Impact`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 5  
 
@@ -356,6 +365,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+                <p><strong>Due:</strong> the start of class on Monday, November 9.</p>
             </td>
         </tr>
     </tbody>
