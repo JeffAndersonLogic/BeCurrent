@@ -27,7 +27,7 @@ const R = '\x1b[31m', G = '\x1b[32m', D = '\x1b[2m', X = '\x1b[0m';
 console.log('\n  Generated weeks reproduce from their content modules\n');
 
 let failed = false;
-for (const builder of ['scripts/build-weeks.js', 'scripts/build-units.js',
+for (const builder of ['scripts/build-midterms.js', 'scripts/build-weeks.js', 'scripts/build-units.js',
   'scripts/build-iran.js', 'scripts/build-desk.js', 'scripts/build-index.js', 'scripts/build-lesson-plans.js',
   'scripts/build-announcements.js', 'scripts/build-canvas-events.js']) {
   const run = spawnSync(process.execPath, [builder, '--check'], { cwd: ROOT, encoding: 'utf8' });

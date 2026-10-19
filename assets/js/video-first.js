@@ -16,10 +16,15 @@
   const nav=[...document.querySelectorAll('[data-student-nav]')];
   const slots=[...document.querySelectorAll('[data-slot]')];
   const sorts=[...document.querySelectorAll('[data-sort]')];
+  const evidence=[...document.querySelectorAll('[data-evidence]')];
   let teacherIndex=0, studentIndex=0;
   const storage={
     get(key){try{return localStorage.getItem(prefix+key)}catch(_){return null}},
-    put(key,v){try{localStorage.setItem(prefix+key,v)}catch(_){}}
+    put(key,v){try{localStorage.setItem(prefix+key,v)}catch(_){
+      let warning=document.getElementById('storage-warning');
+      if(!warning){warning=document.createElement('p');warning.id='storage-warning';warning.className='notice';student.prepend(warning);}
+      warning.textContent='Browser saving is blocked. Keep this tab open and gather your work into Canvas before leaving.';
+    }}
   };
   const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   const modeButtons=[...document.querySelectorAll('[data-view-mode]')];
@@ -104,6 +109,18 @@
     input.checked=storage.get('poll-'+input.name)===input.value;
     input.addEventListener('change',()=>storage.put('poll-'+input.name,input.value));
   });
+  evidence.forEach(el=>{
+    el.value=storage.get('evidence-'+el.dataset.evidence)||'';
+    const save=()=>{storage.put('evidence-'+el.dataset.evidence,el.value);updateProgress()};
+    el.addEventListener('input',save);el.addEventListener('change',save);
+  });
+  const slider=document.getElementById('seat-slider');
+  if(slider){
+    const draw=()=>{const a=Number(slider.value),b=435-a;
+      document.getElementById('seat-status').textContent='Group A: '+a+' · Group B: '+b+'. '+(a>=218?'Group A':'Group B')+' has the majority in this constructed model.';
+      document.getElementById('seat-fill').style.width=(100*a/435)+'%';
+    };slider.addEventListener('input',draw);draw();
+  }
   function sortText(){
     return sorts.map(el=>{
       const q=el.dataset.prompt||el.dataset.sort;
@@ -112,8 +129,8 @@
     }).join('\n');
   }
   function updateProgress(){
-    const done=slots.filter(el=>el.value.trim()).length+(sorts.length&&sorts.every(el=>el.value)?1:0);
-    const total=slots.length+(sorts.length?1:0);
+    const done=slots.filter(el=>el.value.trim()).length+(sorts.length&&sorts.every(el=>el.value)?1:0)+(evidence.length&&evidence.every(el=>el.value.trim())?1:0);
+    const total=slots.length+(sorts.length?1:0)+(evidence.length?1:0);
     document.querySelectorAll('[data-work-progress]').forEach(el=>el.textContent=done+' of '+total+' investigation parts started');
   }
   renderStudent();
@@ -123,22 +140,25 @@
     let correct=0;
     sorts.forEach(el=>{if(el.value===el.dataset.correct)correct++});
     const f=document.getElementById('sort-feedback');
-    if(f)f.textContent=correct+' of '+sorts.length+' correct. '+(correct===sorts.length?'You have it.':'Use the House/Senate fact cards and try again. This is practice, not a grade.');
+    if(f)f.textContent=correct+' of '+sorts.length+' correct. '+(correct===sorts.length?'You have it.':'Use the background and sources, then try again. This is practice, not a grade.');
   });
 
   function gather(){
     const records=[];
     let ord=1;
-    const sortPrompt='Sort each statement about Congress into House, Senate, or Both.';
-    records.push({ord:String(ord++).padStart(2,'0'),id:'chamber-sort',label:'Congress: House and Senate sort',prompt:sortPrompt,text:sortText(),confidence:''});
+    const sortPrompt=body.dataset.sortPrompt||'Sort each statement about Congress into House, Senate, or Both.';
+    if(sorts.length)records.push({ord:String(ord++).padStart(2,'0'),id:'chamber-sort',label:body.dataset.sortLabel||'Congress: House and Senate sort',prompt:sortPrompt,text:sorts.some(el=>el.value)?sortText():'',confidence:''});
+    if(evidence.length)records.push({ord:String(ord++).padStart(2,'0'),id:'results-notebook',label:'2026 results notebook',prompt:'Record sourced outcomes, stages, check time, baseline, and uncertainty.',text:evidence.some(el=>el.value.trim())?evidence.map(el=>el.dataset.evidence+': '+(el.value.trim()||'(not recorded)')).join('\n'):'',confidence:''});
     slots.forEach(el=>{
       records.push({ord:String(ord++).padStart(2,'0'),id:el.dataset.slot,label:el.dataset.label||el.dataset.slot,prompt:el.dataset.prompt||'',text:el.value||'',confidence:''});
     });
-    const head='<h1>BeCurrent | Who Has the Power? | Topic 1</h1><p>The Election Nobody Understands</p>';
+    const heading='BeCurrent | Who Has the Power? | Topic '+(body.dataset.topicNumber||'1');
+    const title=body.dataset.topicTitle||'The Election Nobody Understands';
+    const head='<h1>'+bcEsc(heading)+'</h1><p>'+bcEsc(title)+'</p>';
     const items=records.map(r=>'<h2>'+bcEsc(r.label)+'</h2><p>Prompt: '+bcEsc(r.prompt)+'</p><p>My response:</p>'+bcParagraphsHtml(r.text,'')).join('');
     const footer=bcRecordFooterHtml(bcRecordManifest(records,{topic:lesson,expected:records.length,isoStamp:new Date().toISOString()}));
     const html=head+items+footer;
-    const plain='BeCurrent | Who Has the Power? | Topic 1\nThe Election Nobody Understands\n\n'+records.map(r=>r.label+'\nPrompt: '+r.prompt+'\nMy response:\n'+r.text).join('\n\n')+'\n\n'+bcRecordManifest(records,{topic:lesson,expected:records.length,isoStamp:new Date().toISOString()}).join('\n');
+    const plain=heading+'\n'+title+'\n\n'+records.map(r=>r.label+'\nPrompt: '+r.prompt+'\nMy response:\n'+r.text).join('\n\n')+'\n\n'+bcRecordManifest(records,{topic:lesson,expected:records.length,isoStamp:new Date().toISOString()}).join('\n');
     return {html,plain,records};
   }
   const gatherBtn=document.getElementById('gather-work');
@@ -161,7 +181,7 @@
         copied=true;
       }
     }catch(_){copied=false}
-    const blanks=payload.records.filter(r=>!r.text.trim()||r.text.includes('(not selected)')).length;
+    const blanks=payload.records.filter(r=>!r.text.trim()||r.text.includes('(not selected)')||r.text.includes('(not recorded)')).length;
     if(status){
       status.classList.toggle('error',!copied);
       status.textContent=(copied?'Copied. ':'Clipboard unavailable; use Select all, then Copy in the box below. ')

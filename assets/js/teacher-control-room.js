@@ -16,7 +16,7 @@ const phases=lesson.phases;
 const key=lesson.storageKey;
 const phaseKey=key+'-phase';
 const timerKey=key+'-timer';
-const notesKey=key+'-notes';
+let notesKey=key+'-notes';
 const $=id=>document.getElementById(id);
 function text(id,value){const el=$(id);if(el)el.textContent=String(value==null?'':value)}
 function safeRead(k){try{return localStorage.getItem(k)}catch(_){return null}}
@@ -39,6 +39,11 @@ function setAction(anchorId,textId,action){
   a.hidden=false;
   text(textId,action.label||'Open resource');
 }
+function visual(id,screen){
+  const node=$(id);if(!node)return;node.replaceChildren();
+  if(screen.bullets){const ul=document.createElement('ul');for(const str of screen.bullets){const li=document.createElement('li');li.textContent=str;ul.append(li)}node.append(ul)}
+  if(screen.cards){const grid=document.createElement('div');grid.className='screen-cards';for(const c of screen.cards){const card=document.createElement('article'),h=document.createElement('h3'),p=document.createElement('p');h.textContent=c.title;p.textContent=c.text;card.append(h,p);grid.append(card)}node.append(grid)}
+}
 function go(next,source){
   const n=Math.max(0,Math.min(phases.length-1,Math.trunc(Number(next))));
   if(!Number.isFinite(n)||n===index)return;
@@ -54,7 +59,7 @@ if(navigation&&role==='cockpit'){
     btn.type='button';
     btn.className='phase-button';
     btn.setAttribute('data-phase-index',String(i));
-    const t=document.createElement('span');t.className='phase-time';t.textContent=p.time+' min';
+    const t=document.createElement('span');t.className='phase-time';t.textContent=p.time+(p.kind==='break'||p.kind==='news'?'':' min');
     const n=document.createElement('span');n.className='phase-name';n.textContent=p.label;
     btn.append(t,n);
     btn.addEventListener('click',()=>go(i,'control'));
@@ -66,6 +71,7 @@ function renderCockpit(){
   text('scene-eyebrow',p.screen.eyebrow);
   text('scene-title',p.screen.title);
   text('scene-description',p.screen.description);
+  visual('scene-visual',p.screen);
   text('scene-footer-label',p.label+' / '+p.time+' min');
   text('scene-footer-number',String(index+1).padStart(2,'0')+' / '+String(phases.length).padStart(2,'0'));
   text('teacher-count',(index+1)+' / '+phases.length);
@@ -75,7 +81,9 @@ function renderCockpit(){
   const n=p.intel||{};
   text('intel-land',n.land);text('intel-ask',n.ask);text('intel-listen',n.listenFor);
   text('intel-protect',n.protect);text('intel-cut',n.cut);text('intel-move',n.move);
-  text('timer-target','Target: '+p.minutes+' minutes');
+  text('intel-avoid',n.avoid);text('intel-reteach',n.reteach);
+  text('timer-target',p.kind==='break'?'Lunch is untimed':'Target: '+p.minutes+' minutes');
+  if($('timer-toggle'))$('timer-toggle').disabled=p.kind==='break';
   const prior=$('teacher-prev'),next=$('teacher-next');
   if(prior)prior.disabled=index===0;
   if(next)next.disabled=index===phases.length-1;
@@ -91,8 +99,9 @@ function renderProjector(){
   text('projector-eyebrow',p.screen.eyebrow);
   text('projector-title',p.screen.title);
   text('projector-description',p.screen.description);
+  visual('projector-visual',p.screen);
   text('projector-phase',String(index+1).padStart(2,'0')+' / '+String(phases.length).padStart(2,'0'));
-  text('projector-time',p.time+' min');
+  text('projector-time',p.kind==='break'?'Lunch':p.kind==='news'?'After lunch':p.time+' min');
   setAction('projector-action','projector-action-text',p.screen.action);
   const pct=((p.start+p.minutes)/lesson.totalMinutes)*100;
   const bar=$('projector-progress');if(bar)bar.style.width=Math.max(0,Math.min(100,pct))+'%';
@@ -156,12 +165,19 @@ function displayTimer(){
 if(role==='cockpit'){
   readTimer();
   bind('timer-toggle',()=>{
+    if(phases[index].kind==='break')return;
     if(timer.startedAt!==null){timer.accumulated=elapsed();timer.startedAt=null}
     else timer.startedAt=Date.now();
     persistTimer();displayTimer();
   });
   bind('timer-reset',resetTimer);
   const notes=$('teacher-notes');
+  const section=$('class-section');
+  if(section){
+    section.value=safeRead(key+'-section')||'';
+    if(section.value.trim())notesKey=key+'-notes-'+section.value.trim();
+    section.addEventListener('change',()=>{safeWrite(key+'-section',section.value.trim());notesKey=key+'-notes'+(section.value.trim()?'-'+section.value.trim():'');if(notes)notes.value=safeRead(notesKey)||'';text('notes-status','Loaded notes for this class section on this browser.');});
+  }
   if(notes){
     notes.value=safeRead(notesKey)||'';
     notes.addEventListener('input',()=>{
@@ -169,7 +185,13 @@ if(role==='cockpit'){
       text('notes-status',saved?'Saved on this browser.':'Browser storage blocked. Copy your notes before leaving.');
     });
   }
+  bind('export-notes',()=>{
+    const value=lesson.title+'\nClass: '+(section?section.value:'')+'\nPhase: '+phases[index].label+'\n\n'+(notes?notes.value:'');
+    const url=URL.createObjectURL(new Blob([value],{type:'text/plain'}));const link=document.createElement('a');link.href=url;link.download=lesson.key+'-teaching-notes.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
+  const picker=$('lesson-picker');if(picker)picker.addEventListener('change',()=>{location.href=picker.value});
   window.setInterval(displayTimer,1000);
 }
+bind('projector-fullscreen',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch(_){text('projector-time','Use browser fullscreen')}});
 render();displayTimer();
 })();

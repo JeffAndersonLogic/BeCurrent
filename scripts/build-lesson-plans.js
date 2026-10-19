@@ -61,6 +61,7 @@ function hasOnlineArtifact(topic) {
 }
 
 function artifactLabel(topic) {
+  if(topic.key&&topic.key.startsWith('wp-'))return `Civics investigation, \`${topic.page}\``;
   if (topic.page) return `Reverse History page, \`${topic.page}\``;
   if (topic.sections && topic.sections.length) return `The Brief, \`${briefName(topic)}\``;
   return 'On paper in class, nothing to open';
@@ -70,6 +71,7 @@ function artifactLabel(topic) {
 // asks "where does this go". A topic with no online artifact has no route, and saying
 // so is the point: it stops a paper day being marked missing in the gradebook.
 function canvasRoute(topic) {
+  if(topic.key&&topic.key.startsWith('wp-'))return 'The civics investigation’s Gather All My Work panel: five-item practice and three short responses'+(topic.resultsNotebook?', plus the dated results notebook':'')+'. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.';
   if (!hasOnlineArtifact(topic)) {
     return 'Nothing. This topic is done on paper in class and has no online artifact, '
       + 'so there is no submission to collect and nothing to chase.';
@@ -262,7 +264,7 @@ function renderPlan(unit) {
   out.push('|---|---|---|---|');
   topics.forEach(t => {
     const hasBrief = !!(t.sections && t.sections.length);
-    const artifact = t.page ? 'Reverse History' : (hasBrief ? 'Brief' : 'On paper');
+    const artifact = t.page ? (m.renderer==='video-first'?'Civics investigation':'Reverse History') : (hasBrief ? 'Brief' : 'On paper');
     out.push(`| ${plain(t.topic)} | ${plain(t.title)} | ${artifact} `
       + `| ${(t.learningTargets || []).length} |`);
   });
@@ -271,6 +273,10 @@ function renderPlan(unit) {
     out.push('Each topic tests a different part of the same causal chain. Students begin with');
     out.push('a hypothesis about the current conflict, then revise the weight they give to earlier');
     out.push('turning points before making a ranked causal argument in the final topic.');
+  } else if(m.renderer==='video-first') {
+    out.push('The first four topics establish civics and evidence skills before Election Day.');
+    out.push('The fifth returns after November 3 to interpret sourced results and their possible impact.');
+    out.push('Unit instruction lasts 55 minutes before lunch; CNN10 and daily news follow lunch for 20–25 minutes.');
   } else {
     out.push('Each topic uses the earlier ones. The chain drawn in Topic 1 is what gets checked');
     out.push('against a real document in Topic 4, so they are a sequence rather than a list.');
@@ -527,8 +533,6 @@ emit(path.join('docs', 'lesson-plans', 'the-desk.md'),
 
 files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
-  // Pilot video-first units carry the complete run of show in their teacher view.
-  if (unit.meta.renderer === 'video-first') return;
   emit(path.join('docs', 'lesson-plans', `${unit.meta.unitKey}.md`), renderPlan(unit));
 });
 

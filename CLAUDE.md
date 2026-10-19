@@ -161,6 +161,21 @@ push. That keeps the record of what it would have caught.
 The student entry point is `index.html`, and it is generated. Student work reaches
 the teacher through **Canvas only**.
 
+## Standing class schedule — updated October 18, 2026
+
+The teacher's current rule supersedes earlier timing descriptions below: **55
+minutes of unit instruction before lunch, then 20–25 minutes of CNN10 and daily
+news after lunch.** Complete the unit checkpoint and Canvas filing before lunch.
+Lunch itself is untimed. Plan two short core clips within the unit lesson.
+
+The Midterms unit is explicitly a **civics investigation**; Reverse History is
+optional here. All five topics, student activities, teacher OS screens, and
+projector data come from `scripts/lib/unit-content/midterms.js` through
+`scripts/build-midterms.js`. Do not hand-edit its generated pages or data.
+`npm run build:midterms` builds; `npm run check:midterms` checks reproduction.
+Preserve Topic 1's storage and response IDs. Never prefill future election winners.
+Topic 5 is taught after November 3 with dated, attributed results and uncertainties.
+
 ## The Block Has Two Halves
 
 **This is the shape of the course, and every other decision follows from it.** One

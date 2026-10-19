@@ -8,6 +8,8 @@
     "node": ">=18"
   },
   "scripts": {
+    "build:midterms": "node scripts/build-midterms.js",
+    "check:midterms": "node scripts/build-midterms.js --check",
     "test": "node scripts/run-tests.js offline",
     "test:offline": "node scripts/run-tests.js offline",
     "test:browser": "node scripts/run-tests.js browser",

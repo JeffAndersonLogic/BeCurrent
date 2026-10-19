@@ -1,68 +1,29 @@
 #!/usr/bin/env node
 'use strict';
-/* Browser contract for the Midterms teacher cockpit and note-free projector. */
-const fs=require('fs'),http=require('http'),path=require('path');
-const ROOT=path.resolve(__dirname,'../..');
-let chromium;
-try{chromium=require('playwright-core').chromium}
-catch(_){console.log('SKIP: playwright-core not installed');process.exit(2)}
-const MIME={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.woff2':'font/woff2'};
-function serve(){return new Promise(resolve=>{
-  const server=http.createServer((req,res)=>{
-    const pathname=decodeURIComponent(new URL(req.url,'http://local').pathname);
-    const target=path.resolve(ROOT,'.'+(pathname.endsWith('/')?pathname+'index.html':pathname));
-    if(!target.startsWith(ROOT+path.sep)){res.writeHead(403).end();return}
-    fs.readFile(target,(err,data)=>{
-      if(err){res.writeHead(404).end();return}
-      res.writeHead(200,{'Content-Type':MIME[path.extname(target)]||'application/octet-stream'});res.end(data);
-    });
-  });
-  server.listen(0,'127.0.0.1',()=>resolve({server,port:server.address().port}));
-})}
-(async()=>{
-  const {server,port}=await serve();
-  const browser=await chromium.launch(process.env.PW_CHROME?{executablePath:process.env.PW_CHROME}:{});
-  const context=await browser.newContext({viewport:{width:1365,height:900}});
-  const teacher=await context.newPage();
-  const projection=await context.newPage();
-  teacher.setDefaultTimeout(7000);projection.setDefaultTimeout(7000);
-  const errors=[];
-  teacher.on('pageerror',e=>errors.push('teacher: '+e.message));
-  projection.on('pageerror',e=>errors.push('projector: '+e.message));
-  const root='http://127.0.0.1:'+port+'/teacher/';
-  try{
-    await teacher.goto(root+'midterms-run-of-show.html');
-    await projection.goto(root+'midterms-projector.html');
-    if(await teacher.locator('[data-phase-index]').count()!==7)throw Error('run of show must display seven distinct phases');
-    if(!/First, the world/.test(await teacher.textContent('#scene-title')))throw Error('cockpit did not initialize phase 0');
-    if(!/First, the world/.test(await projection.textContent('#projector-title')))throw Error('projector did not initialize phase 0');
-    if(!/Students can say/.test(await teacher.textContent('#intel-land')))throw Error('teacher intelligence did not render');
-    if(await projection.locator('#intel-land').count())throw Error('projector contains intelligence nodes');
-    if(!/midterms-block-01-projector.js/.test(await projection.content()))throw Error('projector data not generated');
-    if(/Teacher Intelligence|listenFor|protect:/.test(await projection.content()))throw Error('projector HTML includes teaching cues');
-
-    await teacher.click('#teacher-next');
-    await projection.waitForFunction(()=>document.getElementById('projector-title').textContent.includes('No president'));
-    if(!/Phase 2 of 7/.test(await teacher.textContent('#intel-phase')))throw Error('intelligence did not follow navigation');
-    await teacher.locator('[data-phase-index="2"]').click();
-    await projection.waitForFunction(()=>document.getElementById('projector-title').textContent.includes('Two chambers'));
-    if(!/youtube.com/.test(await projection.getAttribute('#projector-action','href')))throw Error('video not shown in relevant projector phase');
-    await projection.click('#projector-next');
-    await teacher.waitForFunction(()=>document.getElementById('scene-title').textContent.includes('House. Senate.'));
-    if(!/4 \/ 7/.test(await teacher.textContent('#teacher-count')))throw Error('reverse navigation synchronization failed');
-
-    await teacher.click('#timer-toggle');
-    if(!/Pause/.test(await teacher.textContent('#timer-toggle')))throw Error('timer did not start');
-    await teacher.click('#timer-toggle');
-    if(!/Resume|Start/.test(await teacher.textContent('#timer-toggle')))throw Error('timer did not pause');
-    await teacher.fill('#teacher-notes','Revisit distinctions between House and Senate.');
-    await teacher.reload();
-    if(!(await teacher.inputValue('#teacher-notes')).includes('House and Senate'))throw Error('teacher notes not persisted');
-    if(!/House. Senate./.test(await teacher.textContent('#scene-title')))throw Error('phase not saved on reload');
-
-    await teacher.goto(root+'index.html');
-    if(!(await teacher.locator('a[href="midterms-run-of-show.html"]').count()))throw Error('course teacher hub lost cockpit link');
-    if(errors.length)throw Error(errors.join(' | '));
-    console.log('PASS: teacher intelligence, 7 phases, bidirectional same-browser projector sync, video launch, timer, saved notes and course hub.');
-  }finally{await context.close();await browser.close();server.close()}
+const assert=require('assert'),{open}=require('./midterms-browser-helper');
+const {topics}=require('../lib/unit-content/midterms');
+(async()=>{const {browser,server,root}=await open(),context=await browser.newContext({viewport:{width:1365,height:900}}),teacher=await context.newPage(),projection=await context.newPage(),errors=[];
+ teacher.setDefaultTimeout(7000);projection.setDefaultTimeout(7000);teacher.on('pageerror',e=>errors.push(e.message));projection.on('pageerror',e=>errors.push(e.message));
+ try{for(const t of topics){
+  const n=String(t.n).padStart(2,'0'),os=t.n===1?'midterms-run-of-show.html':'midterms-topic-'+n+'-os.html',project=t.n===1?'midterms-projector.html':'midterms-topic-'+n+'-projector.html';
+  await teacher.goto(root+'/teacher/'+os);await projection.goto(root+'/teacher/'+project);
+  assert.strictEqual(await teacher.locator('[data-phase-index]').count(),10);assert((await teacher.textContent('#scene-title')).includes(t.hook));
+  assert(await teacher.textContent('#intel-land'));assert.strictEqual(await projection.locator('#intel-land').count(),0);
+  await teacher.locator('[data-phase-index="2"]').click();await projection.waitForFunction(()=>document.getElementById('projector-phase').textContent.startsWith('03'));
+  assert((await projection.getAttribute('#projector-action','href')).includes('pbs.org/video'));
+  await projection.click('#projector-next');await teacher.waitForFunction(()=>document.getElementById('teacher-count').textContent.startsWith('4 /'));
+  await teacher.click('#timer-toggle');assert.strictEqual(await teacher.textContent('#timer-toggle'),'Pause');await teacher.click('#timer-toggle');
+  await teacher.fill('#class-section','Period A');await teacher.locator('#class-section').dispatchEvent('change');await teacher.fill('#teacher-notes','Reteach the institution distinction.');
+  await teacher.fill('#class-section','Period B');await teacher.locator('#class-section').dispatchEvent('change');assert.strictEqual(await teacher.inputValue('#teacher-notes'),'');
+  await teacher.fill('#teacher-notes','Different notes for this class.');await teacher.fill('#class-section','Period A');await teacher.locator('#class-section').dispatchEvent('change');assert((await teacher.inputValue('#teacher-notes')).includes('institution'));
+  await teacher.reload();assert((await teacher.inputValue('#teacher-notes')).includes('institution'));assert((await teacher.textContent('#teacher-count')).startsWith('4 /'));
+  await teacher.locator('[data-phase-index="7"]').click();assert(await teacher.isDisabled('#timer-toggle'));assert((await teacher.textContent('#timer-target')).includes('untimed'));
+  await teacher.locator('[data-phase-index="8"]').click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('cnn.com/cnn10'));
+  await teacher.locator('[data-phase-index="9"]').click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('/daily/'));
+  assert((await projection.locator('body').innerText()).includes('The Lead. Your Pick.'));
+ }
+ await teacher.goto(root+'/teacher/midterms.html');assert.strictEqual(await teacher.getByRole('link',{name:'Launch teaching OS →',exact:true}).count(),5);
+ await teacher.setViewportSize({width:768,height:1024});await teacher.goto(root+'/teacher/midterms-topic-05-os.html');assert(await teacher.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'tablet OS overflows');
+ assert.deepStrictEqual(errors,[]);console.log('PASS: five OS pages, isolated projector data, bidirectional sync, timers, lunch pause, after-lunch news, class-section notes, reload, tablet layout.');
+ }finally{await context.close();await browser.close();server.close()}
 })().catch(e=>{console.error(e.stack||e);process.exit(1)});

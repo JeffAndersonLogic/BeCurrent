@@ -69,6 +69,11 @@ const DECK_URL = '';
 // paper and deliberately have no assignment: a Canvas assignment nobody can
 // submit to is a gradebook row that reads as missing work for the whole class.
 const ASSIGNMENTS = {
+  WP1: { name: 'WP1 - What Midterms Change', points: 20 },
+  WP2: { name: 'WP2 - The Battle for Congress', points: 20 },
+  WP3: { name: 'WP3 - Checks and Governing', points: 20 },
+  WP4: { name: 'WP4 - Election Messages', points: 20 },
+  WP5: { name: 'WP5 - Results and Impact', points: 30 },
   SM3: { name: 'SM3 - Inside the Algorithm', points: 20 },
   SM4: { name: 'SM4 - Effects and Your Footprint', points: 20 },
   SM5: { name: 'SM5 - How a Lie Travels', points: 20 },
@@ -136,6 +141,7 @@ function eventTable(unit, topic, code) {
   const m = unit.meta;
   const hasBrief = !!(topic.sections && topic.sections.length);
   const hasReverseHistory = !!topic.page;
+  const videoFirst = m.renderer === 'video-first';
   const assignment = ASSIGNMENTS[code];
 
   const targets = (topic.learningTargets || [])
@@ -148,18 +154,18 @@ function eventTable(unit, topic, code) {
   if (hasBrief) {
     links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">The Brief for this topic</a></p>`);
   } else if (hasReverseHistory) {
-    links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">The Reverse History investigation for this topic</a></p>`);
+    links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">${videoFirst ? 'The civics investigation' : 'The Reverse History investigation'} for this topic</a></p>`);
   }
 
   // What the student does with their work. A topic with no Brief has no route to
   // Canvas at all, and saying so plainly is the point: it stops a paper day
   // being chased as missing work.
-  const gatherLabel = hasReverseHistory ? 'Gather This Topic' : 'Gather All My Work';
-  const artifactName = hasReverseHistory ? 'Reverse History page' : 'Brief';
+  const gatherLabel = videoFirst ? 'Gather All My Work' : hasReverseHistory ? 'Gather This Topic' : 'Gather All My Work';
+  const artifactName = videoFirst ? 'civics investigation' : hasReverseHistory ? 'Reverse History page' : 'Brief';
   const responseName = hasReverseHistory ? 'filing' : 'question';
   const assignmentCell = assignment
     ? `                <p>[INSERT ASSIGNMENT LINK]</p>
-                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong> and <strong>Copy to Clipboard</strong> at the end of it. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>`
+                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong>${videoFirst ? ' to copy the investigation, with the manual-copy box as a backup' : ' and <strong>Copy to Clipboard</strong> at the end of it'}. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>`
     : `                <p><strong>Nothing to submit.</strong> This topic is done on paper in class. There is no Canvas assignment for it and nothing to hand in.</p>`;
 
   const rows = [
@@ -187,6 +193,22 @@ ${rows.join('\n')}
  * nothing. So the paste is spelled out rather than assumed.
  */
 function assignmentBody(unit, topic, code) {
+  if(unit.meta.renderer==='video-first'){
+    const pageUrl=artifactUrl(unit,topic);
+    return `<h2>${esc(objectName(unit.meta.unit))}, Topic ${topic.n}: ${esc(objectName(topic.title))}</h2>
+<p>${esc(plain(topic.overview))}</p>
+<h3>Step 1 &mdash; Open the civics investigation</h3>
+<p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener">Open Topic ${topic.n}</a></p>
+<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
+<p>Use the two core clips, background supports, and five-item practice. Then complete these three short responses${topic.resultsNotebook?' and the dated results notebook':''}:</p>
+<ol>${topic.questions.map(q=>'<li>'+esc(plain(q.text))+'</li>').join('')}</ol>
+<p>Each response has Start here and Push further support. Political preferences are not scored.</p>
+<h3>Step 3 &mdash; Gather and submit before lunch</h3>
+<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+<h3>Success criteria</h3><ol>${topic.successCriteria.map(c=>'<li>'+esc(plain(c.criteria))+'</li>').join('')}</ol>
+${topic.afterElection?'<p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>':''}
+<p>After lunch: CNN10 and daily reporting through The Desk.</p>`;
+  }
   const m = unit.meta;
   const a = ASSIGNMENTS[code];
   const reverseHistory = !!topic.page;
@@ -586,7 +608,7 @@ function renderUnit(unit) {
     out.push(`**Source:** \`scripts/lib/unit-content/${m.unitKey}.js\`, ${plain(t.topic)}  `);
     out.push('');
 
-    if (t.n === 1 && m.renderer !== 'reverse-history') {
+    if (t.n === 1 && !['reverse-history','video-first'].includes(m.renderer)) {
       out.push(DECK_URL
         ? `The slide deck for this topic: <${DECK_URL}>`
         : '> **The slide deck link is still pending.** Set `DECK_URL` at the top of'
@@ -1003,8 +1025,6 @@ if (!files.length) {
 
 files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
-  // Pilot video-first units are not scheduled in Canvas until the pilot is approved.
-  if (unit.meta.renderer === 'video-first') return;
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.md`), renderUnit(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.html`), renderUnitHtml(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-assignments.md`), renderAssignments(unit), unit);

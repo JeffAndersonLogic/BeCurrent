@@ -1,50 +1,31 @@
 #!/usr/bin/env node
 'use strict';
-const assert=require('assert');
-const fs=require('fs'),path=require('path'),vm=require('vm'),child=require('child_process');
-const ROOT=path.resolve(__dirname,'../..');
-const read=file=>fs.readFileSync(path.join(ROOT,file),'utf8');
-const lesson=require('../..//teacher/data/midterms-block-01');
-assert.strictEqual(lesson.totalMinutes,90);
-assert.strictEqual(lesson.phases.length,7);
-assert.strictEqual(lesson.phases[0].id,'desk');
-assert.strictEqual(lesson.phases[0].minutes,25);
-assert.strictEqual(lesson.phases.reduce((n,p)=>n+p.minutes,0),90);
-let cursor=0;
-const required=['land','ask','listenFor','protect','cut','move'];
-for(const p of lesson.phases){
-  assert.strictEqual(p.start,cursor,'phase starts must be contiguous: '+p.id);
-  cursor+=p.minutes;
-  assert(typeof p.screen.title==='string'&&p.screen.title.length>8,'screen title: '+p.id);
-  assert(p.screen.eyebrow&&p.screen.description,'visible screen content: '+p.id);
-  for(const k of required)assert(typeof p.intel[k]==='string'&&p.intel[k].length>8,'intelligence '+k+': '+p.id);
+const assert=require('assert'),fs=require('fs'),path=require('path'),vm=require('vm'),child=require('child_process');
+const ROOT=path.resolve(__dirname,'../..'),read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
+const topics=require('../lib/unit-content/midterms').topics;
+const build=child.spawnSync(process.execPath,['scripts/build-midterms.js','--check'],{cwd:ROOT,encoding:'utf8'});
+assert.strictEqual(build.status,0,build.stdout+build.stderr);
+for(const t of topics){
+ const n=String(t.n).padStart(2,'0'),lesson=require('../../teacher/data/midterms-block-'+n);
+ assert.strictEqual(lesson.totalMinutes,80);assert.strictEqual(lesson.phases.length,10);
+ assert.strictEqual(lesson.phases[0].id,'hook');
+ const lunch=lesson.phases.findIndex(p=>p.kind==='break');assert(lunch>0);
+ assert.strictEqual(lesson.phases.slice(0,lunch).reduce((a,p)=>a+p.minutes,0),55);
+ assert.strictEqual(lesson.phases[lunch].minutes,0);
+ assert.deepStrictEqual(lesson.phases.slice(lunch+1).map(p=>p.id),['cnn10','desk']);
+ assert.strictEqual(lesson.phases.slice(lunch+1).reduce((a,p)=>a+p.minutes,0),25);
+ let cursor=0;for(const p of lesson.phases){assert.strictEqual(p.start,cursor);cursor+=p.minutes;for(const k of ['land','ask','listenFor','protect','cut','move'])assert(p.intel[k].length>8);}
+ const pub={window:{}};vm.runInNewContext(read('teacher/data/midterms-block-'+n+'-projector.js'),pub);
+ for(const p of pub.window.BECURRENT_PROJECTOR_LESSON.phases)assert(!('intel' in p));
+ const os=t.n===1?'midterms-run-of-show.html':'midterms-topic-'+n+'-os.html';
+ const project=t.n===1?'midterms-projector.html':'midterms-topic-'+n+'-projector.html';
+ const page=read('teacher/'+os),projection=read('teacher/'+project);
+ assert(page.includes('id="teacher-notes"')&&page.includes('id="class-section"'));
+ assert(projection.includes('midterms-block-'+n+'-projector.js'));
+ assert(!projection.includes('intel-land')&&!projection.includes('midterms-block-'+n+'.js?'));
+ assert(read('teacher/midterms.html').includes(os));
 }
-const check=child.spawnSync(process.execPath,['scripts/build-control-room.js','--check'],{cwd:ROOT,encoding:'utf8'});
-assert.strictEqual(check.status,0,(check.stdout||'')+(check.stderr||''));
-const publicData=read('teacher/data/midterms-block-01-projector.js');
-const sandbox={window:{}};
-vm.runInNewContext(publicData,sandbox);
-const publicLesson=sandbox.window.BECURRENT_PROJECTOR_LESSON;
-assert.strictEqual(publicLesson.phases.length,7);
-assert.deepStrictEqual(Array.from(publicLesson.phases,p=>p.id),lesson.phases.map(p=>p.id));
-for(const p of publicLesson.phases){
-  for(const k of ['intel','land','ask','listenFor','protect','cut','move'])assert(!(k in p),'projector leaked '+k);
-}
-for(const s of ['listenFor','LAND /','Teacher Intelligence','intelligence notes','protect:','cut:'])assert(!publicData.includes(s),'projector contains teacher text: '+s);
-const teacher=read('teacher/midterms-run-of-show.html');
-const projector=read('teacher/midterms-projector.html');
-const hub=read('teacher/index.html');
-const student=read('midterms/block-01.html');
-assert(teacher.includes('data/midterms-block-01.js')&&teacher.includes('teacher-control-room.js'),'teacher canonical dependencies');
-assert(projector.includes('data/midterms-block-01-projector.js')&&projector.includes('teacher-control-room.js'),'projector generated dependencies');
-assert(!projector.includes('data/midterms-block-01.js?'),'projector must not load teacher canonical bundle');
-assert(!projector.includes('Teacher Intelligence')&&!projector.includes('intel-land'),'no teacher notes in projector markup');
-assert(hub.includes('midterms-run-of-show.html')&&hub.includes('iran-run-of-show.html'),'course hub links');
-assert(!student.includes('teacher/midterms-run-of-show.html')&&!student.includes('midterms-block-01.js'),'student file unchanged by teacher content');
-const js=read('assets/js/teacher-control-room.js');
-new vm.Script(js);
-assert(js.includes("window.addEventListener('storage'"),'same-browser projector synchronization');
-assert(js.includes('notesKey'),'saved teacher notes');
-assert(js.includes('timerKey'),'timer storage');
-assert(!js.includes('fetch(')&&!js.includes('XMLHttpRequest'),'teacher controls do not export data');
-console.log('PASS: 90-minute source-of-truth, projector-safe build, isolated notes, lesson/hub links, and Control Room syntax.');
+assert(read('teacher/index.html').includes('midterms.html'));
+const js=read('assets/js/teacher-control-room.js');new vm.Script(js);
+assert(js.includes("window.addEventListener('storage'"));assert(!js.includes('fetch(')&&!js.includes('XMLHttpRequest'));
+console.log('PASS: five teaching OS lessons, 55-minute unit, untimed lunch, CNN10/news after lunch, teacher cues, isolated projector data, saved notes.');
