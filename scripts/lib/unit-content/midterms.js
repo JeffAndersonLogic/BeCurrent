@@ -1,7 +1,7 @@
 'use strict';
 // Canonical source for the five civics lessons, student pages, and teaching OS.
 // Generate with node scripts/build-midterms.js. Preserve wp-t01 saved response IDs.
-const reviewed='2026-10-18';
+const reviewed='2026-10-19';
 const S=(title,url,note)=>({title,url,note});
 const sources={
  fec:S('Federal Election Commission: election information','https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/','Official election date and links to state election offices.'),
@@ -149,5 +149,6 @@ const topics=[
  teacher:{story:'This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.',land:'Results establish electoral outcomes; policy effects still depend on institutions and later decisions.',ask:'Which part is established and which part remains conditional?',listenFor:'Two attributed sources, accurate stages, a mechanism, an alternative, and uncertainty.',avoid:'No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.',reteach:'Label each source: prediction, count, call, or certified. Use because / could / does not guarantee.',answer:'Poll / forecast; Unofficial count; News race call; Certified result; Unofficial count. Final answers depend on sourced 2026 evidence, not a fixed party answer key.'}
 }
 ];
-for(const t of topics){t.status='ready';t.inClass='Before lunch: 55-minute civics investigation with two integrated clips, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.';t.resources=[{label:'Teacher OS',url:'../teacher/'+(t.n===1?'midterms-run-of-show.html':`midterms-topic-${String(t.n).padStart(2,'0')}-os.html`)}];}
+const lessonReadings=require('../midterms-readings');
+for(const t of topics){t.flow=lessonReadings[t.n];t.status='ready';t.inClass='Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.';t.resources=[{label:'Teacher OS',url:'../teacher/'+(t.n===1?'midterms-run-of-show.html':`midterms-topic-${String(t.n).padStart(2,'0')}-os.html`)}];}
 module.exports={meta,topics,sources,clips};

@@ -1,6 +1,6 @@
 # Who Has the Power? — Teaching guide
 
-Generated from scripts/lib/unit-content/midterms.js. Reviewed 2026-10-18.
+Generated from scripts/lib/unit-content/midterms.js. Reviewed 2026-10-19.
 
 Civics investigation. Reverse History is optional for this unit.
 

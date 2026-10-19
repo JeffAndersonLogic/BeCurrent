@@ -80,12 +80,12 @@ a,button{transition:background-color .14s ease,color .14s ease,border-color .14s
 .unit-intro{padding:34px 0 12px;display:grid;grid-template-columns:240px 1fr;gap:55px}
 .unit-intro .lead{margin:0 0 25px}
 .unit-list{list-style:none;padding:0;margin:12px 0 55px;display:grid;gap:0;border-top:1px solid var(--vf-rule)}
-.unit-list li{border-bottom:1px solid var(--vf-rule);padding:26px 4px;display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:18px;align-items:start}
+.unit-list > li{border-bottom:1px solid var(--vf-rule);padding:26px 4px;display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:18px;align-items:start}
 .unit-list .chapter-num{font-size:1.11rem;color:var(--vf-soft);letter-spacing:-.03em;font-weight:760}
 .unit-list .copy p{font-size:.93rem;color:var(--vf-soft);margin:0;max-width:640px}
 .unit-list .copy h3{font-size:clamp(1.16rem,2vw,1.5rem);margin:0 0 5px}
 .unit-list .cta{margin-top:13px}
-.unit-list li:first-child{background:var(--vf-white);padding-left:18px;border-left:3px solid var(--vf-accent)}
+.unit-list > li:first-child{background:var(--vf-white);padding-left:18px;border-left:3px solid var(--vf-accent)}
 .pill{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:750;color:var(--vf-faint);white-space:nowrap}
 .pill.live{color:var(--vf-accent-dark)}
 .current-feature{border:1px solid var(--vf-rule);background:var(--vf-white);padding:26px 30px;display:flex;gap:20px;align-items:center;justify-content:space-between}
@@ -185,7 +185,7 @@ a,button{transition:background-color .14s ease,color .14s ease,border-color .14s
  .wrap{padding:0 17px 70px}.hero{padding:40px 17px 34px}.hero.compact{padding-top:30px}
  .hero-grid{gap:26px}.edition-mark{min-height:220px}
  .toolbar{align-items:stretch}.mode-switch{width:100%}.mode-switch button{flex:1;padding:11px 7px;font-size:.76rem}
- .unit-list li{grid-template-columns:42px 1fr;gap:11px}.pill{grid-column:2}.current-feature{flex-direction:column;align-items:start}
+ .unit-list > li{grid-template-columns:42px 1fr;gap:11px}.pill{grid-column:2}.current-feature{flex-direction:column;align-items:start}
  .lesson-nav button{font-size:.71rem;padding:12px 3px 11px 0}.lesson-nav button .step-n{display:block}
  .student-flow .intro{grid-template-columns:1fr;gap:9px}.work-progress{width:fit-content}
  .student-chapter{padding:25px 18px;min-height:350px}

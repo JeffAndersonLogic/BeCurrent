@@ -79,7 +79,7 @@ Find out what is on the 2026 ballot, compare the House and Senate, and explain h
 
 ### What happens in class
 
-Before lunch: 55-minute civics investigation with two integrated clips, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -141,7 +141,7 @@ Follow individual seats to chamber control. Test how a small shift can change le
 
 ### What happens in class
 
-Before lunch: 55-minute civics investigation with two integrated clips, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -203,7 +203,7 @@ Investigate laws, spending, oversight, and confirmations. Explain how Congress c
 
 ### What happens in class
 
-Before lunch: 55-minute civics investigation with two integrated clips, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -263,7 +263,7 @@ Investigate campaign framing, check a real claim, and read a poll without treati
 
 ### What happens in class
 
-Before lunch: 55-minute civics investigation with two integrated clips, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -325,7 +325,7 @@ Return after November 3 to record sourced 2026 results, identify unresolved race
 
 ### What happens in class
 
-Before lunch: 55-minute civics investigation with two integrated clips, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 

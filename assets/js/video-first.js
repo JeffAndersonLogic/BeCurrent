@@ -6,18 +6,15 @@
  */
 (function(){
   const body=document.body;
-  const teacher=document.getElementById('teacher-flow');
   const student=document.getElementById('student-flow');
-  if(!teacher||!student)return;
+  if(!student)return;
   const lesson=body.dataset.lesson||'wp-t01';
   const prefix='bcv2-video-first-'+lesson+'-';
-  const stages=[...document.querySelectorAll('[data-teacher-stage]')];
   const chapters=[...document.querySelectorAll('[data-student-chapter]')];
   const nav=[...document.querySelectorAll('[data-student-nav]')];
   const slots=[...document.querySelectorAll('[data-slot]')];
   const sorts=[...document.querySelectorAll('[data-sort]')];
   const evidence=[...document.querySelectorAll('[data-evidence]')];
-  let teacherIndex=0, studentIndex=0;
   const storage={
     get(key){try{return localStorage.getItem(prefix+key)}catch(_){return null}},
     put(key,v){try{localStorage.setItem(prefix+key,v)}catch(_){
@@ -27,75 +24,17 @@
     }}
   };
   const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  const modeButtons=[...document.querySelectorAll('[data-view-mode]')];
-
-  function mode(name){
-    const t=name==='teacher';
-    body.classList.toggle('teacher-mode',t);
-    teacher.hidden=!t;student.hidden=t;
-    modeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.viewMode===name)));
-    try{localStorage.setItem('bcv2-video-first-view',name)}catch(_){}
-  }
-  let initial='student';
-  try{initial=localStorage.getItem('bcv2-video-first-view')||'student'}catch(_){}
-  mode(initial==='teacher'?'teacher':'student');
-  modeButtons.forEach(b=>b.addEventListener('click',()=>mode(b.dataset.viewMode)));
-
-  function renderTeacher(){
-    stages.forEach((s,i)=>{s.hidden=i!==teacherIndex});
-    const counter=document.getElementById('teacher-counter');
-    if(counter)counter.textContent=(teacherIndex+1)+' / '+stages.length;
-    const prev=document.getElementById('teacher-prev');
-    const next=document.getElementById('teacher-next');
-    if(prev)prev.disabled=teacherIndex===0;
-    if(next)next.disabled=teacherIndex===stages.length-1;
-  }
-  const prev=document.getElementById('teacher-prev'),next=document.getElementById('teacher-next');
-  if(prev)prev.addEventListener('click',()=>{teacherIndex=Math.max(0,teacherIndex-1);renderTeacher()});
-  if(next)next.addEventListener('click',()=>{teacherIndex=Math.min(stages.length-1,teacherIndex+1);renderTeacher()});
-  renderTeacher();
-
-  // Presentation mode has one screen at a time; fullscreen removes browser chrome
-  // while keeping the controls and teacher cues on the same screen.
-  const fullscreen=document.getElementById('teacher-fullscreen');
-  if(fullscreen)fullscreen.addEventListener('click',async()=>{
-    try{
-      if(document.fullscreenElement===teacher)await document.exitFullscreen();
-      else if(teacher.requestFullscreen)await teacher.requestFullscreen();
-    }catch(_){fullscreen.textContent='Fullscreen unavailable';}
+  // Every section remains readable. Navigation changes position, never visibility.
+  const markChapter=index=>nav.forEach((a,i)=>{
+    if(i===index)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');
   });
-  document.addEventListener('fullscreenchange',()=>{
-    if(!fullscreen)return;
-    const on=document.fullscreenElement===teacher;
-    fullscreen.textContent=on?'Exit fullscreen ↙':'Expand ↗';
-    fullscreen.setAttribute('aria-label',on?'Exit fullscreen presentation':'Expand presentation to full screen');
-  });
-  document.addEventListener('keydown',event=>{
-    if(teacher.hidden||event.altKey||event.ctrlKey||event.metaKey)return;
-    const el=event.target;
-    if(el&&el.closest&&el.closest('a,button,input,textarea,select,summary'))return;
-    if(event.key==='ArrowRight'&&teacherIndex<stages.length-1){teacherIndex++;renderTeacher();event.preventDefault()}
-    if(event.key==='ArrowLeft'&&teacherIndex>0){teacherIndex--;renderTeacher();event.preventDefault()}
-  });
-
-  // Return students to their last open chapter after an accidental refresh.
-  try {const saved=Number(localStorage.getItem(prefix+'current-chapter'));if(Number.isInteger(saved)&&saved>=0&&saved<chapters.length)studentIndex=saved;} catch(_){}
-
-  function renderStudent(){
-    storage.put('current-chapter',String(studentIndex));
-    chapters.forEach((s,i)=>{s.hidden=i!==studentIndex});
-    nav.forEach((b,i)=>b.setAttribute('aria-current',i===studentIndex?'step':'false'));
-    const previous=document.getElementById('student-prev'),following=document.getElementById('student-next');
-    if(previous)previous.disabled=studentIndex===0;
-    if(following)following.disabled=studentIndex===chapters.length-1;
-    const counter=document.getElementById('student-counter');
-    if(counter)counter.textContent='Step '+(studentIndex+1)+' of '+chapters.length;
-    updateProgress();
+  nav.forEach((a,i)=>a.addEventListener('click',()=>markChapter(i)));
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries)if(entry.isIntersecting)markChapter(chapters.indexOf(entry.target));
+    },{rootMargin:'-12% 0px -65% 0px'});
+    chapters.forEach(chapter=>observer.observe(chapter));
   }
-  nav.forEach((b,i)=>b.addEventListener('click',()=>{studentIndex=i;renderStudent()}));
-  const studentPrev=document.getElementById('student-prev'),studentNext=document.getElementById('student-next');
-  if(studentPrev)studentPrev.addEventListener('click',()=>{studentIndex=Math.max(0,studentIndex-1);renderStudent();student.scrollIntoView({behavior:'smooth'})});
-  if(studentNext)studentNext.addEventListener('click',()=>{studentIndex=Math.min(chapters.length-1,studentIndex+1);renderStudent();student.scrollIntoView({behavior:'smooth'})});
 
   slots.forEach(el=>{
     el.value=storage.get('text-'+el.dataset.slot)||'';
@@ -133,7 +72,7 @@
     const total=slots.length+(sorts.length?1:0)+(evidence.length?1:0);
     document.querySelectorAll('[data-work-progress]').forEach(el=>el.textContent=done+' of '+total+' investigation parts started');
   }
-  renderStudent();
+  updateProgress();
 
   const check=document.getElementById('check-sort');
   if(check)check.addEventListener('click',()=>{

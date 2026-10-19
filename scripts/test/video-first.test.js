@@ -16,7 +16,10 @@ for(const t of unit.topics){
  for(const item of [...t.learningTargets.map(x=>x.target),...t.successCriteria.map(x=>x.criteria)])assert(page.includes(item.replace(/&/g,'&amp;')),'missing target or criterion '+t.n);
  assert(page.includes('id="gather-work"')&&page.includes('id="copy-preview"'));
  assert(page.includes('video-first-record.js')&&page.includes('video-first.js'));
- assert(page.includes('Read the background'));assert(page.includes('print-topic-'));
+ assert.strictEqual((page.match(/Read the Background:/g)||[]).length,6);assert(page.includes('print-topic-'));
+ assert.strictEqual((page.match(/class="story-bridge"/g)||[]).length,5);
+ assert(!/teacher-flow|data-view-mode|data-teacher-stage|\.\.\/teacher\//.test(page),'teacher controls must not be shipped in student lessons');
+ assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
  if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));}
  assert(!['fetch(','XMLHttpRequest','<iframe'].some(x=>page.includes(x)));
 }
