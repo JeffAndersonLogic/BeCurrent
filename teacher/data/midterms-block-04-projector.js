@@ -14,13 +14,13 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–3",
       "start": 0,
-      "minutes": 5,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 4 / Opening question",
         "title": "Two messages use the same number. Could they leave different impressions?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       }
     },
@@ -28,14 +28,17 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "3–5",
+      "start": 3,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 4 / Today’s direction",
         "title": "Messages, evidence, and uncertainty",
         "description": "Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-04.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can explain how a campaign message directs attention.",
           "I can check a claim against an independent source.",
@@ -47,16 +50,16 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "5–11",
+      "start": 5,
+      "minutes": 6,
       "screen": {
         "eyebrow": "Topic 4 / Watch / explain",
         "title": "How Do You Research Candidates? Simple Civics",
-        "description": "Which source could you use to check a campaign claim?",
+        "description": "Assigned 0:00–2:55. Which source could you use to check a campaign claim?",
         "action": {
           "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
-          "label": "Play How Do You Research Candidates? Simple Civics"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -76,35 +79,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
+      "time": "11–21",
+      "start": 11,
       "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 4 / Investigate",
+        "eyebrow": "Topic 4 / Guided practice",
         "title": "What kind of statement is this?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-04.html",
-          "label": "Open student investigation"
+          "url": "../midterms/block-04.html#chapter-2",
+          "label": "Open practice and feedback"
         }
       }
     },
     {
       "id": "watch-2",
       "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "kind": "lesson",
+      "time": "21–35",
+      "start": 21,
+      "minutes": 14,
       "screen": {
         "eyebrow": "Topic 4 / Evidence",
         "title": "Check the message, then check the claim",
-        "description": "Analyze the constructed messages first. Then check one real claim from the linked October 16 PBS report, or another current message supplied in class. Name the message source, date, link, and independent evidence.",
+        "description": "First analyze the constructed messages with the class. Then use the prepared real-claim packet in Step 4. The original claim and checking evidence are supplied; you do not need to search for a new claim.",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-and-politics-44/",
-          "label": "Play Media Institution: Crash Course Government #44"
+          "url": "../midterms/block-04.html#chapter-3",
+          "label": "Open clip window and evidence"
         }
       }
     },
@@ -112,33 +115,33 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "35–45",
+      "start": 35,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 4 / Apply the idea",
-        "title": "What changes—and what has limits?",
-        "description": "Constructed scenario: A campaign says its plan will save every household money. A poll puts its candidate ahead. You have not seen the plan, the polling methods, or election results.",
+        "title": "Test a real claim",
+        "description": "Use the prepared real-claim packet below. Check its exact claim against the independent evidence. Then use the poll card to distinguish measured opinion from an election result. Open research is an extension.",
         "action": {
-          "url": "../midterms/block-04.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-04.html#chapter-4",
+          "label": "Open the real-claim packet"
         }
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 4 / Checkpoint / Canvas",
-        "title": "Explain it. Support it. File it.",
-        "description": "Why do a favorable poll and an appealing promise fail to prove an election victory or a policy change?",
+        "eyebrow": "Topic 4 / Explain / Canvas",
+        "title": "Explain what remains uncertain",
+        "description": "Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?",
         "action": {
-          "url": "../midterms/block-04.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-04.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       }
     },
@@ -152,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       }
     },
@@ -166,7 +169,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
@@ -183,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

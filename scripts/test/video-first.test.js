@@ -11,7 +11,7 @@ for(const t of unit.topics){
  assert.strictEqual((page.match(/data-student-chapter/g)||[]).length,5);
  assert.strictEqual((page.match(/data-slot=/g)||[]).length,3);assert.strictEqual((page.match(/data-sort=/g)||[]).length,5);
  assert.strictEqual(t.learningTargets.length,3);assert.strictEqual(t.successCriteria.length,3);
- assert(t.videos.filter(v=>!v.optional).length>=2);
+ assert.strictEqual(t.videos.filter(v=>!v.optional).length,t.n===5?1:2);
  for(const v of t.videos){assert(page.includes(v.url));assert(v.date&&v.prompt&&v.duration&&v.reviewed);}
  for(const item of [...t.learningTargets.map(x=>x.target),...t.successCriteria.map(x=>x.criteria)])assert(page.includes(item.replace(/&/g,'&amp;')),'missing target or criterion '+t.n);
  assert(page.includes('id="gather-work"')&&page.includes('id="copy-preview"'));
@@ -20,11 +20,18 @@ for(const t of unit.topics){
  assert.strictEqual((page.match(/class="story-bridge"/g)||[]).length,5);
  assert(!/teacher-flow|data-view-mode|data-teacher-stage|\.\.\/teacher\//.test(page),'teacher controls must not be shipped in student lessons');
  assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
- if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));}
+ assert(page.indexOf('Before the clip: the essential language')<page.indexOf('Watch together'));
+ assert(page.includes('Today you will submit')&&page.includes('How this investigation is assessed'));
+ assert.strictEqual(t.rubric.reduce((n,r)=>n+r.points,0),t.n===5?30:20);
+ assert.strictEqual((page.match(/data-sort-feedback=/g)||[]).length,5);
+ const paper=read('midterms/print-topic-'+String(t.n).padStart(2,'0')+'.html');
+ assert(paper.includes('Reading route / core takeaways')&&paper.includes('Background support'));
+ if(t.n===4){for(const m of t.messages)assert(paper.includes(m.text));assert(paper.includes(t.evidence.claimPacket.exactClaim));assert(page.includes('3,917')&&page.includes('±1.8'));assert(page.includes(t.evidence.claimPacket.recordSource.url));}
+ if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));assert.strictEqual(t.questions.filter(q=>!q.optional).length,1);assert.strictEqual((page.match(/data-optional="true"/g)||[]).length,8);assert(!page.includes('election-commission/election-results/'));assert(page.includes('Six short entries'));}
  assert(!['fetch(','XMLHttpRequest','<iframe'].some(x=>page.includes(x)));
 }
 const js=read('assets/js/video-first.js');new vm.Script(js);
 assert(js.includes('bcRecordManifest(')&&js.includes('bcRecordFooterHtml('));
 assert(!js.includes('fetch(')&&!js.includes('XMLHttpRequest'));
 const r=spawnSync(process.execPath,['scripts/build-video-first.js','--check'],{cwd:ROOT,encoding:'utf8'});assert.strictEqual(r.status,0,r.stdout+r.stderr);
-console.log('PASS: five civics lessons, target/criteria alignment, two core clips each, accessible supports, dated results notebook, canonical Canvas grammar.');
+console.log('PASS: five guided civics lessons, topic rubrics, evidence/poll packets, equivalent paper readings, reduced results task, preserved saved identities, canonical Canvas grammar.');

@@ -14,13 +14,13 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–4",
       "start": 0,
-      "minutes": 5,
+      "minutes": 4,
       "screen": {
         "eyebrow": "Topic 3 / Opening question",
         "title": "A president wants a new law. The House says no. What happens next?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       }
     },
@@ -28,14 +28,17 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "4–6",
+      "start": 4,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 3 / Today’s direction",
         "title": "Checks, cooperation, and governing limits",
         "description": "Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-03.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can explain ways Congress checks presidential power.",
           "I can explain why one election does not settle every governing decision.",
@@ -47,16 +50,16 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "6–13",
+      "start": 6,
+      "minutes": 7,
       "screen": {
         "eyebrow": "Topic 3 / Watch / explain",
         "title": "Checks and Balances: Crash Course Government #3",
-        "description": "How can Congress check the president?",
+        "description": "Assigned 0:00–4:00. How can Congress check the president?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-3/",
-          "label": "Play Checks and Balances: Crash Course Government #3"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -76,35 +79,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
+      "time": "13–23",
+      "start": 13,
       "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 3 / Investigate",
+        "eyebrow": "Topic 3 / Guided practice",
         "title": "Who has this power?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-03.html",
-          "label": "Open student investigation"
+          "url": "../midterms/block-03.html#chapter-2",
+          "label": "Open practice and feedback"
         }
       }
     },
     {
       "id": "watch-2",
       "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "kind": "lesson",
+      "time": "23–35",
+      "start": 23,
+      "minutes": 12,
       "screen": {
         "eyebrow": "Topic 3 / Evidence",
         "title": "Follow the bill",
         "description": "Trace a proposal through both chambers and presidential action. Check the video’s simplified explanation against the official reference.",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-9/",
-          "label": "Play How a Bill Becomes a Law: Crash Course Government #9"
+          "url": "../midterms/block-03.html#chapter-3",
+          "label": "Open clip window and evidence"
         }
       }
     },
@@ -112,33 +115,33 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "35–45",
+      "start": 35,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 3 / Apply the idea",
-        "title": "What changes—and what has limits?",
-        "description": "Constructed scenario: The House opposes the president’s spending plan. A committee questions officials. Some voters welcome the scrutiny; others worry about delay.",
+        "title": "Weigh scrutiny and delay",
+        "description": "Constructed teaching scenario, not a pending 2026 bill: The president proposes more school-lunch funding. The House committee questions its cost. Some families want careful scrutiny; others need the service quickly. The Senate has not agreed to the proposal.",
         "action": {
-          "url": "../midterms/block-03.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-03.html#chapter-4",
+          "label": "Open application"
         }
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 3 / Checkpoint / Canvas",
-        "title": "Explain it. Support it. File it.",
+        "eyebrow": "Topic 3 / Explain / Canvas",
+        "title": "Make a supported judgment",
         "description": "Can divided government improve accountability and make governing harder at the same time? Use one institutional example.",
         "action": {
-          "url": "../midterms/block-03.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-03.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       }
     },
@@ -152,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       }
     },
@@ -166,7 +169,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
@@ -183,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

@@ -14,39 +14,43 @@
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–4",
       "start": 0,
-      "minutes": 5,
+      "minutes": 4,
       "screen": {
         "eyebrow": "Topic 1 / Opening question",
         "title": "The president is not on the ballot. Could Washington still change?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
         "ask": "The president is not on the ballot. Could Washington still change?",
-        "listenFor": "A private prediction that reveals an initial understanding or a question.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students use Step 1 / Predict. Take a private response; do not require a public answer.",
+        "listenFor": "Each student makes a private prediction or selects “not sure.” Notice whether students confuse Congress with the president.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Take the private poll without a class debate. Protect every student’s opportunity to predict.",
+        "move": "Introduce the missing-president puzzle. Students use Chapter 1. Accept uncertainty and keep political preferences out of the discussion.",
+        "model": "Yes. Voters can change Congress while the president stays in office. I still need to learn what Congress can do.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students think only presidents matter, name one school decision with two decision makers. Then say that national government also divides responsibilities; the analogy does not establish its exact rules."
       }
     },
     {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "4–6",
+      "start": 4,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 1 / Today’s direction",
         "title": "What are voters actually choosing?",
         "description": "Find out what is on the 2026 ballot, compare the House and Senate, and explain how Congress can change while the president stays in office.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-01.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can explain what a midterm election changes and what it does not.",
           "I can distinguish House elections from Senate elections.",
@@ -55,30 +59,31 @@
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
-        "ask": "What will you be able to explain by the end of this lesson?",
-        "listenFor": "A congressional office, a leader or majority, and a plausible consequence.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Read the lesson question and the three targets. Show what successful work will demonstrate.",
+        "ask": "Today’s direction — what evidence supports your explanation?",
+        "listenFor": "Students can point to the lesson question and identify the final explanation they will submit.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Do not read every target and criterion aloud. Protect the purpose and show the final-response location.",
+        "move": "Preview the five chapter titles. Explain that background dropdowns are optional support and that short notes can be reused in the final response.",
+        "model": "By lunch I will explain who voters choose, how the two chambers differ, and one way that could affect government.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students cannot state the purpose, reduce it to: “Who is on the ballot, and why does that matter?” Read it aloud once."
       }
     },
     {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "6–11",
+      "start": 6,
+      "minutes": 5,
       "screen": {
         "eyebrow": "Topic 1 / Watch / explain",
-        "title": "Two chambers. Different rules.",
-        "description": "How do House and Senate representation and election cycles differ?",
+        "title": "Bicameral Congress: Crash Course Government #2",
+        "description": "Assigned 0:00–3:30. How do House and Senate representation and election cycles differ?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-2/",
-          "label": "Play Bicameral Congress: Crash Course Government #2"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -98,135 +103,130 @@
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
         "ask": "How do House and Senate representation and election cycles differ?",
-        "listenFor": "A congressional office, a leader or majority, and a plausible consequence.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Use the captioned clip or the corresponding background as an access path. Avoid extended commentary.",
-        "move": "Pause after the chamber comparison; use the fact cards before continuing.",
+        "listenFor": "After the selected Congress excerpt, students identify both chambers without including the president.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Stop the Congress excerpt at the planned 3:30 endpoint and omit the remainder of the full episode. Protect the House-plus-Senate distinction.",
+        "move": "Play the planned 0:00–3:30 Congress excerpt with captions. This is a pacing choice, not a claim that every lesson fact appears in that window. State the matching core takeaway, then use one private point-or-write check.",
+        "model": "Congress is the House of Representatives and the Senate. The president is a different office.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students name only the House, draw one bracket labeled Congress around House and Senate. Read the short two-chamber takeaway aloud."
       }
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
-      "minutes": 10,
+      "time": "11–23",
+      "start": 11,
+      "minutes": 12,
       "screen": {
-        "eyebrow": "Topic 1 / Investigate",
+        "eyebrow": "Topic 1 / Guided practice",
         "title": "House, Senate, or both?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-01.html",
-          "label": "Open student investigation"
-        },
-        "cards": [
-          {
-            "title": "House",
-            "text": "435 voting seats · Two-year terms · Districts"
-          },
-          {
-            "title": "Senate",
-            "text": "100 seats · Six-year terms · Two per state"
-          }
-        ]
+          "url": "../midterms/block-01.html#chapter-2",
+          "label": "Open practice and feedback"
+        }
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
-        "ask": "Which statement was tricky, and what fact helps you classify it?",
-        "listenFor": "I can identify congressional offices on the ballot and explain that the presidency is not being elected.",
-        "protect": "Every student attempts the five-item practice. No grade for first-try errors.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students use Step 2. Check feedback, then correct errors. Use the chamber fact cards and replay the 1:09 WFYI clip.",
+        "ask": "Guided practice — what evidence supports your explanation?",
+        "listenFor": "Students attempt all five items, use feedback, and correct errors. Specifically check “all 435” versus “all 100.”",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Skip optional vocabulary discussion and the federalism extension clip. Protect the five-item attempt and correction.",
+        "move": "Students use Chapter 2. Read each statement aloud if needed. Give two minutes of independent attempt before explaining an answer. Do not score first-try errors.",
+        "model": "House; Senate; Senate; Both; Both. The House has all 435 voting seats on its regular two-year cycle. Senators have six-year terms.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students miss two or more, display two columns: House—435, districts, two years; Senate—100, two per state, six years. Model the first item, then students retry privately."
       }
     },
     {
       "id": "watch-2",
       "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "kind": "lesson",
+      "time": "23–35",
+      "start": 23,
+      "minutes": 12,
       "screen": {
         "eyebrow": "Topic 1 / Evidence",
         "title": "What can this source establish?",
         "description": "Use the FEC election-information page and the WFYI clip. Record a verified election fact and an outcome these sources cannot establish yet.",
         "action": {
-          "url": "https://www.pbs.org/video/members-of-congress-lswvi8/",
-          "label": "Play Members of Congress: Simple Civics"
+          "url": "../midterms/block-01.html#chapter-3",
+          "label": "Open clip window and evidence"
         }
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
-        "ask": "Which two chambers together make up Congress?",
-        "listenFor": "A congressional office, a leader or majority, and a plausible consequence.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Use the captioned clip or the corresponding background as an access path. Avoid extended commentary.",
-        "move": "Replay if students confuse Congress with just the House. Students then complete Step 3 / Evidence.",
+        "ask": "Evidence — what evidence supports your explanation?",
+        "listenFor": "A named source is attached to a specific fact, and the unknown is a genuine outcome rather than a fact already explained.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Play the 1:09 WFYI clip once; skip replay and the optional federalism clip. Protect time to inspect the source and write the evidence note.",
+        "move": "Use the short Members of Congress clip and the supplied official-source extract. Demonstrate where the fact appears. Students complete Chapter 3 with short notes; use the matched reading aloud if playback fails.",
+        "model": "The FEC election information establishes the election date. It cannot establish a congressional winner before voting and counting. The chamber explanation helps me understand which offices are involved.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students write a prediction as a fact, make two headings: “The source establishes” and “We cannot know from this.” Place the election date in the first and a future winner in the second."
       }
     },
     {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "35–45",
+      "start": 35,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 1 / Apply the idea",
-        "title": "What changes—and what has limits?",
+        "title": "Follow a change in power",
         "description": "Constructed scenario: A different party wins the House. The president stays in office. Consider leaders, legislative priorities, and limits on one chamber.",
         "action": {
-          "url": "../midterms/block-01.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-01.html#chapter-4",
+          "label": "Open application"
         }
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
-        "ask": "If House control changes, explain one thing that could change and one thing that would not automatically change.",
-        "listenFor": "A congressional office, a leader or majority, and a plausible consequence.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students complete Step 4 privately. Model one because / could / does not guarantee explanation.",
+        "ask": "For the Indiana race card, name the office voters choose and one decision its winner could influence. Name one part of government this race does not replace.",
+        "listenFor": "One plausible institutional change plus one limit. A party name or a promise alone is not a governing explanation.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Use one consequence and one limit; omit a second hypothetical. Protect the because/could/does-not-guarantee connection.",
+        "move": "Revisit the Indiana race card in Chapter 1, then use Chapter 4. Model office → decision → limit. Students make two short notes; do not require family voting preferences.",
+        "model": "The Indiana Fourth District race chooses a U.S. representative, who can vote on federal spending and serve on committees. It does not elect the president or replace the Senate.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students say the House can change every law, trace “House agreement → Senate agreement → presidential action” and ask which steps a House election does not settle."
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 1 / Checkpoint / Canvas",
-        "title": "Explain it. Support it. File it.",
+        "eyebrow": "Topic 1 / Explain / Canvas",
+        "title": "Explain why it matters",
         "description": "If the president is not on the ballot, why can the midterms still change who has power? Use one verified fact.",
         "action": {
-          "url": "../midterms/block-01.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-01.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
         "ask": "If the president is not on the ballot, why can the midterms still change who has power? Use one verified fact.",
-        "listenFor": "A congressional office, a leader or majority, and a plausible consequence.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students finish Step 5, gather their work, and paste into Canvas. Check a sample for evidence and a stated limit.",
+        "listenFor": "The checkpoint contains an accurate election fact and a connected consequence. Confirm Canvas’s submitted screen, not merely saved text on BeCurrent.",
+        "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
+        "cut": "Omit Push further and extra polishing. Protect the final response and the last five minutes for gathering and Canvas submission.",
+        "move": "Students reuse earlier notes in Chapter 5. After five minutes, call the filing transition. Gather, paste into the assigned Canvas Text Entry, submit, and check confirmation. Use the agreed paper route when required.",
+        "model": "Voters choose members of Congress. A new majority could change leaders and priorities, so the election can change governing power while the president stays. One chamber still cannot ordinarily enact a law alone.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "reteach": "If most students list facts without a connection, supply “Voters choose __. Because __, this could __. It does not guarantee __.” Accept concise completion."
       }
     },
     {
@@ -239,19 +239,19 @@
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       },
       "intel": {
-        "land": "Unit work is filed before the break.",
-        "ask": "Has the Canvas text entry been submitted?",
-        "listenFor": "Check the submission screen rather than assuming local saving is submission.",
-        "protect": "Pause the timer during lunch.",
-        "cut": "Do not extend the unit into the news block.",
-        "move": "Take lunch. Select CNN10 on return; the break has no countdown.",
-        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
-        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "land": "Unit work is submitted before the break.",
+        "ask": "Does Canvas show your submission?",
+        "listenFor": "Canvas confirmation or the agreed paper hand-in.",
+        "protect": "Lunch stays untimed.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Pause the timer. Select CNN10 on return.",
+        "model": "The Canvas submission screen confirms filing.",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     },
     {
@@ -264,22 +264,22 @@
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
         }
       },
       "intel": {
-        "land": "Students identify an important current event and a consequence.",
-        "ask": "What happened, and why does it matter?",
-        "listenFor": "A concrete event rather than a vague topic.",
-        "protect": "Keep CNN10 after lunch.",
-        "cut": "Limit extra discussion to one teacher-led example.",
-        "move": "Open the latest school-day episode. For a 20-minute return block, keep the next Desk phase to ten minutes.",
-        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
-        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Watch the latest school-day CNN10, then move to The Desk.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     },
     {
@@ -292,22 +292,22 @@
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"
         }
       },
       "intel": {
-        "land": "Students use credible reporting and make a brief significance judgment.",
-        "ask": "Which reported fact supports why this story matters?",
-        "listenFor": "A named source, accurate event, and consequence.",
-        "protect": "Preserve the short News Log filing and Canvas backup.",
-        "cut": "At 20 minutes after lunch, shorten browsing and optional discussion; use a prepared Lead.",
-        "move": "Run The Lead and Your Pick with brief responses, then gather the News Log. Teacher voices any anonymous examples.",
-        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
-        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
-        "reteach": "Use the chamber fact cards and replay the 1:09 WFYI clip."
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "At twenty minutes after lunch, shorten browsing and use a prepared Lead; keep the filing.",
+        "move": "Use the Lead and Your Pick with short responses. Gather the News Log.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     }
   ]

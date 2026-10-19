@@ -14,13 +14,13 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–3",
       "start": 0,
-      "minutes": 5,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 5 / Opening question",
         "title": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       }
     },
@@ -28,18 +28,21 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "3–5",
+      "start": 3,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 5 / Today’s direction",
         "title": "The 2026 results and their governing impact",
         "description": "Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-05.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can distinguish a projection, unofficial count, and certified result.",
           "I can connect the 2026 outcome to a governing consequence and a limit.",
-          "I can support an explanation with two sources and a fair alternative interpretation."
+          "I can support an explanation with two sources and a fair alternative interpretation of the governing impact."
         ]
       }
     },
@@ -47,16 +50,16 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "5–13",
+      "start": 5,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 5 / Watch / explain",
         "title": "How the Associated Press uses facts and math to call election results",
-        "description": "How is a race call different from a prediction or official certification?",
+        "description": "Assigned 0:00–6:19. How is a race call different from a prediction or official certification?",
         "action": {
           "url": "https://www.pbs.org/video/calling-the-race-1604354239/",
-          "label": "Play How the Associated Press uses facts and math to call election results"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -76,35 +79,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
-      "minutes": 10,
+      "time": "13–18",
+      "start": 13,
+      "minutes": 5,
       "screen": {
-        "eyebrow": "Topic 5 / Investigate",
+        "eyebrow": "Topic 5 / Guided practice",
         "title": "Which reporting stage?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-05.html",
-          "label": "Open student investigation"
+          "url": "../midterms/block-05.html#chapter-2",
+          "label": "Open practice and feedback"
         }
       }
     },
     {
       "id": "watch-2",
-      "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "label": "Results investigation",
+      "kind": "lesson",
+      "time": "18–33",
+      "start": 18,
+      "minutes": 15,
       "screen": {
-        "eyebrow": "Topic 5 / Evidence",
+        "eyebrow": "Topic 5 / Results investigation",
         "title": "Build a dated results notebook",
-        "description": "Record House control, Senate control, and one Indiana congressional race using the official and reporting links. Keep unresolved outcomes unresolved and identify the reporting stage. Use at least two sources.",
+        "description": "Use the prepared source route below. The teacher models the House row; complete the Senate row together; verify the Indiana example. Enter a short finding, its reporting stage, and its source in each row. Reuse this notebook in your final explanation.",
         "action": {
-          "url": "https://www.pbs.org/video/how-do-voting-machines-work-ikrecu/",
-          "label": "Play How Do Voting Machines Work? Simple Civics"
+          "url": "../midterms/block-05.html#chapter-3",
+          "label": "Open guided results packet"
         }
       }
     },
@@ -112,33 +115,33 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "33–43",
+      "start": 33,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 5 / Apply the idea",
-        "title": "From results to governing.",
+        "title": "Trace the governing effects",
         "description": "Use your verified results. Explain who gains, retains, or has not yet secured control. Consider both accountability and governing effectiveness.",
         "action": {
-          "url": "../midterms/block-05.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-05.html#chapter-4",
+          "label": "Open application"
         }
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "43–55",
+      "start": 43,
+      "minutes": 12,
       "screen": {
-        "eyebrow": "Topic 5 / Checkpoint / Canvas",
-        "title": "Explain the outcome. Show the evidence.",
-        "description": "How did the 2026 midterms change who has power, and what could that mean? Use two identified sources, a competing interpretation, and an uncertainty.",
+        "eyebrow": "Topic 5 / Explain / Canvas",
+        "title": "Explain the results and their impact",
+        "description": "Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.",
         "action": {
-          "url": "../midterms/block-05.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-05.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       }
     },
@@ -152,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       }
     },
@@ -166,7 +169,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
@@ -183,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

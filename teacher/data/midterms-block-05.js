@@ -14,71 +14,76 @@
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–3",
       "start": 0,
-      "minutes": 5,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 5 / Opening question",
         "title": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
         "ask": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "listenFor": "A private prediction that reveals an initial understanding or a question.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students use Step 1 / Predict. Take a private response; do not require a public answer.",
+        "listenFor": "Students ask which source and stage support a result rather than treating every displayed leader as a final winner.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Skip predictions about which party will win. Protect source and reporting-stage labels.",
+        "move": "Teach after November 3. Students use Chapter 1. State the actual check date and explain that a dated unresolved finding is valid evidence.",
+        "model": "No. An early lead reports part of the count. A news race call and official certification are different reporting stages.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students call all three final, label three examples “partial count,” “news call,” and “official sign-off.” Keep any actual unresolved outcome unresolved."
       }
     },
     {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "3–5",
+      "start": 3,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 5 / Today’s direction",
         "title": "The 2026 results and their governing impact",
         "description": "Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-05.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can distinguish a projection, unofficial count, and certified result.",
           "I can connect the 2026 outcome to a governing consequence and a limit.",
-          "I can support an explanation with two sources and a fair alternative interpretation."
+          "I can support an explanation with two sources and a fair alternative interpretation of the governing impact."
         ]
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
-        "ask": "What will you be able to explain by the end of this lesson?",
-        "listenFor": "Two attributed sources, accurate stages, a mechanism, an alternative, and uncertainty.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Read the lesson question and the three targets. Show what successful work will demonstrate.",
+        "ask": "Today’s direction — what evidence supports your explanation?",
+        "listenFor": "Students know they can reuse their notebook and short evidence bullets in the final synthesis rather than write three separate essays.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Do not read the full rubric aloud. Protect the five-sentence synthesis purpose and the source/stage requirement.",
+        "move": "Show the prepared dated results sources and the final-response frame. Explain that application notes are optional planning and that no public presentation is required.",
+        "model": "We will record what the sources establish, connect it to two possible effects and a limit, and explain what remains uncertain.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students think every race must be settled, show the unresolved option and a conditional “If control is __, then __ could follow” frame."
       }
     },
     {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "5–13",
+      "start": 5,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 5 / Watch / explain",
         "title": "How the Associated Press uses facts and math to call election results",
-        "description": "How is a race call different from a prediction or official certification?",
+        "description": "Assigned 0:00–6:19. How is a race call different from a prediction or official certification?",
         "action": {
           "url": "https://www.pbs.org/video/calling-the-race-1604354239/",
-          "label": "Play How the Associated Press uses facts and math to call election results"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -98,125 +103,130 @@
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
         "ask": "How is a race call different from a prediction or official certification?",
-        "listenFor": "Two attributed sources, accurate stages, a mechanism, an alternative, and uncertainty.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Use the captioned clip or the corresponding background as an access path. Avoid extended commentary.",
-        "move": "This 2020 report explains a method; it does not report 2026 winners.",
+        "listenFor": "Students distinguish the reporting organization’s conclusion from an official sign-off and recognize that the 2020 video does not report 2026 winners.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Play the 6:19 race-calling report once. Skip a replay; use the matched reading aloud if blocked. Protect the source-and-stage check.",
+        "move": "Introduce the report as a dated explanation of method. Watch with captions and make one brief distinction afterward; no written response is due during playback.",
+        "model": "A news organization calls a race using counted votes and analysis. That is not the official certification by election authorities.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students treat a news call as certification, ask who issued it. Place the news organization and election authority under different stage labels."
       }
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
-      "minutes": 10,
+      "time": "13–18",
+      "start": 13,
+      "minutes": 5,
       "screen": {
-        "eyebrow": "Topic 5 / Investigate",
+        "eyebrow": "Topic 5 / Guided practice",
         "title": "Which reporting stage?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-05.html",
-          "label": "Open student investigation"
+          "url": "../midterms/block-05.html#chapter-2",
+          "label": "Open practice and feedback"
         }
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
-        "ask": "Which statement was tricky, and what fact helps you classify it?",
-        "listenFor": "I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.",
-        "protect": "Every student attempts the five-item practice. No grade for first-try errors.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students use Step 2. Check feedback, then correct errors. Label each source: prediction, count, call, or certified. Use because / could / does not guarantee.",
+        "ask": "Guided practice — what evidence supports your explanation?",
+        "listenFor": "Students classify and correct reporting stages. They do not need to have filled the results notebook during this practice phase.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Read all five items aloud in one shared pass and allow private selections; omit extra explanations of already-correct items. Protect correction of the stage distinction.",
+        "move": "Use Chapter 2 as a brisk retrieval check. Announce that real 2026 evidence comes next, so no invented example becomes a result in the notebook.",
+        "model": "Poll / forecast; Unofficial count; News race call; Certified result; Unofficial count. These are constructed examples, not actual 2026 findings.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students confuse count and call, underline the issuer: an election office posts totals; a news organization concludes who won. Then retry those two items."
       }
     },
     {
       "id": "watch-2",
-      "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "label": "Results investigation",
+      "kind": "lesson",
+      "time": "18–33",
+      "start": 18,
+      "minutes": 15,
       "screen": {
-        "eyebrow": "Topic 5 / Evidence",
+        "eyebrow": "Topic 5 / Results investigation",
         "title": "Build a dated results notebook",
-        "description": "Record House control, Senate control, and one Indiana congressional race using the official and reporting links. Keep unresolved outcomes unresolved and identify the reporting stage. Use at least two sources.",
+        "description": "Use the prepared source route below. The teacher models the House row; complete the Senate row together; verify the Indiana example. Enter a short finding, its reporting stage, and its source in each row. Reuse this notebook in your final explanation.",
         "action": {
-          "url": "https://www.pbs.org/video/how-do-voting-machines-work-ikrecu/",
-          "label": "Play How Do Voting Machines Work? Simple Civics"
+          "url": "../midterms/block-05.html#chapter-3",
+          "label": "Open guided results packet"
         }
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
-        "ask": "What role do officials and records play in checking a count?",
-        "listenFor": "Two attributed sources, accurate stages, a mechanism, an alternative, and uncertainty.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Use the captioned clip or the corresponding background as an access path. Avoid extended commentary.",
-        "move": "Use the EAC reference to distinguish counting, canvass, and certification. Students then complete Step 3 / Evidence. Use up to three minutes of the Apply phase to finish the results notebook.",
+        "ask": "Results investigation — what evidence supports your explanation?",
+        "listenFor": "The six-entry notebook covers House control, Senate control, and the Indiana example with findings, stages, sources, baseline, and check time. Any unresolved outcome stays unresolved.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Make the voting-machine clip optional and skip it in the 55-minute core path. Use the prepared source extracts rather than open-web searching. Protect dated evidence and honest uncertainty.",
+        "move": "Use the prepared source route. Check the November election label and update time. Model the House row, complete Senate together, and have students verify Indiana. The notebook is the source summary; do not assign an additional required source response.",
+        "model": "As of [actual check time], [named source] reports [finding] at [stage]. [Second named source] establishes [finding or a different stage]. [Race or control] remains unresolved if the evidence does not settle it. Fill brackets only from the current records.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students cannot navigate the sources, model one notebook row from the prepared packet and point to its timestamp and stage. Students then complete the other rows with the same routine."
       }
     },
     {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "33–43",
+      "start": 33,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 5 / Apply the idea",
-        "title": "From results to governing.",
+        "title": "Trace the governing effects",
         "description": "Use your verified results. Explain who gains, retains, or has not yet secured control. Consider both accountability and governing effectiveness.",
         "action": {
-          "url": "../midterms/block-05.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-05.html#chapter-4",
+          "label": "Open application"
         }
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
-        "ask": "Explain two possible governing effects of the verified outcome and one change not guaranteed. State conditions if control remains unresolved.",
-        "listenFor": "Two attributed sources, accurate stages, a mechanism, an alternative, and uncertainty.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students complete Step 4 privately. Model one because / could / does not guarantee explanation.",
+        "ask": "Optional impact-planning note: identify two possible governing effects and one limit. Reuse these ideas in your final explanation.",
+        "listenFor": "Planning identifies two institutional effects, one limit, and a fair alternative interpretation of impact. It does not dispute established vote totals merely to manufacture balance.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Application is optional planning, not a separate required paragraph. Reuse the notebook and bullet notes. Protect preparation of the two effects, limit, alternative impact, and uncertainty for the final response.",
+        "move": "Guide Chapter 4 as oral teacher modeling with private optional notes. Use conditional language if control is unresolved. Finish any remaining source entries before adding extensions; do not require report-outs.",
+        "model": "If the verified outcome changes a chamber’s majority, leaders and committee priorities could change. Oversight could also change. This does not guarantee a promised law. Another reasonable interpretation may emphasize accountability while a second emphasizes delay.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students write only a party reaction, offer four mechanism words: leadership, committees, oversight, lawmaking. Choose two and explain what each could change."
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "43–55",
+      "start": 43,
+      "minutes": 12,
       "screen": {
-        "eyebrow": "Topic 5 / Checkpoint / Canvas",
-        "title": "Explain the outcome. Show the evidence.",
-        "description": "How did the 2026 midterms change who has power, and what could that mean? Use two identified sources, a competing interpretation, and an uncertainty.",
+        "eyebrow": "Topic 5 / Explain / Canvas",
+        "title": "Explain the results and their impact",
+        "description": "Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.",
         "action": {
-          "url": "../midterms/block-05.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-05.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
-        "ask": "How did the 2026 midterms change who has power, and what could that mean? Use two identified sources, a competing interpretation, and an uncertainty.",
-        "listenFor": "Two attributed sources, accurate stages, a mechanism, an alternative, and uncertainty.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students finish Step 5, gather their work, and paste into Canvas. Check a sample for evidence and a stated limit.",
+        "ask": "Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.",
+        "listenFor": "One concise synthesis reuses notes and identifies two sources, two effects, one limit, a fair alternative impact, and genuine uncertainty. Confirm the final response and notebook travel with Gather All My Work and are submitted in Canvas.",
+        "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
+        "cut": "Omit optional planning cleanup, extra race research, and Push further. Protect seven minutes to synthesize and the final five minutes to gather, paste, and submit.",
+        "move": "Students use Chapter 5’s five-sentence frame, reusing prior notes. Check the evidence/stage labels before filing. With five minutes left, move everyone to Canvas or the agreed accommodated hand-in. Keep lunch and the after-lunch news block separate.",
+        "model": "1. As of [time], [source 1] establishes [outcome/stage], while [source 2] establishes [corroboration or unresolved point]. 2. Because / if [outcome], [leadership or committee effect] could follow. 3. [Second effect] could also follow, but [limit]. 4. Another reasonable view emphasizes [alternative governing impact]. 5. We still do not know [genuine uncertainty]; [later evidence or decision] could clarify it. Use current sourced facts in every bracket.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "reteach": "If most students stall, point to the notebook for sentence 1 and the optional planning for sentences 2–4. Let them dictate or use bullets covering the same ideas; do not demand a new essay."
       }
     },
     {
@@ -229,19 +239,19 @@
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       },
       "intel": {
-        "land": "Unit work is filed before the break.",
-        "ask": "Has the Canvas text entry been submitted?",
-        "listenFor": "Check the submission screen rather than assuming local saving is submission.",
-        "protect": "Pause the timer during lunch.",
-        "cut": "Do not extend the unit into the news block.",
-        "move": "Take lunch. Select CNN10 on return; the break has no countdown.",
-        "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
-        "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "land": "Unit work is submitted before the break.",
+        "ask": "Does Canvas show your submission?",
+        "listenFor": "Canvas confirmation or the agreed paper hand-in.",
+        "protect": "Lunch stays untimed.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Pause the timer. Select CNN10 on return.",
+        "model": "The Canvas submission screen confirms filing.",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     },
     {
@@ -254,22 +264,22 @@
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
         }
       },
       "intel": {
-        "land": "Students identify an important current event and a consequence.",
-        "ask": "What happened, and why does it matter?",
-        "listenFor": "A concrete event rather than a vague topic.",
-        "protect": "Keep CNN10 after lunch.",
-        "cut": "Limit extra discussion to one teacher-led example.",
-        "move": "Open the latest school-day episode. For a 20-minute return block, keep the next Desk phase to ten minutes.",
-        "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
-        "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Watch the latest school-day CNN10, then move to The Desk.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     },
     {
@@ -282,22 +292,22 @@
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"
         }
       },
       "intel": {
-        "land": "Students use credible reporting and make a brief significance judgment.",
-        "ask": "Which reported fact supports why this story matters?",
-        "listenFor": "A named source, accurate event, and consequence.",
-        "protect": "Preserve the short News Log filing and Canvas backup.",
-        "cut": "At 20 minutes after lunch, shorten browsing and optional discussion; use a prepared Lead.",
-        "move": "Run The Lead and Your Pick with brief responses, then gather the News Log. Teacher voices any anonymous examples.",
-        "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
-        "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
-        "reteach": "Label each source: prediction, count, call, or certified. Use because / could / does not guarantee."
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "At twenty minutes after lunch, shorten browsing and use a prepared Lead; keep the filing.",
+        "move": "Use the Lead and Your Pick with short responses. Gather the News Log.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     }
   ]

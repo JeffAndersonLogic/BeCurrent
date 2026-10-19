@@ -14,39 +14,43 @@
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–4",
       "start": 0,
-      "minutes": 5,
+      "minutes": 4,
       "screen": {
         "eyebrow": "Topic 3 / Opening question",
         "title": "A president wants a new law. The House says no. What happens next?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       },
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
         "ask": "A president wants a new law. The House says no. What happens next?",
-        "listenFor": "A private prediction that reveals an initial understanding or a question.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students use Step 1 / Predict. Take a private response; do not require a public answer.",
+        "listenFor": "Students recognize that separate institutions can disagree without an election having to be repeated.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Use one private prediction, not a debate about the current president. Protect the institutional question.",
+        "move": "Students use Chapter 1. Introduce the disagreement as a constructed case and distinguish a proposed law from other executive actions.",
+        "model": "The proposal can be delayed, changed, or stopped. A president cannot ordinarily enact that federal law alone.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students say the president can simply pass the law, put a House card and Senate card between “proposal” and “presidential action.” Name the agreements still needed."
       }
     },
     {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "4–6",
+      "start": 4,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 3 / Today’s direction",
         "title": "Checks, cooperation, and governing limits",
         "description": "Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-03.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can explain ways Congress checks presidential power.",
           "I can explain why one election does not settle every governing decision.",
@@ -55,30 +59,31 @@
       },
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
-        "ask": "What will you be able to explain by the end of this lesson?",
-        "listenFor": "Two fair interpretations tied to a specific institutional mechanism.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Read the lesson question and the three targets. Show what successful work will demonstrate.",
+        "ask": "Today’s direction — what evidence supports your explanation?",
+        "listenFor": "Students can describe both halves of the question: accountability and getting governing work done.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Do not explain every constitutional exception in the opener. Protect the question and the two kinds of consequence.",
+        "move": "Preview the checks, bill pathway, and spending scenario. Explain that different judgments can succeed when the institutional facts and reasoning are accurate.",
+        "model": "We will explain two checks on presidential power and weigh how scrutiny can help while delay can hurt.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students hear “checks” only as stopping everything, say: “A hearing may reveal information; agreement may still be needed for a law.”"
       }
     },
     {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "6–13",
+      "start": 6,
+      "minutes": 7,
       "screen": {
         "eyebrow": "Topic 3 / Watch / explain",
         "title": "Checks and Balances: Crash Course Government #3",
-        "description": "How can Congress check the president?",
+        "description": "Assigned 0:00–4:00. How can Congress check the president?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-3/",
-          "label": "Play Checks and Balances: Crash Course Government #3"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -98,125 +103,130 @@
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
         "ask": "How can Congress check the president?",
-        "listenFor": "Two fair interpretations tied to a specific institutional mechanism.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Use the captioned clip or the corresponding background as an access path. Avoid extended commentary.",
-        "move": "Pause after legislative checks on the executive; restate them in everyday language.",
+        "listenFor": "Students identify a real check and the institution exercising it. They do not treat a hearing as proof of guilt.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Use no more than four minutes of the checks episode. Omit a full tour of every branch’s powers.",
+        "move": "Play the selected checks excerpt with captions and pause for one everyday-language restatement. Use the equivalent reading if blocked.",
+        "model": "Congress can investigate government actions and decide spending through legislation. The Senate also confirms many presidential nominees.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students mix up the institutions, make three labels: House and Senate—legislation/oversight; Senate—many confirmations; President—sign/veto. Check one example privately."
       }
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
+      "time": "13–23",
+      "start": 13,
       "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 3 / Investigate",
+        "eyebrow": "Topic 3 / Guided practice",
         "title": "Who has this power?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-03.html",
-          "label": "Open student investigation"
+          "url": "../midterms/block-03.html#chapter-2",
+          "label": "Open practice and feedback"
         }
       },
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
-        "ask": "Which statement was tricky, and what fact helps you classify it?",
-        "listenFor": "I can accurately explain two congressional checks.",
-        "protect": "Every student attempts the five-item practice. No grade for first-try errors.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students use Step 2. Check feedback, then correct errors. Trace House and Senate agreement on the same text, then presidential action; add the override exception.",
+        "ask": "Guided practice — what evidence supports your explanation?",
+        "listenFor": "Students attempt and correct the five power classifications. Pay particular attention to confirmation being Senate-only and sign/veto being presidential.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Skip additional impeachment and Senate procedure examples. Protect correction of the core power classifications.",
+        "move": "Students use Chapter 2. Read statements aloud when helpful. Monitor the sort results rather than expecting the later balanced judgment at this point.",
+        "model": "House and Senate; Senate; President; House and Senate; House and Senate. Overriding a veto requires two-thirds support in each chamber.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students miss the same institution, place that sort statement below the correct institution label and explain one example. Students retry it before moving on."
       }
     },
     {
       "id": "watch-2",
       "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "kind": "lesson",
+      "time": "23–35",
+      "start": 23,
+      "minutes": 12,
       "screen": {
         "eyebrow": "Topic 3 / Evidence",
         "title": "Follow the bill",
         "description": "Trace a proposal through both chambers and presidential action. Check the video’s simplified explanation against the official reference.",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-9/",
-          "label": "Play How a Bill Becomes a Law: Crash Course Government #9"
+          "url": "../midterms/block-03.html#chapter-3",
+          "label": "Open clip window and evidence"
         }
       },
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
-        "ask": "Why does winning one chamber not guarantee a new law?",
-        "listenFor": "Two fair interpretations tied to a specific institutional mechanism.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Use the captioned clip or the corresponding background as an access path. Avoid extended commentary.",
-        "move": "Pause after presidential action; trace the same text through both chambers. Students then complete Step 3 / Evidence.",
+        "ask": "Evidence — what evidence supports your explanation?",
+        "listenFor": "The evidence note explains two actual congressional checks, names its source, and does not claim one chamber can ordinarily enact a law alone.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Use no more than four minutes of the bill episode. Omit extra lawmaking trivia and optional extensions.",
+        "move": "Trace the selected bill excerpt against the short official-process extract. Then students complete the Chapter 3 note. Keep at least eight minutes for the source check and writing.",
+        "model": "Ordinarily the House and Senate must pass the same bill, then the president has a role. Congress can also use oversight to question officials. These are distinct checks, not proof that a particular official did something wrong.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students list branch names without checks, start two clauses: “Congress can ask officials questions through oversight” and “Congress decides legislation.” Then identify which source supports each."
       }
     },
     {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "35–45",
+      "start": 35,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 3 / Apply the idea",
-        "title": "What changes—and what has limits?",
-        "description": "Constructed scenario: The House opposes the president’s spending plan. A committee questions officials. Some voters welcome the scrutiny; others worry about delay.",
+        "title": "Weigh scrutiny and delay",
+        "description": "Constructed teaching scenario, not a pending 2026 bill: The president proposes more school-lunch funding. The House committee questions its cost. Some families want careful scrutiny; others need the service quickly. The Senate has not agreed to the proposal.",
         "action": {
-          "url": "../midterms/block-03.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-03.html#chapter-4",
+          "label": "Open application"
         }
       },
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
-        "ask": "Explain the strongest accountability argument and the strongest concern about delay in the spending scenario.",
-        "listenFor": "Two fair interpretations tied to a specific institutional mechanism.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students complete Step 4 privately. Model one because / could / does not guarantee explanation.",
+        "ask": "Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.",
+        "listenFor": "Both viewpoints receive a fair explanation linked to the constructed spending scenario, not a claim that one party is always good or bad.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Omit a second scenario and whole-class debate. Protect both the benefit and difficulty in a private response.",
+        "move": "Read Chapter 4’s scenario aloud. Model one mechanism without selecting a party, then accept concise writing, dictation, or agreed paper work.",
+        "model": "The House alone cannot enact the school-lunch plan: the Senate must approve the same text and presidential action follows. A hearing could reveal waste or improve the proposal, but delay could postpone food support for families.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students supply only one side, use two sentence frames: “Scrutiny could help by __” and “Delay could hurt by __.” Let them use the same institutional example."
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 3 / Checkpoint / Canvas",
-        "title": "Explain it. Support it. File it.",
+        "eyebrow": "Topic 3 / Explain / Canvas",
+        "title": "Make a supported judgment",
         "description": "Can divided government improve accountability and make governing harder at the same time? Use one institutional example.",
         "action": {
-          "url": "../midterms/block-03.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-03.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       },
       "intel": {
         "land": "Checks support accountability while adding obstacles to governing.",
         "ask": "Can divided government improve accountability and make governing harder at the same time? Use one institutional example.",
-        "listenFor": "Two fair interpretations tied to a specific institutional mechanism.",
-        "protect": "Protect the checkpoint and Canvas submission before lunch.",
-        "cut": "Reduce optional extensions; keep the evidence and core explanation.",
-        "move": "Students finish Step 5, gather their work, and paste into Canvas. Check a sample for evidence and a stated limit.",
+        "listenFor": "A supported judgment includes a specific institutional example and both consequences. Verify Canvas’s submitted screen.",
+        "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
+        "cut": "Omit Push further and extra constitutional exceptions. Protect the short explanation and the final five minutes of filing.",
+        "move": "Students reuse their evidence and scenario notes in Chapter 5. Move to Gather All My Work with five minutes left, then check submission or the agreed paper route.",
+        "model": "Divided government can do both. A congressional hearing can uncover information about a spending proposal, while disagreement can delay a law needed to fund it. The effect depends on the evidence and decisions, not only the parties involved.",
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "reteach": "If most students write only “good and bad,” ask “Which action helps?” and “Which decision might wait?” Help them insert those actions into their response."
       }
     },
     {
@@ -229,19 +239,19 @@
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       },
       "intel": {
-        "land": "Unit work is filed before the break.",
-        "ask": "Has the Canvas text entry been submitted?",
-        "listenFor": "Check the submission screen rather than assuming local saving is submission.",
-        "protect": "Pause the timer during lunch.",
-        "cut": "Do not extend the unit into the news block.",
-        "move": "Take lunch. Select CNN10 on return; the break has no countdown.",
-        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
-        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "land": "Unit work is submitted before the break.",
+        "ask": "Does Canvas show your submission?",
+        "listenFor": "Canvas confirmation or the agreed paper hand-in.",
+        "protect": "Lunch stays untimed.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Pause the timer. Select CNN10 on return.",
+        "model": "The Canvas submission screen confirms filing.",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     },
     {
@@ -254,22 +264,22 @@
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
         }
       },
       "intel": {
-        "land": "Students identify an important current event and a consequence.",
-        "ask": "What happened, and why does it matter?",
-        "listenFor": "A concrete event rather than a vague topic.",
-        "protect": "Keep CNN10 after lunch.",
-        "cut": "Limit extra discussion to one teacher-led example.",
-        "move": "Open the latest school-day episode. For a 20-minute return block, keep the next Desk phase to ten minutes.",
-        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
-        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Watch the latest school-day CNN10, then move to The Desk.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     },
     {
@@ -282,22 +292,22 @@
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"
         }
       },
       "intel": {
-        "land": "Students use credible reporting and make a brief significance judgment.",
-        "ask": "Which reported fact supports why this story matters?",
-        "listenFor": "A named source, accurate event, and consequence.",
-        "protect": "Preserve the short News Log filing and Canvas backup.",
-        "cut": "At 20 minutes after lunch, shorten browsing and optional discussion; use a prepared Lead.",
-        "move": "Run The Lead and Your Pick with brief responses, then gather the News Log. Teacher voices any anonymous examples.",
-        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
-        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
-        "reteach": "Trace House and Senate agreement on the same text, then presidential action; add the override exception."
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "At twenty minutes after lunch, shorten browsing and use a prepared Lead; keep the filing.",
+        "move": "Use the Lead and Your Pick with short responses. Gather the News Log.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
       }
     }
   ]

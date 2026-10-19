@@ -324,7 +324,7 @@ Every link below points at the live GitHub Pages build:
                 <ol>
                     <li>I can distinguish a projection, unofficial count, and certified result.</li>
                     <li>I can connect the 2026 outcome to a governing consequence and a limit.</li>
-                    <li>I can support an explanation with two sources and a fair alternative interpretation.</li>
+                    <li>I can support an explanation with two sources and a fair alternative interpretation of the governing impact.</li>
                 </ol>
             </td>
         </tr>
@@ -336,7 +336,7 @@ Every link below points at the live GitHub Pages build:
                 <ol>
                     <li>I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.</li>
                     <li>I can explain two possible governing effects and one outcome that is not guaranteed.</li>
-                    <li>I can use two identified sources, address a competing interpretation, and state an uncertainty.</li>
+                    <li>I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.</li>
                 </ol>
             </td>
         </tr>

@@ -14,13 +14,13 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–4",
       "start": 0,
-      "minutes": 5,
+      "minutes": 4,
       "screen": {
         "eyebrow": "Topic 2 / Opening question",
         "title": "One group has 217 seats. The other has 218. Why might one seat matter?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       }
     },
@@ -28,14 +28,17 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "4–6",
+      "start": 4,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 2 / Today’s direction",
         "title": "How separate races become a majority",
         "description": "Follow individual seats to chamber control. Test how a small shift can change leaders, committees, and the agenda without guaranteeing a new law.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-02.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can explain how individual elections determine chamber membership.",
           "I can explain how a majority affects leaders and committees.",
@@ -47,16 +50,16 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "6–13",
+      "start": 6,
+      "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Watch / explain",
         "title": "Congressional Leadership: Crash Course Government #8",
-        "description": "How can becoming the majority change who organizes the chamber?",
+        "description": "Assigned 0:00–3:30. How can becoming the majority change who organizes the chamber?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-8/",
-          "label": "Play Congressional Leadership: Crash Course Government #8"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -76,35 +79,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
+      "time": "13–23",
+      "start": 13,
       "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 2 / Investigate",
+        "eyebrow": "Topic 2 / Guided practice",
         "title": "Power or promise?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-02.html",
-          "label": "Open student investigation"
+          "url": "../midterms/block-02.html#chapter-2",
+          "label": "Open practice and feedback"
         }
       }
     },
     {
       "id": "watch-2",
       "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "kind": "lesson",
+      "time": "23–35",
+      "start": 23,
+      "minutes": 12,
       "screen": {
         "eyebrow": "Topic 2 / Evidence",
         "title": "Why do committees matter?",
         "description": "Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote.",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-7/",
-          "label": "Play Congressional Committees: Crash Course Government #7"
+          "url": "../midterms/block-02.html#chapter-3",
+          "label": "Open clip window and evidence"
         }
       }
     },
@@ -112,33 +115,33 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "35–45",
+      "start": 35,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 2 / Apply the idea",
-        "title": "What changes—and what has limits?",
+        "title": "Test a campaign promise",
         "description": "Constructed scenario: Group A moves from 217 to 218 of 435 filled House seats. Its leaders promise a new school-safety law. The Senate and president have not agreed.",
         "action": {
-          "url": "../midterms/block-02.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-02.html#chapter-4",
+          "label": "Open application"
         }
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 2 / Checkpoint / Canvas",
-        "title": "Explain it. Support it. File it.",
-        "description": "Why can a small seat change have a large effect on congressional priorities? Include one fact and one limit.",
+        "eyebrow": "Topic 2 / Explain / Canvas",
+        "title": "Explain the power shift",
+        "description": "Connect one district race to seats, a majority, and congressional priorities. Include one limit on that power.",
         "action": {
-          "url": "../midterms/block-02.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-02.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       }
     },
@@ -152,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       }
     },
@@ -166,7 +169,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
@@ -183,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

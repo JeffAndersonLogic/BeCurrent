@@ -79,7 +79,7 @@ Find out what is on the 2026 ballot, compare the House and Senate, and explain h
 
 ### What happens in class
 
-Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -99,8 +99,8 @@ Before lunch: follow the continuous civics investigation, with two integrated cl
 1. **Evidence.** Name one verified fact about the 2026 election and one outcome still unknown. Name your source.
    - START HERE: The FEC / WFYI establishes ____. It cannot establish who will ____.
    - PUSH FURTHER: Explain why this source can establish your chosen fact.
-2. **Cause and effect.** If House control changes, explain one thing that could change and one thing that would not automatically change.
-   - START HERE: House leaders could ____. The president would still ____.
+2. **Cause and effect.** For the Indiana race card, name the office voters choose and one decision its winner could influence. Name one part of government this race does not replace.
+   - START HERE: Voters choose a ____. That member could influence ____. This race does not replace ____.
    - PUSH FURTHER: Explain why the House cannot ordinarily enact a law alone.
 3. **Explanation.** If the president is not on the ballot, why can the midterms still change who has power? Use one verified fact.
    - START HERE: Voters choose ____. That matters because ____.
@@ -141,7 +141,7 @@ Follow individual seats to chamber control. Test how a small shift can change le
 
 ### What happens in class
 
-Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -158,14 +158,14 @@ Before lunch: follow the continuous civics investigation, with two integrated cl
 
 ### The filings
 
-1. **Evidence.** Explain one way committee leadership can affect what Congress considers. Name your video or official source.
-   - START HERE: A chair can influence ____. My source is ____.
+1. **Evidence.** Name two decisions a new majority could influence. Identify your video or official source.
+   - START HERE: A new majority could influence ____ and ____. My source is ____.
    - PUSH FURTHER: Explain how a proposal might meet an obstacle before a floor vote.
 2. **Cause and effect.** In the 217-to-218 scenario, what could change and why is the promised law not guaranteed?
    - START HERE: Group A could organize ____, but a law still needs ____.
    - PUSH FURTHER: Explain one additional political or procedural obstacle.
-3. **Explanation.** Why can a small seat change have a large effect on congressional priorities? Include one fact and one limit.
-   - START HERE: A small seat change could ____. That does not guarantee ____.
+3. **Explanation.** Connect one district race to seats, a majority, and congressional priorities. Include one limit on that power.
+   - START HERE: One race changes ____. Enough seats can change ____. That can affect ____, but ____.
    - PUSH FURTHER: Distinguish winning the most votes nationally from winning enough separate seats.
 
 ### Where the work goes
@@ -203,7 +203,7 @@ Investigate laws, spending, oversight, and confirmations. Explain how Congress c
 
 ### What happens in class
 
-Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -221,8 +221,8 @@ Before lunch: follow the continuous civics investigation, with two integrated cl
 1. **Civic structures.** Explain two congressional checks on the president. Identify your source.
    - START HERE: Congress can ____ and ____. My source establishes ____.
    - PUSH FURTHER: Distinguish a power of both chambers from a Senate-only power.
-2. **Perspective.** Explain the strongest accountability argument and the strongest concern about delay in the spending scenario.
-   - START HERE: Scrutiny could help by ____. Delay could hurt by ____.
+2. **Perspective.** Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.
+   - START HERE: The same bill also needs ____. Scrutiny could ____. Delay could ____.
    - PUSH FURTHER: What evidence would help judge which concern matters more here?
 3. **Reasoning.** Can divided government improve accountability and make governing harder at the same time? Use one institutional example.
    - START HERE: It can do both because ____. For example, ____.
@@ -263,7 +263,7 @@ Investigate campaign framing, check a real claim, and read a poll without treati
 
 ### What happens in class
 
-Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -283,11 +283,11 @@ Before lunch: follow the continuous civics investigation, with two integrated cl
 1. **Framing.** Choose a constructed message. Identify its claim, audience, and a detail you would check.
    - START HERE: Message __ focuses on ____. Its audience is ____. I would check ____.
    - PUSH FURTHER: How could a different lead or image change its impression?
-2. **Corroboration.** Record a real election claim and its source/date/link. Name an independent source you checked and explain what the evidence establishes or leaves unresolved.
-   - START HERE: The claim is ____ (source/date/link). I checked ____. The evidence ____.
+2. **Corroboration.** Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.
+   - START HERE: The claim by ____ on ____ says ____. The independent source ____ establishes ____. This supports / contradicts / leaves unresolved ____.
    - PUSH FURTHER: Does the second source provide independent evidence or repeat the first?
-3. **Uncertainty.** Why do a favorable poll and an appealing promise fail to prove an election victory or a policy change?
-   - START HERE: A poll cannot prove ____ because ____. A promise still depends on ____.
+3. **Uncertainty.** Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?
+   - START HERE: This poll estimates ____ among ____ at ____. It cannot establish ____. A promise also depends on ____.
    - PUSH FURTHER: Name information that would strengthen each conclusion.
 
 ### Where the work goes
@@ -315,17 +315,17 @@ Return after November 3 to record sourced 2026 results, identify unresolved race
 
 1. **Results literacy.** I can distinguish a projection, unofficial count, and certified result.
 2. **Cause and effect.** I can connect the 2026 outcome to a governing consequence and a limit.
-3. **Argument.** I can support an explanation with two sources and a fair alternative interpretation.
+3. **Argument.** I can support an explanation with two sources and a fair alternative interpretation of the governing impact.
 
 ### Success criteria
 
 1. **Results literacy.** I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.
 2. **Cause and effect.** I can explain two possible governing effects and one outcome that is not guaranteed.
-3. **Argument.** I can use two identified sources, address a competing interpretation, and state an uncertainty.
+3. **Argument.** I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.
 
 ### What happens in class
 
-Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -340,14 +340,14 @@ Before lunch: follow the continuous civics investigation, with two integrated cl
 
 ### The filings
 
-1. **Evidence.** What do two sources establish about the results, and what remains unresolved? Compare the reporting stages.
+1. **Evidence.** Optional source-planning note: what do the two sources establish, and what remains unresolved? Your results notebook already supplies this evidence.
    - START HERE: Source 1 establishes ____. Source 2 reports ____. As of ____, ____ remains unresolved / is certified.
    - PUSH FURTHER: Explain how update times and reporting stages can produce different-looking pages.
-2. **Cause and effect.** Explain two possible governing effects of the verified outcome and one change not guaranteed. State conditions if control remains unresolved.
+2. **Cause and effect.** Optional impact-planning note: identify two possible governing effects and one limit. Reuse these ideas in your final explanation.
    - START HERE: Because / if ____ controls ____, ____ could change. Another effect is ____. This does not guarantee ____.
    - PUSH FURTHER: Separate January leadership changes from policies requiring later action.
-3. **Final explanation.** How did the 2026 midterms change who has power, and what could that mean? Use two identified sources, a competing interpretation, and an uncertainty.
-   - START HERE: The results show ____. Sources ____ and ____ establish ____. This could mean ____. Another interpretation is ____. We still do not know ____.
+3. **Final explanation.** Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.
+   - START HERE: As of ____, sources ____ and ____ establish ____. Because / if ____ controls ____, ____ could change. A second effect is ____, but ____ is not guaranteed. Someone could interpret this impact as ____ because ____. We still need to check ____.
    - PUSH FURTHER: Explain what new evidence could change your conclusion. A concise paragraph or five clear sentences is enough.
 
 ### Where the work goes

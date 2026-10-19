@@ -200,12 +200,13 @@ function assignmentBody(unit, topic, code) {
 <h3>Step 1 &mdash; Open the civics investigation</h3>
 <p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener">Open Topic ${topic.n}</a></p>
 <h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the two core clips, background supports, and five-item practice. Then complete these three short responses${topic.resultsNotebook?' and the dated results notebook':''}:</p>
-<ol>${topic.questions.map(q=>'<li>'+esc(plain(q.text))+'</li>').join('')}</ol>
-<p>Each response has Start here and Push further support. Political preferences are not scored.</p>
+<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. ${topic.resultsNotebook?'Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.':'Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.'}</p>
+<ol>${topic.questions.filter(q=>!q.optional).map(q=>'<li>'+esc(plain(q.text))+'</li>').join('')}</ol>
+<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
 <h3>Step 3 &mdash; Gather and submit before lunch</h3>
 <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
 <h3>Success criteria</h3><ol>${topic.successCriteria.map(c=>'<li>'+esc(plain(c.criteria))+'</li>').join('')}</ol>
+<h3>Scoring / ${topic.rubric.reduce((n,r)=>n+r.points,0)} points</h3><ul>${topic.rubric.map(r=>'<li><strong>'+esc(r.label)+' ('+r.points+')</strong>: '+esc(r.description)+'</li>').join('')}</ul>
 ${topic.afterElection?'<p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>':''}
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>`;
   }

@@ -9,6 +9,7 @@ const {topics}=require('../lib/unit-content/midterms');
   await teacher.goto(root+'/teacher/'+os);await projection.goto(root+'/teacher/'+project);
   assert.strictEqual(await teacher.locator('[data-phase-index]').count(),10);assert((await teacher.textContent('#scene-title')).includes(t.hook));
   assert(await teacher.textContent('#intel-land'));assert.strictEqual(await projection.locator('#intel-land').count(),0);
+  assert(await teacher.textContent('#intel-model'));assert.strictEqual(await projection.locator('#intel-model').count(),0);
   await teacher.locator('[data-phase-index="2"]').click();await projection.waitForFunction(()=>document.getElementById('projector-phase').textContent.startsWith('03'));
   assert((await projection.getAttribute('#projector-action','href')).includes('pbs.org/video'));
   await projection.click('#projector-next');await teacher.waitForFunction(()=>document.getElementById('teacher-count').textContent.startsWith('4 /'));

@@ -14,13 +14,13 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–4",
       "start": 0,
-      "minutes": 5,
+      "minutes": 4,
       "screen": {
         "eyebrow": "Topic 1 / Opening question",
         "title": "The president is not on the ballot. Could Washington still change?",
-        "description": "Make a private prediction before the explanation.",
+        "description": "Make a private prediction. Revisit the recurring Indiana race.",
         "action": null
       }
     },
@@ -28,14 +28,17 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "5–8",
-      "start": 5,
-      "minutes": 3,
+      "time": "4–6",
+      "start": 4,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 1 / Today’s direction",
         "title": "What are voters actually choosing?",
         "description": "Find out what is on the 2026 ballot, compare the House and Senate, and explain how Congress can change while the president stays in office.",
-        "action": null,
+        "action": {
+          "url": "../midterms/block-01.html#student-flow",
+          "label": "See today’s required work"
+        },
         "bullets": [
           "I can explain what a midterm election changes and what it does not.",
           "I can distinguish House elections from Senate elections.",
@@ -47,16 +50,16 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "8–18",
-      "start": 8,
-      "minutes": 10,
+      "time": "6–11",
+      "start": 6,
+      "minutes": 5,
       "screen": {
         "eyebrow": "Topic 1 / Watch / explain",
-        "title": "Two chambers. Different rules.",
-        "description": "How do House and Senate representation and election cycles differ?",
+        "title": "Bicameral Congress: Crash Course Government #2",
+        "description": "Assigned 0:00–3:30. How do House and Senate representation and election cycles differ?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-2/",
-          "label": "Play Bicameral Congress: Crash Course Government #2"
+          "label": "Play the assigned window"
         },
         "cards": [
           {
@@ -76,45 +79,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "investigate",
-      "label": "Investigate",
+      "label": "Guided practice",
       "kind": "lesson",
-      "time": "18–28",
-      "start": 18,
-      "minutes": 10,
+      "time": "11–23",
+      "start": 11,
+      "minutes": 12,
       "screen": {
-        "eyebrow": "Topic 1 / Investigate",
+        "eyebrow": "Topic 1 / Guided practice",
         "title": "House, Senate, or both?",
-        "description": "Open Step 2. Use the background, complete the practice, and check your choices.",
+        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
         "action": {
-          "url": "../midterms/block-01.html",
-          "label": "Open student investigation"
-        },
-        "cards": [
-          {
-            "title": "House",
-            "text": "435 voting seats · Two-year terms · Districts"
-          },
-          {
-            "title": "Senate",
-            "text": "100 seats · Six-year terms · Two per state"
-          }
-        ]
+          "url": "../midterms/block-01.html#chapter-2",
+          "label": "Open practice and feedback"
+        }
       }
     },
     {
       "id": "watch-2",
       "label": "Evidence",
-      "kind": "watch",
-      "time": "28–38",
-      "start": 28,
-      "minutes": 10,
+      "kind": "lesson",
+      "time": "23–35",
+      "start": 23,
+      "minutes": 12,
       "screen": {
         "eyebrow": "Topic 1 / Evidence",
         "title": "What can this source establish?",
         "description": "Use the FEC election-information page and the WFYI clip. Record a verified election fact and an outcome these sources cannot establish yet.",
         "action": {
-          "url": "https://www.pbs.org/video/members-of-congress-lswvi8/",
-          "label": "Play Members of Congress: Simple Civics"
+          "url": "../midterms/block-01.html#chapter-3",
+          "label": "Open clip window and evidence"
         }
       }
     },
@@ -122,33 +115,33 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "38–48",
-      "start": 38,
+      "time": "35–45",
+      "start": 35,
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 1 / Apply the idea",
-        "title": "What changes—and what has limits?",
+        "title": "Follow a change in power",
         "description": "Constructed scenario: A different party wins the House. The president stays in office. Consider leaders, legislative priorities, and limits on one chamber.",
         "action": {
-          "url": "../midterms/block-01.html",
-          "label": "Open Step 4 / Apply"
+          "url": "../midterms/block-01.html#chapter-4",
+          "label": "Open application"
         }
       }
     },
     {
       "id": "file",
-      "label": "Checkpoint / Canvas",
+      "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "48–55",
-      "start": 48,
-      "minutes": 7,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 1 / Checkpoint / Canvas",
-        "title": "Explain it. Support it. File it.",
+        "eyebrow": "Topic 1 / Explain / Canvas",
+        "title": "Explain why it matters",
         "description": "If the president is not on the ballot, why can the midterms still change who has power? Use one verified fact.",
         "action": {
-          "url": "../midterms/block-01.html",
-          "label": "Open Step 5 / File"
+          "url": "../midterms/block-01.html#chapter-5",
+          "label": "Explain, gather, and submit"
         }
       }
     },
@@ -162,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "The unit checkpoint is complete. After lunch: CNN10 and today’s reporting.",
+        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
         "action": null
       }
     },
@@ -176,7 +169,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / CNN10",
         "title": "Now, the wider world.",
-        "description": "Watch the latest school-day CNN10 episode. Notice one event, its source, and why it matters.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
         "action": {
           "url": "https://www.cnn.com/cnn10",
           "label": "Open CNN10"
@@ -193,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk for daily reporting and a short News Log filing.",
+        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

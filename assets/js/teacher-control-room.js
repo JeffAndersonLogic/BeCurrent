@@ -82,6 +82,7 @@ function renderCockpit(){
   text('intel-land',n.land);text('intel-ask',n.ask);text('intel-listen',n.listenFor);
   text('intel-protect',n.protect);text('intel-cut',n.cut);text('intel-move',n.move);
   text('intel-avoid',n.avoid);text('intel-reteach',n.reteach);
+  text('intel-model',n.model);
   text('timer-target',p.kind==='break'?'Lunch is untimed':'Target: '+p.minutes+' minutes');
   if($('timer-toggle'))$('timer-toggle').disabled=p.kind==='break';
   const prior=$('teacher-prev'),next=$('teacher-next');
