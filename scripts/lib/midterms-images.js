@@ -2,9 +2,10 @@
 // Photographs for the Midterms pages: one registry, so every picture carries its
 // credit and licence wherever it renders. Files are local, under
 // assets/images/midterms/, resized from the originals linked in `source`
-// (Wikimedia Commons, NASA, the Library of Congress). Every picture is public
-// domain; if a CC BY picture is ever added, its credit must name the author and
-// licence.
+// (Wikimedia Commons, NASA, the Library of Congress). Pictures are public domain
+// or CC BY; a CC BY credit names the author and licence and says it was resized,
+// and it prints wherever the picture does (the unit page lists every credit).
+// `position` keeps the subject in frame when a layout crops the picture.
 const PHOTOS={
  'capitol-west':{file:'capitol-west-front.webp',w:1600,h:828,
   alt:'The west front of the United States Capitol under a blue sky, with the Senate wing on the left and the House wing on the right.',
@@ -36,11 +37,11 @@ const PHOTOS={
   caption:'The Indiana Statehouse in Indianapolis. A news race call is not the official result: state election officials count, canvass and certify the vote.',
   credit:'Carol M. Highsmith, Library of Congress, public domain',
   source:'https://www.loc.gov/item/2016632124/'},
- 'newspaper':{file:'small-town-newspaper.webp',w:1600,h:1200,
-  alt:'A publisher sits at a vintage linotype machine in a cluttered small-town newspaper office.',
-  caption:'Every message has a maker. The publisher of a weekly newspaper in Saguache, Colorado, sets type on a linotype machine. Before you believe a claim, ask who made it and what evidence it rests on.',
-  credit:'Carol M. Highsmith, Library of Congress, public domain',
-  source:'https://www.loc.gov/item/2017885503/'}
+ 'i-voted':{file:'i-voted-stickers-2026.webp',w:1600,h:1067,position:'25% 75%',
+  alt:'A roll of red “I Voted” stickers on a table, with the room behind it out of focus.',
+  caption:'“I Voted” stickers at the public library in Aitkin, Minnesota, on primary election day, August 11, 2026. Every campaign message is competing for that sticker: check the claim before it decides your vote.',
+  credit:'Lorie Shaull, CC BY 4.0, via Wikimedia Commons (resized)',
+  source:'https://commons.wikimedia.org/wiki/File:A_roll_of_%22I_Voted%22_stickers_in_Aitkin_Public_Library_on_Primary_Election_Day,_Aug._11,_2026._in_Aitkin.jpg'}
 };
 // Where each picture appears. `hero` sits beside the title. `chapters` maps a
 // chapter index (0 Predict … 4 File) to one picture or a pair shown side by side.
@@ -49,7 +50,7 @@ const PLACEMENT={
  1:{hero:'capitol-west',chapters:{1:'house-chamber'}},
  2:{hero:'house-chamber',chapters:{2:'committee-hearing'}},
  3:{hero:'white-house',chapters:{2:'capitol-west'}},
- 4:{hero:'newspaper'},
+ 4:{hero:'i-voted'},
  5:{hero:'indiana-statehouse'}
 };
 function photo(key){const p=PHOTOS[key];if(!p)throw new Error('midterms-images: no photo named '+key);return p;}
