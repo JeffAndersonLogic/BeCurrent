@@ -105,8 +105,26 @@ const CALENDAR = {
   WP2: { date: '2026-10-22', due: '2026-10-26', event: 'CE - Midterms 2 - The Battle for Congress' },
   WP3: { date: '2026-10-26', due: '2026-10-28', event: 'CE - Midterms 3 - The Power to Stop a President' },
   WP4: { date: '2026-10-28', due: '2026-10-30', event: 'CE - Midterms 4 - The Fight for Your Vote' },
+  WPED: { date: '2026-11-03', event: 'CE - Midterms 5 - Election Day' },
   WP5: { date: '2026-11-05', due: '2026-11-09', event: 'CE - Midterms 6 - Election Results' }
 };
+
+// A unit's scheduled days that are not topics (`days` in the content module, like
+// Midterms Election Day) get a calendar event but never an assignment. Each is
+// slotted in by class date, and its `code` stands in for the topic number, so
+// Election Day is WPED everywhere a topic would be WP4 or WP5.
+function withDays(unit) {
+  const code = String(unit.meta.code || '').toUpperCase();
+  const list = (unit.topics || []).slice();
+  (unit.days || []).forEach(d => {
+    const day = { ...d, n: String(d.code).toUpperCase(), day: true };
+    const date = (CALENDAR[code + day.n] || {}).date || d.date;
+    let i = list.findIndex(t => CALENDAR[code + t.n] && CALENDAR[code + t.n].date > date);
+    if (i < 0) i = list.length;
+    list.splice(i, 0, day);
+  });
+  return list;
+}
 
 // "2026-10-22" -> "Thursday, October 22". Plain-date arithmetic, no timezone.
 function longDate(iso) {
@@ -187,6 +205,8 @@ function eventTable(unit, topic, code) {
   const links = [`                <p><a class="inline_disabled" href="${unitUrl}" target="_blank" rel="noopener">${esc(objectName(m.unit))}, the unit page</a></p>`];
   if (hasBrief) {
     links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">The Brief for this topic</a></p>`);
+  } else if (topic.day) {
+    links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">${esc(plain(topic.canvasLink || topic.title))}</a></p>`);
   } else if (hasReverseHistory) {
     links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">${videoFirst ? 'The civics investigation' : 'The Reverse History investigation'} for this topic</a></p>`);
   }
@@ -201,6 +221,8 @@ function eventTable(unit, topic, code) {
     ? `                <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong>${videoFirst ? ' to copy the investigation, with the manual-copy box as a backup' : ' and <strong>Copy to Clipboard</strong> at the end of it'}. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>${CALENDAR[code] && CALENDAR[code].due ? `
                 <p><strong>Due:</strong> the start of class on ${longDate(CALENDAR[code].due)}.</p>` : ''}`
+    : topic.day
+    ? `                <p><strong>Nothing to submit.</strong> ${esc(plain(topic.canvasNote || 'Today is done on paper in class.'))}</p>`
     : `                <p><strong>Nothing to submit.</strong> This topic is done on paper in class. There is no Canvas assignment for it and nothing to hand in.</p>`;
 
   const rows = [
@@ -592,7 +614,7 @@ function renderNewsLog(desk) {
 function renderUnit(unit) {
   const m = unit.meta;
   const code = String(m.code || '').toUpperCase();
-  const topics = unit.topics || [];
+  const topics = withDays(unit);
   const out = [];
 
   out.push(`# ${objectName(m.unit)} Calendar Events, Paste-Ready`);
@@ -635,7 +657,7 @@ function renderUnit(unit) {
     const a = ASSIGNMENTS[c];
     const cal = CALENDAR[c];
     out.push(dated
-      ? `| ${cal ? longDate(cal.date) : ''} | \`${eventTitleFor(c, t)}\` | ${a ? `\`${a.name}\`` : 'none, on paper' } | ${cal && a ? longDate(cal.due) : ''} |`
+      ? `| ${cal ? longDate(cal.date) : ''} | \`${eventTitleFor(c, t)}\` | ${a ? `\`${a.name}\`` : t.day ? 'none, a paper day' : 'none, on paper' } | ${cal && a ? longDate(cal.due) : ''} |`
       : `| \`${eventTitleFor(c, t)}\` | ${a ? `\`${a.name}\`` : 'none, on paper' } | ${a ? 'Yes' : 'No'} |`);
   });
   out.push('');
@@ -650,7 +672,7 @@ function renderUnit(unit) {
     out.push('');
     if (CALENDAR[c]) out.push(`**Class date:** ${longDate(CALENDAR[c].date)}  `);
     out.push(`**Event title:** \`${eventTitleFor(c, t)}\`  `);
-    out.push(`**Assignment to link:** ${a ? `\`${a.name}\`` : '_none, this topic is done on paper_'}  `);
+    out.push(`**Assignment to link:** ${a ? `\`${a.name}\`` : t.day ? '_none, this day is done on paper_' : '_none, this topic is done on paper_'}  `);
     out.push(`**Source:** \`scripts/lib/unit-content/${m.unitKey}.js\`, ${plain(t.topic)}  `);
     out.push('');
 
@@ -711,7 +733,8 @@ function renderUnit(unit) {
 function renderUnitHtml(unit) {
   const m = unit.meta;
   const code = String(m.code || '').toUpperCase();
-  const topics = unit.topics || [];
+  const topics = withDays(unit);
+  const topicCount = (unit.topics || []).length;
   const unitName = objectName(m.unit);
 
   const sections = topics.map(t => {
@@ -735,7 +758,7 @@ function renderUnitHtml(unit) {
     <dt>Event title</dt><dd><code>${esc(eventTitle)}</code></dd>
     <dt>Assignment to link</dt><dd>${a
       ? `<code>${esc(a.name)}</code> <span class="muted">&middot; ${a.points} points${cal ? ` &middot; due ${esc(longDate(cal.due))}, start of class` : ''}</span>`
-      : '<span class="muted">none, this topic is done on paper</span>'}</dd>
+      : `<span class="muted">none, this ${t.day ? 'day' : 'topic'} is done on paper</span>`}</dd>
   </dl>
 ${withheld ? `
   <p class="warn"><strong>Do not name the film anywhere in Canvas before this topic runs.</strong>
@@ -880,7 +903,7 @@ ${table}
 <header class="masthead">
   <div class="wrap">
     <h1>${esc(unitName)}, Canvas Calendar Events</h1>
-    <p>BeCurrent &middot; ${topics.length} topic${topics.length === 1 ? '' : 's'} &middot; paste-ready</p>
+    <p>BeCurrent &middot; ${topicCount} topic${topicCount === 1 ? '' : 's'} &middot; paste-ready</p>
   </div>
 </header>
 

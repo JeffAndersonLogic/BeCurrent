@@ -90,7 +90,8 @@ const {topics}=require('../lib/unit-content/midterms');
   await page.setViewportSize({width,height:900});await page.goto(root+'/midterms/index.html');
   await page.locator('.unit-list details').evaluateAll(nodes=>nodes.forEach(n=>n.open=true));
   const bullets=await page.locator('.unit-list .target-pair li').evaluateAll(nodes=>nodes.map(n=>({display:getComputedStyle(n).display,width:n.getBoundingClientRect().width,height:n.getBoundingClientRect().height})));
-  assert.strictEqual(bullets.length,30);assert(bullets.every(n=>n.display==='list-item'&&n.width>200&&n.height<180),'targets squeezed into narrow columns');
+  const unitContent=require('../lib/unit-content/midterms'),cards=[...unitContent.topics,...(unitContent.days||[])];
+  assert.strictEqual(bullets.length,cards.reduce((n,c)=>n+c.learningTargets.length+c.successCriteria.length,0));assert(bullets.every(n=>n.display==='list-item'&&n.width>200&&n.height<180),'targets squeezed into narrow columns');
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'unit targets overflow');
  }
  // The investigation is readable even before its enhancement script runs.

@@ -109,7 +109,13 @@ window.BECURRENT_SCHEDULE={
      'I can identify what happened, who was involved, and when the Lead was reported.',
      'I can record the outlet, date, link, and a clear short summary for the Lead and Your Pick.',
      'I can support my significance judgment with a specific detail from the reporting.'
-   ]}
+   ]},
+
+  {date:'2026-11-03',topic:'WPED',
+   note:'Election Day. The polls are open while we watch, so nobody knows any winners yet. Today is on paper: nothing to submit in Canvas.',
+   doNow:'The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?',
+   agenda:['Open the Election Day guide on the Midterms page, or take a paper copy.','Read the rule and the steps from casting a ballot to a certified result.','Watch live Election Day coverage. At each pause, log one thing you heard and its kind.','Before you leave, answer the two questions at the bottom of your log.','Keep your log. You will use it on Thursday in Topic 5.'],
+   homework:'Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.'}
 
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]

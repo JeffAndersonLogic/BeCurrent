@@ -35,6 +35,7 @@ Every link below points at the live GitHub Pages build:
 | Thursday, October 22 | `CE - Midterms 2 - The Battle for Congress` | `WP2 - The Battle for Congress` | Monday, October 26 |
 | Monday, October 26 | `CE - Midterms 3 - The Power to Stop a President` | `WP3 - Checks and Governing` | Wednesday, October 28 |
 | Wednesday, October 28 | `CE - Midterms 4 - The Fight for Your Vote` | `WP4 - Election Messages` | Friday, October 30 |
+| Tuesday, November 3 | `CE - Midterms 5 - Election Day` | none, a paper day |  |
 | Thursday, November 5 | `CE - Midterms 6 - Election Results` | `WP5 - Results and Impact` | Monday, November 9 |
 
 ---
@@ -299,6 +300,71 @@ Every link below points at the live GitHub Pages build:
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Friday, October 30.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+```
+
+---
+
+## CE - Midterms 5 - Election Day
+
+**Class date:** Tuesday, November 3  
+**Event title:** `CE - Midterms 5 - Election Day`  
+**Assignment to link:** _none, this day is done on paper_  
+**Source:** `scripts/lib/unit-content/midterms.js`, Election Day  
+
+```html
+<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+    <tbody>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p>Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>LEARNING TARGETS</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <ol>
+                    <li>I can explain the steps from casting a ballot to a certified result.</li>
+                    <li>I can sort what the coverage reports into how voting works, reports from polling places, voter surveys, predictions, and claims to check.</li>
+                    <li>I can explain why no 2026 winner can be known while the polls are open.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <ol>
+                    <li>I can put polls open, polls close, unofficial count, news call, and certification in the right order.</li>
+                    <li>I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.</li>
+                    <li>I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>BeCurrent Link</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/election-day.html" target="_blank" rel="noopener">The Election Day viewing guide</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
+                <h3>ASSIGNMENT</h3>
+            </td>
+            <td style="vertical-align: top;">
+                <p><strong>Nothing to submit.</strong> Today is on paper. Keep your viewing log: you will use it on Thursday in Topic 5.</p>
             </td>
         </tr>
     </tbody>

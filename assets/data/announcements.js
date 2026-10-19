@@ -832,6 +832,50 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "In The Desk, record sources, dates, links, and summaries.",
         "Explain which story matters more. Confirm your Canvas work is saved."
       ]
+    },
+    {
+      "date": "2026-11-03",
+      "topic": "Election Day: What Can We Know Today?",
+      "unit": "Who Has the Power?",
+      "subtitle": "Watching live coverage while the polls are open",
+      "learningTargets": [
+        {
+          "text": "I can explain the steps from casting a ballot to a certified result.",
+          "label": "Civic structures"
+        },
+        {
+          "text": "I can sort what the coverage reports into how voting works, reports from polling places, voter surveys, predictions, and claims to check.",
+          "label": "Sourcing"
+        },
+        {
+          "text": "I can explain why no 2026 winner can be known while the polls are open.",
+          "label": "Evidence"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can put polls open, polls close, unofficial count, news call, and certification in the right order.",
+          "label": "Civic structures"
+        },
+        {
+          "text": "I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.",
+          "label": "Sourcing"
+        },
+        {
+          "text": "I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.",
+          "label": "Evidence"
+        }
+      ],
+      "homework": "Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.",
+      "note": "Election Day. The polls are open while we watch, so nobody knows any winners yet. Today is on paper: nothing to submit in Canvas.",
+      "doNow": "The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?",
+      "agenda": [
+        "Open the Election Day guide on the Midterms page, or take a paper copy.",
+        "Read the rule and the steps from casting a ballot to a certified result.",
+        "Watch live Election Day coverage. At each pause, log one thing you heard and its kind.",
+        "Before you leave, answer the two questions at the bottom of your log.",
+        "Keep your log. You will use it on Thursday in Topic 5."
+      ]
     }
   ],
   "assessments": [

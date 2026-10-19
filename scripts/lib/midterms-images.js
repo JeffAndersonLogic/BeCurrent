@@ -43,6 +43,9 @@ const PHOTOS={
   credit:'Lorie Shaull, CC BY 4.0, via Wikimedia Commons (resized)',
   source:'https://commons.wikimedia.org/wiki/File:A_roll_of_%22I_Voted%22_stickers_in_Aitkin_Public_Library_on_Primary_Election_Day,_Aug._11,_2026._in_Aitkin.jpg'}
 };
+// The same photograph, captioned for Election Day. credits() lists a file once.
+PHOTOS['i-voted-day']={...PHOTOS['i-voted'],
+ caption:'“I Voted” stickers at the public library in Aitkin, Minnesota, on primary election day, August 11, 2026. A sticker means a ballot was cast. Counting it, checking it and certifying it all come after the polls close.'};
 // Where each picture appears. `hero` sits beside the title. `chapters` maps a
 // chapter index (0 Predict … 4 File) to one picture or a pair shown side by side.
 const PLACEMENT={
@@ -51,7 +54,8 @@ const PLACEMENT={
  2:{hero:'house-chamber',chapters:{2:'committee-hearing'}},
  3:{hero:'white-house',chapters:{2:'capitol-west'}},
  4:{hero:'i-voted'},
- 5:{hero:'indiana-statehouse'}
+ 5:{hero:'indiana-statehouse'},
+ ED:{hero:'i-voted-day'}
 };
 function photo(key){const p=PHOTOS[key];if(!p)throw new Error('midterms-images: no photo named '+key);return p;}
 module.exports={PHOTOS,PLACEMENT,photo};
