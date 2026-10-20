@@ -110,7 +110,12 @@ window.BECURRENT_SCHEDULE={
      'I can record the outlet, date, link, and a clear short summary for the Lead and Your Pick.',
      'I can support my significance judgment with a specific detail from the reporting.'
    ]}
+,
 
+  {date:'2026-10-20',topic:'WP1',topicTitle:'Who Has the Power? | The Election Nobody Understands',
+   doNow:'The president is not on the ballot this November. Could Washington still change? Write your prediction.',
+   agenda:['Opening question: could Washington change without a presidential election?','Watch, then compare the House and the Senate.','Use one verified fact to explain a possible change in government.','Explain your thinking and file your work in Canvas.','After lunch: CNN 10 · Oct. 16: NASA\u2019s Mars Rover Breaks an Out-Of-This-World Record.','After lunch: daily news and your News Log.'],
+   homework:'Finish WP1 - What Midterms Change in Canvas.',homeworkDue:'the start of class on Thursday, October 22'}
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]
 };
