@@ -85,6 +85,13 @@ summary{font-family:var(--vf-label);font-weight:650}
 .chapter-pill{font-size:.74rem}
 }
 @media print{.hero{background:none;border:0}.hero-photo,.photo,.topic-thumb{display:none}}
+/* Election Day viewing guide: the order of steps and the paper viewing log. */
+.ed-steps{list-style:none;counter-reset:ed;padding:0;margin:22px 0;display:grid;gap:10px}.ed-steps li{counter-increment:ed;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;padding:14px 16px;background:#fff;border:1px solid #d4d9d5;border-left:3px solid #922d20}.ed-steps li::before{content:counter(ed);grid-row:span 2;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#172124;color:#fff;font-weight:700}.ed-steps strong{font-size:1.05rem}.ed-steps span{line-height:1.6}
+.ed-kinds{grid-template-columns:repeat(5,minmax(0,1fr))}.ed-kind-n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-right:8px;border-radius:50%;background:#922d20;color:#fff;font-size:.85rem}
+.ed-log{width:100%;border-collapse:collapse;margin:18px 0;background:#fff;font-size:.95rem}.ed-log caption{text-align:left;font-weight:700;padding:0 0 8px}.ed-log th,.ed-log td{border:1px solid #9aa59f;padding:8px;text-align:left;vertical-align:top}.ed-log th{background:#edf1ec}.ed-log td{height:58px}.ed-log td:last-child{color:#526166;white-space:nowrap}
+@media(max-width:920px){.ed-kinds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.ed-kinds{grid-template-columns:1fr}.ed-log{font-size:.8rem}.ed-log th,.ed-log td{padding:5px}.ed-log td:last-child{white-space:normal}}
+@media print{.election-day{font-size:12px;background:white}.election-day .hero{padding:0}.election-day .deck{font-size:12px}.election-day .ed-steps li{padding:6px 8px;break-inside:avoid}.election-day .vocabulary{grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0}.election-day .vocabulary article{padding:8px}.election-day .ed-log-section{break-before:page}.election-day .ed-log td{height:54px}.election-day .ed-steps li::before,.election-day .ed-kind-n{-webkit-print-color-adjust:exact;print-color-adjust:exact}.election-day .writing-lines{height:60px;background:none;border-bottom:1px solid #777;box-shadow:0 -35px 0 -34px #777 inset}.election-day .paper-answer{margin:12px 0}.election-day h2{font-size:1.25rem;margin:14px 0 6px}.election-day details{display:none}.election-day .required-route,.election-day .evidence-card{padding:10px;background:white}}
 
 /* Brand refresh, 2026-10-20: the masthead carries the logo file, not type set to
  * resemble it, so the CSS full stop the text wordmark used is switched off. */

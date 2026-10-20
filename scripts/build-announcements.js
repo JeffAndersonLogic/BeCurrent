@@ -114,6 +114,23 @@ function buildIndex() {
           }))
         });
       });
+
+      // A scheduled day that is not a topic, like Midterms Election Day (WPED).
+      // Same shape, so its targets come from the content module like any topic's.
+      (unit.days || []).forEach(d => {
+        index.set(code + String(d.code).toUpperCase(), {
+          kind: 'day',
+          group: plain(m.unit),
+          title: plain(d.title),
+          subtitle: plain(d.subtitle),
+          learningTargets: (d.learningTargets || []).map(e => ({
+            text: plain(e.target), label: plain(e.skill)
+          })),
+          successCriteria: (d.successCriteria || []).map(e => ({
+            text: plain(e.criteria), label: plain(e.skill)
+          }))
+        });
+      });
     });
   }
 

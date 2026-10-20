@@ -35,6 +35,7 @@ Every link below points at the live GitHub Pages build:
 | Thursday, October 22 | `CE - Midterms 2 - The Battle for Congress` | `WP2 - The Battle for Congress` | Monday, October 26 |
 | Monday, October 26 | `CE - Midterms 3 - The Power to Stop a President` | `WP3 - Checks and Governing` | Wednesday, October 28 |
 | Wednesday, October 28 | `CE - Midterms 4 - The Fight for Your Vote` | `WP4 - Election Messages` | Friday, October 30 |
+| Tuesday, November 3 | `CE - Midterms 5 - Election Day` | none, a paper day |  |
 | Thursday, November 5 | `CE - Midterms 6 - Election Results` | `WP5 - Results and Impact` | Monday, November 9 |
 
 ---
@@ -327,6 +328,78 @@ Every link below points at the live GitHub Pages build:
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Friday, October 30.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+```
+
+---
+
+## CE - Midterms 5 - Election Day
+
+**Class date:** Tuesday, November 3  
+**Event title:** `CE - Midterms 5 - Election Day`  
+**Assignment to link:** _none, this day is done on paper_  
+**Source:** `scripts/lib/unit-content/midterms.js`, Election Day  
+
+```html
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Election Day</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Day: What Can We Know Today?</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">LEARNING TARGETS</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can explain the steps from casting a ballot to a certified result.</li>
+                    <li>I can sort what the coverage reports into how voting works, reports from polling places, voter surveys, predictions, and claims to check.</li>
+                    <li>I can explain why no 2026 winner can be known while the polls are open.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can put polls open, polls close, unofficial count, news call, and certification in the right order.</li>
+                    <li>I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.</li>
+                    <li>I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">BeCurrent Link</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/election-day.html" target="_blank" rel="noopener">The Election Day viewing guide</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><strong>Nothing to submit.</strong> Today is on paper. Keep your viewing log: you will use it on Thursday in Topic 5.</p>
             </td>
         </tr>
     </tbody>

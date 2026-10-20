@@ -617,6 +617,57 @@ Misconception: Do not grade political preferences or treat repeated press-releas
 Reteach: Underline only the checkable part, then name a document that could test it.
 
 
+## Election Day: Election Day: What Can We Know Today?
+
+Tuesday, November 3, 2026. A viewing day beside the five topics, not a topic. No Canvas assignment; students keep a paper viewing log for Topic 5.
+
+Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.
+
+Question: The polls are still open while we watch. What can the coverage tell us today, and what can nobody know yet?
+
+### Learning targets
+
+- I can explain the steps from casting a ballot to a certified result.
+- I can sort what the coverage reports into how voting works, reports from polling places, voter surveys, predictions, and claims to check.
+- I can explain why no 2026 winner can be known while the polls are open.
+
+### Success criteria
+
+- I can put polls open, polls close, unofficial count, news call, and certification in the right order.
+- I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.
+- I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.
+
+### Teacher story
+
+The class watches live coverage while every polling place in the country is still open, so the coverage cannot know any winners and neither can we. That is the lesson: students learn to hear the difference between a fact about voting, a report from a polling place, a voter survey, a prediction, and a claim that needs checking. The log they keep becomes the starting point for Topic 5 on Thursday.
+
+### Choosing the coverage
+
+Choose straight news coverage before class (a national network’s daytime election coverage, PBS, C-SPAN, or an Indianapolis station) and check that it is airing. Avoid opinion panels as the main feed. If a commentator predicts a winner, use it: it is a clean example of a prediction.
+
+### Running it
+
+Pause the coverage about every ten minutes. Think aloud as you sort one statement into its kind on the board, then give students a minute to log their own. Read two or three logs aloud with names removed. No student reports out.
+
+After lunch: CNN 10 if an episode is posted, then return to the coverage. There is no Desk filing today; the coverage is today’s news.
+
+If there is no live coverage: If no live coverage is airing, use the two Topic 5 clips (how race calls work, and how voting machines are checked) and have students log statements from those instead.
+
+Listen for: Students who log a prediction as a fact, or who think an early lead is a result. Correct by asking: has a single vote been counted yet?
+
+Avoid: Do not ask students who they or their families support. No prefilled winners, no predictions from the teacher, and no student presenting.
+
+### The rule students carry in
+
+While the polls are open, election offices do not report vote counts, and news organizations do not call a state’s races until its polls have closed. Anything during class that sounds like a 2026 winner is a prediction, an opinion, or a mistake.
+
+### Closing questions
+
+1. Name one thing the coverage established today. How do you know it is true?
+   Start here: The coverage established that ____. I know because ____ (who reported it, and how they knew).
+2. Name one thing nobody can know yet. What would settle it, and when?
+   Start here: Nobody can know ____ yet. It will be settled when ____.
+
 ## Topic 5: Election Night: What Happens Next?
 
 Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.
