@@ -103,3 +103,20 @@ summary{font-family:var(--vf-label);font-weight:650}
    .projector-scene p to a pale mint. On this light projector that left the card
    definitions and lists nearly invisible, so every text element is reset to ink. */
 .projector-body .projector-scene p,.projector-body .screen-visual li,.projector-body .screen-cards p{color:#2b3b3f}.projector-body .screen-cards h3,.projector-body .screen-visual ul{color:#172124}.projector-body .projector-footer{color:#3d4d52}.projector-body .projector-progress{background:#d6ddd8}.projector-body .projector-progress span{background:#CE1400}.projector-body .projector-action:hover{background:#2b3b3f}
+/* The Canvas assignment toolkit in the Run of Show: the calendar toolkit's preview,
+   copy button and select-by-hand field, for this topic's assignment body. */
+.midterms-os .canvas-kit{margin:26px 0 8px;padding:22px 24px;background:#fff;border:1px solid #d4dad6;border-top:4px solid #CE1400;border-radius:10px}
+.midterms-os .canvas-kit-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.midterms-os .canvas-kit-head h2{margin:4px 0 0;font-size:clamp(1.3rem,2vw,1.7rem)}
+.midterms-os .canvas-kit-meta{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:.88rem}
+.midterms-os .canvas-kit-meta dt{font:700 .7rem/1.6 Montserrat,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#922d20}
+.midterms-os .canvas-kit-meta dd{margin:0;color:#172124}
+.midterms-os .canvas-kit-steps{margin:16px 0;padding-left:22px;line-height:1.6;color:#2b3b3f}
+.midterms-os .canvas-kit-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px}
+.midterms-os #canvas-assignment-status{font-size:.88rem;color:#2b3b3f}
+.midterms-os .canvas-kit details{margin:10px 0 0}
+.midterms-os .canvas-kit summary{cursor:pointer;font-weight:700}
+.midterms-os .canvas-kit-preview{margin-top:12px;padding:16px;border:1px dashed #b9c5bf;border-radius:8px;background:#fff;font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;color:#2d3b45;overflow-x:auto}
+.midterms-os .canvas-kit-preview h2,.midterms-os .canvas-kit-preview h3{font-family:inherit;letter-spacing:normal;text-transform:none}
+.midterms-os .canvas-kit-raw{display:block;width:100%;min-height:260px;margin-top:12px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre;overflow:auto}
+.offscreen{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
