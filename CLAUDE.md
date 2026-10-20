@@ -778,8 +778,10 @@ Social Media, week 01) keep their own look and only took the new logo.
 photograph, runs the investigations as a section front (one big photo package,
 then photo cards), and puts line icons on the briefing, Reverse History and the
 issue doors (`assets/js/becurrent-icons.js`, the Midterms icon style). Every
-photograph is a local public-domain copy in `assets/images/home/` or
-`assets/images/midterms/`, credited on the page.
+photograph is a local copy in `assets/images/home/` or `assets/images/midterms/`,
+credited on the page. The Iran, Ukraine and Social Media card images were
+supplied by the teacher on 2026-10-20 and are credited that way; the rest are
+public domain (DVIDS, NASA, Library of Congress).
 
 **The lead's photo is never faked.** When the daily news file carries the story's
 own photograph, that wins. When it does not, Home, the Desk and the TODAY board
