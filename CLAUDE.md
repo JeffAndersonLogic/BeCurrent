@@ -152,6 +152,12 @@ push. That keeps the record of what it would have caught.
 - `node scripts/serve-local.js`, serve the repo locally. The briefs load through
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
+- `node scripts/build-teaching-os-manifest.js`, write
+  `teacher/teaching-os-manifest.js`: for every scheduled topic code, its teacher
+  cockpit, projector and student page. The JeffOS Teaching Command Center reads it
+  live. Refuses to write if a page is missing or a scheduled code has no entry;
+  `--check` is in the offline suite. Teacher page names live in
+  `scripts/lib/teacher-paths.js`, shared with `build-midterms.js`.
 - `python3 -I scripts/brand/build-wordmark.py`, trace every lockup, the Canvas
   PNG and the favicon from the supplied logo files in
   `assets/images/brand/source/`. Traces, trims and recolours; never redraws.

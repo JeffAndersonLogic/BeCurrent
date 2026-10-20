@@ -6,9 +6,7 @@ const fs=require('fs'),path=require('path');
 const ROOT=path.resolve(__dirname,'..'),CHECK=process.argv.includes('--check');
 const unit=require('./lib/unit-content/midterms'),{meta,topics}=unit;
 const E=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const nn=n=>String(n).padStart(2,'0');
-const os=t=>t.n===1?'midterms-run-of-show.html':`midterms-topic-${nn(t.n)}-os.html`;
-const projector=t=>t.n===1?'midterms-projector.html':`midterms-topic-${nn(t.n)}-projector.html`;
+const {nn,midterms:{os,projector}}=require('./lib/teacher-paths');
 let changed=[];
 function emit(file,txt){const p=path.join(ROOT,file);if(fs.existsSync(p)&&fs.readFileSync(p,'utf8')===txt)return;changed.push(file);if(!CHECK){fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,txt);}}
 const ext=(url,label,cls='')=>`<a class="${cls}" href="${E(url)}" target="_blank" rel="noopener noreferrer">${E(label)} ↗</a>`;

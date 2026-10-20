@@ -41,6 +41,8 @@
     "prepare": "git config core.hooksPath .githooks || true",
     "build:video-first": "node scripts/build-video-first.js",
     "check:video-first": "node scripts/build-video-first.js --check",
+    "build:teaching-os": "node scripts/build-teaching-os-manifest.js",
+    "check:teaching-os": "node scripts/build-teaching-os-manifest.js --check",
     "build:control-room": "node scripts/build-control-room.js",
     "check:control-room": "node scripts/build-control-room.js --check"
   },
