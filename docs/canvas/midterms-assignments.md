@@ -30,7 +30,7 @@ unattributable rows in `exceptions.csv`.
 ## WP1 - What Midterms Change
 
 **Assignment name, Canvas and PowerSchool, character for character:** `WP1 - What Midterms Change`  
-**Points:** 20  
+**Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 1 - Intro to the Midterm Elections`  
 **Taught:** Tuesday, October 20  
 **Due date in Canvas:** Thursday, October 22, set to the start time of your class period  
@@ -101,14 +101,14 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
         <tr>
             <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 5 points</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>What voters choose (6)</strong>: Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.</li>
-                    <li><strong>Fact and source (6)</strong>: Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.</li>
-                    <li><strong>Power and limit (6)</strong>: Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.</li>
-                    <li><strong>Explain your thinking (2)</strong>: Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.</li>
+                    <li><strong>What voters choose</strong>: Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.</li>
+                    <li><strong>Fact and source</strong>: Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.</li>
+                    <li><strong>Power and limit</strong>: Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.</li>
+                    <li><strong>Explain your thinking</strong>: Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.</li>
                 </ul>
             </td>
         </tr>
@@ -122,7 +122,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 ## WP2 - The Battle for Congress
 
 **Assignment name, Canvas and PowerSchool, character for character:** `WP2 - The Battle for Congress`  
-**Points:** 20  
+**Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 2 - The Battle for Congress`  
 **Taught:** Thursday, October 22  
 **Due date in Canvas:** Monday, October 26, set to the start time of your class period  
@@ -193,14 +193,14 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
         <tr>
             <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 5 points</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Seats and majority (6)</strong>: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.</li>
-                    <li><strong>Relevant evidence (4)</strong>: Name a clip or official reference and accurately explain evidence about leaders or committees.</li>
-                    <li><strong>Influence and limits (8)</strong>: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.</li>
-                    <li><strong>Explain your thinking (2)</strong>: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.</li>
+                    <li><strong>Seats and majority</strong>: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.</li>
+                    <li><strong>Relevant evidence</strong>: Name a clip or official reference and accurately explain evidence about leaders or committees.</li>
+                    <li><strong>Influence and limits</strong>: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.</li>
+                    <li><strong>Explain your thinking</strong>: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.</li>
                 </ul>
             </td>
         </tr>
@@ -214,7 +214,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 ## WP3 - Checks and Governing
 
 **Assignment name, Canvas and PowerSchool, character for character:** `WP3 - Checks and Governing`  
-**Points:** 20  
+**Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 3 - The Power to Stop a President`  
 **Taught:** Monday, October 26  
 **Due date in Canvas:** Wednesday, October 28, set to the start time of your class period  
@@ -285,14 +285,14 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
         <tr>
             <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 5 points</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Checks and institutions (6)</strong>: Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.</li>
-                    <li><strong>Relevant evidence (4)</strong>: Name a relevant clip or official source and accurately use an institutional fact from it.</li>
-                    <li><strong>Accountability and governing (8)</strong>: Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.</li>
-                    <li><strong>Explain your thinking (2)</strong>: Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.</li>
+                    <li><strong>Checks and institutions</strong>: Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.</li>
+                    <li><strong>Relevant evidence</strong>: Name a relevant clip or official source and accurately use an institutional fact from it.</li>
+                    <li><strong>Accountability and governing</strong>: Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.</li>
+                    <li><strong>Explain your thinking</strong>: Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.</li>
                 </ul>
             </td>
         </tr>
@@ -306,7 +306,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 ## WP4 - Election Messages
 
 **Assignment name, Canvas and PowerSchool, character for character:** `WP4 - Election Messages`  
-**Points:** 20  
+**Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 4 - The Fight for Your Vote`  
 **Taught:** Wednesday, October 28  
 **Due date in Canvas:** Friday, October 30, set to the start time of your class period  
@@ -377,14 +377,14 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
         <tr>
             <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 5 points</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Message and framing (4)</strong>: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.</li>
-                    <li><strong>Check the real claim (8)</strong>: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.</li>
-                    <li><strong>Polls, promises, uncertainty (6)</strong>: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.</li>
-                    <li><strong>Explain your thinking (2)</strong>: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.</li>
+                    <li><strong>Message and framing</strong>: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.</li>
+                    <li><strong>Check the real claim</strong>: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.</li>
+                    <li><strong>Polls, promises, uncertainty</strong>: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.</li>
+                    <li><strong>Explain your thinking</strong>: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.</li>
                 </ul>
             </td>
         </tr>
@@ -398,7 +398,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 ## WP5 - Results and Impact
 
 **Assignment name, Canvas and PowerSchool, character for character:** `WP5 - Results and Impact`  
-**Points:** 30  
+**Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 6 - Election Results`  
 **Taught:** Thursday, November 5  
 **Due date in Canvas:** Monday, November 9, set to the start time of your class period  
@@ -475,15 +475,15 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
         <tr>
             <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 30 points</h3>
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 5 points</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Accurate results (8)</strong>: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.</li>
-                    <li><strong>Effects and limit (8)</strong>: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.</li>
-                    <li><strong>Two-source reasoning (6)</strong>: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.</li>
-                    <li><strong>Another reasonable impact (4)</strong>: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.</li>
-                    <li><strong>Remaining uncertainty (4)</strong>: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.</li>
+                    <li><strong>Accurate results</strong>: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.</li>
+                    <li><strong>Effects and limit</strong>: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.</li>
+                    <li><strong>Two-source reasoning</strong>: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.</li>
+                    <li><strong>Another reasonable impact</strong>: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.</li>
+                    <li><strong>Remaining uncertainty</strong>: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.</li>
                 </ul>
             </td>
         </tr>

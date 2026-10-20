@@ -47,6 +47,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-1",
+      "label": "Notes 1 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 5,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 4 / Notes 1 of 6",
+        "title": "What does a campaign want you to notice?",
+        "description": "",
+        "bullets": [
+          "Campaigns choose an issue, an image, a number, or a personal story.",
+          "Those choices direct attention. That is framing.",
+          "Start by stating the claim in plain language.",
+          "Then ask who the message seems designed to reach."
+        ],
+        "write": "Framing is the choices that shape how information is presented."
+      }
+    },
+    {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
@@ -78,6 +98,46 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-2",
+      "label": "Notes 2 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 11,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 4 / Notes 2 of 6",
+        "title": "How do you check a claim?",
+        "description": "",
+        "bullets": [
+          "Find the exact claim. Who said it, and when?",
+          "Match the source to the claim: a vote record for a vote, a budget document for an amount.",
+          "A campaign’s own page shows what the campaign says. It is not independent proof.",
+          "Two websites repeating one press release are not two confirmations."
+        ],
+        "write": "Corroboration means checking against another source with relevant, independent evidence."
+      }
+    },
+    {
+      "id": "notes-3",
+      "label": "Notes 3 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 11,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 4 / Notes 3 of 6",
+        "title": "Promise, poll, claim, or result?",
+        "description": "",
+        "bullets": [
+          "Campaign promise: a future action a candidate wants to take.",
+          "Poll estimate: opinion from a sample of people at one point in time.",
+          "Claim needing checking: a statement that needs evidence before you believe it.",
+          "Official result: the final totals signed off by the election office."
+        ],
+        "write": "A promise and a poll are not results."
+      }
+    },
+    {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
@@ -92,6 +152,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-04.html#chapter-2",
           "label": "Open practice and feedback"
         }
+      }
+    },
+    {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 21,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 4 / Notes 4 of 6",
+        "title": "Can a message be accurate and still leave something out?",
+        "description": "",
+        "bullets": [
+          "A number can be correct but incomplete: one year, one program, or one comparison.",
+          "A headline can feature a number and leave its limits farther down the page.",
+          "Ask what context would change the impression: time period, comparison, people affected, methods.",
+          "This is a reason to check carefully, not a reason to assume every message is false."
+        ],
+        "write": "An accurate detail can still leave out important context."
       }
     },
     {
@@ -112,6 +192,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-5",
+      "label": "Notes 5 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 35,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 4 / Notes 5 of 6",
+        "title": "What if two sources seem to disagree?",
+        "description": "",
+        "bullets": [
+          "Check whether they answer the same question.",
+          "One may describe a proposal while the other describes an existing law.",
+          "They may use different dates, groups, or measures.",
+          "Decide what the evidence supports, contradicts, or leaves unresolved."
+        ],
+        "write": "“Unresolved” is an honest finding when the evidence cannot settle a claim."
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
@@ -126,6 +226,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-04.html#chapter-4",
           "label": "Open the real-claim packet"
         }
+      }
+    },
+    {
+      "id": "notes-6",
+      "label": "Notes 6 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 4 / Notes 6 of 6",
+        "title": "Why isn’t a poll or a promise a result?",
+        "description": "",
+        "bullets": [
+          "A poll estimates opinion from a sample at a particular time.",
+          "Who was asked, the wording, the timing, and the uncertainty all matter.",
+          "A national poll does not award congressional seats.",
+          "A promise may need other people and institutions to agree."
+        ],
+        "write": "Keep three questions separate: what people say now, who wins, and what government does later."
       }
     },
     {

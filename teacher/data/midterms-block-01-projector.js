@@ -47,6 +47,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-1",
+      "label": "Notes 1 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 6,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 1 of 6",
+        "title": "Why does an election without a president still matter?",
+        "description": "",
+        "bullets": [
+          "The president leads the executive branch. Congress has its own powers.",
+          "Congress considers laws, decides spending through legislation, and checks government actions.",
+          "“Midterm” describes the timing: halfway through a four-year presidential term.",
+          "It does not mean the offices on the ballot have less power."
+        ],
+        "write": "Voters can change Congress in a midterm while the president stays in office."
+      }
+    },
+    {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
@@ -78,6 +98,47 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-2",
+      "label": "Notes 2 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 11,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 2 of 6",
+        "title": "Congress has two chambers",
+        "description": "",
+        "bullets": [
+          "Congress is the House of Representatives and the Senate together.",
+          "House: 435 voting members. Each one represents a district.",
+          "A state’s population sets how many House seats it has.",
+          "Senate: every state has two senators, no matter its population."
+        ],
+        "write": "Congress = the House + the Senate."
+      }
+    },
+    {
+      "id": "notes-3",
+      "label": "Notes 3 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 11,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 3 of 6",
+        "title": "Why do House and Senate elections look different?",
+        "description": "",
+        "bullets": [
+          "House terms last two years, so all 435 voting seats are elected every two years.",
+          "Senate terms last six years and are staggered in three groups.",
+          "Only about one-third of Senate seats have regular elections in a given cycle.",
+          "Special elections can add more Senate races.",
+          "On November 3, 2026, voters choose members of Congress, not a president."
+        ],
+        "write": "The whole House is on the ballot every two years. Only about one-third of the Senate is."
+      }
+    },
+    {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
@@ -92,6 +153,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-01.html#chapter-2",
           "label": "Open practice and feedback"
         }
+      }
+    },
+    {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 23,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 4 of 6",
+        "title": "What is a fact, and what is still a prediction?",
+        "description": "",
+        "bullets": [
+          "A source can establish one fact without answering everything.",
+          "The FEC can establish the election date. It cannot report winners before the election.",
+          "A primary usually helps choose a party’s nominee. The general election chooses who holds the office.",
+          "A primary win or a favorable poll does not establish a November winner."
+        ],
+        "write": "Name the source and the exact fact it supports. Outcomes nobody knows yet stay unknown."
       }
     },
     {
@@ -112,6 +193,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-5",
+      "label": "Notes 5 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 35,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 5 of 6",
+        "title": "What could a new House majority change?",
+        "description": "",
+        "bullets": [
+          "New members can bring different chamber leaders and committee chairs.",
+          "Those leaders influence which bills and investigations get attention.",
+          "A new House majority does not replace the president.",
+          "It does not make every proposal a law: the Senate and the president still have roles."
+        ],
+        "write": "Every change in power has a limit. Name the change and name the limit."
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
@@ -126,6 +227,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-01.html#chapter-4",
           "label": "Open application"
         }
+      }
+    },
+    {
+      "id": "notes-6",
+      "label": "Notes 6 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 6 of 6",
+        "title": "From voters to decisions",
+        "description": "",
+        "bullets": [
+          "Voters choose representatives and senators in separate elections.",
+          "The winners decide who sits in each chamber.",
+          "Membership decides who organizes each chamber.",
+          "Leaders decide which issues get priority."
+        ],
+        "write": "Voters → seats → leaders → priorities. A new priority is not a guaranteed law."
       }
     },
     {

@@ -24,6 +24,9 @@ module.exports=function revise({meta,topics,sources,clips}){
  };
  for(const t of topics){
   t.teaching=teaching[t.n];t.rubric=t.teaching.rubric;t.evidence=evidence;
+  // Jeff, 2026-10-20: every Midterms assignment is worth 5 points, and the rubric
+  // components carry no point values of their own on any surface.
+  t.points=5;
   t.sortExplanations=explanations[t.n];
   t.videos=t.videos.map((v,i)=>i<2?{...v,selection:{start:windows[t.n][i][0],end:windows[t.n][i][1]},takeaways:takeaways[t.n][i],optional:t.n===5&&i===1,pause:'Stop at the assigned endpoint. Ask: '+v.prompt+' Use the core takeaways to check the answer before continuing.'}:v);
   t.questions.forEach((q,i)=>{q.length=i===0?'One factual bullet and a source name are enough.':i===1?'Two short bullets are enough.':'Two or three clear sentences are enough.';q.checklist=[];});

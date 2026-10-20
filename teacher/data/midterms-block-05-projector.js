@@ -47,6 +47,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-1",
+      "label": "Notes 1 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 5,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 5 / Notes 1 of 6",
+        "title": "Why might some results not be final yet?",
+        "description": "",
+        "bullets": [
+          "Reporting develops as ballots are counted and officials check the totals.",
+          "A close race can stay unresolved after other races are called.",
+          "Record when you checked and which source you used.",
+          "If a later update changes a finding, explain what new information appeared."
+        ],
+        "write": "Name the uncertainty. Never fill the gap with a guess."
+      }
+    },
+    {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
@@ -78,6 +98,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-2",
+      "label": "Notes 2 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 13,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 5 / Notes 2 of 6",
+        "title": "The four stages of election reporting",
+        "description": "",
+        "bullets": [
+          "Poll or forecast: estimates opinion before voting ends.",
+          "Unofficial count: ballots counted so far. It can change as more are added.",
+          "News race call: a news organization’s conclusion from counted votes and analysis.",
+          "Certified result: the official sign-off by election authorities after the canvass."
+        ],
+        "write": "Keep the source and the stage attached to every result."
+      }
+    },
+    {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
@@ -92,6 +132,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-05.html#chapter-2",
           "label": "Open practice and feedback"
         }
+      }
+    },
+    {
+      "id": "notes-3",
+      "label": "Notes 3 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 18,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 5 / Notes 3 of 6",
+        "title": "How do separate races decide control of a chamber?",
+        "description": "",
+        "bullets": [
+          "Control depends on who wins enough seats, not on one dramatic race.",
+          "House and Senate outcomes can differ.",
+          "Name your baseline: the outgoing Congress or a previous election. Do not mix them.",
+          "Some races may still be unresolved when we meet."
+        ],
+        "write": "A claim about chamber control needs evidence about enough seats."
       }
     },
     {
@@ -112,6 +172,46 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 33,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 5 / Notes 4 of 6",
+        "title": "When do results start changing government?",
+        "description": "",
+        "bullets": [
+          "Winning on Election Day and starting a term are different moments.",
+          "Newly elected members ordinarily begin their terms on January 3, 2027.",
+          "Until then, the outgoing Congress still has responsibilities.",
+          "Once the new members organize, leadership and committees can change."
+        ],
+        "write": "Election Day does not instantly replace Congress."
+      }
+    },
+    {
+      "id": "notes-5",
+      "label": "Notes 5 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 33,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 5 / Notes 5 of 6",
+        "title": "What can a change in control affect?",
+        "description": "",
+        "bullets": [
+          "Who leads each chamber and its committees.",
+          "Which issues get priority.",
+          "Oversight of the executive branch.",
+          "It does not automatically turn campaign promises into laws."
+        ],
+        "write": "If control is still unresolved, explain it as a condition: “If ___ controls ___, then ___ could ___.”"
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
@@ -126,6 +226,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-05.html#chapter-4",
           "label": "Open application"
         }
+      }
+    },
+    {
+      "id": "notes-6",
+      "label": "Notes 6 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 43,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 5 / Notes 6 of 6",
+        "title": "Build an explanation that can survive an update",
+        "description": "",
+        "bullets": [
+          "Start with the sourced outcome and its reporting stage.",
+          "Connect it to two possible governing effects and one limit.",
+          "Give another reasonable interpretation using the same results.",
+          "Finish with an uncertainty or your next check."
+        ],
+        "write": "Use “has” for an established outcome and “could” for a possible effect."
       }
     },
     {

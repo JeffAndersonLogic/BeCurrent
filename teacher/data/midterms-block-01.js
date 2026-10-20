@@ -71,6 +71,38 @@
       }
     },
     {
+      "id": "notes-1",
+      "label": "Notes 1 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 6,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 1 of 6",
+        "title": "Why does an election without a president still matter?",
+        "description": "",
+        "bullets": [
+          "The president leads the executive branch. Congress has its own powers.",
+          "Congress considers laws, decides spending through legislation, and checks government actions.",
+          "“Midterm” describes the timing: halfway through a four-year presidential term.",
+          "It does not mean the offices on the ballot have less power."
+        ],
+        "write": "Voters can change Congress in a midterm while the president stays in office."
+      },
+      "intel": {
+        "land": "Voters can change Congress in a midterm while the president stays in office.",
+        "ask": "Why does an election without a president still matter?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Voters can change Congress in a midterm while the president stays in office.",
+        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
+        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
@@ -114,6 +146,71 @@
       }
     },
     {
+      "id": "notes-2",
+      "label": "Notes 2 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 11,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 2 of 6",
+        "title": "Congress has two chambers",
+        "description": "",
+        "bullets": [
+          "Congress is the House of Representatives and the Senate together.",
+          "House: 435 voting members. Each one represents a district.",
+          "A state’s population sets how many House seats it has.",
+          "Senate: every state has two senators, no matter its population."
+        ],
+        "write": "Congress = the House + the Senate."
+      },
+      "intel": {
+        "land": "Congress = the House + the Senate.",
+        "ask": "Congress has two chambers",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Congress = the House + the Senate.",
+        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
+        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
+      "id": "notes-3",
+      "label": "Notes 3 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 11,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 3 of 6",
+        "title": "Why do House and Senate elections look different?",
+        "description": "",
+        "bullets": [
+          "House terms last two years, so all 435 voting seats are elected every two years.",
+          "Senate terms last six years and are staggered in three groups.",
+          "Only about one-third of Senate seats have regular elections in a given cycle.",
+          "Special elections can add more Senate races.",
+          "On November 3, 2026, voters choose members of Congress, not a president."
+        ],
+        "write": "The whole House is on the ballot every two years. Only about one-third of the Senate is."
+      },
+      "intel": {
+        "land": "The whole House is on the ballot every two years. Only about one-third of the Senate is.",
+        "ask": "Why do House and Senate elections look different?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "The whole House is on the ballot every two years. Only about one-third of the Senate is.",
+        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
+        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
@@ -140,6 +237,38 @@
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
         "reteach": "If most students miss two or more, display two columns: House—435, districts, two years; Senate—100, two per state, six years. Model the first item, then students retry privately."
+      }
+    },
+    {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 23,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 4 of 6",
+        "title": "What is a fact, and what is still a prediction?",
+        "description": "",
+        "bullets": [
+          "A source can establish one fact without answering everything.",
+          "The FEC can establish the election date. It cannot report winners before the election.",
+          "A primary usually helps choose a party’s nominee. The general election chooses who holds the office.",
+          "A primary win or a favorable poll does not establish a November winner."
+        ],
+        "write": "Name the source and the exact fact it supports. Outcomes nobody knows yet stay unknown."
+      },
+      "intel": {
+        "land": "Name the source and the exact fact it supports. Outcomes nobody knows yet stay unknown.",
+        "ask": "What is a fact, and what is still a prediction?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Name the source and the exact fact it supports. Outcomes nobody knows yet stay unknown.",
+        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
+        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
@@ -172,6 +301,38 @@
       }
     },
     {
+      "id": "notes-5",
+      "label": "Notes 5 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 35,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 5 of 6",
+        "title": "What could a new House majority change?",
+        "description": "",
+        "bullets": [
+          "New members can bring different chamber leaders and committee chairs.",
+          "Those leaders influence which bills and investigations get attention.",
+          "A new House majority does not replace the president.",
+          "It does not make every proposal a law: the Senate and the president still have roles."
+        ],
+        "write": "Every change in power has a limit. Name the change and name the limit."
+      },
+      "intel": {
+        "land": "Every change in power has a limit. Name the change and name the limit.",
+        "ask": "What could a new House majority change?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Every change in power has a limit. Name the change and name the limit.",
+        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
+        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
@@ -198,6 +359,38 @@
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
         "reteach": "If most students say the House can change every law, trace “House agreement → Senate agreement → presidential action” and ask which steps a House election does not settle."
+      }
+    },
+    {
+      "id": "notes-6",
+      "label": "Notes 6 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 1 / Notes 6 of 6",
+        "title": "From voters to decisions",
+        "description": "",
+        "bullets": [
+          "Voters choose representatives and senators in separate elections.",
+          "The winners decide who sits in each chamber.",
+          "Membership decides who organizes each chamber.",
+          "Leaders decide which issues get priority."
+        ],
+        "write": "Voters → seats → leaders → priorities. A new priority is not a guaranteed law."
+      },
+      "intel": {
+        "land": "Voters → seats → leaders → priorities. A new priority is not a guaranteed law.",
+        "ask": "From voters to decisions",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Voters → seats → leaders → priorities. A new priority is not a guaranteed law.",
+        "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
+        "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {

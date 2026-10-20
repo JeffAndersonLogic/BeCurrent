@@ -120,9 +120,10 @@ push. That keeps the record of what it would have caught.
   button in. Also writes `docs/canvas/news-log.md`, the Desk's two-weekly assignment,
   from `desk-content.js`, with the real cycle boundaries derived from its anchor. `--check` fails on drift, which is what the offline suite
   runs. For a `video-first` unit (Midterms) it also writes
-  `teacher/data/<unit>-canvas-assignments.js` from the same `assignmentBody()`, which the
-  Canvas assignment copy tool at the bottom of each Run of Show reads, so the two can
-  never hand the teacher different assignments. Canvas has no version control of its own, so the repo is the source of truth
+  `teacher/data/<unit>-canvas-kit.js` from the same `eventTable()` and
+  `assignmentBody()`, which the Canvas copy tools at the bottom of each Run of Show
+  read, so the Run of Show and the documents can never hand the teacher different
+  events or assignments. Canvas has no version control of its own, so the repo is the source of truth
   for what gets pasted in. See `docs/canvas/CANVAS-BUILD-GUIDE.md`.
 - `node scripts/test/canvas-events.test.js`, prove the two flavours carry the same
   tables byte for byte and that nothing withheld leaks into either. In the offline

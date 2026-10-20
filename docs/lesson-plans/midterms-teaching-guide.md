@@ -47,10 +47,16 @@ Begin with the missing president on the ballot. Then reveal the people who consi
 
 - 0–4: Opening question (4 minutes)
 - 4–6: Today’s direction (2 minutes)
+- Notes slide: Why does an election without a president still matter?
 - 6–11: Watch / explain (5 minutes)
+- Notes slide: Congress has two chambers
+- Notes slide: Why do House and Senate elections look different?
 - 11–23: Guided practice (12 minutes)
+- Notes slide: What is a fact, and what is still a prediction?
 - 23–35: Evidence (12 minutes)
+- Notes slide: What could a new House majority change?
 - 35–45: Apply the idea (10 minutes)
+- Notes slide: From voters to decisions
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
@@ -128,12 +134,71 @@ Reteach: If most students list facts without a connection, supply “Voters choo
 
 Cut: Omit Push further and extra polishing. Protect the final response and the last five minutes for gathering and Canvas submission.
 
-### Topic rubric
+### Notes slides
 
-- What voters choose (6): Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.
-- Fact and source (6): Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.
-- Power and limit (6): Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.
-- Explain your thinking (2): Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.
+Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
+
+**Why does an election without a president still matter?**
+
+- The president leads the executive branch. Congress has its own powers.
+- Congress considers laws, decides spending through legislation, and checks government actions.
+- “Midterm” describes the timing: halfway through a four-year presidential term.
+- It does not mean the offices on the ballot have less power.
+
+Write this down: Voters can change Congress in a midterm while the president stays in office.
+
+**Congress has two chambers**
+
+- Congress is the House of Representatives and the Senate together.
+- House: 435 voting members. Each one represents a district.
+- A state’s population sets how many House seats it has.
+- Senate: every state has two senators, no matter its population.
+
+Write this down: Congress = the House + the Senate.
+
+**Why do House and Senate elections look different?**
+
+- House terms last two years, so all 435 voting seats are elected every two years.
+- Senate terms last six years and are staggered in three groups.
+- Only about one-third of Senate seats have regular elections in a given cycle.
+- Special elections can add more Senate races.
+- On November 3, 2026, voters choose members of Congress, not a president.
+
+Write this down: The whole House is on the ballot every two years. Only about one-third of the Senate is.
+
+**What is a fact, and what is still a prediction?**
+
+- A source can establish one fact without answering everything.
+- The FEC can establish the election date. It cannot report winners before the election.
+- A primary usually helps choose a party’s nominee. The general election chooses who holds the office.
+- A primary win or a favorable poll does not establish a November winner.
+
+Write this down: Name the source and the exact fact it supports. Outcomes nobody knows yet stay unknown.
+
+**What could a new House majority change?**
+
+- New members can bring different chamber leaders and committee chairs.
+- Those leaders influence which bills and investigations get attention.
+- A new House majority does not replace the president.
+- It does not make every proposal a law: the Senate and the president still have roles.
+
+Write this down: Every change in power has a limit. Name the change and name the limit.
+
+**From voters to decisions**
+
+- Voters choose representatives and senators in separate elections.
+- The winners decide who sits in each chamber.
+- Membership decides who organizes each chamber.
+- Leaders decide which issues get priority.
+
+Write this down: Voters → seats → leaders → priorities. A new priority is not a guaranteed law.
+
+### Topic rubric (5 points)
+
+- What voters choose: Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.
+- Fact and source: Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.
+- Power and limit: Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.
+- Explain your thinking: Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.
 
 ### Clips
 
@@ -197,10 +262,16 @@ Move from the ballot to the working room. Separate races produce a chamber. A sm
 
 - 0–4: Opening question (4 minutes)
 - 4–6: Today’s direction (2 minutes)
+- Notes slide: How can one race matter to the whole House?
 - 6–13: Watch / explain (7 minutes)
+- Notes slide: What does the majority get to do?
 - 13–23: Guided practice (10 minutes)
+- Notes slide: What is a committee?
 - 23–35: Evidence (12 minutes)
+- Notes slide: Why can a committee change a bill’s chances?
+- Notes slide: Does controlling the House mean controlling the government?
 - 35–45: Apply the idea (10 minutes)
+- Notes slide: Explain the power shift
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
@@ -278,12 +349,70 @@ Reteach: If most students repeat “218” without explaining why it matters, su
 
 Cut: Omit Push further and extra examples. Protect the last five minutes for gathering, pasting, and submitting.
 
-### Topic rubric
+### Notes slides
 
-- Seats and majority (6): Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.
-- Relevant evidence (4): Name a clip or official reference and accurately explain evidence about leaders or committees.
-- Influence and limits (8): Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.
-- Explain your thinking (2): Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.
+Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
+
+**How can one race matter to the whole House?**
+
+- Each House district elects one representative.
+- There is no single nationwide vote that awards seats to a party.
+- After every race is counted, total membership decides which party organizes the House.
+- Our class model has 435 filled seats and two groups. It is practice, not real 2026 totals.
+
+Write this down: Separate district races add up to a majority. In our model, 218 of 435 seats is a majority.
+
+**What does the majority get to do?**
+
+- The majority generally organizes the chamber and chooses its leaders.
+- The House elects the Speaker.
+- Majority and minority leaders help their groups plan and respond to the other side.
+- Leaders set the agenda: the issues and proposals that get priority.
+
+Write this down: Controlling the House schedule is real power, even when leaders cannot guarantee a final vote.
+
+**What is a committee?**
+
+- A committee is a smaller working group focused on certain subjects.
+- Committees study issues, question officials and experts, and consider bills.
+- They let Congress work on many subjects at the same time.
+- The majority controls committee leadership.
+
+Write this down: Much of Congress’s work happens in committees before the full chamber votes.
+
+**Why can a committee change a bill’s chances?**
+
+- A committee chair influences which issues get attention.
+- If a proposal never moves forward, the full chamber may never vote on it.
+- This happens before the final floor vote, the moment usually shown in headlines.
+
+Write this down: A bill can stop in committee before the whole chamber ever votes on it.
+
+**Does controlling the House mean controlling the government?**
+
+- The Senate is separate and has its own rules.
+- A bill ordinarily needs the same text passed by both chambers before the president acts.
+- The Senate has 100 seats. 51 is an outright majority.
+- In a Senate split 50 to 50, the vice president can break ties.
+- House races are by district. Senate races are statewide.
+
+Write this down: Winning one chamber is not the same as passing a law.
+
+**Explain the power shift**
+
+- One race changes one seat.
+- Enough seats change the majority.
+- A new majority can bring new leaders, committee chairs, and a new agenda.
+- The Senate, the president, and individual votes still shape the outcome.
+
+Write this down: One seat → a majority → leaders and agenda. A new priority is not automatically a new law.
+
+### Topic rubric (5 points)
+
+- Seats and majority: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.
+- Relevant evidence: Name a clip or official reference and accurately explain evidence about leaders or committees.
+- Influence and limits: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.
+- Explain your thinking: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.
 
 ### Clips
 
@@ -347,10 +476,16 @@ Follow one lawmaking or spending proposal through the institutions. Then explain
 
 - 0–4: Opening question (4 minutes)
 - 4–6: Today’s direction (2 minutes)
+- Notes slide: Why can a president face resistance from Congress?
 - 6–13: Watch / explain (7 minutes)
+- Notes slide: How does Congress check the president?
+- Notes slide: What can oversight do, and what can’t it do?
 - 13–23: Guided practice (10 minutes)
+- Notes slide: How does a bill become a law?
 - 23–35: Evidence (12 minutes)
+- Notes slide: How can a check be useful and frustrating?
 - 35–45: Apply the idea (10 minutes)
+- Notes slide: How to make a strong judgment
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
@@ -428,12 +563,70 @@ Reteach: If most students write only “good and bad,” ask “Which action hel
 
 Cut: Omit Push further and extra constitutional exceptions. Protect the short explanation and the final five minutes of filing.
 
-### Topic rubric
+### Notes slides
 
-- Checks and institutions (6): Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.
-- Relevant evidence (4): Name a relevant clip or official source and accurately use an institutional fact from it.
-- Accountability and governing (8): Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.
-- Explain your thinking (2): Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.
+Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
+
+**Why can a president face resistance from Congress?**
+
+- An election does not give one person every governing power.
+- The president leads the executive branch. Congress has legislative responsibilities.
+- Divided government: different parties control the presidency and at least one chamber.
+- Disagreement can also happen inside a single party.
+
+Write this down: First ask: which institution has the power to take this action?
+
+**How does Congress check the president?**
+
+- Lawmaking: Congress considers and passes laws.
+- Spending: Congress decides federal spending through laws.
+- Oversight: hearings and investigations ask officials to explain decisions.
+- Confirmations: the Senate confirms many presidential nominees.
+
+Write this down: Name the specific check: laws, spending, oversight, or confirmation.
+
+**What can oversight do, and what can’t it do?**
+
+- Oversight means Congress examining how government uses its authority.
+- Hearings can establish facts and bring out information.
+- An investigation does not prove wrongdoing by itself.
+- A new majority does not remove a president. Impeachment and conviction are separate processes.
+
+Write this down: Oversight gathers evidence. It is not proof.
+
+**How does a bill become a law?**
+
+- The House and the Senate must ordinarily pass the same bill.
+- If they pass different versions, the differences must be resolved.
+- Then the president can sign the bill or veto it.
+- Congress can override a veto with two-thirds support in each chamber.
+
+Write this down: One chamber cannot ordinarily make a law alone.
+
+**How can a check be useful and frustrating?**
+
+- Scrutiny can uncover problems, such as waste, and improve a proposal.
+- Delay can create costs for people waiting for a service.
+- Divided government can bring accountability and compromise, or delay and stalemate.
+- None of these follows automatically from a party label.
+
+Write this down: Judge a check by its evidence: what it reveals, how long it delays, and who is affected.
+
+**How to make a strong judgment**
+
+- Name the check being used.
+- Explain what it can accomplish.
+- Recognize its cost or limit.
+- Explain fairly why someone could reach another judgment.
+
+Write this down: Divided government can improve accountability and make governing harder at the same time.
+
+### Topic rubric (5 points)
+
+- Checks and institutions: Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.
+- Relevant evidence: Name a relevant clip or official source and accurately use an institutional fact from it.
+- Accountability and governing: Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.
+- Explain your thinking: Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.
 
 ### Clips
 
@@ -493,10 +686,16 @@ Model one exact claim in a think-aloud. Ask what document or record could test i
 
 - 0–3: Opening question (3 minutes)
 - 3–5: Today’s direction (2 minutes)
+- Notes slide: What does a campaign want you to notice?
 - 5–11: Watch / explain (6 minutes)
+- Notes slide: How do you check a claim?
+- Notes slide: Promise, poll, claim, or result?
 - 11–21: Guided practice (10 minutes)
+- Notes slide: Can a message be accurate and still leave something out?
 - 21–35: Evidence (14 minutes)
+- Notes slide: What if two sources seem to disagree?
 - 35–45: Apply the idea (10 minutes)
+- Notes slide: Why isn’t a poll or a promise a result?
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
@@ -574,12 +773,70 @@ Reteach: If most students say only “it might be wrong,” ask what the poll me
 
 Cut: Omit Push further and further poll comparisons. Read only the prepared poll fields needed for the response. Protect five minutes for the explanation and five for Canvas.
 
-### Topic rubric
+### Notes slides
 
-- Message and framing (4): Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.
-- Check the real claim (8): Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.
-- Polls, promises, uncertainty (6): Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.
-- Explain your thinking (2): Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.
+Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
+
+**What does a campaign want you to notice?**
+
+- Campaigns choose an issue, an image, a number, or a personal story.
+- Those choices direct attention. That is framing.
+- Start by stating the claim in plain language.
+- Then ask who the message seems designed to reach.
+
+Write this down: Framing is the choices that shape how information is presented.
+
+**How do you check a claim?**
+
+- Find the exact claim. Who said it, and when?
+- Match the source to the claim: a vote record for a vote, a budget document for an amount.
+- A campaign’s own page shows what the campaign says. It is not independent proof.
+- Two websites repeating one press release are not two confirmations.
+
+Write this down: Corroboration means checking against another source with relevant, independent evidence.
+
+**Promise, poll, claim, or result?**
+
+- Campaign promise: a future action a candidate wants to take.
+- Poll estimate: opinion from a sample of people at one point in time.
+- Claim needing checking: a statement that needs evidence before you believe it.
+- Official result: the final totals signed off by the election office.
+
+Write this down: A promise and a poll are not results.
+
+**Can a message be accurate and still leave something out?**
+
+- A number can be correct but incomplete: one year, one program, or one comparison.
+- A headline can feature a number and leave its limits farther down the page.
+- Ask what context would change the impression: time period, comparison, people affected, methods.
+- This is a reason to check carefully, not a reason to assume every message is false.
+
+Write this down: An accurate detail can still leave out important context.
+
+**What if two sources seem to disagree?**
+
+- Check whether they answer the same question.
+- One may describe a proposal while the other describes an existing law.
+- They may use different dates, groups, or measures.
+- Decide what the evidence supports, contradicts, or leaves unresolved.
+
+Write this down: “Unresolved” is an honest finding when the evidence cannot settle a claim.
+
+**Why isn’t a poll or a promise a result?**
+
+- A poll estimates opinion from a sample at a particular time.
+- Who was asked, the wording, the timing, and the uncertainty all matter.
+- A national poll does not award congressional seats.
+- A promise may need other people and institutions to agree.
+
+Write this down: Keep three questions separate: what people say now, who wins, and what government does later.
+
+### Topic rubric (5 points)
+
+- Message and framing: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.
+- Check the real claim: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.
+- Polls, promises, uncertainty: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.
+- Explain your thinking: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.
 
 ### Clips
 
@@ -694,10 +951,16 @@ This is the payoff. Open the results and make a dated record of what is known. A
 
 - 0–3: Opening question (3 minutes)
 - 3–5: Today’s direction (2 minutes)
+- Notes slide: Why might some results not be final yet?
 - 5–13: Watch / explain (8 minutes)
+- Notes slide: The four stages of election reporting
 - 13–18: Guided practice (5 minutes)
+- Notes slide: How do separate races decide control of a chamber?
 - 18–33: Results investigation (15 minutes)
+- Notes slide: When do results start changing government?
+- Notes slide: What can a change in control affect?
 - 33–43: Apply the idea (10 minutes)
+- Notes slide: Build an explanation that can survive an update
 - 43–55: Explain / Canvas (12 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
@@ -775,13 +1038,71 @@ Reteach: If most students stall, point to the notebook for sentence 1 and the op
 
 Cut: Omit optional planning cleanup, extra race research, and Push further. Protect seven minutes to synthesize and the final five minutes to gather, paste, and submit.
 
-### Topic rubric
+### Notes slides
 
-- Accurate results (8): Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.
-- Effects and limit (8): Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.
-- Two-source reasoning (6): Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.
-- Another reasonable impact (4): Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.
-- Remaining uncertainty (4): Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.
+Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
+
+**Why might some results not be final yet?**
+
+- Reporting develops as ballots are counted and officials check the totals.
+- A close race can stay unresolved after other races are called.
+- Record when you checked and which source you used.
+- If a later update changes a finding, explain what new information appeared.
+
+Write this down: Name the uncertainty. Never fill the gap with a guess.
+
+**The four stages of election reporting**
+
+- Poll or forecast: estimates opinion before voting ends.
+- Unofficial count: ballots counted so far. It can change as more are added.
+- News race call: a news organization’s conclusion from counted votes and analysis.
+- Certified result: the official sign-off by election authorities after the canvass.
+
+Write this down: Keep the source and the stage attached to every result.
+
+**How do separate races decide control of a chamber?**
+
+- Control depends on who wins enough seats, not on one dramatic race.
+- House and Senate outcomes can differ.
+- Name your baseline: the outgoing Congress or a previous election. Do not mix them.
+- Some races may still be unresolved when we meet.
+
+Write this down: A claim about chamber control needs evidence about enough seats.
+
+**When do results start changing government?**
+
+- Winning on Election Day and starting a term are different moments.
+- Newly elected members ordinarily begin their terms on January 3, 2027.
+- Until then, the outgoing Congress still has responsibilities.
+- Once the new members organize, leadership and committees can change.
+
+Write this down: Election Day does not instantly replace Congress.
+
+**What can a change in control affect?**
+
+- Who leads each chamber and its committees.
+- Which issues get priority.
+- Oversight of the executive branch.
+- It does not automatically turn campaign promises into laws.
+
+Write this down: If control is still unresolved, explain it as a condition: “If ___ controls ___, then ___ could ___.”
+
+**Build an explanation that can survive an update**
+
+- Start with the sourced outcome and its reporting stage.
+- Connect it to two possible governing effects and one limit.
+- Give another reasonable interpretation using the same results.
+- Finish with an uncertainty or your next check.
+
+Write this down: Use “has” for an established outcome and “could” for a possible effect.
+
+### Topic rubric (5 points)
+
+- Accurate results: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.
+- Effects and limit: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.
+- Two-source reasoning: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.
+- Another reasonable impact: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.
+- Remaining uncertainty: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.
 
 ### Clips
 

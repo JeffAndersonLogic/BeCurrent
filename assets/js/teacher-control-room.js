@@ -42,6 +42,7 @@ function setAction(anchorId,textId,action){
 function visual(id,screen){
   const node=$(id);if(!node)return;node.replaceChildren();
   if(screen.bullets){const ul=document.createElement('ul');for(const str of screen.bullets){const li=document.createElement('li');li.textContent=str;ul.append(li)}node.append(ul)}
+  if(screen.write){const w=document.createElement('p');w.className='write-this';const b=document.createElement('strong');b.textContent='✎ Write this down: ';w.append(b,document.createTextNode(screen.write));node.append(w)}
   if(screen.cards){const grid=document.createElement('div');grid.className='screen-cards';for(const c of screen.cards){const card=document.createElement('article'),h=document.createElement('h3'),p=document.createElement('p');h.textContent=c.title;p.textContent=c.text;card.append(h,p);grid.append(card)}node.append(grid)}
 }
 function go(next,source){
@@ -59,7 +60,8 @@ if(navigation&&role==='cockpit'){
     btn.type='button';
     btn.className='phase-button';
     btn.setAttribute('data-phase-index',String(i));
-    const t=document.createElement('span');t.className='phase-time';t.textContent=p.time+(p.kind==='break'||p.kind==='news'?'':' min');
+    btn.setAttribute('data-kind',p.kind);
+    const t=document.createElement('span');t.className='phase-time';t.textContent=p.time+(p.kind==='break'||p.kind==='news'||p.kind==='notes'?'':' min');
     const n=document.createElement('span');n.className='phase-name';n.textContent=p.label;
     btn.append(t,n);
     btn.addEventListener('click',()=>go(i,'control'));
@@ -72,18 +74,18 @@ function renderCockpit(){
   text('scene-title',p.screen.title);
   text('scene-description',p.screen.description);
   visual('scene-visual',p.screen);
-  text('scene-footer-label',p.label+' / '+p.time+' min');
+  text('scene-footer-label',p.kind==='notes'?p.label:p.label+' / '+p.time+' min');
   text('scene-footer-number',String(index+1).padStart(2,'0')+' / '+String(phases.length).padStart(2,'0'));
   text('teacher-count',(index+1)+' / '+phases.length);
   setAction('scene-action','scene-action-text',p.screen.action);
   text('intel-title',p.label);
-  text('intel-phase','Phase '+(index+1)+' of '+phases.length+' · '+p.minutes+' minutes');
+  text('intel-phase','Phase '+(index+1)+' of '+phases.length+' · '+(p.kind==='notes'?'notes slide, no separate time':p.minutes+' minutes'));
   const n=p.intel||{};
   text('intel-land',n.land);text('intel-ask',n.ask);text('intel-listen',n.listenFor);
   text('intel-protect',n.protect);text('intel-cut',n.cut);text('intel-move',n.move);
   text('intel-avoid',n.avoid);text('intel-reteach',n.reteach);
   text('intel-model',n.model);
-  text('timer-target',p.kind==='break'?'Lunch is untimed':'Target: '+p.minutes+' minutes');
+  text('timer-target',p.kind==='break'?'Lunch is untimed':p.kind==='notes'?'Notes: copy time comes from the lesson block':'Target: '+p.minutes+' minutes');
   if($('timer-toggle'))$('timer-toggle').disabled=p.kind==='break';
   const prior=$('teacher-prev'),next=$('teacher-next');
   if(prior)prior.disabled=index===0;
@@ -101,6 +103,7 @@ function renderProjector(){
   text('projector-title',p.screen.title);
   text('projector-description',p.screen.description);
   visual('projector-visual',p.screen);
+  document.body.setAttribute('data-kind',p.kind);
   text('projector-phase',String(index+1).padStart(2,'0')+' / '+String(phases.length).padStart(2,'0'));
   // No minute counts on the projector: students see the step, not the clock.
   text('projector-time',p.kind==='break'?'Lunch':p.kind==='news'?'After lunch':'');
@@ -160,6 +163,7 @@ function displayTimer(){
   const sec=String(seconds%60).padStart(2,'0');
   text('timer-clock',min+':'+sec);
   text('timer-toggle',timer.startedAt===null?(seconds>0?'Resume':'Start'):'Pause');
+  if(phases[index].kind==='notes'){text('timer-pace',timer.startedAt===null&&!seconds?'Ready':'Copying notes');return}
   const max=phases[index].minutes*60;
   const remaining=max-seconds;
   text('timer-pace',timer.startedAt===null&&!seconds?'Ready':remaining>=0?'On pace · '+Math.ceil(remaining/60)+' min left':'Over by '+Math.floor(-remaining/60)+'m '+String((-remaining)%60).padStart(2,'0')+'s');

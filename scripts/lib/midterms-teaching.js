@@ -8,10 +8,10 @@ module.exports = {
   1: {
     timing: [4, 2, 5, 12, 12, 10, 10],
     rubric: [
-      {label:'What voters choose',points:6,description:'Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.'},
-      {label:'Fact and source',points:6,description:'Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.'},
-      {label:'Power and limit',points:6,description:'Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.'},
-      {label:'Explain your thinking',points:2,description:'Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.'}
+      {label:'What voters choose',description:'Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.'},
+      {label:'Fact and source',description:'Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.'},
+      {label:'Power and limit',description:'Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.'},
+      {label:'Explain your thinking',description:'Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.'}
     ],
     phases: {
       hook: {
@@ -68,10 +68,10 @@ module.exports = {
   2: {
     timing: [4, 2, 7, 10, 12, 10, 10],
     rubric: [
-      {label:'Seats and majority',points:6,description:'Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.'},
-      {label:'Relevant evidence',points:4,description:'Name a clip or official reference and accurately explain evidence about leaders or committees.'},
-      {label:'Influence and limits',points:8,description:'Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.'},
-      {label:'Explain your thinking',points:2,description:'Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.'}
+      {label:'Seats and majority',description:'Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.'},
+      {label:'Relevant evidence',description:'Name a clip or official reference and accurately explain evidence about leaders or committees.'},
+      {label:'Influence and limits',description:'Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.'},
+      {label:'Explain your thinking',description:'Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.'}
     ],
     phases: {
       hook: {
@@ -128,10 +128,10 @@ module.exports = {
   3: {
     timing: [4, 2, 7, 10, 12, 10, 10],
     rubric: [
-      {label:'Checks and institutions',points:6,description:'Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.'},
-      {label:'Relevant evidence',points:4,description:'Name a relevant clip or official source and accurately use an institutional fact from it.'},
-      {label:'Accountability and governing',points:8,description:'Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.'},
-      {label:'Explain your thinking',points:2,description:'Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.'}
+      {label:'Checks and institutions',description:'Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.'},
+      {label:'Relevant evidence',description:'Name a relevant clip or official source and accurately use an institutional fact from it.'},
+      {label:'Accountability and governing',description:'Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.'},
+      {label:'Explain your thinking',description:'Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.'}
     ],
     phases: {
       hook: {
@@ -188,10 +188,10 @@ module.exports = {
   4: {
     timing: [3, 2, 6, 10, 14, 10, 10],
     rubric: [
-      {label:'Message and framing',points:4,description:'Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.'},
-      {label:'Check the real claim',points:8,description:'Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.'},
-      {label:'Polls, promises, uncertainty',points:6,description:'Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.'},
-      {label:'Explain your thinking',points:2,description:'Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.'}
+      {label:'Message and framing',description:'Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.'},
+      {label:'Check the real claim',description:'Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.'},
+      {label:'Polls, promises, uncertainty',description:'Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.'},
+      {label:'Explain your thinking',description:'Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.'}
     ],
     phases: {
       hook: {
@@ -248,11 +248,11 @@ module.exports = {
   5: {
     timing: [3, 2, 8, 5, 15, 10, 12],
     rubric: [
-      {label:'Accurate results',points:8,description:'Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.'},
-      {label:'Effects and limit',points:8,description:'Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.'},
-      {label:'Two-source reasoning',points:6,description:'Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.'},
-      {label:'Another reasonable impact',points:4,description:'Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.'},
-      {label:'Remaining uncertainty',points:4,description:'Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.'}
+      {label:'Accurate results',description:'Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.'},
+      {label:'Effects and limit',description:'Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.'},
+      {label:'Two-source reasoning',description:'Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.'},
+      {label:'Another reasonable impact',description:'Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.'},
+      {label:'Remaining uncertainty',description:'Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.'}
     ],
     phases: {
       hook: {

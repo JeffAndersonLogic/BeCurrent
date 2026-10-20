@@ -22,7 +22,7 @@ for(const t of unit.topics){
  assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
  assert(page.indexOf('Before the clip: the essential language')<page.indexOf('Watch together'));
  assert(page.includes('Today you will submit')&&page.includes('How this investigation is assessed'));
- assert.strictEqual(t.rubric.reduce((n,r)=>n+r.points,0),t.n===5?30:20);
+ assert.strictEqual(t.points,5);assert(t.rubric.every(r=>!('points' in r)),'rubric components carry no point values');
  assert.strictEqual((page.match(/data-sort-feedback=/g)||[]).length,5);
  const paper=read('midterms/print-topic-'+String(t.n).padStart(2,'0')+'.html');
  assert(paper.includes('Reading route / core takeaways')&&paper.includes('Background support'));

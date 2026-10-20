@@ -71,6 +71,38 @@
       }
     },
     {
+      "id": "notes-1",
+      "label": "Notes 1 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 6,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 1 of 6",
+        "title": "Why can a president face resistance from Congress?",
+        "description": "",
+        "bullets": [
+          "An election does not give one person every governing power.",
+          "The president leads the executive branch. Congress has legislative responsibilities.",
+          "Divided government: different parties control the presidency and at least one chamber.",
+          "Disagreement can also happen inside a single party."
+        ],
+        "write": "First ask: which institution has the power to take this action?"
+      },
+      "intel": {
+        "land": "First ask: which institution has the power to take this action?",
+        "ask": "Why can a president face resistance from Congress?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "First ask: which institution has the power to take this action?",
+        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
+        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
@@ -114,6 +146,70 @@
       }
     },
     {
+      "id": "notes-2",
+      "label": "Notes 2 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 13,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 2 of 6",
+        "title": "How does Congress check the president?",
+        "description": "",
+        "bullets": [
+          "Lawmaking: Congress considers and passes laws.",
+          "Spending: Congress decides federal spending through laws.",
+          "Oversight: hearings and investigations ask officials to explain decisions.",
+          "Confirmations: the Senate confirms many presidential nominees."
+        ],
+        "write": "Name the specific check: laws, spending, oversight, or confirmation."
+      },
+      "intel": {
+        "land": "Name the specific check: laws, spending, oversight, or confirmation.",
+        "ask": "How does Congress check the president?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Name the specific check: laws, spending, oversight, or confirmation.",
+        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
+        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
+      "id": "notes-3",
+      "label": "Notes 3 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 13,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 3 of 6",
+        "title": "What can oversight do, and what can’t it do?",
+        "description": "",
+        "bullets": [
+          "Oversight means Congress examining how government uses its authority.",
+          "Hearings can establish facts and bring out information.",
+          "An investigation does not prove wrongdoing by itself.",
+          "A new majority does not remove a president. Impeachment and conviction are separate processes."
+        ],
+        "write": "Oversight gathers evidence. It is not proof."
+      },
+      "intel": {
+        "land": "Oversight gathers evidence. It is not proof.",
+        "ask": "What can oversight do, and what can’t it do?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Oversight gathers evidence. It is not proof.",
+        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
+        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
@@ -140,6 +236,38 @@
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students miss the same institution, place that sort statement below the correct institution label and explain one example. Students retry it before moving on."
+      }
+    },
+    {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 23,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 4 of 6",
+        "title": "How does a bill become a law?",
+        "description": "",
+        "bullets": [
+          "The House and the Senate must ordinarily pass the same bill.",
+          "If they pass different versions, the differences must be resolved.",
+          "Then the president can sign the bill or veto it.",
+          "Congress can override a veto with two-thirds support in each chamber."
+        ],
+        "write": "One chamber cannot ordinarily make a law alone."
+      },
+      "intel": {
+        "land": "One chamber cannot ordinarily make a law alone.",
+        "ask": "How does a bill become a law?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "One chamber cannot ordinarily make a law alone.",
+        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
+        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
@@ -172,6 +300,38 @@
       }
     },
     {
+      "id": "notes-5",
+      "label": "Notes 5 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 35,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 5 of 6",
+        "title": "How can a check be useful and frustrating?",
+        "description": "",
+        "bullets": [
+          "Scrutiny can uncover problems, such as waste, and improve a proposal.",
+          "Delay can create costs for people waiting for a service.",
+          "Divided government can bring accountability and compromise, or delay and stalemate.",
+          "None of these follows automatically from a party label."
+        ],
+        "write": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected."
+      },
+      "intel": {
+        "land": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected.",
+        "ask": "How can a check be useful and frustrating?",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected.",
+        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
+        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
@@ -198,6 +358,38 @@
         "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students supply only one side, use two sentence frames: “Scrutiny could help by __” and “Delay could hurt by __.” Let them use the same institutional example."
+      }
+    },
+    {
+      "id": "notes-6",
+      "label": "Notes 6 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 6 of 6",
+        "title": "How to make a strong judgment",
+        "description": "",
+        "bullets": [
+          "Name the check being used.",
+          "Explain what it can accomplish.",
+          "Recognize its cost or limit.",
+          "Explain fairly why someone could reach another judgment."
+        ],
+        "write": "Divided government can improve accountability and make governing harder at the same time."
+      },
+      "intel": {
+        "land": "Divided government can improve accountability and make governing harder at the same time.",
+        "ask": "How to make a strong judgment",
+        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
+        "protect": "Leave the slide up until every student has the Write this down line.",
+        "cut": "If time is short, students copy only the Write this down line.",
+        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "model": "Divided government can improve accountability and make governing harder at the same time.",
+        "story": "Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.",
+        "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
+        "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {

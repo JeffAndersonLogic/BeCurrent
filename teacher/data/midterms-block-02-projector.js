@@ -47,6 +47,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-1",
+      "label": "Notes 1 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 6,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 2 / Notes 1 of 6",
+        "title": "How can one race matter to the whole House?",
+        "description": "",
+        "bullets": [
+          "Each House district elects one representative.",
+          "There is no single nationwide vote that awards seats to a party.",
+          "After every race is counted, total membership decides which party organizes the House.",
+          "Our class model has 435 filled seats and two groups. It is practice, not real 2026 totals."
+        ],
+        "write": "Separate district races add up to a majority. In our model, 218 of 435 seats is a majority."
+      }
+    },
+    {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
@@ -78,6 +98,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-2",
+      "label": "Notes 2 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 13,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 2 / Notes 2 of 6",
+        "title": "What does the majority get to do?",
+        "description": "",
+        "bullets": [
+          "The majority generally organizes the chamber and chooses its leaders.",
+          "The House elects the Speaker.",
+          "Majority and minority leaders help their groups plan and respond to the other side.",
+          "Leaders set the agenda: the issues and proposals that get priority."
+        ],
+        "write": "Controlling the House schedule is real power, even when leaders cannot guarantee a final vote."
+      }
+    },
+    {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
@@ -92,6 +132,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-02.html#chapter-2",
           "label": "Open practice and feedback"
         }
+      }
+    },
+    {
+      "id": "notes-3",
+      "label": "Notes 3 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 23,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 2 / Notes 3 of 6",
+        "title": "What is a committee?",
+        "description": "",
+        "bullets": [
+          "A committee is a smaller working group focused on certain subjects.",
+          "Committees study issues, question officials and experts, and consider bills.",
+          "They let Congress work on many subjects at the same time.",
+          "The majority controls committee leadership."
+        ],
+        "write": "Much of Congress’s work happens in committees before the full chamber votes."
       }
     },
     {
@@ -112,6 +172,46 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 35,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 2 / Notes 4 of 6",
+        "title": "Why can a committee change a bill’s chances?",
+        "description": "",
+        "bullets": [
+          "A committee chair influences which issues get attention.",
+          "If a proposal never moves forward, the full chamber may never vote on it.",
+          "This happens before the final floor vote, the moment usually shown in headlines."
+        ],
+        "write": "A bill can stop in committee before the whole chamber ever votes on it."
+      }
+    },
+    {
+      "id": "notes-5",
+      "label": "Notes 5 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 35,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 2 / Notes 5 of 6",
+        "title": "Does controlling the House mean controlling the government?",
+        "description": "",
+        "bullets": [
+          "The Senate is separate and has its own rules.",
+          "A bill ordinarily needs the same text passed by both chambers before the president acts.",
+          "The Senate has 100 seats. 51 is an outright majority.",
+          "In a Senate split 50 to 50, the vice president can break ties.",
+          "House races are by district. Senate races are statewide."
+        ],
+        "write": "Winning one chamber is not the same as passing a law."
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
@@ -126,6 +226,26 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "url": "../midterms/block-02.html#chapter-4",
           "label": "Open application"
         }
+      }
+    },
+    {
+      "id": "notes-6",
+      "label": "Notes 6 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 2 / Notes 6 of 6",
+        "title": "Explain the power shift",
+        "description": "",
+        "bullets": [
+          "One race changes one seat.",
+          "Enough seats change the majority.",
+          "A new majority can bring new leaders, committee chairs, and a new agenda.",
+          "The Senate, the president, and individual votes still shape the outcome."
+        ],
+        "write": "One seat → a majority → leaders and agenda. A new priority is not automatically a new law."
       }
     },
     {
