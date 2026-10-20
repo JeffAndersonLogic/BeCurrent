@@ -23,16 +23,16 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "Economy",
-      headline: "Paddy Power cuts 1,400 jobs and blames betting tax rises",
-      dek: "The government increased taxes on online casino and sports betting in last year's Budget.",
+      headline: "Sudan army drones hit mourners and fuel market killing more than 200 people, sources say",
+      dek: "A truck carrying people to a funeral and a market alleged to be supplying fuel to the RSF were targeted.",
       source: "BBC News",
       published: "October 20, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cqzrdpkm3g84o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cr3el70jz1nqo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / International",
-      headline: "Zelensky and US envoys to hold Oslo talks as Rubio denies withholding intelligence",
-      dek: "The US secretary of state rejects accusations Ukrainians were dying because the US was withholding intelligence.",
+      headline: "Zelensky and US envoys holding Oslo talks as Rubio denies withholding intelligence",
+      dek: "The US secretary of state earlier rejected accusations Ukrainians were dying because the US was withholding critical intelligence.",
       source: "BBC News",
       published: "October 20, 2026",
       url: "https://www.bbc.co.uk/news/articles/ck9qzn193lrlo?at_medium=RSS&at_campaign=rss"
