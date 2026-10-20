@@ -834,6 +834,51 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ]
     },
     {
+      "date": "2026-10-20",
+      "topic": "Who Has the Power? | The Election Nobody Understands",
+      "unit": "Who Has the Power?",
+      "subtitle": "What are voters actually choosing?",
+      "learningTargets": [
+        {
+          "text": "I can explain what a midterm election changes and what it does not.",
+          "label": "Civic structures"
+        },
+        {
+          "text": "I can distinguish House elections from Senate elections.",
+          "label": "Comparison"
+        },
+        {
+          "text": "I can explain one way a changed congressional majority could affect government decisions.",
+          "label": "Cause and effect"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can identify congressional offices on the ballot and explain that the presidency is not being elected.",
+          "label": "Civic structures"
+        },
+        {
+          "text": "I can sort at least four of five House/Senate facts correctly and correct my errors.",
+          "label": "Comparison"
+        },
+        {
+          "text": "I can use one verified fact to explain a possible governing consequence.",
+          "label": "Evidence"
+        }
+      ],
+      "homework": "Finish WP1 - What Midterms Change in Canvas.",
+      "homeworkDue": "the start of class on Thursday, October 22",
+      "doNow": "The president is not on the ballot this November. Could Washington still change? Write your prediction.",
+      "agenda": [
+        "Opening question: could Washington change without a presidential election?",
+        "Watch, then compare the House and the Senate.",
+        "Use one verified fact to explain a possible change in government.",
+        "Explain your thinking and file your work in Canvas.",
+        "After lunch: CNN 10 · Oct. 16: NASA’s Mars Rover Breaks an Out-Of-This-World Record.",
+        "After lunch: daily news and your News Log."
+      ]
+    },
+    {
       "date": "2026-11-03",
       "topic": "Election Day: What Can We Know Today?",
       "unit": "Who Has the Power?",
