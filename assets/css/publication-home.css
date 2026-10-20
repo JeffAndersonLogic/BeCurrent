@@ -21,7 +21,7 @@
 /* The lead. One column until a photograph arrives, then two. */
 .home-lead{max-width:none;padding:0;background:var(--vf-header);border-bottom:1px solid #d9ddda}
 .home-lead .hero-inner{max-width:1216px;margin:auto;padding:52px 30px 46px;display:grid;grid-template-columns:minmax(0,1fr);gap:44px;align-items:center}
-.home-lead .hero-inner:has([data-daily-hero][data-has-photo="true"]){grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr)}
+.home-lead .hero-inner:has([data-daily-hero][data-has-photo="true"]){grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr)}
 .home-lead h1{font-size:clamp(2.3rem,4.6vw,4.4rem);line-height:1.05;max-width:20ch;text-wrap:balance}
 .home-lead .deck{margin-bottom:26px}
 .home-lead-footer{display:flex;align-items:center;gap:14px 22px;flex-wrap:wrap}
@@ -51,12 +51,40 @@
 .home-routine{margin:8px 0 0}
 .home-routine-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
 
-/* Investigations reuse the Midterms unit list, with a thumbnail. */
-.home-units>li{grid-template-columns:64px 190px minmax(0,1fr) auto}
-.home-units .topic-thumb{margin:0}
-.home-units .topic-thumb img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#dfe3e0}
-.home-units .copy .eyebrow{margin-bottom:8px;font-size:.7rem}
-.home-progress{margin:10px 0 0!important;font:600 .78rem/1.4 var(--vf-label)!important}
+/* Investigations, laid out like a section front: one lead package with a big
+ * photograph, then a row of photo cards. Every photograph is a local file. */
+.feature-story{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:34px;align-items:center;padding:0 0 34px;border-bottom:1px solid var(--vf-rule)}
+.feature-photo,.story-photo{display:block;line-height:0;overflow:hidden;border-radius:10px;background:#dfe3e0}
+.feature-photo img,.story-photo img{display:block;width:100%;height:auto;object-fit:cover;transition:transform .35s ease}
+.feature-photo img{aspect-ratio:16/10}
+.story-photo img{aspect-ratio:3/2}
+.feature-photo:hover img,.story-card:hover .story-photo img{transform:scale(1.03)}
+.feature-copy h3{font-size:clamp(1.8rem,3.2vw,2.7rem);line-height:1.05;letter-spacing:-.05em;margin:10px 0 12px}
+.feature-copy h3 a,.story-card h3 a{text-decoration:none;color:var(--vf-ink)}
+.feature-copy h3 a:hover,.story-card h3 a:hover{text-decoration:underline;text-decoration-color:#CE1400;text-decoration-thickness:3px;text-underline-offset:5px}
+.feature-copy>p{color:var(--vf-soft);font-size:1.02rem;line-height:1.65;margin:0 0 12px}
+.feature-copy .feature-meta{font:600 .8rem/1.4 var(--vf-label);color:var(--vf-faint);margin-bottom:20px}
+.story-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-top:30px}
+.story-card{display:flex;flex-direction:column;min-width:0}
+.story-card .story-kicker{margin-top:14px}
+.story-card h3{font-size:1.22rem;line-height:1.2;letter-spacing:-.03em;margin:6px 0 6px}
+.story-card>p{font-size:.88rem;line-height:1.55;color:var(--vf-soft);margin:0}
+.story-kicker{display:flex;align-items:center;gap:7px;margin:0;font:700 .7rem/1.3 var(--vf-label);letter-spacing:.1em;text-transform:uppercase;color:var(--vf-accent-dark)}
+.story-kicker .ico svg{width:15px;height:15px}
+.home-progress{margin:10px 0 0!important;font:600 .78rem/1.4 var(--vf-label)!important;color:var(--vf-faint)!important}
+
+/* Icons: inline SVG painted by becurrent-icons.js, always beside words. */
+.ico{display:inline-flex;flex-shrink:0;line-height:0}
+.ico svg{width:17px;height:17px}
+.publication-home .eyebrow{display:flex;align-items:center;gap:8px}
+.briefing-icon{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--vf-soft-accent);color:var(--vf-accent-dark);margin-bottom:4px}
+.briefing-icon svg{width:19px;height:19px}
+.step-icon{display:inline-grid;place-items:center;float:right;color:var(--vf-soft)}
+.step-icon svg{width:22px;height:22px}
+.door-icon{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--vf-tint);color:var(--vf-ink);margin-bottom:6px}
+.door-icon svg{width:22px;height:22px}
+.issue-door:hover .door-icon{background:var(--vf-ink);color:#fff}
+.home-lead-photo figcaption span:not(:empty){display:block}
 
 /* Reverse History. */
 .home-reverse{padding:58px 0 18px;border-top:1px solid var(--vf-rule)}
@@ -86,6 +114,16 @@ body.teacher-on .teacher-only{display:block}
 
 @media(max-width:1050px){.briefing-list{grid-template-columns:repeat(2,minmax(0,1fr))}.publication-home .mast-nav{gap:16px}}
 @media(max-width:920px){.publication-home .mast-inner{flex-wrap:wrap;gap:12px 20px;padding:14px 20px}.publication-home .mast-nav{order:3;width:100%;margin-left:0;overflow-x:auto}.publication-home .home-mode{margin-left:auto}.home-wire-inner{padding:0 20px}.issue-doors{grid-template-columns:repeat(2,minmax(0,1fr))}.reverse-line{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:800px){.home-lead .hero-inner,.home-lead .hero-inner:has([data-daily-hero][data-has-photo="true"]){grid-template-columns:1fr;gap:26px;padding:34px 20px 30px}.home-units>li{grid-template-columns:minmax(0,1fr);gap:12px}.home-units .pill{grid-column:auto;justify-self:start}.home-units .topic-thumb img{aspect-ratio:16/9}}
+@media(max-width:1050px){.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.home-lead .hero-inner,.home-lead .hero-inner:has([data-daily-hero][data-has-photo="true"]){grid-template-columns:1fr;gap:26px;padding:34px 20px 30px}.home-lead-photo{order:-1}.feature-story{grid-template-columns:1fr;gap:20px}}
 @media(max-width:650px){.publication-home .wrap{padding:0 16px 64px}.briefing-list,.issue-doors,.reverse-line{grid-template-columns:1fr}.home-brand img{height:22px}.home-routine-actions{width:100%}}
-@media print{.home-wire,.home-mode,.home-lead-photo,.topic-thumb{display:none}}
+@media(max-width:650px){.story-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.feature-photo img,.story-photo img{transition:none}.feature-photo:hover img,.story-card:hover .story-photo img{transform:none}}
+@media print{.home-wire,.home-mode,.home-lead-photo,.feature-photo,.story-photo{display:none}}
+
+/* Captions and credits, the same as the Midterms photo captions. */
+.home-lead-photo figcaption{font:500 .78rem/1.5 var(--vf-label);color:var(--vf-soft);margin-top:9px}
+.home-lead-photo .credit{display:block;color:var(--vf-faint);font-size:.72rem;margin-top:2px;text-decoration:none}
+.home-lead-photo .credit:hover{text-decoration:underline}
+.home-lead-photo .credit[hidden]{display:none}
+.publication-home .wrap{max-width:1216px}

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Today | BeCurrent</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261020-brand">
+  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261020-photos">
 </head>
 <body>
 <div class="board" id="board">
@@ -48,6 +48,7 @@
 <script src="assets/data/announcements-schedule.js?v=20261009"></script>
 <script src="assets/data/announcements.js"></script>
 <script src="assets/data/daily-news.js"></script>
+<script src="assets/js/section-photos.js?v=20261020"></script>
 <script>
 (function () {
   'use strict';
@@ -149,15 +150,22 @@
     }
     copy.appendChild(meta);
     s.appendChild(copy);
-    if (has(lead.image)) {
+    // The story's own photograph wins; without one, a captioned file photo for
+    // its section (assets/js/section-photos.js), the same one Home and the Desk show.
+    var sections = window.BECURRENT_SECTION_PHOTOS;
+    var file = !has(lead.image) && sections ? sections.forCategory(lead.category) : null;
+    var src = has(lead.image) ? lead.image : (file ? file.src : '');
+    if (src) {
       s.classList.add('has-photo');
       var figure = el('figure','lead-photo');
       var img = el('div','lead-photo-img');
-      img.style.backgroundImage = 'url("' + lead.image.replace(/"/g,'') + '")';
+      img.style.backgroundImage = 'url("' + src.replace(/"/g,'') + '")';
       figure.appendChild(img);
-      if (has(lead.imageCredit)) {
-        var credit = el('a','lead-photo-credit',lead.imageCredit);
-        credit.href = has(lead.imageCreditUrl) ? lead.imageCreditUrl : (lead.url || '#');
+      if (file) figure.appendChild(el('p','lead-photo-caption',sections.caption(file)));
+      var creditText = file ? file.credit : lead.imageCredit;
+      if (has(creditText)) {
+        var credit = el('a','lead-photo-credit',creditText);
+        credit.href = file ? file.creditUrl : (has(lead.imageCreditUrl) ? lead.imageCreditUrl : (lead.url || '#'));
         credit.target = '_blank'; credit.rel = 'noopener noreferrer';
         figure.appendChild(credit);
       }

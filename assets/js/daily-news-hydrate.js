@@ -36,14 +36,25 @@
       } catch(_){return '';}
     }
     const photo=trustedPhoto(lead.image);
+    // The story's own photograph always wins. Without one, the lead gets a local
+    // file photo for its section, captioned as a file photo so it is never taken
+    // for a picture of the story itself. See assets/js/section-photos.js.
+    const sections=window.BECURRENT_SECTION_PHOTOS;
+    const file=!photo&&sections?sections.forCategory(lead.category):null;
+    const captionEl=document.querySelector('[data-daily-image-caption]');
     if(hero){
-      hero.dataset.hasPhoto=photo?'true':'false';
-      hero.style.backgroundImage=photo?'url('+JSON.stringify(photo)+')':'';
+      const src=photo||(file&&file.src)||'';
+      hero.dataset.hasPhoto=src?'true':'false';
+      hero.dataset.filePhoto=file?'true':'false';
+      hero.style.backgroundImage=src?'url('+JSON.stringify(src)+')':'';
+      hero.setAttribute('aria-label',file?file.alt:'Photograph for today’s top story');
     }
+    if(captionEl)captionEl.textContent=file?sections.caption(file):'';
     if(credit){
-      if(photo&&lead.imageCredit){
-        credit.textContent=lead.imageCredit;
-        credit.href=lead.imageCreditUrl||lead.url||photo;
+      const text=photo?lead.imageCredit:(file&&file.credit);
+      if(text){
+        credit.textContent=text;
+        credit.href=photo?(lead.imageCreditUrl||lead.url||photo):file.creditUrl;
         credit.hidden=false;
       }else{
         credit.hidden=true;
@@ -70,6 +81,11 @@
       const title=card.querySelector('[data-brief-title]');
       const dek=card.querySelector('[data-brief-dek]');
       if(meta)meta.textContent=[item.category,item.source].filter(Boolean).join(' · ');
+      const icon=card.querySelector('[data-brief-icon]');
+      if(icon&&window.BECURRENT_ICONS){
+        icon.dataset.icon=window.BECURRENT_ICONS.iconForCategory(item.category);
+        window.BECURRENT_ICONS.paint(card);
+      }
       if(title)title.textContent=item.headline||'';
       if(dek)dek.textContent=item.dek||'Open the reporting and decide what actually changed.';
     });

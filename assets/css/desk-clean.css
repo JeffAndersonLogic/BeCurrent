@@ -24,7 +24,11 @@ body.desk-v2{background:var(--vf-paper);color:var(--vf-ink)}
  * the band past the container without adding any horizontal scroll. */
 .desk-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:44px;align-items:start;padding:48px 0 44px;background:var(--vf-header);box-shadow:0 0 0 100vmax var(--vf-header);clip-path:inset(0 -100vmax);border-bottom:1px solid #d9ddda;margin-bottom:8px}
 .desk-lead-visual{position:relative}
-.desk-lead-visual[data-has-photo="true"]:before{content:"";display:block;aspect-ratio:16/9;max-width:640px;margin-bottom:26px;border-radius:10px;background:#dfe3e0 var(--lead-photo) center/cover no-repeat;box-shadow:0 1px 2px rgba(23,33,36,.08),0 8px 24px rgba(23,33,36,.08)}
+.desk-lead-photo{margin:0 0 24px;max-width:720px}
+.desk-lead-photo img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:10px;background:#dfe3e0;box-shadow:0 1px 2px rgba(23,33,36,.08),0 8px 24px rgba(23,33,36,.08)}
+.desk-lead-photo figcaption{font:500 .76rem/1.5 var(--vf-label);color:var(--vf-soft);margin-top:8px}
+.desk-lead-photo figcaption a{color:var(--vf-faint);text-decoration:none}
+.desk-lead-photo figcaption a:hover{text-decoration:underline}
 .desk-lead-copy h1{font-size:clamp(2.3rem,4.6vw,4.2rem);line-height:1.05;margin:14px 0 16px;max-width:20ch;text-wrap:balance}
 .desk-lead-copy p{max-width:64ch;margin:0;color:var(--vf-soft);font-size:clamp(1.03rem,1.6vw,1.15rem);line-height:1.7}
 .desk-lead-copy p[data-news-stale]{margin-top:14px;padding:11px 14px;background:var(--vf-soft-accent);border-left:3px solid var(--vf-accent);color:#41312c;font-size:.9rem}

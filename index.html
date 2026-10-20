@@ -6,7 +6,7 @@
   <title>BeCurrent | Home</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/video-first.css?v=20261019r3">
-  <link rel="stylesheet" href="assets/css/publication-home.css?v=20261020-brand">
+  <link rel="stylesheet" href="assets/css/publication-home.css?v=20261020-photos">
 </head>
 <body class="publication-home">
 <a class="skip" href="#main">Skip to content</a>
@@ -46,8 +46,8 @@
         </div>
       </div>
       <figure class="photo hero-photo home-lead-photo">
-        <div class="home-lead-image" data-daily-hero role="img" aria-label="Photograph from today's top story"></div>
-        <figcaption><a class="credit" data-daily-image-credit href="#" target="_blank" rel="noopener noreferrer" hidden></a></figcaption>
+        <div class="home-lead-image" data-daily-hero role="img" aria-label="Photograph for today's top story"></div>
+        <figcaption><span data-daily-image-caption></span><a class="credit" data-daily-image-credit href="#" target="_blank" rel="noopener noreferrer" hidden></a></figcaption>
       </figure>
     </div>
   </section>
@@ -55,21 +55,21 @@
   <div class="wrap">
     <section class="home-briefing" aria-labelledby="briefing-title">
       <div class="home-section-head">
-        <p class="eyebrow">Today's briefing</p>
+        <p class="eyebrow"><span class="ico" data-icon="radio"></span>Today's briefing</p>
         <h2 id="briefing-title">Four stories worth knowing before class ends.</h2>
       </div>
       <div class="briefing-list">
-        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/810649a0a4143d9042094626c4a36dad" target="_blank" rel="noopener"><span class="briefing-meta" data-brief-meta>Trade · Associated Press</span><h3 data-brief-title>Canada announces retaliatory tariffs on U.S. goods.</h3><p data-brief-dek>A trade dispute moves from negotiation to direct retaliation.</p></a>
-        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/d88f76c1d91b11185ae4065f85abc2f9" target="_blank" rel="noopener"><span class="briefing-meta" data-brief-meta>Democracy · Associated Press</span><h3 data-brief-title>Supreme Court clears the way for new mail-voting restrictions.</h3><p data-brief-dek>A legal decision could affect the approaching midterms.</p></a>
-        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/8fdcfa56f35b9eac2399fe1d167f8fbd" target="_blank" rel="noopener"><span class="briefing-meta" data-brief-meta>Economy · Associated Press</span><h3 data-brief-title>Consumer confidence falls to a seven-month low.</h3><p data-brief-dek>Gas prices and inflation are shaping how Americans see the economy.</p></a>
-        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/41ac797399040746c2caa76a409ae580" target="_blank" rel="noopener"><span class="briefing-meta" data-brief-meta>World · Associated Press</span><h3 data-brief-title>Economic pressure is increasingly visible inside Iran.</h3><p data-brief-dek>Sanctions and fuel shortages show how a war reaches daily life.</p></a>
+        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/810649a0a4143d9042094626c4a36dad" target="_blank" rel="noopener"><span class="briefing-icon" data-brief-icon data-icon="chart"></span><span class="briefing-meta" data-brief-meta>Trade · Associated Press</span><h3 data-brief-title>Canada announces retaliatory tariffs on U.S. goods.</h3><p data-brief-dek>A trade dispute moves from negotiation to direct retaliation.</p></a>
+        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/d88f76c1d91b11185ae4065f85abc2f9" target="_blank" rel="noopener"><span class="briefing-icon" data-brief-icon data-icon="capitol"></span><span class="briefing-meta" data-brief-meta>Democracy · Associated Press</span><h3 data-brief-title>Supreme Court clears the way for new mail-voting restrictions.</h3><p data-brief-dek>A legal decision could affect the approaching midterms.</p></a>
+        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/8fdcfa56f35b9eac2399fe1d167f8fbd" target="_blank" rel="noopener"><span class="briefing-icon" data-brief-icon data-icon="chart"></span><span class="briefing-meta" data-brief-meta>Economy · Associated Press</span><h3 data-brief-title>Consumer confidence falls to a seven-month low.</h3><p data-brief-dek>Gas prices and inflation are shaping how Americans see the economy.</p></a>
+        <a class="briefing-item" data-daily-briefing href="https://apnews.com/article/41ac797399040746c2caa76a409ae580" target="_blank" rel="noopener"><span class="briefing-icon" data-brief-icon data-icon="globe"></span><span class="briefing-meta" data-brief-meta>World · Associated Press</span><h3 data-brief-title>Economic pressure is increasingly visible inside Iran.</h3><p data-brief-dek>Sanctions and fuel shortages show how a war reaches daily life.</p></a>
       </div>
       <a class="text-link" href="announcements.html">Open today's class board →</a>
     </section>
 
     <section class="current-feature home-routine">
       <div>
-        <p class="eyebrow">Our class routine</p>
+        <p class="eyebrow"><span class="ico" data-icon="calendar"></span>Our class routine</p>
         <h3>Unit first. News after lunch.</h3>
         <p>Work through the unit and its checkpoint before lunch. Return for CNN10, daily reporting, and the News Log.</p>
       </div>
@@ -81,61 +81,76 @@
 
     <section class="home-section" id="investigations" aria-labelledby="investigations-title">
       <div class="home-section-head">
-        <p class="eyebrow">Current investigations</p>
+        <p class="eyebrow"><span class="ico" data-icon="search"></span>Current investigations</p>
         <h2 id="investigations-title">Go deeper when a headline deserves <em>more than a headline.</em></h2>
         <p class="lead">Investigations stay open after the news cycle moves on. The midterms unit runs now; Iran, Ukraine, Social Media and News Literacy remain open as working course content.</p>
       </div>
-      <ol class="unit-list home-units">
-        <li><span class="chapter-num">01</span><figure class="photo topic-thumb"><img src="assets/images/midterms/capitol-west-front.webp" width="1600" height="828" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></figure><div class="copy"><p class="eyebrow">Democracy &amp; authority · Five-topic civics unit</p><h3>Who Has the Power?</h3><p>The 2026 midterm elections: watch together, investigate individually, and explain how Congress can change.</p><a class="cta" href="midterms/index.html">Open the unit →</a></div><span class="pill live">Now</span></li>
-        <li><span class="chapter-num">02</span><figure class="photo topic-thumb"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tehran%20Skyline%20and%20Alborz%20Mountains.jpg?width=640" width="640" height="427" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></figure><div class="copy"><p class="eyebrow">Conflict &amp; resistance · Reverse History</p><h3>Iran at War</h3><p>Trace a current conflict backward through U.S.-Iran distrust, nuclear diplomacy and regional power.</p><a class="cta" href="iran/index.html">Continue investigation →</a><p class="home-progress" data-progress>0 of 41 saved</p></div><span class="pill">Open</span></li>
-        <li><span class="chapter-num">03</span><figure class="photo topic-thumb"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kyiv%20after%20Russian%20shelling%2C%202022-10-10%20%28499%29.jpg?width=640" width="640" height="427" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></figure><div class="copy"><p class="eyebrow">Conflict &amp; resistance · Reverse History</p><h3>The War in Ukraine</h3><p>Start with the war as it exists now, then trace backward through 2022, 2014, Ukraine's post-Soviet choices and the deeper historical memory behind the conflict.</p><a class="cta" href="ukraine/index.html">Open investigation →</a></div><span class="pill">Open</span></li>
-        <li><span class="chapter-num">04</span><figure class="photo topic-thumb"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2019-10-04%20Oblivious%20%E2%80%94%20phone%20use.jpg?width=640" width="640" height="427" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></figure><div class="copy"><p class="eyebrow">Technology &amp; society</p><h3>Social Media</h3><p>Who decides what platforms are allowed to do to your attention?</p><a class="cta" href="social-media/index.html">Open investigation →</a></div><span class="pill">Open</span></li>
-        <li><span class="chapter-num">05</span><figure class="photo topic-thumb"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Just%20printed%20newspaper.jpg?width=640" width="640" height="427" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></figure><div class="copy"><p class="eyebrow">News literacy</p><h3>How to Read the News</h3><p>Before tracing history, learn how to identify what a current story can support.</p><a class="cta" href="week-01/index.html">Open investigation →</a></div><span class="pill">Open</span></li>
-      </ol>
+      <article class="feature-story">
+        <a class="feature-photo" href="midterms/index.html" tabindex="-1" aria-hidden="true"><img src="assets/images/midterms/capitol-west-front.webp" width="1600" height="828" alt="" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></a>
+        <div class="feature-copy">
+          <p class="story-kicker"><span class="ico" data-icon="capitol"></span>Now teaching · Democracy &amp; authority</p>
+          <h3><a href="midterms/index.html">Who Has the Power?</a></h3>
+          <p>The 2026 midterm elections: watch together, investigate individually, and explain how Congress can change while the president stays in office.</p>
+          <p class="feature-meta">Five-topic civics unit · Results after November 3</p>
+          <a class="cta" href="midterms/index.html">Open the unit →</a>
+        </div>
+      </article>
+      <div class="story-grid">
+        <article class="story-card"><a class="story-photo" href="iran/index.html" tabindex="-1" aria-hidden="true"><img src="assets/images/home/hormuz-lookout.webp" width="1000" height="714" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></a><p class="story-kicker"><span class="ico" data-icon="shield"></span>Reverse History</p><h3><a href="iran/index.html">Iran at War</a></h3><p>Trace a current conflict backward through U.S.-Iran distrust, nuclear diplomacy and regional power.</p><p class="home-progress" data-progress>0 of 41 saved</p></article>
+        <article class="story-card"><a class="story-photo" href="ukraine/index.html" tabindex="-1" aria-hidden="true"><img src="assets/images/home/ukraine-flag-kyiv.webp" width="1000" height="667" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></a><p class="story-kicker"><span class="ico" data-icon="shield"></span>Reverse History</p><h3><a href="ukraine/index.html">The War in Ukraine</a></h3><p>Start with the war as it exists now, then trace backward through 2022, 2014 and Ukraine's post-Soviet choices.</p></article>
+        <article class="story-card"><a class="story-photo" href="social-media/index.html" tabindex="-1" aria-hidden="true"><img src="assets/images/home/phones-raised.webp" width="1280" height="851" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></a><p class="story-kicker"><span class="ico" data-icon="phone"></span>Technology &amp; society</p><h3><a href="social-media/index.html">Social Media</a></h3><p>Who decides what platforms are allowed to do to your attention?</p></article>
+        <article class="story-card"><a class="story-photo" href="week-01/index.html" tabindex="-1" aria-hidden="true"><img src="assets/images/home/press-briefing.webp" width="1000" height="665" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/week-art/card-fallback.svg'"></a><p class="story-kicker"><span class="ico" data-icon="newspaper"></span>News literacy</p><h3><a href="week-01/index.html">How to Read the News</a></h3><p>Before tracing history, learn how to identify what a current story can support.</p></article>
+      </div>
     </section>
 
     <section class="unit-intro home-reverse" id="reverse" aria-labelledby="reverse-title">
-      <div><p class="eyebrow">Reverse History</p></div>
+      <div><p class="eyebrow"><span class="ico" data-icon="rewind"></span>Reverse History</p></div>
       <div>
         <h2 id="reverse-title">Today's event is the starting line, <em>not the whole story.</em></h2>
         <p class="lead">BeCurrent begins with a real current event and keeps moving backward until the history explains how the present became possible. It is not a hunt for vaguely similar events from the past.</p>
         <ol class="reverse-line" aria-label="Reverse History process">
-          <li><span class="step-n">1</span><strong>What is happening now?</strong><span>Start with the current event.</span></li>
-          <li><span class="step-n">2</span><strong>Why now?</strong><span>Find the immediate decisions and pressures.</span></li>
-          <li><span class="step-n">3</span><strong>What changed earlier?</strong><span>Trace the turning points that shaped those choices.</span></li>
-          <li><span class="step-n">4</span><strong>Where do the roots begin?</strong><span>Go back only as far as the story requires.</span></li>
+          <li><span class="step-n">1</span><span class="step-icon" data-icon="radio"></span><strong>What is happening now?</strong><span>Start with the current event.</span></li>
+          <li><span class="step-n">2</span><span class="step-icon" data-icon="clock"></span><strong>Why now?</strong><span>Find the immediate decisions and pressures.</span></li>
+          <li><span class="step-n">3</span><span class="step-icon" data-icon="rewind"></span><strong>What changed earlier?</strong><span>Trace the turning points that shaped those choices.</span></li>
+          <li><span class="step-n">4</span><span class="step-icon" data-icon="roots"></span><strong>Where do the roots begin?</strong><span>Go back only as far as the story requires.</span></li>
         </ol>
       </div>
     </section>
 
     <section class="home-section" id="explore" aria-labelledby="explore-title">
       <div class="home-section-head">
-        <p class="eyebrow">Explore current issues</p>
+        <p class="eyebrow"><span class="ico" data-icon="compass"></span>Explore current issues</p>
         <h2 id="explore-title">The world is bigger than today's lead story.</h2>
         <p class="lead">Enter through the issue that catches your attention. Each doorway can become a briefing, an investigation or a Reverse History trail.</p>
       </div>
       <div class="issue-doors">
-        <a class="issue-door" href="ukraine/index.html"><span class="briefing-meta">War &amp; power</span><h3>The War in Ukraine</h3><p>Why did Russia go to war with Ukraine, and why has the war been so difficult to end?</p><span class="text-link">Open investigation →</span></a>
-        <a class="issue-door" href="social-media/index.html"><span class="briefing-meta">Technology &amp; society</span><h3>Who Controls Your Feed?</h3><p>Algorithms, attention, misinformation and platform power.</p><span class="text-link">Explore issue →</span></a>
-        <a class="issue-door" href="week-01/index.html"><span class="briefing-meta">Media literacy</span><h3>How to Read the News</h3><p>Start with the source, the reporting chain and what can actually be verified.</p><span class="text-link">Open story →</span></a>
-        <a class="issue-door" href="https://apnews.com/article/810649a0a4143d9042094626c4a36dad" target="_blank" rel="noopener"><span class="briefing-meta">Trade &amp; economy</span><h3>Tariffs Are Back in the Headlines</h3><p>A Canada-U.S. dispute opens a much larger story about trade and power.</p><span class="text-link">Read the story →</span></a>
-        <a class="issue-door" href="midterms/index.html"><span class="briefing-meta">Democracy &amp; authority · Civics</span><h3>Who Has the Power?</h3><p>Why do the November 2026 midterms matter if the president is not on the ballot?</p><span class="text-link">Open the civics investigation →</span></a>
-        <a class="issue-door" href="daily/index.html"><span class="briefing-meta">Your news beat</span><h3>The Desk</h3><p>Move beyond one unit: find the stories shaping your community and the world.</p><span class="text-link">Start today's hunt →</span></a>
+        <a class="issue-door" href="ukraine/index.html"><span class="door-icon" data-icon="shield"></span><span class="briefing-meta">War &amp; power</span><h3>The War in Ukraine</h3><p>Why did Russia go to war with Ukraine, and why has the war been so difficult to end?</p><span class="text-link">Open investigation →</span></a>
+        <a class="issue-door" href="social-media/index.html"><span class="door-icon" data-icon="phone"></span><span class="briefing-meta">Technology &amp; society</span><h3>Who Controls Your Feed?</h3><p>Algorithms, attention, misinformation and platform power.</p><span class="text-link">Explore issue →</span></a>
+        <a class="issue-door" href="week-01/index.html"><span class="door-icon" data-icon="newspaper"></span><span class="briefing-meta">Media literacy</span><h3>How to Read the News</h3><p>Start with the source, the reporting chain and what can actually be verified.</p><span class="text-link">Open story →</span></a>
+        <a class="issue-door" href="https://apnews.com/article/810649a0a4143d9042094626c4a36dad" target="_blank" rel="noopener"><span class="door-icon" data-icon="ship"></span><span class="briefing-meta">Trade &amp; economy</span><h3>Tariffs Are Back in the Headlines</h3><p>A Canada-U.S. dispute opens a much larger story about trade and power.</p><span class="text-link">Read the story →</span></a>
+        <a class="issue-door" href="midterms/index.html"><span class="door-icon" data-icon="capitol"></span><span class="briefing-meta">Democracy &amp; authority · Civics</span><h3>Who Has the Power?</h3><p>Why do the November 2026 midterms matter if the president is not on the ballot?</p><span class="text-link">Open the civics investigation →</span></a>
+        <a class="issue-door" href="daily/index.html"><span class="door-icon" data-icon="globe"></span><span class="briefing-meta">Your news beat</span><h3>The Desk</h3><p>Move beyond one unit: find the stories shaping your community and the world.</p><span class="text-link">Start today's hunt →</span></a>
       </div>
     </section>
 
     <section class="home-section" id="archive" aria-labelledby="archive-title">
       <div class="home-section-head">
-        <p class="eyebrow">From the archive</p>
+        <p class="eyebrow"><span class="ico" data-icon="archive"></span>From the archive</p>
         <h2 id="archive-title">Specific stories and questions remain one click away.</h2>
       </div>
       <div class="issue-doors home-archive">
-        <a class="issue-door" href="social-media/topic-03-brief-the-algorithm.html"><span class="briefing-meta">Social Media</span><h3>The Algorithm</h3><p>What can a platform count, predict and shape?</p></a>
-        <a class="issue-door" href="social-media/topic-05-brief-fake-news.html"><span class="briefing-meta">Social Media</span><h3>Fake News</h3><p>How does false or misleading information travel?</p></a>
-        <a class="issue-door" href="social-media/topic-06-brief-who-decides.html"><span class="briefing-meta">Social Media</span><h3>Who Gets to Decide?</h3><p>User, company or government: where should platform power stop?</p></a>
+        <a class="issue-door" href="social-media/topic-03-brief-the-algorithm.html"><span class="door-icon" data-icon="phone"></span><span class="briefing-meta">Social Media</span><h3>The Algorithm</h3><p>What can a platform count, predict and shape?</p></a>
+        <a class="issue-door" href="social-media/topic-05-brief-fake-news.html"><span class="door-icon" data-icon="phone"></span><span class="briefing-meta">Social Media</span><h3>Fake News</h3><p>How does false or misleading information travel?</p></a>
+        <a class="issue-door" href="social-media/topic-06-brief-who-decides.html"><span class="door-icon" data-icon="phone"></span><span class="briefing-meta">Social Media</span><h3>Who Gets to Decide?</h3><p>User, company or government: where should platform power stop?</p></a>
       </div>
       <a class="text-link" href="briefs/index.html">Browse all previous Briefs and study guides →</a>
     </section>
+
+    <details class="source-section photo-credits">
+      <summary>Photo credits</summary>
+      <p>When the day's top story has no photograph of its own, the lead shows a file photo for its section, labelled as a file photo under the picture.</p>
+      <ul><li>Who Has the Power? The west front of the U.S. Capitol. <a href="https://commons.wikimedia.org/wiki/File:United_States_Capitol_west_front_edit2.jpg" target="_blank" rel="noopener noreferrer">Architect of the Capitol, public domain, via Wikimedia Commons ↗</a></li><li>Iran at War. A sailor on the bridge of USS San Antonio watches the Strait of Hormuz through "Big Eyes" binoculars, August 2021. <a href="https://www.dvidshub.net/image/6870398" target="_blank" rel="noopener noreferrer">U.S. Navy photo by Seaman Mason Ray, public domain, via DVIDS ↗</a></li><li>The War in Ukraine. Members of the Armed Forces of Ukraine hold the national flag at an Independence Day parade rehearsal in Kyiv, August 2021. <a href="https://www.dvidshub.net/image/6799737" target="_blank" rel="noopener noreferrer">U.S. Army photo by Sgt. Christopher Brecht, public domain, via DVIDS ↗</a></li><li>Social Media. Spectators hold up phones to record a space shuttle launch at Kennedy Space Center, April 2010. <a href="https://images.nasa.gov/details/1000635" target="_blank" rel="noopener noreferrer">NASA, public domain ↗</a></li><li>How to Read the News. Pentagon Press Secretary John F. Kirby holds a press briefing, February 2021. <a href="https://www.dvidshub.net/image/6528659" target="_blank" rel="noopener noreferrer">DoD photo by Lisa Ferdinando, public domain, via DVIDS ↗</a></li></ul>
+    </details>
 
     <div class="teacher-only notice"><strong>Teacher view:</strong> The homepage is intentionally publication-first: current stories, active investigations, broad issue doors and archive links. Curriculum machinery stays behind the scenes. No answer key is hidden in this public build.</div>
   </div>
@@ -147,7 +162,9 @@
 </footer>
 <script src="assets/data/daily-news.js"></script>
 <script src="assets/data/iran-unit.js"></script>
-<script src="assets/js/daily-news-hydrate.js?v=20261009-lead"></script>
+<script src="assets/js/becurrent-icons.js?v=20261020"></script>
+<script src="assets/js/section-photos.js?v=20261020"></script>
+<script src="assets/js/daily-news-hydrate.js?v=20261020-photos"></script>
 <script src="assets/js/becurrent-2.js"></script>
 </body>
 </html>

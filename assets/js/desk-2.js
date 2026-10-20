@@ -117,8 +117,28 @@
 
     var visual=document.querySelector('[data-lead-image]');
     // The photograph sits above the headline on the light Desk, never behind it.
-    if(visual&&lead.image){
-      visual.style.setProperty('--lead-photo','url("'+String(lead.image).replace(/"/g,'')+'")');
+    // The story's own photograph wins; without one the Lead gets a captioned file
+    // photo for its section (assets/js/section-photos.js), as on the front door.
+    var sections=window.BECURRENT_SECTION_PHOTOS;
+    var file=!lead.image&&sections?sections.forCategory(lead.category):null;
+    var src=lead.image?String(lead.image):(file?'../'+file.src:'');
+    if(visual&&src&&!visual.querySelector('.desk-lead-photo')){
+      var figure=document.createElement('figure');
+      figure.className='desk-lead-photo';
+      var img=document.createElement('img');
+      img.src=src; img.alt=file?file.alt:''; img.decoding='async';
+      img.onerror=function(){figure.remove();};
+      figure.appendChild(img);
+      if(file){
+        var cap=document.createElement('figcaption');
+        cap.textContent=sections.caption(file)+' ';
+        var credit=document.createElement('a');
+        credit.href=file.creditUrl; credit.target='_blank'; credit.rel='noopener noreferrer';
+        credit.textContent=file.credit;
+        cap.appendChild(credit);
+        figure.appendChild(cap);
+      }
+      visual.insertBefore(figure,visual.firstChild);
       visual.dataset.hasPhoto='true';
     }
 

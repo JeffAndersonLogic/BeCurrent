@@ -774,6 +774,20 @@ has its own `becurrent-announcements.css`. The dark Desk and board stylesheets a
 in `archive/dark-surfaces-2026-10/`. The other investigations (Iran, Ukraine,
 Social Media, week 01) keep their own look and only took the new logo.
 
+**They are news pages, so they carry pictures.** The front door leads with a
+photograph, runs the investigations as a section front (one big photo package,
+then photo cards), and puts line icons on the briefing, Reverse History and the
+issue doors (`assets/js/becurrent-icons.js`, the Midterms icon style). Every
+photograph is a local public-domain copy in `assets/images/home/` or
+`assets/images/midterms/`, credited on the page.
+
+**The lead's photo is never faked.** When the daily news file carries the story's
+own photograph, that wins. When it does not, Home, the Desk and the TODAY board
+show a file photo for the story's section from `assets/js/section-photos.js`,
+captioned "File photo: ... Not from this story." with its credit.
+`scripts/test/daily-news-refresh.test.js` fails if a file photo is missing or its
+caption stops saying so.
+
 The Midterms Canvas pastes match: `build-canvas-events.js` gives any
 `video-first` unit the logo in a grey band at the top of the table and hairline
 rows with a red edge on each label. Other units keep their black-bordered tables.

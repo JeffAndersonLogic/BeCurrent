@@ -34,6 +34,24 @@ async function main() {
   assert.match(hydrate, /hero.style.backgroundImage/);
   assert.doesNotMatch(css, /Tehran%20Skyline%20and%20Alborz%20Mountains\.jpg/);
 
+  // The lead's file photos: every one is a local file that exists, every caption
+  // says it is a file photo and not the story's, and the homepage loads the module
+  // before the hydrate script that uses it.
+  const vm = require('node:vm');
+  const sandbox = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '..', '..', 'assets', 'js', 'section-photos.js'), 'utf8'), sandbox);
+  const sections = sandbox.window.BECURRENT_SECTION_PHOTOS;
+  Object.values(sections.photos).forEach(photo => {
+    assert.ok(fs.existsSync(path.join(__dirname, '..', '..', photo.src)), `missing file photo ${photo.src}`);
+    assert.match(sections.caption(photo), /^File photo: .+\. Not from this story\.$/);
+    assert.ok(photo.alt && photo.credit && /^https:\/\//.test(photo.creditUrl), `incomplete credit for ${photo.src}`);
+  });
+  assert.equal(sections.forCategory('World / Security'), sections.photos.security);
+  assert.equal(sections.forCategory('U.S. / Democracy'), sections.photos.democracy);
+  assert.equal(sections.forCategory('Something new'), sections.photos.world);
+  assert.ok(homepage.indexOf('section-photos.js') < homepage.indexOf('daily-news-hydrate.js'),
+    'section-photos.js must load before the hydrate script');
+
   const now = new Date();
   const yesterday = new Date(now.getTime() - 24 * 3600000);
   const old = new Date(now.getTime() - 96 * 3600000);
