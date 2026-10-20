@@ -157,6 +157,60 @@ ${inner}
         </tr>`;
 }
 
+// ── The clean Canvas look ────────────────────────────────────────────────────
+//
+// The Midterms unit (the video-first renderer) pastes in the 2026-10-20 brand:
+// the BeCurrent logo in a grey band at the top of the table, then the same
+// labelled rows every unit has, on hairline rules with a red edge on each label.
+// The other units keep their existing black-bordered tables until they are
+// rebuilt in the same design system.
+//
+// Only properties Canvas's sanitiser keeps are used (colour, background, border,
+// padding, margin, font-size, font-weight, width, vertical-align). No
+// text-transform or letter-spacing: the labels are written the way they should
+// read, so "BeCurrent Link" stays mixed case in Canvas and in the preview.
+//
+// The logo is a PNG on the live site rather than the SVG, because the Canvas
+// mobile app and notification emails are not trusted to render SVG. It shows in
+// Canvas only once this build is on main, which is what GitHub Pages serves.
+const LOGO_PNG = `${SITE}/assets/images/brand/becurrent-wordmark-ink.png`;
+const CLEAN = { rule: '#d4dad6', band: '#eceeec', label: '#f6f7f4', red: '#ce1400',
+  redDeep: '#922d20', ink: '#172124' };
+
+function isClean(unit) {
+  return unit.meta.renderer === 'video-first';
+}
+
+function cleanBanner(kicker, title) {
+  return `        <tr>
+            <td colspan="2" style="background-color: ${CLEAN.band}; border-bottom: 3px solid ${CLEAN.red}; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="${LOGO_PNG}" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: ${CLEAN.redDeep};">${kicker}</p>
+                <h2 style="margin: 2px 0 0 0; color: ${CLEAN.ink};">${title}</h2>
+            </td>
+        </tr>`;
+}
+
+function cleanRow(label, inner) {
+  return `        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: ${CLEAN.label}; border-bottom: 1px solid ${CLEAN.rule}; border-left: 4px solid ${CLEAN.red}; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: ${CLEAN.redDeep};">${label}</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid ${CLEAN.rule}; padding: 14px 18px; color: ${CLEAN.ink};">
+${inner}
+            </td>
+        </tr>`;
+}
+
+function cleanTable(banner, rows) {
+  return `<table style="border-collapse: collapse; width: 100%; border: 1px solid ${CLEAN.rule};" cellpadding="12">
+    <tbody>
+${banner}
+${rows.join('\n')}
+    </tbody>
+</table>`;
+}
+
 function briefFileFor(topic) {
   const nn = String(topic.n).padStart(2, '0');
   return `topic-${nn}-brief-${topic.slug}.html`;
@@ -203,13 +257,19 @@ function eventTable(unit, topic, code) {
                 <p><strong>Due:</strong> the start of class on ${longDate(CALENDAR[code].due)}.</p>` : ''}`
     : `                <p><strong>Nothing to submit.</strong> This topic is done on paper in class. There is no Canvas assignment for it and nothing to hand in.</p>`;
 
+  const mk = isClean(unit) ? cleanRow : row;
   const rows = [
-    row('OVERVIEW', `                <p>${esc(plain(topic.overview))}</p>`),
-    row('LEARNING TARGETS', `                <ol>\n${targets}\n                </ol>`),
-    row('SUCCESS CRITERIA', `                <ol>\n${criteria}\n                </ol>`),
-    row('BeCurrent Link', links.join('\n')),
-    row('ASSIGNMENT', assignmentCell)
+    mk('OVERVIEW', `                <p>${esc(plain(topic.overview))}</p>`),
+    mk('LEARNING TARGETS', `                <ol>\n${targets}\n                </ol>`),
+    mk('SUCCESS CRITERIA', `                <ol>\n${criteria}\n                </ol>`),
+    mk('BeCurrent Link', links.join('\n')),
+    mk('ASSIGNMENT', assignmentCell)
   ];
+
+  if (isClean(unit)) {
+    return cleanTable(cleanBanner(`${esc(plain(m.unit))} &middot; ${esc(plain(topic.topic))}`,
+      esc(plain(topic.title))), rows);
+  }
 
   return `<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
     <tbody>
@@ -228,23 +288,41 @@ ${rows.join('\n')}
  * nothing. So the paste is spelled out rather than assumed.
  */
 function assignmentBody(unit, topic, code) {
-  if(unit.meta.renderer==='video-first'){
-    const pageUrl=artifactUrl(unit,topic);
-    const due=CALENDAR[code]&&CALENDAR[code].due;
-    return `<h2>${esc(objectName(unit.meta.unit))}, Topic ${topic.n}: ${esc(objectName(topic.title))}</h2>
-<p>${esc(plain(topic.overview))}</p>
-<h3>Step 1 &mdash; Open the civics investigation</h3>
-<p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener">Open Topic ${topic.n}</a></p>
-<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. ${topic.resultsNotebook?'Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.':'Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.'}</p>
-<ol>${topic.questions.filter(q=>!q.optional).map(q=>'<li>'+esc(plain(q.text))+'</li>').join('')}</ol>
-<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit${due ? '' : ' before lunch'}</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>${due ? `
-<p>Aim to submit before lunch. <strong>Due: the start of class on ${longDate(due)}.</strong></p>` : ''}
-<h3>Success criteria</h3><ol>${topic.successCriteria.map(c=>'<li>'+esc(plain(c.criteria))+'</li>').join('')}</ol>
-<h3>Scoring / ${topic.rubric.reduce((n,r)=>n+r.points,0)} points</h3><ul>${topic.rubric.map(r=>'<li><strong>'+esc(r.label)+' ('+r.points+')</strong>: '+esc(r.description)+'</li>').join('')}</ul>
-${topic.afterElection?'<p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>':''}
+  if (isClean(unit)) {
+    const pageUrl = artifactUrl(unit, topic);
+    const due = CALENDAR[code] && CALENDAR[code].due;
+    const points = topic.rubric.reduce((n, r) => n + r.points, 0);
+    const required = topic.questions.filter(q => !q.optional)
+      .map(q => `                    <li>${esc(plain(q.text))}</li>`).join('\n');
+    const criteria = topic.successCriteria
+      .map(c => `                    <li>${esc(plain(c.criteria))}</li>`).join('\n');
+    const rubric = topic.rubric
+      .map(r => `                    <li><strong>${esc(r.label)} (${r.points})</strong>: ${esc(r.description)}</li>`).join('\n');
+    const rows = [
+      cleanRow('OVERVIEW', `                <p>${esc(plain(topic.overview))}</p>`),
+      cleanRow('STEP 1: Open', `                <p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener"><strong>Open Topic ${topic.n} on BeCurrent</strong></a></p>
+                <p>Everything happens on the website. There is nothing to download.</p>`),
+      cleanRow('STEP 2: Investigate', `                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. ${topic.resultsNotebook ? 'Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.' : 'Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.'}</p>
+                <ol>
+${required}
+                </ol>
+                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>`),
+      cleanRow('STEP 3: Submit', `                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>${due ? `
+                <p>Aim to submit before lunch. <strong>Due: the start of class on ${longDate(due)}.</strong></p>` : `
+                <p>Submit before lunch.</p>`}`),
+      cleanRow('SUCCESS CRITERIA', `                <ol>
+${criteria}
+                </ol>`),
+      cleanRow(`SCORING: ${points} points`, `                <ul>
+${rubric}
+                </ul>`)
+    ];
+    if (topic.afterElection) {
+      rows.splice(1, 0, cleanRow('AFTER NOVEMBER 3',
+        '                <p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>'));
+    }
+    return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; Topic ${topic.n}`,
+      esc(plain(topic.title))), rows)}
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>`;
   }
   const m = unit.meta;

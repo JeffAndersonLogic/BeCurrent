@@ -152,10 +152,10 @@ push. That keeps the record of what it would have caught.
 - `node scripts/serve-local.js`, serve the repo locally. The briefs load through
   an iframe, which `file://` blocks, so use this rather than opening the HTML
   directly.
-- `python3 scripts/brand/build-wordmark.py`, derive the plate, both wordmarks and
-  the favicon from `assets/images/brand/becurrent-mark-source.svg`, the supplied
-  artwork. Trims and recolours; never redraws. Needs
-  `pip install fonttools brotli svgelements`, and is off the test path on
+- `python3 -I scripts/brand/build-wordmark.py`, trace every lockup, the Canvas
+  PNG and the favicon from the supplied logo files in
+  `assets/images/brand/source/`. Traces, trims and recolours; never redraws.
+  Needs `pip install pillow numpy potracer`, and is off the test path on
   purpose. See "The Mark, the Palette, and the Faces" below.
 
 The student entry point is `index.html`, and it is generated. Student work reaches
@@ -712,66 +712,71 @@ is two answers to "what red is this course" waiting to disagree.
 
 ### The mark
 
-**The artwork is a real file and it is the source of truth.**
-`assets/images/brand/becurrent-mark-source.svg` is the supplied vector.
-Everything else in the brand folder is derived from it by
-`scripts/brand/build-wordmark.py`, which does three things and only three: trim,
-recolour, compose. **It never redraws.** Every earlier mark in this repo was a
-reproduction built from fonts, because the artwork had only ever arrived as a
-raster; all of that code is gone.
+**The artwork is real files and they are the source of truth.** The logo was
+replaced on 2026-10-20: the heavy word **BeCurrent** with a red full stop, the
+**BC.** monogram on a black square, and two lockups with a line under the word
+(CURRENT EVENTS, and a red rule over THE BRIEF). The teacher supplied them as
+five raster files, kept unedited in `assets/images/brand/source/`. The earlier
+C mark and its vector source are in `archive/brand-c-mark-2026/`.
 
-**Do not hand-edit the four outputs.** Edit the source, or the script.
-
-The mark is **Be**, an oversized red **C**, then **URRENT**, with the word
-crossing in front of the C. The C is the C of "Current" and it is also the logo.
+Everything else in the brand folder is derived by
+`scripts/brand/build-wordmark.py`, which does three things and only three:
+trace (potrace, so the outputs are the artwork's own outlines as vectors), trim,
+recolour. **It never redraws.** **Do not hand-edit the outputs.** Replace a
+source, or edit the script.
 
 ```
-assets/images/brand/becurrent-mark-source.svg    THE ARTWORK, 1500x1500
-assets/images/brand/becurrent-logo.svg           the plate, 10:3, with the tagline
-assets/images/brand/becurrent-wordmark.svg       word in paper, dark grounds
-assets/images/brand/becurrent-wordmark-ink.svg   word in ink, light grounds
-assets/favicon.svg                               the red C, for a browser tab
+assets/images/brand/source/                      THE ARTWORK, five files as supplied
+assets/images/brand/becurrent-wordmark-ink.svg   word in ink, light grounds (the default)
+assets/images/brand/becurrent-wordmark.svg       word in paper, dark bands
+assets/images/brand/becurrent-wordmark-ink.png   480px, for Canvas pastes
+assets/images/brand/becurrent-logo-ink.svg       word over CURRENT EVENTS, no plate
+assets/images/brand/becurrent-logo.svg           the same on a black plate
+assets/images/brand/becurrent-brief.svg          the BeCurrent / THE BRIEF lockup
+assets/images/brand/becurrent-monogram.svg       BC. on its square
+assets/favicon.svg                               the monogram at 64x64
 ```
 
-**Three things stop the source being usable as-is**, and they are why a build
-step exists at all rather than four copies of one file:
+Three things about the derivation are deliberate:
 
-1. **The canvas is mostly empty.** The artwork sits in a band about 1102x450 in
-   the middle of a 1500x1500 square, roughly a fifth of the height. An `<img>`
-   renders the whole canvas, so used untrimmed the mark comes out a fifth of the
-   size its `height` asks for, floating in space. Trimming is what makes the
-   ratio 2.45 rather than 1.
-2. **The word is black.** On the masthead and the footer, both near-black bands,
-   a black word is invisible and only the red C survives, which reads as a
-   rendering fault rather than a logo. Hence two colourways. The **only**
-   difference between them is the word's fill; the red never moves.
-3. **There is no tagline in it.** The plate needs one, so it is set in Montserrat
-   and exists in the plate alone. At masthead size it is four illegible pixels,
-   and the front door already prints the course name in the dateline right under
-   the mark. In the plate it clears the **C's descender**, not the word's
-   baseline: the C overhangs the line by more than a cap height at each end, and
-   measuring from the baseline runs the tagline straight through it.
+1. **One red.** The five files were drawn separately and their full stops sample
+   anywhere from `#D00800` to `#E41404`. Every red is recoloured to `--signal`
+   `#CE1400`, which is within a few points of the main wordmark's own dot.
+2. **One geometry per colourway pair.** The paper wordmark is the ink trace
+   recoloured, not a trace of the paper source, so the only difference between
+   the two is the fill.
+3. **The plate keeps its own ground.** The older investigation pages put
+   `becurrent-logo.svg` on dark mastheads, so it carries a black plate and looks
+   right on any ground. Light pages use `becurrent-logo-ink.svg`.
 
-**The lockup has a legibility floor and it is not 21px.** It is 2.45:1 and the
-word's cap height is only about a third of the mark's total height, because of
-that overhang. At 21px, the height the first BeCurrent masthead used, the cap
-height is under 7px and the word is unreadable. **The masthead is 38px and the
-footer 30px for that reason.** If the artwork is ever redrawn, measure this again
-rather than assuming the heights carry over.
+**The legibility floor moved.** The new word is about 6.7:1 and its cap height is
+most of the mark's height, the opposite of the old C lockup, whose word was a
+third of its height. It reads at a 22 to 28px masthead, which is what the front
+door, the Desk, the TODAY board and the Midterms pages use.
 
-`scripts/brand/build-wordmark.py` regenerates all four. It needs
-`pip install fonttools brotli svgelements` and is **deliberately off the test
-path**, because `validate.js` has to stay runnable on a bare checkout with no
-install at all. The outputs are committed; nothing in the build or the gate calls
-it.
+**The Canvas logo is a PNG on the live site**, because the Canvas mobile app and
+notification emails are not trusted with SVG. It only appears in Canvas once the
+build that carries it is on `main`.
 
-**Replacing the artwork is not a file swap.** Four outputs come from it, plus
-`--signal` sampled from it, plus the `width`/`height` on every `<img>` that
-renders it, plus the masthead and footer heights if the ratio moves. The
-dimensions are enforced: `validate.js` reads the wordmark's own size and fails if
-any lockup disagrees. That check has fired on every redraw, 4889x810 then
-4101x716 then 7101x733 then 7563x1848 and now 1102x450, and each time ten
-hardcoded pairs across four generators had to move with it.
+**Replacing the artwork is not a file swap.** The outputs, plus the
+`width`/`height` on every `<img>` that renders a wordmark, have to move together.
+The dimensions are enforced: `validate.js` reads the wordmark's own size and fails
+if any lockup disagrees. That check has fired on every redraw, 4889x810 then
+4101x716 then 7101x733 then 7563x1848 then 1102x450 and now 1786x266.
+
+### The clean surfaces
+
+Since 2026-10-20 the front door, the Desk, the TODAY board and the Midterms unit
+share one design system, `assets/css/video-first.css`: light paper, a grey title
+band, system sans headings, Montserrat labels, ink buttons and the one red. The
+front door adds `publication-home.css`, the Desk `desk-clean.css`, and the board
+has its own `becurrent-announcements.css`. The dark Desk and board stylesheets are
+in `archive/dark-surfaces-2026-10/`. The other investigations (Iran, Ukraine,
+Social Media, week 01) keep their own look and only took the new logo.
+
+The Midterms Canvas pastes match: `build-canvas-events.js` gives any
+`video-first` unit the logo in a grey band at the top of the table and hairline
+rows with a red edge on each label. Other units keep their black-bordered tables.
 
 ### One family, two courses
 

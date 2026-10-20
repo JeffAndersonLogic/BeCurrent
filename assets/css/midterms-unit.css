@@ -85,3 +85,10 @@ summary{font-family:var(--vf-label);font-weight:650}
 .chapter-pill{font-size:.74rem}
 }
 @media print{.hero{background:none;border:0}.hero-photo,.photo,.topic-thumb{display:none}}
+
+/* Brand refresh, 2026-10-20: the masthead carries the logo file, not type set to
+ * resemble it, so the CSS full stop the text wordmark used is switched off. */
+.brand-logo{display:block;line-height:0}
+.brand-logo:after{content:none}
+.brand-logo img{display:block;height:26px;width:auto}
+@media(max-width:650px){.brand-logo img{height:22px}}

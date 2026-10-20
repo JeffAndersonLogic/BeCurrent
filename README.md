@@ -120,17 +120,14 @@ There is no third accent. Where a second series has to be distinguished from the
 first, the second one is black. The focus ring is ink, never the accent, because
 red is already on nearly every card border.
 
-The mark is **Be**, an oversized red **C**, then **URRENT**, with the word
-crossing in front of the C. `assets/images/brand/becurrent-mark-source.svg` is
-the supplied artwork and the source of truth; the four lockups are derived from
-it by trimming, recolouring and composing, never by redrawing. Two colourways,
-because the word is black in the artwork and would vanish on the dark bands. It
-is unreadable below about 38px tall, which is why the masthead and footer are
-sized the way they are.
+The logo is the heavy word **BeCurrent** with a red full stop, plus a **BC.**
+monogram, supplied on 2026-10-20 as the five files in
+`assets/images/brand/source/`. Every lockup, the Canvas PNG and the favicon are
+traced from them, trimmed and recoloured to the one red, never redrawn.
 
-`python3 scripts/brand/build-wordmark.py` regenerates all four. It needs
-`fonttools brotli svgelements` and is off the test path on purpose; the outputs
-are committed.
+`python3 -I scripts/brand/build-wordmark.py` regenerates them. It needs
+`pillow numpy potracer` and is off the test path on purpose; the outputs are
+committed.
 
 ## Deploying
 

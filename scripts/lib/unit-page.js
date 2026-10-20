@@ -137,7 +137,7 @@ ${actionRow}
   <header class="topbar">
     <nav class="nav">
       <a class="brand-mini" href="../index.html" aria-label="Return to the BeCurrent home page">
-        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450">
+        <img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1786" height="266">
       </a>
       <div class="nav-links">
         <a href="../index.html">Home</a>
@@ -200,7 +200,7 @@ ${competencyList}
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1102" height="450"></div>
+      <div class="footer-brand"><img src="../assets/images/brand/becurrent-wordmark.svg" alt="BeCurrent" width="1786" height="266"></div>
       <p>${esc(m.unit)} &middot; ${esc(String(withBriefs))} of ${esc(String(topics.length))} topics have a Brief. The rest happen on paper.</p>
       <p>Read it. Check it. Then decide.</p>
     </div>

@@ -47,21 +47,28 @@ Every link below points at the live GitHub Pages build:
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 1  
 
 ```html
-<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
     <tbody>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>OVERVIEW</h3>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 1</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Election Nobody Understands</h2>
             </td>
-            <td style="vertical-align: top;">
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Find out what is on the 2026 ballot, compare the House and Senate, and explain how Congress can change while the president stays in office.</p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>LEARNING TARGETS</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">LEARNING TARGETS</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can explain what a midterm election changes and what it does not.</li>
                     <li>I can distinguish House elections from Senate elections.</li>
@@ -70,10 +77,10 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>SUCCESS CRITERIA</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can identify congressional offices on the ballot and explain that the presidency is not being elected.</li>
                     <li>I can sort at least four of five House/Senate facts correctly and correct my errors.</li>
@@ -82,19 +89,19 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>BeCurrent Link</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">BeCurrent Link</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-01.html" target="_blank" rel="noopener">The civics investigation for this topic</a></p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>ASSIGNMENT</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Thursday, October 22.</p>
@@ -114,21 +121,28 @@ Every link below points at the live GitHub Pages build:
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 2  
 
 ```html
-<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
     <tbody>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>OVERVIEW</h3>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 2</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Battle for Congress</h2>
             </td>
-            <td style="vertical-align: top;">
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Follow individual seats to chamber control. Test how a small shift can change leaders, committees, and the agenda without guaranteeing a new law.</p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>LEARNING TARGETS</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">LEARNING TARGETS</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can explain how individual elections determine chamber membership.</li>
                     <li>I can explain how a majority affects leaders and committees.</li>
@@ -137,10 +151,10 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>SUCCESS CRITERIA</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can identify the majority in a constructed 435-seat House scenario.</li>
                     <li>I can identify two decisions a new majority could influence.</li>
@@ -149,19 +163,19 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>BeCurrent Link</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">BeCurrent Link</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-02.html" target="_blank" rel="noopener">The civics investigation for this topic</a></p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>ASSIGNMENT</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Monday, October 26.</p>
@@ -181,21 +195,28 @@ Every link below points at the live GitHub Pages build:
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 3  
 
 ```html
-<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
     <tbody>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>OVERVIEW</h3>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 3</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Power to Stop a President</h2>
             </td>
-            <td style="vertical-align: top;">
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.</p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>LEARNING TARGETS</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">LEARNING TARGETS</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can explain ways Congress checks presidential power.</li>
                     <li>I can explain why one election does not settle every governing decision.</li>
@@ -204,10 +225,10 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>SUCCESS CRITERIA</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can accurately explain two congressional checks.</li>
                     <li>I can explain why one chamber cannot ordinarily enact a law alone.</li>
@@ -216,19 +237,19 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>BeCurrent Link</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">BeCurrent Link</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-03.html" target="_blank" rel="noopener">The civics investigation for this topic</a></p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>ASSIGNMENT</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Wednesday, October 28.</p>
@@ -248,21 +269,28 @@ Every link below points at the live GitHub Pages build:
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 4  
 
 ```html
-<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
     <tbody>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>OVERVIEW</h3>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 4</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Fight for Your Vote</h2>
             </td>
-            <td style="vertical-align: top;">
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.</p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>LEARNING TARGETS</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">LEARNING TARGETS</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can explain how a campaign message directs attention.</li>
                     <li>I can check a claim against an independent source.</li>
@@ -271,10 +299,10 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>SUCCESS CRITERIA</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can identify a message’s claim, audience, and missing context.</li>
                     <li>I can name a second source and explain what it supports, contradicts, or leaves unresolved.</li>
@@ -283,19 +311,19 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>BeCurrent Link</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">BeCurrent Link</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-04.html" target="_blank" rel="noopener">The civics investigation for this topic</a></p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>ASSIGNMENT</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Friday, October 30.</p>
@@ -315,21 +343,28 @@ Every link below points at the live GitHub Pages build:
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 5  
 
 ```html
-<table style="border-collapse: collapse; width: 100%; border-color: #000000; border-style: solid;" border="3" cellpadding="8">
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
     <tbody>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>OVERVIEW</h3>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 5</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Night: What Happens Next?</h2>
             </td>
-            <td style="vertical-align: top;">
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.</p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>LEARNING TARGETS</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">LEARNING TARGETS</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can distinguish a projection, unofficial count, and certified result.</li>
                     <li>I can connect the 2026 outcome to a governing consequence and a limit.</li>
@@ -338,10 +373,10 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>SUCCESS CRITERIA</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.</li>
                     <li>I can explain two possible governing effects and one outcome that is not guaranteed.</li>
@@ -350,19 +385,19 @@ Every link below points at the live GitHub Pages build:
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>BeCurrent Link</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">BeCurrent Link</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-05.html" target="_blank" rel="noopener">The civics investigation for this topic</a></p>
             </td>
         </tr>
         <tr>
-            <td style="width: 20%; vertical-align: top; background-color: #f0f0f0;">
-                <h3>ASSIGNMENT</h3>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
             </td>
-            <td style="vertical-align: top;">
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the civics investigation, answer every filing, then use <strong>Gather All My Work</strong> to copy the investigation, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
                 <p><strong>Due:</strong> the start of class on Monday, November 9.</p>

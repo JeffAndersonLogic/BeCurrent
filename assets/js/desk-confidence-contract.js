@@ -4,14 +4,9 @@
   /* The generated Desk already loads this tiny compatibility bootstrap on every
      visit. Keep the hidden confidence contract intact, and use the same stable
      hook to layer in presentation-only Desk polish without hand-editing the
-     generated daily/index.html. */
-  if(!document.querySelector('link[data-desk-polish]')){
-    const style=document.createElement('link');
-    style.rel='stylesheet';
-    style.href='../assets/css/desk-2-polish.css';
-    style.dataset.deskPolish='true';
-    document.head.appendChild(style);
-  }
+     generated daily/index.html. The polish stylesheet it used to inject,
+     desk-2-polish.css, belonged to the dark Desk and is folded into
+     desk-clean.css since the 2026-10-20 brand refresh. */
   if(!document.querySelector('script[data-desk-ui-polish]')){
     const script=document.createElement('script');
     script.src='../assets/js/desk-ui-polish.js';

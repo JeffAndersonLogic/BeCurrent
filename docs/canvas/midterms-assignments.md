@@ -38,20 +38,82 @@ unattributable rows in `exceptions.csv`.
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Who Has the Power?, Topic 1: The Election Nobody Understands</h2>
-<p>Find out what is on the 2026 ballot, compare the House and Senate, and explain how Congress can change while the president stays in office.</p>
-<h3>Step 1 &mdash; Open the civics investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-01.html" target="_blank" rel="noopener">Open Topic 1</a></p>
-<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
-<ol><li>Name one verified fact about the 2026 election and one outcome still unknown. Name your source.</li><li>For the Indiana race card, name the office voters choose and one decision its winner could influence. Name one part of government this race does not replace.</li><li>If the president is not on the ballot, why can the midterms still change who has power? Use one verified fact.</li></ol>
-<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
-<p>Aim to submit before lunch. <strong>Due: the start of class on Thursday, October 22.</strong></p>
-<h3>Success criteria</h3><ol><li>I can identify congressional offices on the ballot and explain that the presidency is not being elected.</li><li>I can sort at least four of five House/Senate facts correctly and correct my errors.</li><li>I can use one verified fact to explain a possible governing consequence.</li></ol>
-<h3>Scoring / 20 points</h3><ul><li><strong>What voters choose (6)</strong>: Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.</li><li><strong>Fact and source (6)</strong>: Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.</li><li><strong>Power and limit (6)</strong>: Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.</li><li><strong>Explain your thinking (2)</strong>: Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.</li></ul>
-
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 1</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Election Nobody Understands</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Find out what is on the 2026 ballot, compare the House and Senate, and explain how Congress can change while the president stays in office.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-01.html" target="_blank" rel="noopener"><strong>Open Topic 1 on BeCurrent</strong></a></p>
+                <p>Everything happens on the website. There is nothing to download.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <ol>
+                    <li>Name one verified fact about the 2026 election and one outcome still unknown. Name your source.</li>
+                    <li>For the Indiana race card, name the office voters choose and one decision its winner could influence. Name one part of government this race does not replace.</li>
+                    <li>If the president is not on the ballot, why can the midterms still change who has power? Use one verified fact.</li>
+                </ol>
+                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 3: Submit</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+                <p>Aim to submit before lunch. <strong>Due: the start of class on Thursday, October 22.</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can identify congressional offices on the ballot and explain that the presidency is not being elected.</li>
+                    <li>I can sort at least four of five House/Senate facts correctly and correct my errors.</li>
+                    <li>I can use one verified fact to explain a possible governing consequence.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ul>
+                    <li><strong>What voters choose (6)</strong>: Correctly identify Congress as the House and Senate, distinguish their election cycles, and explain that the presidency is not being elected.</li>
+                    <li><strong>Fact and source (6)</strong>: Name a relevant source, accurately use a fact it establishes, and identify something it cannot establish yet.</li>
+                    <li><strong>Power and limit (6)</strong>: Connect a changed majority to leadership, priorities, or oversight and explain one change it does not automatically cause.</li>
+                    <li><strong>Explain your thinking (2)</strong>: Make the connection understandable in concise writing, dictated text, or the agreed paper response. Spelling and length do not determine this score.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>
 ```
 
@@ -68,20 +130,82 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Who Has the Power?, Topic 2: The Battle for Congress</h2>
-<p>Follow individual seats to chamber control. Test how a small shift can change leaders, committees, and the agenda without guaranteeing a new law.</p>
-<h3>Step 1 &mdash; Open the civics investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-02.html" target="_blank" rel="noopener">Open Topic 2</a></p>
-<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
-<ol><li>Name two decisions a new majority could influence. Identify your video or official source.</li><li>In the 217-to-218 scenario, what could change and why is the promised law not guaranteed?</li><li>Connect one district race to seats, a majority, and congressional priorities. Include one limit on that power.</li></ol>
-<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
-<p>Aim to submit before lunch. <strong>Due: the start of class on Monday, October 26.</strong></p>
-<h3>Success criteria</h3><ol><li>I can identify the majority in a constructed 435-seat House scenario.</li><li>I can identify two decisions a new majority could influence.</li><li>I can explain one reason chamber control does not guarantee a policy change.</li></ol>
-<h3>Scoring / 20 points</h3><ul><li><strong>Seats and majority (6)</strong>: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.</li><li><strong>Relevant evidence (4)</strong>: Name a clip or official reference and accurately explain evidence about leaders or committees.</li><li><strong>Influence and limits (8)</strong>: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.</li><li><strong>Explain your thinking (2)</strong>: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.</li></ul>
-
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 2</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Battle for Congress</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Follow individual seats to chamber control. Test how a small shift can change leaders, committees, and the agenda without guaranteeing a new law.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-02.html" target="_blank" rel="noopener"><strong>Open Topic 2 on BeCurrent</strong></a></p>
+                <p>Everything happens on the website. There is nothing to download.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <ol>
+                    <li>Name two decisions a new majority could influence. Identify your video or official source.</li>
+                    <li>In the 217-to-218 scenario, what could change and why is the promised law not guaranteed?</li>
+                    <li>Connect one district race to seats, a majority, and congressional priorities. Include one limit on that power.</li>
+                </ol>
+                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 3: Submit</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+                <p>Aim to submit before lunch. <strong>Due: the start of class on Monday, October 26.</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can identify the majority in a constructed 435-seat House scenario.</li>
+                    <li>I can identify two decisions a new majority could influence.</li>
+                    <li>I can explain one reason chamber control does not guarantee a policy change.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ul>
+                    <li><strong>Seats and majority (6)</strong>: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.</li>
+                    <li><strong>Relevant evidence (4)</strong>: Name a clip or official reference and accurately explain evidence about leaders or committees.</li>
+                    <li><strong>Influence and limits (8)</strong>: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.</li>
+                    <li><strong>Explain your thinking (2)</strong>: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>
 ```
 
@@ -98,20 +222,82 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Who Has the Power?, Topic 3: The Power to Stop a President</h2>
-<p>Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.</p>
-<h3>Step 1 &mdash; Open the civics investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-03.html" target="_blank" rel="noopener">Open Topic 3</a></p>
-<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
-<ol><li>Explain two congressional checks on the president. Identify your source.</li><li>Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.</li><li>Can divided government improve accountability and make governing harder at the same time? Use one institutional example.</li></ol>
-<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
-<p>Aim to submit before lunch. <strong>Due: the start of class on Wednesday, October 28.</strong></p>
-<h3>Success criteria</h3><ol><li>I can accurately explain two congressional checks.</li><li>I can explain why one chamber cannot ordinarily enact a law alone.</li><li>I can support an accountability benefit and a governing difficulty with a specific example.</li></ol>
-<h3>Scoring / 20 points</h3><ul><li><strong>Checks and institutions (6)</strong>: Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.</li><li><strong>Relevant evidence (4)</strong>: Name a relevant clip or official source and accurately use an institutional fact from it.</li><li><strong>Accountability and governing (8)</strong>: Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.</li><li><strong>Explain your thinking (2)</strong>: Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.</li></ul>
-
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 3</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Power to Stop a President</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-03.html" target="_blank" rel="noopener"><strong>Open Topic 3 on BeCurrent</strong></a></p>
+                <p>Everything happens on the website. There is nothing to download.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <ol>
+                    <li>Explain two congressional checks on the president. Identify your source.</li>
+                    <li>Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.</li>
+                    <li>Can divided government improve accountability and make governing harder at the same time? Use one institutional example.</li>
+                </ol>
+                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 3: Submit</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+                <p>Aim to submit before lunch. <strong>Due: the start of class on Wednesday, October 28.</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can accurately explain two congressional checks.</li>
+                    <li>I can explain why one chamber cannot ordinarily enact a law alone.</li>
+                    <li>I can support an accountability benefit and a governing difficulty with a specific example.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ul>
+                    <li><strong>Checks and institutions (6)</strong>: Accurately explain two congressional checks and distinguish a Senate-only confirmation power from powers both chambers exercise.</li>
+                    <li><strong>Relevant evidence (4)</strong>: Name a relevant clip or official source and accurately use an institutional fact from it.</li>
+                    <li><strong>Accountability and governing (8)</strong>: Use the scenario to explain both an accountability benefit and a governing difficulty, with a concrete mechanism and a limit.</li>
+                    <li><strong>Explain your thinking (2)</strong>: Make the reasoning understandable without requiring a long response, public speech, or agreement with a political position.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>
 ```
 
@@ -128,20 +314,82 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Who Has the Power?, Topic 4: The Fight for Your Vote</h2>
-<p>Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.</p>
-<h3>Step 1 &mdash; Open the civics investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-04.html" target="_blank" rel="noopener">Open Topic 4</a></p>
-<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
-<ol><li>Choose a constructed message. Identify its claim, audience, and a detail you would check.</li><li>Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.</li><li>Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?</li></ol>
-<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
-<p>Aim to submit before lunch. <strong>Due: the start of class on Friday, October 30.</strong></p>
-<h3>Success criteria</h3><ol><li>I can identify a message’s claim, audience, and missing context.</li><li>I can name a second source and explain what it supports, contradicts, or leaves unresolved.</li><li>I can explain why a poll or promise does not establish what will happen.</li></ol>
-<h3>Scoring / 20 points</h3><ul><li><strong>Message and framing (4)</strong>: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.</li><li><strong>Check the real claim (8)</strong>: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.</li><li><strong>Polls, promises, uncertainty (6)</strong>: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.</li><li><strong>Explain your thinking (2)</strong>: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.</li></ul>
-
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 4</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">The Fight for Your Vote</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-04.html" target="_blank" rel="noopener"><strong>Open Topic 4 on BeCurrent</strong></a></p>
+                <p>Everything happens on the website. There is nothing to download.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <ol>
+                    <li>Choose a constructed message. Identify its claim, audience, and a detail you would check.</li>
+                    <li>Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.</li>
+                    <li>Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?</li>
+                </ol>
+                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 3: Submit</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+                <p>Aim to submit before lunch. <strong>Due: the start of class on Friday, October 30.</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can identify a message’s claim, audience, and missing context.</li>
+                    <li>I can name a second source and explain what it supports, contradicts, or leaves unresolved.</li>
+                    <li>I can explain why a poll or promise does not establish what will happen.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 20 points</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ul>
+                    <li><strong>Message and framing (4)</strong>: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.</li>
+                    <li><strong>Check the real claim (8)</strong>: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.</li>
+                    <li><strong>Polls, promises, uncertainty (6)</strong>: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.</li>
+                    <li><strong>Explain your thinking (2)</strong>: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>
 ```
 
@@ -158,19 +406,88 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
 
 ```html
-<h2>Who Has the Power?, Topic 5: Election Night: What Happens Next?</h2>
-<p>Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.</p>
-<h3>Step 1 &mdash; Open the civics investigation</h3>
-<p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-05.html" target="_blank" rel="noopener">Open Topic 5</a></p>
-<h3>Step 2 &mdash; Watch, investigate, and explain</h3>
-<p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.</p>
-<ol><li>Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.</li></ol>
-<p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
-<h3>Step 3 &mdash; Gather and submit</h3>
-<p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
-<p>Aim to submit before lunch. <strong>Due: the start of class on Monday, November 9.</strong></p>
-<h3>Success criteria</h3><ol><li>I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.</li><li>I can explain two possible governing effects and one outcome that is not guaranteed.</li><li>I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.</li></ol>
-<h3>Scoring / 30 points</h3><ul><li><strong>Accurate results (8)</strong>: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.</li><li><strong>Effects and limit (8)</strong>: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.</li><li><strong>Two-source reasoning (6)</strong>: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.</li><li><strong>Another reasonable impact (4)</strong>: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.</li><li><strong>Remaining uncertainty (4)</strong>: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.</li></ul>
-<p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 5</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Night: What Happens Next?</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">AFTER NOVEMBER 3</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-05.html" target="_blank" rel="noopener"><strong>Open Topic 5 on BeCurrent</strong></a></p>
+                <p>Everything happens on the website. There is nothing to download.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.</p>
+                <ol>
+                    <li>Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.</li>
+                </ol>
+                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 3: Submit</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+                <p>Aim to submit before lunch. <strong>Due: the start of class on Monday, November 9.</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.</li>
+                    <li>I can explain two possible governing effects and one outcome that is not guaranteed.</li>
+                    <li>I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 30 points</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ul>
+                    <li><strong>Accurate results (8)</strong>: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.</li>
+                    <li><strong>Effects and limit (8)</strong>: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.</li>
+                    <li><strong>Two-source reasoning (6)</strong>: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.</li>
+                    <li><strong>Another reasonable impact (4)</strong>: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.</li>
+                    <li><strong>Remaining uncertainty (4)</strong>: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>
 ```

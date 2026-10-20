@@ -112,8 +112,8 @@ found.forEach(unit => {
   // Every event must actually be a Canvas table, not an empty shell.
   check('every event is a real five-row table',
     mdTables.every(t => /^<table style="border-collapse/.test(t)
-      && (t.match(/<h3>/g) || []).length === 5),
-    mdTables.map(t => (t.match(/<h3>/g) || []).length).join('/'));
+      && (t.match(/<h3[ >]/g) || []).length === 5),
+    mdTables.map(t => (t.match(/<h3[ >]/g) || []).length).join('/'));
 
   // ── Content safety, read off disk ───────────────────────────────────────────
   [['markdown', md], ['HTML', html]].forEach(([label, text]) => {

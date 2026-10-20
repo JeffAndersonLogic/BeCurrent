@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Today | BeCurrent</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261009-lead">
-  <link rel="stylesheet" href="assets/css/becurrent-announcements-projector.css?v=20260826">
+  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261020-brand">
 </head>
 <body>
 <div class="board" id="board">
@@ -14,7 +13,7 @@
 
   <header class="masthead">
     <a class="masthead-brand" href="index.html" aria-label="BeCurrent home">
-      <img src="assets/images/brand/becurrent-logo.svg" alt="BeCurrent">
+      <img src="assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="1786" height="266">
       <span class="masthead-course">Today</span>
     </a>
     <div class="masthead-links"><a href="index.html">Home</a><a href="daily/index.html">The Desk</a></div>
@@ -117,9 +116,10 @@
   function titleSlide(day) {
     var s = slide('title-slide');
     var inner = el('div','title-inner');
-    inner.appendChild(kicker(SETTINGS.courseName || 'Current Events'));
+    // The lockup carries the CURRENT EVENTS line itself, so no kicker above it.
     var logo = document.createElement('img');
-    logo.className = 'title-logo'; logo.src = 'assets/images/brand/becurrent-logo.svg'; logo.alt = 'BeCurrent';
+    logo.className = 'title-logo'; logo.src = 'assets/images/brand/becurrent-logo-ink.svg';
+    logo.alt = 'BeCurrent, ' + (SETTINGS.courseName || 'Current Events');
     inner.appendChild(logo);
     inner.appendChild(el('div','title-date',formatDate(new Date())));
     inner.appendChild(el('h1','title-topic',day && has(day.topic) ? day.topic : 'Welcome to class'));
@@ -135,10 +135,9 @@
     if (day && day.showLead === false) return null;
     var lead = NEWS.lead || null;
     if (!lead || !has(lead.headline)) return null;
+    // The words sit on paper and the photograph sits beside them, never behind:
+    // a headline over a picture is the first thing a lit room washes out.
     var s = slide('lead-slide');
-    var media = el('div','lead-media');
-    if (has(lead.image)) media.style.backgroundImage = 'url("' + lead.image.replace(/"/g,'') + '")';
-    var shade = el('div','lead-shade');
     var copy = el('div','lead-copy');
     copy.appendChild(kicker('Today’s Lead · ' + (lead.category || 'News')));
     copy.appendChild(el('h2','lead-headline',lead.headline));
@@ -149,13 +148,21 @@
       var a = el('a','lead-link','Open the reporting →'); a.href = lead.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; meta.appendChild(a);
     }
     copy.appendChild(meta);
-    if (has(lead.imageCredit)) {
-      var credit = el('a','lead-photo-credit',lead.imageCredit);
-      credit.href = has(lead.imageCreditUrl) ? lead.imageCreditUrl : (lead.url || '#');
-      credit.target = '_blank'; credit.rel = 'noopener noreferrer';
-      copy.appendChild(credit);
+    s.appendChild(copy);
+    if (has(lead.image)) {
+      s.classList.add('has-photo');
+      var figure = el('figure','lead-photo');
+      var img = el('div','lead-photo-img');
+      img.style.backgroundImage = 'url("' + lead.image.replace(/"/g,'') + '")';
+      figure.appendChild(img);
+      if (has(lead.imageCredit)) {
+        var credit = el('a','lead-photo-credit',lead.imageCredit);
+        credit.href = has(lead.imageCreditUrl) ? lead.imageCreditUrl : (lead.url || '#');
+        credit.target = '_blank'; credit.rel = 'noopener noreferrer';
+        figure.appendChild(credit);
+      }
+      s.appendChild(figure);
     }
-    shade.appendChild(copy); media.appendChild(shade); s.appendChild(media);
     return s;
   }
 

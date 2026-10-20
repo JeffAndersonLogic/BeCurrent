@@ -116,7 +116,11 @@
     }
 
     var visual=document.querySelector('[data-lead-image]');
-    if(visual&&lead.image){visual.style.backgroundImage='url("'+String(lead.image).replace(/"/g,'')+'")';}
+    // The photograph sits above the headline on the light Desk, never behind it.
+    if(visual&&lead.image){
+      visual.style.setProperty('--lead-photo','url("'+String(lead.image).replace(/"/g,'')+'")');
+      visual.dataset.hasPhoto='true';
+    }
 
     if(overdue){
       var kicker=document.querySelector('.desk-lead-copy .desk-kicker');
