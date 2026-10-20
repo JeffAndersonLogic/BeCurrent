@@ -158,6 +158,11 @@ push. That keeps the record of what it would have caught.
   live. Refuses to write if a page is missing or a scheduled code has no entry;
   `--check` is in the offline suite. Teacher page names live in
   `scripts/lib/teacher-paths.js`, shared with `build-midterms.js`.
+- `node scripts/build-teacher-home.js`, write `teacher/index.html`, the BeCurrent
+  Command Center (the teacher's front door, BeCurrent's counterpart of BeHistorical's
+  AP World Command Center). Today comes from the live schedule in the browser; the
+  Teaching OS library is rendered from `scripts/lib/teaching-os.js`, the list the
+  manifest publishes. `--check` is in the offline suite.
 - `python3 -I scripts/brand/build-wordmark.py`, trace every lockup, the Canvas
   PNG and the favicon from the supplied logo files in
   `assets/images/brand/source/`. Traces, trims and recolours; never redraws.

@@ -42,6 +42,8 @@
     "build:video-first": "node scripts/build-video-first.js",
     "check:video-first": "node scripts/build-video-first.js --check",
     "build:teaching-os": "node scripts/build-teaching-os-manifest.js",
+    "build:teacher-home": "node scripts/build-teacher-home.js",
+    "check:teacher-home": "node scripts/build-teacher-home.js --check",
     "check:teaching-os": "node scripts/build-teaching-os-manifest.js --check",
     "build:control-room": "node scripts/build-control-room.js",
     "check:control-room": "node scripts/build-control-room.js --check"

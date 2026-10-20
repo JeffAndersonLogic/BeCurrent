@@ -30,7 +30,7 @@ let failed = false;
 for (const builder of ['scripts/build-midterms.js', 'scripts/build-weeks.js', 'scripts/build-units.js',
   'scripts/build-iran.js', 'scripts/build-desk.js', 'scripts/build-index.js', 'scripts/build-lesson-plans.js',
   'scripts/build-announcements.js', 'scripts/build-canvas-events.js',
-  'scripts/build-teaching-os-manifest.js']) {
+  'scripts/build-teaching-os-manifest.js', 'scripts/build-teacher-home.js']) {
   const run = spawnSync(process.execPath, [builder, '--check'], { cwd: ROOT, encoding: 'utf8' });
   const out = (run.stdout || '') + (run.stderr || '');
   process.stdout.write(out.split('\n').map(l => l ? '  ' + l : l).join('\n'));

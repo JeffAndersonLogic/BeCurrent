@@ -24,54 +24,14 @@
 
 const fs = require('fs');
 const path = require('path');
-const { nn, midterms, iran } = require('./lib/teacher-paths');
+const { teachingTopics } = require('./lib/teaching-os');
 
 const ROOT = path.resolve(__dirname, '..');
 const CHECK = process.argv.includes('--check');
 const OUT = path.join('teacher', 'teaching-os-manifest.js');
-const CONTENT = path.join(ROOT, 'scripts', 'lib', 'unit-content');
 const R = '\x1b[31m', G = '\x1b[32m', X = '\x1b[0m';
 
-const plain = s => String(s == null ? '' : s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-
-function entriesFor(unit) {
-  const m = unit.meta;
-  const code = String(m.code || '').toUpperCase();
-  const base = { unit: plain(m.unit), unitPage: `${m.unitKey}/index.html` };
-  const out = [];
-
-  (unit.topics || []).forEach(t => {
-    const e = Object.assign({ code: code + t.n, topic: plain(t.topic || `Topic ${t.n}`), title: plain(t.title) }, base);
-    if (m.renderer === 'video-first') {
-      e.student = `${m.unitKey}/${t.page}`;
-      e.teacher = `teacher/${midterms.os(t)}`;
-      e.projector = `teacher/${midterms.projector(t)}`;
-      e.hub = midterms.hub;
-    } else if (m.renderer === 'reverse-history') {
-      e.student = `${m.unitKey}/${t.page}`;
-      e.teacher = iran.day(t.n);
-      e.hub = iran.hub;
-    } else {
-      // A Brief topic, or a paper day with no Brief: the unit page.
-      e.student = (t.sections && t.sections.length)
-        ? `${m.unitKey}/topic-${nn(t.n)}-brief-${t.slug}.html`
-        : base.unitPage;
-    }
-    out.push(e);
-  });
-
-  // Non-topic class days, such as the Midterms Election Day guide.
-  (unit.days || []).forEach(d => {
-    out.push(Object.assign({ code: code + d.code, topic: plain(d.topic), title: plain(d.title),
-      student: `${m.unitKey}/${d.page}`, hub: m.renderer === 'video-first' ? midterms.hub : undefined }, base));
-  });
-  return out;
-}
-
-const topics = fs.readdirSync(CONTENT).filter(f => f.endsWith('.js')).sort()
-  .map(f => require(path.join(CONTENT, f)))
-  .filter(u => u && u.meta && u.meta.code)
-  .flatMap(entriesFor);
+const topics = teachingTopics();
 
 const problems = [];
 const seen = new Set();
