@@ -20,7 +20,7 @@
       "screen": {
         "eyebrow": "Topic 5 / Opening question",
         "title": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "description": "Make a private prediction. Revisit the recurring Indiana race.",
+        "description": "Make a private prediction. You will test it by the end of class.",
         "action": null
       },
       "intel": {
@@ -80,10 +80,10 @@
       "screen": {
         "eyebrow": "Topic 5 / Watch / explain",
         "title": "How the Associated Press uses facts and math to call election results",
-        "description": "Assigned 0:00–6:19. How is a race call different from a prediction or official certification?",
+        "description": "Watch 0:00 to 6:19. How is a race call different from a prediction or official certification?",
         "action": {
           "url": "https://www.pbs.org/video/calling-the-race-1604354239/",
-          "label": "Play the assigned window"
+          "label": "Play the clip"
         },
         "cards": [
           {
@@ -123,7 +123,7 @@
       "screen": {
         "eyebrow": "Topic 5 / Guided practice",
         "title": "Which reporting stage?",
-        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
+        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
         "action": {
           "url": "../midterms/block-05.html#chapter-2",
           "label": "Open practice and feedback"
@@ -152,10 +152,10 @@
       "screen": {
         "eyebrow": "Topic 5 / Results investigation",
         "title": "Build a dated results notebook",
-        "description": "Use the prepared source route below. The teacher models the House row; complete the Senate row together; verify the Indiana example. Enter a short finding, its reporting stage, and its source in each row. Reuse this notebook in your final explanation.",
+        "description": "Use the results sources in this step. We work the House row as an example, complete the Senate row together, and then you check the Indiana example. Enter a short finding, its reporting stage, and its source in each row. Reuse this notebook in your final explanation.",
         "action": {
           "url": "../midterms/block-05.html#chapter-3",
-          "label": "Open guided results packet"
+          "label": "Open the results packet"
         }
       },
       "intel": {
@@ -239,7 +239,7 @@
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
+        "description": "Submit your work in Canvas before lunch. After lunch: CNN10 and the daily news.",
         "action": null
       },
       "intel": {
@@ -292,7 +292,7 @@
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
+        "description": "Open The Desk. Read The Lead, choose Your Pick, and file your News Log.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

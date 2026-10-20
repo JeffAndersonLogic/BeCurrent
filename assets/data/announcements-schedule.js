@@ -122,6 +122,30 @@ window.BECURRENT_SCHEDULE={
    doNow:'The president is not on the ballot this November. Could Washington still change? Write your prediction.',
    agenda:['Opening question: could Washington change without a presidential election?','Watch, then compare the House and the Senate.','Use one verified fact to explain a possible change in government.','Explain your thinking and file your work in Canvas.','After lunch: CNN 10 · Oct. 16: NASA\u2019s Mars Rover Breaks an Out-Of-This-World Record.','After lunch: daily news and your News Log.'],
    homework:'Finish WP1 - What Midterms Change in Canvas.',homeworkDue:'the start of class on Thursday, October 22'}
+,
+
+  {date:'2026-10-22',topic:'WP2',topicTitle:'Who Has the Power? | The Battle for Congress',
+   doNow:'One group has 217 seats. The other has 218. Why might one seat matter? Write your prediction.',
+   agenda:['Opening question: why might one seat matter?','Watch, then follow separate races to a majority.','Sort statements about power and promises, then check your choices.','Test a campaign promise against the limits on one chamber.','Explain your thinking and file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   homework:'Finish WP2 - The Battle for Congress in Canvas.',homeworkDue:'the start of class on Monday, October 26'}
+,
+
+  {date:'2026-10-26',topic:'WP3',topicTitle:'Who Has the Power? | The Power to Stop a President',
+   doNow:'A president wants a new law. The House says no. What happens next? Write your prediction.',
+   agenda:['Opening question: what happens when the House says no?','Watch, then sort which branch holds each power.','Follow a bill through both chambers and the president.','Weigh careful scrutiny against delay in a practice scenario.','Explain your judgment and file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   homework:'Finish WP3 - Checks and Governing in Canvas.',homeworkDue:'the start of class on Wednesday, October 28'}
+,
+
+  {date:'2026-10-28',topic:'WP4',topicTitle:'Who Has the Power? | The Fight for Your Vote',
+   doNow:'Two messages use the same number. Could they leave different impressions? Write your prediction.',
+   agenda:['Opening question: can the same number leave two impressions?','Watch, then sort promises, polls and verified results.','Compare two practice campaign messages.','Check a real claim against independent evidence.','Explain what a poll can and cannot show, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   homework:'Finish WP4 - Election Messages in Canvas.',homeworkDue:'the start of class on Friday, October 30'}
+,
+
+  {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Night: What Happens Next?',
+   doNow:'An early leader, a projected winner, and a certified winner: are these the same? Write your answer.',
+   agenda:['Opening question: is a projected winner the same as a certified one?','Watch, then sort each example by reporting stage.','Build a dated results notebook from named sources.','Trace what the results could change, and what is still unresolved.','Explain the results and their impact, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   homework:'Finish WP5 - Results and Impact in Canvas.',homeworkDue:'the start of class on Monday, November 9'}
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]
 };

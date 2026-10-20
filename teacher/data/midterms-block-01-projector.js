@@ -20,7 +20,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 1 / Opening question",
         "title": "The president is not on the ballot. Could Washington still change?",
-        "description": "Make a private prediction. Revisit the recurring Indiana race.",
+        "description": "Make a private prediction. You will test it by the end of class.",
         "action": null
       }
     },
@@ -56,10 +56,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 1 / Watch / explain",
         "title": "Bicameral Congress: Crash Course Government #2",
-        "description": "Assigned 0:00–3:30. How do House and Senate representation and election cycles differ?",
+        "description": "Watch 0:00 to 3:30. How do House and Senate representation and election cycles differ?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-2/",
-          "label": "Play the assigned window"
+          "label": "Play the clip"
         },
         "cards": [
           {
@@ -87,7 +87,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 1 / Guided practice",
         "title": "House, Senate, or both?",
-        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
+        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
         "action": {
           "url": "../midterms/block-01.html#chapter-2",
           "label": "Open practice and feedback"
@@ -107,7 +107,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
         "description": "Use the FEC election-information page and the WFYI clip. Record a verified election fact and an outcome these sources cannot establish yet.",
         "action": {
           "url": "../midterms/block-01.html#chapter-3",
-          "label": "Open clip window and evidence"
+          "label": "Open the clip and evidence"
         }
       }
     },
@@ -121,7 +121,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 1 / Apply the idea",
         "title": "Follow a change in power",
-        "description": "Constructed scenario: A different party wins the House. The president stays in office. Consider leaders, legislative priorities, and limits on one chamber.",
+        "description": "Practice scenario (made up for class): A different party wins the House. The president stays in office. Consider leaders, legislative priorities, and limits on one chamber.",
         "action": {
           "url": "../midterms/block-01.html#chapter-4",
           "label": "Open application"
@@ -155,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
+        "description": "Submit your work in Canvas before lunch. After lunch: CNN10 and the daily news.",
         "action": null
       }
     },
@@ -186,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
+        "description": "Open The Desk. Read The Lead, choose Your Pick, and file your News Log.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

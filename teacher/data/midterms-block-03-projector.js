@@ -20,7 +20,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Opening question",
         "title": "A president wants a new law. The House says no. What happens next?",
-        "description": "Make a private prediction. Revisit the recurring Indiana race.",
+        "description": "Make a private prediction. You will test it by the end of class.",
         "action": null
       }
     },
@@ -56,10 +56,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Watch / explain",
         "title": "Checks and Balances: Crash Course Government #3",
-        "description": "Assigned 0:00–4:00. How can Congress check the president?",
+        "description": "Watch 0:00 to 4:00. How can Congress check the president?",
         "action": {
           "url": "https://www.pbs.org/video/crash-course-government-3/",
-          "label": "Play the assigned window"
+          "label": "Play the clip"
         },
         "cards": [
           {
@@ -87,7 +87,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Guided practice",
         "title": "Who has this power?",
-        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
+        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
         "action": {
           "url": "../midterms/block-03.html#chapter-2",
           "label": "Open practice and feedback"
@@ -107,7 +107,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
         "description": "Trace a proposal through both chambers and presidential action. Check the video’s simplified explanation against the official reference.",
         "action": {
           "url": "../midterms/block-03.html#chapter-3",
-          "label": "Open clip window and evidence"
+          "label": "Open the clip and evidence"
         }
       }
     },
@@ -121,7 +121,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Apply the idea",
         "title": "Weigh scrutiny and delay",
-        "description": "Constructed teaching scenario, not a pending 2026 bill: The president proposes more school-lunch funding. The House committee questions its cost. Some families want careful scrutiny; others need the service quickly. The Senate has not agreed to the proposal.",
+        "description": "Practice scenario (made up for class, not a real 2026 bill): The president proposes more school-lunch funding. The House committee questions its cost. Some families want careful scrutiny; others need the service quickly. The Senate has not agreed to the proposal.",
         "action": {
           "url": "../midterms/block-03.html#chapter-4",
           "label": "Open application"
@@ -155,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
+        "description": "Submit your work in Canvas before lunch. After lunch: CNN10 and the daily news.",
         "action": null
       }
     },
@@ -186,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
+        "description": "Open The Desk. Read The Lead, choose Your Pick, and file your News Log.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"

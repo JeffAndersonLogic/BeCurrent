@@ -102,7 +102,8 @@ function renderProjector(){
   text('projector-description',p.screen.description);
   visual('projector-visual',p.screen);
   text('projector-phase',String(index+1).padStart(2,'0')+' / '+String(phases.length).padStart(2,'0'));
-  text('projector-time',p.kind==='break'?'Lunch':p.kind==='news'?'After lunch':p.time+' min');
+  // No minute counts on the projector: students see the step, not the clock.
+  text('projector-time',p.kind==='break'?'Lunch':p.kind==='news'?'After lunch':'');
   setAction('projector-action','projector-action-text',p.screen.action);
   const pct=((p.start+p.minutes)/lesson.totalMinutes)*100;
   const bar=$('projector-progress');if(bar)bar.style.width=Math.max(0,Math.min(100,pct))+'%';

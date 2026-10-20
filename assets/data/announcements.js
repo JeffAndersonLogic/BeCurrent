@@ -879,6 +879,141 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ]
     },
     {
+      "date": "2026-10-22",
+      "topic": "Who Has the Power? | The Battle for Congress",
+      "unit": "Who Has the Power?",
+      "subtitle": "How separate races become a majority",
+      "learningTargets": [
+        {
+          "text": "I can explain how individual elections determine chamber membership.",
+          "label": "Representation"
+        },
+        {
+          "text": "I can explain how a majority affects leaders and committees.",
+          "label": "Power"
+        },
+        {
+          "text": "I can distinguish organizing a chamber from passing a law.",
+          "label": "Limits"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can identify the majority in a constructed 435-seat House scenario.",
+          "label": "Representation"
+        },
+        {
+          "text": "I can identify two decisions a new majority could influence.",
+          "label": "Power"
+        },
+        {
+          "text": "I can explain one reason chamber control does not guarantee a policy change.",
+          "label": "Limits"
+        }
+      ],
+      "homework": "Finish WP2 - The Battle for Congress in Canvas.",
+      "homeworkDue": "the start of class on Monday, October 26",
+      "doNow": "One group has 217 seats. The other has 218. Why might one seat matter? Write your prediction.",
+      "agenda": [
+        "Opening question: why might one seat matter?",
+        "Watch, then follow separate races to a majority.",
+        "Sort statements about power and promises, then check your choices.",
+        "Test a campaign promise against the limits on one chamber.",
+        "Explain your thinking and file your work in Canvas.",
+        "After lunch: CNN 10, then daily news and your News Log."
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "topic": "Who Has the Power? | The Power to Stop a President",
+      "unit": "Who Has the Power?",
+      "subtitle": "Checks, cooperation, and governing limits",
+      "learningTargets": [
+        {
+          "text": "I can explain ways Congress checks presidential power.",
+          "label": "Civic powers"
+        },
+        {
+          "text": "I can explain why one election does not settle every governing decision.",
+          "label": "Limits"
+        },
+        {
+          "text": "I can explain a benefit and a difficulty of divided government.",
+          "label": "Perspective"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can accurately explain two congressional checks.",
+          "label": "Civic powers"
+        },
+        {
+          "text": "I can explain why one chamber cannot ordinarily enact a law alone.",
+          "label": "Limits"
+        },
+        {
+          "text": "I can support an accountability benefit and a governing difficulty with a specific example.",
+          "label": "Perspective"
+        }
+      ],
+      "homework": "Finish WP3 - Checks and Governing in Canvas.",
+      "homeworkDue": "the start of class on Wednesday, October 28",
+      "doNow": "A president wants a new law. The House says no. What happens next? Write your prediction.",
+      "agenda": [
+        "Opening question: what happens when the House says no?",
+        "Watch, then sort which branch holds each power.",
+        "Follow a bill through both chambers and the president.",
+        "Weigh careful scrutiny against delay in a practice scenario.",
+        "Explain your judgment and file your work in Canvas.",
+        "After lunch: CNN 10, then daily news and your News Log."
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "topic": "Who Has the Power? | The Fight for Your Vote",
+      "unit": "Who Has the Power?",
+      "subtitle": "Messages, evidence, and uncertainty",
+      "learningTargets": [
+        {
+          "text": "I can explain how a campaign message directs attention.",
+          "label": "Framing"
+        },
+        {
+          "text": "I can check a claim against an independent source.",
+          "label": "Corroboration"
+        },
+        {
+          "text": "I can distinguish a poll, a promise, and a verified result.",
+          "label": "Uncertainty"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can identify a message’s claim, audience, and missing context.",
+          "label": "Framing"
+        },
+        {
+          "text": "I can name a second source and explain what it supports, contradicts, or leaves unresolved.",
+          "label": "Corroboration"
+        },
+        {
+          "text": "I can explain why a poll or promise does not establish what will happen.",
+          "label": "Uncertainty"
+        }
+      ],
+      "homework": "Finish WP4 - Election Messages in Canvas.",
+      "homeworkDue": "the start of class on Friday, October 30",
+      "doNow": "Two messages use the same number. Could they leave different impressions? Write your prediction.",
+      "agenda": [
+        "Opening question: can the same number leave two impressions?",
+        "Watch, then sort promises, polls and verified results.",
+        "Compare two practice campaign messages.",
+        "Check a real claim against independent evidence.",
+        "Explain what a poll can and cannot show, then file your work in Canvas.",
+        "After lunch: CNN 10, then daily news and your News Log."
+      ]
+    },
+    {
       "date": "2026-11-03",
       "topic": "Election Day: What Can We Know Today?",
       "unit": "Who Has the Power?",
@@ -920,6 +1055,51 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Watch live Election Day coverage. At each pause, log one thing you heard and its kind.",
         "Before you leave, answer the two questions at the bottom of your log.",
         "Keep your log. You will use it on Thursday in Topic 5."
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "topic": "Who Has the Power? | Election Night: What Happens Next?",
+      "unit": "Who Has the Power?",
+      "subtitle": "The 2026 results and their governing impact",
+      "learningTargets": [
+        {
+          "text": "I can distinguish a projection, unofficial count, and certified result.",
+          "label": "Results literacy"
+        },
+        {
+          "text": "I can connect the 2026 outcome to a governing consequence and a limit.",
+          "label": "Cause and effect"
+        },
+        {
+          "text": "I can support an explanation with two sources and a fair alternative interpretation of the governing impact.",
+          "label": "Argument"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.",
+          "label": "Results literacy"
+        },
+        {
+          "text": "I can explain two possible governing effects and one outcome that is not guaranteed.",
+          "label": "Cause and effect"
+        },
+        {
+          "text": "I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.",
+          "label": "Argument"
+        }
+      ],
+      "homework": "Finish WP5 - Results and Impact in Canvas.",
+      "homeworkDue": "the start of class on Monday, November 9",
+      "doNow": "An early leader, a projected winner, and a certified winner: are these the same? Write your answer.",
+      "agenda": [
+        "Opening question: is a projected winner the same as a certified one?",
+        "Watch, then sort each example by reporting stage.",
+        "Build a dated results notebook from named sources.",
+        "Trace what the results could change, and what is still unresolved.",
+        "Explain the results and their impact, then file your work in Canvas.",
+        "After lunch: CNN 10, then daily news and your News Log."
       ]
     }
   ],

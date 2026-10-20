@@ -99,3 +99,7 @@ summary{font-family:var(--vf-label);font-weight:650}
 .brand-logo:after{content:none}
 .brand-logo img{display:block;height:26px;width:auto}
 @media(max-width:650px){.brand-logo img{height:22px}}
+/* The base projector theme (teacher-control-room.css) is dark and sets every
+   .projector-scene p to a pale mint. On this light projector that left the card
+   definitions and lists nearly invisible, so every text element is reset to ink. */
+.projector-body .projector-scene p,.projector-body .screen-visual li,.projector-body .screen-cards p{color:#2b3b3f}.projector-body .screen-cards h3,.projector-body .screen-visual ul{color:#172124}.projector-body .projector-footer{color:#3d4d52}.projector-body .projector-progress{background:#d6ddd8}.projector-body .projector-progress span{background:#CE1400}.projector-body .projector-action:hover{background:#2b3b3f}

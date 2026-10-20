@@ -20,7 +20,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Opening question",
         "title": "Two messages use the same number. Could they leave different impressions?",
-        "description": "Make a private prediction. Revisit the recurring Indiana race.",
+        "description": "Make a private prediction. You will test it by the end of class.",
         "action": null
       }
     },
@@ -56,10 +56,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Watch / explain",
         "title": "How Do You Research Candidates? Simple Civics",
-        "description": "Assigned 0:00–2:55. Which source could you use to check a campaign claim?",
+        "description": "Watch 0:00 to 2:55. Which source could you use to check a campaign claim?",
         "action": {
           "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
-          "label": "Play the assigned window"
+          "label": "Play the clip"
         },
         "cards": [
           {
@@ -87,7 +87,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Guided practice",
         "title": "What kind of statement is this?",
-        "description": "Use Chapter 2. Try the five statements, check each explanation, and correct errors.",
+        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
           "label": "Open practice and feedback"
@@ -104,10 +104,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Evidence",
         "title": "Check the message, then check the claim",
-        "description": "First analyze the constructed messages with the class. Then use the prepared real-claim packet in Step 4. The original claim and checking evidence are supplied; you do not need to search for a new claim.",
+        "description": "First look at the two practice messages together. Then use the real-claim packet in Chapter 4. The claim and the checking evidence are supplied, so you do not need to search for a new one.",
         "action": {
           "url": "../midterms/block-04.html#chapter-3",
-          "label": "Open clip window and evidence"
+          "label": "Open the clip and evidence"
         }
       }
     },
@@ -121,7 +121,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Apply the idea",
         "title": "Test a real claim",
-        "description": "Use the prepared real-claim packet below. Check its exact claim against the independent evidence. Then use the poll card to distinguish measured opinion from an election result. Open research is an extension.",
+        "description": "Use the real-claim packet in Chapter 4. Check its exact claim against the independent evidence. Then use the poll card to distinguish measured opinion from an election result.",
         "action": {
           "url": "../midterms/block-04.html#chapter-4",
           "label": "Open the real-claim packet"
@@ -155,7 +155,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Lunch break",
         "title": "Pause here for lunch.",
-        "description": "Unit work is complete. Return for CNN10 and daily reporting.",
+        "description": "Submit your work in Canvas before lunch. After lunch: CNN10 and the daily news.",
         "action": null
       }
     },
@@ -186,7 +186,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "After lunch / daily news",
         "title": "The Lead. Your Pick.",
-        "description": "Use The Desk and file a short News Log. With a 20-minute return block, use ten minutes here.",
+        "description": "Open The Desk. Read The Lead, choose Your Pick, and file your News Log.",
         "action": {
           "url": "../daily/index.html",
           "label": "Open The Desk"
