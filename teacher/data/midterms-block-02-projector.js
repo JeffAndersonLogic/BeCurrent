@@ -31,9 +31,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "5–8",
+      "time": "5–7",
       "start": 5,
-      "minutes": 3,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 2 / Opening question",
         "title": "One group has 217 seats. The other has 218. Why might one seat matter?",
@@ -45,9 +45,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "8–10",
-      "start": 8,
-      "minutes": 2,
+      "time": "7–10",
+      "start": 7,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 2 / Today’s direction",
         "title": "How separate races become a majority",
@@ -57,9 +57,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
           "label": "See today’s required work"
         },
         "bullets": [
-          "I can explain how individual elections determine chamber membership.",
-          "I can explain how a majority affects leaders and committees.",
-          "I can distinguish organizing a chamber from passing a law."
+          "Work down the page, one chapter at a time. Use headphones for the two clips.",
+          "Copy each “Write this down” box into your notes.",
+          "Use the checklist at the top to see what is still missing.",
+          "Stuck? Open Start here, reread the takeaways, then raise your hand. Your teacher is coming around to check in."
         ]
       }
     },
@@ -138,9 +139,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
-      "time": "17–25",
+      "time": "17–23",
       "start": 17,
-      "minutes": 8,
+      "minutes": 6,
       "screen": {
         "eyebrow": "Topic 2 / Guided practice",
         "title": "Power or promise?",
@@ -156,7 +157,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 25,
+      "start": 23,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 3 of 6",
@@ -175,13 +176,13 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-2",
       "label": "Evidence",
       "kind": "lesson",
-      "time": "25–37",
-      "start": 25,
-      "minutes": 12,
+      "time": "23–38",
+      "start": 23,
+      "minutes": 15,
       "screen": {
         "eyebrow": "Topic 2 / Evidence",
         "title": "Why do committees matter?",
-        "description": "Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote.",
+        "description": "Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote. Then look up one real House committee on house.gov.",
         "action": {
           "url": "../midterms/block-02.html#chapter-3",
           "label": "Open the clip and evidence"
@@ -193,7 +194,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 37,
+      "start": 38,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 4 of 6",
@@ -212,7 +213,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 37,
+      "start": 38,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 5 of 6",
@@ -232,9 +233,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "37–45",
-      "start": 37,
-      "minutes": 8,
+      "time": "38–45",
+      "start": 38,
+      "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Apply the idea",
         "title": "Test a campaign promise",

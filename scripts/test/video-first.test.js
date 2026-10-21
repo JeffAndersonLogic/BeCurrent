@@ -5,11 +5,30 @@ const ROOT=path.resolve(__dirname,'../..'),read=p=>fs.readFileSync(path.join(ROO
 const unit=require('../lib/unit-content/midterms');
 assert.strictEqual(unit.meta.renderer,'video-first');assert.strictEqual(unit.meta.code,'WP');assert.strictEqual(unit.topics.length,5);
 const index=read('midterms/index.html');
+// Topic 2's committee lookup is required work: every fact box and the note must be a
+// gathered slot, sit between the source note and the application note, and send the
+// student to house.gov rather than a search engine.
+function lookupProblems(page,t){
+ if(!t.lookup)return /id="committee-response"|class="lookup-fact"/.test(page)?['lookup on a topic without one']:[];
+ const at=id=>page.indexOf('id="'+id+'"'),ids=[...t.lookup.facts.map(f=>f.id),'committee-response'];
+ return [
+  ids.some(id=>!new RegExp('id="'+id+'"[^>]*data-slot="').test(page))&&'a lookup box is not a gathered slot',
+  ids.some(id=>at(id)<at('report-response')||at(id)>at('scenario-response'))&&'lookup is out of place',
+  !page.includes('href="https://www.house.gov/committees"')&&'no route to house.gov/committees',
+  t.lookup.standing.length!==20&&'standing committee list is not the 20 from house.gov',
+  !page.includes('A committee lookup:')&&'missing from Today you will submit',
+  t.selfPaced&&(page.match(/class="notes-card"/g)||[]).length!==require('../lib/midterms-notes')[t.n].length&&'notes boxes do not match the projector notes'
+ ].filter(Boolean);
+}
+{const t2=unit.topics.find(t=>t.lookup),p2=read('midterms/'+t2.page);
+ for(const [bad,why] of [[p2.replace('data-slot="committee-name"','data-x="committee-name"'),'a lookup box is not a gathered slot'],[p2.replaceAll('href="https://www.house.gov/committees"','href="https://www.google.com/"'),'no route to house.gov/committees'],[p2.replace('A committee lookup:','A lookup:'),'missing from Today you will submit'],[p2.replace('class="notes-card"','class="x"'),'notes boxes do not match the projector notes']])
+  assert(lookupProblems(bad,t2).includes(why),'negative control should fail: '+why);}
 for(const t of unit.topics){
  const page=read('midterms/'+t.page);
  assert(page.includes('data-lesson="'+t.key+'"'));assert(index.includes('href="'+t.page+'"'));
  assert.strictEqual((page.match(/data-student-chapter/g)||[]).length,5);
- assert.strictEqual((page.match(/data-slot=/g)||[]).length,3);assert.strictEqual((page.match(/data-sort=/g)||[]).length,5);
+ // Three responses, plus the committee lookup's facts and note where a topic has one (Topic 2).
+ assert.strictEqual((page.match(/data-slot=/g)||[]).length,3+(t.lookup?t.lookup.facts.length+1:0));assert.strictEqual((page.match(/data-sort=/g)||[]).length,5);
  assert.strictEqual(t.learningTargets.length,3);assert.strictEqual(t.successCriteria.length,3);
  assert.strictEqual(t.videos.filter(v=>!v.optional).length,t.n===5?1:2);
  for(const v of t.videos){assert(page.includes(v.url));assert(v.date&&v.prompt&&v.duration&&v.reviewed);}
@@ -20,7 +39,10 @@ for(const t of unit.topics){
  assert.strictEqual((page.match(/class="story-bridge"/g)||[]).length,5);
  assert(!/teacher-flow|data-view-mode|data-teacher-stage|\.\.\/teacher\//.test(page),'teacher controls must not be shipped in student lessons');
  assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
- assert(page.indexOf('Before the clip: the essential language')<page.indexOf('Watch together'));
+ const watchLabel=t.selfPaced?'Watch on your own, with headphones':'Watch together';
+ assert(page.includes(watchLabel)&&page.indexOf('Before the clip: the essential language')<page.indexOf(watchLabel));
+ assert.strictEqual(page.includes('Watch together'),!t.selfPaced,'a self-paced topic sends students to the clips on their own');
+ assert.deepStrictEqual(lookupProblems(page,t),[]);
  assert(page.includes('Today you will submit')&&page.includes('How this investigation is assessed'));
  assert.strictEqual(t.points,5);assert(t.rubric.every(r=>!('points' in r)),'rubric components carry no point values');
  assert.strictEqual((page.match(/data-sort-feedback=/g)||[]).length,5);

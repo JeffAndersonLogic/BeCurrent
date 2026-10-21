@@ -261,17 +261,17 @@ Move from the ballot to the working room. Separate races produce a chamber. A sm
 ### Run of show
 
 - 0–5: Day 1 recap / Day 2 preview (5 minutes)
-- 5–8: Opening question (3 minutes)
-- 8–10: Today’s direction (2 minutes)
+- 5–7: Opening question (2 minutes)
+- 7–10: Today’s direction (3 minutes)
 - Notes slide: How can one race matter to the whole House?
 - 10–17: Watch / explain (7 minutes)
 - Notes slide: What does the majority get to do?
-- 17–25: Guided practice (8 minutes)
+- 17–23: Guided practice (6 minutes)
 - Notes slide: What is a committee?
-- 25–37: Evidence (12 minutes)
+- 23–38: Evidence (15 minutes)
 - Notes slide: Why can a committee change a bill’s chances?
 - Notes slide: Does controlling the House mean controlling the government?
-- 37–45: Apply the idea (8 minutes)
+- 38–45: Apply the idea (7 minutes)
 - Notes slide: Explain the power shift
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
@@ -302,43 +302,43 @@ Cut: Do not discuss actual party seat totals here. Protect the hypothetical-mode
 
 **Today’s direction**
 
-Model: We will connect one seat to a majority, a majority to leadership, and leadership to priorities—with limits.
+Model: Today you work at your own pace. Go down the page one chapter at a time, use headphones for the clips, copy the Write this down boxes, and use the checklist at the top to see what is missing. I am coming around to check in.
 
-Look for: Students can identify the chain they will explain at the end.
+Look for: Every student has headphones, the lesson open at Chapter 1, and can point to the checklist and the committee lookup in Chapter 3.
 
-Reteach: If most students think the lesson is only arithmetic, ask: “What can the majority decide before a bill gets a final vote?”
+Reteach: If most students are unsure what to do first, put the projector on this screen and point to the checklist at the top of the page: start at Chapter 1 and work down.
 
-Cut: Read the purpose rather than all six target/criterion statements. Protect the distinction between organizing and lawmaking.
+Cut: Do not read every target and criterion aloud. Protect the launch: headphones, where to start, and where the checklist is.
 
 **Watch / explain**
 
 Model: A majority helps choose chamber leaders. Leaders influence which issues receive time and attention.
 
-Look for: Students name a leadership job or decision, rather than memorize the historical officeholder shown.
+Look for: Students are watching the leadership window with headphones or reading the takeaways, and their notes name a leadership job or decision rather than the historical officeholder shown.
 
 Reteach: If most students only repeat a person’s name, cover the name and label the role: Speaker, leadership, schedule. Ask what the role can influence.
 
-Cut: Use no more than four minutes of the leadership episode. Omit historical personality details and the rest of the episode.
+Cut: Students watch only the assigned window. A student whose clip will not play uses the reading route and core takeaways instead.
 
 **Guided practice**
 
 Model: Sort: Can influence; Can influence; Not guaranteed; Can influence; Not guaranteed. At 218 in the filled-seat model, Group A can organize the House; Senate agreement is still separate.
 
-Look for: A 217-to-218 slider change is connected to organizing the House. Sort corrections distinguish influence over priorities from guaranteed policy.
+Look for: Students move the seat slider across 218 on their own and use Check my sort to correct their choices. Sort corrections distinguish influence over priorities from guaranteed policy.
 
-Reteach: If most students equate majority with guaranteed law, move the slider across 218 and hold up a separate Senate card that has not changed. Retry items 3 and 5.
+Reteach: If most students equate majority with guaranteed law, pause the room once: move the slider across 218 on the projector and hold up a separate Senate card that has not changed. Then release them to retry items 3 and 5.
 
-Cut: Try only 217 and 218 on the slider; omit additional seat combinations. Protect all five sort attempts and correction.
+Cut: Students try only 217 and 218 on the slider. Protect all five sort attempts and the self-correction.
 
 **Evidence**
 
-Model: The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines, so priorities matter before a final vote.
+Model: The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines. For the lookup: the committee’s own site names its chair, the representatives page shows the chair’s party, and that party is the House majority.
 
-Look for: A specific committee action, a named source, and an explanation of why the action matters before the whole chamber votes.
+Look for: A specific committee action and a named source in the Chapter 3 source note, then a real committee name, one subject it covers, and the chair’s party in the lookup.
 
-Reteach: If most students think committees make every law themselves, place “committee considers” before “full chamber acts.” Have students identify the missing later decision.
+Reteach: If most students cannot find a chair, open any one committee site on the projector and point to where the chair is named. Then send them back to their own committee.
 
-Cut: Use no more than four minutes of the committee episode. Omit the optional Alaska report today unless it replaces another activity.
+Cut: Students use only the assigned committee window. Omit the optional Alaska report. If a committee site is blocked, the student chooses another committee from the list.
 
 **Apply the idea**
 
@@ -348,7 +348,7 @@ Look for: The constructed 217-to-218 change leads to a leadership or committee c
 
 Reteach: If most students write only “more power,” ask them to replace power with one action: choose leaders, schedule work, or set committee priorities. Add what that action cannot guarantee.
 
-Cut: Use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.
+Cut: Students use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.
 
 ### Notes slides
 
@@ -411,7 +411,7 @@ Write this down: One seat → a majority → leaders and agenda. A new priority 
 ### Topic rubric (5 points)
 
 - Seats and majority: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.
-- Relevant evidence: Name a clip or official reference and accurately explain evidence about leaders or committees.
+- Relevant evidence: Name a clip or official reference and accurately explain evidence about leaders or committees. Record one real House committee, a subject it covers, and its chair’s party from house.gov.
 - Influence and limits: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.
 - Explain your thinking: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.
 

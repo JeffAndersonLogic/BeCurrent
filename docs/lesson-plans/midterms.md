@@ -141,7 +141,7 @@ Follow individual seats to chamber control. Test how a small shift can change le
 
 ### What happens in class
 
-Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: the Day 1 recap clip and the opening question together, then a self-paced investigation. Students work down the page on their own with headphones, copy the notes boxes, and complete the sort, the committee clip, a lookup of one real House committee, and three short responses while the teacher circulates. Everyone gathers and submits in Canvas before lunch. After lunch: CNN10 and daily reporting for 20–25 minutes.
 
 ### Clips
 
@@ -168,9 +168,14 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
    - START HERE: One race changes ____. Enough seats can change ____. That can affect ____, but ____.
    - PUSH FURTHER: Distinguish winning the most votes nationally from winning enough separate seats.
 
+**Look up a real committee** (required, filed with the rest; after the source note on the page). Which House committee did you choose? Name one subject this committee covers, from its own website. Who chairs this committee, and which party is the chair in?
+- **Power.** Committee chairs come from the House majority. If a different party won the House majority in November, what could change about your committee, and what could it still not guarantee?
+   - START HERE: If the majority changed, this committee could get a new ____, who could put ____ first. It still could not guarantee ____, because ____.
+   - PUSH FURTHER: Find one hearing or bill on the committee’s website. What would you need to check to know whether the chair’s priorities shaped it?
+
 ### Where the work goes
 
-The civics investigation’s Gather All My Work panel: five-item practice and three short responses. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
+The civics investigation’s Gather All My Work panel: five-item practice and three short responses, plus the committee lookup (three facts and one short note). Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
 
 ---
 

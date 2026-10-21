@@ -68,10 +68,15 @@ module.exports = {
   2: {
     // Recap clip, hook, direction, watch-1, investigate, watch-2, apply, file. The
     // recap's five minutes came from the hook, guided practice and apply (2026-10-21).
-    timing: [5, 3, 2, 7, 8, 12, 8, 10],
+    // Jeff, 2026-10-21: Day 2 is self-paced. The recap, opening question and launch
+    // are whole-class (ten minutes); from watch-1 on, students work through the
+    // chapters on their own with headphones while the teacher circulates. The times
+    // after the launch are pacing checkpoints, not class transitions. The committee
+    // lookup sits in watch-2, which is why that phase is the longest.
+    timing: [5, 2, 3, 7, 6, 15, 7, 10],
     rubric: [
       {label:'Seats and majority',description:'Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.'},
-      {label:'Relevant evidence',description:'Name a clip or official reference and accurately explain evidence about leaders or committees.'},
+      {label:'Relevant evidence',description:'Name a clip or official reference and accurately explain evidence about leaders or committees. Record one real House committee, a subject it covers, and its chair’s party from house.gov.'},
       {label:'Influence and limits',description:'Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.'},
       {label:'Explain your thinking',description:'Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.'}
     ],
@@ -88,49 +93,49 @@ module.exports = {
         lookFor:'Students compare 217 and 218 with the whole chamber rather than treating either number as a real election tally.',
         reteach:'If most students do not see the difference, split 435 into 217 + 217 + 1. Move the remaining seat visibly to one group.',
         cut:'Do not discuss actual party seat totals here. Protect the hypothetical-model label.',
-        move:'Use the private prediction in Chapter 1. Say explicitly: these are invented groups and filled-seat assumptions, not current 2026 counts.'
+        move:'Whole class. Students make the private prediction in Chapter 1. Say explicitly: these are invented groups and filled-seat assumptions, not current 2026 counts. This is the last whole-class step before the self-paced work.'
       },
       direction: {
-        model:'We will connect one seat to a majority, a majority to leadership, and leadership to priorities—with limits.',
-        lookFor:'Students can identify the chain they will explain at the end.',
-        reteach:'If most students think the lesson is only arithmetic, ask: “What can the majority decide before a bill gets a final vote?”',
-        cut:'Read the purpose rather than all six target/criterion statements. Protect the distinction between organizing and lawmaking.',
-        move:'Preview the seat model, committee evidence, and final question. Remind students that the final response can reuse their two earlier notes.'
+        model:'Today you work at your own pace. Go down the page one chapter at a time, use headphones for the clips, copy the Write this down boxes, and use the checklist at the top to see what is missing. I am coming around to check in.',
+        lookFor:'Every student has headphones, the lesson open at Chapter 1, and can point to the checklist and the committee lookup in Chapter 3.',
+        reteach:'If most students are unsure what to do first, put the projector on this screen and point to the checklist at the top of the page: start at Chapter 1 and work down.',
+        cut:'Do not read every target and criterion aloud. Protect the launch: headphones, where to start, and where the checklist is.',
+        move:'Launch the self-paced work. Show where the checklist and the committee lookup are, then release students to Chapter 1. Leave this screen on the projector. From here, circulate rather than present.'
       },
       'watch-1': {
         model:'A majority helps choose chamber leaders. Leaders influence which issues receive time and attention.',
-        lookFor:'Students name a leadership job or decision, rather than memorize the historical officeholder shown.',
+        lookFor:'Students are watching the leadership window with headphones or reading the takeaways, and their notes name a leadership job or decision rather than the historical officeholder shown.',
         reteach:'If most students only repeat a person’s name, cover the name and label the role: Speaker, leadership, schedule. Ask what the role can influence.',
-        cut:'Use no more than four minutes of the leadership episode. Omit historical personality details and the rest of the episode.',
-        move:'Play the selected leadership excerpt with captions, then model the role-to-decision link. Use the equivalent reading if blocked; do not add a full second explanation.'
+        cut:'Students watch only the assigned window. A student whose clip will not play uses the reading route and core takeaways instead.',
+        move:'Self-paced pacing checkpoint: most students should be in Chapter 2. Circulate. Check that headphones are in and the clip plays; send any student whose player is blocked to the reading route. Confer quietly; do not stop the class to explain.'
       },
       investigate: {
         model:'Sort: Can influence; Can influence; Not guaranteed; Can influence; Not guaranteed. At 218 in the filled-seat model, Group A can organize the House; Senate agreement is still separate.',
-        lookFor:'A 217-to-218 slider change is connected to organizing the House. Sort corrections distinguish influence over priorities from guaranteed policy.',
-        reteach:'If most students equate majority with guaranteed law, move the slider across 218 and hold up a separate Senate card that has not changed. Retry items 3 and 5.',
-        cut:'Try only 217 and 218 on the slider; omit additional seat combinations. Protect all five sort attempts and correction.',
-        move:'Students use Chapter 2. Run one shared slider demonstration, then private practice. Monitor the sort itself rather than expecting the later source response now.'
+        lookFor:'Students move the seat slider across 218 on their own and use Check my sort to correct their choices. Sort corrections distinguish influence over priorities from guaranteed policy.',
+        reteach:'If most students equate majority with guaranteed law, pause the room once: move the slider across 218 on the projector and hold up a separate Senate card that has not changed. Then release them to retry items 3 and 5.',
+        cut:'Students try only 217 and 218 on the slider. Protect all five sort attempts and the self-correction.',
+        move:'Self-paced pacing checkpoint: students sort and use the slider on their own. Circulate to students who have not checked their sort yet. Do not grade first-try errors.'
       },
       'watch-2': {
-        model:'The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines, so priorities matter before a final vote.',
-        lookFor:'A specific committee action, a named source, and an explanation of why the action matters before the whole chamber votes.',
-        reteach:'If most students think committees make every law themselves, place “committee considers” before “full chamber acts.” Have students identify the missing later decision.',
-        cut:'Use no more than four minutes of the committee episode. Omit the optional Alaska report today unless it replaces another activity.',
-        move:'Use the selected committee excerpt, then inspect the short official-process extract together. Preserve at least eight minutes of this phase for the source comparison and Chapter 3 note.'
+        model:'The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines. For the lookup: the committee’s own site names its chair, the representatives page shows the chair’s party, and that party is the House majority.',
+        lookFor:'A specific committee action and a named source in the Chapter 3 source note, then a real committee name, one subject it covers, and the chair’s party in the lookup.',
+        reteach:'If most students cannot find a chair, open any one committee site on the projector and point to where the chair is named. Then send them back to their own committee.',
+        cut:'Students use only the assigned committee window. Omit the optional Alaska report. If a committee site is blocked, the student chooses another committee from the list.',
+        move:'Self-paced pacing checkpoint: the longest stretch, for the committee clip, the source note and the committee lookup. Circulate to the lookup first: check that students are on house.gov, not a search engine, and that nobody types a ZIP code or address.'
       },
       apply: {
         model:'Group A could choose House leaders and prioritize its school-safety proposal. The proposal is not guaranteed to become law: the Senate must agree to the same text and presidential action ordinarily follows.',
         lookFor:'The constructed 217-to-218 change leads to a leadership or committee consequence, with another institution identified as a limit.',
         reteach:'If most students write only “more power,” ask them to replace power with one action: choose leaders, schedule work, or set committee priorities. Add what that action cannot guarantee.',
-        cut:'Use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.',
-        move:'Students use Chapter 4. Model a short because/could/not-guaranteed explanation, then let them write or dictate their own. Avoid inventing a real candidate’s position.'
+        cut:'Students use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.',
+        move:'Self-paced pacing checkpoint: students write or dictate their Chapter 4 note using Start here. Confer with students who are still in Chapter 3 and help them finish the lookup first. Avoid inventing a real candidate’s position.'
       },
       file: {
         model:'In the constructed House, one seat can turn 217 into a 218-seat majority. That can change leaders and committee priorities. It does not guarantee a new law because the Senate and president still have roles.',
-        lookFor:'The final response connects seats, organization, and priorities, and states a limit. Verify actual Canvas submission.',
+        lookFor:'The final response connects seats, organization, and priorities, and states a limit. The gathered paste includes the four committee lookup entries. Verify actual Canvas submission.',
         reteach:'If most students repeat “218” without explaining why it matters, supply the chain “seat → majority → leadership → priority” and have them explain one link.',
         cut:'Omit Push further and extra examples. Protect the last five minutes for gathering, pasting, and submitting.',
-        move:'Students reuse the slider and committee notes in Chapter 5. Stop writing extensions with five minutes remaining and check the Canvas confirmation or agreed paper hand-in.'
+        move:'Whole class again for the close. Students reuse the slider, committee and lookup notes in Chapter 5. With five minutes remaining, call everyone to Gather All My Work, then check the Canvas confirmation or agreed paper hand-in.'
       }
     }
   },

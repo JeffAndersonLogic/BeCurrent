@@ -43,9 +43,9 @@
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "5–8",
+      "time": "5–7",
       "start": 5,
-      "minutes": 3,
+      "minutes": 2,
       "screen": {
         "eyebrow": "Topic 2 / Opening question",
         "title": "One group has 217 seats. The other has 218. Why might one seat matter?",
@@ -58,7 +58,7 @@
         "listenFor": "Students compare 217 and 218 with the whole chamber rather than treating either number as a real election tally.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Do not discuss actual party seat totals here. Protect the hypothetical-model label.",
-        "move": "Use the private prediction in Chapter 1. Say explicitly: these are invented groups and filled-seat assumptions, not current 2026 counts.",
+        "move": "Whole class. Students make the private prediction in Chapter 1. Say explicitly: these are invented groups and filled-seat assumptions, not current 2026 counts. This is the last whole-class step before the self-paced work.",
         "model": "In this constructed House, 218 is more than half of 435. Moving one seat can change which group has the majority.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
@@ -69,9 +69,9 @@
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "8–10",
-      "start": 8,
-      "minutes": 2,
+      "time": "7–10",
+      "start": 7,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 2 / Today’s direction",
         "title": "How separate races become a majority",
@@ -81,22 +81,23 @@
           "label": "See today’s required work"
         },
         "bullets": [
-          "I can explain how individual elections determine chamber membership.",
-          "I can explain how a majority affects leaders and committees.",
-          "I can distinguish organizing a chamber from passing a law."
+          "Work down the page, one chapter at a time. Use headphones for the two clips.",
+          "Copy each “Write this down” box into your notes.",
+          "Use the checklist at the top to see what is still missing.",
+          "Stuck? Open Start here, reread the takeaways, then raise your hand. Your teacher is coming around to check in."
         ]
       },
       "intel": {
         "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
         "ask": "Today’s direction — what evidence supports your explanation?",
-        "listenFor": "Students can identify the chain they will explain at the end.",
+        "listenFor": "Every student has headphones, the lesson open at Chapter 1, and can point to the checklist and the committee lookup in Chapter 3.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Read the purpose rather than all six target/criterion statements. Protect the distinction between organizing and lawmaking.",
-        "move": "Preview the seat model, committee evidence, and final question. Remind students that the final response can reuse their two earlier notes.",
-        "model": "We will connect one seat to a majority, a majority to leadership, and leadership to priorities—with limits.",
+        "cut": "Do not read every target and criterion aloud. Protect the launch: headphones, where to start, and where the checklist is.",
+        "move": "Launch the self-paced work. Show where the checklist and the committee lookup are, then release students to Chapter 1. Leave this screen on the projector. From here, circulate rather than present.",
+        "model": "Today you work at your own pace. Go down the page one chapter at a time, use headphones for the clips, copy the Write this down boxes, and use the checklist at the top to see what is missing. I am coming around to check in.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
-        "reteach": "If most students think the lesson is only arithmetic, ask: “What can the majority decide before a bill gets a final vote?”"
+        "reteach": "If most students are unsure what to do first, put the projector on this screen and point to the checklist at the top of the page: start at Chapter 1 and work down."
       }
     },
     {
@@ -164,10 +165,10 @@
       "intel": {
         "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
         "ask": "How can becoming the majority change who organizes the chamber?",
-        "listenFor": "Students name a leadership job or decision, rather than memorize the historical officeholder shown.",
+        "listenFor": "Students are watching the leadership window with headphones or reading the takeaways, and their notes name a leadership job or decision rather than the historical officeholder shown.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Use no more than four minutes of the leadership episode. Omit historical personality details and the rest of the episode.",
-        "move": "Play the selected leadership excerpt with captions, then model the role-to-decision link. Use the equivalent reading if blocked; do not add a full second explanation.",
+        "cut": "Students watch only the assigned window. A student whose clip will not play uses the reading route and core takeaways instead.",
+        "move": "Self-paced pacing checkpoint: most students should be in Chapter 2. Circulate. Check that headphones are in and the clip plays; send any student whose player is blocked to the reading route. Confer quietly; do not stop the class to explain.",
         "model": "A majority helps choose chamber leaders. Leaders influence which issues receive time and attention.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
@@ -210,9 +211,9 @@
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
-      "time": "17–25",
+      "time": "17–23",
       "start": 17,
-      "minutes": 8,
+      "minutes": 6,
       "screen": {
         "eyebrow": "Topic 2 / Guided practice",
         "title": "Power or promise?",
@@ -225,14 +226,14 @@
       "intel": {
         "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
         "ask": "Guided practice — what evidence supports your explanation?",
-        "listenFor": "A 217-to-218 slider change is connected to organizing the House. Sort corrections distinguish influence over priorities from guaranteed policy.",
+        "listenFor": "Students move the seat slider across 218 on their own and use Check my sort to correct their choices. Sort corrections distinguish influence over priorities from guaranteed policy.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Try only 217 and 218 on the slider; omit additional seat combinations. Protect all five sort attempts and correction.",
-        "move": "Students use Chapter 2. Run one shared slider demonstration, then private practice. Monitor the sort itself rather than expecting the later source response now.",
+        "cut": "Students try only 217 and 218 on the slider. Protect all five sort attempts and the self-correction.",
+        "move": "Self-paced pacing checkpoint: students sort and use the slider on their own. Circulate to students who have not checked their sort yet. Do not grade first-try errors.",
         "model": "Sort: Can influence; Can influence; Not guaranteed; Can influence; Not guaranteed. At 218 in the filled-seat model, Group A can organize the House; Senate agreement is still separate.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
-        "reteach": "If most students equate majority with guaranteed law, move the slider across 218 and hold up a separate Senate card that has not changed. Retry items 3 and 5."
+        "reteach": "If most students equate majority with guaranteed law, pause the room once: move the slider across 218 on the projector and hold up a separate Senate card that has not changed. Then release them to retry items 3 and 5."
       }
     },
     {
@@ -240,7 +241,7 @@
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 25,
+      "start": 23,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 3 of 6",
@@ -271,13 +272,13 @@
       "id": "watch-2",
       "label": "Evidence",
       "kind": "lesson",
-      "time": "25–37",
-      "start": 25,
-      "minutes": 12,
+      "time": "23–38",
+      "start": 23,
+      "minutes": 15,
       "screen": {
         "eyebrow": "Topic 2 / Evidence",
         "title": "Why do committees matter?",
-        "description": "Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote.",
+        "description": "Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote. Then look up one real House committee on house.gov.",
         "action": {
           "url": "../midterms/block-02.html#chapter-3",
           "label": "Open the clip and evidence"
@@ -286,14 +287,14 @@
       "intel": {
         "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
         "ask": "Evidence — what evidence supports your explanation?",
-        "listenFor": "A specific committee action, a named source, and an explanation of why the action matters before the whole chamber votes.",
+        "listenFor": "A specific committee action and a named source in the Chapter 3 source note, then a real committee name, one subject it covers, and the chair’s party in the lookup.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Use no more than four minutes of the committee episode. Omit the optional Alaska report today unless it replaces another activity.",
-        "move": "Use the selected committee excerpt, then inspect the short official-process extract together. Preserve at least eight minutes of this phase for the source comparison and Chapter 3 note.",
-        "model": "The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines, so priorities matter before a final vote.",
+        "cut": "Students use only the assigned committee window. Omit the optional Alaska report. If a committee site is blocked, the student chooses another committee from the list.",
+        "move": "Self-paced pacing checkpoint: the longest stretch, for the committee clip, the source note and the committee lookup. Circulate to the lookup first: check that students are on house.gov, not a search engine, and that nobody types a ZIP code or address.",
+        "model": "The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines. For the lookup: the committee’s own site names its chair, the representatives page shows the chair’s party, and that party is the House majority.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
-        "reteach": "If most students think committees make every law themselves, place “committee considers” before “full chamber acts.” Have students identify the missing later decision."
+        "reteach": "If most students cannot find a chair, open any one committee site on the projector and point to where the chair is named. Then send them back to their own committee."
       }
     },
     {
@@ -301,7 +302,7 @@
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 37,
+      "start": 38,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 4 of 6",
@@ -332,7 +333,7 @@
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 37,
+      "start": 38,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 5 of 6",
@@ -364,9 +365,9 @@
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "37–45",
-      "start": 37,
-      "minutes": 8,
+      "time": "38–45",
+      "start": 38,
+      "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Apply the idea",
         "title": "Test a campaign promise",
@@ -381,8 +382,8 @@
         "ask": "In the 217-to-218 scenario, what could change and why is the promised law not guaranteed?",
         "listenFor": "The constructed 217-to-218 change leads to a leadership or committee consequence, with another institution identified as a limit.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.",
-        "move": "Students use Chapter 4. Model a short because/could/not-guaranteed explanation, then let them write or dictate their own. Avoid inventing a real candidate’s position.",
+        "cut": "Students use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.",
+        "move": "Self-paced pacing checkpoint: students write or dictate their Chapter 4 note using Start here. Confer with students who are still in Chapter 3 and help them finish the lookup first. Avoid inventing a real candidate’s position.",
         "model": "Group A could choose House leaders and prioritize its school-safety proposal. The proposal is not guaranteed to become law: the Senate must agree to the same text and presidential action ordinarily follows.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
@@ -440,10 +441,10 @@
       "intel": {
         "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
         "ask": "Connect one district race to seats, a majority, and congressional priorities. Include one limit on that power.",
-        "listenFor": "The final response connects seats, organization, and priorities, and states a limit. Verify actual Canvas submission.",
+        "listenFor": "The final response connects seats, organization, and priorities, and states a limit. The gathered paste includes the four committee lookup entries. Verify actual Canvas submission.",
         "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
         "cut": "Omit Push further and extra examples. Protect the last five minutes for gathering, pasting, and submitting.",
-        "move": "Students reuse the slider and committee notes in Chapter 5. Stop writing extensions with five minutes remaining and check the Canvas confirmation or agreed paper hand-in.",
+        "move": "Whole class again for the close. Students reuse the slider, committee and lookup notes in Chapter 5. With five minutes remaining, call everyone to Gather All My Work, then check the Canvas confirmation or agreed paper hand-in.",
         "model": "In the constructed House, one seat can turn 217 into a 218-seat majority. That can change leaders and committee priorities. It does not guarantee a new law because the Senate and president still have roles.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",

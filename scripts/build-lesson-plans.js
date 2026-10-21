@@ -71,7 +71,7 @@ function artifactLabel(topic) {
 // asks "where does this go". A topic with no online artifact has no route, and saying
 // so is the point: it stops a paper day being marked missing in the gradebook.
 function canvasRoute(topic) {
-  if(topic.key&&topic.key.startsWith('wp-'))return 'The civics investigation’s Gather All My Work panel: five-item practice and three short responses'+(topic.resultsNotebook?', plus the dated results notebook':'')+'. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.';
+  if(topic.key&&topic.key.startsWith('wp-'))return 'The civics investigation’s Gather All My Work panel: five-item practice and three short responses'+(topic.lookup?', plus the committee lookup (three facts and one short note)':'')+(topic.resultsNotebook?', plus the dated results notebook':'')+'. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.';
   if (!hasOnlineArtifact(topic)) {
     return 'Nothing. This topic is done on paper in class and has no online artifact, '
       + 'so there is no submission to collect and nothing to chase.';
@@ -191,6 +191,14 @@ function renderTopic(unit, topic) {
       if (q.startHere) out.push(`   - START HERE: ${plain(q.startHere)}`);
       if (q.pushFurther) out.push(`   - PUSH FURTHER: ${plain(q.pushFurther)}`);
     });
+    if (topic.lookup) {
+      const l = topic.lookup, q = l.question;
+      out.push('');
+      out.push(`**${plain(l.title)}** (required, filed with the rest; after the source note on the page). ${l.facts.map(f => plain(f.prompt)).join(' ')}`);
+      out.push(`- **${plain(q.skill)}.** ${plain(q.text)}`);
+      out.push(`   - START HERE: ${plain(q.startHere)}`);
+      out.push(`   - PUSH FURTHER: ${plain(q.pushFurther)}`);
+    }
     out.push('');
   }
 

@@ -33,7 +33,7 @@ module.exports={
     bridges:[
       'Last time, you learned what voters choose. Today, follow those choices into Congress. A small difference in seats can decide who organizes the work.',
       'A majority means more than a number on a scoreboard. Watch how it connects to leadership, then move the seat model to see when control changes.',
-      'Leadership matters partly because much of the work happens before a final vote. Look inside a committee to see how an issue can gain attention or meet an obstacle.',
+      'Leadership matters partly because much of the work happens before a final vote. Look inside a committee to see how an issue can gain attention or meet an obstacle. Then find a real committee and see who runs it.',
       'Now put the seat model and the committee story together. A new majority has opportunities, but its promises still face other decision-makers.',
       'You have traced the path from separate races to membership, leadership, and priorities. Use that chain to explain why a few seats can matter so much.'
     ],

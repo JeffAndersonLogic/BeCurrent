@@ -161,9 +161,10 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, a committee lookup, an application note, and a final explanation. A factual bullet, three facts from house.gov with one or two sentences, two short application bullets, and two or three final sentences are enough.</p>
                 <ol>
                     <li>Name two decisions a new majority could influence. Identify your video or official source.</li>
+                    <li>Committee lookup: Which House committee did you choose? Name one subject this committee covers, from its own website. Who chairs this committee, and which party is the chair in? Then: Committee chairs come from the House majority. If a different party won the House majority in November, what could change about your committee, and what could it still not guarantee?</li>
                     <li>In the 217-to-218 scenario, what could change and why is the promised law not guaranteed?</li>
                     <li>Connect one district race to seats, a majority, and congressional priorities. Include one limit on that power.</li>
                 </ol>
@@ -198,7 +199,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
                     <li><strong>Seats and majority</strong>: Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.</li>
-                    <li><strong>Relevant evidence</strong>: Name a clip or official reference and accurately explain evidence about leaders or committees.</li>
+                    <li><strong>Relevant evidence</strong>: Name a clip or official reference and accurately explain evidence about leaders or committees. Record one real House committee, a subject it covers, and its chair’s party from house.gov.</li>
                     <li><strong>Influence and limits</strong>: Explain two decisions a majority can influence and why the other chamber or presidential action still matters for a law.</li>
                     <li><strong>Explain your thinking</strong>: Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.</li>
                 </ul>

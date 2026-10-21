@@ -41,6 +41,9 @@ const {topics}=require('../lib/unit-content/midterms');
   const scenario=page.locator('#scenario-response');
   if(await scenario.getAttribute('data-optional')!=='true')await scenario.fill('Topic '+t.n+' application. A governing effect still depends on other institutions.');
   await page.locator('[data-student-nav]').nth(4).click();await page.fill('#exit-response','Topic '+t.n+' conclusion. Two sources support the explanation; an uncertainty remains.');
+  // Any other required box on the page (Topic 2's committee lookup) is filled the same way.
+  for(const el of await page.locator('[data-slot]:not([data-optional="true"])').all())if(!(await el.inputValue()))await el.fill('Topic '+t.n+' '+(await el.getAttribute('data-slot'))+' entry.');
+  if(t.lookup){const plainBefore=await page.textContent('#work-checklist');for(const f of t.lookup.facts)assert(plainBefore.includes(f.label),'checklist names '+f.label);}
   const count=requiredCount;assert((await page.textContent('[data-work-progress]')).includes(count+' of '+count));
   assert((await page.textContent('#work-checklist')).includes('draft recorded'));
   await page.reload();assert((await page.inputValue('#exit-response')).includes('Topic '+t.n+' conclusion'));

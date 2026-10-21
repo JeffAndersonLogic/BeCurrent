@@ -9,6 +9,7 @@ const sources={
  senate:S('U.S. Senate: classes and terms','https://www.senate.gov/about/origins-foundations/senate-and-constitution/senate-classes.htm','Six-year terms and staggered elections.'),
  constitution:S('National Archives: Constitution','https://www.archives.gov/founding-docs/constitution-transcript','Articles I and II establish legislative and executive powers. Follow the amendments for later changes.'),
  leaders:S('U.S. House: leadership','https://www.house.gov/leadership','Official current leadership. Focus on the jobs, not memorizing names.'),
+ committees:S('U.S. House: committees','https://www.house.gov/committees','Official list of House committees. Each name links to that committee’s own website. Do not type a ZIP code or home address anywhere on house.gov.'),
  law:S('U.S. House: the legislative process','https://www.house.gov/the-house-explained/the-legislative-process','Official explanation of bills, committees, and presidential action.'),
  eac:S('Election Assistance Commission: results and certification','https://www.eac.gov/election-officials/election-results-canvass-and-certification','Unofficial totals, canvass, and certification.'),
  indiana:S('Indiana Secretary of State: election results','https://www.in.gov/sos/elections/election-commission/election-results/','Select the correct election year. Older results are not 2026 results.'),
@@ -72,7 +73,34 @@ const topics=[
  overview:'Follow individual seats to chamber control. Test how a small shift can change leaders, committees, and the agenda without guaranteeing a new law.',question:'How can a few seats change the decisions Congress considers?',
  learningTargets:[LT('Representation','I can explain how individual elections determine chamber membership.'),LT('Power','I can explain how a majority affects leaders and committees.'),LT('Limits','I can distinguish organizing a chamber from passing a law.')],
  successCriteria:[SC('Representation','I can identify the majority in a constructed 435-seat House scenario.'),SC('Power','I can identify two decisions a new majority could influence.'),SC('Limits','I can explain one reason chamber control does not guarantee a policy change.')],
- videos:[clips.leaders,clips.committees,clips.alaska],sources:[sources.house,sources.leaders,sources.law],
+ videos:[clips.leaders,clips.committees,clips.alaska],sources:[sources.house,sources.leaders,sources.law,sources.committees],
+ // Jeff, 2026-10-21: Day 2 is self-paced. After the whole-class recap and opening
+ // question, students work through the chapters on their own while the teacher
+ // circulates. The note-taking slides also print on the page so a student can copy
+ // them at their own pace.
+ selfPaced:{
+  title:'Today you work at your own pace',
+  steps:['Work down the page, one chapter at a time. Use headphones for the two clips.','Copy each “Write this down” box into your notes.','Use the checklist at the top to see what is still missing.','Stuck? Open Start here, reread the takeaways, then raise your hand. Your teacher is coming around to check in.']
+ },
+ // Jeff, 2026-10-21: a required, independent lookup of one real House committee,
+ // filed in Canvas with the rest of the investigation. Facts the student looks up,
+ // then one sentence, the same split the Desk uses. The committee list below was
+ // copied from house.gov/committees on the date in `checked`; no chair or member
+ // name is written here, because students look those up and they change.
+ lookup:{
+  title:'Look up a real committee',
+  checked:'2026-10-21',
+  intro:'The clip and the official extract explained committees in general. Now find one real House committee and see who runs it.',
+  steps:['Open the official House committees list.','Choose one committee from the list. Pick a subject you care about.','Open that committee’s website. Find one subject it covers and the name of its chair (sometimes called the chairman).','Check the chair’s party on the House representatives page. Do not type a ZIP code or home address.','Record the three facts, then write one or two sentences.'],
+  standing:['Agriculture','Appropriations','Armed Services','Budget','Education and Workforce','Energy and Commerce','Ethics','Financial Services','Foreign Affairs','Homeland Security','House Administration','Judiciary','Natural Resources','Oversight and Government Reform','Rules','Science, Space, and Technology','Small Business','Transportation and Infrastructure','Veterans’ Affairs','Ways and Means'],
+  facts:[
+   {id:'committee-name',label:'Committee lookup / Committee name',prompt:'Which House committee did you choose?',placeholder:'The committee’s name, as house.gov lists it'},
+   {id:'committee-subject',label:'Committee lookup / One subject it covers',prompt:'Name one subject this committee covers, from its own website.',placeholder:'One subject, in your own words'},
+   {id:'committee-chair',label:'Committee lookup / Chair and party',prompt:'Who chairs this committee, and which party is the chair in?',placeholder:'Chair’s name and party'}
+  ],
+  question:Q('committee','Power','Committee chairs come from the House majority. If a different party won the House majority in November, what could change about your committee, and what could it still not guarantee?','If the majority changed, this committee could get a new ____, who could put ____ first. It still could not guarantee ____, because ____.','Find one hearing or bill on the committee’s website. What would you need to check to know whether the chair’s priorities shaped it?'),
+  tip:'If a committee website will not open, choose another committee from the list. Political preferences are not scored: write about the committee’s job, not which party should win.'
+ },
  // Jeff, 2026-10-21: the Day 2 presentation opens with this clip as the recap of
  // Topic 1 and the way into Topic 2. Presentation only; it is not a student clip card.
  recap:{title:'US Midterms: What are they and why do presidents dread them? | Explainer',url:'https://www.youtube.com/watch?v=wzU2YvfquQw',source:'Guardian News',date:'2026-10-07',duration:'under 5 minutes',reviewed:'2026-10-21',
@@ -88,7 +116,7 @@ const topics=[
  ],
  sortTitle:'Power or promise?',sortPrompt:'Classify each statement as an influence of chamber control or an outcome control does not guarantee.',sortLabel:'Majority power and its limits',sortOptions:['Can influence','Not guaranteed'],
  sorts:[['Who leads the chamber and its committees.','Can influence'],['Which proposals receive priority.','Can influence'],['Every campaign promise becoming law.','Not guaranteed'],['Which topics committees investigate.','Can influence'],['The other chamber agreeing to the same bill.','Not guaranteed']],simulation:true,
- evidenceTitle:'Why do committees matter?',evidenceTask:'Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote.',
+ evidenceTitle:'Why do committees matter?',evidenceTask:'Use the committee video and official legislative-process reference. Identify a decision made before a final floor vote. Then look up one real House committee on house.gov.',
  scenario:'Practice scenario (made up for class): Group A moves from 217 to 218 of 435 filled House seats. Its leaders promise a new school-safety law. The Senate and president have not agreed.',
  questions:[Q('report','Evidence','Explain one way committee leadership can affect what Congress considers. Name your video or official source.','A chair can influence ____. My source is ____.','Explain how a proposal might meet an obstacle before a floor vote.'),Q('scenario','Cause and effect','In the 217-to-218 scenario, what could change and why is the promised law not guaranteed?','Group A could organize ____, but a law still needs ____.','Explain one additional political or procedural obstacle.'),Q('checkpoint','Explanation','Why can a small seat change have a large effect on congressional priorities? Include one fact and one limit.','A small seat change could ____. That does not guarantee ____.','Distinguish winning the most votes nationally from winning enough separate seats.')],
  teacher:{story:'Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.',land:'A majority shapes who organizes the work and what gets attention; outcomes still face limits.',ask:'What power exists before a final vote on a bill?',listenFor:'Leadership, committee chairs, hearings, or scheduling connected to a consequence.',avoid:'The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.',reteach:'Move the slider across 218, then connect that change to one committee job.',answer:'Can influence; Can influence; Not guaranteed; Can influence; Not guaranteed. Connect a seat change to a leadership decision and a limit.'}
