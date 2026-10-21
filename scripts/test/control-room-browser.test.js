@@ -9,7 +9,8 @@ const {topics}=require('../lib/unit-content/midterms');
   await teacher.goto(root+'/teacher/'+os);await projection.goto(root+'/teacher/'+project);
   // Slides are found by id, not position: note-taking slides sit between the activities.
   const ids=await teacher.evaluate(()=>window.BECURRENT_CONTROL_LESSON.phases.map(p=>p.id)),at=id=>{const i=ids.indexOf(id);assert(i>=0,id);return i},pad=i=>String(i+1).padStart(2,'0');
-  assert.strictEqual(await teacher.locator('[data-phase-index]').count(),ids.length);assert(ids.filter(id=>id.startsWith('notes-')).length>=5);assert((await teacher.textContent('#scene-title')).includes(t.hook));
+  assert.strictEqual(await teacher.locator('[data-phase-index]').count(),ids.length);assert(ids.filter(id=>id.startsWith('notes-')).length>=5);assert((await teacher.textContent('#scene-title')).includes(t.recap?t.recap.title:t.hook));
+  if(t.recap)assert.strictEqual(await projection.getAttribute('#projector-action','href'),t.recap.url);
   assert(await teacher.textContent('#intel-land'));assert.strictEqual(await projection.locator('#intel-land').count(),0);
   assert(await teacher.textContent('#intel-model'));assert.strictEqual(await projection.locator('#intel-model').count(),0);
   await teacher.locator(`[data-phase-index="${at('watch-1')}"]`).click();await projection.waitForFunction(s=>document.getElementById('projector-phase').textContent.startsWith(s),pad(at('watch-1')));

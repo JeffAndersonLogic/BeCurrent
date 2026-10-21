@@ -22,11 +22,14 @@ module.exports=function({E,ext,list}){
    ['watch-2',t.n===5?'Results investigation':'Evidence',t.evidenceTitle,t.evidenceTask,action(base+'#chapter-3',t.n===5?'Open the results packet':'Open the clip and evidence')],
    ['apply','Apply the idea',t.flow.headings[3],t.scenario,action(base+'#chapter-4',t.n===4?'Open the real-claim packet':'Open application')],
    ['file','Explain / Canvas',t.flow.headings[4],t.questions[2].text,action(base+'#chapter-5','Explain, gather, and submit')]
-  ];let cursor=0;
+  ];
+  // A topic can open with a recap clip (Topic 2: the Day 1 recap). Its timing entry comes first.
+  if(t.recap)rows.unshift(['recap','Day 1 recap / Day 2 preview',t.recap.title,'Watch the whole clip ('+t.recap.duration+'). '+t.recap.prompt,action(t.recap.url,'Play the recap video')]);
+  let cursor=0;
   const phases=rows.map(([id,label,title,description,act],i)=>{const minutes=t.teaching.timing[i],start=cursor;cursor+=minutes;const p=t.teaching.phases[id];
-   const intel={land:t.teacher.land,ask:id==='hook'?t.hook:id==='apply'?t.questions[1].text:id==='file'?t.questions[2].text:id==='watch-1'?t.videos[0].prompt:label+' — what evidence supports your explanation?',listenFor:p.lookFor,protect:id==='file'?'Protect the last five minutes for Gather, Canvas paste, and submission confirmation.':'Protect the required practice, evidence, and private explanation; keep unit work before lunch.',cut:p.cut,move:p.move,model:p.model,story:t.teacher.story,avoid:t.teacher.avoid,reteach:p.reteach};
+   const intel={land:t.teacher.land,ask:id==='recap'?t.recap.prompt:id==='hook'?t.hook:id==='apply'?t.questions[1].text:id==='file'?t.questions[2].text:id==='watch-1'?t.videos[0].prompt:label+' — what evidence supports your explanation?',listenFor:p.lookFor,protect:id==='file'?'Protect the last five minutes for Gather, Canvas paste, and submission confirmation.':'Protect the required practice, evidence, and private explanation; keep unit work before lunch.',cut:p.cut,move:p.move,model:p.model,story:t.teacher.story,avoid:t.teacher.avoid,reteach:p.reteach};
    const screen={eyebrow:`Topic ${t.n} / ${label}`,title,description,action:act};if(id==='direction')screen.bullets=t.learningTargets.map(x=>x.target);if(id==='watch-1')screen.cards=t.terms.map(([title,text])=>({title,text}));
-   return {id,label,kind:id==='watch-1'?'watch':'lesson',time:`${start}–${cursor}`,start,minutes,screen,intel};});
+   return {id,label,kind:id==='watch-1'||id==='recap'?'watch':'lesson',time:`${start}–${cursor}`,start,minutes,screen,intel};});
   // Note-taking slides sit between the activity slides they explain. They carry no
   // minutes of their own (copying time comes out of the 55-minute block), so every
   // timed phase keeps its start and the unit still totals 55. See midterms-notes.js.

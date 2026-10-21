@@ -260,17 +260,18 @@ Move from the ballot to the working room. Separate races produce a chamber. A sm
 
 ### Run of show
 
-- 0–4: Opening question (4 minutes)
-- 4–6: Today’s direction (2 minutes)
+- 0–5: Day 1 recap / Day 2 preview (5 minutes)
+- 5–8: Opening question (3 minutes)
+- 8–10: Today’s direction (2 minutes)
 - Notes slide: How can one race matter to the whole House?
-- 6–13: Watch / explain (7 minutes)
+- 10–17: Watch / explain (7 minutes)
 - Notes slide: What does the majority get to do?
-- 13–23: Guided practice (10 minutes)
+- 17–25: Guided practice (8 minutes)
 - Notes slide: What is a committee?
-- 23–35: Evidence (12 minutes)
+- 25–37: Evidence (12 minutes)
 - Notes slide: Why can a committee change a bill’s chances?
 - Notes slide: Does controlling the House mean controlling the government?
-- 35–45: Apply the idea (10 minutes)
+- 37–45: Apply the idea (8 minutes)
 - Notes slide: Explain the power shift
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
@@ -278,6 +279,16 @@ Move from the ballot to the working room. Separate races produce a chamber. A sm
 - After lunch · 15 min: After lunch / daily news (15 minutes)
 
 ### Phase models and teaching decisions
+
+**Day 1 recap / Day 2 preview**
+
+Model: A midterm elects all 435 voting House seats and about a third of the Senate, but not the president. If the president’s party loses its majority in a chamber, the other party organizes that chamber and can slow or reshape the president’s priorities. Today we follow how separate races add up to that majority.
+
+Look for: Students connect the clip to Day 1: a midterm chooses members of Congress, and a changed majority can change what Congress takes up while the president stays.
+
+Reteach: If most students cannot say why a president would dread a midterm, return to the Day 1 notes on the two chambers and ask: who organizes the House if the president’s party loses seats there?
+
+Cut: Play the clip once with captions on. Skip discussion of any polls, predictions, or seat counts in it; they are dated reporting, not 2026 results.
 
 **Opening question**
 
@@ -338,16 +349,6 @@ Look for: The constructed 217-to-218 change leads to a leadership or committee c
 Reteach: If most students write only “more power,” ask them to replace power with one action: choose leaders, schedule work, or set committee priorities. Add what that action cannot guarantee.
 
 Cut: Use one route through the scenario; omit extra procedural hurdles and Senate threshold extensions. Protect a concrete mechanism and limit.
-
-**Explain / Canvas**
-
-Model: In the constructed House, one seat can turn 217 into a 218-seat majority. That can change leaders and committee priorities. It does not guarantee a new law because the Senate and president still have roles.
-
-Look for: The final response connects seats, organization, and priorities, and states a limit. Verify actual Canvas submission.
-
-Reteach: If most students repeat “218” without explaining why it matters, supply the chain “seat → majority → leadership → priority” and have them explain one link.
-
-Cut: Omit Push further and extra examples. Protect the last five minutes for gathering, pasting, and submitting.
 
 ### Notes slides
 
@@ -416,6 +417,10 @@ Write this down: One seat → a majority → leaders and agenda. A new priority 
 
 ### Clips
 
+- [US Midterms: What are they and why do presidents dread them? | Explainer](https://www.youtube.com/watch?v=wzU2YvfquQw) · Full under 5 minutes · Assigned the full clip · 2026-10-07
+  Watch for: Why might a president dread a midterm election? Use what you learned on Day 1 about the House and the Senate. Today: how separate races add up to control of Congress.
+  Pause: Play the whole clip, then ask the recap question before the opening question.
+  Dated 2026 reporting from a British outlet. Polls, predictions, and seat counts in it are not 2026 results.
 - [Congressional Leadership: Crash Course Government #8](https://www.pbs.org/video/crash-course-government-8/) · Full 8:10 · Assigned 0:00–3:30 · 2015-03-14
   Watch for: How can becoming the majority change who organizes the chamber?
   Pause: Stop at the assigned endpoint. Ask: How can becoming the majority change who organizes the chamber? Use the core takeaways to check the answer before continuing.

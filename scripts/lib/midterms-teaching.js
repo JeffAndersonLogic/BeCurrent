@@ -66,7 +66,9 @@ module.exports = {
     }
   },
   2: {
-    timing: [4, 2, 7, 10, 12, 10, 10],
+    // Recap clip, hook, direction, watch-1, investigate, watch-2, apply, file. The
+    // recap's five minutes came from the hook, guided practice and apply (2026-10-21).
+    timing: [5, 3, 2, 7, 8, 12, 8, 10],
     rubric: [
       {label:'Seats and majority',description:'Use the constructed 435-filled-seat model to explain why 218 is a majority. Do not present it as an actual 2026 result.'},
       {label:'Relevant evidence',description:'Name a clip or official reference and accurately explain evidence about leaders or committees.'},
@@ -74,6 +76,13 @@ module.exports = {
       {label:'Explain your thinking',description:'Make the seat-to-power connection understandable. Concise notes, dictated text, and agreed paper work can show the same learning.'}
     ],
     phases: {
+      recap: {
+        model:'A midterm elects all 435 voting House seats and about a third of the Senate, but not the president. If the president’s party loses its majority in a chamber, the other party organizes that chamber and can slow or reshape the president’s priorities. Today we follow how separate races add up to that majority.',
+        lookFor:'Students connect the clip to Day 1: a midterm chooses members of Congress, and a changed majority can change what Congress takes up while the president stays.',
+        reteach:'If most students cannot say why a president would dread a midterm, return to the Day 1 notes on the two chambers and ask: who organizes the House if the president’s party loses seats there?',
+        cut:'Play the clip once with captions on. Skip discussion of any polls, predictions, or seat counts in it; they are dated reporting, not 2026 results.',
+        move:'Play the whole clip as class opens. Students answer the recap question privately in one sentence; voice one anonymous example yourself, then go straight to the 217 vs. 218 opening question.'
+      },
       hook: {
         model:'In this constructed House, 218 is more than half of 435. Moving one seat can change which group has the majority.',
         lookFor:'Students compare 217 and 218 with the whole chamber rather than treating either number as a real election tally.',

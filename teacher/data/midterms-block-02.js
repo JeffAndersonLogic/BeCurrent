@@ -11,12 +11,41 @@
   "storageKey": "bc-current-control-midterms-02",
   "phases": [
     {
+      "id": "recap",
+      "label": "Day 1 recap / Day 2 preview",
+      "kind": "watch",
+      "time": "0–5",
+      "start": 0,
+      "minutes": 5,
+      "screen": {
+        "eyebrow": "Topic 2 / Day 1 recap / Day 2 preview",
+        "title": "US Midterms: What are they and why do presidents dread them? | Explainer",
+        "description": "Watch the whole clip (under 5 minutes). Why might a president dread a midterm election? Use what you learned on Day 1 about the House and the Senate. Today: how separate races add up to control of Congress.",
+        "action": {
+          "url": "https://www.youtube.com/watch?v=wzU2YvfquQw",
+          "label": "Play the recap video"
+        }
+      },
+      "intel": {
+        "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
+        "ask": "Why might a president dread a midterm election? Use what you learned on Day 1 about the House and the Senate. Today: how separate races add up to control of Congress.",
+        "listenFor": "Students connect the clip to Day 1: a midterm chooses members of Congress, and a changed majority can change what Congress takes up while the president stays.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Play the clip once with captions on. Skip discussion of any polls, predictions, or seat counts in it; they are dated reporting, not 2026 results.",
+        "move": "Play the whole clip as class opens. Students answer the recap question privately in one sentence; voice one anonymous example yourself, then go straight to the 217 vs. 218 opening question.",
+        "model": "A midterm elects all 435 voting House seats and about a third of the Senate, but not the president. If the president’s party loses its majority in a chamber, the other party organizes that chamber and can slow or reshape the president’s priorities. Today we follow how separate races add up to that majority.",
+        "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
+        "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
+        "reteach": "If most students cannot say why a president would dread a midterm, return to the Day 1 notes on the two chambers and ask: who organizes the House if the president’s party loses seats there?"
+      }
+    },
+    {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–4",
-      "start": 0,
-      "minutes": 4,
+      "time": "5–8",
+      "start": 5,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 2 / Opening question",
         "title": "One group has 217 seats. The other has 218. Why might one seat matter?",
@@ -40,8 +69,8 @@
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "4–6",
-      "start": 4,
+      "time": "8–10",
+      "start": 8,
       "minutes": 2,
       "screen": {
         "eyebrow": "Topic 2 / Today’s direction",
@@ -75,7 +104,7 @@
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 6,
+      "start": 10,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 1 of 6",
@@ -106,8 +135,8 @@
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "6–13",
-      "start": 6,
+      "time": "10–17",
+      "start": 10,
       "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Watch / explain",
@@ -150,7 +179,7 @@
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 17,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 2 of 6",
@@ -181,9 +210,9 @@
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
-      "time": "13–23",
-      "start": 13,
-      "minutes": 10,
+      "time": "17–25",
+      "start": 17,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 2 / Guided practice",
         "title": "Power or promise?",
@@ -211,7 +240,7 @@
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 23,
+      "start": 25,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 3 of 6",
@@ -242,8 +271,8 @@
       "id": "watch-2",
       "label": "Evidence",
       "kind": "lesson",
-      "time": "23–35",
-      "start": 23,
+      "time": "25–37",
+      "start": 25,
       "minutes": 12,
       "screen": {
         "eyebrow": "Topic 2 / Evidence",
@@ -272,7 +301,7 @@
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 37,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 4 of 6",
@@ -303,7 +332,7 @@
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 37,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 5 of 6",
@@ -335,9 +364,9 @@
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "35–45",
-      "start": 35,
-      "minutes": 10,
+      "time": "37–45",
+      "start": 37,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 2 / Apply the idea",
         "title": "Test a campaign promise",

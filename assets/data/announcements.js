@@ -915,6 +915,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "homeworkDue": "the start of class on Monday, October 26",
       "doNow": "One group has 217 seats. The other has 218. Why might one seat matter? Write your prediction.",
       "agenda": [
+        "Day 1 recap: watch a short video on why presidents dread the midterms.",
         "Opening question: why might one seat matter?",
         "Watch, then follow separate races to a majority.",
         "Sort statements about power and promises, then check your choices.",

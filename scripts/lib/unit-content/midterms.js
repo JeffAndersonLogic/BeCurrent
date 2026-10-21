@@ -73,6 +73,12 @@ const topics=[
  learningTargets:[LT('Representation','I can explain how individual elections determine chamber membership.'),LT('Power','I can explain how a majority affects leaders and committees.'),LT('Limits','I can distinguish organizing a chamber from passing a law.')],
  successCriteria:[SC('Representation','I can identify the majority in a constructed 435-seat House scenario.'),SC('Power','I can identify two decisions a new majority could influence.'),SC('Limits','I can explain one reason chamber control does not guarantee a policy change.')],
  videos:[clips.leaders,clips.committees,clips.alaska],sources:[sources.house,sources.leaders,sources.law],
+ // Jeff, 2026-10-21: the Day 2 presentation opens with this clip as the recap of
+ // Topic 1 and the way into Topic 2. Presentation only; it is not a student clip card.
+ recap:{title:'US Midterms: What are they and why do presidents dread them? | Explainer',url:'https://www.youtube.com/watch?v=wzU2YvfquQw',source:'Guardian News',date:'2026-10-07',duration:'under 5 minutes',reviewed:'2026-10-21',
+  prompt:'Why might a president dread a midterm election? Use what you learned on Day 1 about the House and the Senate. Today: how separate races add up to control of Congress.',
+  pause:'Play the whole clip, then ask the recap question before the opening question.',
+  context:'Dated 2026 reporting from a British outlet. Polls, predictions, and seat counts in it are not 2026 results.'},
  terms:[['District','An area that elects a representative.'],['Agenda','The issues and proposals leaders prioritize.'],['Committee','A smaller group that studies issues, investigates, and considers legislation.']],
  hook:'One group has 217 seats. The other has 218. Why might one seat matter?',prediction:['It could change who organizes the House.','It automatically changes every law.','I need to see the rules.'],
  background:[

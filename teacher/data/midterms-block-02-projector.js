@@ -11,12 +11,29 @@ window.BECURRENT_PROJECTOR_LESSON = {
   "storageKey": "bc-current-control-midterms-02",
   "phases": [
     {
+      "id": "recap",
+      "label": "Day 1 recap / Day 2 preview",
+      "kind": "watch",
+      "time": "0–5",
+      "start": 0,
+      "minutes": 5,
+      "screen": {
+        "eyebrow": "Topic 2 / Day 1 recap / Day 2 preview",
+        "title": "US Midterms: What are they and why do presidents dread them? | Explainer",
+        "description": "Watch the whole clip (under 5 minutes). Why might a president dread a midterm election? Use what you learned on Day 1 about the House and the Senate. Today: how separate races add up to control of Congress.",
+        "action": {
+          "url": "https://www.youtube.com/watch?v=wzU2YvfquQw",
+          "label": "Play the recap video"
+        }
+      }
+    },
+    {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–4",
-      "start": 0,
-      "minutes": 4,
+      "time": "5–8",
+      "start": 5,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 2 / Opening question",
         "title": "One group has 217 seats. The other has 218. Why might one seat matter?",
@@ -28,8 +45,8 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "4–6",
-      "start": 4,
+      "time": "8–10",
+      "start": 8,
       "minutes": 2,
       "screen": {
         "eyebrow": "Topic 2 / Today’s direction",
@@ -51,7 +68,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 6,
+      "start": 10,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 1 of 6",
@@ -70,8 +87,8 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "6–13",
-      "start": 6,
+      "time": "10–17",
+      "start": 10,
       "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Watch / explain",
@@ -102,7 +119,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 17,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 2 of 6",
@@ -121,9 +138,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "investigate",
       "label": "Guided practice",
       "kind": "lesson",
-      "time": "13–23",
-      "start": 13,
-      "minutes": 10,
+      "time": "17–25",
+      "start": 17,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 2 / Guided practice",
         "title": "Power or promise?",
@@ -139,7 +156,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 23,
+      "start": 25,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 3 of 6",
@@ -158,8 +175,8 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-2",
       "label": "Evidence",
       "kind": "lesson",
-      "time": "23–35",
-      "start": 23,
+      "time": "25–37",
+      "start": 25,
       "minutes": 12,
       "screen": {
         "eyebrow": "Topic 2 / Evidence",
@@ -176,7 +193,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 37,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 4 of 6",
@@ -195,7 +212,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 37,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 2 / Notes 5 of 6",
@@ -215,9 +232,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "35–45",
-      "start": 35,
-      "minutes": 10,
+      "time": "37–45",
+      "start": 37,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 2 / Apply the idea",
         "title": "Test a campaign promise",
