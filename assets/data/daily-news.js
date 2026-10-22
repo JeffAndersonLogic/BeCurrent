@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-22",
   lead: {
-    category: "World / International",
-    headline: "Why a student protest movement is challenging 12 years of Vučić rule in Serbia",
-    dek: "After two years of student protests, Serbians vote on Sunday in elections that could bring down the ruling party.",
+    category: "U.S. / National",
+    headline: "Trump ordered to answer questions under oath in BBC lawsuit",
+    dek: "Trump is suing the BBC over an episode of Panorama that edited together two different sections of a speech he gave in 2021.",
     source: "BBC News",
     published: "October 22, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cmq8n3v94ql3o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a379/live/0b1863f0-ce1c-11f1-906e-e3128518d85d.jpg",
+    url: "https://www.bbc.co.uk/news/articles/cmy0ryjx7741o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/b7ce/live/a18b7e00-ce38-11f1-a86f-f78305ec9987.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cmq8n3v94ql3o?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cmy0ryjx7741o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Ilhan Omar after DC house raid: 'I can’t continue to live there'",
-      dek: "Omar has not been charged with a crime. She has maintained she has done nothing wrong.",
-      source: "NewsNation",
+      category: "World / Security",
+      headline: "'This is despicable': Amy Acton responds to Ohio attack ad featuring her estranged mother",
+      dek: "Her Republican opponent Vivek Ramaswamy is airing the ad featuring her mother, whose husband was charged with sexual abuse in her childhood.",
+      source: "BBC News",
       published: "October 22, 2026",
-      url: "https://www.newsnationnow.com/politics/ilhan-omar-dc-home-raid-i-cant-live-there/"
+      url: "https://www.bbc.co.uk/news/articles/c6z981l59wnwo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Climate / Environment",
@@ -30,20 +30,20 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.bbc.co.uk/news/videos/cm5ynpz5jj5do?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / Security",
-      headline: "Russian missiles pound Kyiv as Moscow says over 800 Ukrainian drones downed",
-      dek: "KYIV, Ukraine (AP) — Russia bombarded Kyiv with ballistic missiles in an hourslong nighttime barrage, while the Russian military said Thursday that its air defenses intercepted over 800 drones fired by Ukraine at Moscow and other cities. At least four people were killed in Ukraine and dozens of othe",
-      source: "NewsNation",
+      category: "U.S. / Democracy",
+      headline: "Lula says rival should be disqualified over alleged Meta interference ahead of Brazil vote",
+      dek: "The Brazilian president accuses the tech firm of favouring Flávio Bolsonaro, which it denies.",
+      source: "BBC News",
       published: "October 22, 2026",
-      url: "https://www.newsnationnow.com/business/ap-business/ap-russia-pounds-ukraines-capital-kyiv-with-missiles-and-drones-hours-after-agreeing-to-peace-talks/"
+      url: "https://www.bbc.co.uk/news/articles/c6pwgve2lk5go?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / International",
-      headline: "Teacher in Oregon shooting said she pretended to be dead to survive",
-      dek: "The teacher said she could not help children because she was badly injured by the attacker.",
+      headline: "Meta strikes deal to stop Mark Zuckerberg leaving California over billionaire tax",
+      dek: "The Meta boss had said he would exit the state over a wealth tax that has not yet come into force.",
       source: "BBC News",
       published: "October 22, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cqvgrmzdzgr7o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cky83vwnyglno?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
