@@ -23,8 +23,17 @@ function lookupProblems(page,t){
 {const t2=unit.topics.find(t=>t.lookup),p2=read('midterms/'+t2.page);
  for(const [bad,why] of [[p2.replace('data-slot="committee-name"','data-x="committee-name"'),'a lookup box is not a gathered slot'],[p2.replaceAll('href="https://www.house.gov/committees"','href="https://www.google.com/"'),'no route to house.gov/committees'],[p2.replace('A committee lookup:','A lookup:'),'missing from Today you will submit'],[p2.replace('class="notes-card"','class="x"'),'notes boxes do not match the projector notes']])
   assert(lookupProblems(bad,t2).includes(why),'negative control should fail: '+why);}
+// Chapter banners: a topic listed in BANNERS opens each of its five chapters with one
+// decorative drawing, inside that chapter, hidden from screen readers and sized.
+const {BANNERS}=require('../lib/midterms-banners');
+function bannerProblems(page,n){const want=BANNERS[n]||[],chapters=page.split('data-student-chapter').slice(1),got=chapters.map(c=>(c.match(/^[^>]*>\s*<div class="chapter-banner" data-banner="([a-z]+)"><svg width="960" height="160"[^>]*aria-hidden="true"/)||[])[1]).filter(Boolean);
+ return [want.length&&got.join()!==want.join()&&'chapters do not open with their banners: '+got.join(),!want.length&&page.includes('class="chapter-banner"')&&'banner on a topic without any'].filter(Boolean);}
+{const p2=read('midterms/block-02.html');
+ for(const [bad,n,why] of [[p2.replace(/<div class="chapter-banner" data-banner="committee">/,'<div>'),2,'chapters do not open'],[p2.replace(/(data-banner="seat"><svg[^>]*?) aria-hidden="true"/,'$1'),2,'chapters do not open'],[read('midterms/block-01.html').replace('data-student-chapter','data-student-chapter><div class="chapter-banner"'),1,'banner on a topic']])
+  assert(bannerProblems(bad,n).some(x=>x.startsWith(why)),'negative control should fail: '+why);}
 for(const t of unit.topics){
  const page=read('midterms/'+t.page);
+ assert.deepStrictEqual(bannerProblems(page,t.n),[],'Topic '+t.n);
  assert(page.includes('data-lesson="'+t.key+'"'));assert(index.includes('href="'+t.page+'"'));
  assert.strictEqual((page.match(/data-student-chapter/g)||[]).length,5);
  // Three responses, plus the committee lookup's facts and note where a topic has one (Topic 2).

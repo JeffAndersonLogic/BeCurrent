@@ -136,3 +136,8 @@ summary{font-family:var(--vf-label);font-weight:650}
 .self-paced,.lookup-card,.notes-card{padding:22px;border:1px solid #d4d9d5;margin:24px 0;background:#f6f7f4}.self-paced{border-left:3px solid #111}.lookup-card{border-left:3px solid #922d20}.self-paced h3,.lookup-card h3,.notes-card h3{font-size:1.2rem;margin:0 0 12px}.self-paced ol,.lookup-card ol,.notes-card ul{padding-left:21px}.self-paced li,.lookup-card li,.notes-card li{margin:6px 0}.notes-card{background:#fff}.notes-card .write-this{border-top:1px solid #d4d9d5;padding-top:12px;margin-bottom:0}.lookup-facts{display:grid;gap:4px;margin:18px 0;padding:18px;background:#edf1ec}.lookup-facts label{display:block;font-weight:650;font-size:.95rem;margin:10px 0 4px}.lookup-fact{padding:12px;width:100%;max-width:790px;border:1px solid #9ba9a2;border-radius:8px;background:#fff;color:#172124;min-height:44px;font:inherit}.lookup-fact:focus{border-color:#922d20}
 @media(max-width:650px){.self-paced,.lookup-card,.notes-card{padding:17px}.lookup-facts{padding:14px}}
 @media print{.print-activity .self-paced,.print-activity .lookup-card,.print-activity .notes-card{padding:10px;border-color:#aaa;background:white}}
+/* Chapter banners (scripts/lib/midterms-banners.js): a full-width line drawing across the top of each chapter card. */
+#student-flow>.student-chapter>.chapter-banner{margin:-36px -36px 28px;aspect-ratio:6/1;max-height:168px;background:var(--vf-tint);border-bottom:3px solid var(--vf-accent);overflow:hidden}
+.chapter-banner svg{display:block;width:100%;height:100%}
+@media(max-width:650px){#student-flow>.student-chapter>.chapter-banner{margin:-22px -18px 20px}}
+@media print{.chapter-banner{display:none}}
