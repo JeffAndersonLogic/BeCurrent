@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-21",
+  reviewed: "2026-10-22",
   lead: {
     category: "World / International",
-    headline: "Family of prison officer killed by IRA receives state apology",
-    dek: "Brian Stack was crossing a street in Dublin in 1983 when he was shot in the back of the neck and died 18 months later.",
+    headline: "Why a student protest movement is challenging 12 years of Vučić rule in Serbia",
+    dek: "After two years of student protests, Serbians vote on Sunday in elections that could bring down the ruling party.",
     source: "BBC News",
-    published: "October 21, 2026",
-    url: "https://www.bbc.co.uk/news/articles/ck20rver1j31o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/4ef0/live/3613e220-cd70-11f1-bbdb-c39c91930f26.jpg",
+    published: "October 22, 2026",
+    url: "https://www.bbc.co.uk/news/articles/cmq8n3v94ql3o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/a379/live/0b1863f0-ce1c-11f1-906e-e3128518d85d.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/ck20rver1j31o?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cmq8n3v94ql3o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Bones found in Philadelphia ‘House of Horrors’ identified as animal bones",
-      dek: "Raymond Horsch, who has since died, could be responsible for the disappearance of seven women.",
+      headline: "Ilhan Omar after DC house raid: 'I can’t continue to live there'",
+      dek: "Omar has not been charged with a crime. She has maintained she has done nothing wrong.",
       source: "NewsNation",
-      published: "October 21, 2026",
-      url: "https://www.newsnationnow.com/us-news/bones-philadelphia-house-horror-animal/"
+      published: "October 22, 2026",
+      url: "https://www.newsnationnow.com/politics/ilhan-omar-dc-home-raid-i-cant-live-there/"
     },
     {
-      category: "Technology",
-      headline: "Why Trump thinks data centers should pay 'dividend' to local communities",
-      dek: "Data centers powering the AI boom have faced growing opposition over their significant electricity and water usage.",
-      source: "NewsNation",
-      published: "October 21, 2026",
-      url: "https://www.newsnationnow.com/business/tech/trump-data-centers-pay-communities-dividend/"
+      category: "Climate / Environment",
+      headline: "Damaging hail pelts Phoenix in rare storm",
+      dek: "Videos from the Arizona capital show people sheltering inside a car as hail smashes the windscreen, while intense downpours covered neighbourhoods in ice.",
+      source: "BBC News",
+      published: "October 22, 2026",
+      url: "https://www.bbc.co.uk/news/videos/cm5ynpz5jj5do?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / Security",
-      headline: "Russia says it is ready to resume talks with Ukraine and US to end war",
-      dek: "The announcement came after Russian President Vladimir Putin met US President Donald Trump's special envoy Steve Witkoff in St Petersburg.",
-      source: "BBC News",
-      published: "October 21, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cq3djn5nxx12o?at_medium=RSS&at_campaign=rss"
+      headline: "Russian missiles pound Kyiv as Moscow says over 800 Ukrainian drones downed",
+      dek: "KYIV, Ukraine (AP) — Russia bombarded Kyiv with ballistic missiles in an hourslong nighttime barrage, while the Russian military said Thursday that its air defenses intercepted over 800 drones fired by Ukraine at Moscow and other cities. At least four people were killed in Ukraine and dozens of othe",
+      source: "NewsNation",
+      published: "October 22, 2026",
+      url: "https://www.newsnationnow.com/business/ap-business/ap-russia-pounds-ukraines-capital-kyiv-with-missiles-and-drones-hours-after-agreeing-to-peace-talks/"
     },
     {
-      category: "World / Security",
-      headline: "US citizen Stephen Hubbard freed by Russia as Trump envoy meets Putin",
-      dek: "The 74-year-old former teacher, who was captured, has been released without any \"swap\" required, Trump says.",
+      category: "World / International",
+      headline: "Teacher in Oregon shooting said she pretended to be dead to survive",
+      dek: "The teacher said she could not help children because she was badly injured by the attacker.",
       source: "BBC News",
-      published: "October 21, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c6m24l9v3745o?at_medium=RSS&at_campaign=rss"
+      published: "October 22, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cqvgrmzdzgr7o?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
