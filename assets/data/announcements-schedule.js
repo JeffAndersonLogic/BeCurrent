@@ -126,7 +126,7 @@ window.BECURRENT_SCHEDULE={
 
   {date:'2026-10-22',topic:'WP2',topicTitle:'Who Has the Power? | The Battle for Congress',
    doNow:'One group has 217 seats. The other has 218. Why might one seat matter? Write your prediction.',
-   agenda:['Together: a Day 1 recap video on why presidents dread the midterms.','Together: why might one seat matter?','On your own: work down the page with headphones and copy the notes boxes.','On your own: sort power and promises, then look up a real House committee on house.gov.','On your own: test a campaign promise against the limits on one chamber.','Explain your thinking and file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   agenda:['Together: a Day 1 recap video on why presidents dread the midterms.','Together: why might one seat matter?','On your own: work down the page with headphones and copy the notes boxes.','On your own: sort power and promises, then look up a real House committee on house.gov.','On your own: test a campaign promise against the limits on one chamber.','Explain your thinking and file your work in Canvas.','After lunch: CNN 10 · Oct. 20: A new Mars mission aims to uncover the mysteries of its moons.','After lunch: daily news and your News Log.'],
    homework:'Finish WP2 - The Battle for Congress in Canvas.',homeworkDue:'the start of class on Monday, October 26'}
 ,
 

@@ -921,7 +921,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "On your own: sort power and promises, then look up a real House committee on house.gov.",
         "On your own: test a campaign promise against the limits on one chamber.",
         "Explain your thinking and file your work in Canvas.",
-        "After lunch: CNN 10, then daily news and your News Log."
+        "After lunch: CNN 10 · Oct. 20: A new Mars mission aims to uncover the mysteries of its moons.",
+        "After lunch: daily news and your News Log."
       ]
     },
     {
