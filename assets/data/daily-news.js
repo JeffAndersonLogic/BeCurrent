@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-23",
   lead: {
-    category: "World / International",
-    headline: "Six shot dead by gunmen at church funeral in Jordan, officials say",
-    dek: "Another 28 people are injured in the southern Karak governorate, and a manhunt is now under way.",
+    category: "U.S. / Democracy",
+    headline: "Home distillers rejoice as US Supreme Court considers whether to finally legalise moonshine",
+    dek: "The Supreme Court will consider in the new year whether the 1868 legislation forbidding home distilling should be overturned.",
     source: "BBC News",
     published: "October 23, 2026",
-    url: "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/fd9e/live/bb37b200-cee8-11f1-b441-2b33b063138f.jpg",
+    url: "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bffe/live/95770270-cef5-11f1-b441-2b33b063138f.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
+      category: "World / International",
+      headline: "Seven shot dead by gunmen at church funeral in Jordan, officials say",
+      dek: "Thirty-four people are also injured in the attack in southern Karak governorate, and a manhunt is now under way.",
+      source: "BBC News",
+      published: "October 23, 2026",
+      url: "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "Science / Environment",
+      headline: "Wales plans to ban steel pylons as government launches consultation",
+      dek: "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
+      source: "BBC News",
+      published: "October 23, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c9x28dgj2r0go?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "U.S. / Democracy",
+      headline: "Former FBI agents surrender, charged with lying to Congress",
+      dek: "Nikki Floris and Bradley Benavides allegedly lied to Congress about Hunter Biden's laptop.",
+      source: "NewsNation",
+      published: "October 23, 2026",
+      url: "https://www.newsnationnow.com/politics/former-fbi-agents-surrender-lying-congress/"
+    },
+    {
       category: "U.S. / Government",
-      headline: "Melania Trump brokers truce for Ukraine city 'on brink of disaster', White House says",
-      dek: "Ukraine and Russia have not confirmed the truce in Russian-occupied Oleshky, where residents have had to eat garden weeds to survive.",
+      headline: "White House says Melania Trump brokers truce for Ukraine city 'on brink of disaster'",
+      dek: "Ukraine and Russia confirm the truce in Russian-occupied Oleshky, where residents have had to eat garden weeds to survive.",
       source: "BBC News",
       published: "October 23, 2026",
       url: "https://www.bbc.co.uk/news/articles/c6vgxkvl4w5eo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      category: "Climate / Environment",
-      headline: "Scotland to be hit with 80mph wind gusts as Storm Boelo alert upgraded to amber",
-      dek: "It is due to be the second of two storms to hit Scotland over the weekend, with Storm Austen bringing heavy rain on Friday.",
-      source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cwkgjz3dpyj6o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      category: "World / Security",
-      headline: "Two Israeli soldiers killed in attack by suspected Palestinian gunmen in West Bank",
-      dek: "The two attackers were shot dead after a gun battle outside Hebron, four days before Israel's general election.",
-      source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cq4g1p974wxko?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      category: "U.S. / National",
-      headline: "NASA to give update on Artemis III mission",
-      dek: "Artemis III will send a crew to low-Earth orbit to test equipment for future moon landings.",
-      source: "NewsNation",
-      published: "October 23, 2026",
-      url: "https://www.newsnationnow.com/space/nasa-update-artemis-iii-mission/"
     }
   ]
 };
