@@ -173,3 +173,32 @@ summary{font-family:var(--vf-label);font-weight:650}
 [data-worksheet-question] .response{min-height:88px}
 #worksheet-confirmation{min-height:56px;height:64px}
 [data-worksheet-question] .eyebrow{margin-bottom:.6rem}
+
+/* BeCurrent scenario slides: paper, ink, the brand red, large comparison rows. */
+.scenario-table{width:100%;border-collapse:collapse;margin:1.2rem 0;color:#172124;background:#fffefb;font-family:system-ui,sans-serif;text-align:left}
+.scenario-table caption{text-align:left;font-size:1rem;font-weight:700;color:#505050;margin:0 0 .7rem}
+.scenario-table th,.scenario-table td{padding:.9rem 1rem;border-bottom:1px solid #bbb;font-size:1.05rem;line-height:1.4;vertical-align:top}
+.scenario-table thead th{background:#e8e9e7;border-top:4px solid #CE1400;font-weight:700}
+.scenario-table tbody th{border-left:4px solid #CE1400;font-weight:700}
+.slide-sources,.scenario-footnote{font-family:system-ui,sans-serif;font-size:.8rem!important;line-height:1.4!important;margin-top:1rem!important;color:#505050!important}
+.slide-sources a{color:inherit;text-decoration:underline}
+.projector-body[data-kind="scenario"] .projector-scene{min-height:0;padding:1rem 0}
+.projector-body[data-kind="scenario"] .projector-scene h1{font-size:clamp(2rem,4vw,4rem);margin:12px 0 18px}
+.projector-body[data-kind="scenario"] .screen-visual ul{font-size:clamp(1.1rem,2.15vw,2rem);line-height:1.4;max-width:1200px}
+.projector-body[data-kind="scenario"] .screen-visual li{margin:0 0 .55em}
+.projector-body[data-kind="scenario"] .scenario-table th,.projector-body[data-kind="scenario"] .scenario-table td{font-size:clamp(1rem,1.6vw,1.55rem);padding:1rem}
+.projector-body[data-kind="scenario"] .scenario-table caption{font-size:clamp(.85rem,1.25vw,1.1rem)}
+.projector-body[data-kind="scenario"] .slide-sources{max-width:1250px;font-size:clamp(12px,1vw,16px)!important}
+.midterms-os .phase-button[data-kind="scenario"]{background:#fffefb;border-top:4px solid #CE1400}
+@media(max-width:700px){.scenario-table th,.scenario-table td{padding:.5rem;font-size:.85rem}.projector-body[data-kind="scenario"] .scenario-table th,.projector-body[data-kind="scenario"] .scenario-table td{padding:.5rem;font-size:.85rem}}
+@media(max-height:800px) and (min-width:900px){
+ .projector-body[data-kind="scenario"] .projector-wrap{padding:20px 36px}
+ .projector-body[data-kind="scenario"] .projector-head{padding-bottom:12px}
+ .projector-body[data-kind="scenario"] .projector-scene{padding:12px 0}
+ .projector-body[data-kind="scenario"] .projector-scene h1{font-size:clamp(2rem,5.8vh,3rem);margin:10px 0 14px}
+ .projector-body[data-kind="scenario"] #projector-description{font-size:1.2rem;line-height:1.4}
+ .projector-body[data-kind="scenario"] .scenario-table{margin:.8rem 0}
+ .projector-body[data-kind="scenario"] .scenario-table th,.projector-body[data-kind="scenario"] .scenario-table td{font-size:1.2rem;line-height:1.35;padding:.7rem .85rem}
+ .projector-body[data-kind="scenario"] .slide-sources,.projector-body[data-kind="scenario"] .scenario-footnote{margin-top:.6rem!important}
+ .projector-body[data-kind="scenario"] .projector-footer{padding-top:10px}
+}

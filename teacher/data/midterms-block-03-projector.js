@@ -299,6 +299,422 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "scenario-three-outcomes",
+      "label": "Scenario 1 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Three possible outcomes",
+        "title": "Who controls Congress?",
+        "description": "Trump remains president in all three scenarios.",
+        "bullets": null,
+        "table": {
+          "caption": "Hypothetical control of the next Congress",
+          "headers": [
+            "Scenario",
+            "House",
+            "Senate"
+          ],
+          "rows": [
+            [
+              "1. Democratic check",
+              "Democratic",
+              "Democratic"
+            ],
+            [
+              "2. Split Congress",
+              "Democratic",
+              "Republican"
+            ],
+            [
+              "3. Republican control",
+              "Republican",
+              "Republican"
+            ]
+          ]
+        },
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-democratic-agenda",
+      "label": "Scenario 2 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Democratic House and Senate",
+        "title": "The opening agenda",
+        "description": "Illustrative first 100 hours; reported plans cover 100 days.",
+        "bullets": [
+          "ACA subsidies: proposed renewal or restoration",
+          "Tariffs: possible limits on presidential authority",
+          "Early votes signal Democratic priorities",
+          "Enactment still faces presidential action"
+        ],
+        "sources": [
+          {
+            "title": "Jeffries: stated priorities, October 14, 2026",
+            "url": "https://democraticleader.house.gov/media/press-releases/leader-jeffries-ms-now-were-going-relentlessly-focus-our-affordability-agenda"
+          },
+          {
+            "title": "AP: proposed first 100-days agenda, October 14, 2026",
+            "url": "https://apnews.com/article/018019529b14a6b3bc4a343a4e17c44f"
+          },
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-democratic-foreign",
+      "label": "Scenario 3 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Foreign policy",
+        "title": "Could Congress override a veto?",
+        "description": "Ukraine aid and Russia sanctions: possible coalition tests.",
+        "bullets": [
+          "Ukraine aid: coalition votes still needed",
+          "Russia sanctions: bipartisan support still needed",
+          "Override: two-thirds in each chamber",
+          "Simple majorities cannot override"
+        ],
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. Senate: voting thresholds",
+            "url": "https://www.senate.gov/about/powers-procedures/voting.htm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-democratic-oversight",
+      "label": "Scenario 4 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Oversight",
+        "title": "Investigations in both chambers",
+        "description": "Committee control could increase scrutiny of the administration.",
+        "bullets": [
+          "More hearings and document requests",
+          "Subpoenas under committee rules",
+          "Agency spending and conduct examined",
+          "Privilege disputes may slow enforcement",
+          "An investigation does not establish guilt"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: investigations",
+            "url": "https://www.senate.gov/about/powers-procedures/investigations.htm"
+          },
+          {
+            "title": "CRS: congressional oversight and limits",
+            "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF10015/IF10015.4.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-democratic-confirmations",
+      "label": "Scenario 5 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Nominations",
+        "title": "A possible confirmation freeze",
+        "description": "Democratic Senate control creates a strong personnel check.",
+        "bullets": [
+          "Hearings and votes could stall",
+          "Contested judicial nominees could face rejection",
+          "New cabinet nominees could face rejection",
+          "Existing officials keep their positions",
+          "Compromise nominees could still advance"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: judicial nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-split-budget",
+      "label": "Scenario 6 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 2 / Democratic House, Republican Senate",
+        "title": "Spending becomes a bargaining test",
+        "description": "A funding deadline can turn disagreement into a shutdown risk.",
+        "bullets": [
+          "House can block new funding bills",
+          "Senate can reject House proposals",
+          "Trump can reject a spending deal",
+          "Temporary funding may buy more time",
+          "An unresolved funding lapse risks shutdown"
+        ],
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-split-oversight",
+      "label": "Scenario 7 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 2 / House investigations",
+        "title": "One chamber can investigate",
+        "description": "A Republican Senate cannot cancel House committee oversight.",
+        "bullets": [
+          "Democratic chairs set House hearing priorities",
+          "Authorized subpoenas seek records and testimony",
+          "Senate may choose different investigations",
+          "Compliance disputes can reach courts",
+          "House investigations alone cannot remove Trump"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: investigations",
+            "url": "https://www.senate.gov/about/powers-procedures/investigations.htm"
+          },
+          {
+            "title": "CRS: congressional oversight and limits",
+            "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF10015/IF10015.4.pdf"
+          },
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-split-confirmations",
+      "label": "Scenario 8 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 2 / Senate confirmations",
+        "title": "Nominees can keep moving",
+        "description": "House control does not determine confirmation votes.",
+        "bullets": [
+          "Republican Senate controls its own schedule",
+          "Judicial nominees could continue advancing",
+          "Cabinet nominees could continue advancing",
+          "Individual senators can still withhold support"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: judicial nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-republican-agenda",
+      "label": "Scenario 9 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 3 / Republican House and Senate",
+        "title": "More room for Trump’s agenda",
+        "description": "Aligned chamber leadership could speed legislative priorities.",
+        "bullets": [
+          "Border and immigration proposals could advance",
+          "Energy priorities could gain floor time",
+          "Budget measures may use reconciliation",
+          "Narrow margins can empower dissenters",
+          "Many bills still face Senate hurdles"
+        ],
+        "sources": [
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          },
+          {
+            "title": "U.S. Senate: voting thresholds",
+            "url": "https://www.senate.gov/about/powers-procedures/voting.htm"
+          },
+          {
+            "title": "CRS: reconciliation and the Byrd Rule",
+            "url": "https://www.congress.gov/crs_external_products/RL/PDF/RL30862/RL30862.17.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-republican-tax",
+      "label": "Scenario 10 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 3 / Taxes and regulation",
+        "title": "What could change next?",
+        "description": "The starting point includes legislation already enacted in 2025.",
+        "bullets": [
+          "Major individual tax rates already permanent",
+          "Temporary provisions could face extension proposals",
+          "Congress could pursue further tax changes",
+          "Agencies could continue deregulatory rulemaking",
+          "Statutes and courts still impose limits"
+        ],
+        "sources": [
+          {
+            "title": "IRS: Revenue Procedure 2025-32, Section 2",
+            "url": "https://www.irs.gov/irb/2025-45_IRB"
+          },
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-republican-confirmations",
+      "label": "Scenario 11 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 3 / Personnel",
+        "title": "A clearer confirmation path",
+        "description": "Republican Senate control could speed judges and officials.",
+        "bullets": [
+          "Leadership can prioritize confirmation votes",
+          "Judicial appointments could move faster",
+          "Cabinet replacements could advance",
+          "Vacancies and vetting still shape timing",
+          "Party control does not guarantee approval"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: judicial nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scenario-comparison",
+      "label": "Scenario 12 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario comparison",
+        "title": "Gridlock and presidential latitude",
+        "description": "Relative expectations, not probabilities or guaranteed outcomes.",
+        "bullets": null,
+        "table": {
+          "caption": "Expected effects on the Trump administration",
+          "headers": [
+            "Congress",
+            "Legislative gridlock",
+            "Nomination path",
+            "Presidential latitude*"
+          ],
+          "rows": [
+            [
+              "Democratic House + Senate",
+              "High",
+              "Strong obstacles",
+              "Most constrained"
+            ],
+            [
+              "Democratic House / Republican Senate",
+              "High",
+              "More favorable",
+              "Mixed"
+            ],
+            [
+              "Republican House + Senate",
+              "Lower, not absent",
+              "Most favorable",
+              "Broadest of these three"
+            ]
+          ]
+        },
+        "footnote": "*Latitude means relative room to pursue priorities. Existing legal limits apply in every scenario.",
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: voting thresholds",
+            "url": "https://www.senate.gov/about/powers-procedures/voting.htm"
+          }
+        ]
+      }
+    },
+    {
       "id": "file",
       "label": "Explain / Canvas",
       "kind": "lesson",

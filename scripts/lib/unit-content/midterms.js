@@ -188,6 +188,7 @@ for(const t of topics){t.flow=lessonReadings[t.n];t.status='ready';t.inClass='Be
 require('../midterms-revision')({meta,topics,sources,clips});
 require('../midterms-engagement')({meta,topics,clips});
 require('../midterms-independent')({meta,topics});
+topics[2].presentationSlides=require('../midterms-scenarios');
 // Election Day is a scheduled viewing day beside the five topics, not a sixth topic.
 const days=[require('../midterms-election-day')];
 module.exports={meta,topics,sources,clips,days};

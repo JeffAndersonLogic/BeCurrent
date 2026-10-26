@@ -27,6 +27,17 @@ const {topics}=require('../lib/unit-content/midterms');
   await teacher.locator(`[data-phase-index="${at('desk')}"]`).click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('/daily/'));
   assert((await projection.locator('body').innerText()).includes('The Lead. Your Pick.'));
  }
+ // The new analysis section deep-links, syncs, and presents real comparison tables.
+ await teacher.goto(root+'/teacher/midterms-topic-03-os.html');
+ await projection.goto(root+'/teacher/midterms-topic-03-projector.html#scenario-three-outcomes');
+ assert.strictEqual(await projection.getAttribute('body','data-kind'),'scenario');
+ assert.strictEqual(await projection.locator('.scenario-table tbody tr').count(),3);
+ assert(await projection.locator('.slide-sources a').count());
+ const scenarioIds=await teacher.evaluate(()=>window.BECURRENT_CONTROL_LESSON.phases.map((p,i)=>p.kind==='scenario'?i:null).filter(i=>i!==null));
+ for(const index of scenarioIds){await teacher.locator(`[data-phase-index="${index}"]`).click();await projection.waitForFunction(n=>document.getElementById('projector-phase').textContent.startsWith(String(n+1).padStart(2,'0')),index);assert.strictEqual(await projection.getAttribute('body','data-kind'),'scenario');assert(await projection.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'scenario slide overflows horizontally');assert(await teacher.isDisabled('#timer-toggle'));}
+ await projection.goto(root+'/teacher/midterms-topic-03-projector.html#scenario-comparison');
+ assert.strictEqual(await projection.locator('.scenario-table thead th').count(),4);
+ assert((await projection.textContent('.scenario-footnote')).includes('legal limits'));
  await teacher.goto(root+'/teacher/midterms.html');assert.strictEqual(await teacher.getByRole('link',{name:'Launch teaching OS →',exact:true}).count(),5);
  await teacher.setViewportSize({width:768,height:1024});await teacher.goto(root+'/teacher/midterms-topic-05-os.html');assert(await teacher.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'tablet OS overflows');
  assert.deepStrictEqual(errors,[]);console.log('PASS: five OS pages, isolated projector data, bidirectional sync, timers, lunch pause, after-lunch news, class-section notes, reload, tablet layout.');

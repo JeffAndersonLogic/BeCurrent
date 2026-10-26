@@ -487,6 +487,18 @@ Students own the entire lesson path. Both opening clips, all six notes boxes, th
 - Notes slide: How does a bill become a law?
 - 33–45: Apply the idea (12 minutes)
 - Notes slide: How to make a strong judgment
+- Scenario analysis: Who controls Congress?
+- Scenario analysis: The opening agenda
+- Scenario analysis: Could Congress override a veto?
+- Scenario analysis: Investigations in both chambers
+- Scenario analysis: A possible confirmation freeze
+- Scenario analysis: Spending becomes a bargaining test
+- Scenario analysis: One chamber can investigate
+- Scenario analysis: Nominees can keep moving
+- Scenario analysis: More room for Trump’s agenda
+- Scenario analysis: What could change next?
+- Scenario analysis: A clearer confirmation path
+- Scenario analysis: Gridlock and presidential latitude
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
@@ -621,6 +633,171 @@ Write this down: One chamber cannot ordinarily make a law alone.
 - Explain fairly why someone could reach another judgment.
 
 Write this down: Divided government can improve accountability and make governing harder at the same time.
+
+### Scenario presentation extension
+
+Added within the existing application window. No additional worksheet response is required. These are conditional analyses, not election forecasts.
+
+**1. Who controls Congress?** (Three possible outcomes)
+
+Trump remains president in all three scenarios.
+
+- 1. Democratic check / Democratic / Democratic
+- 2. Split Congress / Democratic / Republican
+- 3. Republican control / Republican / Republican
+
+Teacher note: These are conditional configurations, not forecasts. Democratic control of both chambers means unified Democratic control of Congress, while government remains divided because the president is Republican. The new Congress ordinarily starts January 3, 2027.
+
+[National Archives: Constitution, Articles I and II](https://www.archives.gov/founding-docs/constitution-transcript)
+
+**2. The opening agenda** (Scenario 1 / Democratic House and Senate)
+
+Illustrative first 100 hours; reported plans cover 100 days.
+
+- ACA subsidies: proposed renewal or restoration
+- Tariffs: possible limits on presidential authority
+- Early votes signal Democratic priorities
+- Enactment still faces presidential action
+
+Teacher note: The October 14 Jeffries statement identifies ACA tax credits and reclaiming congressional tariff authority as party priorities. AP describes a first 100-days agenda, not a verified first 100-hours commitment. Use 100 hours here only as an illustrative opening window. These proposals require a legislative path; a new majority cannot simply repeal presidential tariff authority by announcing it.
+
+[Jeffries: stated priorities, October 14, 2026](https://democraticleader.house.gov/media/press-releases/leader-jeffries-ms-now-were-going-relentlessly-focus-our-affordability-agenda) / [AP: proposed first 100-days agenda, October 14, 2026](https://apnews.com/article/018019529b14a6b3bc4a343a4e17c44f) / [U.S. House: legislative process](https://www.house.gov/the-house-explained/the-legislative-process)
+
+**3. Could Congress override a veto?** (Scenario 1 / Foreign policy)
+
+Ukraine aid and Russia sanctions: possible coalition tests.
+
+- Ukraine aid: coalition votes still needed
+- Russia sanctions: bipartisan support still needed
+- Override: two-thirds in each chamber
+- Simple majorities cannot override
+
+Teacher note: A veto-proof coalition is a possibility to test on a particular bill, not an automatic consequence of Democratic control. Both chambers need two-thirds of members present and voting, with a quorum. With all members voting, that is 290 House votes and 67 Senate votes. Support may differ between Ukraine aid and Russia sanctions. This slide predicts neither an override nor a Trump veto.
+
+[National Archives: Constitution, Articles I and II](https://www.archives.gov/founding-docs/constitution-transcript) / [U.S. Senate: voting thresholds](https://www.senate.gov/about/powers-procedures/voting.htm)
+
+**4. Investigations in both chambers** (Scenario 1 / Oversight)
+
+Committee control could increase scrutiny of the administration.
+
+- More hearings and document requests
+- Subpoenas under committee rules
+- Agency spending and conduct examined
+- Privilege disputes may slow enforcement
+- An investigation does not establish guilt
+
+Teacher note: A majority can set committee priorities and use authorized investigative tools for legitimate legislative purposes. Subpoenas are not unlimited. Executive privilege, constitutional protections, negotiations, and litigation can constrain or delay compliance. The potential intensity of oversight is an analytical judgment, not a finding of wrongdoing.
+
+[U.S. Senate: investigations](https://www.senate.gov/about/powers-procedures/investigations.htm) / [CRS: congressional oversight and limits](https://www.congress.gov/crs_external_products/IF/PDF/IF10015/IF10015.4.pdf)
+
+**5. A possible confirmation freeze** (Scenario 1 / Nominations)
+
+Democratic Senate control creates a strong personnel check.
+
+- Hearings and votes could stall
+- Contested judicial nominees could face rejection
+- New cabinet nominees could face rejection
+- Existing officials keep their positions
+- Compromise nominees could still advance
+
+Teacher note: The Senate can delay, reject, or decline to act on nominations. A broad freeze is possible but not guaranteed for every conservative nominee. Congress changing hands does not automatically dismiss sitting cabinet officers or remove life-tenured judges. Acting appointments and recess appointments follow separate legal limits.
+
+[U.S. Senate: nominations](https://www.senate.gov/about/powers-procedures/nominations.htm) / [U.S. Senate: judicial nominations](https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm)
+
+**6. Spending becomes a bargaining test** (Scenario 2 / Democratic House, Republican Senate)
+
+A funding deadline can turn disagreement into a shutdown risk.
+
+- House can block new funding bills
+- Senate can reject House proposals
+- Trump can reject a spending deal
+- Temporary funding may buy more time
+- An unresolved funding lapse risks shutdown
+
+Teacher note: House, Senate, and president must resolve disagreements over appropriations. A shutdown follows a funding lapse, not divided control by itself. Temporary funding legislation can prevent or end a lapse. Agency functions and effects vary; a shutdown does not mean every government operation stops.
+
+[National Archives: Constitution, Articles I and II](https://www.archives.gov/founding-docs/constitution-transcript) / [U.S. House: legislative process](https://www.house.gov/the-house-explained/the-legislative-process)
+
+**7. One chamber can investigate** (Scenario 2 / House investigations)
+
+A Republican Senate cannot cancel House committee oversight.
+
+- Democratic chairs set House hearing priorities
+- Authorized subpoenas seek records and testimony
+- Senate may choose different investigations
+- Compliance disputes can reach courts
+- House investigations alone cannot remove Trump
+
+Teacher note: Each chamber has its own investigative authority. A House subpoena does not need Senate approval, though it must satisfy committee rules and legal requirements. Investigation, impeachment by the House, and conviction by the Senate are distinct processes. None follows automatically from a party winning seats.
+
+[U.S. Senate: investigations](https://www.senate.gov/about/powers-procedures/investigations.htm) / [CRS: congressional oversight and limits](https://www.congress.gov/crs_external_products/IF/PDF/IF10015/IF10015.4.pdf) / [National Archives: Constitution, Articles I and II](https://www.archives.gov/founding-docs/constitution-transcript)
+
+**8. Nominees can keep moving** (Scenario 2 / Senate confirmations)
+
+House control does not determine confirmation votes.
+
+- Republican Senate controls its own schedule
+- Judicial nominees could continue advancing
+- Cabinet nominees could continue advancing
+- Individual senators can still withhold support
+
+Teacher note: Confirmation is a Senate function. A Democratic House can investigate executive conduct and use legislative leverage, but it has no confirmation vote. A Republican Senate gives Trump a favorable route, not a guarantee that every nominee receives approval.
+
+[U.S. Senate: nominations](https://www.senate.gov/about/powers-procedures/nominations.htm) / [U.S. Senate: judicial nominations](https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm)
+
+**9. More room for Trump’s agenda** (Scenario 3 / Republican House and Senate)
+
+Aligned chamber leadership could speed legislative priorities.
+
+- Border and immigration proposals could advance
+- Energy priorities could gain floor time
+- Budget measures may use reconciliation
+- Narrow margins can empower dissenters
+- Many bills still face Senate hurdles
+
+Teacher note: This is a directional analysis, not a verified 2027 legislative calendar. Unified control can align committee and floor priorities. Reconciliation can advance eligible budget measures under special rules, but it is not an unrestricted route for unrelated policy. Ordinary legislation may still face a 60-vote cloture threshold under current rules.
+
+[U.S. House: legislative process](https://www.house.gov/the-house-explained/the-legislative-process) / [U.S. Senate: voting thresholds](https://www.senate.gov/about/powers-procedures/voting.htm) / [CRS: reconciliation and the Byrd Rule](https://www.congress.gov/crs_external_products/RL/PDF/RL30862/RL30862.17.pdf)
+
+**10. What could change next?** (Scenario 3 / Taxes and regulation)
+
+The starting point includes legislation already enacted in 2025.
+
+- Major individual tax rates already permanent
+- Temporary provisions could face extension proposals
+- Congress could pursue further tax changes
+- Agencies could continue deregulatory rulemaking
+- Statutes and courts still impose limits
+
+Teacher note: The IRS confirms the 2025 law made the TCJA individual tax rates permanent. Do not describe that as an uncompleted post-2026 task. Permanent means no scheduled expiration under that law, not that a future Congress cannot amend it. Future extensions concern remaining temporary provisions. Deregulation can involve agency action or legislation and remains subject to statutory authority, required procedures, and judicial review.
+
+[IRS: Revenue Procedure 2025-32, Section 2](https://www.irs.gov/irb/2025-45_IRB) / [National Archives: Constitution, Articles I and II](https://www.archives.gov/founding-docs/constitution-transcript) / [U.S. House: legislative process](https://www.house.gov/the-house-explained/the-legislative-process)
+
+**11. A clearer confirmation path** (Scenario 3 / Personnel)
+
+Republican Senate control could speed judges and officials.
+
+- Leadership can prioritize confirmation votes
+- Judicial appointments could move faster
+- Cabinet replacements could advance
+- Vacancies and vetting still shape timing
+- Party control does not guarantee approval
+
+Teacher note: Confirmation still requires nominations, available positions, Senate processing, and sufficient votes. Republican control could smooth the path compared with a Democratic Senate. Smooth and rapid are possibilities, not promises. House control matters for legislation but does not add a vote to confirmations.
+
+[U.S. Senate: nominations](https://www.senate.gov/about/powers-procedures/nominations.htm) / [U.S. Senate: judicial nominations](https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm)
+
+**12. Gridlock and presidential latitude** (Scenario comparison)
+
+Relative expectations, not probabilities or guaranteed outcomes.
+
+- Democratic House + Senate / High / Strong obstacles / Most constrained
+- Democratic House / Republican Senate / High / More favorable / Mixed
+- Republican House + Senate / Lower, not absent / Most favorable / Broadest of these three
+
+Teacher note: The comparison describes expected congressional constraints on Trump’s priorities, assuming the majorities generally hold together. Both Democratic control and split Congress can produce high legislative gridlock. The main difference is Senate control of confirmations. Executive legal powers do not expand or disappear because Congress changes parties; laws, funding, courts, and political decisions still matter.
+
+[National Archives: Constitution, Articles I and II](https://www.archives.gov/founding-docs/constitution-transcript) / [U.S. Senate: nominations](https://www.senate.gov/about/powers-procedures/nominations.htm) / [U.S. Senate: voting thresholds](https://www.senate.gov/about/powers-procedures/voting.htm)
 
 ### Topic rubric (5 points)
 

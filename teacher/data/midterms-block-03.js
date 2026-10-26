@@ -443,6 +443,566 @@
       }
     },
     {
+      "id": "scenario-three-outcomes",
+      "label": "Scenario 1 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Three possible outcomes",
+        "title": "Who controls Congress?",
+        "description": "Trump remains president in all three scenarios.",
+        "bullets": null,
+        "table": {
+          "caption": "Hypothetical control of the next Congress",
+          "headers": [
+            "Scenario",
+            "House",
+            "Senate"
+          ],
+          "rows": [
+            [
+              "1. Democratic check",
+              "Democratic",
+              "Democratic"
+            ],
+            [
+              "2. Split Congress",
+              "Democratic",
+              "Republican"
+            ],
+            [
+              "3. Republican control",
+              "Republican",
+              "Republican"
+            ]
+          ]
+        },
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "These are conditional configurations, not forecasts. Democratic control of both chambers means unified Democratic control of Congress, while government remains divided because the president is Republican. The new Congress ordinarily starts January 3, 2027.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-democratic-agenda",
+      "label": "Scenario 2 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Democratic House and Senate",
+        "title": "The opening agenda",
+        "description": "Illustrative first 100 hours; reported plans cover 100 days.",
+        "bullets": [
+          "ACA subsidies: proposed renewal or restoration",
+          "Tariffs: possible limits on presidential authority",
+          "Early votes signal Democratic priorities",
+          "Enactment still faces presidential action"
+        ],
+        "sources": [
+          {
+            "title": "Jeffries: stated priorities, October 14, 2026",
+            "url": "https://democraticleader.house.gov/media/press-releases/leader-jeffries-ms-now-were-going-relentlessly-focus-our-affordability-agenda"
+          },
+          {
+            "title": "AP: proposed first 100-days agenda, October 14, 2026",
+            "url": "https://apnews.com/article/018019529b14a6b3bc4a343a4e17c44f"
+          },
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "The October 14 Jeffries statement identifies ACA tax credits and reclaiming congressional tariff authority as party priorities. AP describes a first 100-days agenda, not a verified first 100-hours commitment. Use 100 hours here only as an illustrative opening window. These proposals require a legislative path; a new majority cannot simply repeal presidential tariff authority by announcing it.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-democratic-foreign",
+      "label": "Scenario 3 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Foreign policy",
+        "title": "Could Congress override a veto?",
+        "description": "Ukraine aid and Russia sanctions: possible coalition tests.",
+        "bullets": [
+          "Ukraine aid: coalition votes still needed",
+          "Russia sanctions: bipartisan support still needed",
+          "Override: two-thirds in each chamber",
+          "Simple majorities cannot override"
+        ],
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. Senate: voting thresholds",
+            "url": "https://www.senate.gov/about/powers-procedures/voting.htm"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "A veto-proof coalition is a possibility to test on a particular bill, not an automatic consequence of Democratic control. Both chambers need two-thirds of members present and voting, with a quorum. With all members voting, that is 290 House votes and 67 Senate votes. Support may differ between Ukraine aid and Russia sanctions. This slide predicts neither an override nor a Trump veto.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-democratic-oversight",
+      "label": "Scenario 4 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Oversight",
+        "title": "Investigations in both chambers",
+        "description": "Committee control could increase scrutiny of the administration.",
+        "bullets": [
+          "More hearings and document requests",
+          "Subpoenas under committee rules",
+          "Agency spending and conduct examined",
+          "Privilege disputes may slow enforcement",
+          "An investigation does not establish guilt"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: investigations",
+            "url": "https://www.senate.gov/about/powers-procedures/investigations.htm"
+          },
+          {
+            "title": "CRS: congressional oversight and limits",
+            "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF10015/IF10015.4.pdf"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "A majority can set committee priorities and use authorized investigative tools for legitimate legislative purposes. Subpoenas are not unlimited. Executive privilege, constitutional protections, negotiations, and litigation can constrain or delay compliance. The potential intensity of oversight is an analytical judgment, not a finding of wrongdoing.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-democratic-confirmations",
+      "label": "Scenario 5 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 1 / Nominations",
+        "title": "A possible confirmation freeze",
+        "description": "Democratic Senate control creates a strong personnel check.",
+        "bullets": [
+          "Hearings and votes could stall",
+          "Contested judicial nominees could face rejection",
+          "New cabinet nominees could face rejection",
+          "Existing officials keep their positions",
+          "Compromise nominees could still advance"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: judicial nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "The Senate can delay, reject, or decline to act on nominations. A broad freeze is possible but not guaranteed for every conservative nominee. Congress changing hands does not automatically dismiss sitting cabinet officers or remove life-tenured judges. Acting appointments and recess appointments follow separate legal limits.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-split-budget",
+      "label": "Scenario 6 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 2 / Democratic House, Republican Senate",
+        "title": "Spending becomes a bargaining test",
+        "description": "A funding deadline can turn disagreement into a shutdown risk.",
+        "bullets": [
+          "House can block new funding bills",
+          "Senate can reject House proposals",
+          "Trump can reject a spending deal",
+          "Temporary funding may buy more time",
+          "An unresolved funding lapse risks shutdown"
+        ],
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "House, Senate, and president must resolve disagreements over appropriations. A shutdown follows a funding lapse, not divided control by itself. Temporary funding legislation can prevent or end a lapse. Agency functions and effects vary; a shutdown does not mean every government operation stops.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-split-oversight",
+      "label": "Scenario 7 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 2 / House investigations",
+        "title": "One chamber can investigate",
+        "description": "A Republican Senate cannot cancel House committee oversight.",
+        "bullets": [
+          "Democratic chairs set House hearing priorities",
+          "Authorized subpoenas seek records and testimony",
+          "Senate may choose different investigations",
+          "Compliance disputes can reach courts",
+          "House investigations alone cannot remove Trump"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: investigations",
+            "url": "https://www.senate.gov/about/powers-procedures/investigations.htm"
+          },
+          {
+            "title": "CRS: congressional oversight and limits",
+            "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF10015/IF10015.4.pdf"
+          },
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "Each chamber has its own investigative authority. A House subpoena does not need Senate approval, though it must satisfy committee rules and legal requirements. Investigation, impeachment by the House, and conviction by the Senate are distinct processes. None follows automatically from a party winning seats.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-split-confirmations",
+      "label": "Scenario 8 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 2 / Senate confirmations",
+        "title": "Nominees can keep moving",
+        "description": "House control does not determine confirmation votes.",
+        "bullets": [
+          "Republican Senate controls its own schedule",
+          "Judicial nominees could continue advancing",
+          "Cabinet nominees could continue advancing",
+          "Individual senators can still withhold support"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: judicial nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "Confirmation is a Senate function. A Democratic House can investigate executive conduct and use legislative leverage, but it has no confirmation vote. A Republican Senate gives Trump a favorable route, not a guarantee that every nominee receives approval.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-republican-agenda",
+      "label": "Scenario 9 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 3 / Republican House and Senate",
+        "title": "More room for Trump’s agenda",
+        "description": "Aligned chamber leadership could speed legislative priorities.",
+        "bullets": [
+          "Border and immigration proposals could advance",
+          "Energy priorities could gain floor time",
+          "Budget measures may use reconciliation",
+          "Narrow margins can empower dissenters",
+          "Many bills still face Senate hurdles"
+        ],
+        "sources": [
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          },
+          {
+            "title": "U.S. Senate: voting thresholds",
+            "url": "https://www.senate.gov/about/powers-procedures/voting.htm"
+          },
+          {
+            "title": "CRS: reconciliation and the Byrd Rule",
+            "url": "https://www.congress.gov/crs_external_products/RL/PDF/RL30862/RL30862.17.pdf"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "This is a directional analysis, not a verified 2027 legislative calendar. Unified control can align committee and floor priorities. Reconciliation can advance eligible budget measures under special rules, but it is not an unrestricted route for unrelated policy. Ordinary legislation may still face a 60-vote cloture threshold under current rules.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-republican-tax",
+      "label": "Scenario 10 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 3 / Taxes and regulation",
+        "title": "What could change next?",
+        "description": "The starting point includes legislation already enacted in 2025.",
+        "bullets": [
+          "Major individual tax rates already permanent",
+          "Temporary provisions could face extension proposals",
+          "Congress could pursue further tax changes",
+          "Agencies could continue deregulatory rulemaking",
+          "Statutes and courts still impose limits"
+        ],
+        "sources": [
+          {
+            "title": "IRS: Revenue Procedure 2025-32, Section 2",
+            "url": "https://www.irs.gov/irb/2025-45_IRB"
+          },
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. House: legislative process",
+            "url": "https://www.house.gov/the-house-explained/the-legislative-process"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "The IRS confirms the 2025 law made the TCJA individual tax rates permanent. Do not describe that as an uncompleted post-2026 task. Permanent means no scheduled expiration under that law, not that a future Congress cannot amend it. Future extensions concern remaining temporary provisions. Deregulation can involve agency action or legislation and remains subject to statutory authority, required procedures, and judicial review.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-republican-confirmations",
+      "label": "Scenario 11 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario 3 / Personnel",
+        "title": "A clearer confirmation path",
+        "description": "Republican Senate control could speed judges and officials.",
+        "bullets": [
+          "Leadership can prioritize confirmation votes",
+          "Judicial appointments could move faster",
+          "Cabinet replacements could advance",
+          "Vacancies and vetting still shape timing",
+          "Party control does not guarantee approval"
+        ],
+        "sources": [
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: judicial nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations/judicial-nominations-overview.htm"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "Confirmation still requires nominations, available positions, Senate processing, and sufficient votes. Republican control could smooth the path compared with a Democratic Senate. Smooth and rapid are possibilities, not promises. House control matters for legislation but does not add a vote to confirmations.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
+      "id": "scenario-comparison",
+      "label": "Scenario 12 / 12",
+      "kind": "scenario",
+      "time": "Analysis",
+      "start": 45,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Scenario comparison",
+        "title": "Gridlock and presidential latitude",
+        "description": "Relative expectations, not probabilities or guaranteed outcomes.",
+        "bullets": null,
+        "table": {
+          "caption": "Expected effects on the Trump administration",
+          "headers": [
+            "Congress",
+            "Legislative gridlock",
+            "Nomination path",
+            "Presidential latitude*"
+          ],
+          "rows": [
+            [
+              "Democratic House + Senate",
+              "High",
+              "Strong obstacles",
+              "Most constrained"
+            ],
+            [
+              "Democratic House / Republican Senate",
+              "High",
+              "More favorable",
+              "Mixed"
+            ],
+            [
+              "Republican House + Senate",
+              "Lower, not absent",
+              "Most favorable",
+              "Broadest of these three"
+            ]
+          ]
+        },
+        "footnote": "*Latitude means relative room to pursue priorities. Existing legal limits apply in every scenario.",
+        "sources": [
+          {
+            "title": "National Archives: Constitution, Articles I and II",
+            "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+          },
+          {
+            "title": "U.S. Senate: nominations",
+            "url": "https://www.senate.gov/about/powers-procedures/nominations.htm"
+          },
+          {
+            "title": "U.S. Senate: voting thresholds",
+            "url": "https://www.senate.gov/about/powers-procedures/voting.htm"
+          }
+        ]
+      },
+      "intel": {
+        "land": "Congressional control changes opportunities and constraints; it does not guarantee an outcome.",
+        "ask": "Which institutional rule explains the possible outcome on this slide?",
+        "listenFor": "A conditional explanation using the specific powers and limits on this slide.",
+        "protect": "Keep forecasts separate from verified facts. Preserve the final Canvas filing time.",
+        "cut": "Use the final comparison table if the application window is nearly over.",
+        "move": "Use as an optional presentation extension within the application window. Students may remain on their independent worksheet; no additional response is required.",
+        "model": "The comparison describes expected congressional constraints on Trump’s priorities, assuming the majorities generally hold together. Both Democratic control and split Congress can produce high legislative gridlock. The main difference is Senate control of confirmations. Executive legal powers do not expand or disappear because Congress changes parties; laws, funding, courts, and political decisions still matter.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
+        "avoid": "Party control alone does not guarantee a veto override, a confirmation freeze, or a policy change.",
+        "reteach": "If most students treat a scenario as guaranteed, name the decision, institution, and extra votes still required."
+      }
+    },
+    {
       "id": "file",
       "label": "Explain / Canvas",
       "kind": "lesson",
