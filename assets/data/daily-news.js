@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-10-26",
   lead: {
-    category: "World / International",
-    headline: "Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement",
-    dek: "The populist right-wing leader of 12 years says it is \"clear\" his party has lost the vote billed as a referendum on the country's future.",
-    source: "BBC News",
+    category: "U.S. / National",
+    headline: "'Headbutt maneuver': The move an F-16 used near Trump at Mar-a-Lago",
+    dek: "The North American Aerospace Defense Command said it intercepted a small plane after it flew into a temporary flight restriction zone over Trump's Palm Beach estate.",
+    source: "NewsNation",
     published: "October 26, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f0c7/live/712973e0-d110-11f1-b441-2b33b063138f.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss"
+    url: "https://www.newsnationnow.com/politics/headbutt-maneuver-intercept-plane-maralago-trump-early-voting/",
+    image: "",
+    imageCredit: "",
+    imageCreditUrl: ""
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "15-year-old arrested in connection to shooting near Florida A&M",
-      dek: "The Saturday shooting near the Florida A&M campus injured 12 people, six of them children.",
-      source: "NewsNation",
+      category: "World / International",
+      headline: "How 'Lula's Army' WhatsApp chat helped turn Brazil election around",
+      dek: "As polls pointed to defeat, millions joined a 'Lula's Army' channel that is credited with helping transform online enthusiasm into real-world mobilisation.",
+      source: "BBC News",
       published: "October 26, 2026",
-      url: "https://www.newsnationnow.com/crime/gun-violence/15-year-old-arrested-shooting-florida-am/"
+      url: "https://www.bbc.co.uk/news/articles/cwz0vg4v3ndeo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Technology",
-      headline: "Anthropic files for potentially the biggest IPO ever even as CEO warns of risk to humanity from AI",
-      dek: "SAN FRANCISCO (AP) — Artificial intelligence giant Anthropic filed papers Monday for what could be the biggest initial public offering of stock ever even as its top executive warns that advanced AI could pose an existential threat to humanity. The filing sets up the San Francisco company for a Wall ",
-      source: "NewsNation",
-      published: "October 26, 2026",
-      url: "https://www.newsnationnow.com/business/tech/ai/ap-artificial-intelligence-giant-anthropic-files-papers-to-sell-shares-to-the-public-for-the-first-time/"
-    },
-    {
-      category: "World / Security",
-      headline: "Nurse killed in attack while responding to Ebola alert in DR Congo",
-      dek: "Local youths reportedly accused the health workers of contaminating water sources and spreading Ebola.",
+      headline: "Anthropic warns of 'catastrophic risk' to humankind ahead of blockbuster share listing",
+      dek: "The company will be the first true artificial intelligence company to go public as tech firms continue to invest heavily in AI.",
       source: "BBC News",
       published: "October 26, 2026",
-      url: "https://www.bbc.co.uk/news/articles/crx2dyd24188o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cq398p1wd1evo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / Security",
-      headline: "Chris Brown given suspended eight-month prison sentence over nightclub attack",
-      dek: "The R&B star previously pleaded guilty to affray, after attacking a music producer with a glass bottle.",
+      category: "U.S. / National",
+      headline: "Catholic bishops apologise for 'exploited' Trump meeting",
+      dek: "Two bishops in images that show them praying with Trump have said they believed the meeting was private.",
       source: "BBC News",
       published: "October 26, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cq3dje4g4d5jo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cw8rz1d286v3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "U.S. / Government",
+      headline: "Watch: BBC asks Democrat El-Sayed about tight Michigan Senate race",
+      dek: "The BBC's Sarah Smith asks Democrat Abdul El-Sayed why polls suggest his contest against Republican Mike Rogers is so close.",
+      source: "BBC News",
+      published: "October 26, 2026",
+      url: "https://www.bbc.co.uk/news/videos/cmx2dj4z6wz6o?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
