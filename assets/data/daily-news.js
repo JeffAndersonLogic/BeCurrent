@@ -1,49 +1,41 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-23",
+  reviewed: "2026-10-26",
   lead: {
     category: "U.S. / Democracy",
-    headline: "Home distillers rejoice as US Supreme Court considers whether to finally legalise moonshine",
-    dek: "The Supreme Court will consider in the new year whether the 1868 legislation forbidding home distilling should be overturned.",
+    headline: "Trump administration sues to block certification of upcoming Alaska election",
+    dek: "The justice department has filed a lawsuit arguing that the inclusion of two candidates named Dan Sullivan could confuse voters.",
     source: "BBC News",
     published: "October 23, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bffe/live/95770270-cef5-11f1-b441-2b33b063138f.jpg",
+    url: "https://www.bbc.co.uk/news/articles/c678pv4krx37o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/056d/live/ef958c50-cef9-11f1-a7ee-733e71112503.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c678pv4krx37o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "Seven shot dead by gunmen at church funeral in Jordan, officials say",
-      dek: "Thirty-four people are also injured in the attack in southern Karak governorate, and a manhunt is now under way.",
+      category: "U.S. / Democracy",
+      headline: "Obama attacks Trump as he campaigns for Democrats ahead of midterm elections",
+      dek: "Obama said the election was \"the last best chance to at least rein in some of the foolishness of this administration\".",
       source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"
+      published: "October 25, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cmj6jwe1j1gjo?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "Science / Environment",
-      headline: "Wales plans to ban steel pylons as government launches consultation",
-      dek: "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
+      category: "Economy",
+      headline: "White House lifts tariffs on some Canadian goods as midterm elections loom",
+      dek: "From 30 October, tariffs will be eased on some products, including certain machinery, and placed on others, such as carpets.",
       source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c9x28dgj2r0go?at_medium=RSS&at_campaign=rss"
+      published: "October 24, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c60qk573yzz8o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "U.S. / Democracy",
-      headline: "Former FBI agents surrender, charged with lying to Congress",
-      dek: "Nikki Floris and Bradley Benavides allegedly lied to Congress about Hunter Biden's laptop.",
-      source: "NewsNation",
-      published: "October 23, 2026",
-      url: "https://www.newsnationnow.com/politics/former-fbi-agents-surrender-lying-congress/"
-    },
-    {
-      category: "U.S. / Government",
-      headline: "White House says Melania Trump brokers truce for Ukraine city 'on brink of disaster'",
-      dek: "Ukraine and Russia confirm the truce in Russian-occupied Oleshky, where residents have had to eat garden weeds to survive.",
+      headline: "Are California voters about to impose 'world's first' tax on billionaires?",
+      dek: "Voters are about to decide if the mega-rich among them should hand over billions of dollars to pay for improvements to healthcare.",
       source: "BBC News",
       published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c6vgxkvl4w5eo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/ck4g1jg4n9dno?at_medium=RSS&at_campaign=rss"
     }
   ]
 };

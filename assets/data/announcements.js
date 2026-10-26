@@ -966,7 +966,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Follow a bill through both chambers and the president.",
         "Weigh careful scrutiny against delay in a practice scenario.",
         "Explain your judgment and file your work in Canvas.",
-        "After lunch: CNN 10, then daily news and your News Log."
+        "After lunch: CNN 10 · Oct. 22: Why a chemical explosion evacuated hundreds in Ohio.",
+        "After lunch: daily news and your News Log."
       ]
     },
     {

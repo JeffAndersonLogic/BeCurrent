@@ -132,7 +132,7 @@ window.BECURRENT_SCHEDULE={
 
   {date:'2026-10-26',topic:'WP3',topicTitle:'Who Has the Power? | The Power to Stop a President',
    doNow:'A president wants a new law. The House says no. What happens next? Write your prediction.',
-   agenda:['Opening question: what happens when the House says no?','Watch, then sort which branch holds each power.','Follow a bill through both chambers and the president.','Weigh careful scrutiny against delay in a practice scenario.','Explain your judgment and file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   agenda:['Opening question: what happens when the House says no?','Watch, then sort which branch holds each power.','Follow a bill through both chambers and the president.','Weigh careful scrutiny against delay in a practice scenario.','Explain your judgment and file your work in Canvas.','After lunch: CNN 10 · Oct. 22: Why a chemical explosion evacuated hundreds in Ohio.','After lunch: daily news and your News Log.'],
    homework:'Finish WP3 - Checks and Governing in Canvas.',homeworkDue:'the start of class on Wednesday, October 28'}
 ,
 
