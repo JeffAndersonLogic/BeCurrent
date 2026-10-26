@@ -93,10 +93,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Watch / explain",
-        "title": "Congressional Leadership: Crash Course Government #8",
-        "description": "Watch 0:00 to 3:30. How can becoming the majority change who organizes the chamber?",
+        "title": "Members of Congress: Simple Civics",
+        "description": "Watch the full clip. Who leads the House?",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-8/",
+          "url": "https://www.pbs.org/video/members-of-congress-lswvi8/",
           "label": "Play the clip"
         },
         "cards": [

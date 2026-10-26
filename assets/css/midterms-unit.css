@@ -141,3 +141,29 @@ summary{font-family:var(--vf-label);font-weight:650}
 .chapter-banner svg{display:block;width:100%;height:100%}
 @media(max-width:650px){#student-flow>.student-chapter>.chapter-banner{margin:-22px -18px 20px}}
 @media print{.chapter-banner{display:none}}
+
+/* Decision labs: large controls, clear outcomes, no extra graded writing. */
+.engagement-lab{margin:1.8rem 0;padding:clamp(1rem,3vw,2rem);border:1px solid #c9c9c9;border-top:5px solid #CE1400;border-radius:12px;background:#f5f4f0}
+.engagement-lab>h3{font-family:system-ui,sans-serif;font-size:clamp(1.4rem,3vw,2rem);line-height:1.2;margin:.5rem 0 1rem}
+.decision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.decision-card{background:#fffefb;border:1px solid #bbb;border-radius:10px;overflow:hidden;min-width:0}
+.decision-card summary{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;padding:1rem;cursor:pointer;font-weight:700;list-style-position:inside}
+.decision-card summary small{flex-basis:100%;font-weight:400;font-family:system-ui,sans-serif;color:#505050}
+.decision-card>p,.decision-answer{padding:0 1rem 1rem;margin:0}
+.decision-answer{border-top:1px solid #ccc;padding-top:1rem;background:#eee}
+.decision-card[open] summary{border-left:5px solid #CE1400}
+.decision-card summary:focus-visible,.bill-controls select:focus-visible{outline:3px solid #141414;outline-offset:3px}
+.bill-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.3rem 0}
+.bill-controls label{font-family:system-ui,sans-serif;font-weight:700;min-width:0}
+.bill-controls select{display:block;width:100%;max-width:100%;margin-top:.5rem;padding:.8rem .5rem;min-height:48px;background:#fff;color:#111;border:1px solid #777;border-radius:6px;font:inherit;font-size:1rem}
+.bill-controls select:disabled{background:#ddd;color:#555}
+.bill-outcome{padding:1rem 1.2rem;background:#fff;border-left:6px solid #CE1400;font-weight:700;min-height:5em}
+.screen-photo{margin:1rem 0;max-width:760px}
+.screen-photo img{display:block;width:100%;max-height:260px;object-fit:cover;border-radius:8px}
+.screen-photo figcaption{font-family:system-ui,sans-serif;font-size:.85rem;line-height:1.35;margin-top:.5rem}
+.screen-photo a{color:inherit;text-decoration:underline}
+.projector-body .screen-photo{max-width:1000px}
+.projector-body .screen-photo img{max-height:32vh}
+.projector-body .screen-photo figcaption{font-size:clamp(14px,1.2vw,19px)}
+@media(max-width:600px){.decision-grid,.bill-controls{grid-template-columns:1fr}.engagement-lab{padding:1rem}.screen-photo img{max-height:220px}}
+@media print{.decision-card{break-inside:avoid}.bill-controls{display:none}.engagement-lab{border:1px solid #888;background:white}.bill-lab:after{content:'Paper route: trace House approval → Senate agreement on the same text → presidential signature. A veto blocks the bill unless two-thirds in each chamber override it. Explain a benefit of scrutiny and a cost of delay.';display:block}.bill-outcome{display:none}}

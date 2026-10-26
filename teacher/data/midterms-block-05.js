@@ -20,8 +20,15 @@
       "screen": {
         "eyebrow": "Topic 5 / Opening question",
         "title": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "description": "Make a private prediction. You will test it by the end of class.",
-        "action": null
+        "description": "Your desk rule: source, stage, check time.",
+        "action": null,
+        "image": {
+          "src": "../assets/images/midterms/indiana-statehouse-night.webp",
+          "alt": "The Indiana Statehouse in Indianapolis, lit at night, with trees on either side of its front steps.",
+          "caption": "The Indiana Statehouse in Indianapolis. A news race call is not the official result: state election officials count, canvass and certify the vote.",
+          "credit": "Carol M. Highsmith, Library of Congress, public domain",
+          "source": "https://www.loc.gov/item/2016632124/"
+        }
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
@@ -29,7 +36,7 @@
         "listenFor": "Students ask which source and stage support a result rather than treating every displayed leader as a final winner.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Skip predictions about which party will win. Protect source and reporting-stage labels.",
-        "move": "Teach after November 3. Students use Chapter 1. State the actual check date and explain that a dated unresolved finding is valid evidence.",
+        "move": "Use the newsroom stage cards. Students privately choose a label before revealing it. Read the evidence stage aloud, then make the dated results notebook. Never prefill a winner.",
         "model": "No. An early lead reports part of the count. A news race call and official certification are different reporting stages.",
         "story": "This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.",
         "avoid": "No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.",
@@ -191,7 +198,21 @@
         "action": {
           "url": "../midterms/block-05.html#chapter-2",
           "label": "Open practice and feedback"
-        }
+        },
+        "cards": [
+          {
+            "title": "Count",
+            "text": "Partial totals may change."
+          },
+          {
+            "title": "Call",
+            "text": "Attribute the news outlet’s conclusion."
+          },
+          {
+            "title": "Certified",
+            "text": "Official sign-off for that race."
+          }
+        ]
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
@@ -248,11 +269,25 @@
       "screen": {
         "eyebrow": "Topic 5 / Results investigation",
         "title": "Build a dated results notebook",
-        "description": "Use the results sources in this step. We work the House row as an example, complete the Senate row together, and then you check the Indiana example. Enter a short finding, its reporting stage, and its source in each row. Reuse this notebook in your final explanation.",
+        "description": "Run the results desk. Keep unresolved outcomes open.",
         "action": {
           "url": "../midterms/block-05.html#chapter-3",
           "label": "Open the results packet"
-        }
+        },
+        "cards": [
+          {
+            "title": "House",
+            "text": "Model the evidence check."
+          },
+          {
+            "title": "Senate",
+            "text": "Check together."
+          },
+          {
+            "title": "Indiana",
+            "text": "Verify the district race."
+          }
+        ]
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
@@ -340,12 +375,22 @@
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 5 / Apply the idea",
-        "title": "Trace the governing effects",
+        "title": "Write the impact, keep the limits",
         "description": "Use your verified results. Explain who gains, retains, or has not yet secured control. Consider both accountability and governing effectiveness.",
         "action": {
           "url": "../midterms/block-05.html#chapter-4",
           "label": "Open application"
-        }
+        },
+        "cards": [
+          {
+            "title": "What happened?",
+            "text": "Use dated, attributed results."
+          },
+          {
+            "title": "What could follow?",
+            "text": "Explain a governing effect and limit."
+          }
+        ]
       },
       "intel": {
         "land": "Results establish electoral outcomes; policy effects still depend on institutions and later decisions.",
@@ -401,8 +446,8 @@
       "minutes": 12,
       "screen": {
         "eyebrow": "Topic 5 / Explain / Canvas",
-        "title": "Explain the results and their impact",
-        "description": "Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.",
+        "title": "File your analysis",
+        "description": "Established result. Possible impact. Honest uncertainty.",
         "action": {
           "url": "../midterms/block-05.html#chapter-5",
           "label": "Explain, gather, and submit"

@@ -1,6 +1,6 @@
 # Who Has the Power? — Teaching guide
 
-Generated from scripts/lib/unit-content/midterms.js. Reviewed 2026-10-19.
+Generated from scripts/lib/unit-content/midterms.js. Reviewed 2026-10-26.
 
 Civics investigation. Reverse History is optional for this unit.
 
@@ -92,7 +92,7 @@ Look for: After the selected Congress excerpt, students identify both chambers w
 
 Reteach: If most students name only the House, draw one bracket labeled Congress around House and Senate. Read the short two-chamber takeaway aloud.
 
-Cut: Stop the Congress excerpt at the planned 3:30 endpoint and omit the remainder of the full episode. Protect the House-plus-Senate distinction.
+Cut: Use the 1:09 clip, then one private House-or-Senate check.
 
 **Guided practice**
 
@@ -202,17 +202,13 @@ Write this down: Voters → seats → leaders → priorities. A new priority is 
 
 ### Clips
 
-- [Bicameral Congress: Crash Course Government #2](https://www.pbs.org/video/crash-course-government-2/) · Full 9:04 · Assigned 0:00–3:30 · 2015-01-30
-  Watch for: How do House and Senate representation and election cycles differ?
-  Pause: Stop at the assigned endpoint. Ask: How do House and Senate representation and election cycles differ? Use the core takeaways to check the answer before continuing.
+- [Members of Congress: Simple Civics](https://www.pbs.org/video/members-of-congress-lswvi8/) · Full 1:09 · Assigned the full clip · 2021-12-29
+  Watch for: Which two chambers make up Congress?
+  Pause: Stop at the assigned endpoint. Ask: Which two chambers make up Congress? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [Members of Congress: Simple Civics](https://www.pbs.org/video/members-of-congress-lswvi8/) · Full 1:09 · Assigned 0:00–1:09 · 2021-12-29
-  Watch for: Which two chambers together make up Congress?
-  Pause: Stop at the assigned endpoint. Ask: Which two chambers together make up Congress? Use the core takeaways to check the answer before continuing.
-  Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [Federalism and Elections: Simple Civics](https://www.pbs.org/video/federalism-and-elections-in-the-united-states-xd8u2b/) · Full 2:29 · Assigned the full clip · 2026-06-23 · optional
+- [Federalism and Elections: Simple Civics](https://www.pbs.org/video/federalism-and-elections-in-the-united-states-xd8u2b/) · Full 2:29 · Assigned the full clip · 2026-06-23
   Watch for: Why check the state election office for local election information?
-  Pause: Pause after the explanation of shared national and state authority.
+  Pause: Stop at the assigned endpoint. Ask: Why check the state election office for local election information? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
 
 ### Questions
@@ -318,7 +314,7 @@ Look for: Students are watching the leadership window with headphones or reading
 
 Reteach: If most students only repeat a person’s name, cover the name and label the role: Speaker, leadership, schedule. Ask what the role can influence.
 
-Cut: Students watch only the assigned window. A student whose clip will not play uses the reading route and core takeaways instead.
+Cut: Use the short WFYI clip and one seat-model change. Omit extra leadership examples.
 
 **Guided practice**
 
@@ -338,7 +334,7 @@ Look for: A specific committee action and a named source in the Chapter 3 source
 
 Reteach: If most students cannot find a chair, open any one committee site on the projector and point to where the chair is named. Then send them back to their own committee.
 
-Cut: Students use only the assigned committee window. Omit the optional Alaska report. If a committee site is blocked, the student chooses another committee from the list.
+Cut: Use the official extract if playback is blocked. Protect the real committee lookup.
 
 **Apply the idea**
 
@@ -421,14 +417,14 @@ Write this down: One seat → a majority → leaders and agenda. A new priority 
   Watch for: Why might a president dread a midterm election? Use what you learned on Day 1 about the House and the Senate. Today: how separate races add up to control of Congress.
   Pause: Play the whole clip, then ask the recap question before the opening question.
   Dated 2026 reporting from a British outlet. Polls, predictions, and seat counts in it are not 2026 results.
-- [Congressional Leadership: Crash Course Government #8](https://www.pbs.org/video/crash-course-government-8/) · Full 8:10 · Assigned 0:00–3:30 · 2015-03-14
-  Watch for: How can becoming the majority change who organizes the chamber?
-  Pause: Stop at the assigned endpoint. Ask: How can becoming the majority change who organizes the chamber? Use the core takeaways to check the answer before continuing.
+- [Members of Congress: Simple Civics](https://www.pbs.org/video/members-of-congress-lswvi8/) · Full 1:09 · Assigned the full clip · 2021-12-29
+  Watch for: Who leads the House?
+  Pause: Stop at the assigned endpoint. Ask: Who leads the House? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [Congressional Committees: Crash Course Government #7](https://www.pbs.org/video/crash-course-government-7/) · Full 8:26 · Assigned 0:00–4:00 · 2015-03-06
-  Watch for: Why does a committee chair matter before the whole chamber votes?
-  Pause: Stop at the assigned endpoint. Ask: Why does a committee chair matter before the whole chamber votes? Use the core takeaways to check the answer before continuing.
-  Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
+- [What are Congressional Committees?](https://www.youtube.com/watch?v=IkfseDAVHYo) · Full 2:20 · Assigned the full clip · 2018-11-15
+  Watch for: What work happens in committees before a full chamber votes?
+  Pause: Stop at the assigned endpoint. Ask: What work happens in committees before a full chamber votes? Use the core takeaways to check the answer before continuing.
+  Evergreen institutional explainer from a scientific association. Verify institutional facts against house.gov; science-related examples are not 2026 election results.
 - [How Alaska became a battleground in the fight for the Senate](https://www.pbs.org/video/vote-2026-1792182550/) · Full 5:01 · Assigned the full clip · 2026-10-16 · optional
   Watch for: How could one statewide race affect chamber control? Which statements are results and which are still campaign claims?
   Pause: Use in place of extra committee discussion, not as additional time.
@@ -475,21 +471,21 @@ Question: When does divided power protect the public, and when does it make gove
 
 ### Teacher story
 
-Follow one lawmaking or spending proposal through the institutions. Then explain why someone might welcome a hearing while someone else worries about delay. Students evaluate governing consequences, not party preference. Distinguish an investigation from a conclusion, and a majority change from removal. Both accountability and governing effectiveness can matter at once.
+Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.
 
 ### Run of show
 
-- 0–4: Opening question (4 minutes)
-- 4–6: Today’s direction (2 minutes)
+- 0–3: Opening question (3 minutes)
+- 3–5: Today’s direction (2 minutes)
 - Notes slide: Why can a president face resistance from Congress?
-- 6–13: Watch / explain (7 minutes)
+- 5–11: Watch / explain (6 minutes)
 - Notes slide: How does Congress check the president?
 - Notes slide: What can oversight do, and what can’t it do?
-- 13–23: Guided practice (10 minutes)
-- Notes slide: How does a bill become a law?
-- 23–35: Evidence (12 minutes)
+- 11–20: Opening report / compare (9 minutes)
 - Notes slide: How can a check be useful and frustrating?
-- 35–45: Apply the idea (10 minutes)
+- 20–33: Guided practice (13 minutes)
+- Notes slide: How does a bill become a law?
+- 33–45: Apply the idea (12 minutes)
 - Notes slide: How to make a strong judgment
 - 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
@@ -520,25 +516,15 @@ Cut: Do not explain every constitutional exception in the opener. Protect the qu
 
 **Watch / explain**
 
-Model: Congress can investigate government actions and decide spending through legislation. The Senate also confirms many presidential nominees.
+Model: The clip frames congressional races around their impact on a president. An election could change oversight or legislative priorities, but it does not replace the president.
 
 Look for: Students identify a real check and the institution exercising it. They do not treat a hearing as proof of guilt.
 
 Reteach: If most students mix up the institutions, make three labels: House and Senate—legislation/oversight; Senate—many confirmations; President—sign/veto. Check one example privately.
 
-Cut: Use no more than four minutes of the checks episode. Omit a full tour of every branch’s powers.
+Cut: Use the visible takeaways if blocked. Keep the power panel and bill simulation.
 
-**Guided practice**
-
-Model: House and Senate; Senate; President; House and Senate; House and Senate. Overriding a veto requires two-thirds support in each chamber.
-
-Look for: Students attempt and correct the five power classifications. Pay particular attention to confirmation being Senate-only and sign/veto being presidential.
-
-Reteach: If most students miss the same institution, place that sort statement below the correct institution label and explain one example. Students retry it before moving on.
-
-Cut: Skip additional impeachment and Senate procedure examples. Protect correction of the core power classifications.
-
-**Evidence**
+**Opening report / compare**
 
 Model: Ordinarily the House and Senate must pass the same bill, then the president has a role. Congress can also use oversight to question officials. These are distinct checks, not proof that a particular official did something wrong.
 
@@ -546,7 +532,17 @@ Look for: The evidence note explains two actual congressional checks, names its 
 
 Reteach: If most students list branch names without checks, start two clauses: “Congress can ask officials questions through oversight” and “Congress decides legislation.” Then identify which source supports each.
 
-Cut: Use no more than four minutes of the bill episode. Omit extra lawmaking trivia and optional extensions.
+Cut: If the two reports overrun, use the DW reading takeaways and go to the bill lab. Protect the last ten minutes for the checkpoint and Canvas.
+
+**Guided practice**
+
+Model: House and Senate; Senate; President; House and Senate; House and Senate. Overriding a veto requires two-thirds support in each chamber.
+
+Look for: A student can explain why House approval alone is insufficient, identify Senate-only confirmations, and distinguish an investigation from proof of wrongdoing.
+
+Reteach: If most students miss the same institution, place that sort statement below the correct institution label and explain one example. Students retry it before moving on.
+
+Cut: Skip additional impeachment and Senate procedure examples. Protect correction of the core power classifications.
 
 **Apply the idea**
 
@@ -599,15 +595,6 @@ Write this down: Name the specific check: laws, spending, oversight, or confirma
 
 Write this down: Oversight gathers evidence. It is not proof.
 
-**How does a bill become a law?**
-
-- The House and the Senate must ordinarily pass the same bill.
-- If they pass different versions, the differences must be resolved.
-- Then the president can sign the bill or veto it.
-- Congress can override a veto with two-thirds support in each chamber.
-
-Write this down: One chamber cannot ordinarily make a law alone.
-
 **How can a check be useful and frustrating?**
 
 - Scrutiny can uncover problems, such as waste, and improve a proposal.
@@ -616,6 +603,15 @@ Write this down: One chamber cannot ordinarily make a law alone.
 - None of these follows automatically from a party label.
 
 Write this down: Judge a check by its evidence: what it reveals, how long it delays, and who is affected.
+
+**How does a bill become a law?**
+
+- The House and the Senate must ordinarily pass the same bill.
+- If they pass different versions, the differences must be resolved.
+- Then the president can sign the bill or veto it.
+- Congress can override a veto with two-thirds support in each chamber.
+
+Write this down: One chamber cannot ordinarily make a law alone.
 
 **How to make a strong judgment**
 
@@ -635,14 +631,14 @@ Write this down: Divided government can improve accountability and make governin
 
 ### Clips
 
-- [Checks and Balances: Crash Course Government #3](https://www.pbs.org/video/crash-course-government-3/) · Full 8:30 · Assigned 0:00–4:00 · 2015-02-06
-  Watch for: How can Congress check the president?
-  Pause: Stop at the assigned endpoint. Ask: How can Congress check the president? Use the core takeaways to check the answer before continuing.
-  Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [How a Bill Becomes a Law: Crash Course Government #9](https://www.pbs.org/video/crash-course-government-9/) · Full 6:56 · Assigned 0:00–4:00 · 2015-02-20
-  Watch for: Why does winning one chamber not guarantee a new law?
-  Pause: Stop at the assigned endpoint. Ask: Why does winning one chamber not guarantee a new law? Use the core takeaways to check the answer before continuing.
-  Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
+- [These midterm races could decide Trump’s future](https://youtu.be/fKzS5sYtZ0A) · Full 4:32 · Assigned the full clip · 2026-10-23
+  Watch for: What could a changed Congress make harder for a president? Separate a possible outcome from an established result.
+  Pause: Stop at the assigned endpoint. Ask: What could a changed Congress make harder for a president? Separate a possible outcome from an established result. Use the core takeaways to check the answer before continuing.
+  Pre-election reporting and analysis, not November results. The headline is the outlet’s framing; test its claims against the institutional rules.
+- [Will the US midterms change anything? | DW News](https://youtu.be/CEvUySWgXMA) · Full 7:22 · Assigned the full clip · 2026-10-19
+  Watch for: What could Congress change, and what would still need agreement? Compare the limits with the Guardian headline.
+  Pause: Stop at the assigned endpoint. Ask: What could Congress change, and what would still need agreement? Compare the limits with the Guardian headline. Use the core takeaways to check the answer before continuing.
+  Pre-election reporting from Germany’s international public broadcaster. Polls and possible outcomes are not results. Use the House and Constitution references to verify institutional claims.
 
 ### Questions
 
@@ -756,7 +752,7 @@ Look for: A constructed-message note identifies claim, audience, and missing inf
 
 Reteach: If most students judge only whether they like the message, underline its checkable words. Ask “Which record could support or challenge these words?” Model one match before independent work.
 
-Cut: Use at most three minutes of the media excerpt, or the matched reading instead. Do not add the full campaign report to this phase. Protect the guided evidence inspection.
+Cut: Omit the optional campaign report. Keep one framing reveal and the real claim with independent evidence.
 
 **Apply the idea**
 
@@ -845,13 +841,13 @@ Write this down: Keep three questions separate: what people say now, who wins, a
 
 ### Clips
 
-- [How Do You Research Candidates? Simple Civics](https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/) · Full 2:55 · Assigned 0:00–2:55 · 2022-10-13
+- [How Do You Research Candidates? Simple Civics](https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/) · Full 2:55 · Assigned the full clip · 2022-10-13
   Watch for: Which source could you use to check a campaign claim?
   Pause: Stop at the assigned endpoint. Ask: Which source could you use to check a campaign claim? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [Media Institution: Crash Course Government #44](https://www.pbs.org/video/crash-course-government-and-politics-44/) · Full 8:40 · Assigned 0:00–3:00 · 2016-01-16
-  Watch for: How can selection and framing shape which issues seem important?
-  Pause: Stop at the assigned endpoint. Ask: How can selection and framing shape which issues seem important? Use the core takeaways to check the answer before continuing.
+- [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · Full 3:05 · Assigned the full clip · 2023-10-26
+  Watch for: What should you check before sharing an election claim?
+  Pause: Stop at the assigned endpoint. Ask: What should you check before sharing an election claim? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
 - [Examining Trump's claims at his midterm rallies](https://www.pbs.org/video/rally-rhetoric-1792182521/) · Full 6:48 · Assigned the full clip · 2026-10-16 · optional
   Watch for: Choose one checkable campaign claim. What independent record would test it?
@@ -1115,7 +1111,7 @@ Write this down: Use “has” for an established outcome and “could” for a 
   Watch for: How is a race call different from a prediction or official certification?
   Pause: Stop at the assigned endpoint. Ask: How is a race call different from a prediction or official certification? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [How Do Voting Machines Work? Simple Civics](https://www.pbs.org/video/how-do-voting-machines-work-ikrecu/) · Full 2:07 · Assigned 0:00–2:07 · 2022-10-28 · optional
+- [How Do Voting Machines Work? Simple Civics](https://www.pbs.org/video/how-do-voting-machines-work-ikrecu/) · Full 2:07 · Assigned the full clip · 2022-10-28 · optional
   Watch for: What role do officials and records play in checking a count?
   Pause: Stop at the assigned endpoint. Ask: What role do officials and records play in checking a count? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.

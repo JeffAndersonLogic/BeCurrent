@@ -14,7 +14,7 @@ const {topics}=require('../lib/unit-content/midterms');
   assert(await teacher.textContent('#intel-land'));assert.strictEqual(await projection.locator('#intel-land').count(),0);
   assert(await teacher.textContent('#intel-model'));assert.strictEqual(await projection.locator('#intel-model').count(),0);
   await teacher.locator(`[data-phase-index="${at('watch-1')}"]`).click();await projection.waitForFunction(s=>document.getElementById('projector-phase').textContent.startsWith(s),pad(at('watch-1')));
-  assert((await projection.getAttribute('#projector-action','href')).includes('pbs.org/video'));
+  assert.strictEqual(await projection.getAttribute('#projector-action','href'),t.videos[0].url);
   await projection.click('#projector-next');await teacher.waitForFunction(s=>document.getElementById('teacher-count').textContent.startsWith(s),(at('watch-1')+2)+' /');
   assert.strictEqual(await projection.getAttribute('body','data-kind'),'notes');assert((await projection.textContent('.write-this')).includes('Write this down'));assert.strictEqual(await projection.textContent('#projector-time'),'');
   await teacher.click('#timer-toggle');assert.strictEqual(await teacher.textContent('#timer-toggle'),'Pause');await teacher.click('#timer-toggle');

@@ -75,10 +75,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 5,
       "screen": {
         "eyebrow": "Topic 1 / Watch / explain",
-        "title": "Bicameral Congress: Crash Course Government #2",
-        "description": "Watch 0:00 to 3:30. How do House and Senate representation and election cycles differ?",
+        "title": "Members of Congress: Simple Civics",
+        "description": "Watch the full clip. Which two chambers make up Congress?",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-2/",
+          "url": "https://www.pbs.org/video/members-of-congress-lswvi8/",
           "label": "Play the clip"
         },
         "cards": [

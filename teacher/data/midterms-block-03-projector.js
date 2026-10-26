@@ -14,22 +14,29 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "hook",
       "label": "Opening question",
       "kind": "lesson",
-      "time": "0–4",
+      "time": "0–3",
       "start": 0,
-      "minutes": 4,
+      "minutes": 3,
       "screen": {
         "eyebrow": "Topic 3 / Opening question",
         "title": "A president wants a new law. The House says no. What happens next?",
-        "description": "Make a private prediction. You will test it by the end of class.",
-        "action": null
+        "description": "The president stays. Congress could change. What happens next?",
+        "action": null,
+        "image": {
+          "src": "../assets/images/midterms/white-house-north.webp",
+          "alt": "The north front of the White House, with its columned portico, fountain and flag.",
+          "caption": "The White House. The president is not on the 2026 ballot, but the Congress voters choose can check what the president proposes.",
+          "credit": "Carol M. Highsmith, Library of Congress, public domain",
+          "source": "https://www.loc.gov/item/2011632870/"
+        }
       }
     },
     {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "4–6",
-      "start": 4,
+      "time": "3–5",
+      "start": 3,
       "minutes": 2,
       "screen": {
         "eyebrow": "Topic 3 / Today’s direction",
@@ -51,7 +58,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 6,
+      "start": 5,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 3 / Notes 1 of 6",
@@ -70,29 +77,25 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "6–13",
-      "start": 6,
-      "minutes": 7,
+      "time": "5–11",
+      "start": 5,
+      "minutes": 6,
       "screen": {
         "eyebrow": "Topic 3 / Watch / explain",
-        "title": "Checks and Balances: Crash Course Government #3",
-        "description": "Watch 0:00 to 4:00. How can Congress check the president?",
+        "title": "These midterm races could decide Trump’s future",
+        "description": "Watch the full clip. What could a changed Congress make harder for a president? Separate a possible outcome from an established result.",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-3/",
+          "url": "https://youtu.be/fKzS5sYtZ0A",
           "label": "Play the clip"
         },
         "cards": [
           {
-            "title": "Oversight",
-            "text": "Congress checking how government uses its authority."
+            "title": "Guardian / Watch for",
+            "text": "Which races could change a president’s options?"
           },
           {
-            "title": "Veto",
-            "text": "The president’s rejection of a bill."
-          },
-          {
-            "title": "Divided government",
-            "text": "Different parties control the presidency and at least one chamber."
+            "title": "Keep separate",
+            "text": "Possible outcomes and verified results."
           }
         ]
       }
@@ -102,7 +105,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 11,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 3 / Notes 2 of 6",
@@ -122,7 +125,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 11,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 3 / Notes 3 of 6",
@@ -138,57 +141,30 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
-      "id": "investigate",
-      "label": "Guided practice",
-      "kind": "lesson",
-      "time": "13–23",
-      "start": 13,
-      "minutes": 10,
-      "screen": {
-        "eyebrow": "Topic 3 / Guided practice",
-        "title": "Who has this power?",
-        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
-        "action": {
-          "url": "../midterms/block-03.html#chapter-2",
-          "label": "Open practice and feedback"
-        }
-      }
-    },
-    {
-      "id": "notes-4",
-      "label": "Notes 4 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 23,
-      "minutes": 0,
-      "screen": {
-        "eyebrow": "Topic 3 / Notes 4 of 6",
-        "title": "How does a bill become a law?",
-        "description": "",
-        "bullets": [
-          "The House and the Senate must ordinarily pass the same bill.",
-          "If they pass different versions, the differences must be resolved.",
-          "Then the president can sign the bill or veto it.",
-          "Congress can override a veto with two-thirds support in each chamber."
-        ],
-        "write": "One chamber cannot ordinarily make a law alone."
-      }
-    },
-    {
       "id": "watch-2",
-      "label": "Evidence",
+      "label": "Opening report / compare",
       "kind": "lesson",
-      "time": "23–35",
-      "start": 23,
-      "minutes": 12,
+      "time": "11–20",
+      "start": 11,
+      "minutes": 9,
       "screen": {
-        "eyebrow": "Topic 3 / Evidence",
-        "title": "Follow the bill",
-        "description": "Trace a proposal through both chambers and presidential action. Check the video’s simplified explanation against the official reference.",
+        "eyebrow": "Topic 3 / Opening report / compare",
+        "title": "Will the US midterms change anything? | DW News",
+        "description": "What could Congress change, and what would still need agreement? Compare the limits with the Guardian headline.",
         "action": {
-          "url": "../midterms/block-03.html#chapter-3",
-          "label": "Open the clip and evidence"
-        }
+          "url": "https://youtu.be/CEvUySWgXMA",
+          "label": "Play the second opening"
+        },
+        "cards": [
+          {
+            "title": "DW / Watch for",
+            "text": "What could Congress change?"
+          },
+          {
+            "title": "Compare the framing",
+            "text": "What could still block that change?"
+          }
+        ]
       }
     },
     {
@@ -196,7 +172,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 20,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 3 / Notes 5 of 6",
@@ -212,20 +188,85 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "investigate",
+      "label": "Guided practice",
+      "kind": "lesson",
+      "time": "20–33",
+      "start": 20,
+      "minutes": 13,
+      "screen": {
+        "eyebrow": "Topic 3 / Guided practice",
+        "title": "Who has this power?",
+        "description": "Open the power panel, then test the school-lunch bill.",
+        "action": {
+          "url": "../midterms/block-03.html#chapter-3",
+          "label": "Open the bill lab"
+        },
+        "cards": [
+          {
+            "title": "House",
+            "text": "Pass the bill."
+          },
+          {
+            "title": "Senate",
+            "text": "Agree to the same text."
+          },
+          {
+            "title": "President",
+            "text": "Sign it or veto it."
+          },
+          {
+            "title": "Override",
+            "text": "Two-thirds in each chamber."
+          }
+        ]
+      }
+    },
+    {
+      "id": "notes-4",
+      "label": "Notes 4 of 6",
+      "kind": "notes",
+      "time": "Notes",
+      "start": 33,
+      "minutes": 0,
+      "screen": {
+        "eyebrow": "Topic 3 / Notes 4 of 6",
+        "title": "How does a bill become a law?",
+        "description": "",
+        "bullets": [
+          "The House and the Senate must ordinarily pass the same bill.",
+          "If they pass different versions, the differences must be resolved.",
+          "Then the president can sign the bill or veto it.",
+          "Congress can override a veto with two-thirds support in each chamber."
+        ],
+        "write": "One chamber cannot ordinarily make a law alone."
+      }
+    },
+    {
       "id": "apply",
       "label": "Apply the idea",
       "kind": "lesson",
-      "time": "35–45",
-      "start": 35,
-      "minutes": 10,
+      "time": "33–45",
+      "start": 33,
+      "minutes": 12,
       "screen": {
         "eyebrow": "Topic 3 / Apply the idea",
-        "title": "Weigh scrutiny and delay",
-        "description": "Practice scenario (made up for class, not a real 2026 bill): The president proposes more school-lunch funding. The House committee questions its cost. Some families want careful scrutiny; others need the service quickly. The Senate has not agreed to the proposal.",
+        "title": "Who pays for the delay?",
+        "description": "Same hearing. Two consequences.",
         "action": {
           "url": "../midterms/block-03.html#chapter-4",
           "label": "Open application"
-        }
+        },
+        "cards": [
+          {
+            "title": "Accountability",
+            "text": "What could scrutiny uncover?"
+          },
+          {
+            "title": "Delay",
+            "text": "Who might wait for support?"
+          }
+        ]
       }
     },
     {
@@ -257,8 +298,8 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 3 / Explain / Canvas",
-        "title": "Make a supported judgment",
-        "description": "Can divided government improve accountability and make governing harder at the same time? Use one institutional example.",
+        "title": "Deliver your verdict",
+        "description": "Name a check. Explain a benefit. Recognize a cost.",
         "action": {
           "url": "../midterms/block-03.html#chapter-5",
           "label": "Explain, gather, and submit"

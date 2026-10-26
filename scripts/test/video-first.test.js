@@ -49,7 +49,7 @@ for(const t of unit.topics){
  assert(!/teacher-flow|data-view-mode|data-teacher-stage|\.\.\/teacher\//.test(page),'teacher controls must not be shipped in student lessons');
  assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
  const watchLabel=t.selfPaced?'Watch on your own, with headphones':'Watch together';
- assert(page.includes(watchLabel)&&page.indexOf('Before the clip: the essential language')<page.indexOf(watchLabel));
+ assert(page.includes(watchLabel)&&page.indexOf(t.introVideos?'Before the clips: the essential language':'Before the clip: the essential language')<page.indexOf(watchLabel));
  assert.strictEqual(page.includes('Watch together'),!t.selfPaced,'a self-paced topic sends students to the clips on their own');
  assert.deepStrictEqual(lookupProblems(page,t),[]);
  assert(page.includes('Today you will submit')&&page.includes('How this investigation is assessed'));

@@ -20,8 +20,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Opening question",
         "title": "Two messages use the same number. Could they leave different impressions?",
-        "description": "Make a private prediction. You will test it by the end of class.",
-        "action": null
+        "description": "Would you share it before checking it?",
+        "action": null,
+        "image": {
+          "src": "../assets/images/midterms/i-voted-stickers-2026.webp",
+          "alt": "A roll of red “I Voted” stickers on a table, with the room behind it out of focus.",
+          "caption": "“I Voted” stickers at the public library in Aitkin, Minnesota, on primary election day, August 11, 2026. Every campaign message is competing for that sticker: check the claim before it decides your vote.",
+          "credit": "Lorie Shaull, CC BY 4.0, via Wikimedia Commons (resized)",
+          "source": "https://commons.wikimedia.org/wiki/File:A_roll_of_%22I_Voted%22_stickers_in_Aitkin_Public_Library_on_Primary_Election_Day,_Aug._11,_2026._in_Aitkin.jpg"
+        }
       }
     },
     {
@@ -76,7 +83,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Watch / explain",
         "title": "How Do You Research Candidates? Simple Civics",
-        "description": "Watch 0:00 to 2:55. Which source could you use to check a campaign claim?",
+        "description": "Watch the full clip. Which source could you use to check a campaign claim?",
         "action": {
           "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
           "label": "Play the clip"
@@ -151,7 +158,21 @@ window.BECURRENT_PROJECTOR_LESSON = {
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
           "label": "Open practice and feedback"
-        }
+        },
+        "cards": [
+          {
+            "title": "The claim",
+            "text": "What exactly is being asserted?"
+          },
+          {
+            "title": "The receipt",
+            "text": "Which independent record could test it?"
+          },
+          {
+            "title": "The gap",
+            "text": "What context is missing?"
+          }
+        ]
       }
     },
     {
@@ -184,10 +205,10 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 4 / Evidence",
         "title": "Check the message, then check the claim",
-        "description": "First look at the two practice messages together. Then use the real-claim packet in Chapter 4. The claim and the checking evidence are supplied, so you do not need to search for a new one.",
+        "description": "Watch for a verification move. Then try the framing lab.",
         "action": {
           "url": "../midterms/block-04.html#chapter-3",
-          "label": "Open the clip and evidence"
+          "label": "Open the framing lab"
         }
       }
     },
@@ -220,12 +241,22 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 4 / Apply the idea",
-        "title": "Test a real claim",
+        "title": "Check the receipt",
         "description": "Use the real-claim packet in Chapter 4. Check its exact claim against the independent evidence. Then use the poll card to distinguish measured opinion from an election result.",
         "action": {
           "url": "../midterms/block-04.html#chapter-4",
           "label": "Open the real-claim packet"
-        }
+        },
+        "cards": [
+          {
+            "title": "Support",
+            "text": "What does the record establish?"
+          },
+          {
+            "title": "Limit",
+            "text": "What remains unresolved?"
+          }
+        ]
       }
     },
     {
@@ -257,8 +288,8 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 4 / Explain / Canvas",
-        "title": "Explain what remains uncertain",
-        "description": "Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?",
+        "title": "Decide what you can actually claim",
+        "description": "A poll estimates. A promise proposes. Neither guarantees.",
         "action": {
           "url": "../midterms/block-04.html#chapter-5",
           "label": "Explain, gather, and submit"

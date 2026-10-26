@@ -141,10 +141,10 @@
       "minutes": 7,
       "screen": {
         "eyebrow": "Topic 2 / Watch / explain",
-        "title": "Congressional Leadership: Crash Course Government #8",
-        "description": "Watch 0:00 to 3:30. How can becoming the majority change who organizes the chamber?",
+        "title": "Members of Congress: Simple Civics",
+        "description": "Watch the full clip. Who leads the House?",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-8/",
+          "url": "https://www.pbs.org/video/members-of-congress-lswvi8/",
           "label": "Play the clip"
         },
         "cards": [
@@ -164,11 +164,11 @@
       },
       "intel": {
         "land": "A majority shapes who organizes the work and what gets attention; outcomes still face limits.",
-        "ask": "How can becoming the majority change who organizes the chamber?",
+        "ask": "Who leads the House?",
         "listenFor": "Students are watching the leadership window with headphones or reading the takeaways, and their notes name a leadership job or decision rather than the historical officeholder shown.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Students watch only the assigned window. A student whose clip will not play uses the reading route and core takeaways instead.",
-        "move": "Self-paced pacing checkpoint: most students should be in Chapter 2. Circulate. Check that headphones are in and the clip plays; send any student whose player is blocked to the reading route. Confer quietly; do not stop the class to explain.",
+        "cut": "Use the short WFYI clip and one seat-model change. Omit extra leadership examples.",
+        "move": "Play the 1:09 WFYI explanation, then move the seat model across 218. Use the official leadership extract to connect members to the Speaker and agenda.",
         "model": "A majority helps choose chamber leaders. Leaders influence which issues receive time and attention.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",
@@ -289,8 +289,8 @@
         "ask": "Evidence — what evidence supports your explanation?",
         "listenFor": "A specific committee action and a named source in the Chapter 3 source note, then a real committee name, one subject it covers, and the chair’s party in the lookup.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Students use only the assigned committee window. Omit the optional Alaska report. If a committee site is blocked, the student chooses another committee from the list.",
-        "move": "Self-paced pacing checkpoint: the longest stretch, for the committee clip, the source note and the committee lookup. Circulate to the lookup first: check that students are on house.gov, not a search engine, and that nobody types a ZIP code or address.",
+        "cut": "Use the official extract if playback is blocked. Protect the real committee lookup.",
+        "move": "Play the AGU committee explanation. Check it against the official House extract, then students complete the real committee lookup.",
         "model": "The legislative-process reference explains that committees consider bills before floor action. A chair can influence which issues the committee examines. For the lookup: the committee’s own site names its chair, the representatives page shows the chair’s party, and that party is the House majority.",
         "story": "Move from the ballot to the working room. Separate races produce a chamber. A small difference in seats can decide who organizes that chamber. Leaders and committees can change which issues receive attention before a final vote. Keep the seat model explicitly hypothetical. Then add the limit: one chamber still needs the other chamber and ordinarily presidential action to enact a law.",
         "avoid": "The 217/218 model is not a current seat count. House control does not guarantee Senate agreement.",

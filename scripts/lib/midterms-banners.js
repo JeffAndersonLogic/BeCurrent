@@ -39,7 +39,7 @@ const ART={
  chain:()=>`${dot(196,84,12,RED,RED)}${arrow(220,84,262,RED)}${hemicycle(320,104,18,3,11,3.4)}${line(286,106,354,106)}${arrow(372,84,414,RED)}${gavel(462,58,.6)}${arrow(524,84,566,RED)}${agenda(584,42)}<path d="M690 22v124" stroke="${RED}" stroke-width="3" stroke-dasharray="7 7"/>${columns(716,120,64)}${podium(830,120)}`
 };
 // Which drawing heads which chapter (0 Predict … 4 File), per topic.
-const BANNERS={2:['seat','majority','committee','promise','chain']};
+const BANNERS={2:['seat','majority','committee','promise','chain'],3:['promise','committee','chain','committee','promise'],4:['promise','committee','promise','committee','chain'],5:['seat','majority','committee','chain','promise']};
 function banner(n,i){const key=(BANNERS[n]||[])[i];if(!key)return '';if(!ART[key])throw new Error('midterms-banners: no drawing named '+key);
  return `<div class="chapter-banner" data-banner="${key}"><svg width="960" height="160" viewBox="0 0 960 160" preserveAspectRatio="xMidYMid meet" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ART[key]()}</svg></div>`;}
 module.exports={banner,BANNERS,ART};

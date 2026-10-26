@@ -52,9 +52,9 @@ const PLACEMENT={
  unit:{hero:'capitol-dusk'},
  1:{hero:'capitol-west',chapters:{1:'house-chamber'}},
  2:{hero:'house-chamber',chapters:{2:'committee-hearing'}},
- 3:{hero:'white-house',chapters:{2:'capitol-west'}},
- 4:{hero:'i-voted'},
- 5:{hero:'indiana-statehouse'},
+ 3:{hero:'white-house',chapters:{1:'committee-hearing',3:'house-chamber'}},
+ 4:{hero:'i-voted',chapters:{3:'committee-hearing'}},
+ 5:{hero:'indiana-statehouse',chapters:{2:'house-chamber',3:'capitol-dusk'}},
  ED:{hero:'i-voted-day'}
 };
 function photo(key){const p=PHOTOS[key];if(!p)throw new Error('midterms-images: no photo named '+key);return p;}

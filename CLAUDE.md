@@ -191,6 +191,10 @@ projector data come from `scripts/lib/unit-content/midterms.js` through
 Preserve Topic 1's storage and response IDs. Never prefill future election winners.
 Topic 5 is taught after November 3 with dated, attributed results and uncertainties.
 
+### Midterms engagement and video preference, October 26, 2026
+
+Jeff does not want Crash Course Government used as explanations. Keep this preference for future lesson revisions. Topic 3 opens with his Guardian and DW clips, then uses a power panel and school-lunch bill lab. Topic 4 uses framing decisions; Topic 5 uses election-desk stage cards. Keep responses private and concise, preserve saved response IDs, and do not add required writing for the practice labs. `midterms-engagement.js` applies the final content/pacing choices, `midterms-labs.js` renders student and paper practice, and `midterms-projector-visuals.js` supplies student-safe display data. Build through `scripts/build-midterms.js`.
+
 ## The Block Has Two Halves
 
 **This is the shape of the course, and every other decision follows from it.** One

@@ -20,8 +20,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 5 / Opening question",
         "title": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "description": "Make a private prediction. You will test it by the end of class.",
-        "action": null
+        "description": "Your desk rule: source, stage, check time.",
+        "action": null,
+        "image": {
+          "src": "../assets/images/midterms/indiana-statehouse-night.webp",
+          "alt": "The Indiana Statehouse in Indianapolis, lit at night, with trees on either side of its front steps.",
+          "caption": "The Indiana Statehouse in Indianapolis. A news race call is not the official result: state election officials count, canvass and certify the vote.",
+          "credit": "Carol M. Highsmith, Library of Congress, public domain",
+          "source": "https://www.loc.gov/item/2016632124/"
+        }
       }
     },
     {
@@ -131,7 +138,21 @@ window.BECURRENT_PROJECTOR_LESSON = {
         "action": {
           "url": "../midterms/block-05.html#chapter-2",
           "label": "Open practice and feedback"
-        }
+        },
+        "cards": [
+          {
+            "title": "Count",
+            "text": "Partial totals may change."
+          },
+          {
+            "title": "Call",
+            "text": "Attribute the news outlet’s conclusion."
+          },
+          {
+            "title": "Certified",
+            "text": "Official sign-off for that race."
+          }
+        ]
       }
     },
     {
@@ -164,11 +185,25 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 5 / Results investigation",
         "title": "Build a dated results notebook",
-        "description": "Use the results sources in this step. We work the House row as an example, complete the Senate row together, and then you check the Indiana example. Enter a short finding, its reporting stage, and its source in each row. Reuse this notebook in your final explanation.",
+        "description": "Run the results desk. Keep unresolved outcomes open.",
         "action": {
           "url": "../midterms/block-05.html#chapter-3",
           "label": "Open the results packet"
-        }
+        },
+        "cards": [
+          {
+            "title": "House",
+            "text": "Model the evidence check."
+          },
+          {
+            "title": "Senate",
+            "text": "Check together."
+          },
+          {
+            "title": "Indiana",
+            "text": "Verify the district race."
+          }
+        ]
       }
     },
     {
@@ -220,12 +255,22 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 10,
       "screen": {
         "eyebrow": "Topic 5 / Apply the idea",
-        "title": "Trace the governing effects",
+        "title": "Write the impact, keep the limits",
         "description": "Use your verified results. Explain who gains, retains, or has not yet secured control. Consider both accountability and governing effectiveness.",
         "action": {
           "url": "../midterms/block-05.html#chapter-4",
           "label": "Open application"
-        }
+        },
+        "cards": [
+          {
+            "title": "What happened?",
+            "text": "Use dated, attributed results."
+          },
+          {
+            "title": "What could follow?",
+            "text": "Explain a governing effect and limit."
+          }
+        ]
       }
     },
     {
@@ -257,8 +302,8 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 12,
       "screen": {
         "eyebrow": "Topic 5 / Explain / Canvas",
-        "title": "Explain the results and their impact",
-        "description": "Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.",
+        "title": "File your analysis",
+        "description": "Established result. Possible impact. Honest uncertainty.",
         "action": {
           "url": "../midterms/block-05.html#chapter-5",
           "label": "Explain, gather, and submit"

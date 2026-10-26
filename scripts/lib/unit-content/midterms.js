@@ -1,7 +1,7 @@
 'use strict';
 // Canonical source for the five civics lessons, student pages, and teaching OS.
 // Generate with node scripts/build-midterms.js. Preserve wp-t01 saved response IDs.
-const reviewed='2026-10-19';
+const reviewed='2026-10-26';
 const S=(title,url,note)=>({title,url,note});
 const sources={
  fec:S('Federal Election Commission: election information','https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/','Official election date and links to state election offices.'),
@@ -17,21 +17,21 @@ const sources={
 };
 function V(title,slug,duration,date,prompt,pause,extra={}){
  return {title,url:'https://www.pbs.org/video/'+slug+'/',duration,date,prompt,pause,captions:true,reviewed,
- source:title.includes('Simple Civics')?'WFYI / PBS Simple Civics':title.includes('facts and math')?'PBS NewsHour':'Crash Course / PBS Digital Studios',
+ source:title.includes('Simple Civics')?'WFYI / PBS Simple Civics':'PBS NewsHour',
  context:'Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.',...extra};
 }
 const clips={
  alaska:V('How Alaska became a battleground in the fight for the Senate','vote-2026-1792182550','5:01','2026-10-16','How could one statewide race affect chamber control? Which statements are results and which are still campaign claims?','Use in place of extra committee discussion, not as additional time.',{source:'PBS NewsHour',optional:true,context:'Dated 2026 campaign reporting. This report does not establish a November winner.'}),
  rallies:V("Examining Trump's claims at his midterm rallies",'rally-rhetoric-1792182521','6:48','2026-10-16','Choose one checkable campaign claim. What independent record would test it?','May replace the media explainer. Apply the same verification questions to every party.',{source:'PBS NewsHour',optional:true,context:'Dated 2026 reporting and fact checking. Separate the quoted claim, the reporter’s evidence, and your verification.'}),
- congress:V('Bicameral Congress: Crash Course Government #2','crash-course-government-2','9:04','2015-01-30','How do House and Senate representation and election cycles differ?','Pause after the chamber comparison; use the fact cards before continuing.',{alternateUrl:'https://www.youtube.com/watch?v=n9defOwVWS8'}),
+ congress:V('Members of Congress: Simple Civics','members-of-congress-lswvi8','1:09','2021-12-29','Which two chambers make up Congress?','Name the House and Senate before continuing.'),
  members:V('Members of Congress: Simple Civics','members-of-congress-lswvi8','1:09','2021-12-29','Which two chambers together make up Congress?','Replay if students confuse Congress with just the House.'),
  federalism:V('Federalism and Elections: Simple Civics','federalism-and-elections-in-the-united-states-xd8u2b','2:29','2026-06-23','Why check the state election office for local election information?','Pause after the explanation of shared national and state authority.',{optional:true}),
- leaders:V('Congressional Leadership: Crash Course Government #8','crash-course-government-8','8:10','2015-03-14','How can becoming the majority change who organizes the chamber?','Pause when the Speaker is explained; focus on the role rather than the person shown.'),
- committees:V('Congressional Committees: Crash Course Government #7','crash-course-government-7','8:26','2015-03-06','Why does a committee chair matter before the whole chamber votes?','Pause after standing committees; define a committee as a smaller working group.'),
- checks:V('Checks and Balances: Crash Course Government #3','crash-course-government-3','8:30','2015-02-06','How can Congress check the president?','Pause after legislative checks on the executive; restate them in everyday language.',{alternateUrl:'https://www.youtube.com/watch?v=0bf3CwYCxXw'}),
- bill:V('How a Bill Becomes a Law: Crash Course Government #9','crash-course-government-9','6:56','2015-02-20','Why does winning one chamber not guarantee a new law?','Pause after presidential action; trace the same text through both chambers.',{alternateUrl:'https://www.youtube.com/watch?v=66f4-NKEYz4'}),
+ leaders:V('Members of Congress: Simple Civics','members-of-congress-lswvi8','1:09','2021-12-29','Who leads the House?','Connect the Speaker to the majority, then use the seat model.'),
+ committees:{title:'What are Congressional Committees?',url:'https://www.youtube.com/watch?v=IkfseDAVHYo',source:'AGU (American Geophysical Union)',duration:'2:20',date:'2018-11-15',reviewed,captions:true,prompt:'What work happens in committees before a full chamber votes?',pause:'Use the official House extract to verify the committee’s role.',context:'Evergreen institutional explainer from a scientific association. Verify institutional facts against house.gov; science-related examples are not 2026 election results.'},
+ checks:{title:'These midterm races could decide Trump’s future',url:'https://youtu.be/fKzS5sYtZ0A',source:'Guardian News',duration:'4:32',date:'2026-10-23',reviewed,captions:true,prompt:'What could a changed Congress make harder for a president? Separate a possible outcome from an established result.',pause:'After viewing, choose one congressional power to test in the school-lunch scenario.',context:'Pre-election reporting and analysis, not November results. The headline is the outlet’s framing; test its claims against the institutional rules.'},
+ bill:{title:'Will the US midterms change anything? | DW News',url:'https://youtu.be/CEvUySWgXMA',source:'DW News',duration:'7:22',date:'2026-10-19',reviewed,captions:true,prompt:'What could Congress change, and what would still need agreement? Compare the limits with the Guardian headline.',pause:'After viewing, point to a power and a limit in the visual power panel.',context:'Pre-election reporting from Germany’s international public broadcaster. Polls and possible outcomes are not results. Use the House and Constitution references to verify institutional claims.'},
  research:V('How Do You Research Candidates? Simple Civics','how-do-you-research-candidates-vqol2j','2:55','2022-10-13','Which source could you use to check a campaign claim?','Separate a candidate’s promise from evidence that verifies a claim.'),
- media:V('Media Institution: Crash Course Government #44','crash-course-government-and-politics-44','8:40','2016-01-16','How can selection and framing shape which issues seem important?','Pause after agenda setting; attention is different from proof.',{alternateUrl:'https://www.youtube.com/watch?v=6F0g4N415uw'}),
+ media:V('Recognizing Election Mis/Disinformation: Simple Civics','recognizing-election-misdisinformation-hn47gs','3:05','2023-10-26','What should you check before sharing an election claim?','Name an independent record that could test the claim.'),
  calls:V("How the Associated Press uses facts and math to call election results",'calling-the-race-1604354239','6:19','2020-11-02','How is a race call different from a prediction or official certification?','This 2020 report explains a method; it does not report 2026 winners.'),
  machines:V('How Do Voting Machines Work? Simple Civics','how-do-voting-machines-work-ikrecu','2:07','2022-10-28','What role do officials and records play in checking a count?','Use the EAC reference to distinguish counting, canvass, and certification.')
 };
@@ -46,14 +46,14 @@ const meta={unit:'Who Has the Power?',unitKey:'midterms',code:'WP',course:'CURRE
  goals:['Explain what voters choose in midterms.','Connect chamber control to governing powers and limits.','Check claims and separate evidence from prediction.','Explain verified results with evidence and acknowledge uncertainty.'],
  competencies:{1:'Civic structures',2:'Evidence and sourcing',3:'Cause and effect',4:'Perspective',5:'Reasoned explanation'},
  assessment:'Three short responses and one practice investigation per topic. Topic 5 adds a dated results notebook and a final explanation using two sources, a competing interpretation, and an uncertainty.',
- sourcePolicy:'Government references establish institutional facts. PBS, WFYI, and Crash Course provide educational explanations. Campaign messages are evidence of a message, not independent proof of its claim. Results need a source, check date, and reporting stage.'};
+ sourcePolicy:'Government references establish institutional facts. WFYI / PBS and AGU provide educational explanations. Teacher-selected Guardian and DW reports are analyzed for framing and checked against official institutional sources. Campaign messages are evidence of a message, not independent proof of its claim. Results need a source, check date, and reporting stage.'};
 const topics=[
 {
  n:1,key:'wp-t01',topic:'Topic 1',page:'block-01.html',title:'The Election Nobody Understands',subtitle:'What are voters actually choosing?',
  overview:'Find out what is on the 2026 ballot, compare the House and Senate, and explain how Congress can change while the president stays in office.',question:meta.openingQuestion,
  learningTargets:[LT('Civic structures','I can explain what a midterm election changes and what it does not.'),LT('Comparison','I can distinguish House elections from Senate elections.'),LT('Cause and effect','I can explain one way a changed congressional majority could affect government decisions.')],
  successCriteria:[SC('Civic structures','I can identify congressional offices on the ballot and explain that the presidency is not being elected.'),SC('Comparison','I can sort at least four of five House/Senate facts correctly and correct my errors.'),SC('Evidence','I can use one verified fact to explain a possible governing consequence.')],
- videos:[clips.congress,clips.members,clips.federalism],sources:[sources.fec,sources.house,sources.senate],
+ videos:[clips.congress,{...clips.federalism,optional:false}],sources:[sources.fec,sources.house,sources.senate],
  terms:[['Midterm','An election held halfway through a presidential term.'],['Congress','The House of Representatives and Senate together.'],['Majority','More than half of a group; chamber organization also follows its rules.']],
  hook:'The president is not on the ballot. Could Washington still change?',prediction:['Yes, Congress could change.','No, only presidents change government.','I am not sure yet.'],
  background:[
@@ -186,6 +186,7 @@ const topics=[
 const lessonReadings=require('../midterms-readings');
 for(const t of topics){t.flow=lessonReadings[t.n];t.status='ready';t.inClass='Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.';t.resources=[{label:'Teacher OS',url:'../teacher/'+(t.n===1?'midterms-run-of-show.html':`midterms-topic-${String(t.n).padStart(2,'0')}-os.html`)}];}
 require('../midterms-revision')({meta,topics,sources,clips});
+require('../midterms-engagement')({meta,topics,clips});
 // Election Day is a scheduled viewing day beside the five topics, not a sixth topic.
 const days=[require('../midterms-election-day')];
 module.exports={meta,topics,sources,clips,days};

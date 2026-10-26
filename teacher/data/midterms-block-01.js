@@ -111,10 +111,10 @@
       "minutes": 5,
       "screen": {
         "eyebrow": "Topic 1 / Watch / explain",
-        "title": "Bicameral Congress: Crash Course Government #2",
-        "description": "Watch 0:00 to 3:30. How do House and Senate representation and election cycles differ?",
+        "title": "Members of Congress: Simple Civics",
+        "description": "Watch the full clip. Which two chambers make up Congress?",
         "action": {
-          "url": "https://www.pbs.org/video/crash-course-government-2/",
+          "url": "https://www.pbs.org/video/members-of-congress-lswvi8/",
           "label": "Play the clip"
         },
         "cards": [
@@ -134,11 +134,11 @@
       },
       "intel": {
         "land": "Congressional elections can change governing power while the president stays.",
-        "ask": "How do House and Senate representation and election cycles differ?",
+        "ask": "Which two chambers make up Congress?",
         "listenFor": "After the selected Congress excerpt, students identify both chambers without including the president.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Stop the Congress excerpt at the planned 3:30 endpoint and omit the remainder of the full episode. Protect the House-plus-Senate distinction.",
-        "move": "Play the planned 0:00–3:30 Congress excerpt with captions. This is a pacing choice, not a claim that every lesson fact appears in that window. State the matching core takeaway, then use one private point-or-write check.",
+        "cut": "Use the 1:09 clip, then one private House-or-Senate check.",
+        "move": "Play the short WFYI Members of Congress clip. Use the chamber cards and official House and Senate references to check terms and election cycles.",
         "model": "Congress is the House of Representatives and the Senate. The president is a different office.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",
@@ -293,7 +293,7 @@
         "listenFor": "A named source is attached to a specific fact, and the unknown is a genuine outcome rather than a fact already explained.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Play the 1:09 WFYI clip once; skip replay and the optional federalism clip. Protect time to inspect the source and write the evidence note.",
-        "move": "Use the short Members of Congress clip and the supplied official-source extract. Demonstrate where the fact appears. Students complete Chapter 3 with short notes; use the matched reading aloud if playback fails.",
+        "move": "Play the WFYI federalism clip. Use the FEC election-date reference to separate what is known from who might win.",
         "model": "The FEC election information establishes the election date. It cannot establish a congressional winner before voting and counting. The chamber explanation helps me understand which offices are involved.",
         "story": "Begin with the missing president on the ballot. Then reveal the people who consider laws, decide spending through legislation, and investigate government. The House is elected all at once every two years; the Senate turns over in parts. Those elections can leave a president facing new partners or opponents. The outcome changes the setting for decisions. It does not guarantee a policy.",
         "avoid": "Not all 100 Senate seats are on the ballot. A new House majority does not remove the president.",

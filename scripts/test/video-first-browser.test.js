@@ -85,6 +85,37 @@ const {topics}=require('../lib/unit-content/midterms');
   }
   if(t.resultsNotebook){assert(plain.includes('2026-11-04T10:30'));assert(plain.includes('Comparison baseline'));await page.locator('[data-student-nav]').nth(2).click();assert.strictEqual(await page.inputValue('#stage-0'),'Unresolved');}
  }
+ // The bill lab must follow the institutional rules on each path, and must not
+ // create new required writing slots or leak private responses to another page.
+ await page.goto(root+'/midterms/block-03.html');
+ assert((await page.textContent('#lab-outcome')).includes('House has not passed'));
+ await page.selectOption('#lab-house','yes');
+ assert((await page.textContent('#lab-outcome')).includes('Senate still needs'));
+ await page.selectOption('#lab-senate','different');
+ assert((await page.textContent('#lab-outcome')).includes('different text'));
+ await page.selectOption('#lab-senate','yes');
+ assert((await page.textContent('#lab-outcome')).includes('Law enacted'));
+ await page.selectOption('#lab-president','veto');
+ assert((await page.textContent('#lab-outcome')).includes('Veto blocks'));
+ await page.selectOption('#lab-override','one');
+ assert((await page.textContent('#lab-outcome')).includes('House alone is insufficient'));
+ await page.selectOption('#lab-override','both');
+ assert((await page.textContent('#lab-outcome')).includes('Veto overridden'));
+ await page.selectOption('#lab-president','sign');
+ assert(await page.isDisabled('#lab-override'));
+ const introChapter=page.locator('#chapter-1');
+ assert.strictEqual(await introChapter.locator('.clip-card').count(),2);
+ assert.strictEqual(await page.locator('#chapter-2 .clip-card,#chapter-3 .clip-card').count(),0);
+ assert.strictEqual(await page.locator('[data-slot]').count(),3);
+ for(const n of [3,4,5]){
+  await page.goto(root+'/midterms/block-0'+n+'.html');
+  const card=page.locator('.decision-card summary').first();
+  await card.focus();await page.keyboard.press('Enter');
+  assert(await card.evaluate(el=>el.parentElement.open),'reveal works with keyboard');
+  await page.setViewportSize({width:390,height:844});
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'lab page overflows '+n);
+  await page.setViewportSize({width:1365,height:900});
+ }
  // Check narrow Chromebook/mobile layout without changing saved work.
  await page.setViewportSize({width:390,height:844});await page.goto(root+'/midterms/block-04.html');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'mobile student page overflows');

@@ -83,10 +83,8 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 ### Clips
 
-- [Bicameral Congress: Crash Course Government #2](https://www.pbs.org/video/crash-course-government-2/) · Crash Course / PBS Digital Studios · 9:04
-  Watch for: How do House and Senate representation and election cycles differ?
 - [Members of Congress: Simple Civics](https://www.pbs.org/video/members-of-congress-lswvi8/) · WFYI / PBS Simple Civics · 1:09
-  Watch for: Which two chambers together make up Congress?
+  Watch for: Which two chambers make up Congress?
 - [Federalism and Elections: Simple Civics](https://www.pbs.org/video/federalism-and-elections-in-the-united-states-xd8u2b/) · WFYI / PBS Simple Civics · 2:29
   Watch for: Why check the state election office for local election information?
 
@@ -145,10 +143,10 @@ Before lunch: the Day 1 recap clip and the opening question together, then a sel
 
 ### Clips
 
-- [Congressional Leadership: Crash Course Government #8](https://www.pbs.org/video/crash-course-government-8/) · Crash Course / PBS Digital Studios · 8:10
-  Watch for: How can becoming the majority change who organizes the chamber?
-- [Congressional Committees: Crash Course Government #7](https://www.pbs.org/video/crash-course-government-7/) · Crash Course / PBS Digital Studios · 8:26
-  Watch for: Why does a committee chair matter before the whole chamber votes?
+- [Members of Congress: Simple Civics](https://www.pbs.org/video/members-of-congress-lswvi8/) · WFYI / PBS Simple Civics · 1:09
+  Watch for: Who leads the House?
+- [What are Congressional Committees?](https://www.youtube.com/watch?v=IkfseDAVHYo) · AGU (American Geophysical Union) · 2:20
+  Watch for: What work happens in committees before a full chamber votes?
 - [How Alaska became a battleground in the fight for the Senate](https://www.pbs.org/video/vote-2026-1792182550/) · PBS NewsHour · 5:01
   Watch for: How could one statewide race affect chamber control? Which statements are results and which are still campaign claims?
 
@@ -212,10 +210,10 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 ### Clips
 
-- [Checks and Balances: Crash Course Government #3](https://www.pbs.org/video/crash-course-government-3/) · Crash Course / PBS Digital Studios · 8:30
-  Watch for: How can Congress check the president?
-- [How a Bill Becomes a Law: Crash Course Government #9](https://www.pbs.org/video/crash-course-government-9/) · Crash Course / PBS Digital Studios · 6:56
-  Watch for: Why does winning one chamber not guarantee a new law?
+- [These midterm races could decide Trump’s future](https://youtu.be/fKzS5sYtZ0A) · Guardian News · 4:32
+  Watch for: What could a changed Congress make harder for a president? Separate a possible outcome from an established result.
+- [Will the US midterms change anything? | DW News](https://youtu.be/CEvUySWgXMA) · DW News · 7:22
+  Watch for: What could Congress change, and what would still need agreement? Compare the limits with the Guardian headline.
 
 ### Also linked from the unit page
 
@@ -274,8 +272,8 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 - [How Do You Research Candidates? Simple Civics](https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/) · WFYI / PBS Simple Civics · 2:55
   Watch for: Which source could you use to check a campaign claim?
-- [Media Institution: Crash Course Government #44](https://www.pbs.org/video/crash-course-government-and-politics-44/) · Crash Course / PBS Digital Studios · 8:40
-  Watch for: How can selection and framing shape which issues seem important?
+- [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · WFYI / PBS Simple Civics · 3:05
+  Watch for: What should you check before sharing an election claim?
 - [Examining Trump's claims at his midterm rallies](https://www.pbs.org/video/rally-rhetoric-1792182521/) · PBS NewsHour · 6:48
   Watch for: Choose one checkable campaign claim. What independent record would test it?
 
