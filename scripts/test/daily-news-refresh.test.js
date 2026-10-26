@@ -52,6 +52,14 @@ async function main() {
   assert.ok(homepage.indexOf('section-photos.js') < homepage.indexOf('daily-news-hydrate.js'),
     'section-photos.js must load before the hydrate script');
 
+  assert.equal(news.category("Anthropic warns of catastrophic risk ahead of share listing"), 'Technology');
+  assert.equal(news.category('Lula wins Brazil election'), 'World / International');
+  assert.equal(news.category('Serbia election result changes leadership'), 'World / International');
+  assert.equal(news.storyCategory({title:'Opposition wins election in France',source:{beat:'World / International'}}), 'World / International');
+  assert.equal(news.storyCategory({title:'US midterms bring new election campaigns',source:{beat:'World / International'}}), 'U.S. / Democracy');
+  assert.match(homepage, /data-class-announcement/);
+  assert.match(hydrate, /day\.homeAnnouncement/);
+  assert.doesNotMatch(homepage, /Current Wire reviewed August|Canada announces retaliatory tariffs/);
   const now = new Date();
   const yesterday = new Date(now.getTime() - 24 * 3600000);
   const old = new Date(now.getTime() - 96 * 3600000);

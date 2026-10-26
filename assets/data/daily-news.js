@@ -1,49 +1,49 @@
-/* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
+/* BeCurrent daily news, curated and publisher-verified October 26, 2026. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-23",
-  lead: {
-    category: "U.S. / Democracy",
-    headline: "Home distillers rejoice as US Supreme Court considers whether to finally legalise moonshine",
-    dek: "The Supreme Court will consider in the new year whether the 1868 legislation forbidding home distilling should be overturned.",
-    source: "BBC News",
-    published: "October 23, 2026",
-    url: "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/bffe/live/95770270-cef5-11f1-b441-2b33b063138f.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cv98zn0ye4kpo?at_medium=RSS&at_campaign=rss"
+  "reviewed": "2026-10-26",
+  "lead": {
+    "category": "U.S. / Democracy",
+    "headline": "Thune scrambles to save the GOP's Senate majority",
+    "dek": "AP follows Republican Senate campaigns as candidates respond to voters’ concerns. The report connects individual races to control of the Senate, without establishing November winners.",
+    "source": "Associated Press",
+    "published": "October 26, 2026",
+    "url": "https://apnews.com/article/john-thune-midterm-elections-senate-majority-republicans-8f1d701189db1189e07b78375f3ad805",
+    "image": "https://dims.apnews.com/dims4/default/eec115c/2147483647/strip/true/crop/2420x1816+0+0/resize/1200x900!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F92%2Ffe%2Fcb8c62bcbc32ef758d93137baba7%2F0895e0a21c624183a9db9aba51f4c2ea",
+    "imageCredit": "Image: Associated Press",
+    "imageCreditUrl": "https://apnews.com/article/john-thune-midterm-elections-senate-majority-republicans-8f1d701189db1189e07b78375f3ad805"
   },
-  wire: [
+  "wire": [
     {
-      category: "World / International",
-      headline: "Seven shot dead by gunmen at church funeral in Jordan, officials say",
-      dek: "Thirty-four people are also injured in the attack in southern Karak governorate, and a manhunt is now under way.",
-      source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"
+      "category": "World / International",
+      "headline": "Lula wins fourth term in dramatic Brazil election comeback",
+      "dek": "Brazil’s presidential runoff produced a fourth term for Lula after he trailed in the first round. Read how the vote changed and what follows.",
+      "source": "BBC News",
+      "published": "October 26, 2026",
+      "url": "https://www.bbc.co.uk/news/articles/ckm23y3mg1yyo"
     },
     {
-      category: "Science / Environment",
-      headline: "Wales plans to ban steel pylons as government launches consultation",
-      dek: "The Welsh government says it is consulting on an \"undergrounding-first approach\" to electricity lines.",
-      source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c9x28dgj2r0go?at_medium=RSS&at_campaign=rss"
+      "category": "Economy",
+      "headline": "Trump failed to stop inflation. Now Republicans may pay the price in the midterm elections",
+      "dek": "AP examines how household costs feature in midterm campaigns, alongside candidates’ competing accounts of the economy. Campaign expectations remain separate from election results.",
+      "source": "Associated Press",
+      "published": "October 26, 2026",
+      "url": "https://apnews.com/article/trump-economy-midterms-inflation-prices-96f617e2bbb42be4261a0141f787c6ed"
     },
     {
-      category: "U.S. / Democracy",
-      headline: "Former FBI agents surrender, charged with lying to Congress",
-      dek: "Nikki Floris and Bradley Benavides allegedly lied to Congress about Hunter Biden's laptop.",
-      source: "NewsNation",
-      published: "October 23, 2026",
-      url: "https://www.newsnationnow.com/politics/former-fbi-agents-surrender-lying-congress/"
+      "category": "Technology",
+      "headline": "Anthropic warns of 'catastrophic risk' to humankind ahead of blockbuster share listing",
+      "dek": "Ahead of a planned stock-market listing, Anthropic describes potential dangers from advanced AI. Examine the company’s claims and the evidence behind them.",
+      "source": "BBC News",
+      "published": "October 26, 2026",
+      "url": "https://www.bbc.co.uk/news/articles/cq398p1wd1evo"
     },
     {
-      category: "U.S. / Government",
-      headline: "White House says Melania Trump brokers truce for Ukraine city 'on brink of disaster'",
-      dek: "Ukraine and Russia confirm the truce in Russian-occupied Oleshky, where residents have had to eat garden weeds to survive.",
-      source: "BBC News",
-      published: "October 23, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c6vgxkvl4w5eo?at_medium=RSS&at_campaign=rss"
+      "category": "World / International",
+      "headline": "Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement",
+      "dek": "A student-led opposition movement has defeated the governing party in Serbia’s election, according to BBC reporting. Examine the result and the next steps.",
+      "source": "BBC News",
+      "published": "October 26, 2026",
+      "url": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo"
     }
   ]
 };

@@ -61,19 +61,25 @@ function parseSeenDate(value) {
 
 function category(title) {
   const t = title.toLowerCase();
-  if (/election|vot|ballot|supreme court|constitution|democracy|congress/.test(t)) return 'U.S. / Democracy';
-  if (/white house|president|senate|house of representatives|federal|governor/.test(t)) return 'U.S. / Government';
-  if (/iran|israel|gaza|ukraine|russia|china|taiwan|missile|war|military|attack|nuclear|security/.test(t)) return 'World / Security';
-  if (/summit|diplomat|ceasefire|treaty|sanction|united nations|negotiat/.test(t)) return 'World / Diplomacy';
-  if (/econom|inflation|tariff|trade|jobs|market|oil|gas price|interest rate|fed\b|bank/.test(t)) return 'Economy';
-  if (/ai\b|artificial intelligence|technology|tech\b|cyber|data center|social media/.test(t)) return 'Technology';
-  if (/climate|wildfire|hurricane|flood|storm|environment|epa\b|heat/.test(t)) return 'Climate / Environment';
+  // Whole words matter: “warns” is not “war”, and “market” is not “mark”.
+  if (/\b(?:anthropic|openai|ai|artificial intelligence|technology|tech|cyber|data cent(?:er|re)|social media)\b/.test(t)) return 'Technology';
+  if (/\b(?:brazil|brazilian|lula|bolsonaro|serbia|serbian|vučić|vucic|canadian|canada)\b/.test(t) && /\b(?:election|elections|vote|votes|voting|wins|loses)\b/.test(t)) return 'World / International';
+  if (/\b(?:election|elections|voters?|voting|ballots?|supreme court|constitution|democracy|congress)\b/.test(t)) return 'U.S. / Democracy';
+  if (/\b(?:white house|president|senate|house of representatives|federal|governor)\b/.test(t)) return 'U.S. / Government';
+  if (/\b(?:iran|israel|gaza|ukraine|russia|china|taiwan|missiles?|war|military|attacks?|nuclear|security)\b/.test(t)) return 'World / Security';
+  if (/\b(?:summit|diplomats?|ceasefire|treaty|sanctions?|united nations|negotiations?)\b/.test(t)) return 'World / Diplomacy';
+  if (/\b(?:economy|economic|inflation|tariffs?|trade|jobs|markets?|oil|gas prices?|interest rates?|fed|banks?)\b/.test(t)) return 'Economy';
+  if (/\b(?:climate|wildfires?|hurricanes?|floods?|storms?|environment|epa|heat)\b/.test(t)) return 'Climate / Environment';
   return 'Current Events';
 }
 
 function storyCategory(article) {
   const derived = category(article.title);
-  return derived !== 'Current Events' ? derived : (article.source.beat || derived);
+  const beat = article.source.beat || '';
+  // Election vocabulary alone cannot make a story from a world feed U.S. news.
+  const explicitUS = /\b(?:united states|american voters|us congress|us supreme court|us midterms)\b|u\.s\./i.test(article.title);
+  if (/^World/.test(beat) && /^U\.S\./.test(derived) && !explicitUS) return 'World / International';
+  return derived !== 'Current Events' ? derived : (beat || derived);
 }
 
 function words(title) {

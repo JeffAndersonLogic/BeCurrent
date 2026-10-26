@@ -6,6 +6,12 @@
   }
 
   function render(){
+    const notice=document.querySelector('[data-class-announcement]');
+    if(notice){
+      const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Indiana/Indianapolis',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      const day=((window.BECURRENT_SCHEDULE||{}).days||[]).find(d=>d.date===today);
+      notice.textContent=day?(day.homeAnnouncement||'Today: '+(day.topicTitle||'Open the class board')):'Open today’s class board';
+    }
     const data=window.BECURRENT_DAILY_NEWS||{};
     const lead=data.lead||{};
     const wire=Array.isArray(data.wire)?data.wire:[];
@@ -60,6 +66,20 @@
         credit.hidden=true;
         credit.removeAttribute('href');
       }
+    }
+    // Publisher images can be blocked on school networks. Keep the existing
+    // local, explicitly captioned file-photo route available on an actual error.
+    if(photo){
+      const attempted=photo,probe=new Image();
+      if(hero)hero.dataset.photoUrl=attempted;
+      probe.onerror=()=>{
+        if(hero&&hero.dataset.photoUrl!==attempted)return;
+        const fallback=sections?sections.forCategory(lead.category):null;
+        if(hero){hero.style.backgroundImage=fallback?'url('+JSON.stringify(fallback.src)+')':'';hero.dataset.filePhoto=fallback?'true':'false';hero.dataset.hasPhoto=fallback?'true':'false';hero.setAttribute('aria-label',fallback?fallback.alt:'Photograph unavailable');}
+        if(captionEl)captionEl.textContent=fallback?sections.caption(fallback):'';
+        if(credit){credit.textContent=fallback?fallback.credit:'';credit.hidden=!fallback;if(fallback)credit.href=fallback.creditUrl;else credit.removeAttribute('href');}
+      };
+      probe.src=attempted;
     }
     if(kicker)kicker.textContent='Today’s top story'+(lead.category?' · '+lead.category:'');
 

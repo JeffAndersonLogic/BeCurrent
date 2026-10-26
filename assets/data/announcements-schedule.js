@@ -131,9 +131,12 @@ window.BECURRENT_SCHEDULE={
 ,
 
   {date:'2026-10-26',topic:'WP3',topicTitle:'Who Has the Power? | The Power to Stop a President',
-   doNow:'A president wants a new law. The House says no. What happens next? Write your prediction.',
-   agenda:['Opening question: what happens when the House says no?','Watch, then sort which branch holds each power.','Follow a bill through both chambers and the president.','Weigh careful scrutiny against delay in a practice scenario.','Explain your judgment and file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
-   homework:'Finish WP3 - Checks and Governing in Canvas.',homeworkDue:'the start of class on Wednesday, October 28'}
+   homeAnnouncement:'Today: Midterms 3. Work independently. Eight questions. Canvas before lunch.',
+   note:'Work independently with headphones. All six notes boxes are on the lesson page; no copied notes are required. The teacher is available for individual help.',
+   doNow:'Open Midterms 3. A president wants a new law. The House says no. Make your private prediction, then begin Chapter 1.',
+   agenda:['On your own: watch the Guardian and DW opening clips with headphones.','Read the notes on the page and answer Questions 1–4. No note copying is required.','Correct the five practice choices, then test the school-lunch bill lab.','Answer Questions 5–8 using the bill lab, official sources, and your earlier notes.','Check all eight answers. Gather All My Work, paste into Canvas, and submit before lunch.','After lunch: CNN10, then daily news and your News Log.'],
+   homework:'Finish the eight worksheet questions and five practice choices for WP3 - Checks and Governing in Canvas.',homeworkDue:'the start of class on Wednesday, October 28'}
+
 ,
 
   {date:'2026-10-28',topic:'WP4',topicTitle:'Who Has the Power? | The Fight for Your Vote',

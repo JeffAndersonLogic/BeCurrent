@@ -127,3 +127,5 @@ body.teacher-on .teacher-only{display:block}
 .home-lead-photo .credit:hover{text-decoration:underline}
 .home-lead-photo .credit[hidden]{display:none}
 .publication-home .wrap{max-width:1216px}
+/* Today's class announcement shares the existing horizontally scrolling wire. */
+.home-wire .home-class-notice{color:var(--vf-ink);font-weight:700;border-right:1px solid var(--vf-rule);padding-right:26px}
