@@ -1,49 +1,49 @@
-/* BeCurrent daily news, curated and publisher-verified October 26, 2026. */
+/* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  "reviewed": "2026-10-26",
-  "lead": {
-    "category": "U.S. / Democracy",
-    "headline": "Thune scrambles to save the GOP's Senate majority",
-    "dek": "AP follows Republican Senate campaigns as candidates respond to voters’ concerns. The report connects individual races to control of the Senate, without establishing November winners.",
-    "source": "Associated Press",
-    "published": "October 26, 2026",
-    "url": "https://apnews.com/article/john-thune-midterm-elections-senate-majority-republicans-8f1d701189db1189e07b78375f3ad805",
-    "image": "https://dims.apnews.com/dims4/default/eec115c/2147483647/strip/true/crop/2420x1816+0+0/resize/1200x900!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F92%2Ffe%2Fcb8c62bcbc32ef758d93137baba7%2F0895e0a21c624183a9db9aba51f4c2ea",
-    "imageCredit": "Image: Associated Press",
-    "imageCreditUrl": "https://apnews.com/article/john-thune-midterm-elections-senate-majority-republicans-8f1d701189db1189e07b78375f3ad805"
+  reviewed: "2026-10-26",
+  lead: {
+    category: "World / International",
+    headline: "Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement",
+    dek: "The populist right-wing leader of 12 years says it is \"clear\" his party has lost the vote billed as a referendum on the country's future.",
+    source: "BBC News",
+    published: "October 26, 2026",
+    url: "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/f0c7/live/712973e0-d110-11f1-b441-2b33b063138f.jpg",
+    imageCredit: "Image: BBC News",
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss"
   },
-  "wire": [
+  wire: [
     {
-      "category": "World / International",
-      "headline": "Lula wins fourth term in dramatic Brazil election comeback",
-      "dek": "Brazil’s presidential runoff produced a fourth term for Lula after he trailed in the first round. Read how the vote changed and what follows.",
-      "source": "BBC News",
-      "published": "October 26, 2026",
-      "url": "https://www.bbc.co.uk/news/articles/ckm23y3mg1yyo"
+      category: "U.S. / National",
+      headline: "15-year-old arrested in connection to shooting near Florida A&M",
+      dek: "The Saturday shooting near the Florida A&M campus injured 12 people, six of them children.",
+      source: "NewsNation",
+      published: "October 26, 2026",
+      url: "https://www.newsnationnow.com/crime/gun-violence/15-year-old-arrested-shooting-florida-am/"
     },
     {
-      "category": "Economy",
-      "headline": "Trump failed to stop inflation. Now Republicans may pay the price in the midterm elections",
-      "dek": "AP examines how household costs feature in midterm campaigns, alongside candidates’ competing accounts of the economy. Campaign expectations remain separate from election results.",
-      "source": "Associated Press",
-      "published": "October 26, 2026",
-      "url": "https://apnews.com/article/trump-economy-midterms-inflation-prices-96f617e2bbb42be4261a0141f787c6ed"
+      category: "Technology",
+      headline: "Anthropic files for potentially the biggest IPO ever even as CEO warns of risk to humanity from AI",
+      dek: "SAN FRANCISCO (AP) — Artificial intelligence giant Anthropic filed papers Monday for what could be the biggest initial public offering of stock ever even as its top executive warns that advanced AI could pose an existential threat to humanity. The filing sets up the San Francisco company for a Wall ",
+      source: "NewsNation",
+      published: "October 26, 2026",
+      url: "https://www.newsnationnow.com/business/tech/ai/ap-artificial-intelligence-giant-anthropic-files-papers-to-sell-shares-to-the-public-for-the-first-time/"
     },
     {
-      "category": "Technology",
-      "headline": "Anthropic warns of 'catastrophic risk' to humankind ahead of blockbuster share listing",
-      "dek": "Ahead of a planned stock-market listing, Anthropic describes potential dangers from advanced AI. Examine the company’s claims and the evidence behind them.",
-      "source": "BBC News",
-      "published": "October 26, 2026",
-      "url": "https://www.bbc.co.uk/news/articles/cq398p1wd1evo"
+      category: "World / Security",
+      headline: "Nurse killed in attack while responding to Ebola alert in DR Congo",
+      dek: "Local youths reportedly accused the health workers of contaminating water sources and spreading Ebola.",
+      source: "BBC News",
+      published: "October 26, 2026",
+      url: "https://www.bbc.co.uk/news/articles/crx2dyd24188o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "category": "World / International",
-      "headline": "Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement",
-      "dek": "A student-led opposition movement has defeated the governing party in Serbia’s election, according to BBC reporting. Examine the result and the next steps.",
-      "source": "BBC News",
-      "published": "October 26, 2026",
-      "url": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo"
+      category: "World / Security",
+      headline: "Chris Brown given suspended eight-month prison sentence over nightclub attack",
+      dek: "The R&B star previously pleaded guilty to affray, after attacking a music producer with a glass bottle.",
+      source: "BBC News",
+      published: "October 26, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cq3dje4g4d5jo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
