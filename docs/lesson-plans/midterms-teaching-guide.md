@@ -17,7 +17,7 @@ Civics investigation. Reverse History is optional for this unit.
 
 ## Final assessment
 
-Topics 1–4: five practice choices, a brief source note, an application note, and a final explanation. Topic 5: a guided results notebook and one final explanation. Optional planning notes are not required. Political preference is not scored.
+Topic 3: eight short worksheet questions distributed through the self-paced lesson, plus five practice choices. Questions 6–8 are the source note, application note, and final explanation. Topics 1, 2, and 4 retain their practice and short responses; Topic 2 also includes the committee lookup. Topic 5 uses the guided results notebook and final explanation. Political preference is not scored.
 
 Accuracy and reasoning are scored, not political preferences. Students respond privately; the teacher can voice anonymous examples. Typing, dictation, and paper accommodations remain available.
 
@@ -453,7 +453,7 @@ Reteach: Move the slider across 218, then connect that change to one committee j
 
 ## Topic 3: The Power to Stop a President
 
-Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.
+Work independently through two opening clips, short notes, and a school-lunch bill lab. Answer eight worksheet questions along the way to explain congressional checks, accountability, and delay.
 
 Question: When does divided power protect the public, and when does it make governing harder?
 
@@ -471,7 +471,7 @@ Question: When does divided power protect the public, and when does it make gove
 
 ### Teacher story
 
-Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.
+Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.
 
 ### Run of show
 
@@ -542,7 +542,7 @@ Look for: A student can explain why House approval alone is insufficient, identi
 
 Reteach: If most students miss the same institution, place that sort statement below the correct institution label and explain one example. Students retry it before moving on.
 
-Cut: Skip additional impeachment and Senate procedure examples. Protect correction of the core power classifications.
+Cut: Omit optional background expansions and repeated lab trials. Keep Questions 3–6 and the five practice choices; use phrases and bullets.
 
 **Apply the idea**
 
@@ -552,7 +552,7 @@ Look for: Both viewpoints receive a fair explanation linked to the constructed s
 
 Reteach: If most students supply only one side, use two sentence frames: “Scrutiny could help by __” and “Delay could hurt by __.” Let them use the same institutional example.
 
-Cut: Omit a second scenario and whole-class debate. Protect both the benefit and difficulty in a private response.
+Cut: Keep one benefit and one cost in Question 7; use short bullets instead of a paragraph.
 
 **Explain / Canvas**
 
@@ -562,11 +562,11 @@ Look for: A supported judgment includes a specific institutional example and bot
 
 Reteach: If most students write only “good and bad,” ask “Which action helps?” and “Which decision might wait?” Help them insert those actions into their response.
 
-Cut: Omit Push further and extra constitutional exceptions. Protect the short explanation and the final five minutes of filing.
+Cut: Keep the brief Question 8 explanation and the final five minutes for Canvas. Do not require copied notes or a second version of earlier answers.
 
 ### Notes slides
 
-Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
+All six notes boxes are visible on the student page. Students read them independently; copying and a live presentation are not required.
 
 **Why can a president face resistance from Congress?**
 
@@ -642,13 +642,28 @@ Write this down: Divided government can improve accountability and make governin
 
 ### Questions
 
-1. Explain two congressional checks on the president. Identify your source.
+1. Choose one opening clip. Name the outlet and one way a changed Congress could affect a president.
+   Start here: The Guardian / DW report suggests Congress could ____. This is a possible effect, not a known election result.
+   Push further: undefined
+2. Complete the idea: divided government means different parties control the presidency and ____.
+   Start here: Look at the Read the notes box above. Which part of Congress could a different party control?
+   Push further: undefined
+3. Does a congressional investigation prove wrongdoing by itself? Explain what oversight is meant to do.
+   Start here: An investigation does / does not prove wrongdoing by itself. Oversight helps Congress ____.
+   Push further: undefined
+4. Which chamber confirms many presidential nominees: the House, the Senate, or both?
+   Start here: Find Confirmations in the notes or the Approve a nominee power card.
+   Push further: undefined
+5. Test the bill lab twice. Record one setup that blocks the bill and one that makes it law. If you use the paper route, trace the two setups from the notes.
+   Start here: Blocked: House ____, Senate ____, president ____. Becomes law: House ____, Senate ____, president ____. You may also test a veto override.
+   Push further: undefined
+6. Explain two congressional checks on the president. Identify your source.
    Start here: Congress can ____ and ____. My source establishes ____.
    Push further: Distinguish a power of both chambers from a Senate-only power.
-2. Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.
+7. Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.
    Start here: The same bill also needs ____. Scrutiny could ____. Delay could ____.
    Push further: What evidence would help judge which concern matters more here?
-3. Can divided government improve accountability and make governing harder at the same time? Use one institutional example.
+8. Can divided government improve accountability and make governing harder at the same time? Use one institutional example.
    Start here: It can do both because ____. For example, ____.
    Push further: Identify a circumstance in which your conclusion could change.
 

@@ -237,7 +237,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.</p>
+                <p>Work independently through two opening clips, short notes, and a school-lunch bill lab. Answer eight worksheet questions along the way to explain congressional checks, accountability, and delay.</p>
             </td>
         </tr>
         <tr>
@@ -254,8 +254,13 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Work independently. Watch the two opening clips with headphones and read the six notes boxes on the page; no copied notes or teacher presentation is required. Answer worksheet Questions 1–8 where they appear. Questions 6–8 are the source note, application note, and final explanation, not extra tasks. Short phrases and bullets are welcome.</p>
                 <ol>
+                    <li>Choose one opening clip. Name the outlet and one way a changed Congress could affect a president.</li>
+                    <li>Complete the idea: divided government means different parties control the presidency and ____.</li>
+                    <li>Does a congressional investigation prove wrongdoing by itself? Explain what oversight is meant to do.</li>
+                    <li>Which chamber confirms many presidential nominees: the House, the Senate, or both?</li>
+                    <li>Test the bill lab twice. Record one setup that blocks the bill and one that makes it law. If you use the paper route, trace the two setups from the notes.</li>
                     <li>Explain two congressional checks on the president. Identify your source.</li>
                     <li>Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.</li>
                     <li>Can divided government improve accountability and make governing harder at the same time? Use one institutional example.</li>

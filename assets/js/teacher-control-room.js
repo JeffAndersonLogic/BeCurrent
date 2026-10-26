@@ -43,7 +43,7 @@ function visual(id,screen){
   const node=$(id);if(!node)return;node.replaceChildren();
   if(screen.image){const pic=screen.image;if(/^\.\.\/assets\/images\/[a-zA-Z0-9_./-]+$/.test(pic.src)){const fig=document.createElement('figure'),img=document.createElement('img'),cap=document.createElement('figcaption'),credit=document.createElement('a');fig.className='screen-photo';img.src=pic.src;img.alt=pic.alt;cap.textContent=pic.caption+' ';credit.textContent=pic.credit;if(/^https:\/\//.test(pic.source)){credit.href=pic.source;credit.target='_blank';credit.rel='noopener noreferrer';}cap.append(credit);fig.append(img,cap);node.append(fig);}}
   if(screen.bullets){const ul=document.createElement('ul');for(const str of screen.bullets){const li=document.createElement('li');li.textContent=str;ul.append(li)}node.append(ul)}
-  if(screen.write){const w=document.createElement('p');w.className='write-this';const b=document.createElement('strong');b.textContent='✎ Write this down: ';w.append(b,document.createTextNode(screen.write));node.append(w)}
+  if(screen.write){const w=document.createElement('p');w.className='write-this';const b=document.createElement('strong');b.textContent=screen.noteMode==='read'?'Key idea: ':'✎ Write this down: ';w.append(b,document.createTextNode(screen.write));node.append(w)}
   if(screen.cards){const grid=document.createElement('div');grid.className='screen-cards';for(const c of screen.cards){const card=document.createElement('article'),h=document.createElement('h3'),p=document.createElement('p');h.textContent=c.title;p.textContent=c.text;card.append(h,p);grid.append(card)}node.append(grid)}
 }
 function go(next,source){

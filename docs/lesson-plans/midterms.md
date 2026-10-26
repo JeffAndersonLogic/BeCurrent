@@ -190,7 +190,7 @@ _Checks, cooperation, and governing limits_
 
 ### Overview
 
-Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.
+Work independently through two opening clips, short notes, and a school-lunch bill lab. Answer eight worksheet questions along the way to explain congressional checks, accountability, and delay.
 
 ### Learning targets
 
@@ -206,7 +206,7 @@ Investigate laws, spending, oversight, and confirmations. Explain how Congress c
 
 ### What happens in class
 
-Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
+Before lunch: a fully self-paced lesson. Students watch both opening clips independently, read the six notes boxes without copying them, answer eight worksheet questions, correct the five-item practice, and test the bill lab. The teacher circulates for individual support. Gather the complete worksheet into Canvas before lunch. After lunch: CNN10 and daily reporting.
 
 ### Clips
 
@@ -221,19 +221,29 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 ### The filings
 
-1. **Civic structures.** Explain two congressional checks on the president. Identify your source.
+1. **.** Choose one opening clip. Name the outlet and one way a changed Congress could affect a president.
+   - START HERE: The Guardian / DW report suggests Congress could ____. This is a possible effect, not a known election result.
+2. **.** Complete the idea: divided government means different parties control the presidency and ____.
+   - START HERE: Look at the Read the notes box above. Which part of Congress could a different party control?
+3. **.** Does a congressional investigation prove wrongdoing by itself? Explain what oversight is meant to do.
+   - START HERE: An investigation does / does not prove wrongdoing by itself. Oversight helps Congress ____.
+4. **.** Which chamber confirms many presidential nominees: the House, the Senate, or both?
+   - START HERE: Find Confirmations in the notes or the Approve a nominee power card.
+5. **.** Test the bill lab twice. Record one setup that blocks the bill and one that makes it law. If you use the paper route, trace the two setups from the notes.
+   - START HERE: Blocked: House ____, Senate ____, president ____. Becomes law: House ____, Senate ____, president ____. You may also test a veto override.
+6. **Civic structures.** Explain two congressional checks on the president. Identify your source.
    - START HERE: Congress can ____ and ____. My source establishes ____.
    - PUSH FURTHER: Distinguish a power of both chambers from a Senate-only power.
-2. **Perspective.** Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.
+7. **Perspective.** Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.
    - START HERE: The same bill also needs ____. Scrutiny could ____. Delay could ____.
    - PUSH FURTHER: What evidence would help judge which concern matters more here?
-3. **Reasoning.** Can divided government improve accountability and make governing harder at the same time? Use one institutional example.
+8. **Reasoning.** Can divided government improve accountability and make governing harder at the same time? Use one institutional example.
    - START HERE: It can do both because ____. For example, ____.
    - PUSH FURTHER: Identify a circumstance in which your conclusion could change.
 
 ### Where the work goes
 
-The civics investigation’s Gather All My Work panel: five-item practice and three short responses. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
+The civics investigation’s Gather All My Work panel: five-item practice and eight distributed worksheet answers. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
 
 ---
 

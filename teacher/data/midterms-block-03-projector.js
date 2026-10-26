@@ -41,15 +41,18 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Today’s direction",
         "title": "Checks, cooperation, and governing limits",
-        "description": "Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.",
+        "description": "Work independently through two opening clips, short notes, and a school-lunch bill lab. Answer eight worksheet questions along the way to explain congressional checks, accountability, and delay.",
         "action": {
           "url": "../midterms/block-03.html#student-flow",
           "label": "See today’s required work"
         },
         "bullets": [
-          "I can explain ways Congress checks presidential power.",
-          "I can explain why one election does not settle every governing decision.",
-          "I can explain a benefit and a difficulty of divided government."
+          "Start in Chapter 1 and work down the page. Watch the two opening clips on your own with headphones. Use captions or the reading takeaways if needed.",
+          "Read each “Read the notes” box before answering the questions below it. You do not need to copy the notes.",
+          "Answer worksheet questions 1–8 where they appear. A word, short phrase, or bullet is enough unless the question asks for an explanation.",
+          "Complete the five practice choices and check your answers. Try the bill lab, then record what you found.",
+          "Use the checklist to find anything unfinished. If stuck, open Start here, reread the notes, or ask your teacher for help.",
+          "At the end, choose Gather All My Work. Paste the entire packet into Canvas and submit before lunch."
         ]
       }
     },
@@ -63,14 +66,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Notes 1 of 6",
         "title": "Why can a president face resistance from Congress?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "An election does not give one person every governing power.",
           "The president leads the executive branch. Congress has legislative responsibilities.",
           "Divided government: different parties control the presidency and at least one chamber.",
           "Disagreement can also happen inside a single party."
         ],
-        "write": "First ask: which institution has the power to take this action?"
+        "write": "First ask: which institution has the power to take this action?",
+        "noteMode": "read"
       }
     },
     {
@@ -110,14 +114,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Notes 2 of 6",
         "title": "How does Congress check the president?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Lawmaking: Congress considers and passes laws.",
           "Spending: Congress decides federal spending through laws.",
           "Oversight: hearings and investigations ask officials to explain decisions.",
           "Confirmations: the Senate confirms many presidential nominees."
         ],
-        "write": "Name the specific check: laws, spending, oversight, or confirmation."
+        "write": "Name the specific check: laws, spending, oversight, or confirmation.",
+        "noteMode": "read"
       }
     },
     {
@@ -130,14 +135,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Notes 3 of 6",
         "title": "What can oversight do, and what can’t it do?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Oversight means Congress examining how government uses its authority.",
           "Hearings can establish facts and bring out information.",
           "An investigation does not prove wrongdoing by itself.",
           "A new majority does not remove a president. Impeachment and conviction are separate processes."
         ],
-        "write": "Oversight gathers evidence. It is not proof."
+        "write": "Oversight gathers evidence. It is not proof.",
+        "noteMode": "read"
       }
     },
     {
@@ -177,14 +183,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Notes 5 of 6",
         "title": "How can a check be useful and frustrating?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Scrutiny can uncover problems, such as waste, and improve a proposal.",
           "Delay can create costs for people waiting for a service.",
           "Divided government can bring accountability and compromise, or delay and stalemate.",
           "None of these follows automatically from a party label."
         ],
-        "write": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected."
+        "write": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected.",
+        "noteMode": "read"
       }
     },
     {
@@ -232,14 +239,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Notes 4 of 6",
         "title": "How does a bill become a law?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "The House and the Senate must ordinarily pass the same bill.",
           "If they pass different versions, the differences must be resolved.",
           "Then the president can sign the bill or veto it.",
           "Congress can override a veto with two-thirds support in each chamber."
         ],
-        "write": "One chamber cannot ordinarily make a law alone."
+        "write": "One chamber cannot ordinarily make a law alone.",
+        "noteMode": "read"
       }
     },
     {
@@ -279,14 +287,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Topic 3 / Notes 6 of 6",
         "title": "How to make a strong judgment",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Name the check being used.",
           "Explain what it can accomplish.",
           "Recognize its cost or limit.",
           "Explain fairly why someone could reach another judgment."
         ],
-        "write": "Divided government can improve accountability and make governing harder at the same time."
+        "write": "Divided government can improve accountability and make governing harder at the same time.",
+        "noteMode": "read"
       }
     },
     {

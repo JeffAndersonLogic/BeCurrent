@@ -187,6 +187,7 @@ const lessonReadings=require('../midterms-readings');
 for(const t of topics){t.flow=lessonReadings[t.n];t.status='ready';t.inClass='Before lunch: follow the continuous civics investigation, with two integrated clips, optional background readings, practice, evidence, and a Canvas checkpoint. After lunch: CNN10 and daily reporting for 20–25 minutes.';t.resources=[{label:'Teacher OS',url:'../teacher/'+(t.n===1?'midterms-run-of-show.html':`midterms-topic-${String(t.n).padStart(2,'0')}-os.html`)}];}
 require('../midterms-revision')({meta,topics,sources,clips});
 require('../midterms-engagement')({meta,topics,clips});
+require('../midterms-independent')({meta,topics});
 // Election Day is a scheduled viewing day beside the five topics, not a sixth topic.
 const days=[require('../midterms-election-day')];
 module.exports={meta,topics,sources,clips,days};

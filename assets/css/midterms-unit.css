@@ -167,3 +167,9 @@ summary{font-family:var(--vf-label);font-weight:650}
 .projector-body .screen-photo figcaption{font-size:clamp(14px,1.2vw,19px)}
 @media(max-width:600px){.decision-grid,.bill-controls{grid-template-columns:1fr}.engagement-lab{padding:1rem}.screen-photo img{max-height:220px}}
 @media print{.decision-card{break-inside:avoid}.bill-controls{display:none}.engagement-lab{border:1px solid #888;background:white}.bill-lab:after{content:'Paper route: trace House approval → Senate agreement on the same text → presidential signature. A veto blocks the bill unless two-thirds in each chamber override it. Explain a benefit of scrutiny and a cost of delay.';display:block}.bill-outcome{display:none}}
+
+/* Distributed worksheet answers stay compact beside the notes they use. */
+[data-worksheet-question]{border-left:3px solid #b7b7b7;padding-left:1.1rem;margin:1.4rem 0}
+[data-worksheet-question] .response{min-height:88px}
+#worksheet-confirmation{min-height:56px;height:64px}
+[data-worksheet-question] .eyebrow{margin-bottom:.6rem}

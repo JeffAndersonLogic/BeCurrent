@@ -321,7 +321,7 @@ function assignmentBody(unit, topic, code) {
     }
     // A committee lookup (Topic 2) is required work, so it is listed where it sits on
     // the page: after the source note, before the application note.
-    const asked = topic.questions.filter(q => !q.optional).map(q => q.text);
+    const asked = [...(topic.worksheet || []), ...topic.questions.filter(q => !q.optional)].map(q => q.text);
     if (topic.lookup) asked.splice(1, 0, 'Committee lookup: ' + topic.lookup.facts.map(f => f.prompt).join(' ') + ' Then: ' + topic.lookup.question.text);
     const required = asked
       .map(q => `                    <li>${esc(plain(q))}</li>`).join('\n');
@@ -333,7 +333,7 @@ function assignmentBody(unit, topic, code) {
       cleanRow('OVERVIEW', `                <p>${esc(plain(topic.overview))}</p>`),
       cleanRow('STEP 1: Open', `                <p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener"><strong>Open Topic ${topic.n} on BeCurrent</strong></a></p>
                 <p>Everything happens on the website. There is nothing to download.</p>`),
-      cleanRow('STEP 2: Investigate', `                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. ${topic.resultsNotebook ? 'Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.' : (topic.lookup ? 'Submit a short source note, a committee lookup, an application note, and a final explanation. A factual bullet, three facts from house.gov with one or two sentences, two short application bullets, and two or three final sentences are enough.' : 'Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.')}</p>
+      cleanRow('STEP 2: Investigate', `                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. ${topic.worksheet ? 'Work independently. Watch the two opening clips with headphones and read the six notes boxes on the page; no copied notes or teacher presentation is required. Answer worksheet Questions 1–8 where they appear. Questions 6–8 are the source note, application note, and final explanation, not extra tasks. Short phrases and bullets are welcome.' : topic.resultsNotebook ? 'Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.' : (topic.lookup ? 'Submit a short source note, a committee lookup, an application note, and a final explanation. A factual bullet, three facts from house.gov with one or two sentences, two short application bullets, and two or three final sentences are enough.' : 'Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.')}</p>
                 <ol>
 ${required}
                 </ol>

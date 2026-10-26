@@ -37,7 +37,7 @@ for(const t of unit.topics){
  assert(page.includes('data-lesson="'+t.key+'"'));assert(index.includes('href="'+t.page+'"'));
  assert.strictEqual((page.match(/data-student-chapter/g)||[]).length,5);
  // Three responses, plus the committee lookup's facts and note where a topic has one (Topic 2).
- assert.strictEqual((page.match(/data-slot=/g)||[]).length,3+(t.lookup?t.lookup.facts.length+1:0));assert.strictEqual((page.match(/data-sort=/g)||[]).length,5);
+ assert.strictEqual((page.match(/data-slot=/g)||[]).length,3+(t.worksheet||[]).length+(t.lookup?t.lookup.facts.length+1:0));assert.strictEqual((page.match(/data-sort=/g)||[]).length,5);
  assert.strictEqual(t.learningTargets.length,3);assert.strictEqual(t.successCriteria.length,3);
  assert.strictEqual(t.videos.filter(v=>!v.optional).length,t.n===5?1:2);
  for(const v of t.videos){assert(page.includes(v.url));assert(v.date&&v.prompt&&v.duration&&v.reviewed);}
@@ -56,7 +56,14 @@ for(const t of unit.topics){
  assert.strictEqual(t.points,5);assert(t.rubric.every(r=>!('points' in r)),'rubric components carry no point values');
  assert.strictEqual((page.match(/data-sort-feedback=/g)||[]).length,5);
  const paper=read('midterms/print-topic-'+String(t.n).padStart(2,'0')+'.html');
- assert(paper.includes('Reading route / core takeaways')&&paper.includes('Background support'));
+ assert(paper.includes('Reading route / core takeaways')&&paper.includes(t.worksheet?'Read the notes:':'Background support'));
+ if(t.worksheet){
+  assert(t.selfPaced.readNotes);assert(!page.includes('Copy into your notes:'));
+  assert.strictEqual((page.match(/class="notes-card"/g)||[]).length,6);
+  assert.deepStrictEqual([...page.matchAll(/data-worksheet-question="(\d+)"/g)].map(x=>Number(x[1])),[1,2,3,4,5,6,7,8]);
+  for(const q of t.worksheet){assert(page.includes('data-slot="'+q.id+'"'));assert(paper.includes(q.text.replace(/&/g,'&amp;')));}
+  assert(!paper.includes('<textarea'));assert(paper.includes('Bill lab / paper route'));
+ }
  if(t.n===4){for(const m of t.messages)assert(paper.includes(m.text));assert(paper.includes(t.evidence.claimPacket.exactClaim));assert(page.includes('3,917')&&page.includes('±1.8'));assert(page.includes(t.evidence.claimPacket.recordSource.url));}
  if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));assert.strictEqual(t.questions.filter(q=>!q.optional).length,1);assert.strictEqual((page.match(/data-optional="true"/g)||[]).length,8);assert(!page.includes('election-commission/election-results/'));assert(page.includes('Six short entries'));}
  assert(!['fetch(','XMLHttpRequest','<iframe'].some(x=>page.includes(x)));

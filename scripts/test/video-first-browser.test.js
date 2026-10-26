@@ -106,7 +106,7 @@ const {topics}=require('../lib/unit-content/midterms');
  const introChapter=page.locator('#chapter-1');
  assert.strictEqual(await introChapter.locator('.clip-card').count(),2);
  assert.strictEqual(await page.locator('#chapter-2 .clip-card,#chapter-3 .clip-card').count(),0);
- assert.strictEqual(await page.locator('[data-slot]').count(),3);
+ assert.strictEqual(await page.locator('[data-slot]').count(),8);
  for(const n of [3,4,5]){
   await page.goto(root+'/midterms/block-0'+n+'.html');
   const card=page.locator('.decision-card summary').first();

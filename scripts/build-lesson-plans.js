@@ -71,7 +71,7 @@ function artifactLabel(topic) {
 // asks "where does this go". A topic with no online artifact has no route, and saying
 // so is the point: it stops a paper day being marked missing in the gradebook.
 function canvasRoute(topic) {
-  if(topic.key&&topic.key.startsWith('wp-'))return 'The civics investigation’s Gather All My Work panel: five-item practice and three short responses'+(topic.lookup?', plus the committee lookup (three facts and one short note)':'')+(topic.resultsNotebook?', plus the dated results notebook':'')+'. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.';
+  if(topic.key&&topic.key.startsWith('wp-'))return 'The civics investigation’s Gather All My Work panel: five-item practice and '+(topic.worksheet?'eight distributed worksheet answers':'three short responses')+(topic.lookup?', plus the committee lookup (three facts and one short note)':'')+(topic.resultsNotebook?', plus the dated results notebook':'')+'. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.';
   if (!hasOnlineArtifact(topic)) {
     return 'Nothing. This topic is done on paper in class and has no online artifact, '
       + 'so there is no submission to collect and nothing to chase.';
@@ -186,7 +186,7 @@ function renderTopic(unit, topic) {
   if (online && (topic.questions || []).length) {
     out.push(topic.page ? '### The filings' : '### The questions');
     out.push('');
-    (topic.questions || []).forEach((q, i) => {
+    [...(topic.worksheet || []), ...(topic.questions || [])].forEach((q, i) => {
       out.push(`${i + 1}. **${plain(q.skill)}.** ${plain(q.text)}`);
       if (q.startHere) out.push(`   - START HERE: ${plain(q.startHere)}`);
       if (q.pushFurther) out.push(`   - PUSH FURTHER: ${plain(q.pushFurther)}`);

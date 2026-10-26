@@ -36,9 +36,9 @@
         "listenFor": "Students recognize that separate institutions can disagree without an election having to be repeated.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Use one private prediction, not a debate about the current president. Protect the institutional question.",
-        "move": "Students use Chapter 1. Introduce the disagreement as a constructed case and distinguish a proposed law from other executive actions.",
+        "move": "Students begin Chapter 1 independently. Check that they can find the self-paced directions and the worksheet checklist. No whole-class opening is required.",
         "model": "The proposal can be delayed, changed, or stopped. A president cannot ordinarily enact that federal law alone.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students say the president can simply pass the law, put a House card and Senate card between “proposal” and “presidential action.” Name the agreements still needed."
       }
@@ -53,15 +53,18 @@
       "screen": {
         "eyebrow": "Topic 3 / Today’s direction",
         "title": "Checks, cooperation, and governing limits",
-        "description": "Investigate laws, spending, oversight, and confirmations. Explain how Congress checks a president and why disagreement can create both accountability and delay.",
+        "description": "Work independently through two opening clips, short notes, and a school-lunch bill lab. Answer eight worksheet questions along the way to explain congressional checks, accountability, and delay.",
         "action": {
           "url": "../midterms/block-03.html#student-flow",
           "label": "See today’s required work"
         },
         "bullets": [
-          "I can explain ways Congress checks presidential power.",
-          "I can explain why one election does not settle every governing decision.",
-          "I can explain a benefit and a difficulty of divided government."
+          "Start in Chapter 1 and work down the page. Watch the two opening clips on your own with headphones. Use captions or the reading takeaways if needed.",
+          "Read each “Read the notes” box before answering the questions below it. You do not need to copy the notes.",
+          "Answer worksheet questions 1–8 where they appear. A word, short phrase, or bullet is enough unless the question asks for an explanation.",
+          "Complete the five practice choices and check your answers. Try the bill lab, then record what you found.",
+          "Use the checklist to find anything unfinished. If stuck, open Start here, reread the notes, or ask your teacher for help.",
+          "At the end, choose Gather All My Work. Paste the entire packet into Canvas and submit before lunch."
         ]
       },
       "intel": {
@@ -70,9 +73,9 @@
         "listenFor": "Students can describe both halves of the question: accountability and getting governing work done.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Do not explain every constitutional exception in the opener. Protect the question and the two kinds of consequence.",
-        "move": "Preview the checks, bill pathway, and spending scenario. Explain that different judgments can succeed when the institutional facts and reasoning are accurate.",
+        "move": "Students read the first notes box and use the on-page directions. Point an individual student to Start here or the reading fallback as needed.",
         "model": "We will explain two checks on presidential power and weigh how scrutiny can help while delay can hurt.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students hear “checks” only as stopping everything, say: “A hearing may reveal information; agreement may still be needed for a law.”"
       }
@@ -87,24 +90,25 @@
       "screen": {
         "eyebrow": "Topic 3 / Notes 1 of 6",
         "title": "Why can a president face resistance from Congress?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "An election does not give one person every governing power.",
           "The president leads the executive branch. Congress has legislative responsibilities.",
           "Divided government: different parties control the presidency and at least one chamber.",
           "Disagreement can also happen inside a single party."
         ],
-        "write": "First ask: which institution has the power to take this action?"
+        "write": "First ask: which institution has the power to take this action?",
+        "noteMode": "read"
       },
       "intel": {
         "land": "First ask: which institution has the power to take this action?",
         "ask": "Why can a president face resistance from Congress?",
-        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
-        "protect": "Leave the slide up until every student has the Write this down line.",
-        "cut": "If time is short, students copy only the Write this down line.",
-        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "listenFor": "Students use this key idea to answer the nearby worksheet question.",
+        "protect": "Keep the notes visible on the student page; do not require a projected explanation.",
+        "cut": "Students read the key idea first if they need a shorter route.",
+        "move": "Students read independently on their own screens. Circulate to support individuals; a live presentation is optional.",
         "model": "First ask: which institution has the power to take this action?",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -141,9 +145,9 @@
         "listenFor": "Students identify a real check and the institution exercising it. They do not treat a hearing as proof of guilt.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Use the visible takeaways if blocked. Keep the power panel and bill simulation.",
-        "move": "Play the teacher-selected Guardian opening (4:32). Students privately identify one possible governing consequence. Treat its title as framing and distinguish forecasts from results.",
+        "move": "Students watch the Guardian clip with headphones on their own. Use the visible takeaways if playback is blocked. Monitor access without advancing the class together.",
         "model": "The clip frames congressional races around their impact on a president. An election could change oversight or legislative priorities, but it does not replace the president.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students mix up the institutions, make three labels: House and Senate—legislation/oversight; Senate—many confirmations; President—sign/veto. Check one example privately."
       }
@@ -158,24 +162,25 @@
       "screen": {
         "eyebrow": "Topic 3 / Notes 2 of 6",
         "title": "How does Congress check the president?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Lawmaking: Congress considers and passes laws.",
           "Spending: Congress decides federal spending through laws.",
           "Oversight: hearings and investigations ask officials to explain decisions.",
           "Confirmations: the Senate confirms many presidential nominees."
         ],
-        "write": "Name the specific check: laws, spending, oversight, or confirmation."
+        "write": "Name the specific check: laws, spending, oversight, or confirmation.",
+        "noteMode": "read"
       },
       "intel": {
         "land": "Name the specific check: laws, spending, oversight, or confirmation.",
         "ask": "How does Congress check the president?",
-        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
-        "protect": "Leave the slide up until every student has the Write this down line.",
-        "cut": "If time is short, students copy only the Write this down line.",
-        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "listenFor": "Students use this key idea to answer the nearby worksheet question.",
+        "protect": "Keep the notes visible on the student page; do not require a projected explanation.",
+        "cut": "Students read the key idea first if they need a shorter route.",
+        "move": "Students read independently on their own screens. Circulate to support individuals; a live presentation is optional.",
         "model": "Name the specific check: laws, spending, oversight, or confirmation.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -190,24 +195,25 @@
       "screen": {
         "eyebrow": "Topic 3 / Notes 3 of 6",
         "title": "What can oversight do, and what can’t it do?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Oversight means Congress examining how government uses its authority.",
           "Hearings can establish facts and bring out information.",
           "An investigation does not prove wrongdoing by itself.",
           "A new majority does not remove a president. Impeachment and conviction are separate processes."
         ],
-        "write": "Oversight gathers evidence. It is not proof."
+        "write": "Oversight gathers evidence. It is not proof.",
+        "noteMode": "read"
       },
       "intel": {
         "land": "Oversight gathers evidence. It is not proof.",
         "ask": "What can oversight do, and what can’t it do?",
-        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
-        "protect": "Leave the slide up until every student has the Write this down line.",
-        "cut": "If time is short, students copy only the Write this down line.",
-        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "listenFor": "Students use this key idea to answer the nearby worksheet question.",
+        "protect": "Keep the notes visible on the student page; do not require a projected explanation.",
+        "cut": "Students read the key idea first if they need a shorter route.",
+        "move": "Students read independently on their own screens. Circulate to support individuals; a live presentation is optional.",
         "model": "Oversight gathers evidence. It is not proof.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -244,9 +250,9 @@
         "listenFor": "The evidence note explains two actual congressional checks, names its source, and does not claim one chamber can ordinarily enact a law alone.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "If the two reports overrun, use the DW reading takeaways and go to the bill lab. Protect the last ten minutes for the checkpoint and Canvas.",
-        "move": "Play the DW opening (7:22), then compare one power and one limit with the Guardian framing. Both clips precede the practice. Use the power panel and House reference for institutional facts.",
+        "move": "Students watch the DW clip independently, then answer Questions 1 and 2 after the notes. They do not wait for a teacher explanation.",
         "model": "Ordinarily the House and Senate must pass the same bill, then the president has a role. Congress can also use oversight to question officials. These are distinct checks, not proof that a particular official did something wrong.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students list branch names without checks, start two clauses: “Congress can ask officials questions through oversight” and “Congress decides legislation.” Then identify which source supports each."
       }
@@ -261,24 +267,25 @@
       "screen": {
         "eyebrow": "Topic 3 / Notes 5 of 6",
         "title": "How can a check be useful and frustrating?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Scrutiny can uncover problems, such as waste, and improve a proposal.",
           "Delay can create costs for people waiting for a service.",
           "Divided government can bring accountability and compromise, or delay and stalemate.",
           "None of these follows automatically from a party label."
         ],
-        "write": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected."
+        "write": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected.",
+        "noteMode": "read"
       },
       "intel": {
         "land": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected.",
         "ask": "How can a check be useful and frustrating?",
-        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
-        "protect": "Leave the slide up until every student has the Write this down line.",
-        "cut": "If time is short, students copy only the Write this down line.",
-        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "listenFor": "Students use this key idea to answer the nearby worksheet question.",
+        "protect": "Keep the notes visible on the student page; do not require a projected explanation.",
+        "cut": "Students read the key idea first if they need a shorter route.",
+        "move": "Students read independently on their own screens. Circulate to support individuals; a live presentation is optional.",
         "model": "Judge a check by its evidence: what it reveals, how long it delays, and who is affected.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -322,10 +329,10 @@
         "ask": "Guided practice — what evidence supports your explanation?",
         "listenFor": "A student can explain why House approval alone is insufficient, identify Senate-only confirmations, and distinguish an investigation from proof of wrongdoing.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Skip additional impeachment and Senate procedure examples. Protect correction of the core power classifications.",
-        "move": "Open Chapters 2 and 3. Reveal the power cards, complete and correct the five sorts, then test the school-lunch bill lab. Show House-only approval, agreement and signature, veto, and override. Students use the official process source for their short source note.",
+        "cut": "Omit optional background expansions and repeated lab trials. Keep Questions 3–6 and the five practice choices; use phrases and bullets.",
+        "move": "Students read the power and bill-route notes, reveal power cards, correct their five practice choices, test the bill lab, and answer Questions 3–6. Circulate for individual checks.",
         "model": "House and Senate; Senate; President; House and Senate; House and Senate. Overriding a veto requires two-thirds support in each chamber.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students miss the same institution, place that sort statement below the correct institution label and explain one example. Students retry it before moving on."
       }
@@ -340,24 +347,25 @@
       "screen": {
         "eyebrow": "Topic 3 / Notes 4 of 6",
         "title": "How does a bill become a law?",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "The House and the Senate must ordinarily pass the same bill.",
           "If they pass different versions, the differences must be resolved.",
           "Then the president can sign the bill or veto it.",
           "Congress can override a veto with two-thirds support in each chamber."
         ],
-        "write": "One chamber cannot ordinarily make a law alone."
+        "write": "One chamber cannot ordinarily make a law alone.",
+        "noteMode": "read"
       },
       "intel": {
         "land": "One chamber cannot ordinarily make a law alone.",
         "ask": "How does a bill become a law?",
-        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
-        "protect": "Leave the slide up until every student has the Write this down line.",
-        "cut": "If time is short, students copy only the Write this down line.",
-        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "listenFor": "Students use this key idea to answer the nearby worksheet question.",
+        "protect": "Keep the notes visible on the student page; do not require a projected explanation.",
+        "cut": "Students read the key idea first if they need a shorter route.",
+        "move": "Students read independently on their own screens. Circulate to support individuals; a live presentation is optional.",
         "model": "One chamber cannot ordinarily make a law alone.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -393,10 +401,10 @@
         "ask": "Why can’t the House alone make the school-lunch proposal law? Give one benefit of scrutiny and one possible cost of delay.",
         "listenFor": "Both viewpoints receive a fair explanation linked to the constructed spending scenario, not a claim that one party is always good or bad.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Omit a second scenario and whole-class debate. Protect both the benefit and difficulty in a private response.",
-        "move": "Return to the lab outcome. Read the school-lunch scenario aloud. Students write one benefit of scrutiny and one possible cost of delay. The teacher can voice anonymous examples.",
+        "cut": "Keep one benefit and one cost in Question 7; use short bullets instead of a paragraph.",
+        "move": "Students read Chapter 4’s notes and the school-lunch scenario, then answer Question 7 privately. Support an individual student with the sentence frame if needed.",
         "model": "The House alone cannot enact the school-lunch plan: the Senate must approve the same text and presidential action follows. A hearing could reveal waste or improve the proposal, but delay could postpone food support for families.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students supply only one side, use two sentence frames: “Scrutiny could help by __” and “Delay could hurt by __.” Let them use the same institutional example."
       }
@@ -411,24 +419,25 @@
       "screen": {
         "eyebrow": "Topic 3 / Notes 6 of 6",
         "title": "How to make a strong judgment",
-        "description": "",
+        "description": "Read these notes on your own in the student lesson. No copying required.",
         "bullets": [
           "Name the check being used.",
           "Explain what it can accomplish.",
           "Recognize its cost or limit.",
           "Explain fairly why someone could reach another judgment."
         ],
-        "write": "Divided government can improve accountability and make governing harder at the same time."
+        "write": "Divided government can improve accountability and make governing harder at the same time.",
+        "noteMode": "read"
       },
       "intel": {
         "land": "Divided government can improve accountability and make governing harder at the same time.",
         "ask": "How to make a strong judgment",
-        "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
-        "protect": "Leave the slide up until every student has the Write this down line.",
-        "cut": "If time is short, students copy only the Write this down line.",
-        "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
+        "listenFor": "Students use this key idea to answer the nearby worksheet question.",
+        "protect": "Keep the notes visible on the student page; do not require a projected explanation.",
+        "cut": "Students read the key idea first if they need a shorter route.",
+        "move": "Students read independently on their own screens. Circulate to support individuals; a live presentation is optional.",
         "model": "Divided government can improve accountability and make governing harder at the same time.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -454,10 +463,10 @@
         "ask": "Can divided government improve accountability and make governing harder at the same time? Use one institutional example.",
         "listenFor": "A supported judgment includes a specific institutional example and both consequences. Verify Canvas’s submitted screen.",
         "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
-        "cut": "Omit Push further and extra constitutional exceptions. Protect the short explanation and the final five minutes of filing.",
-        "move": "Students reuse their evidence and scenario notes in Chapter 5. Move to Gather All My Work with five minutes left, then check submission or the agreed paper route.",
+        "cut": "Keep the brief Question 8 explanation and the final five minutes for Canvas. Do not require copied notes or a second version of earlier answers.",
+        "move": "Students read the final notes and answer Question 8 using their earlier work. The checklist identifies unfinished worksheet questions. Everyone gathers the whole packet and submits in Canvas before lunch.",
         "model": "Divided government can do both. A congressional hearing can uncover information about a spending proposal, while disagreement can delay a law needed to fund it. The effect depends on the evidence and decisions, not only the parties involved.",
-        "story": "Start with two current reports about why congressional races matter. Then put students inside one made-up school-lunch funding proposal. A president can propose it, but a new federal law needs agreement in the House and Senate. A signature, veto, or override changes the route. A hearing can reveal problems while delay can hurt people waiting. Finish with a judgment that names both consequences.",
+        "story": "Students own the entire lesson path. Both opening clips, all six notes boxes, the power cards, practice feedback, bill lab, official source extract, and eight worksheet questions are on the student page. No live explanation or projected note copying is needed. Circulate to support students individually. The original source note, application note, and checkpoint are Questions 6–8, not additional assignments.",
         "avoid": "Oversight is not proof of guilt. Impeachment is not automatic removal. Not every Senate vote requires 60.",
         "reteach": "If most students write only “good and bad,” ask “Which action helps?” and “Which decision might wait?” Help them insert those actions into their response."
       }
