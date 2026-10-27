@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-26",
+  reviewed: "2026-10-27",
   lead: {
     category: "World / International",
-    headline: "Lula wins fourth term in dramatic Brazil election comeback",
-    dek: "The left-wing incumbent president had lost the first round to right-wing challenger Flávio Bolsonaro.",
+    headline: "FBI raids California home tied to former Congressman Eric Swalwell - US media",
+    dek: "The California Democrat has faced multiple sexual misconduct allegations which he has denied.",
     source: "BBC News",
-    published: "October 26, 2026",
-    url: "https://www.bbc.co.uk/news/articles/ckm23y3mg1yyo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/eab1/live/a6b767f0-d15c-11f1-a701-fddedf244c16.jpg",
+    published: "October 27, 2026",
+    url: "https://www.bbc.co.uk/news/articles/cwvgrk0zx641o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/1a2d/live/537ff930-6139-11ee-b101-6f93d6dfbcc2.png",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/ckm23y3mg1yyo?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cwvgrk0zx641o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Foreign policy shakes up US midterms",
-      dek: "American voters are witnessing other countries turn on the establishment or reject candidates aligned with Trump.",
-      source: "NewsNation",
-      published: "October 26, 2026",
-      url: "https://www.newsnationnow.com/politics/2026-midterm-elections/trump-world-midterms-election/"
-    },
-    {
-      category: "Technology",
-      headline: "Anthropic files for potentially the biggest IPO ever as CEO warns of risk to humanity from AI",
-      dek: "SAN FRANCISCO (AP) — Artificial intelligence giant Anthropic filed papers Monday for what could be the biggest initial public offering of stock ever even as its top executive warns that advanced AI could pose an existential threat to humanity. The filing sets up the San Francisco company for a Wall ",
-      source: "NewsNation",
-      published: "October 26, 2026",
-      url: "https://www.newsnationnow.com/business/tech/ai/ap-artificial-intelligence-giant-anthropic-files-papers-to-sell-shares-to-the-public-for-the-first-time/"
-    },
-    {
       category: "U.S. / Democracy",
-      headline: "Claude reportedly bypassed paywall to access Georgia voter data",
-      dek: "The model reportedly bypassed a paywall to retrieve aggregate vote counts but didn't access individual voter records.",
+      headline: "Trump dangles $1M reward for voter fraud tips before midterms",
+      dek: "Prosecuted cases of illegal voting or fraud committed by immigrants who do not have the right to vote remain rare, statistics show.",
       source: "NewsNation",
-      published: "October 26, 2026",
-      url: "https://www.newsnationnow.com/business/tech/claude-georgia-voter-data/"
+      published: "October 27, 2026",
+      url: "https://www.newsnationnow.com/politics/trump-voter-fraud-reward-one-million/"
+    },
+    {
+      category: "Science / Environment",
+      headline: "Scotland's recycling rates at five-year low. How is your area doing?",
+      dek: "Environmental regulator Sepa says households recycled 42.8% of waste in 2025 - down from 44.3% the previous year.",
+      source: "BBC News",
+      published: "October 27, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c62ke84qwl1vo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      category: "World / Security",
+      headline: "Truce begins in Ukraine city where residents ate weeds to survive",
+      dek: "The Oleshky ceasefire, which the White House said was secured by US First Lady Melania Trump, is meant to allow aid to get in and civilians to get out.",
+      source: "BBC News",
+      published: "October 27, 2026",
+      url: "https://www.bbc.co.uk/news/articles/ck20wjnv3w0jo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / International",
-      headline: "Algeria to send troops to Niger in first foreign deployment since 1973",
-      dek: "The troops are expected to protect energy facilities in northern Niger, near the Libyan border.",
+      headline: "Ballon d'Or ceremony raises case of French sports journalist jailed in Algeria",
+      dek: "He is in jail accused of supporting terrorism after travelling to the politically sensitive region Kabylie.",
       source: "BBC News",
-      published: "October 26, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm4g14n1e5wko?at_medium=RSS&at_campaign=rss"
+      published: "October 27, 2026",
+      url: "https://www.bbc.co.uk/news/articles/c6x2qgyqr79wo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
