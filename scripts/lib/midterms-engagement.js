@@ -41,6 +41,40 @@ module.exports=function({meta,topics}){
  d.videos[1].takeaways=['Pause before sharing and investigate the source of an election claim.','Find independent evidence that answers the exact claim; a persuasive image or repeated claim is not verification.'];
  d.teaching.phases['watch-2'].move='Play the 3:05 WFYI misinformation clip. Use the framing lab to choose a missing detail. Then students analyze a constructed message and move to the prepared real claim.';
  d.teaching.phases['watch-2'].cut='Omit the optional campaign report. Keep one framing reveal and the real claim with independent evidence.';
+ // Topic 4: the actual 2026 ads replace the old constructed-message worksheet.
+ d.evidenceTitle='Campaign Evidence Lab: two real 2026 ads';
+ d.evidenceTask='Compare the two rural-hospital campaign advertisements. Record an initial impression, inspect Medicaid.gov and the CBO estimate, then write a revised evidence-based conclusion.';
+ d.flow.bridges[2]='Put the checking method to work with actual 2026 advertisements. Make your first judgment BEFORE opening the records, then explain what the evidence changes.';
+ d.flow.bridges[3]='Use the evidence you just checked to separate a campaign claim from its proof. Next, check what a poll and a promise can establish.';
+ d.flow.evidence.paragraphs[1]='The two advertisements are real 2026 campaign messages about different candidates and states. They both discuss the same federal law. A true fact can be selectively emphasized, so check the entire record rather than treating one advertisement as independent evidence.';
+ d.videos[1].optional=true;
+ d.teaching.timing=[3,5,5,2,20,12,8];
+ d.teaching.phases.direction.move='Present the three required responses: before evidence, after evidence, and a poll-or-promise checkpoint. The real 2026 ads replace the old constructed-message activity.';
+ d.teaching.phases.investigate.move='Use two minutes to review promise, poll, claim and result. The original five-item practice is now optional reading, not a required sort.';
+ d.teaching.phases.investigate.cut='Do not require the old five-item sort. Move to the 2026 ads.';
+ d.teaching.phases['watch-2'].move='Use Chapter 3 for the required 2026 rural-hospital ad comparison. Students watch or read both original transcripts, write BEFORE, then inspect CMS and CBO evidence and write AFTER. There is no second required PBS clip.';
+ d.teaching.phases['watch-2'].model='Ad A highlights new rural-health funding. Ad B highlights risks. Medicaid.gov verifies the five-year $50 billion program; CBO projects roughly $915 billion less national Medicaid spending over ten years. Neither number alone predicts specific hospital closures.';
+ d.teaching.phases['watch-2'].lookFor='Students distinguish advertisements, independent records, projections, and verified outcomes. Their BEFORE and AFTER notes have an evidence-based change or confirmation.';
+ d.teaching.phases['watch-2'].cut='Display the short ad excerpts and read the CMS/CBO cards aloud if external players are blocked. Protect the BEFORE and AFTER responses.';
+ d.teaching.phases.apply.move='Use the prepared Pew poll card in Chapter 4. Ask what a dated national sample can estimate, why it cannot establish district winners, and why a policy promise needs other institutions.';
+ d.teaching.phases.apply.cut='The older Arizona claim packet is optional. Do not assign a second unrelated fact-check.';
+ d.teaching.phases.file.move='Keep the final poll/promise answer short. With five minutes remaining gather all three required written responses and submit to Canvas. Confirm the submission.';
+ d.questions[0].text='After checking the records, explain what each 2026 ad emphasizes, what it leaves out, and whether the evidence changes your initial impression.';
+ d.questions[0].startHere='Before I thought ____. Ad A emphasizes ____, while Ad B emphasizes ____. According to ____, ____. My conclusion is ____ because ____.';
+ d.questions[1].text='Optional extension: analyze a different attributed campaign claim with a record that could test it.';
+ d.questions[1].optional=true;
+ d.teacher.story='Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.';
+ d.teacher.land='A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.';
+ d.teacher.ask='What did you think before checking, and which named record changed or confirmed your conclusion?';
+ d.teacher.listenFor='Before/after reasoning, specific source name, recognition of different spending scopes and timelines, and uncertainty about closures.';
+ d.rubric=[
+  {label:'Before evidence',description:'Identify one initial impression or exact claim in each actual 2026 ad.'},
+  {label:'Independent check',description:'Name Medicaid.gov, CBO, or FactCheck.org and accurately state a finding and its limits.'},
+  {label:'After evidence',description:'Compare what each ad emphasizes, what it omits, and whether the original impression changed or held.'},
+  {label:'Polls and promises',description:'Explain why a sampled poll and a campaign promise are not election results or guaranteed policy outcomes.'}
+ ];
+ d.inClass='55 minutes: hook 3, direction 5, PBS research clip 5, optional concept check 2, paired 2026 ads and evidence 20, poll/promise 12, explanation and Canvas 8. After lunch: CNN10 and daily reporting.';
+ meta.assessment='Topics 1–3: practice choices, source notes, and short explanations. Topic 4: a before-and-after check of real 2026 ads and a poll/promise checkpoint. Topic 5: a guided results notebook and final explanation. Political preference is never scored.';
  e.flow.headings=['The scoreboard is moving','Call, count, or certified?','Run the election desk','Write the impact, keep the limits','File your analysis'];
  e.flow.bridges[0]='You are at an election desk. Your job is to label what the evidence establishes before turning a changing number into a headline.';
  e.teaching.phases.hook.move='Use the newsroom stage cards. Students privately choose a label before revealing it. Read the evidence stage aloud, then make the dated results notebook. Never prefill a winner.';
