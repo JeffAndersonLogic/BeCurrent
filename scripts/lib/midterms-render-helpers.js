@@ -23,6 +23,22 @@ module.exports=function({E,ext,list}){
    ['apply','Apply the idea',t.flow.headings[3],t.scenario,action(base+'#chapter-4',t.n===4?'Open the real-claim packet':'Open application')],
    ['file','Explain / Canvas',t.flow.headings[4],t.questions[2].text,action(base+'#chapter-5','Explain, gather, and submit')]
   ];
+  if(t.n===4){
+    const concept=rows.find(r=>r[0]==='investigate');
+    concept[1]='Concept check';concept[2]='Promise, poll, claim, or result?';
+    concept[3]='Two-minute reminder only. The five-item sort is no longer required.';
+    concept[4]=action(base+'#chapter-2','Review key terms');
+    const evidence=rows.find(r=>r[0]==='watch-2');
+    evidence[1]='2026 Campaign Evidence Lab';evidence[2]='Same law. Two real ads.';
+    evidence[3]='Open Chapter 3. Read or watch both ads, record BEFORE, reveal the CMS and CBO evidence, then write AFTER.';
+    evidence[4]=action(base+'#chapter-3','Open required campaign evidence');
+    const apply=rows.find(r=>r[0]==='apply');
+    apply[1]='Polls and promises';apply[2]='What can we actually know?';
+    apply[3]='Use the Pew poll card. Explain why a national sample is not a local result and a promise is not a law.';
+    apply[4]=action(base+'#chapter-4','Read the poll card');
+    const file=rows.find(r=>r[0]==='file');
+    file[3]='Write the short poll/promise checkpoint, gather all required work, and submit in Canvas. Protect the final five minutes.';
+  }
   if(t.introVideos){const at=rows.findIndex(r=>r[0]==='watch-2');rows.splice(rows.findIndex(r=>r[0]==='investigate'),0,rows.splice(at,1)[0]);rows.find(r=>r[0]==='watch-2').splice(1,4,'Opening report / compare',t.videos[1].title,t.videos[1].prompt,action(t.videos[1].url,'Play the second opening'));}
   // A topic can open with a recap clip (Topic 2: the Day 1 recap). Its timing entry comes first.
   if(t.recap)rows.unshift(['recap','Day 1 recap / Day 2 preview',t.recap.title,'Watch the whole clip ('+t.recap.duration+'). '+t.recap.prompt,action(t.recap.url,'Play the recap video')]);
