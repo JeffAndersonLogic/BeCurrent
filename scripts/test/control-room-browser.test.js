@@ -8,13 +8,13 @@ const {topics}=require('../lib/unit-content/midterms');
   const n=String(t.n).padStart(2,'0'),os=t.n===1?'midterms-run-of-show.html':'midterms-topic-'+n+'-os.html',project=t.n===1?'midterms-projector.html':'midterms-topic-'+n+'-projector.html';
   await teacher.goto(root+'/teacher/'+os);await projection.goto(root+'/teacher/'+project);
   // Slides are found by id, not position: note-taking slides sit between the activities.
-  const ids=await teacher.evaluate(()=>window.BECURRENT_CONTROL_LESSON.phases.map(p=>p.id)),at=id=>{const i=ids.indexOf(id);assert(i>=0,id);return i},pad=i=>String(i+1).padStart(2,'0');
-  assert.strictEqual(await teacher.locator('[data-phase-index]').count(),ids.length);assert(ids.filter(id=>id.startsWith('notes-')).length>=5);assert((await teacher.textContent('#scene-title')).includes(t.recap?t.recap.title:t.hook));
+  const phases=await teacher.evaluate(()=>window.BECURRENT_CONTROL_LESSON.phases),ids=phases.map(p=>p.id),at=id=>{const i=ids.indexOf(id);assert(i>=0,id);return i},pad=i=>String(i+1).padStart(2,'0');
+  assert.strictEqual(await teacher.locator('[data-phase-index]').count(),ids.length);assert(ids.filter(id=>id.startsWith('notes-')).length>=5);assert.strictEqual(await teacher.textContent('#scene-title'),phases[0].screen.title);
   if(t.recap)assert.strictEqual(await projection.getAttribute('#projector-action','href'),t.recap.url);
   assert(await teacher.textContent('#intel-land'));assert.strictEqual(await projection.locator('#intel-land').count(),0);
   assert(await teacher.textContent('#intel-model'));assert.strictEqual(await projection.locator('#intel-model').count(),0);
   await teacher.locator(`[data-phase-index="${at('watch-1')}"]`).click();await projection.waitForFunction(s=>document.getElementById('projector-phase').textContent.startsWith(s),pad(at('watch-1')));
-  assert.strictEqual(await projection.getAttribute('#projector-action','href'),t.videos[0].url);
+  assert.strictEqual(await projection.getAttribute('#projector-action','href'),phases[at('watch-1')].screen.action.url);
   await projection.click('#projector-next');await teacher.waitForFunction(s=>document.getElementById('teacher-count').textContent.startsWith(s),(at('watch-1')+2)+' /');
   assert.strictEqual(await projection.getAttribute('body','data-kind'),'notes');assert((await projection.textContent('.write-this')).includes(t.selfPaced?.readNotes?'Key idea:':'Write this down'));assert.strictEqual(await projection.textContent('#projector-time'),'');
   await teacher.click('#timer-toggle');assert.strictEqual(await teacher.textContent('#timer-toggle'),'Pause');await teacher.click('#timer-toggle');
