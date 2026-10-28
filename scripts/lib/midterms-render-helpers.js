@@ -24,20 +24,34 @@ module.exports=function({E,ext,list}){
    ['file','Explain / Canvas',t.flow.headings[4],t.questions[2].text,action(base+'#chapter-5','Explain, gather, and submit')]
   ];
   if(t.n===4){
-    const concept=rows.find(r=>r[0]==='investigate');
-    concept[1]='Concept check';concept[2]='Promise, poll, claim, or result?';
-    concept[3]='Two-minute reminder only. The five-item sort is no longer required.';
-    concept[4]=action(base+'#chapter-2','Review key terms');
-    const evidence=rows.find(r=>r[0]==='watch-2');
-    evidence[1]='2026 Campaign Evidence Lab';evidence[2]='Same law. Two real ads.';
-    evidence[3]='Open Chapter 3. Read or watch both ads, record BEFORE, reveal the CMS and CBO evidence, then write AFTER.';
-    evidence[4]=action(base+'#chapter-3','Open required campaign evidence');
-    const apply=rows.find(r=>r[0]==='apply');
-    apply[1]='Polls and promises';apply[2]='What can we actually know?';
-    apply[3]='Use the Pew poll card. Explain why a national sample is not a local result and a promise is not a law.';
-    apply[4]=action(base+'#chapter-4','Read the poll card');
+    const hook=rows.find(r=>r[0]==='hook');
+    hook[1]='Teacher opening / 2026 ads';hook[2]='Can a true fact still leave out context?';
+    hook[3]='In 45 seconds, explain why campaigns persuade. Open three current FactCheck.org ad collections, comparing images, headlines and selective claims.';
+    hook[4]=action('https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/','Open FactCheck.org / rural-hospital ad examples');
+    const direction=rows.find(r=>r[0]==='direction');
+    direction[1]='Eight-question student worksheet';direction[2]='Observe. Investigate. Verify. File.';
+    direction[3]='Point out the eight numbered answers and where Gather All My Work saves them for Canvas.';
+    direction[4]=action(base+'#student-flow','Open student worksheet');
+    const video=rows.find(r=>r[0]==='watch-1');
+    video[1]='Two intro clips';video[2]='How campaigns shape a message';
+    video[3]='Play the teacher-selected YouTube intro, then the 2:55 PBS Simple Civics candidate-research clip. Keep only the key ideas.';
+    video[4]=action(t.introClip.url,'Play selected YouTube campaign introduction');
+    const model=rows.find(r=>r[0]==='investigate');
+    model[1]='Model the checking question';model[2]='Ad claim ≠ independent proof';
+    model[3]='Model one claim-checking sentence, then release students to their own work.';
+    model[4]=action(base+'#chapter-2','Open clips and source check');
+    const ads=rows.find(r=>r[0]==='watch-2');
+    ads[1]='Student-led advertisement lab';ads[2]='Watch, examine, answer Questions 4–6';
+    ads[3]='Students view two real 2026 ads, notice their frames, and identify a testable claim. Circulate, do not lecture.';
+    ads[4]=action(base+'#chapter-3','Open student investigation');
+    const evidence=rows.find(r=>r[0]==='apply');
+    evidence[1]='Read the evidence';evidence[2]='Answer Question 7: what was missing?';
+    evidence[3]='Students examine the visible CMS, CBO and FactCheck.org readings; explain the difference between new funding, projected Medicaid cuts, and hospital closures.';
+    evidence[4]=action(base+'#chapter-4','Open independent evidence');
     const file=rows.find(r=>r[0]==='file');
-    file[3]='Write the short poll/promise checkpoint, gather all required work, and submit in Canvas. Protect the final five minutes.';
+    file[1]='Complete and submit';file[2]='Question 8 + Canvas';
+    file[3]='Students answer the poll-and-promise question, choose Gather All My Work, paste eight answers into Canvas, and verify submission.';
+    file[4]=action(base+'#chapter-5','Open final worksheet question');
   }
   if(t.introVideos){const at=rows.findIndex(r=>r[0]==='watch-2');rows.splice(rows.findIndex(r=>r[0]==='investigate'),0,rows.splice(at,1)[0]);rows.find(r=>r[0]==='watch-2').splice(1,4,'Opening report / compare',t.videos[1].title,t.videos[1].prompt,action(t.videos[1].url,'Play the second opening'));}
   // A topic can open with a recap clip (Topic 2: the Day 1 recap). Its timing entry comes first.
