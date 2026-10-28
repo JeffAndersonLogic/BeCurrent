@@ -14,7 +14,8 @@ const {topics}=require('../lib/unit-content/midterms');
   assert(await page.isVisible('#student-flow'));assert.strictEqual(await page.inputValue('#report-response'),'');
   assert.strictEqual(await page.locator('#teacher-flow,[data-view-mode],[data-teacher-stage]').count(),0);
   for(const chapter of await page.locator('[data-student-chapter]').all())assert(await chapter.isVisible());
-  assert.strictEqual(await page.locator('.background').count(),6);
+  assert.strictEqual(await page.locator('.background').count(),t.n===4?5:6);
+  if(t.n===4)assert.strictEqual(await page.locator('details.background').count(),0,'Topic 4 reading remains visible');
   const requiredCount=await page.locator('[data-slot]').evaluateAll(nodes=>nodes.filter(el=>el.dataset.optional!=='true').length)+(t.resultsNotebook?1:0)+(t.n===4?0:1);
   if(t.n===1){
    await page.click('#gather-work');
@@ -25,11 +26,12 @@ const {topics}=require('../lib/unit-content/midterms');
   }
   await page.locator('[data-student-nav]').nth(1).click();
   if(t.n===4){
+   assert.strictEqual(await page.locator('.worksheet-question').count(),8);
    assert.strictEqual(await page.locator('#campaign-before').count(),1);
-   assert.strictEqual(await page.locator('#campaign-evidence-reveal').evaluate(el=>el.open),false,'the evidence starts hidden');
-   await page.fill('#campaign-before','Ad A highlights rural funding. Ad B highlights hospital risk. I need to inspect the records.');
-   await page.locator('#campaign-evidence-reveal summary').click();
-   assert.strictEqual(await page.locator('#campaign-evidence-reveal').evaluate(el=>el.open),true,'the evidence opens after the first judgment');
+   assert.strictEqual(await page.locator('#campaign-evidence-reveal').count(),1);
+   assert(await page.isVisible('.section-reading'));
+   assert.strictEqual(await page.locator('details.background').count(),0);
+   await page.fill('#campaign-before','Ad A emphasizes the new rural fund. Ad B emphasizes possible hospital closures. I need independent evidence.');
    assert((await page.locator('#campaign-evidence-reveal').textContent()).includes('Congressional Budget Office'));
   }else{
    for(let i=0;i<t.sorts.length;i++)await page.selectOption('#sort-'+(i+1),t.sorts[i][1]);
