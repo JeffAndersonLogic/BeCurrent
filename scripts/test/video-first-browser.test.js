@@ -15,7 +15,7 @@ const {topics}=require('../lib/unit-content/midterms');
   assert.strictEqual(await page.locator('#teacher-flow,[data-view-mode],[data-teacher-stage]').count(),0);
   for(const chapter of await page.locator('[data-student-chapter]').all())assert(await chapter.isVisible());
   assert.strictEqual(await page.locator('.background').count(),6);
-  const requiredCount=await page.locator('[data-slot]').evaluateAll(nodes=>nodes.filter(el=>el.dataset.optional!=='true').length)+(t.resultsNotebook?1:0)+1;
+  const requiredCount=await page.locator('[data-slot]').evaluateAll(nodes=>nodes.filter(el=>el.dataset.optional!=='true').length)+(t.resultsNotebook?1:0)+(t.n===4?0:1);
   if(t.n===1){
    await page.click('#gather-work');
    await page.waitForFunction(()=>document.getElementById('copy-status').textContent.includes('missing parts'));
@@ -24,13 +24,22 @@ const {topics}=require('../lib/unit-content/midterms');
    assert((await page.textContent('#work-checklist')).includes('not started'));
   }
   await page.locator('[data-student-nav]').nth(1).click();
-  for(let i=0;i<t.sorts.length;i++)await page.selectOption('#sort-'+(i+1),t.sorts[i][1]);
-  await page.selectOption('#sort-1',t.sortOptions.find(option=>option!==t.sorts[0][1]));
-  await page.click('#check-sort');
-  assert((await page.textContent('[data-sort-feedback="1"]')).startsWith('Try again.'));
-  assert((await page.textContent('[data-sort-feedback="2"]')).startsWith('Correct.'));
-  await page.selectOption('#sort-1',t.sorts[0][1]);
-  await page.click('#check-sort');assert((await page.textContent('#sort-feedback')).includes('5 of 5 correct'));
+  if(t.n===4){
+   assert.strictEqual(await page.locator('#campaign-before').count(),1);
+   assert.strictEqual(await page.locator('#campaign-evidence-reveal').evaluate(el=>el.open),false,'the evidence starts hidden');
+   await page.fill('#campaign-before','Ad A highlights rural funding. Ad B highlights hospital risk. I need to inspect the records.');
+   await page.locator('#campaign-evidence-reveal summary').click();
+   assert.strictEqual(await page.locator('#campaign-evidence-reveal').evaluate(el=>el.open),true,'the evidence opens after the first judgment');
+   assert((await page.locator('#campaign-evidence-reveal').textContent()).includes('Congressional Budget Office'));
+  }else{
+   for(let i=0;i<t.sorts.length;i++)await page.selectOption('#sort-'+(i+1),t.sorts[i][1]);
+   await page.selectOption('#sort-1',t.sortOptions.find(option=>option!==t.sorts[0][1]));
+   await page.click('#check-sort');
+   assert((await page.textContent('[data-sort-feedback="1"]')).startsWith('Try again.'));
+   assert((await page.textContent('[data-sort-feedback="2"]')).startsWith('Correct.'));
+   await page.selectOption('#sort-1',t.sorts[0][1]);
+   await page.click('#check-sort');assert((await page.textContent('#sort-feedback')).includes('5 of 5 correct'));
+  }
   if(t.simulation){await page.locator('#seat-slider').fill('218');assert((await page.textContent('#seat-status')).includes('Group A has the majority'));}
   await page.locator('[data-student-nav]').nth(2).click();
   if(t.resultsNotebook){
@@ -39,7 +48,7 @@ const {topics}=require('../lib/unit-content/midterms');
   if(await page.locator('#report-response').getAttribute('data-optional')!=='true')await page.fill('#report-response','Source evidence for Topic '+t.n+'. A verified fact is separate from a prediction.');
   await page.locator('[data-student-nav]').nth(3).click();
   const scenario=page.locator('#scenario-response');
-  if(await scenario.getAttribute('data-optional')!=='true')await scenario.fill('Topic '+t.n+' application. A governing effect still depends on other institutions.');
+  if(t.n!==4&&await scenario.getAttribute('data-optional')!=='true')await scenario.fill('Topic '+t.n+' application. A governing effect still depends on other institutions.');
   await page.locator('[data-student-nav]').nth(4).click();await page.fill('#exit-response','Topic '+t.n+' conclusion. Two sources support the explanation; an uncertainty remains.');
   // Any other required box on the page (Topic 2's committee lookup) is filled the same way.
   for(const el of await page.locator('[data-slot]:not([data-optional="true"])').all())if(!(await el.inputValue()))await el.fill('Topic '+t.n+' '+(await el.getAttribute('data-slot'))+' entry.');
@@ -73,7 +82,7 @@ const {topics}=require('../lib/unit-content/midterms');
   }
   await page.reload();assert.strictEqual(await page.inputValue('#'+editedId),revised);
   // Optional legacy planning keeps its existing saved key and record when present.
-  if(await page.locator('#scenario-response').getAttribute('data-optional')==='true'){
+  if(t.n!==4&&await page.locator('#scenario-response').getAttribute('data-optional')==='true'){
    await page.evaluate(key=>localStorage.setItem('bcv2-video-first-'+key+'-text-scenario','Legacy planning response retained.'),t.key);
    await page.reload();assert.strictEqual(await page.inputValue('#scenario-response'),'Legacy planning response retained.');
    await page.click('#gather-work');
