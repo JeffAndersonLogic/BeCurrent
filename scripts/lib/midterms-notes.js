@@ -129,42 +129,42 @@ module.exports={
    'Divided government can improve accountability and make governing harder at the same time.')
  ],
  4:[
-  N('direction','What does a campaign want you to notice?',[
-   'Campaigns choose an issue, an image, a number, or a personal story.',
-   'Those choices direct attention. That is framing.',
-   'Start by stating the claim in plain language.',
-   'Then ask who the message seems designed to reach.'],
-   'Framing is the choices that shape how information is presented.'),
-  N('watch-1','How do you check a claim?',[
-   'Find the exact claim. Who said it, and when?',
-   'Match the source to the claim: a vote record for a vote, a budget document for an amount.',
-   'A campaign’s own page shows what the campaign says. It is not independent proof.',
-   'Two websites repeating one press release are not two confirmations.'],
-   'Corroboration means checking against another source with relevant, independent evidence.'),
-  N('watch-1','Promise, poll, claim, or result?',[
-   'Campaign promise: a future action a candidate wants to take.',
-   'Poll estimate: opinion from a sample of people at one point in time.',
-   'Claim needing checking: a statement that needs evidence before you believe it.',
-   'Official result: the final totals signed off by the election office.'],
-   'A promise and a poll are not results.'),
-  N('investigate','Can a message be accurate and still leave something out?',[
-   'A number can be correct but incomplete: one year, one program, or one comparison.',
-   'A headline can feature a number and leave its limits farther down the page.',
-   'Ask what context would change the impression: time period, comparison, people affected, methods.',
-   'This is a reason to check carefully, not a reason to assume every message is false.'],
-   'An accurate detail can still leave out important context.'),
-  N('watch-2','What if two sources seem to disagree?',[
-   'Check whether they answer the same question.',
-   'One may describe a proposal while the other describes an existing law.',
-   'They may use different dates, groups, or measures.',
-   'Decide what the evidence supports, contradicts, or leaves unresolved.'],
-   '“Unresolved” is an honest finding when the evidence cannot settle a claim.'),
-  N('apply','Why isn’t a poll or a promise a result?',[
-   'A poll estimates opinion from a sample at a particular time.',
-   'Who was asked, the wording, the timing, and the uncertainty all matter.',
-   'A national poll does not award congressional seats.',
-   'A promise may need other people and institutions to agree.'],
-   'Keep three questions separate: what people say now, who wins, and what government does later.')
+  N('direction','Why do campaigns run ads?',[
+   'Campaigns compete for attention and votes.',
+   'An ad chooses a few images, stories, facts, or feelings.',
+   'Choosing what to emphasize is framing.',
+   'We investigate claims, not which candidate to support.'],
+   'A campaign ad is persuasion, not independent proof.'),
+  N('watch-1','How do campaign messages work?',[
+   'A memorable message uses words, images, and emotions.',
+   'Notice who is speaking and who paid for the ad.',
+   'Identify one exact claim that evidence could check.',
+   'A second copy of the same claim is not a second source.'],
+   'A checkable claim needs a relevant independent source.'),
+  N('watch-1','Which information counts as evidence?',[
+   'Ad text: what a campaign wants viewers to hear.',
+   'Budget record: what a government analysis projects.',
+   'Official record: what the government actually did.',
+   'Fact-check: independent reporting and its sources.'],
+   'Different sources answer different questions.'),
+  N('investigate','Questions 4–6: examine the ads',[
+   'Read Ad A and Ad B before the evidence.',
+   'What message does each sponsor emphasize?',
+   'What audience or emotion is being targeted?',
+   'Write one claim and the record that could test it.'],
+   'Observe first. Verify second.'),
+  N('watch-2','Question 7: check the same law',[
+   'The law created a five-year rural-health fund.',
+   'It also changes longer-term Medicaid spending.',
+   'Different amounts describe different purposes and periods.',
+   'Hospital risk is not a confirmed number of closures.'],
+   'An incomplete ad can use a real fact but omit context.'),
+  N('apply','Question 8: know the evidence limit',[
+   'A poll estimates what a sample thinks at one time.',
+   'A promise describes what a candidate wants to do.',
+   'A certified result reports completed official counting.',
+   'Answer Question 8 and file all eight answers in Canvas.'],
+   'Polls and promises are not certified results.')
  ],
  5:[
   N('direction','Why might some results not be final yet?',[
