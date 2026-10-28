@@ -873,23 +873,23 @@ Question: What should we check before believing an election message?
 
 ### Teacher story
 
-Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.
+Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.
 
 ### Run of show
 
 - 0–3: Opening question (3 minutes)
-- 3–5: Today’s direction (2 minutes)
+- 3–8: Today’s direction (5 minutes)
 - Notes slide: What does a campaign want you to notice?
-- 5–11: Watch / explain (6 minutes)
+- 8–13: Watch / explain (5 minutes)
 - Notes slide: How do you check a claim?
 - Notes slide: Promise, poll, claim, or result?
-- 11–21: Guided practice (10 minutes)
+- 13–15: Concept check (2 minutes)
 - Notes slide: Can a message be accurate and still leave something out?
-- 21–35: Evidence (14 minutes)
+- 15–35: 2026 Campaign Evidence Lab (20 minutes)
 - Notes slide: What if two sources seem to disagree?
-- 35–45: Apply the idea (10 minutes)
+- 35–47: Polls and promises (12 minutes)
 - Notes slide: Why isn’t a poll or a promise a result?
-- 45–55: Explain / Canvas (10 minutes)
+- 47–55: Explain / Canvas (8 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
 - After lunch · 15 min: After lunch / daily news (15 minutes)
@@ -926,7 +926,7 @@ Reteach: If most students choose two copies of the same message, trace both back
 
 Cut: Use the 2:55 WFYI candidate-research clip once. Omit replay and the optional full campaign report.
 
-**Guided practice**
+**Concept check**
 
 Model: Campaign promise; Poll estimate; Official result; Claim needing checking; Claim needing checking. An estimate from a sample is not a certified election result.
 
@@ -934,19 +934,19 @@ Look for: All five classifications are attempted and corrected. Students disting
 
 Reteach: If most students confuse promise and result, contrast “I will seek a law” with “The office certifies these totals.” Have students underline future versus completed action.
 
-Cut: Skip extra examples beyond the five-item sort. Protect feedback and a private retry.
+Cut: Do not require the old five-item sort. Move to the 2026 ads.
 
-**Evidence**
+**2026 Campaign Evidence Lab**
 
-Model: Constructed Message A emphasizes household costs and addresses voters worried about expenses. It promises support for a bill, but I would need the bill’s details and evidence about its effects to assess the promised savings.
+Model: Ad A highlights new rural-health funding. Ad B highlights risks. Medicaid.gov verifies the five-year $50 billion program; CBO projects roughly $915 billion less national Medicaid spending over ten years. Neither number alone predicts specific hospital closures.
 
-Look for: A constructed-message note identifies claim, audience, and missing information. For the real claim, students can locate the speaker, date, exact claim, and matched independent evidence in the packet.
+Look for: Students distinguish advertisements, independent records, projections, and verified outcomes. Their BEFORE and AFTER notes have an evidence-based change or confirmation.
 
 Reteach: If most students judge only whether they like the message, underline its checkable words. Ask “Which record could support or challenge these words?” Model one match before independent work.
 
-Cut: Omit the optional campaign report. Keep one framing reveal and the real claim with independent evidence.
+Cut: Display the short ad excerpts and read the CMS/CBO cards aloud if external players are blocked. Protect the BEFORE and AFTER responses.
 
-**Apply the idea**
+**Polls and promises**
 
 Model: The rally statement alleges intentional breakage and inability to vote. The technical investigation describes equipment limits and procedures for counting affected ballots. The supplied record does not support the allegation of deliberate interference; its counting evidence contradicts the blanket claim that the printer problem made voting impossible. A technical review and its cited court finding do not narrate every voter’s experience or prove that every election everywhere is free of mistakes.
 
@@ -954,7 +954,7 @@ Look for: The real claim has source/date/link, an independent record relevant to
 
 Reteach: If most students copy the claim as proof, place claim and independent record side by side. Model one “supports / contradicts / cannot settle” judgment using the actual packet wording.
 
-Cut: Use the one prepared claim and one matched record. Omit a second claim and optional polling extensions. Protect attribution and the evidence-based conclusion.
+Cut: The older Arizona claim packet is optional. Do not assign a second unrelated fact-check.
 
 **Explain / Canvas**
 
@@ -1026,10 +1026,10 @@ Write this down: Keep three questions separate: what people say now, who wins, a
 
 ### Topic rubric (5 points)
 
-- Message and framing: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.
-- Check the real claim: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.
-- Polls, promises, uncertainty: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.
-- Explain your thinking: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.
+- Before evidence: Identify one initial impression or exact claim in each actual 2026 ad.
+- Independent check: Name Medicaid.gov, CBO, or FactCheck.org and accurately state a finding and its limits.
+- After evidence: Compare what each ad emphasizes, what it omits, and whether the original impression changed or held.
+- Polls and promises: Explain why a sampled poll and a campaign promise are not election results or guaranteed policy outcomes.
 
 ### Clips
 
@@ -1037,7 +1037,7 @@ Write this down: Keep three questions separate: what people say now, who wins, a
   Watch for: Which source could you use to check a campaign claim?
   Pause: Stop at the assigned endpoint. Ask: Which source could you use to check a campaign claim? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · Full 3:05 · Assigned the full clip · 2023-10-26
+- [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · Full 3:05 · Assigned the full clip · 2023-10-26 · optional
   Watch for: What should you check before sharing an election claim?
   Pause: Stop at the assigned endpoint. Ask: What should you check before sharing an election claim? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
@@ -1048,10 +1048,10 @@ Write this down: Keep three questions separate: what people say now, who wins, a
 
 ### Questions
 
-1. Choose a constructed message. Identify its claim, audience, and a detail you would check.
-   Start here: Message __ focuses on ____. Its audience is ____. I would check ____.
+1. After checking the records, explain what each 2026 ad emphasizes, what it leaves out, and whether the evidence changes your initial impression.
+   Start here: Before I thought ____. Ad A emphasizes ____, while Ad B emphasizes ____. According to ____, ____. My conclusion is ____ because ____.
    Push further: How could a different lead or image change its impression?
-2. Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.
+2. Optional planning: Optional extension: analyze a different attributed campaign claim with a record that could test it.
    Start here: The claim by ____ on ____ says ____. The independent source ____ establishes ____. This supports / contradicts / leaves unresolved ____.
    Push further: Does the second source provide independent evidence or repeat the first?
 3. Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?

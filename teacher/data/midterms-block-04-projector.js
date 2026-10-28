@@ -35,9 +35,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "3–5",
+      "time": "3–8",
       "start": 3,
-      "minutes": 2,
+      "minutes": 5,
       "screen": {
         "eyebrow": "Topic 4 / Today’s direction",
         "title": "Messages, evidence, and uncertainty",
@@ -58,7 +58,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 5,
+      "start": 8,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 1 of 6",
@@ -77,9 +77,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "5–11",
-      "start": 5,
-      "minutes": 6,
+      "time": "8–13",
+      "start": 8,
+      "minutes": 5,
       "screen": {
         "eyebrow": "Topic 4 / Watch / explain",
         "title": "How Do You Research Candidates? Simple Civics",
@@ -109,7 +109,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 11,
+      "start": 13,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 2 of 6",
@@ -129,7 +129,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 11,
+      "start": 13,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 3 of 6",
@@ -146,18 +146,18 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "investigate",
-      "label": "Guided practice",
+      "label": "Concept check",
       "kind": "lesson",
-      "time": "11–21",
-      "start": 11,
-      "minutes": 10,
+      "time": "13–15",
+      "start": 13,
+      "minutes": 2,
       "screen": {
-        "eyebrow": "Topic 4 / Guided practice",
-        "title": "What kind of statement is this?",
-        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
+        "eyebrow": "Topic 4 / Concept check",
+        "title": "Promise, poll, claim, or result?",
+        "description": "Two-minute reminder only. The five-item sort is no longer required.",
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
-          "label": "Open practice and feedback"
+          "label": "Review key terms"
         },
         "cards": [
           {
@@ -180,7 +180,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 21,
+      "start": 15,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 4 of 6",
@@ -197,14 +197,14 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "watch-2",
-      "label": "Evidence",
+      "label": "2026 Campaign Evidence Lab",
       "kind": "lesson",
-      "time": "21–35",
-      "start": 21,
-      "minutes": 14,
+      "time": "15–35",
+      "start": 15,
+      "minutes": 20,
       "screen": {
-        "eyebrow": "Topic 4 / Evidence",
-        "title": "Check the message, then check the claim",
+        "eyebrow": "Topic 4 / 2026 Campaign Evidence Lab",
+        "title": "Same law. Two real ads.",
         "description": "Watch for a verification move. Then try the framing lab.",
         "action": {
           "url": "../midterms/block-04.html#chapter-3",
@@ -234,18 +234,18 @@ window.BECURRENT_PROJECTOR_LESSON = {
     },
     {
       "id": "apply",
-      "label": "Apply the idea",
+      "label": "Polls and promises",
       "kind": "lesson",
-      "time": "35–45",
+      "time": "35–47",
       "start": 35,
-      "minutes": 10,
+      "minutes": 12,
       "screen": {
-        "eyebrow": "Topic 4 / Apply the idea",
-        "title": "Check the receipt",
-        "description": "Use the real-claim packet in Chapter 4. Check its exact claim against the independent evidence. Then use the poll card to distinguish measured opinion from an election result.",
+        "eyebrow": "Topic 4 / Polls and promises",
+        "title": "What can we actually know?",
+        "description": "Use the Pew poll card. Explain why a national sample is not a local result and a promise is not a law.",
         "action": {
           "url": "../midterms/block-04.html#chapter-4",
-          "label": "Open the real-claim packet"
+          "label": "Read the poll card"
         },
         "cards": [
           {
@@ -264,7 +264,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 6 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 45,
+      "start": 47,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 6 of 6",
@@ -283,9 +283,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "file",
       "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "45–55",
-      "start": 45,
-      "minutes": 10,
+      "time": "47–55",
+      "start": 47,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 4 / Explain / Canvas",
         "title": "Decide what you can actually claim",

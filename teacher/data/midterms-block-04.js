@@ -31,14 +31,14 @@
         }
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
         "ask": "Two messages use the same number. Could they leave different impressions?",
         "listenFor": "Students distinguish a message’s impression from evidence establishing its factual claim.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Use the private prediction without an open political debate. Protect the source-and-context question.",
         "move": "Students use Chapter 1. Explain that everyone applies the same checking questions to every party and can respond privately.",
         "model": "A message can select a number or image that draws attention to one concern. I need its source and context before accepting the conclusion.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students think a number settles the issue, ask what it counts, when it was measured, and what comparison is missing. Do not invent a real campaign quotation."
       }
@@ -47,9 +47,9 @@
       "id": "direction",
       "label": "Today’s direction",
       "kind": "lesson",
-      "time": "3–5",
+      "time": "3–8",
       "start": 3,
-      "minutes": 2,
+      "minutes": 5,
       "screen": {
         "eyebrow": "Topic 4 / Today’s direction",
         "title": "Messages, evidence, and uncertainty",
@@ -65,14 +65,14 @@
         ]
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
         "ask": "Today’s direction — what evidence supports your explanation?",
         "listenFor": "Students know that identifying framing and verifying a claim are related but separate tasks.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Read the three-part checking routine rather than every target aloud. Protect the difference between claim and proof.",
-        "move": "Preview the constructed-message practice and the prepared real-claim packet. Show where the independent evidence appears so the task does not become an open-web search.",
+        "move": "Present the three required responses: before evidence, after evidence, and a poll-or-promise checkpoint. The real 2026 ads replace the old constructed-message activity.",
         "model": "First notice how a message persuades. Then check one exact factual claim against evidence. Finally say what remains uncertain.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students say the goal is to pick the better candidate, restate: “We assess a claim and its evidence, not your vote or beliefs.”"
       }
@@ -82,7 +82,7 @@
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 5,
+      "start": 8,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 1 of 6",
@@ -104,7 +104,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "Framing is the choices that shape how information is presented.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -113,9 +113,9 @@
       "id": "watch-1",
       "label": "Watch / explain",
       "kind": "watch",
-      "time": "5–11",
-      "start": 5,
-      "minutes": 6,
+      "time": "8–13",
+      "start": 8,
+      "minutes": 5,
       "screen": {
         "eyebrow": "Topic 4 / Watch / explain",
         "title": "How Do You Research Candidates? Simple Civics",
@@ -140,14 +140,14 @@
         ]
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
         "ask": "Which source could you use to check a campaign claim?",
         "listenFor": "Students identify a source that answers the exact question, rather than treating any second website as confirmation.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Use the 2:55 WFYI candidate-research clip once. Omit replay and the optional full campaign report.",
         "move": "Watch with captions, then model “Who says this? What evidence would test it?” Use the equivalent short reading if playback fails.",
         "model": "A campaign site can establish what a candidate promises. A relevant independent record is needed to check whether a factual claim is supported.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students choose two copies of the same message, trace both back to the original. Contrast repeating a claim with checking a relevant record."
       }
@@ -157,7 +157,7 @@
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 11,
+      "start": 13,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 2 of 6",
@@ -179,7 +179,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "Corroboration means checking against another source with relevant, independent evidence.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -189,7 +189,7 @@
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 11,
+      "start": 13,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 3 of 6",
@@ -211,25 +211,25 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "A promise and a poll are not results.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "investigate",
-      "label": "Guided practice",
+      "label": "Concept check",
       "kind": "lesson",
-      "time": "11–21",
-      "start": 11,
-      "minutes": 10,
+      "time": "13–15",
+      "start": 13,
+      "minutes": 2,
       "screen": {
-        "eyebrow": "Topic 4 / Guided practice",
-        "title": "What kind of statement is this?",
-        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
+        "eyebrow": "Topic 4 / Concept check",
+        "title": "Promise, poll, claim, or result?",
+        "description": "Two-minute reminder only. The five-item sort is no longer required.",
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
-          "label": "Open practice and feedback"
+          "label": "Review key terms"
         },
         "cards": [
           {
@@ -247,14 +247,14 @@
         ]
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
-        "ask": "Guided practice — what evidence supports your explanation?",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
+        "ask": "Concept check — what evidence supports your explanation?",
         "listenFor": "All five classifications are attempted and corrected. Students distinguish a desired future action from an observation or official outcome.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Skip extra examples beyond the five-item sort. Protect feedback and a private retry.",
-        "move": "Students use Chapter 2. Read the examples aloud and label them constructed teaching examples, not actual campaign statements or results.",
+        "cut": "Do not require the old five-item sort. Move to the 2026 ads.",
+        "move": "Use two minutes to review promise, poll, claim and result. The original five-item practice is now optional reading, not a required sort.",
         "model": "Campaign promise; Poll estimate; Official result; Claim needing checking; Claim needing checking. An estimate from a sample is not a certified election result.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students confuse promise and result, contrast “I will seek a law” with “The office certifies these totals.” Have students underline future versus completed action."
       }
@@ -264,7 +264,7 @@
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 21,
+      "start": 15,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 4 of 6",
@@ -286,21 +286,21 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "An accurate detail can still leave out important context.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "watch-2",
-      "label": "Evidence",
+      "label": "2026 Campaign Evidence Lab",
       "kind": "lesson",
-      "time": "21–35",
-      "start": 21,
-      "minutes": 14,
+      "time": "15–35",
+      "start": 15,
+      "minutes": 20,
       "screen": {
-        "eyebrow": "Topic 4 / Evidence",
-        "title": "Check the message, then check the claim",
+        "eyebrow": "Topic 4 / 2026 Campaign Evidence Lab",
+        "title": "Same law. Two real ads.",
         "description": "Watch for a verification move. Then try the framing lab.",
         "action": {
           "url": "../midterms/block-04.html#chapter-3",
@@ -308,14 +308,14 @@
         }
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
-        "ask": "Evidence — what evidence supports your explanation?",
-        "listenFor": "A constructed-message note identifies claim, audience, and missing information. For the real claim, students can locate the speaker, date, exact claim, and matched independent evidence in the packet.",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
+        "ask": "2026 Campaign Evidence Lab — what evidence supports your explanation?",
+        "listenFor": "Students distinguish advertisements, independent records, projections, and verified outcomes. Their BEFORE and AFTER notes have an evidence-based change or confirmation.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Omit the optional campaign report. Keep one framing reveal and the real claim with independent evidence.",
-        "move": "Play the 3:05 WFYI misinformation clip. Use the framing lab to choose a missing detail. Then students analyze a constructed message and move to the prepared real claim.",
-        "model": "Constructed Message A emphasizes household costs and addresses voters worried about expenses. It promises support for a bill, but I would need the bill’s details and evidence about its effects to assess the promised savings.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "cut": "Display the short ad excerpts and read the CMS/CBO cards aloud if external players are blocked. Protect the BEFORE and AFTER responses.",
+        "move": "Use Chapter 3 for the required 2026 rural-hospital ad comparison. Students watch or read both original transcripts, write BEFORE, then inspect CMS and CBO evidence and write AFTER. There is no second required PBS clip.",
+        "model": "Ad A highlights new rural-health funding. Ad B highlights risks. Medicaid.gov verifies the five-year $50 billion program; CBO projects roughly $915 billion less national Medicaid spending over ten years. Neither number alone predicts specific hospital closures.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students judge only whether they like the message, underline its checkable words. Ask “Which record could support or challenge these words?” Model one match before independent work."
       }
@@ -347,25 +347,25 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "“Unresolved” is an honest finding when the evidence cannot settle a claim.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "apply",
-      "label": "Apply the idea",
+      "label": "Polls and promises",
       "kind": "lesson",
-      "time": "35–45",
+      "time": "35–47",
       "start": 35,
-      "minutes": 10,
+      "minutes": 12,
       "screen": {
-        "eyebrow": "Topic 4 / Apply the idea",
-        "title": "Check the receipt",
-        "description": "Use the real-claim packet in Chapter 4. Check its exact claim against the independent evidence. Then use the poll card to distinguish measured opinion from an election result.",
+        "eyebrow": "Topic 4 / Polls and promises",
+        "title": "What can we actually know?",
+        "description": "Use the Pew poll card. Explain why a national sample is not a local result and a promise is not a law.",
         "action": {
           "url": "../midterms/block-04.html#chapter-4",
-          "label": "Open the real-claim packet"
+          "label": "Read the poll card"
         },
         "cards": [
           {
@@ -379,14 +379,14 @@
         ]
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
-        "ask": "Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
+        "ask": "Optional extension: analyze a different attributed campaign claim with a record that could test it.",
         "listenFor": "The real claim has source/date/link, an independent record relevant to that claim, and a careful conclusion. Unsupported or unresolved is acceptable when justified.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Use the one prepared claim and one matched record. Omit a second claim and optional polling extensions. Protect attribution and the evidence-based conclusion.",
-        "move": "Use the exact October 16 claim and McGregor investigation shown in Chapter 4. Model one claim–record–limit connection, then students write their short check. Read the poll’s population and dates together before the checkpoint.",
+        "cut": "The older Arizona claim packet is optional. Do not assign a second unrelated fact-check.",
+        "move": "Use the prepared Pew poll card in Chapter 4. Ask what a dated national sample can estimate, why it cannot establish district winners, and why a policy promise needs other institutions.",
         "model": "The rally statement alleges intentional breakage and inability to vote. The technical investigation describes equipment limits and procedures for counting affected ballots. The supplied record does not support the allegation of deliberate interference; its counting evidence contradicts the blanket claim that the printer problem made voting impossible. A technical review and its cited court finding do not narrate every voter’s experience or prove that every election everywhere is free of mistakes.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students copy the claim as proof, place claim and independent record side by side. Model one “supports / contradicts / cannot settle” judgment using the actual packet wording."
       }
@@ -396,7 +396,7 @@
       "label": "Notes 6 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 45,
+      "start": 47,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 6 of 6",
@@ -418,7 +418,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "Keep three questions separate: what people say now, who wins, and what government does later.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -427,9 +427,9 @@
       "id": "file",
       "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "45–55",
-      "start": 45,
-      "minutes": 10,
+      "time": "47–55",
+      "start": 47,
+      "minutes": 8,
       "screen": {
         "eyebrow": "Topic 4 / Explain / Canvas",
         "title": "Decide what you can actually claim",
@@ -440,14 +440,14 @@
         }
       },
       "intel": {
-        "land": "Persuasion, independent evidence, polling, and official results answer different questions.",
+        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
         "ask": "Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?",
         "listenFor": "The checkpoint gives a reason for both limits: sampling/reporting for the poll and institutional steps for the promise. Verify actual Canvas submission.",
         "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
         "cut": "Omit Push further and further poll comparisons. Read only the prepared poll fields needed for the response. Protect five minutes for the explanation and five for Canvas.",
-        "move": "Students reuse the message and evidence notes in Chapter 5. Gather and submit with five minutes left; accept the agreed paper route and do not grade political preferences.",
+        "move": "Keep the final poll/promise answer short. With five minutes remaining gather all three required written responses and submit to Canvas. Confirm the submission.",
         "model": "The poll describes a national registered-voter preference during its field period. Separate district elections award House seats; this survey cannot establish an Indiana district winner, turnout, or November chamber control. A campaign promise also depends on later decisions by the relevant institutions.",
-        "story": "Model one exact claim in a think-aloud. Ask what document or record could test it. The constructed messages show different priorities without inventing real campaign quotations. Then students check one actual message in writing. Evidence may support part of a claim and leave the rest uncertain; that is a useful finding. Apply the same questions to every party.",
+        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students say only “it might be wrong,” ask what the poll measured and which institutions still must act on the promise."
       }
