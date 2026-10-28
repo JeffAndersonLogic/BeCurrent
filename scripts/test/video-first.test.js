@@ -70,7 +70,7 @@ for(const t of unit.topics){
    assert(page.includes('data-slot="campaign-before"')&&page.includes('data-slot="report"')&&page.includes('data-slot="checkpoint"'));
    assert(page.includes('id="campaign-evidence-reveal"'),'full evidence packet available without dropdown');
    assert(!page.includes('class="scaffold background"'),'no collapsed readings');
-   assert(page.includes('https://youtu.be/muJ7w0uKI20'));
+   assert(/https:\/\/(?:youtu\.be\/|www\.youtube\.com\/watch\?v=)muJ7w0uKI20(?:[&"']|$)/.test(page));
    for(const url of ['https://platform.adimpact.com/viewer/92dea8ad-ede9-4331-983b-1bad45f44196','https://platform.adimpact.com/viewer/d6cb52a6-156f-4823-b747-29c374df27d2','https://www.medicaid.gov/resources-for-states/rural-health','https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/'])assert(page.includes(url)&&paper.includes(url),'missing original ad or independent record');
    assert(!page.includes('data-sort=')&&page.includes('Gather All My Work'),'clean worksheet and gathering');
    assert(page.includes('3,917')&&page.includes('±1.8'),'poll evidence retained');

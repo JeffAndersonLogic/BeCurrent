@@ -328,7 +328,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-08",
       "topic": "Iran at War | The War Now",
       "unit": "Iran at War",
-      "subtitle": "Current anchor � FRONTLINE Part I",
+      "subtitle": "Current anchor · FRONTLINE Part I",
       "learningTargets": [
         {
           "text": "Identify the key decision-makers and regional armed groups in the current conflict.",
@@ -345,7 +345,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "successCriteria": [
         {
-          "text": "I can explain why "Iran-backed" does not always mean "Iran-controlled."",
+          "text": "I can explain why “Iran-backed” does not always mean “Iran-controlled.”",
           "label": ""
         },
         {
@@ -361,9 +361,9 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "NEW UNIT: visual orientation first, then PBS FRONTLINE. Today is intentionally light on reading and writing.",
       "doNow": "Look at the map and faces on the Iran page. Which person or place do you already recognize?",
       "agenda": [
-        "Visual orientation: key people, Iran-aligned armed groups, and what "proxy" means.",
+        "Visual orientation: key people, Iran-aligned armed groups, and what “proxy” means.",
         "Map Iran and the Strait of Hormuz.",
-        "Watch FRONTLINE: Remaking the Middle East - Part I.",
+        "Watch FRONTLINE: Remaking the Middle East — Part I.",
         "Complete one exit ticket: what most needs a historical explanation?"
       ]
     },
@@ -371,10 +371,10 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-10",
       "topic": "Iran at War | The Road to War",
       "unit": "Iran at War",
-      "subtitle": "Current anchor � FRONTLINE Part II",
+      "subtitle": "Current anchor · FRONTLINE Part II",
       "learningTargets": [
         {
-          "text": "Distinguish the 2026 war's immediate trigger from deeper causes.",
+          "text": "Distinguish the 2026 war’s immediate trigger from deeper causes.",
           "label": ""
         },
         {
@@ -405,7 +405,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "doNow": "Without reopening Topic 1, name two leaders, two armed partners, and the Strait of Hormuz.",
       "agenda": [
         "Three-minute retrieval from Day 1.",
-        "Finish FRONTLINE: Remaking the Middle East - Part II.",
+        "Finish FRONTLINE: Remaking the Middle East — Part II.",
         "Source check: what can a documentary establish, and what still needs testing?",
         "Write one question that points backward into the history."
       ]
@@ -414,7 +414,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-14",
       "topic": "Iran at War | Why the U.S. and Iran Became Enemies",
       "unit": "Iran at War",
-      "subtitle": "Historical roots � 1953  1979",
+      "subtitle": "Historical roots · 1953 → 1979",
       "learningTargets": [
         {
           "text": "I can explain why 1953 mattered to Iranian revolutionary memory and how 1979 changed the U.S.-Iran relationship.",
@@ -445,12 +445,12 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "homework": "Finish all five Topic 3 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 3 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
-      "note": "Reverse History begins: 2026  1979  1953. Two turning points, two national memories, one comparison.",
+      "note": "Reverse History begins: 2026 → 1979 → 1953. Two turning points, two national memories, one comparison.",
       "doNow": "From FRONTLINE: why do Iran and the United States appear to distrust each other so deeply?",
       "agenda": [
         "Reverse to 1979: revolution, the Shah, Khomeini, and the hostage crisis.",
         "Reverse again to 1953: Mosaddegh, oil nationalization, and U.S.-British covert intervention.",
-        "Test what the declassified record proves-and what it does not.",
+        "Test what the declassified record proves—and what it does not.",
         "Compare the two historical memories.",
         "Claim: which transformed U.S.-Iran relations more, 1953 or 1979?"
       ]
@@ -459,7 +459,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-16",
       "topic": "Iran at War | Why Fight Far From Home?",
       "unit": "Iran at War",
-      "subtitle": "Reverse History stop � 1980-1988",
+      "subtitle": "Reverse History stop · 1980–1988",
       "learningTargets": [
         {
           "text": "I can explain how the Iran-Iraq War shaped later security choices without treating it as the only cause.",
@@ -490,13 +490,13 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "homework": "Finish all five Topic 4 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 4 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
-      "note": "Today connects the Iran-Iraq War to deterrence, the IRGC, missiles, and Iran's regional armed network.",
+      "note": "Today connects the Iran-Iraq War to deterrence, the IRGC, missiles, and Iran’s regional armed network.",
       "doNow": "If Iran had survived an eight-year invasion, what security lesson might its leaders carry forward?",
       "agenda": [
         "1980: Iraq invades revolutionary Iran.",
-        "Build the vulnerability  deterrence mechanism.",
+        "Build the vulnerability → deterrence mechanism.",
         "IRGC and Quds Force: institutions of asymmetric strategy.",
-        "Test the word "proxy" against real differences among armed partners.",
+        "Test the word “proxy” against real differences among armed partners.",
         "Claim: deterrence, power projection, or both?"
       ]
     },
@@ -504,7 +504,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "date": "2026-09-18",
       "topic": "Iran at War | The Nuclear Bargain",
       "unit": "Iran at War",
-      "subtitle": "Reverse History thread � 1957-2018",
+      "subtitle": "Reverse History thread · 1957–2018",
       "learningTargets": [
         {
           "text": "I can explain what the JCPOA limited, what inspectors verified, and what the agreement left outside its scope.",
@@ -529,7 +529,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Cause and Effect"
         },
         {
-          "text": "I can argue whether the agreement's collapse made war more likely while acknowledging at least one other cause.",
+          "text": "I can argue whether the agreement’s collapse made war more likely while acknowledging at least one other cause.",
           "label": "Constructing Arguments"
         }
       ],
@@ -542,14 +542,14 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Break down the JCPOA bargain and verification system.",
         "Trace the post-2018 causal chain.",
         "Policy tradeoff: imperfect agreement vs. abandoning verified limits.",
-        "Claim: did the deal's collapse make war substantially more likely?"
+        "Claim: did the deal’s collapse make war substantially more likely?"
       ]
     },
     {
       "date": "2026-09-22",
       "topic": "Iran at War | From Shadow War to Open War",
       "unit": "Iran at War",
-      "subtitle": "Reverse History stop � 2023-2026",
+      "subtitle": "Reverse History stop · 2023–2026",
       "learningTargets": [
         {
           "text": "I can distinguish a larger attack from an attack that changes what becomes thinkable next.",
@@ -583,11 +583,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "note": "Today is about thresholds: when did direct state-to-state attack become an available option?",
       "doNow": "Why might two rivals prefer a shadow war to direct war?",
       "agenda": [
-        "CNN 10 � Sept. 18: Japan Has More Living 100-Year-Olds Than Ever Before.",
-        "CNN 10 � Sept. 21: New Fossil Analysis Confirms Tyrannosaurus Rex Was Warm-Blooded.",
+        "CNN 10 · Sept. 18: Japan Has More Living 100-Year-Olds Than Ever Before.",
+        "CNN 10 · Sept. 21: New Fossil Analysis Confirms Tyrannosaurus Rex Was Warm-Blooded.",
         "Define shadow war and why rivals may prefer it.",
         "2024: direct Iran-Israel attacks cross a threshold.",
-        "2025-26: compare size, precedent, retaliation, and path dependence.",
+        "2025–26: compare size, precedent, retaliation, and path dependence.",
         "Perspective check: deterrence as restraint vs. escalation ladder.",
         "Choose the turning point when full-scale war became substantially more likely."
       ]
@@ -628,13 +628,13 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "homework": "Finish all five Topic 7 filings. On BeCurrent, click Gather This Topic, confirm 5 of 5, Copy to Clipboard, then paste the complete gathered record into the Topic 7 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
       "note": "Return to the map from Day 1. Now explain how geography becomes military, economic, and diplomatic leverage.",
-      "doNow": "How can a narrow waterway create power for a country that does not have the world's strongest navy?",
+      "doNow": "How can a narrow waterway create power for a country that does not have the world’s strongest navy?",
       "agenda": [
-        "CNN 10 � Sept. 22: What to Expect at the UN General Assembly, the Biggest Event in World Diplomacy.",
-        "CNN 10 � Sept. 23: The First New Species of Cat to Be Discovered in More Than 100 Years.",
+        "CNN 10 · Sept. 22: What to Expect at the UN General Assembly, the Biggest Event in World Diplomacy.",
+        "CNN 10 · Sept. 23: The First New Species of Cat to Be Discovered in More Than 100 Years.",
         "Map the chokepoint mechanism.",
         "Compare the 1980s Tanker War with 2026.",
-        "Read the EIA flow change carefully: 21.6  4.9 million barrels/day.",
+        "Read the EIA flow change carefully: 21.6 → 4.9 million barrels/day.",
         "Separate what the data proves from what it cannot prove.",
         "Rank Hormuz as military, economic, or diplomatic leverage."
       ]
@@ -654,7 +654,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Causal Ranking"
         },
         {
-          "text": "I can use the unit's history to explain a detail in this week's news about the war.",
+          "text": "I can use the unit’s history to explain a detail in this week’s news about the war.",
           "label": "Current Context"
         }
       ],
@@ -668,17 +668,17 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Counterargument"
         },
         {
-          "text": "I can point to one detail in this week's news and name the turning point that explains it.",
+          "text": "I can point to one detail in this week’s news and name the turning point that explains it.",
           "label": "Current Context"
         }
       ],
       "homework": "Finish all three Topic 8 filings. On BeCurrent, click Gather This Topic, confirm 3 of 3, Copy to Clipboard, then paste the complete gathered record into the Topic 8 Canvas Text Entry assignment.",
       "homeworkDue": "the start of next class",
-      "note": "Class starts with two news videos about Iran's peace plan. Then we connect the story to the whole unit.",
+      "note": "Class starts with two news videos about Iran’s peace plan. Then we connect the story to the whole unit.",
       "doNow": "Without notes, name three turning points from this unit that help explain why the war continues.",
       "agenda": [
-        "CNN 10 � Sept. 28: How five pivotal elections helped shape American History.",
-        "Watch: Iran's peace plan (BBC News), then President Trump's answer (Reuters).",
+        "CNN 10 · Sept. 28: How five pivotal elections helped shape American History.",
+        "Watch: Iran’s peace plan (BBC News), then President Trump’s answer (Reuters).",
         "Connect the story to earlier topics in the unit.",
         "Sort eight turning points into long-running conflict or recent decision. Rank your top three.",
         "Write one paragraph: Was the war caused more by recent decisions or by decades of unresolved conflict?",
@@ -712,12 +712,12 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": ""
         },
         {
-          "text": "I can identify what I still need to study before Friday's exam.",
+          "text": "I can identify what I still need to study before Friday’s exam.",
           "label": ""
         }
       ],
       "homework": "Finish the Iran at War Study Guide and prepare for the unit exam on Friday, October 2.",
-      "note": "No new content today. Use the study guide to identify what you know, what you need to review, and which causal connections still need work before Friday's exam.",
+      "note": "No new content today. Use the study guide to identify what you know, what you need to review, and which causal connections still need work before Friday’s exam.",
       "doNow": "Without opening the unit, write the major Iran topics or turning points you remember. Then check yourself against the study guide.",
       "agenda": [
         "Open the Iran at War Study Guide.",
@@ -763,7 +763,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "doNow": "Get settled, open Canvas only when instructed, and make sure you are ready to begin the Iran at War Unit Exam.",
       "agenda": [
         "Complete the Iran at War Unit Exam in Canvas. Your one-page reference guide is allowed ONLY if you submitted it to Canvas.",
-        "After the exam, watch CNN 10 � Oct. 2: Special Edition: Dive Behind the Scenes at One of the World's Largest Aquariums.",
+        "After the exam, watch CNN 10 · Oct. 2: Special Edition: Dive Behind the Scenes at One of the World’s Largest Aquariums.",
         "Then watch The World from A to Z with Carl Azuz: How Americans View the Freedom of the Press.",
         "Then browse the latest edition of The Week."
       ],
@@ -874,7 +874,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Watch, then compare the House and the Senate.",
         "Use one verified fact to explain a possible change in government.",
         "Explain your thinking and file your work in Canvas.",
-        "After lunch: CNN 10 � Oct. 16: NASA's Mars Rover Breaks an Out-Of-This-World Record.",
+        "After lunch: CNN 10 · Oct. 16: NASA’s Mars Rover Breaks an Out-Of-This-World Record.",
         "After lunch: daily news and your News Log."
       ]
     },
@@ -963,9 +963,9 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "doNow": "Open Midterms 3. A president wants a new law. The House says no. Make your private prediction, then begin Chapter 1.",
       "agenda": [
         "On your own: watch the Guardian and DW opening clips with headphones.",
-        "Read the notes on the page and answer Questions 1-4. No note copying is required.",
+        "Read the notes on the page and answer Questions 1–4. No note copying is required.",
         "Correct the five practice choices, then test the school-lunch bill lab.",
-        "Answer Questions 5-8 using the bill lab, official sources, and your earlier notes.",
+        "Answer Questions 5–8 using the bill lab, official sources, and your earlier notes.",
         "Check all eight answers. Gather All My Work, paste into Canvas, and submit before lunch.",
         "After lunch: CNN10, then daily news and your News Log."
       ]
@@ -1118,7 +1118,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
   ],
   "reminders": [
     {
-      "title": "Fall break: October 12-16",
+      "title": "Fall break: October 12–16",
       "detail": "No regular classes next week.",
       "until": "2026-10-09"
     }
@@ -1150,11 +1150,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
     "lanes": [
       {
         "name": "The Lead",
-        "question": "What actually happened, and why does this story deserve the room's attention?"
+        "question": "What actually happened, and why does this story deserve the room’s attention?"
       },
       {
         "name": "Your Pick",
-        "question": "What happened in the story you chose, and which of today's two stories deserves more attention?"
+        "question": "What happened in the story you chose, and which of today’s two stories deserves more attention?"
       }
     ]
   }
