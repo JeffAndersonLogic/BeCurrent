@@ -4,7 +4,7 @@ window.BECURRENT_DAILY_NEWS = {
   lead: {
     category: "U.S. / Democracy",
     headline: "Mackenzie Shirilla asks Ohio Supreme Court again to hear her appeal",
-    dek: "Shirilla is serving 15 years to life in prison for the July 2022 crash that killed her boyfriend, Dominic Russo and their friend, Davion Flanagan.",
+    dek: "Shirilla is serving 15 years to life in prison for the 2022 crash that killed her boyfriend, Dominic Russo and their friend.",
     source: "NewsNation",
     published: "October 28, 2026",
     url: "https://www.newsnationnow.com/crime/mackenzie-shirilla-ohio-supreme-court-appeal-crash/",
@@ -15,19 +15,19 @@ window.BECURRENT_DAILY_NEWS = {
   wire: [
     {
       category: "World / International",
-      headline: "How could Israel break election deadlock? Here are four scenarios",
-      dek: "With 85% of votes counted, all signs point to an impasse. The most likely outcome may be new elections.",
+      headline: "Netanyahu's bloc leading Israel election but short of majority, partial results show",
+      dek: "With 85% of ballots counted, Netanyahu's Likud party and its allies are set to win 53 seats in the 120-seat Knesset.",
       source: "BBC News",
       published: "October 28, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cmdx3knq1xexo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Economy",
-      headline: "Will I get a £100 energy payment and when will I get it?",
-      dek: "Here is what you need to know about the payment that millions will receive from January.",
+      headline: "The Budget explained in less than one minute",
+      dek: "What the Budget means for you in under a minute",
       source: "BBC News",
       published: "October 28, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c35yn8x748e9o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/videos/crkg70lnlx9yo?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "U.S. / Democracy",
@@ -39,11 +39,11 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "U.S. / National",
-      headline: "US civil rights leader Dolores Huerta dies aged 96",
-      dek: "Huerta fought for farm workers' rights in the 1960s and 1970s and had continued to work addressing immigration and voting issues.",
-      source: "BBC News",
+      headline: "High-speed train collision kills at least 68 in Spain’s 2nd deadly rail crash this year",
+      dek: "URDA, Spain (AP) — A high-speed train slammed into another that had stopped on the tracks in Spain Wednesday, killing at least 68 people and injuring dozens in the second deadly rail collision this year. The regional government of Castilla La Mancha confirmed the death toll and said another 58 peopl",
+      source: "NewsNation",
       published: "October 28, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cwp8gdk3rzn3o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.newsnationnow.com/world/ap-2-trains-crash-in-central-spain-injuring-an-unknown-number-of-passengers/"
     }
   ]
 };
