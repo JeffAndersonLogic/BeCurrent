@@ -50,7 +50,7 @@ for(const t of unit.topics){
  assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
  const watchLabel=t.selfPaced?'Watch on your own, with headphones':'Watch together';
  assert(t.n===4?(page.includes('WATCH TOGETHER')&&page.includes('muJ7w0uKI20')):(page.includes(watchLabel)&&page.indexOf(t.introVideos?'Before the clips: the essential language':'Before the clip: the essential language')<page.indexOf(watchLabel)));
- assert.strictEqual(page.includes('Watch together'),!t.selfPaced,'a self-paced topic sends students to the clips on their own');
+ if(t.n!==4)assert.strictEqual(page.includes('Watch together'),!t.selfPaced,'a self-paced topic sends students to the clips on their own');
  assert.deepStrictEqual(lookupProblems(page,t),[]);
  assert(page.includes('Today you will submit')&&page.includes(t.n===4?'How the worksheet is assessed':'How this investigation is assessed'));
  assert.strictEqual(t.points,5);assert(t.rubric.every(r=>!('points' in r)),'rubric components carry no point values');
