@@ -37,42 +37,43 @@ for(const t of unit.topics){
  assert(page.includes('data-lesson="'+t.key+'"'));assert(index.includes('href="'+t.page+'"'));
  assert.strictEqual((page.match(/data-student-chapter/g)||[]).length,5);
  // Three responses, plus the committee lookup's facts and note where a topic has one (Topic 2).
- assert.strictEqual((page.match(/data-slot=/g)||[]).length,3+(t.worksheet||[]).length+(t.lookup?t.lookup.facts.length+1:0));assert.strictEqual((page.match(/data-sort=/g)||[]).length,t.n===4?0:5);
+ assert.strictEqual((page.match(/data-slot=/g)||[]).length,(t.n===4?8:3+(t.worksheet||[]).length+(t.lookup?t.lookup.facts.length+1:0)));assert.strictEqual((page.match(/data-sort=/g)||[]).length,t.n===4?0:5);
  assert.strictEqual(t.learningTargets.length,3);assert.strictEqual(t.successCriteria.length,3);
  assert.strictEqual(t.videos.filter(v=>!v.optional).length,(t.n===4||t.n===5)?1:2);
  for(const v of t.videos){assert(page.includes(v.url));assert(v.date&&v.prompt&&v.duration&&v.reviewed);}
  for(const item of [...t.learningTargets.map(x=>x.target),...t.successCriteria.map(x=>x.criteria)])assert(page.includes(item.replace(/&/g,'&amp;')),'missing target or criterion '+t.n);
  assert(page.includes('id="gather-work"')&&page.includes('id="copy-preview"'));
  assert(page.includes('video-first-record.js')&&page.includes('video-first.js'));
- assert.strictEqual((page.match(/Read the Background:/g)||[]).length,6);assert(page.includes('print-topic-'));
+ assert(t.n===4?((page.match(/class="background section-reading"/g)||[]).length===5&&!/<details[^>]*class="[^"]*background/.test(page)):((page.match(/Read the Background:/g)||[]).length===6));assert(page.includes('print-topic-'));
  assert.strictEqual((page.match(/class="story-bridge"/g)||[]).length,5);
  assert(!/teacher-flow|data-view-mode|data-teacher-stage|\.\.\/teacher\//.test(page),'teacher controls must not be shipped in student lessons');
  assert(!/data-student-chapter[^>]*hidden/.test(page),'lesson sections must stay visible');
  const watchLabel=t.selfPaced?'Watch on your own, with headphones':'Watch together';
- assert(page.includes(watchLabel)&&page.indexOf(t.introVideos?'Before the clips: the essential language':'Before the clip: the essential language')<page.indexOf(watchLabel));
+ assert(t.n===4?(page.includes('WATCH TOGETHER')&&page.includes('muJ7w0uKI20')):(page.includes(watchLabel)&&page.indexOf(t.introVideos?'Before the clips: the essential language':'Before the clip: the essential language')<page.indexOf(watchLabel)));
  assert.strictEqual(page.includes('Watch together'),!t.selfPaced,'a self-paced topic sends students to the clips on their own');
  assert.deepStrictEqual(lookupProblems(page,t),[]);
- assert(page.includes('Today you will submit')&&page.includes('How this investigation is assessed'));
+ assert(page.includes('Today you will submit')&&page.includes(t.n===4?'How the worksheet is assessed':'How this investigation is assessed'));
  assert.strictEqual(t.points,5);assert(t.rubric.every(r=>!('points' in r)),'rubric components carry no point values');
  assert.strictEqual((page.match(/data-sort-feedback=/g)||[]).length,t.n===4?0:5);
  const paper=read('midterms/print-topic-'+String(t.n).padStart(2,'0')+'.html');
- assert(t.n===4?(paper.includes('Your first impression')&&paper.includes('Rural Health Transformation Program')&&paper.includes('class="writing-lines"')):(paper.includes('Reading route / core takeaways')&&paper.includes(t.worksheet?'Read the notes:':'Background support')));
+ assert(t.n===4?(paper.includes('data-worksheet-question="8"')&&paper.includes('Rural Health Transformation Program')&&paper.includes('class="writing-lines"')):(paper.includes('Reading route / core takeaways')&&paper.includes(t.worksheet?'Read the notes:':'Background support')));
  if(t.worksheet){
-  assert(t.selfPaced.readNotes);assert(!page.includes('Copy into your notes:'));
-  assert.strictEqual((page.match(/class="notes-card"/g)||[]).length,6);
+  if(t.n!==4)assert(t.selfPaced.readNotes);assert(!page.includes('Copy into your notes:'));
+  if(t.n!==4)assert.strictEqual((page.match(/class="notes-card"/g)||[]).length,6);
   assert.deepStrictEqual([...page.matchAll(/data-worksheet-question="(\d+)"/g)].map(x=>Number(x[1])),[1,2,3,4,5,6,7,8]);
-  for(const q of t.worksheet){assert(page.includes('data-slot="'+q.id+'"'));assert(paper.includes(q.text.replace(/&/g,'&amp;')));}
-  assert(!paper.includes('<textarea'));assert(paper.includes('Bill lab / paper route'));
+  for(const q of t.worksheet){assert(page.includes('data-worksheet-question="'+q.number+'"'));assert(paper.includes(q.text.replace(/&/g,'&amp;')));}
+  assert(!paper.includes('<textarea'));if(t.n!==4)assert(paper.includes('Bill lab / paper route'));
  }
  if(t.n===4){
-  assert.deepStrictEqual([...page.matchAll(/data-slot="([^"]+)"/g)].map(x=>x[1]),['campaign-before','report','checkpoint'],'Topic 4 collects before, after and poll checkpoint');
-  assert(page.includes('data-prompt="Before looking at the evidence:'));
-  assert(page.includes('id="campaign-evidence-reveal"')&&!page.includes('<details open class="claim-packet" id="campaign-evidence-reveal"'),'online reveal starts closed');
-  for(const url of ['https://platform.adimpact.com/viewer/92dea8ad-ede9-4331-983b-1bad45f44196','https://platform.adimpact.com/viewer/d6cb52a6-156f-4823-b747-29c374df27d2','https://www.medicaid.gov/resources-for-states/rural-health','https://www.cbo.gov/system/files/2025-10/PL-119-21-Medicaid%20_0.pdf'])assert(page.includes(url)&&paper.includes(url),'missing matching 2026 ad or primary record');
-  assert(paper.includes('<details open class="claim-packet" id="campaign-evidence-reveal"'),'paper evidence is fully readable');
-  assert(!page.includes('data-slot="scenario"')&&!page.includes('data-sort='),'removed practice is not required');
-  assert(page.includes('3,917')&&page.includes('±1.8'),'Pew poll retained');
-  assert(page.includes(t.evidence.claimPacket.recordSource.url),'Arizona case available as optional extension');
+   assert.deepStrictEqual([...page.matchAll(/data-worksheet-question="(\d+)"/g)].map(x=>Number(x[1])),[1,2,3,4,5,6,7,8]);
+   assert.strictEqual((page.match(/data-slot="/g)||[]).length,8,'eight saved worksheet entries');
+   assert(page.includes('data-slot="campaign-before"')&&page.includes('data-slot="report"')&&page.includes('data-slot="checkpoint"'));
+   assert(page.includes('id="campaign-evidence-reveal"'),'full evidence packet available without dropdown');
+   assert(!page.includes('class="scaffold background"'),'no collapsed readings');
+   assert(page.includes('https://youtu.be/muJ7w0uKI20'));
+   for(const url of ['https://platform.adimpact.com/viewer/92dea8ad-ede9-4331-983b-1bad45f44196','https://platform.adimpact.com/viewer/d6cb52a6-156f-4823-b747-29c374df27d2','https://www.medicaid.gov/resources-for-states/rural-health','https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/'])assert(page.includes(url)&&paper.includes(url),'missing original ad or independent record');
+   assert(!page.includes('data-sort=')&&page.includes('Gather All My Work'),'clean worksheet and gathering');
+   assert(page.includes('3,917')&&page.includes('±1.8'),'poll evidence retained');
  }
  if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));assert.strictEqual(t.questions.filter(q=>!q.optional).length,1);assert.strictEqual((page.match(/data-optional="true"/g)||[]).length,8);assert(!page.includes('election-commission/election-results/'));assert(page.includes('Six short entries'));}
  assert(!['fetch(','XMLHttpRequest','<iframe'].some(x=>page.includes(x)));
