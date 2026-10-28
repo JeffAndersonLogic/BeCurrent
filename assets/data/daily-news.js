@@ -1,49 +1,41 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-27",
+  reviewed: "2026-10-28",
   lead: {
-    category: "World / International",
-    headline: "Turnout so far highest on record as Israelis vote in pivotal election",
-    dek: "The elections - the first since the Hamas-led attacks on Israel and the wars which followed - are widely seen as a referendum on Benjamin Netanyahu.",
+    category: "U.S. / Democracy",
+    headline: "Trump says US voter fraud is 'rampant' - evidence suggests it is extremely rare",
+    dek: "As the US president casts doubt on the security of the midterm elections, BBC Verify examines his claims.",
     source: "BBC News",
     published: "October 27, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c3j47l4kdez4o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/24e8/live/8fbba870-d221-11f1-b441-2b33b063138f.jpg",
+    url: "https://www.bbc.co.uk/news/articles/ckeq3vezxlx1o?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/d705/live/81506150-d23e-11f1-93e1-3b657b665bcf.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c3j47l4kdez4o?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/ckeq3vezxlx1o?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "FBI raids Beverly Hills mansion in Eric Swalwell investigation",
-      dek: "Swalwell has denied any criminal wrongdoing.",
-      source: "NewsNation",
-      published: "October 27, 2026",
-      url: "https://www.newsnationnow.com/politics/fbi-raid-swalwell-mansion-beverly-hills/"
+      category: "U.S. / Democracy",
+      headline: "The rise of AI election ads in US midterms campaign",
+      dek: "BBC Verify has tracked dozens of AI ads to assess how they are being used by campaigns in the midterms.",
+      source: "BBC News",
+      published: "October 24, 2026",
+      url: "https://www.bbc.co.uk/news/videos/cm62y59zw8zko?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "Science / Environment",
-      headline: "Will a new strategy help protect Northern Ireland's nature?",
-      dek: "About 40% of the plants and animals in protected sites across Northern Ireland fall short of meeting the standard for \"favourable condition\".",
+      category: "U.S. / Democracy",
+      headline: "Trump v Obama - which president has the star power to get out the vote?",
+      dek: "The BBC's Sarah Smith followed the current and former presidents as both parties hope their biggest names can drive midterm turnout.",
       source: "BBC News",
       published: "October 27, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cq0megg87n3po?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      category: "U.S. / National",
-      headline: "Nanotyrannus skeleton goes to auction in New York with $6m price tag",
-      dek: "The sale of the rare skeleton reignites debate in the scientific community about whether dinosaur remains should end up in private hands or public view.",
-      source: "BBC News",
-      published: "October 27, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cmx28de233r2o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/videos/cv0ldjez8z32o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "World / International",
-      headline: "Flávio Bolsonaro's passports cancelled after he fails to surrender them",
-      dek: "The defeated presidential candidate is under investigation for alleged money laundering and barred from leaving Brazil.",
+      headline: "Watch: What happens now after close vote in Israeli election?",
+      dek: "Polls have closed in the Israeli election, but there is no clear winner.",
       source: "BBC News",
-      published: "October 27, 2026",
-      url: "https://www.bbc.co.uk/news/articles/ckly0xpxp243o?at_medium=RSS&at_campaign=rss"
+      published: "October 28, 2026",
+      url: "https://www.bbc.co.uk/news/videos/cm79p5pxqey2o?at_medium=RSS&at_campaign=rss"
     }
   ]
 };

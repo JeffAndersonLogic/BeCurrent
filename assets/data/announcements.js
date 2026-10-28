@@ -1012,7 +1012,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Compare two practice campaign messages.",
         "Check a real claim against independent evidence.",
         "Explain what a poll can and cannot show, then file your work in Canvas.",
-        "After lunch: CNN 10, then daily news and your News Log."
+        "After lunch: CNN 10 · Oct. 27: America welcomes its 64th National Park in Arizona.",
+        "After lunch: daily news and your News Log."
       ]
     },
     {

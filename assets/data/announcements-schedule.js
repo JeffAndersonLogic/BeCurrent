@@ -141,7 +141,7 @@ window.BECURRENT_SCHEDULE={
 
   {date:'2026-10-28',topic:'WP4',topicTitle:'Who Has the Power? | The Fight for Your Vote',
    doNow:'Two messages use the same number. Could they leave different impressions? Write your prediction.',
-   agenda:['Opening question: can the same number leave two impressions?','Watch, then sort promises, polls and verified results.','Compare two practice campaign messages.','Check a real claim against independent evidence.','Explain what a poll can and cannot show, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   agenda:['Opening question: can the same number leave two impressions?','Watch, then sort promises, polls and verified results.','Compare two practice campaign messages.','Check a real claim against independent evidence.','Explain what a poll can and cannot show, then file your work in Canvas.','After lunch: CNN 10 · Oct. 27: America welcomes its 64th National Park in Arizona.','After lunch: daily news and your News Log.'],
    homework:'Finish WP4 - Election Messages in Canvas.',homeworkDue:'the start of class on Friday, October 30'}
 ,
 
