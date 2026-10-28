@@ -95,7 +95,7 @@ module.exports=function({meta,topics}){
  d.overview='Watch real 2026 campaign ads, spot one-sided messaging, and verify the claims using independent records.';
  d.evidenceTitle='Your mission: spot the message, then verify it';
  d.evidenceTask='Read or watch both 2026 advertisements, answer Questions 4–6, then open the independent evidence in the next chapter.';
- d.teaching.timing=[6,2,9,3,18,9,8];
+ d.teaching.timing=[5,2,8,3,18,9,10];
  d.worksheet=[
   {number:1,chapter:0,id:'worksheet-purpose',text:'What is the purpose of a political campaign ad? Name one way an ad tries to shape what voters notice.',length:'One sentence.',startHere:'A campaign ad tries to ____. It draws attention to ____.'},
   {number:2,chapter:1,id:'worksheet-video',text:'From the intro videos, name one technique campaigns use to persuade voters.',length:'One short sentence.',startHere:'Campaigns persuade viewers by ____.'},
@@ -128,7 +128,7 @@ module.exports=function({meta,topics}){
  d.teaching.phases['watch-2'].cut='Do not make students visit three unrelated ad stations. The rural hospital pair is required; other cases are optional.';
  d.teaching.phases.apply.move='Students open the CMS, CBO, and FactCheck.org evidence packet, then answer Question 7. Highlight that the money amounts cover different populations and periods.';
  d.teaching.phases.file.move='Students answer Question 8 with the poll card, use Gather All My Work, and confirm Canvas submission. Protect final five minutes.';
- d.inClass='Before lunch, 55 minutes: teacher introduction and three FactCheck.org ads (6), student directions (2), two introductory videos (9), source-check model (3), independent ads/Questions 4–6 (18), evidence/Question 7 (9), poll/Question 8 and Canvas (8). After lunch: CNN10 and daily news.';
+ d.inClass='Before lunch, 55 minutes: teacher introduction and three FactCheck.org ads (5), student directions (2), two introductory video excerpts (8), source-check model (3), independent ads/Questions 4–6 (18), evidence/Question 7 (9), poll/Question 8 and Canvas (10). After lunch: CNN10 and daily news.';
  meta.reviewed='2026-10-28';
  meta.assessment='Topic 4: eight short student-directed worksheet questions, including original-ad analysis, independently checked evidence, and a poll/promise conclusion. Political preference is never graded.';
  e.flow.headings=['The scoreboard is moving','Call, count, or certified?','Run the election desk','Write the impact, keep the limits','File your analysis'];
