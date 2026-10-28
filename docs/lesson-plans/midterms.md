@@ -260,7 +260,7 @@ _Messages, evidence, and uncertainty_
 
 ### Overview
 
-Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.
+Watch real 2026 campaign ads, spot one-sided messaging, and verify the claims using independent records.
 
 ### Learning targets
 
@@ -276,7 +276,7 @@ Investigate campaign framing, check a real claim, and read a poll without treati
 
 ### What happens in class
 
-55 minutes: hook 3, direction 5, PBS research clip 5, optional concept check 2, paired 2026 ads and evidence 20, poll/promise 10, explanation and Canvas 10. After lunch: CNN10 and daily reporting.
+Before lunch, 55 minutes: teacher introduction and three FactCheck.org ads (5), student directions (2), two introductory video excerpts (8), source-check model (3), independent ads/Questions 4–6 (18), evidence/Question 7 (9), poll/Question 8 and Canvas (10). After lunch: CNN10 and daily news.
 
 ### Clips
 
@@ -293,19 +293,35 @@ Investigate campaign framing, check a real claim, and read a poll without treati
 
 ### The filings
 
-1. **Framing.** After checking the records, explain what each 2026 ad emphasizes, what it leaves out, and whether the evidence changes your initial impression.
-   - START HERE: Before I thought ____. Ad A emphasizes ____, while Ad B emphasizes ____. According to ____, ____. My conclusion is ____ because ____.
+1. **.** What is the purpose of a political campaign ad? Name one way an ad tries to shape what voters notice.
+   - START HERE: A campaign ad tries to ____. It draws attention to ____.
+2. **.** From the intro videos, name one technique campaigns use to persuade voters.
+   - START HERE: Campaigns persuade viewers by ____.
+3. **.** Why is a campaign website or ad not enough to prove a factual claim?
+   - START HERE: It tells us what the campaign says. To check the claim, I need ____.
+4. **.** BEFORE CHECKING: What does Ad A want viewers to believe? What does Ad B want viewers to believe?
+   - START HERE: Ad A says ____. Ad B says ____.
+5. **.** Choose one ad. What audience, image, word, or emotion does it use to persuade?
+   - START HERE: I chose Ad ____. It targets ____ by using ____.
+6. **.** Choose one checkable claim from either ad. What independent record could help test it?
+   - START HERE: The claim is ____. I could check ____.
+7. **.** AFTER CHECKING: What did the independent evidence establish, and what important context was left out of the campaign ads?
+   - START HERE: Medicaid.gov / CBO / FactCheck.org establishes ____. Ad __ left out ____. My first impression changed / stayed the same because ____.
+8. **.** Why does a favorable poll not prove a candidate won, and why does a campaign promise not guarantee a new law?
+   - START HERE: A poll cannot prove ____ because ____. A promise does not guarantee ____ because ____.
+9. **Framing.** AFTER CHECKING: What did the independent evidence establish, and what important context was left out of the campaign ads?
+   - START HERE: Medicaid.gov / CBO / FactCheck.org establishes ____. Ad __ left out ____. My first impression changed / stayed the same because ____.
    - PUSH FURTHER: How could a different lead or image change its impression?
-2. **Corroboration.** Optional extension: analyze a different attributed campaign claim with a record that could test it.
-   - START HERE: The claim by ____ on ____ says ____. The independent source ____ establishes ____. This supports / contradicts / leaves unresolved ____.
+10. **Corroboration.** Choose one checkable claim from either ad. What independent record could help test it?
+   - START HERE: The claim is ____. I could check ____.
    - PUSH FURTHER: Does the second source provide independent evidence or repeat the first?
-3. **Uncertainty.** Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?
-   - START HERE: This poll estimates ____ among ____ at ____. It cannot establish ____. A promise also depends on ____.
+11. **Uncertainty.** Why does a favorable poll not prove a candidate won, and why does a campaign promise not guarantee a new law?
+   - START HERE: A poll cannot prove ____ because ____. A promise does not guarantee ____ because ____.
    - PUSH FURTHER: Name information that would strengthen each conclusion.
 
 ### Where the work goes
 
-The civics investigation’s Gather All My Work panel: five-item practice and three short responses. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
+The civics investigation’s Gather All My Work panel: five-item practice and eight distributed worksheet answers. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
 
 ---
 

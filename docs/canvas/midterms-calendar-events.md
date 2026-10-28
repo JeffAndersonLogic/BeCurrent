@@ -284,7 +284,7 @@ Every link below points at the live GitHub Pages build:
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.</p>
+                <p>Watch real 2026 campaign ads, spot one-sided messaging, and verify the claims using independent records.</p>
             </td>
         </tr>
         <tr>

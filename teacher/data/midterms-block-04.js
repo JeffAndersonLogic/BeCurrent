@@ -12,51 +12,68 @@
   "phases": [
     {
       "id": "hook",
-      "label": "Opening question",
+      "label": "Teacher opening / 2026 ads",
       "kind": "lesson",
-      "time": "0–3",
+      "time": "0–5",
       "start": 0,
-      "minutes": 3,
+      "minutes": 5,
       "screen": {
-        "eyebrow": "Topic 4 / Opening question",
-        "title": "Two messages use the same number. Could they leave different impressions?",
-        "description": "Would you share it before checking it?",
-        "action": null,
+        "eyebrow": "Topic 4 / Teacher opening / 2026 ads",
+        "title": "Can a true fact still leave out context?",
+        "description": "What do these 2026 campaign ads want voters to notice? Open the FactCheck.org examples first.",
+        "action": {
+          "url": "https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/",
+          "label": "Open FactCheck.org / rural-hospital ad examples"
+        },
         "image": {
           "src": "../assets/images/midterms/i-voted-stickers-2026.webp",
           "alt": "A roll of red “I Voted” stickers on a table, with the room behind it out of focus.",
           "caption": "“I Voted” stickers at the public library in Aitkin, Minnesota, on primary election day, August 11, 2026. Every campaign message is competing for that sticker: check the claim before it decides your vote.",
           "credit": "Lorie Shaull, CC BY 4.0, via Wikimedia Commons (resized)",
           "source": "https://commons.wikimedia.org/wiki/File:A_roll_of_%22I_Voted%22_stickers_in_Aitkin_Public_Library_on_Primary_Election_Day,_Aug._11,_2026._in_Aitkin.jpg"
-        }
+        },
+        "cards": [
+          {
+            "title": "Rural hospitals",
+            "text": "Same law, different effects."
+          },
+          {
+            "title": "Texas taxes",
+            "text": "What was cropped from a quote?"
+          },
+          {
+            "title": "Medicare",
+            "text": "Which programs and figures differ?"
+          }
+        ]
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
-        "ask": "Two messages use the same number. Could they leave different impressions?",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Can a campaign ad use a true fact and still leave out important information?",
         "listenFor": "Students distinguish a message’s impression from evidence establishing its factual claim.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Use the private prediction without an open political debate. Protect the source-and-context question.",
-        "move": "Students use Chapter 1. Explain that everyone applies the same checking questions to every party and can respond privately.",
+        "move": "Give the 45-second opening explanation, then show brief excerpts from three real 2026 ads on FactCheck.org: rural hospitals, Texas taxes, Medicare. Do not spend the full class arguing about any candidate.",
         "model": "A message can select a number or image that draws attention to one concern. I need its source and context before accepting the conclusion.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students think a number settles the issue, ask what it counts, when it was measured, and what comparison is missing. Do not invent a real campaign quotation."
       }
     },
     {
       "id": "direction",
-      "label": "Today’s direction",
+      "label": "Eight-question student worksheet",
       "kind": "lesson",
-      "time": "3–8",
-      "start": 3,
-      "minutes": 5,
+      "time": "5–7",
+      "start": 5,
+      "minutes": 2,
       "screen": {
-        "eyebrow": "Topic 4 / Today’s direction",
-        "title": "Messages, evidence, and uncertainty",
-        "description": "Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.",
+        "eyebrow": "Topic 4 / Eight-question student worksheet",
+        "title": "Observe. Investigate. Verify. File.",
+        "description": "Point out the eight numbered answers and where Gather All My Work saves them for Canvas.",
         "action": {
           "url": "../midterms/block-04.html#student-flow",
-          "label": "See today’s required work"
+          "label": "Open student worksheet"
         },
         "bullets": [
           "I can explain how a campaign message directs attention.",
@@ -65,14 +82,14 @@
         ]
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
-        "ask": "Today’s direction — what evidence supports your explanation?",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Eight-question student worksheet — what evidence supports your explanation?",
         "listenFor": "Students know that identifying framing and verifying a claim are related but separate tasks.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Read the three-part checking routine rather than every target aloud. Protect the difference between claim and proof.",
-        "move": "Present the three required responses: before evidence, after evidence, and a poll-or-promise checkpoint. The real 2026 ads replace the old constructed-message activity.",
+        "move": "Show the eight numbered worksheet responses and the Gather All My Work button. Students will work independently after the videos.",
         "model": "First notice how a message persuades. Then check one exact factual claim against evidence. Finally say what remains uncertain.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students say the goal is to pick the better candidate, restate: “We assess a claim and its evidence, not your vote or beliefs.”"
       }
@@ -82,47 +99,47 @@
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 8,
+      "start": 7,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 1 of 6",
-        "title": "What does a campaign want you to notice?",
+        "title": "Why do campaigns run ads?",
         "description": "",
         "bullets": [
-          "Campaigns choose an issue, an image, a number, or a personal story.",
-          "Those choices direct attention. That is framing.",
-          "Start by stating the claim in plain language.",
-          "Then ask who the message seems designed to reach."
+          "Campaigns compete for attention and votes.",
+          "An ad chooses a few images, stories, facts, or feelings.",
+          "Choosing what to emphasize is framing.",
+          "We investigate claims, not which candidate to support."
         ],
-        "write": "Framing is the choices that shape how information is presented."
+        "write": "A campaign ad is persuasion, not independent proof."
       },
       "intel": {
-        "land": "Framing is the choices that shape how information is presented.",
-        "ask": "What does a campaign want you to notice?",
+        "land": "A campaign ad is persuasion, not independent proof.",
+        "ask": "Why do campaigns run ads?",
         "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
         "protect": "Leave the slide up until every student has the Write this down line.",
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
-        "model": "Framing is the choices that shape how information is presented.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "model": "A campaign ad is persuasion, not independent proof.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "watch-1",
-      "label": "Watch / explain",
+      "label": "Two intro clips",
       "kind": "watch",
-      "time": "8–13",
-      "start": 8,
-      "minutes": 5,
+      "time": "7–15",
+      "start": 7,
+      "minutes": 8,
       "screen": {
-        "eyebrow": "Topic 4 / Watch / explain",
-        "title": "How Do You Research Candidates? Simple Civics",
-        "description": "Watch the full clip. Which source could you use to check a campaign claim?",
+        "eyebrow": "Topic 4 / Two intro clips",
+        "title": "How campaigns shape a message",
+        "description": "Play the teacher-selected YouTube intro, then the 2:55 PBS Simple Civics candidate-research clip. Keep only the key ideas.",
         "action": {
-          "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
-          "label": "Play the clip"
+          "url": "https://www.youtube.com/watch?v=muJ7w0uKI20",
+          "label": "Play selected YouTube campaign introduction"
         },
         "cards": [
           {
@@ -140,14 +157,14 @@
         ]
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
         "ask": "Which source could you use to check a campaign claim?",
         "listenFor": "Students identify a source that answers the exact question, rather than treating any second website as confirmation.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Use the 2:55 WFYI candidate-research clip once. Omit replay and the optional full campaign report.",
-        "move": "Watch with captions, then model “Who says this? What evidence would test it?” Use the equivalent short reading if playback fails.",
+        "cut": "Keep one key idea from each video; avoid turning both into a long lecture.",
+        "move": "Play the user-selected Modern Political Campaigns YouTube intro, then WFYI How Do You Research Candidates? (2:55). Preview the first video's length and select a meaningful excerpt as needed. Use the short reading fallback.",
         "model": "A campaign site can establish what a candidate promises. A relevant independent record is needed to check whether a factual claim is supported.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students choose two copies of the same message, trace both back to the original. Contrast repeating a claim with checking a relevant record."
       }
@@ -157,29 +174,29 @@
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 15,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 2 of 6",
-        "title": "How do you check a claim?",
+        "title": "How do campaign messages work?",
         "description": "",
         "bullets": [
-          "Find the exact claim. Who said it, and when?",
-          "Match the source to the claim: a vote record for a vote, a budget document for an amount.",
-          "A campaign’s own page shows what the campaign says. It is not independent proof.",
-          "Two websites repeating one press release are not two confirmations."
+          "A memorable message uses words, images, and emotions.",
+          "Notice who is speaking and who paid for the ad.",
+          "Identify one exact claim that evidence could check.",
+          "A second copy of the same claim is not a second source."
         ],
-        "write": "Corroboration means checking against another source with relevant, independent evidence."
+        "write": "A checkable claim needs a relevant independent source."
       },
       "intel": {
-        "land": "Corroboration means checking against another source with relevant, independent evidence.",
-        "ask": "How do you check a claim?",
+        "land": "A checkable claim needs a relevant independent source.",
+        "ask": "How do campaign messages work?",
         "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
         "protect": "Leave the slide up until every student has the Write this down line.",
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
-        "model": "Corroboration means checking against another source with relevant, independent evidence.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "model": "A checkable claim needs a relevant independent source.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -189,47 +206,47 @@
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 15,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 3 of 6",
-        "title": "Promise, poll, claim, or result?",
+        "title": "Which information counts as evidence?",
         "description": "",
         "bullets": [
-          "Campaign promise: a future action a candidate wants to take.",
-          "Poll estimate: opinion from a sample of people at one point in time.",
-          "Claim needing checking: a statement that needs evidence before you believe it.",
-          "Official result: the final totals signed off by the election office."
+          "Ad text: what a campaign wants viewers to hear.",
+          "Budget record: what a government analysis projects.",
+          "Official record: what the government actually did.",
+          "Fact-check: independent reporting and its sources."
         ],
-        "write": "A promise and a poll are not results."
+        "write": "Different sources answer different questions."
       },
       "intel": {
-        "land": "A promise and a poll are not results.",
-        "ask": "Promise, poll, claim, or result?",
+        "land": "Different sources answer different questions.",
+        "ask": "Which information counts as evidence?",
         "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
         "protect": "Leave the slide up until every student has the Write this down line.",
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
-        "model": "A promise and a poll are not results.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "model": "Different sources answer different questions.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "investigate",
-      "label": "Concept check",
+      "label": "Model the checking question",
       "kind": "lesson",
-      "time": "13–15",
-      "start": 13,
-      "minutes": 2,
+      "time": "15–18",
+      "start": 15,
+      "minutes": 3,
       "screen": {
-        "eyebrow": "Topic 4 / Concept check",
-        "title": "Promise, poll, claim, or result?",
-        "description": "Two-minute reminder only. The five-item sort is no longer required.",
+        "eyebrow": "Topic 4 / Model the checking question",
+        "title": "Ad claim ≠ independent proof",
+        "description": "Model one claim-checking sentence, then release students to their own work.",
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
-          "label": "Review key terms"
+          "label": "Open clips and source check"
         },
         "cards": [
           {
@@ -247,14 +264,14 @@
         ]
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
-        "ask": "Concept check — what evidence supports your explanation?",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Model the checking question — what evidence supports your explanation?",
         "listenFor": "All five classifications are attempted and corrected. Students distinguish a desired future action from an observation or official outcome.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Do not require the old five-item sort. Move to the 2026 ads.",
-        "move": "Use two minutes to review promise, poll, claim and result. The original five-item practice is now optional reading, not a required sort.",
+        "move": "Model one sentence on why a campaign website does not prove its own claims; release students to Questions 4–6.",
         "model": "Campaign promise; Poll estimate; Official result; Claim needing checking; Claim needing checking. An estimate from a sample is not a certified election result.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students confuse promise and result, contrast “I will seek a law” with “The office certifies these totals.” Have students underline future versus completed action."
       }
@@ -264,58 +281,58 @@
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 15,
+      "start": 18,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 4 of 6",
-        "title": "Can a message be accurate and still leave something out?",
+        "title": "Questions 4–6: examine the ads",
         "description": "",
         "bullets": [
-          "A number can be correct but incomplete: one year, one program, or one comparison.",
-          "A headline can feature a number and leave its limits farther down the page.",
-          "Ask what context would change the impression: time period, comparison, people affected, methods.",
-          "This is a reason to check carefully, not a reason to assume every message is false."
+          "Read Ad A and Ad B before the evidence.",
+          "What message does each sponsor emphasize?",
+          "What audience or emotion is being targeted?",
+          "Write one claim and the record that could test it."
         ],
-        "write": "An accurate detail can still leave out important context."
+        "write": "Observe first. Verify second."
       },
       "intel": {
-        "land": "An accurate detail can still leave out important context.",
-        "ask": "Can a message be accurate and still leave something out?",
+        "land": "Observe first. Verify second.",
+        "ask": "Questions 4–6: examine the ads",
         "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
         "protect": "Leave the slide up until every student has the Write this down line.",
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
-        "model": "An accurate detail can still leave out important context.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "model": "Observe first. Verify second.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "watch-2",
-      "label": "2026 Campaign Evidence Lab",
+      "label": "Student-led advertisement lab",
       "kind": "lesson",
-      "time": "15–35",
-      "start": 15,
-      "minutes": 20,
+      "time": "18–36",
+      "start": 18,
+      "minutes": 18,
       "screen": {
-        "eyebrow": "Topic 4 / 2026 Campaign Evidence Lab",
-        "title": "Same law. Two real ads.",
-        "description": "Watch for a verification move. Then try the framing lab.",
+        "eyebrow": "Topic 4 / Student-led advertisement lab",
+        "title": "Watch, examine, answer Questions 4–6",
+        "description": "Students work independently on Questions 4–6 using the two original 2026 ads.",
         "action": {
           "url": "../midterms/block-04.html#chapter-3",
-          "label": "Open the framing lab"
+          "label": "Open student ad investigation"
         }
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
-        "ask": "2026 Campaign Evidence Lab — what evidence supports your explanation?",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Student-led advertisement lab — what evidence supports your explanation?",
         "listenFor": "Students distinguish advertisements, independent records, projections, and verified outcomes. Their BEFORE and AFTER notes have an evidence-based change or confirmation.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Display the short ad excerpts and read the CMS/CBO cards aloud if external players are blocked. Protect the BEFORE and AFTER responses.",
-        "move": "Use Chapter 3 for the required 2026 rural-hospital ad comparison. Students watch or read both original transcripts, write BEFORE, then inspect CMS and CBO evidence and write AFTER. There is no second required PBS clip.",
+        "cut": "Do not make students visit three unrelated ad stations. The rural hospital pair is required; other cases are optional.",
+        "move": "Students independently examine both original campaign ads and answer Questions 4–6. Project the launch link and circulate. If ad playback is blocked, short excerpts and written source descriptions remain available.",
         "model": "Ad A highlights new rural-health funding. Ad B highlights risks. Medicaid.gov verifies the five-year $50 billion program; CBO projects roughly $915 billion less national Medicaid spending over ten years. Neither number alone predicts specific hospital closures.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students judge only whether they like the message, underline its checkable words. Ask “Which record could support or challenge these words?” Model one match before independent work."
       }
@@ -325,68 +342,72 @@
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 36,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 5 of 6",
-        "title": "What if two sources seem to disagree?",
+        "title": "Question 7: check the same law",
         "description": "",
         "bullets": [
-          "Check whether they answer the same question.",
-          "One may describe a proposal while the other describes an existing law.",
-          "They may use different dates, groups, or measures.",
-          "Decide what the evidence supports, contradicts, or leaves unresolved."
+          "The law created a five-year rural-health fund.",
+          "It also changes longer-term Medicaid spending.",
+          "Different amounts describe different purposes and periods.",
+          "Hospital risk is not a confirmed number of closures."
         ],
-        "write": "“Unresolved” is an honest finding when the evidence cannot settle a claim."
+        "write": "An incomplete ad can use a real fact but omit context."
       },
       "intel": {
-        "land": "“Unresolved” is an honest finding when the evidence cannot settle a claim.",
-        "ask": "What if two sources seem to disagree?",
+        "land": "An incomplete ad can use a real fact but omit context.",
+        "ask": "Question 7: check the same law",
         "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
         "protect": "Leave the slide up until every student has the Write this down line.",
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
-        "model": "“Unresolved” is an honest finding when the evidence cannot settle a claim.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "model": "An incomplete ad can use a real fact but omit context.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "apply",
-      "label": "Polls and promises",
+      "label": "Read the evidence",
       "kind": "lesson",
-      "time": "35–45",
-      "start": 35,
-      "minutes": 10,
+      "time": "36–45",
+      "start": 36,
+      "minutes": 9,
       "screen": {
-        "eyebrow": "Topic 4 / Polls and promises",
-        "title": "What can we actually know?",
-        "description": "Use the Pew poll card. Explain why a national sample is not a local result and a promise is not a law.",
+        "eyebrow": "Topic 4 / Read the evidence",
+        "title": "Answer Question 7: what was missing?",
+        "description": "Students examine the visible CMS, CBO and FactCheck.org readings; explain the difference between new funding, projected Medicaid cuts, and hospital closures.",
         "action": {
           "url": "../midterms/block-04.html#chapter-4",
-          "label": "Read the poll card"
+          "label": "Open independent evidence"
         },
         "cards": [
           {
-            "title": "Support",
-            "text": "What does the record establish?"
+            "title": "Rural health fund",
+            "text": "New funding over five years."
           },
           {
-            "title": "Limit",
-            "text": "What remains unresolved?"
+            "title": "Medicaid",
+            "text": "Projected spending change over ten years."
+          },
+          {
+            "title": "Limits",
+            "text": "Specific closures are not established."
           }
         ]
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
-        "ask": "Optional extension: analyze a different attributed campaign claim with a record that could test it.",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Choose one checkable claim from either ad. What independent record could help test it?",
         "listenFor": "The real claim has source/date/link, an independent record relevant to that claim, and a careful conclusion. Unsupported or unresolved is acceptable when justified.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "The older Arizona claim packet is optional. Do not assign a second unrelated fact-check.",
-        "move": "Use the prepared Pew poll card in Chapter 4. Ask what a dated national sample can estimate, why it cannot establish district winners, and why a policy promise needs other institutions.",
+        "move": "Students open the CMS, CBO, and FactCheck.org evidence packet, then answer Question 7. Highlight that the money amounts cover different populations and periods.",
         "model": "The rally statement alleges intentional breakage and inability to vote. The technical investigation describes equipment limits and procedures for counting affected ballots. The supplied record does not support the allegation of deliberate interference; its counting evidence contradicts the blanket claim that the printer problem made voting impossible. A technical review and its cited court finding do not narrate every voter’s experience or prove that every election everywhere is free of mistakes.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students copy the claim as proof, place claim and independent record side by side. Model one “supports / contradicts / cannot settle” judgment using the actual packet wording."
       }
@@ -400,54 +421,54 @@
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 6 of 6",
-        "title": "Why isn’t a poll or a promise a result?",
+        "title": "Question 8: know the evidence limit",
         "description": "",
         "bullets": [
-          "A poll estimates opinion from a sample at a particular time.",
-          "Who was asked, the wording, the timing, and the uncertainty all matter.",
-          "A national poll does not award congressional seats.",
-          "A promise may need other people and institutions to agree."
+          "A poll estimates what a sample thinks at one time.",
+          "A promise describes what a candidate wants to do.",
+          "A certified result reports completed official counting.",
+          "Answer Question 8 and file all eight answers in Canvas."
         ],
-        "write": "Keep three questions separate: what people say now, who wins, and what government does later."
+        "write": "Polls and promises are not certified results."
       },
       "intel": {
-        "land": "Keep three questions separate: what people say now, who wins, and what government does later.",
-        "ask": "Why isn’t a poll or a promise a result?",
+        "land": "Polls and promises are not certified results.",
+        "ask": "Question 8: know the evidence limit",
         "listenFor": "Students copy the Write this down line and at least two bullets, by hand, typed, or dictated.",
         "protect": "Leave the slide up until every student has the Write this down line.",
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
-        "model": "Keep three questions separate: what people say now, who wins, and what government does later.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "model": "Polls and promises are not certified results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "file",
-      "label": "Explain / Canvas",
+      "label": "Complete and submit",
       "kind": "lesson",
       "time": "45–55",
       "start": 45,
       "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 4 / Explain / Canvas",
-        "title": "Decide what you can actually claim",
+        "eyebrow": "Topic 4 / Complete and submit",
+        "title": "Question 8 + Canvas",
         "description": "A poll estimates. A promise proposes. Neither guarantees.",
         "action": {
           "url": "../midterms/block-04.html#chapter-5",
-          "label": "Explain, gather, and submit"
+          "label": "Open final worksheet question"
         }
       },
       "intel": {
-        "land": "A campaign may select accurate details while omitting other essential effects. Evidence can confirm parts of competing messages without proving every implied outcome.",
-        "ask": "Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?",
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Why does a favorable poll not prove a candidate won, and why does a campaign promise not guarantee a new law?",
         "listenFor": "The checkpoint gives a reason for both limits: sampling/reporting for the poll and institutional steps for the promise. Verify actual Canvas submission.",
         "protect": "Protect the last five minutes for Gather, Canvas paste, and submission confirmation.",
         "cut": "Omit Push further and further poll comparisons. Read only the prepared poll fields needed for the response. Protect five minutes for the explanation and five for Canvas.",
-        "move": "Keep the final poll/promise answer short. With five minutes remaining gather all three required written responses and submit to Canvas. Confirm the submission.",
+        "move": "Students answer Question 8 with the poll card, use Gather All My Work, and confirm Canvas submission. Protect final five minutes.",
         "model": "The poll describes a national registered-voter preference during its field period. Separate district elections award House seats; this survey cannot establish an Indiana district winner, turnout, or November chamber control. A campaign promise also depends on later decisions by the relevant institutions.",
-        "story": "Students examine two real 2026 ads about the same law, first as persuasive viewers and then as evidence detectives. They document an initial impression, compare two primary government records and independent reporting, revise their assessment, and finish by distinguishing poll estimates and promises from results.",
+        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students say only “it might be wrong,” ask what the poll measured and which institutions still must act on the promise."
       }

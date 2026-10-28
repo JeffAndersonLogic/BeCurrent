@@ -12,39 +12,56 @@ window.BECURRENT_PROJECTOR_LESSON = {
   "phases": [
     {
       "id": "hook",
-      "label": "Opening question",
+      "label": "Teacher opening / 2026 ads",
       "kind": "lesson",
-      "time": "0–3",
+      "time": "0–5",
       "start": 0,
-      "minutes": 3,
+      "minutes": 5,
       "screen": {
-        "eyebrow": "Topic 4 / Opening question",
-        "title": "Two messages use the same number. Could they leave different impressions?",
-        "description": "Would you share it before checking it?",
-        "action": null,
+        "eyebrow": "Topic 4 / Teacher opening / 2026 ads",
+        "title": "Can a true fact still leave out context?",
+        "description": "What do these 2026 campaign ads want voters to notice? Open the FactCheck.org examples first.",
+        "action": {
+          "url": "https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/",
+          "label": "Open FactCheck.org / rural-hospital ad examples"
+        },
         "image": {
           "src": "../assets/images/midterms/i-voted-stickers-2026.webp",
           "alt": "A roll of red “I Voted” stickers on a table, with the room behind it out of focus.",
           "caption": "“I Voted” stickers at the public library in Aitkin, Minnesota, on primary election day, August 11, 2026. Every campaign message is competing for that sticker: check the claim before it decides your vote.",
           "credit": "Lorie Shaull, CC BY 4.0, via Wikimedia Commons (resized)",
           "source": "https://commons.wikimedia.org/wiki/File:A_roll_of_%22I_Voted%22_stickers_in_Aitkin_Public_Library_on_Primary_Election_Day,_Aug._11,_2026._in_Aitkin.jpg"
-        }
+        },
+        "cards": [
+          {
+            "title": "Rural hospitals",
+            "text": "Same law, different effects."
+          },
+          {
+            "title": "Texas taxes",
+            "text": "What was cropped from a quote?"
+          },
+          {
+            "title": "Medicare",
+            "text": "Which programs and figures differ?"
+          }
+        ]
       }
     },
     {
       "id": "direction",
-      "label": "Today’s direction",
+      "label": "Eight-question student worksheet",
       "kind": "lesson",
-      "time": "3–8",
-      "start": 3,
-      "minutes": 5,
+      "time": "5–7",
+      "start": 5,
+      "minutes": 2,
       "screen": {
-        "eyebrow": "Topic 4 / Today’s direction",
-        "title": "Messages, evidence, and uncertainty",
-        "description": "Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.",
+        "eyebrow": "Topic 4 / Eight-question student worksheet",
+        "title": "Observe. Investigate. Verify. File.",
+        "description": "Point out the eight numbered answers and where Gather All My Work saves them for Canvas.",
         "action": {
           "url": "../midterms/block-04.html#student-flow",
-          "label": "See today’s required work"
+          "label": "Open student worksheet"
         },
         "bullets": [
           "I can explain how a campaign message directs attention.",
@@ -58,35 +75,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 8,
+      "start": 7,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 1 of 6",
-        "title": "What does a campaign want you to notice?",
+        "title": "Why do campaigns run ads?",
         "description": "",
         "bullets": [
-          "Campaigns choose an issue, an image, a number, or a personal story.",
-          "Those choices direct attention. That is framing.",
-          "Start by stating the claim in plain language.",
-          "Then ask who the message seems designed to reach."
+          "Campaigns compete for attention and votes.",
+          "An ad chooses a few images, stories, facts, or feelings.",
+          "Choosing what to emphasize is framing.",
+          "We investigate claims, not which candidate to support."
         ],
-        "write": "Framing is the choices that shape how information is presented."
+        "write": "A campaign ad is persuasion, not independent proof."
       }
     },
     {
       "id": "watch-1",
-      "label": "Watch / explain",
+      "label": "Two intro clips",
       "kind": "watch",
-      "time": "8–13",
-      "start": 8,
-      "minutes": 5,
+      "time": "7–15",
+      "start": 7,
+      "minutes": 8,
       "screen": {
-        "eyebrow": "Topic 4 / Watch / explain",
-        "title": "How Do You Research Candidates? Simple Civics",
-        "description": "Watch the full clip. Which source could you use to check a campaign claim?",
+        "eyebrow": "Topic 4 / Two intro clips",
+        "title": "How campaigns shape a message",
+        "description": "Play the teacher-selected YouTube intro, then the 2:55 PBS Simple Civics candidate-research clip. Keep only the key ideas.",
         "action": {
-          "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
-          "label": "Play the clip"
+          "url": "https://www.youtube.com/watch?v=muJ7w0uKI20",
+          "label": "Play selected YouTube campaign introduction"
         },
         "cards": [
           {
@@ -109,19 +126,19 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 15,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 2 of 6",
-        "title": "How do you check a claim?",
+        "title": "How do campaign messages work?",
         "description": "",
         "bullets": [
-          "Find the exact claim. Who said it, and when?",
-          "Match the source to the claim: a vote record for a vote, a budget document for an amount.",
-          "A campaign’s own page shows what the campaign says. It is not independent proof.",
-          "Two websites repeating one press release are not two confirmations."
+          "A memorable message uses words, images, and emotions.",
+          "Notice who is speaking and who paid for the ad.",
+          "Identify one exact claim that evidence could check.",
+          "A second copy of the same claim is not a second source."
         ],
-        "write": "Corroboration means checking against another source with relevant, independent evidence."
+        "write": "A checkable claim needs a relevant independent source."
       }
     },
     {
@@ -129,35 +146,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 13,
+      "start": 15,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 3 of 6",
-        "title": "Promise, poll, claim, or result?",
+        "title": "Which information counts as evidence?",
         "description": "",
         "bullets": [
-          "Campaign promise: a future action a candidate wants to take.",
-          "Poll estimate: opinion from a sample of people at one point in time.",
-          "Claim needing checking: a statement that needs evidence before you believe it.",
-          "Official result: the final totals signed off by the election office."
+          "Ad text: what a campaign wants viewers to hear.",
+          "Budget record: what a government analysis projects.",
+          "Official record: what the government actually did.",
+          "Fact-check: independent reporting and its sources."
         ],
-        "write": "A promise and a poll are not results."
+        "write": "Different sources answer different questions."
       }
     },
     {
       "id": "investigate",
-      "label": "Concept check",
+      "label": "Model the checking question",
       "kind": "lesson",
-      "time": "13–15",
-      "start": 13,
-      "minutes": 2,
+      "time": "15–18",
+      "start": 15,
+      "minutes": 3,
       "screen": {
-        "eyebrow": "Topic 4 / Concept check",
-        "title": "Promise, poll, claim, or result?",
-        "description": "Two-minute reminder only. The five-item sort is no longer required.",
+        "eyebrow": "Topic 4 / Model the checking question",
+        "title": "Ad claim ≠ independent proof",
+        "description": "Model one claim-checking sentence, then release students to their own work.",
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
-          "label": "Review key terms"
+          "label": "Open clips and source check"
         },
         "cards": [
           {
@@ -180,35 +197,35 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 15,
+      "start": 18,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 4 of 6",
-        "title": "Can a message be accurate and still leave something out?",
+        "title": "Questions 4–6: examine the ads",
         "description": "",
         "bullets": [
-          "A number can be correct but incomplete: one year, one program, or one comparison.",
-          "A headline can feature a number and leave its limits farther down the page.",
-          "Ask what context would change the impression: time period, comparison, people affected, methods.",
-          "This is a reason to check carefully, not a reason to assume every message is false."
+          "Read Ad A and Ad B before the evidence.",
+          "What message does each sponsor emphasize?",
+          "What audience or emotion is being targeted?",
+          "Write one claim and the record that could test it."
         ],
-        "write": "An accurate detail can still leave out important context."
+        "write": "Observe first. Verify second."
       }
     },
     {
       "id": "watch-2",
-      "label": "2026 Campaign Evidence Lab",
+      "label": "Student-led advertisement lab",
       "kind": "lesson",
-      "time": "15–35",
-      "start": 15,
-      "minutes": 20,
+      "time": "18–36",
+      "start": 18,
+      "minutes": 18,
       "screen": {
-        "eyebrow": "Topic 4 / 2026 Campaign Evidence Lab",
-        "title": "Same law. Two real ads.",
-        "description": "Watch for a verification move. Then try the framing lab.",
+        "eyebrow": "Topic 4 / Student-led advertisement lab",
+        "title": "Watch, examine, answer Questions 4–6",
+        "description": "Students work independently on Questions 4–6 using the two original 2026 ads.",
         "action": {
           "url": "../midterms/block-04.html#chapter-3",
-          "label": "Open the framing lab"
+          "label": "Open student ad investigation"
         }
       }
     },
@@ -217,44 +234,48 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 35,
+      "start": 36,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 5 of 6",
-        "title": "What if two sources seem to disagree?",
+        "title": "Question 7: check the same law",
         "description": "",
         "bullets": [
-          "Check whether they answer the same question.",
-          "One may describe a proposal while the other describes an existing law.",
-          "They may use different dates, groups, or measures.",
-          "Decide what the evidence supports, contradicts, or leaves unresolved."
+          "The law created a five-year rural-health fund.",
+          "It also changes longer-term Medicaid spending.",
+          "Different amounts describe different purposes and periods.",
+          "Hospital risk is not a confirmed number of closures."
         ],
-        "write": "“Unresolved” is an honest finding when the evidence cannot settle a claim."
+        "write": "An incomplete ad can use a real fact but omit context."
       }
     },
     {
       "id": "apply",
-      "label": "Polls and promises",
+      "label": "Read the evidence",
       "kind": "lesson",
-      "time": "35–45",
-      "start": 35,
-      "minutes": 10,
+      "time": "36–45",
+      "start": 36,
+      "minutes": 9,
       "screen": {
-        "eyebrow": "Topic 4 / Polls and promises",
-        "title": "What can we actually know?",
-        "description": "Use the Pew poll card. Explain why a national sample is not a local result and a promise is not a law.",
+        "eyebrow": "Topic 4 / Read the evidence",
+        "title": "Answer Question 7: what was missing?",
+        "description": "Students examine the visible CMS, CBO and FactCheck.org readings; explain the difference between new funding, projected Medicaid cuts, and hospital closures.",
         "action": {
           "url": "../midterms/block-04.html#chapter-4",
-          "label": "Read the poll card"
+          "label": "Open independent evidence"
         },
         "cards": [
           {
-            "title": "Support",
-            "text": "What does the record establish?"
+            "title": "Rural health fund",
+            "text": "New funding over five years."
           },
           {
-            "title": "Limit",
-            "text": "What remains unresolved?"
+            "title": "Medicaid",
+            "text": "Projected spending change over ten years."
+          },
+          {
+            "title": "Limits",
+            "text": "Specific closures are not established."
           }
         ]
       }
@@ -268,31 +289,31 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 6 of 6",
-        "title": "Why isn’t a poll or a promise a result?",
+        "title": "Question 8: know the evidence limit",
         "description": "",
         "bullets": [
-          "A poll estimates opinion from a sample at a particular time.",
-          "Who was asked, the wording, the timing, and the uncertainty all matter.",
-          "A national poll does not award congressional seats.",
-          "A promise may need other people and institutions to agree."
+          "A poll estimates what a sample thinks at one time.",
+          "A promise describes what a candidate wants to do.",
+          "A certified result reports completed official counting.",
+          "Answer Question 8 and file all eight answers in Canvas."
         ],
-        "write": "Keep three questions separate: what people say now, who wins, and what government does later."
+        "write": "Polls and promises are not certified results."
       }
     },
     {
       "id": "file",
-      "label": "Explain / Canvas",
+      "label": "Complete and submit",
       "kind": "lesson",
       "time": "45–55",
       "start": 45,
       "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 4 / Explain / Canvas",
-        "title": "Decide what you can actually claim",
+        "eyebrow": "Topic 4 / Complete and submit",
+        "title": "Question 8 + Canvas",
         "description": "A poll estimates. A promise proposes. Neither guarantees.",
         "action": {
           "url": "../midterms/block-04.html#chapter-5",
-          "label": "Explain, gather, and submit"
+          "label": "Open final worksheet question"
         }
       }
     },

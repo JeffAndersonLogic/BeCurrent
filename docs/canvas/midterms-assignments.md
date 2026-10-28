@@ -334,7 +334,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Investigate campaign framing, check a real claim, and read a poll without treating it as an election result.</p>
+                <p>Watch real 2026 campaign ads, spot one-sided messaging, and verify the claims using independent records.</p>
             </td>
         </tr>
         <tr>
@@ -351,10 +351,19 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
+                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Work independently. Watch the two opening clips with headphones and read the six notes boxes on the page; no copied notes or teacher presentation is required. Answer worksheet Questions 1–8 where they appear. Questions 6–8 are the source note, application note, and final explanation, not extra tasks. Short phrases and bullets are welcome.</p>
                 <ol>
-                    <li>After checking the records, explain what each 2026 ad emphasizes, what it leaves out, and whether the evidence changes your initial impression.</li>
-                    <li>Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?</li>
+                    <li>What is the purpose of a political campaign ad? Name one way an ad tries to shape what voters notice.</li>
+                    <li>From the intro videos, name one technique campaigns use to persuade voters.</li>
+                    <li>Why is a campaign website or ad not enough to prove a factual claim?</li>
+                    <li>BEFORE CHECKING: What does Ad A want viewers to believe? What does Ad B want viewers to believe?</li>
+                    <li>Choose one ad. What audience, image, word, or emotion does it use to persuade?</li>
+                    <li>Choose one checkable claim from either ad. What independent record could help test it?</li>
+                    <li>AFTER CHECKING: What did the independent evidence establish, and what important context was left out of the campaign ads?</li>
+                    <li>Why does a favorable poll not prove a candidate won, and why does a campaign promise not guarantee a new law?</li>
+                    <li>AFTER CHECKING: What did the independent evidence establish, and what important context was left out of the campaign ads?</li>
+                    <li>Choose one checkable claim from either ad. What independent record could help test it?</li>
+                    <li>Why does a favorable poll not prove a candidate won, and why does a campaign promise not guarantee a new law?</li>
                 </ol>
                 <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
             </td>
@@ -386,10 +395,10 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Before evidence</strong>: Identify one initial impression or exact claim in each actual 2026 ad.</li>
-                    <li><strong>Independent check</strong>: Name Medicaid.gov, CBO, or FactCheck.org and accurately state a finding and its limits.</li>
-                    <li><strong>After evidence</strong>: Compare what each ad emphasizes, what it omits, and whether the original impression changed or held.</li>
-                    <li><strong>Polls and promises</strong>: Explain why a sampled poll and a campaign promise are not election results or guaranteed policy outcomes.</li>
+                    <li><strong>Campaign purpose and video</strong>: Explain why campaigns persuade and identify a messaging technique.</li>
+                    <li><strong>Ad analysis</strong>: Identify both ads' messages, a persuasive choice, and a checkable claim.</li>
+                    <li><strong>Evidence and revision</strong>: Name a relevant independent source, identify a limit or omitted context, and update the first impression.</li>
+                    <li><strong>Poll and promise limits</strong>: Distinguish sampled opinion and proposed policy from verified outcomes.</li>
                 </ul>
             </td>
         </tr>
