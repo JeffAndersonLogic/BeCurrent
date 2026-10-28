@@ -202,3 +202,14 @@ summary{font-family:var(--vf-label);font-weight:650}
  .projector-body[data-kind="scenario"] .slide-sources,.projector-body[data-kind="scenario"] .scenario-footnote{margin-top:.6rem!important}
  .projector-body[data-kind="scenario"] .projector-footer{padding-top:10px}
 }
+
+/* Topic 4 (2026): the required background reading is always visible. */
+body[data-topic-number="4"] .section-reading, .print-activity .section-reading{display:block;background:#f5f3ed;border:1px solid #d7d0c2;border-left:4px solid #315c75;border-radius:8px;padding:18px 20px;margin:18px 0 24px;max-width:100%;line-height:1.65}
+body[data-topic-number="4"] .section-reading .eyebrow,.print-activity .section-reading .eyebrow{color:#1b3a5c;letter-spacing:.1em;font-weight:800;margin-top:0;margin-bottom:10px}
+body[data-topic-number="4"] .section-reading p:last-child,.print-activity .section-reading p:last-child{margin-bottom:0}
+body[data-topic-number="4"] .worksheet-question{border:1px solid #d6dadd;border-left:4px solid #476b85;background:#fffefb;border-radius:9px;padding:17px 20px;margin:19px 0}
+body[data-topic-number="4"] .worksheet-question label{display:block;margin:8px 0 12px}
+body[data-topic-number="4"] .worksheet-question textarea{display:block;min-height:80px;width:100%}
+body[data-topic-number="4"] .student-chapter>.evidence-card{margin:16px 0 20px}
+@media(max-width:700px){body[data-topic-number="4"] .section-reading,body[data-topic-number="4"] .worksheet-question{padding:14px}}
+@media print{.print-activity .section-reading{break-inside:avoid;background:#fff;border-color:#999}.print-activity .worksheet-question{break-inside:avoid}}
