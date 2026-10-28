@@ -887,9 +887,9 @@ Students examine two real 2026 ads about the same law, first as persuasive viewe
 - Notes slide: Can a message be accurate and still leave something out?
 - 15–35: 2026 Campaign Evidence Lab (20 minutes)
 - Notes slide: What if two sources seem to disagree?
-- 35–47: Polls and promises (12 minutes)
+- 35–45: Polls and promises (10 minutes)
 - Notes slide: Why isn’t a poll or a promise a result?
-- 47–55: Explain / Canvas (8 minutes)
+- 45–55: Explain / Canvas (10 minutes)
 - Lunch: Lunch break (0 minutes)
 - After lunch · 10 min: After lunch / CNN10 (10 minutes)
 - After lunch · 15 min: After lunch / daily news (15 minutes)

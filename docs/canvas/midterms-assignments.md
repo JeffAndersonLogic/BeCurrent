@@ -353,8 +353,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Submit a short source note, an application note, and a final explanation. A factual bullet, two short application bullets, and two or three final sentences are enough.</p>
                 <ol>
-                    <li>Choose a constructed message. Identify its claim, audience, and a detail you would check.</li>
-                    <li>Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.</li>
+                    <li>After checking the records, explain what each 2026 ad emphasizes, what it leaves out, and whether the evidence changes your initial impression.</li>
                     <li>Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?</li>
                 </ol>
                 <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
@@ -387,10 +386,10 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Message and framing</strong>: Identify a message’s claim, intended audience, and missing context without presenting a constructed teaching example as a real quotation.</li>
-                    <li><strong>Check the real claim</strong>: Record the actual claim and source/date/link, name independent evidence, and explain exactly what it supports, contradicts, or leaves unresolved.</li>
-                    <li><strong>Polls, promises, uncertainty</strong>: Explain why a sample-based poll does not establish an election winner and why a campaign promise does not guarantee a policy change.</li>
-                    <li><strong>Explain your thinking</strong>: Make the evidence-to-conclusion connection understandable. Political preference, response length, and public speaking are not scored.</li>
+                    <li><strong>Before evidence</strong>: Identify one initial impression or exact claim in each actual 2026 ad.</li>
+                    <li><strong>Independent check</strong>: Name Medicaid.gov, CBO, or FactCheck.org and accurately state a finding and its limits.</li>
+                    <li><strong>After evidence</strong>: Compare what each ad emphasizes, what it omits, and whether the original impression changed or held.</li>
+                    <li><strong>Polls and promises</strong>: Explain why a sampled poll and a campaign promise are not election results or guaranteed policy outcomes.</li>
                 </ul>
             </td>
         </tr>

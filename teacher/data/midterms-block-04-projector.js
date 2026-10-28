@@ -236,9 +236,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "apply",
       "label": "Polls and promises",
       "kind": "lesson",
-      "time": "35–47",
+      "time": "35–45",
       "start": 35,
-      "minutes": 12,
+      "minutes": 10,
       "screen": {
         "eyebrow": "Topic 4 / Polls and promises",
         "title": "What can we actually know?",
@@ -264,7 +264,7 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "label": "Notes 6 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 47,
+      "start": 45,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 6 of 6",
@@ -283,9 +283,9 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "id": "file",
       "label": "Explain / Canvas",
       "kind": "lesson",
-      "time": "47–55",
-      "start": 47,
-      "minutes": 8,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
         "eyebrow": "Topic 4 / Explain / Canvas",
         "title": "Decide what you can actually claim",

@@ -276,7 +276,7 @@ Investigate campaign framing, check a real claim, and read a poll without treati
 
 ### What happens in class
 
-Before lunch: follow the guided civics investigation, use the assigned clip windows and evidence cards, then submit the required work in Canvas. Background readings and Push further are optional. After lunch: CNN10 and daily reporting for 20–25 minutes.
+55 minutes: hook 3, direction 5, PBS research clip 5, optional concept check 2, paired 2026 ads and evidence 20, poll/promise 10, explanation and Canvas 10. After lunch: CNN10 and daily reporting.
 
 ### Clips
 
@@ -293,10 +293,10 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 ### The filings
 
-1. **Framing.** Choose a constructed message. Identify its claim, audience, and a detail you would check.
-   - START HERE: Message __ focuses on ____. Its audience is ____. I would check ____.
+1. **Framing.** After checking the records, explain what each 2026 ad emphasizes, what it leaves out, and whether the evidence changes your initial impression.
+   - START HERE: Before I thought ____. Ad A emphasizes ____, while Ad B emphasizes ____. According to ____, ____. My conclusion is ____ because ____.
    - PUSH FURTHER: How could a different lead or image change its impression?
-2. **Corroboration.** Use the prepared real claim: identify its speaker and date, name the independent checking source, and explain what the evidence supports, contradicts, or leaves unresolved.
+2. **Corroboration.** Optional extension: analyze a different attributed campaign claim with a record that could test it.
    - START HERE: The claim by ____ on ____ says ____. The independent source ____ establishes ____. This supports / contradicts / leaves unresolved ____.
    - PUSH FURTHER: Does the second source provide independent evidence or repeat the first?
 3. **Uncertainty.** Use the poll card to state one thing it can show and one thing it cannot establish. Why does a campaign promise also fail to guarantee a policy change?
