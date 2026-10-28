@@ -1,49 +1,46 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-10-27",
-  lead: {
-    category: "World / International",
-    headline: "Turnout so far highest on record as Israelis vote in pivotal election",
-    dek: "The elections - the first since the Hamas-led attacks on Israel and the wars which followed - are widely seen as a referendum on Benjamin Netanyahu.",
-    source: "BBC News",
-    published: "October 27, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c3j47l4kdez4o?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/24e8/live/8fbba870-d221-11f1-b441-2b33b063138f.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c3j47l4kdez4o?at_medium=RSS&at_campaign=rss"
+  "reviewed": "2026-10-28",
+  "lead": {
+    "category": "World / Elections",
+    "headline": "Israel counts votes as parties face an uncertain path to a governing coalition",
+    "dek": "Israel's election has produced no clear governing majority. Benjamin Netanyahu's Likud remains the largest party in emerging results, while rival parties consider possible coalitions. Final results and negotiations will determine who can form a government; an early lead is not a settled outcome.",
+    "source": "Associated Press",
+    "published": "October 28, 2026",
+    "url": "https://apnews.com/article/d4680e90210c9a8611853fda9d0deb61"
   },
-  wire: [
+  "wire": [
     {
-      category: "U.S. / National",
-      headline: "FBI raids Beverly Hills mansion in Eric Swalwell investigation",
-      dek: "Swalwell has denied any criminal wrongdoing.",
-      source: "NewsNation",
-      published: "October 27, 2026",
-      url: "https://www.newsnationnow.com/politics/fbi-raid-swalwell-mansion-beverly-hills/"
+      "category": "Local / Zionsville",
+      "headline": "Zionsville voters face school referendum and statewide ballot questions",
+      "dek": "Current in Zionsville's latest community briefing identifies the school referendum and two statewide ballot questions, alongside county races and local updates.",
+      "source": "Current in Zionsville",
+      "published": "October 26, 2026",
+      "url": "https://www.youarecurrent.com/2026/10/26/zionsville-in-brief-october-27-2026/"
     },
     {
-      category: "Science / Environment",
-      headline: "Will a new strategy help protect Northern Ireland's nature?",
-      dek: "About 40% of the plants and animals in protected sites across Northern Ireland fall short of meeting the standard for \"favourable condition\".",
-      source: "BBC News",
-      published: "October 27, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cq0megg87n3po?at_medium=RSS&at_campaign=rss"
+      "category": "U.S. / Economy",
+      "headline": "Consumer confidence rebounds in October as gasoline prices ease",
+      "dek": "The Conference Board's confidence index rose from September, AP reports. Households still described pressure from living costs; improved sentiment does not mean prices have returned to last year's levels.",
+      "source": "Associated Press (via WKYT)",
+      "published": "October 27, 2026",
+      "url": "https://www.wkyt.com/2026/10/27/us-consumer-confidence-recovers-october-gas-prices-eased-bit/"
     },
     {
-      category: "U.S. / National",
-      headline: "Nanotyrannus skeleton goes to auction in New York with $6m price tag",
-      dek: "The sale of the rare skeleton reignites debate in the scientific community about whether dinosaur remains should end up in private hands or public view.",
-      source: "BBC News",
-      published: "October 27, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cmx28de233r2o?at_medium=RSS&at_campaign=rss"
+      "category": "World / Transportation",
+      "headline": "Fatal high-speed train collision in Spain prompts rescue operation",
+      "dek": "Two high-speed trains collided near Urda on Wednesday. Emergency crews searched the wreckage, and rail services were disrupted. Casualty figures and the investigation were still developing.",
+      "source": "Associated Press (via WHDH)",
+      "published": "October 28, 2026",
+      "url": "https://whdh.com/news/at-least-64-dead-in-spain-after-one-high-speed-train-slams-into-another/"
     },
     {
-      category: "World / International",
-      headline: "Flávio Bolsonaro's passports cancelled after he fails to surrender them",
-      dek: "The defeated presidential candidate is under investigation for alleged money laundering and barred from leaving Brazil.",
-      source: "BBC News",
-      published: "October 27, 2026",
-      url: "https://www.bbc.co.uk/news/articles/ckly0xpxp243o?at_medium=RSS&at_campaign=rss"
+      "category": "Science / Space",
+      "headline": "NASA's daily astronomy feature shows one Jupiter moon passing in front of another",
+      "dek": "NASA's October 28 feature shows Ganymede briefly blocking Io in a video captured October 20. The alignment offers a visual explanation of a mutual occultation.",
+      "source": "NASA Astronomy Picture of the Day",
+      "published": "October 28, 2026",
+      "url": "https://science.nasa.gov/image-article/apod-2026-october-28-the-mutual-occultation-of-ganymede-and-io/"
     }
   ]
 };

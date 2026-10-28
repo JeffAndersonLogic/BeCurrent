@@ -69,6 +69,16 @@
     var slide = document.querySelector('.desk-slide-v2');
     if (!slide) return false;
 
+    var todayEntry = ((window.BECURRENT_SCHEDULE || {}).days || []).find(function (day) {
+      return day && day.date === dayKeyOf(new Date());
+    });
+    // The native board already follows the site-to-Canvas filing routine.
+    // Preserve it on dates explicitly using the gathered News Log.
+    if (todayEntry && todayEntry.deskWorkflow === 'gather') {
+      slide.dataset.deskMode = 'full';
+      return true;
+    }
+
     var mode = modeToday();
     var kicker = slide.querySelector('.board-kicker');
     var heading = slide.querySelector('.slide-title');

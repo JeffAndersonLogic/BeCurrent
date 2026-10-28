@@ -139,10 +139,15 @@ window.BECURRENT_SCHEDULE={
 
 ,
 
-  {date:'2026-10-28',topic:'WP4',topicTitle:'Who Has the Power? | The Fight for Your Vote',
-   doNow:'Two messages use the same number. Could they leave different impressions? Write your prediction.',
-   agenda:['Opening question: can the same number leave two impressions?','Watch, then sort promises, polls and verified results.','Compare two practice campaign messages.','Check a real claim against independent evidence.','Explain what a poll can and cannot show, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
-   homework:'Finish WP4 - Election Messages in Canvas.',homeworkDue:'the start of class on Friday, October 30'}
+  {date:'2026-10-28',topicTitle:'The Desk',deskMode:'full',deskWorkflow:'gather',showLead:true,
+   homeAnnouncement:'Today: The Desk. Read the Lead, choose Your Pick, and submit your News Log in Canvas before you leave.',
+   note:'Today is a full Desk day. File the shared Lead, follow a story of your choice, and defend which deserves more attention.',
+   doNow:'Open The Desk. Read the shared Lead headline and source. What is confirmed, and what is still unresolved?',
+   agenda:['Begin with CNN 10 and today\'s news briefing.','Read the shared Lead. Record its source, date and link; explain the event and its significance.','Choose and read Your Pick. Record its source details and summarize what happened.','Decide which story deserves more attention and support your judgment with evidence.','Gather My Log, Copy to Clipboard, and paste the complete log into today\'s Canvas assignment: The Desk.','Check your October 28 entry and submit before leaving class.'],
+   learningTargets:['I can distinguish a reported event from reactions, predictions and unresolved claims.','I can summarize the Lead and Your Pick accurately in my own words.','I can defend which story deserves more attention using specific evidence.'],
+   successCriteria:['Both stories include the outlet, publication date and working source link.','My Lead explains what happened and why it matters; Your Pick includes a clear event summary.','My October 28 entry and evidence-based judgment are included in my submitted Canvas log.'],
+   homework:'Submit today\'s The Desk assignment in Canvas before you leave. Paste the complete gathered log and check that October 28 is included.',
+   homeworkDue:'the end of class today'}
 ,
 
   {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Night: What Happens Next?',
@@ -152,4 +157,4 @@ window.BECURRENT_SCHEDULE={
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]
 };
-if(typeof document!=='undefined'&&/(?:^|\/)announcements\.html$/.test(location.pathname)){var deskModePatch=document.createElement('script');deskModePatch.src='assets/js/announcements-desk-mode.js?v=20260903-hourly';document.head.appendChild(deskModePatch);}
+if(typeof document!=='undefined'&&/(?:^|\/)announcements\.html$/.test(location.pathname)){var deskModePatch=document.createElement('script');deskModePatch.src='assets/js/announcements-desk-mode.js?v=20261028-desk';document.head.appendChild(deskModePatch);}
