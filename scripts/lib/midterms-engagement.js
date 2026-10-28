@@ -48,7 +48,7 @@ module.exports=function({meta,topics}){
  d.flow.bridges[3]='Use the evidence you just checked to separate a campaign claim from its proof. Next, check what a poll and a promise can establish.';
  d.flow.evidence.paragraphs[1]='The two advertisements are real 2026 campaign messages about different candidates and states. They both discuss the same federal law. A true fact can be selectively emphasized, so check the entire record rather than treating one advertisement as independent evidence.';
  d.videos[1].optional=true;
- d.teaching.timing=[3,5,5,2,20,12,8];
+ d.teaching.timing=[3,5,5,2,20,10,10];
  d.teaching.phases.direction.move='Present the three required responses: before evidence, after evidence, and a poll-or-promise checkpoint. The real 2026 ads replace the old constructed-message activity.';
  d.teaching.phases.investigate.move='Use two minutes to review promise, poll, claim and result. The original five-item practice is now optional reading, not a required sort.';
  d.teaching.phases.investigate.cut='Do not require the old five-item sort. Move to the 2026 ads.';
@@ -73,7 +73,7 @@ module.exports=function({meta,topics}){
   {label:'After evidence',description:'Compare what each ad emphasizes, what it omits, and whether the original impression changed or held.'},
   {label:'Polls and promises',description:'Explain why a sampled poll and a campaign promise are not election results or guaranteed policy outcomes.'}
  ];
- d.inClass='55 minutes: hook 3, direction 5, PBS research clip 5, optional concept check 2, paired 2026 ads and evidence 20, poll/promise 12, explanation and Canvas 8. After lunch: CNN10 and daily reporting.';
+ d.inClass='55 minutes: hook 3, direction 5, PBS research clip 5, optional concept check 2, paired 2026 ads and evidence 20, poll/promise 10, explanation and Canvas 10. After lunch: CNN10 and daily reporting.';
  meta.assessment='Topics 1–3: practice choices, source notes, and short explanations. Topic 4: a before-and-after check of real 2026 ads and a poll/promise checkpoint. Topic 5: a guided results notebook and final explanation. Political preference is never scored.';
  e.flow.headings=['The scoreboard is moving','Call, count, or certified?','Run the election desk','Write the impact, keep the limits','File your analysis'];
  e.flow.bridges[0]='You are at an election desk. Your job is to label what the evidence establishes before turning a changing number into a headline.';
