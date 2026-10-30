@@ -150,6 +150,12 @@ window.BECURRENT_SCHEDULE={
    homeworkDue:'the end of class today'}
 ,
 
+  {date:'2026-10-30',topic:'WP4',topicTitle:'Who Has the Power? | The Fight for Your Vote',
+   doNow:'Think of a campaign ad you have seen. What did it want you to believe? Write one sentence.',
+   agenda:['Together: watch several real 2026 campaign ads. Notice the ideas, images and numbers that stand out.','Together: two short clips on how campaigns choose messages and how to check them.','On your own: open both ads, find who paid for them, and record what each wants you to believe.','On your own: use government records and a FactCheck.org investigation to see what the ads prove and what they leave out.','Sort promises, poll estimates and verified results. Gather all eight answers and submit in Canvas before lunch.','After lunch: CNN 10 · Oct. 29: Spain investigates deadly collision between two high-speed trains.','After lunch: daily news and your News Log.'],
+   homework:'Finish WP4 - Election Messages in Canvas.',homeworkDue:'the start of class on Tuesday, November 3'}
+,
+
   {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Night: What Happens Next?',
    doNow:'An early leader, a projected winner, and a certified winner: are these the same? Write your answer.',
    agenda:['Opening question: is a projected winner the same as a certified one?','Watch, then sort each example by reporting stage.','Build a dated results notebook from named sources.','Trace what the results could change, and what is still unresolved.','Explain the results and their impact, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],

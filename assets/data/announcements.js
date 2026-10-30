@@ -1015,6 +1015,52 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ]
     },
     {
+      "date": "2026-10-30",
+      "topic": "Who Has the Power? | The Fight for Your Vote",
+      "unit": "Who Has the Power?",
+      "subtitle": "Messages, evidence, and uncertainty",
+      "learningTargets": [
+        {
+          "text": "I can explain how a campaign message directs attention.",
+          "label": "Framing"
+        },
+        {
+          "text": "I can check a claim against an independent source.",
+          "label": "Corroboration"
+        },
+        {
+          "text": "I can distinguish a poll, a promise, and a verified result.",
+          "label": "Uncertainty"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can identify a message’s claim, audience, and missing context.",
+          "label": "Framing"
+        },
+        {
+          "text": "I can name a second source and explain what it supports, contradicts, or leaves unresolved.",
+          "label": "Corroboration"
+        },
+        {
+          "text": "I can explain why a poll or promise does not establish what will happen.",
+          "label": "Uncertainty"
+        }
+      ],
+      "homework": "Finish WP4 - Election Messages in Canvas.",
+      "homeworkDue": "the start of class on Tuesday, November 3",
+      "doNow": "Think of a campaign ad you have seen. What did it want you to believe? Write one sentence.",
+      "agenda": [
+        "Together: watch several real 2026 campaign ads. Notice the ideas, images and numbers that stand out.",
+        "Together: two short clips on how campaigns choose messages and how to check them.",
+        "On your own: open both ads, find who paid for them, and record what each wants you to believe.",
+        "On your own: use government records and a FactCheck.org investigation to see what the ads prove and what they leave out.",
+        "Sort promises, poll estimates and verified results. Gather all eight answers and submit in Canvas before lunch.",
+        "After lunch: CNN 10 · Oct. 29: Spain investigates deadly collision between two high-speed trains.",
+        "After lunch: daily news and your News Log."
+      ]
+    },
+    {
       "date": "2026-11-03",
       "topic": "Election Day: What Can We Know Today?",
       "unit": "Who Has the Power?",
