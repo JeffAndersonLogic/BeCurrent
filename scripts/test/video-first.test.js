@@ -39,8 +39,8 @@ for(const t of unit.topics){
  // Three responses, plus the committee lookup's facts and note where a topic has one (Topic 2).
  assert.strictEqual((page.match(/data-slot=/g)||[]).length,(t.n===4?8:3+(t.worksheet||[]).length+(t.lookup?t.lookup.facts.length+1:0)));assert.strictEqual((page.match(/data-sort=/g)||[]).length,t.n===4?0:5);
  assert.strictEqual(t.learningTargets.length,3);assert.strictEqual(t.successCriteria.length,3);
- // Topic 4 plays WFYI plus the two 2026 reports Jeff added on 2026-10-30.
- assert.strictEqual(t.videos.filter(v=>!v.optional).length,t.n===4?3:t.n===5?1:2);
+ // Topic 4 plays WFYI plus the three clips Jeff added on 2026-10-30.
+ assert.strictEqual(t.videos.filter(v=>!v.optional).length,t.n===4?4:t.n===5?1:2);
  for(const v of t.videos){assert(page.includes(v.url));assert(v.date&&v.prompt&&v.duration&&v.reviewed);}
  for(const item of [...t.learningTargets.map(x=>x.target),...t.successCriteria.map(x=>x.criteria)])assert(page.includes(item.replace(/&/g,'&amp;')),'missing target or criterion '+t.n);
  assert(page.includes('id="gather-work"')&&page.includes('id="copy-preview"'));

@@ -873,7 +873,7 @@ Question: What should we check before believing an election message?
 
 ### Teacher story
 
-Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.
+Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, the WFYI research-candidates explainer, and the Vox polls explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.
 
 ### Run of show
 
@@ -914,7 +914,7 @@ Look for: Students identify a source that answers the exact question, rather tha
 
 Reteach: If most students choose two copies of the same message, trace both back to the original. Contrast repeating a claim with checking a relevant record.
 
-Cut: Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI last: it sets up the checking work.
+Cut: Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI: it sets up the checking work. The Vox polls video sets up Question 8.
 
 **Your turn / release**
 
@@ -1045,6 +1045,10 @@ Write this down: Polls and promises are not certified results.
   Watch for: What do ads do to get a voter to remember one message?
   Pause: Play straight through, back to back with the other clips. No writing yet; students answer on their own after the last video.
   Dated 2026 news report. Claims inside quoted ads are what campaigns say, not verified facts.
+- [What polls can actually tell us](https://youtu.be/In9Pqm9YlIo) · Full not verified · Assigned the full clip · 2024-11-01
+  Watch for: What can a poll tell us, and what can it not?
+  Pause: Play straight through, back to back with the other clips. No writing yet; students answer on their own after the last video.
+  Explainer from the 2024 presidential race. The candidates and poll numbers in it are 2024 examples, not 2026 results.
 - [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · Full 3:05 · Assigned the full clip · 2023-10-26 · optional
   Watch for: What should you check before sharing an election claim?
   Pause: Stop at the assigned endpoint. Ask: What should you check before sharing an election claim? Use the core takeaways to check the answer before continuing.

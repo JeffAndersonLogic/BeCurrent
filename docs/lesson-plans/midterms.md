@@ -286,6 +286,8 @@ Before lunch, 55 minutes: brief teacher introduction (3), all videos back to bac
   Watch for: Where is the money going, and how are the attacks getting more personal?
 - [How political ads influence voters](https://youtu.be/Ih29cdeEjW4) · CBS Detroit · not verified
   Watch for: What do ads do to get a voter to remember one message?
+- [What polls can actually tell us](https://youtu.be/In9Pqm9YlIo) · Vox · not verified
+  Watch for: What can a poll tell us, and what can it not?
 - [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · WFYI / PBS Simple Civics · 3:05
   Watch for: What should you check before sharing an election claim?
 - [Examining Trump's claims at his midterm rallies](https://www.pbs.org/video/rally-rhetoric-1792182521/) · PBS NewsHour · 6:48

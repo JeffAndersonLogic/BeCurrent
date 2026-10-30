@@ -83,13 +83,15 @@ module.exports=function({meta,topics}){
  const reportClip=(title,url,source,date,prompt)=>({title,url,duration:'not verified',date,prompt,pause:'Play straight through, back to back with the other clips. No writing yet; students answer on their own after the last video.',captions:true,reviewed:'2026-10-30',source,context:'Dated 2026 news report. Claims inside quoted ads are what campaigns say, not verified facts.',optional:false});
  d.videos.splice(1,0,
   reportClip('Campaigns spend big to sway voters with increasingly personal attack ads','https://youtu.be/OZgOi26wo4I','PBS NewsHour','2026-10-26','Where is the money going, and how are the attacks getting more personal?'),
-  reportClip('How political ads influence voters','https://youtu.be/Ih29cdeEjW4','CBS Detroit','2026-10-27','What do ads do to get a voter to remember one message?'));
+  reportClip('How political ads influence voters','https://youtu.be/Ih29cdeEjW4','CBS Detroit','2026-10-27','What do ads do to get a voter to remember one message?'),
+  {...reportClip('What polls can actually tell us','https://youtu.be/In9Pqm9YlIo','Vox','2024-11-01','What can a poll tell us, and what can it not?'),context:'Explainer from the 2024 presidential race. The candidates and poll numbers in it are 2024 examples, not 2026 results.'});
  // The order the class watches them in, back to back, before independent work.
  d.classClips=[
   {title:d.introClip.title,url:d.introClip.url,source:d.introClip.source,length:'teacher selects an excerpt',watch:'How do campaigns use images, messages, and emotions?'},
   {title:d.videos[1].title,url:d.videos[1].url,source:'PBS NewsHour, Oct. 26, 2026',length:'check length before class',watch:d.videos[1].prompt},
   {title:d.videos[2].title,url:d.videos[2].url,source:'CBS Detroit, Oct. 27, 2026',length:'check length before class',watch:d.videos[2].prompt},
-  {title:'How Do You Research Candidates?',url:d.videos[0].url,source:'WFYI / PBS Simple Civics',length:'2:55',watch:'Which sources can confirm a campaign claim?'}
+  {title:'How Do You Research Candidates?',url:d.videos[0].url,source:'WFYI / PBS Simple Civics',length:'2:55',watch:'Which sources can confirm a campaign claim?'},
+  {title:d.videos[3].title,url:d.videos[3].url,source:'Vox, Nov. 1, 2024',length:'check length before class',watch:'What can a poll tell us, and what can it not? (Examples are from 2024.)'}
  ];
  d.campaignOpeners=[
   {title:'Rural hospitals: two sides of one law',url:'https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/',note:'Republican- and Democratic-aligned advertisements frame the effects differently.'},
@@ -122,7 +124,7 @@ module.exports=function({meta,topics}){
  d.questions[0].text=d.worksheet[6].text;d.questions[0].startHere=d.worksheet[6].startHere;
  d.questions[1].text=d.worksheet[5].text;d.questions[1].startHere=d.worksheet[5].startHere;d.questions[1].optional=false;
  d.questions[2].text=d.worksheet[7].text;d.questions[2].startHere=d.worksheet[7].startHere;
- d.teacher.story='Begin with a short teacher introduction to today\'s topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.';
+ d.teacher.story='Begin with a short teacher introduction to today\'s topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, the WFYI research-candidates explainer, and the Vox polls explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.';
  d.teacher.land='Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.';
  d.teacher.ask='What is the advertisement claiming, and what independent record actually answers that claim?';
  d.teacher.listenFor='An attributed original ad, identified target audience, precise claim, named independent evidence, and cautious conclusions.';
@@ -134,8 +136,8 @@ module.exports=function({meta,topics}){
  ];
  d.teaching.phases.hook.move='Brief intro, about a minute: campaigns spend millions so one message sticks; today we learn how, then check two real 2026 ads. Go straight into the videos. Do not spend the class arguing about any candidate.';
  d.teaching.phases.direction.move='Release students: show where Question 1 starts (Chapter 2), the eight numbered answers, and the Gather All My Work button. From here students work on their own; circulate.';
- d.teaching.phases['watch-1'].move='Play all four back to back, no writing in between: Modern Political Campaigns (your excerpt), PBS NewsHour attack ads, CBS Detroit political ads, then WFYI How Do You Research Candidates? (2:55). If time allows, show brief ads from the three FactCheck.org collections. Lengths of the first three were not verified, so preview and trim to fit.';
- d.teaching.phases['watch-1'].cut='Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI last: it sets up the checking work.';
+ d.teaching.phases['watch-1'].move='Play all five back to back, no writing in between: Modern Political Campaigns (your excerpt), PBS NewsHour attack ads, CBS Detroit political ads, WFYI How Do You Research Candidates? (2:55), then Vox What polls can actually tell us. If time allows, show brief ads from the three FactCheck.org collections. Only the WFYI length was verified, so preview and trim to fit.';
+ d.teaching.phases['watch-1'].cut='Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI: it sets up the checking work. The Vox polls video sets up Question 8.';
  d.teaching.phases.investigate.move='Students answer Questions 1 to 3 on their own in Chapter 2. Circulate; if many stall on Question 3, model one sentence on why a campaign ad does not prove its own claims.';
  d.teaching.phases['watch-2'].move='Students independently examine both original campaign ads and answer Questions 4–6. Project the launch link and circulate. If ad playback is blocked, short excerpts and written source descriptions remain available.';
  d.teaching.phases['watch-2'].cut='Do not make students visit three unrelated ad stations. The rural hospital pair is required; other cases are optional.';

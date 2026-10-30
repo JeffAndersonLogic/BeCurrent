@@ -90,6 +90,12 @@ window.BECURRENT_PROJECTOR_LESSON = {
             "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
             "source": "WFYI / PBS Simple Civics",
             "length": "2:55"
+          },
+          {
+            "title": "What polls can actually tell us",
+            "url": "https://youtu.be/In9Pqm9YlIo",
+            "source": "Vox, Nov. 1, 2024",
+            "length": "check length before class"
           }
         ]
       }

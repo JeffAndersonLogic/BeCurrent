@@ -1052,7 +1052,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "doNow": "Think of a campaign ad you have seen. What did it want you to believe? Write one sentence.",
       "agenda": [
         "Together: a short introduction to today's topic.",
-        "Together: watch four videos back to back on how campaigns persuade and how to check them. No writing yet.",
+        "Together: watch five videos back to back on how campaigns persuade, how to check them, and what polls can tell us. No writing yet.",
         "On your own: start at Question 1. Open both ads, find who paid for them, and record what each wants you to believe.",
         "On your own: use government records and a FactCheck.org investigation to see what the ads prove and what they leave out.",
         "Sort promises, poll estimates and verified results. Gather all eight answers and submit in Canvas before lunch.",
