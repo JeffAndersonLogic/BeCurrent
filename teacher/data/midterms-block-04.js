@@ -86,7 +86,10 @@
         "eyebrow": "Topic 4 / Watch together / back to back",
         "title": "How campaigns shape a message",
         "description": "Play these one after another. No writing yet; questions start after the last video.",
-        "action": null,
+        "action": {
+          "url": "https://www.youtube.com/watch?v=muJ7w0uKI20",
+          "label": "Start with video 1: Modern Political Campaigns"
+        },
         "links": [
           {
             "title": "Modern Political Campaigns",

@@ -35,7 +35,7 @@ module.exports=function({E,ext,list}){
     const video=rows.find(r=>r[0]==='watch-1');
     video[1]='Watch together / back to back';video[2]='How campaigns shape a message';
     video[3]='Play these one after another. No writing yet; questions start after the last video.';
-    video[4]=null;
+    video[4]=action(t.classClips[0].url,'Start with video 1: '+t.classClips[0].title);
     const model=rows.find(r=>r[0]==='investigate');
     model[1]='On your own / Questions 1–3';model[2]='Ad claim ≠ independent proof';
     model[3]='Read the two short boxes and answer Questions 1 to 3 using what you saw in the videos.';
