@@ -12,40 +12,23 @@
   "phases": [
     {
       "id": "hook",
-      "label": "Teacher opening / 2026 ads",
+      "label": "Brief teacher intro",
       "kind": "lesson",
-      "time": "0–5",
+      "time": "0–3",
       "start": 0,
-      "minutes": 5,
+      "minutes": 3,
       "screen": {
-        "eyebrow": "Topic 4 / Teacher opening / 2026 ads",
+        "eyebrow": "Topic 4 / Brief teacher intro",
         "title": "Can a true fact still leave out context?",
-        "description": "What do these 2026 campaign ads want voters to notice? Open the FactCheck.org examples first.",
-        "action": {
-          "url": "https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/",
-          "label": "Open FactCheck.org / rural-hospital ad examples"
-        },
+        "description": "Campaigns spend millions so one message sticks. Today: how they do it, then you check two real 2026 ads yourself.",
+        "action": null,
         "image": {
           "src": "../assets/images/midterms/i-voted-stickers-2026.webp",
           "alt": "A roll of red “I Voted” stickers on a table, with the room behind it out of focus.",
           "caption": "“I Voted” stickers at the public library in Aitkin, Minnesota, on primary election day, August 11, 2026. Every campaign message is competing for that sticker: check the claim before it decides your vote.",
           "credit": "Lorie Shaull, CC BY 4.0, via Wikimedia Commons (resized)",
           "source": "https://commons.wikimedia.org/wiki/File:A_roll_of_%22I_Voted%22_stickers_in_Aitkin_Public_Library_on_Primary_Election_Day,_Aug._11,_2026._in_Aitkin.jpg"
-        },
-        "cards": [
-          {
-            "title": "Rural hospitals",
-            "text": "Same law, different effects."
-          },
-          {
-            "title": "Texas taxes",
-            "text": "What was cropped from a quote?"
-          },
-          {
-            "title": "Medicare",
-            "text": "Which programs and figures differ?"
-          }
-        ]
+        }
       },
       "intel": {
         "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
@@ -53,45 +36,11 @@
         "listenFor": "Students distinguish a message’s impression from evidence establishing its factual claim.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Use the private prediction without an open political debate. Protect the source-and-context question.",
-        "move": "Give the 45-second opening explanation, then show brief excerpts from three real 2026 ads on FactCheck.org: rural hospitals, Texas taxes, Medicare. Do not spend the full class arguing about any candidate.",
+        "move": "Brief intro, about a minute: campaigns spend millions so one message sticks; today we learn how, then check two real 2026 ads. Go straight into the videos. Do not spend the class arguing about any candidate.",
         "model": "A message can select a number or image that draws attention to one concern. I need its source and context before accepting the conclusion.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students think a number settles the issue, ask what it counts, when it was measured, and what comparison is missing. Do not invent a real campaign quotation."
-      }
-    },
-    {
-      "id": "direction",
-      "label": "Eight-question student worksheet",
-      "kind": "lesson",
-      "time": "5–7",
-      "start": 5,
-      "minutes": 2,
-      "screen": {
-        "eyebrow": "Topic 4 / Eight-question student worksheet",
-        "title": "Observe. Investigate. Verify. File.",
-        "description": "Point out the eight numbered answers and where Gather All My Work saves them for Canvas.",
-        "action": {
-          "url": "../midterms/block-04.html#student-flow",
-          "label": "Open student worksheet"
-        },
-        "bullets": [
-          "I can explain how a campaign message directs attention.",
-          "I can check a claim against an independent source.",
-          "I can distinguish a poll, a promise, and a verified result."
-        ]
-      },
-      "intel": {
-        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
-        "ask": "Eight-question student worksheet — what evidence supports your explanation?",
-        "listenFor": "Students know that identifying framing and verifying a claim are related but separate tasks.",
-        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Read the three-part checking routine rather than every target aloud. Protect the difference between claim and proof.",
-        "move": "Show the eight numbered worksheet responses and the Gather All My Work button. Students will work independently after the videos.",
-        "model": "First notice how a message persuades. Then check one exact factual claim against evidence. Finally say what remains uncertain.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
-        "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
-        "reteach": "If most students say the goal is to pick the better candidate, restate: “We assess a claim and its evidence, not your vote or beliefs.”"
       }
     },
     {
@@ -99,7 +48,7 @@
       "label": "Notes 1 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 7,
+      "start": 3,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 1 of 6",
@@ -121,38 +70,42 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "A campaign ad is persuasion, not independent proof.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
       "id": "watch-1",
-      "label": "Two intro clips",
+      "label": "Watch together / back to back",
       "kind": "watch",
-      "time": "7–15",
-      "start": 7,
-      "minutes": 8,
+      "time": "3–20",
+      "start": 3,
+      "minutes": 17,
       "screen": {
-        "eyebrow": "Topic 4 / Two intro clips",
+        "eyebrow": "Topic 4 / Watch together / back to back",
         "title": "How campaigns shape a message",
-        "description": "Play the teacher-selected YouTube intro, then the 2:55 PBS Simple Civics candidate-research clip. Keep only the key ideas.",
+        "description": "1. Modern Political Campaigns (YouTube) · 2. Campaigns spend big to sway voters with increasingly personal attack ads (PBS NewsHour, Oct. 26, 2026) · 3. How political ads influence voters (CBS Detroit, Oct. 27, 2026) · 4. How Do You Research Candidates? (WFYI / PBS Simple Civics). No writing yet.",
         "action": {
           "url": "https://www.youtube.com/watch?v=muJ7w0uKI20",
-          "label": "Play selected YouTube campaign introduction"
+          "label": "Play video 1: Modern Political Campaigns"
         },
         "cards": [
           {
-            "title": "Framing",
-            "text": "Choices that shape how information is presented."
+            "title": "1. Modern Political Campaigns",
+            "text": "How do campaigns use images, messages, and emotions?"
           },
           {
-            "title": "Corroboration",
-            "text": "Checking information against another source with relevant evidence."
+            "title": "2. PBS NewsHour",
+            "text": "Where is the money going, and how are attacks getting more personal?"
           },
           {
-            "title": "Poll",
-            "text": "An estimate based on responses from a sample at a particular time."
+            "title": "3. CBS Detroit",
+            "text": "What do ads do to make one message stick?"
+          },
+          {
+            "title": "4. WFYI / PBS Simple Civics",
+            "text": "Which sources can confirm a campaign claim?"
           }
         ]
       },
@@ -161,10 +114,10 @@
         "ask": "Which source could you use to check a campaign claim?",
         "listenFor": "Students identify a source that answers the exact question, rather than treating any second website as confirmation.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
-        "cut": "Keep one key idea from each video; avoid turning both into a long lecture.",
-        "move": "Play the user-selected Modern Political Campaigns YouTube intro, then WFYI How Do You Research Candidates? (2:55). Preview the first video's length and select a meaningful excerpt as needed. Use the short reading fallback.",
+        "cut": "Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI last: it sets up the checking work.",
+        "move": "Play all four back to back, no writing in between: Modern Political Campaigns (your excerpt), PBS NewsHour attack ads, CBS Detroit political ads, then WFYI How Do You Research Candidates? (2:55). If time allows, show brief ads from the three FactCheck.org collections. Lengths of the first three were not verified, so preview and trim to fit.",
         "model": "A campaign site can establish what a candidate promises. A relevant independent record is needed to check whether a factual claim is supported.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students choose two copies of the same message, trace both back to the original. Contrast repeating a claim with checking a relevant record."
       }
@@ -174,7 +127,7 @@
       "label": "Notes 2 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 15,
+      "start": 20,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 2 of 6",
@@ -196,7 +149,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "A checkable claim needs a relevant independent source.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -206,7 +159,7 @@
       "label": "Notes 3 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 15,
+      "start": 20,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 3 of 6",
@@ -228,25 +181,59 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "Different sources answer different questions.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
     },
     {
-      "id": "investigate",
-      "label": "Model the checking question",
+      "id": "direction",
+      "label": "Your turn / release",
       "kind": "lesson",
-      "time": "15–18",
-      "start": 15,
-      "minutes": 3,
+      "time": "20–22",
+      "start": 20,
+      "minutes": 2,
       "screen": {
-        "eyebrow": "Topic 4 / Model the checking question",
-        "title": "Ad claim ≠ independent proof",
-        "description": "Model one claim-checking sentence, then release students to their own work.",
+        "eyebrow": "Topic 4 / Your turn / release",
+        "title": "Start at Question 1. Work on your own.",
+        "description": "Open Chapter 2 and work down the page: eight numbered answers, then Gather All My Work for Canvas.",
         "action": {
           "url": "../midterms/block-04.html#chapter-2",
-          "label": "Open clips and source check"
+          "label": "Open Question 1"
+        },
+        "bullets": [
+          "I can explain how a campaign message directs attention.",
+          "I can check a claim against an independent source.",
+          "I can distinguish a poll, a promise, and a verified result."
+        ]
+      },
+      "intel": {
+        "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
+        "ask": "Your turn / release — what evidence supports your explanation?",
+        "listenFor": "Students know that identifying framing and verifying a claim are related but separate tasks.",
+        "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
+        "cut": "Read the three-part checking routine rather than every target aloud. Protect the difference between claim and proof.",
+        "move": "Release students: show where Question 1 starts (Chapter 2), the eight numbered answers, and the Gather All My Work button. From here students work on their own; circulate.",
+        "model": "First notice how a message persuades. Then check one exact factual claim against evidence. Finally say what remains uncertain.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
+        "reteach": "If most students say the goal is to pick the better candidate, restate: “We assess a claim and its evidence, not your vote or beliefs.”"
+      }
+    },
+    {
+      "id": "investigate",
+      "label": "On your own / Questions 1–3",
+      "kind": "lesson",
+      "time": "22–28",
+      "start": 22,
+      "minutes": 6,
+      "screen": {
+        "eyebrow": "Topic 4 / On your own / Questions 1–3",
+        "title": "Ad claim ≠ independent proof",
+        "description": "Read the two short boxes and answer Questions 1 to 3 using what you saw in the videos.",
+        "action": {
+          "url": "../midterms/block-04.html#chapter-2",
+          "label": "Open Questions 1–3"
         },
         "cards": [
           {
@@ -265,13 +252,13 @@
       },
       "intel": {
         "land": "Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.",
-        "ask": "Model the checking question — what evidence supports your explanation?",
+        "ask": "On your own / Questions 1–3 — what evidence supports your explanation?",
         "listenFor": "All five classifications are attempted and corrected. Students distinguish a desired future action from an observation or official outcome.",
         "protect": "Protect the required practice, evidence, and private explanation; keep unit work before lunch.",
         "cut": "Do not require the old five-item sort. Move to the 2026 ads.",
-        "move": "Model one sentence on why a campaign website does not prove its own claims; release students to Questions 4–6.",
+        "move": "Students answer Questions 1 to 3 on their own in Chapter 2. Circulate; if many stall on Question 3, model one sentence on why a campaign ad does not prove its own claims.",
         "model": "Campaign promise; Poll estimate; Official result; Claim needing checking; Claim needing checking. An estimate from a sample is not a certified election result.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students confuse promise and result, contrast “I will seek a law” with “The office certifies these totals.” Have students underline future versus completed action."
       }
@@ -281,7 +268,7 @@
       "label": "Notes 4 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 18,
+      "start": 28,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 4 of 6",
@@ -303,7 +290,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "Observe first. Verify second.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -312,9 +299,9 @@
       "id": "watch-2",
       "label": "Student-led advertisement lab",
       "kind": "lesson",
-      "time": "18–36",
-      "start": 18,
-      "minutes": 18,
+      "time": "28–39",
+      "start": 28,
+      "minutes": 11,
       "screen": {
         "eyebrow": "Topic 4 / Student-led advertisement lab",
         "title": "Watch, examine, answer Questions 4–6",
@@ -332,7 +319,7 @@
         "cut": "Do not make students visit three unrelated ad stations. The rural hospital pair is required; other cases are optional.",
         "move": "Students independently examine both original campaign ads and answer Questions 4–6. Project the launch link and circulate. If ad playback is blocked, short excerpts and written source descriptions remain available.",
         "model": "Ad A highlights new rural-health funding. Ad B highlights risks. Medicaid.gov verifies the five-year $50 billion program; CBO projects roughly $915 billion less national Medicaid spending over ten years. Neither number alone predicts specific hospital closures.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students judge only whether they like the message, underline its checkable words. Ask “Which record could support or challenge these words?” Model one match before independent work."
       }
@@ -342,7 +329,7 @@
       "label": "Notes 5 of 6",
       "kind": "notes",
       "time": "Notes",
-      "start": 36,
+      "start": 39,
       "minutes": 0,
       "screen": {
         "eyebrow": "Topic 4 / Notes 5 of 6",
@@ -364,7 +351,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "An incomplete ad can use a real fact but omit context.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -373,9 +360,9 @@
       "id": "apply",
       "label": "Read the evidence",
       "kind": "lesson",
-      "time": "36–45",
-      "start": 36,
-      "minutes": 9,
+      "time": "39–45",
+      "start": 39,
+      "minutes": 6,
       "screen": {
         "eyebrow": "Topic 4 / Read the evidence",
         "title": "Answer Question 7: what was missing?",
@@ -407,7 +394,7 @@
         "cut": "The older Arizona claim packet is optional. Do not assign a second unrelated fact-check.",
         "move": "Students open the CMS, CBO, and FactCheck.org evidence packet, then answer Question 7. Highlight that the money amounts cover different populations and periods.",
         "model": "The rally statement alleges intentional breakage and inability to vote. The technical investigation describes equipment limits and procedures for counting affected ballots. The supplied record does not support the allegation of deliberate interference; its counting evidence contradicts the blanket claim that the printer problem made voting impossible. A technical review and its cited court finding do not narrate every voter’s experience or prove that every election everywhere is free of mistakes.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students copy the claim as proof, place claim and independent record side by side. Model one “supports / contradicts / cannot settle” judgment using the actual packet wording."
       }
@@ -439,7 +426,7 @@
         "cut": "If time is short, students copy only the Write this down line.",
         "move": "Read the slide aloud once, then pause while students copy. Accept handwritten, typed, or dictated notes.",
         "model": "Polls and promises are not certified results.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students cannot restate the line, read it again and point to the bullet that supports it."
       }
@@ -468,7 +455,7 @@
         "cut": "Omit Push further and further poll comparisons. Read only the prepared poll fields needed for the response. Protect five minutes for the explanation and five for Canvas.",
         "move": "Students answer Question 8 with the poll card, use Gather All My Work, and confirm Canvas submission. Protect final five minutes.",
         "model": "The poll describes a national registered-voter preference during its field period. Separate district elections award House seats; this survey cannot establish an Indiana district winner, turnout, or November chamber control. A campaign promise also depends on later decisions by the relevant institutions.",
-        "story": "Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
+        "story": "Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.",
         "avoid": "Do not grade political preferences or treat repeated press-release coverage as independent corroboration.",
         "reteach": "If most students say only “it might be wrong,” ask what the poll measured and which institutions still must act on the promise."
       }

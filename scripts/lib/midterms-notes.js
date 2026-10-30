@@ -129,7 +129,7 @@ module.exports={
    'Divided government can improve accountability and make governing harder at the same time.')
  ],
  4:[
-  N('direction','Why do campaigns run ads?',[
+  N('hook','Why do campaigns run ads?',[
    'Campaigns compete for attention and votes.',
    'An ad chooses a few images, stories, facts, or feelings.',
    'Choosing what to emphasize is framing.',

@@ -78,16 +78,29 @@ module.exports=function({meta,topics}){
  // Topic 4 lesson contract: the teacher launches with current campaign ads; then
  // students move independently through eight short, accessible worksheet questions.
  d.introClip={title:'Modern Political Campaigns',url:'https://www.youtube.com/watch?v=muJ7w0uKI20',source:'YouTube',note:'Teacher previews runtime and selects an excerpt if needed. The linked title was checked October 28, 2026; duration was not verified.'};
+ // Jeff, 2026-10-30: two dated 2026 reports join the watch-together block. Titles
+ // and channels were checked October 30, 2026; durations were not verified.
+ const reportClip=(title,url,source,date,prompt)=>({title,url,duration:'not verified',date,prompt,pause:'Play straight through, back to back with the other clips. No writing yet; students answer on their own after the last video.',captions:true,reviewed:'2026-10-30',source,context:'Dated 2026 news report. Claims inside quoted ads are what campaigns say, not verified facts.',optional:false});
+ d.videos.splice(1,0,
+  reportClip('Campaigns spend big to sway voters with increasingly personal attack ads','https://youtu.be/OZgOi26wo4I','PBS NewsHour','2026-10-26','Where is the money going, and how are the attacks getting more personal?'),
+  reportClip('How political ads influence voters','https://youtu.be/Ih29cdeEjW4','CBS Detroit','2026-10-27','What do ads do to get a voter to remember one message?'));
+ // The order the class watches them in, back to back, before independent work.
+ d.classClips=[
+  {title:d.introClip.title,url:d.introClip.url,source:d.introClip.source,length:'teacher selects an excerpt',watch:'How do campaigns use images, messages, and emotions?'},
+  {title:d.videos[1].title,url:d.videos[1].url,source:'PBS NewsHour, Oct. 26, 2026',length:'check length before class',watch:d.videos[1].prompt},
+  {title:d.videos[2].title,url:d.videos[2].url,source:'CBS Detroit, Oct. 27, 2026',length:'check length before class',watch:d.videos[2].prompt},
+  {title:'How Do You Research Candidates?',url:d.videos[0].url,source:'WFYI / PBS Simple Civics',length:'2:55',watch:'Which sources can confirm a campaign claim?'}
+ ];
  d.campaignOpeners=[
   {title:'Rural hospitals: two sides of one law',url:'https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/',note:'Republican- and Democratic-aligned advertisements frame the effects differently.'},
   {title:'Texas taxes: what a shortened quote changes',url:'https://www.factcheck.org/2026/10/paxton-ad-takes-talarico-taxes-comments-out-of-context/',note:'A quoted statement omits a key description of who would face higher taxes.'},
   {title:'Medicare: what gets emphasized',url:'https://www.factcheck.org/2026/10/democratic-ads-exaggerate-gop-laws-impact-on-medicare/',note:'Advertisements use Medicare claims without explaining the full law.'}
  ];
- d.flow.headings=['What does a campaign want us to believe?','Watch: how campaign messaging works','Investigate two real 2026 advertisements','Check the receipts','Explain what you can actually conclude'];
+ d.flow.headings=['Together: what does a campaign want us to believe?','On your own: how campaigns persuade','Investigate two real 2026 advertisements','Check the receipts','Explain what you can actually conclude'];
  d.flow.bridges=[
-  'Your teacher will show several real 2026 campaign ads. Notice which ideas, images, and numbers stand out. Your task is to investigate the message, not support a party.',
-  'Watch the two introductory clips with your class. You will learn how campaigns choose messages and how to check their claims.',
-  'Now you take over. Open both ads, look at who paid for them, and record what each wants viewers to believe before you read the independent evidence.',
+  'Your teacher gives a short introduction, then the class watches the videos below back to back. Notice which ideas, images, and numbers stand out. No writing yet. Your task is to investigate the message, not support a party.',
+  'Now you take over. Read the two short boxes and answer Questions 1 to 3, using what you just saw in the videos. Then keep working down the page.',
+  'Open both ads, look at who paid for them, and record what each wants viewers to believe before you read the independent evidence.',
   'Use the government records and a FactCheck.org investigation to identify what the advertisements establish and what they leave out.',
   'Use what you found to distinguish campaign promises, poll estimates, and verified results. Gather all eight worksheet answers for Canvas.'
  ];
@@ -95,7 +108,7 @@ module.exports=function({meta,topics}){
  d.overview='Watch real 2026 campaign ads, spot one-sided messaging, and verify the claims using independent records.';
  d.evidenceTitle='Your mission: spot the message, then verify it';
  d.evidenceTask='Read or watch both 2026 advertisements, answer Questions 4–6, then open the independent evidence in the next chapter.';
- d.teaching.timing=[5,2,8,3,18,9,10];
+ d.teaching.timing=[3,17,2,6,11,6,10];
  d.worksheet=[
   {number:1,chapter:0,id:'worksheet-purpose',text:'What is the purpose of a political campaign ad? Name one way an ad tries to shape what voters notice.',length:'One sentence.',startHere:'A campaign ad tries to ____. It draws attention to ____.'},
   {number:2,chapter:1,id:'worksheet-video',text:'From the intro videos, name one technique campaigns use to persuade voters.',length:'One short sentence.',startHere:'Campaigns persuade viewers by ____.'},
@@ -109,7 +122,7 @@ module.exports=function({meta,topics}){
  d.questions[0].text=d.worksheet[6].text;d.questions[0].startHere=d.worksheet[6].startHere;
  d.questions[1].text=d.worksheet[5].text;d.questions[1].startHere=d.worksheet[5].startHere;d.questions[1].optional=false;
  d.questions[2].text=d.worksheet[7].text;d.questions[2].startHere=d.worksheet[7].startHere;
- d.teacher.story='Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.';
+ d.teacher.story='Begin with a short teacher introduction to today\'s topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.';
  d.teacher.land='Real campaign messages can select an accurate fact and omit other relevant evidence. Students can inspect both political perspectives without declaring a preferred candidate.';
  d.teacher.ask='What is the advertisement claiming, and what independent record actually answers that claim?';
  d.teacher.listenFor='An attributed original ad, identified target audience, precise claim, named independent evidence, and cautious conclusions.';
@@ -119,16 +132,16 @@ module.exports=function({meta,topics}){
   {label:'Evidence and revision',description:'Name a relevant independent source, identify a limit or omitted context, and update the first impression.'},
   {label:'Poll and promise limits',description:'Distinguish sampled opinion and proposed policy from verified outcomes.'}
  ];
- d.teaching.phases.hook.move='Give the 45-second opening explanation, then show brief excerpts from three real 2026 ads on FactCheck.org: rural hospitals, Texas taxes, Medicare. Do not spend the full class arguing about any candidate.';
- d.teaching.phases.direction.move='Show the eight numbered worksheet responses and the Gather All My Work button. Students will work independently after the videos.';
- d.teaching.phases['watch-1'].move='Play the user-selected Modern Political Campaigns YouTube intro, then WFYI How Do You Research Candidates? (2:55). Preview the first video\'s length and select a meaningful excerpt as needed. Use the short reading fallback.';
- d.teaching.phases['watch-1'].cut='Keep one key idea from each video; avoid turning both into a long lecture.';
- d.teaching.phases.investigate.move='Model one sentence on why a campaign website does not prove its own claims; release students to Questions 4–6.';
+ d.teaching.phases.hook.move='Brief intro, about a minute: campaigns spend millions so one message sticks; today we learn how, then check two real 2026 ads. Go straight into the videos. Do not spend the class arguing about any candidate.';
+ d.teaching.phases.direction.move='Release students: show where Question 1 starts (Chapter 2), the eight numbered answers, and the Gather All My Work button. From here students work on their own; circulate.';
+ d.teaching.phases['watch-1'].move='Play all four back to back, no writing in between: Modern Political Campaigns (your excerpt), PBS NewsHour attack ads, CBS Detroit political ads, then WFYI How Do You Research Candidates? (2:55). If time allows, show brief ads from the three FactCheck.org collections. Lengths of the first three were not verified, so preview and trim to fit.';
+ d.teaching.phases['watch-1'].cut='Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI last: it sets up the checking work.';
+ d.teaching.phases.investigate.move='Students answer Questions 1 to 3 on their own in Chapter 2. Circulate; if many stall on Question 3, model one sentence on why a campaign ad does not prove its own claims.';
  d.teaching.phases['watch-2'].move='Students independently examine both original campaign ads and answer Questions 4–6. Project the launch link and circulate. If ad playback is blocked, short excerpts and written source descriptions remain available.';
  d.teaching.phases['watch-2'].cut='Do not make students visit three unrelated ad stations. The rural hospital pair is required; other cases are optional.';
  d.teaching.phases.apply.move='Students open the CMS, CBO, and FactCheck.org evidence packet, then answer Question 7. Highlight that the money amounts cover different populations and periods.';
  d.teaching.phases.file.move='Students answer Question 8 with the poll card, use Gather All My Work, and confirm Canvas submission. Protect final five minutes.';
- d.inClass='Before lunch, 55 minutes: teacher introduction and three FactCheck.org ads (5), student directions (2), two introductory video excerpts (8), source-check model (3), independent ads/Questions 4–6 (18), evidence/Question 7 (9), poll/Question 8 and Canvas (10). After lunch: CNN10 and daily news.';
+ d.inClass='Before lunch, 55 minutes: brief teacher introduction (3), all videos back to back (17), release to independent work (2), Questions 1–3 (6), ads/Questions 4–6 (11), evidence/Question 7 (6), poll/Question 8 and Canvas (10). After lunch: CNN10 and daily news.';
  meta.reviewed='2026-10-28';
  meta.assessment='Topic 4: eight short student-directed worksheet questions, including original-ad analysis, independently checked evidence, and a poll/promise conclusion. Political preference is never graded.';
  e.flow.headings=['The scoreboard is moving','Call, count, or certified?','Run the election desk','Write the impact, keep the limits','File your analysis'];

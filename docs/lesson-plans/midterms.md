@@ -276,12 +276,16 @@ Watch real 2026 campaign ads, spot one-sided messaging, and verify the claims us
 
 ### What happens in class
 
-Before lunch, 55 minutes: teacher introduction and three FactCheck.org ads (5), student directions (2), two introductory video excerpts (8), source-check model (3), independent ads/Questions 4–6 (18), evidence/Question 7 (9), poll/Question 8 and Canvas (10). After lunch: CNN10 and daily news.
+Before lunch, 55 minutes: brief teacher introduction (3), all videos back to back (17), release to independent work (2), Questions 1–3 (6), ads/Questions 4–6 (11), evidence/Question 7 (6), poll/Question 8 and Canvas (10). After lunch: CNN10 and daily news.
 
 ### Clips
 
 - [How Do You Research Candidates? Simple Civics](https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/) · WFYI / PBS Simple Civics · 2:55
   Watch for: Which source could you use to check a campaign claim?
+- [Campaigns spend big to sway voters with increasingly personal attack ads](https://youtu.be/OZgOi26wo4I) · PBS NewsHour · not verified
+  Watch for: Where is the money going, and how are the attacks getting more personal?
+- [How political ads influence voters](https://youtu.be/Ih29cdeEjW4) · CBS Detroit · not verified
+  Watch for: What do ads do to get a voter to remember one message?
 - [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · WFYI / PBS Simple Civics · 3:05
   Watch for: What should you check before sharing an election claim?
 - [Examining Trump's claims at his midterm rallies](https://www.pbs.org/video/rally-rhetoric-1792182521/) · PBS NewsHour · 6:48

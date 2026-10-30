@@ -25,21 +25,21 @@ module.exports=function({E,ext,list}){
   ];
   if(t.n===4){
     const hook=rows.find(r=>r[0]==='hook');
-    hook[1]='Teacher opening / 2026 ads';hook[2]='Can a true fact still leave out context?';
-    hook[3]='In 45 seconds, explain why campaigns persuade. Open three current FactCheck.org ad collections, comparing images, headlines and selective claims.';
-    hook[4]=action('https://www.factcheck.org/2026/09/midterm-ads-clash-over-gop-laws-impact-on-rural-healthcare/','Open FactCheck.org / rural-hospital ad examples');
+    hook[1]='Brief teacher intro';hook[2]='Can a true fact still leave out context?';
+    hook[3]='Campaigns spend millions so one message sticks. Today: how they do it, then you check two real 2026 ads yourself.';
+    hook[4]=null;
     const direction=rows.find(r=>r[0]==='direction');
-    direction[1]='Eight-question student worksheet';direction[2]='Observe. Investigate. Verify. File.';
-    direction[3]='Point out the eight numbered answers and where Gather All My Work saves them for Canvas.';
-    direction[4]=action(base+'#student-flow','Open student worksheet');
+    direction[1]='Your turn / release';direction[2]='Start at Question 1. Work on your own.';
+    direction[3]='Open Chapter 2 and work down the page: eight numbered answers, then Gather All My Work for Canvas.';
+    direction[4]=action(base+'#chapter-2','Open Question 1');
     const video=rows.find(r=>r[0]==='watch-1');
-    video[1]='Two intro clips';video[2]='How campaigns shape a message';
-    video[3]='Play the teacher-selected YouTube intro, then the 2:55 PBS Simple Civics candidate-research clip. Keep only the key ideas.';
-    video[4]=action(t.introClip.url,'Play selected YouTube campaign introduction');
+    video[1]='Watch together / back to back';video[2]='How campaigns shape a message';
+    video[3]=t.classClips.map((c,i)=>(i+1)+'. '+c.title+' ('+c.source+')').join(' · ')+'. No writing yet.';
+    video[4]=action(t.classClips[0].url,'Play video 1: '+t.classClips[0].title);
     const model=rows.find(r=>r[0]==='investigate');
-    model[1]='Model the checking question';model[2]='Ad claim ≠ independent proof';
-    model[3]='Model one claim-checking sentence, then release students to their own work.';
-    model[4]=action(base+'#chapter-2','Open clips and source check');
+    model[1]='On your own / Questions 1–3';model[2]='Ad claim ≠ independent proof';
+    model[3]='Read the two short boxes and answer Questions 1 to 3 using what you saw in the videos.';
+    model[4]=action(base+'#chapter-2','Open Questions 1–3');
     const ads=rows.find(r=>r[0]==='watch-2');
     ads[1]='Student-led advertisement lab';ads[2]='Watch, examine, answer Questions 4–6';
     ads[3]='Students view two real 2026 ads, notice their frames, and identify a testable claim. Circulate, do not lecture.';
@@ -52,6 +52,8 @@ module.exports=function({E,ext,list}){
     file[1]='Complete and submit';file[2]='Question 8 + Canvas';
     file[3]='Students answer the poll-and-promise question, choose Gather All My Work, paste eight answers into Canvas, and verify submission.';
     file[4]=action(base+'#chapter-5','Open final worksheet question');
+    // Jeff, 2026-10-30: brief intro, every video back to back, then release.
+    rows.splice(1,0,rows.splice(rows.indexOf(video),1)[0]);
   }
   if(t.introVideos){const at=rows.findIndex(r=>r[0]==='watch-2');rows.splice(rows.findIndex(r=>r[0]==='investigate'),0,rows.splice(at,1)[0]);rows.find(r=>r[0]==='watch-2').splice(1,4,'Opening report / compare',t.videos[1].title,t.videos[1].prompt,action(t.videos[1].url,'Play the second opening'));}
   // A topic can open with a recap clip (Topic 2: the Day 1 recap). Its timing entry comes first.

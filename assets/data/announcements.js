@@ -1051,9 +1051,9 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "homeworkDue": "the start of class on Tuesday, November 3",
       "doNow": "Think of a campaign ad you have seen. What did it want you to believe? Write one sentence.",
       "agenda": [
-        "Together: watch several real 2026 campaign ads. Notice the ideas, images and numbers that stand out.",
-        "Together: two short clips on how campaigns choose messages and how to check them.",
-        "On your own: open both ads, find who paid for them, and record what each wants you to believe.",
+        "Together: a short introduction to today's topic.",
+        "Together: watch four videos back to back on how campaigns persuade and how to check them. No writing yet.",
+        "On your own: start at Question 1. Open both ads, find who paid for them, and record what each wants you to believe.",
         "On your own: use government records and a FactCheck.org investigation to see what the ads prove and what they leave out.",
         "Sort promises, poll estimates and verified results. Gather all eight answers and submit in Canvas before lunch.",
         "After lunch: CNN 10 · Oct. 29: Spain investigates deadly collision between two high-speed trains.",

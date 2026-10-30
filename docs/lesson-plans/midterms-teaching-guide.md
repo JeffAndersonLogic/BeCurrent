@@ -873,21 +873,21 @@ Question: What should we check before believing an election message?
 
 ### Teacher story
 
-Begin with a short teacher explanation of persuasion and show three current 2026 FactCheck.org ad examples. Play Modern Political Campaigns and the WFYI research-candidates explainer. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.
+Begin with a short teacher introduction to today's topic. Then play the videos back to back: Modern Political Campaigns, the PBS NewsHour attack-ads report, the CBS Detroit political-ads report, and the WFYI research-candidates explainer; add the three FactCheck.org ad examples if time allows. Then release students to the eight-question worksheet: examine two campaign ads, identify framing, check CMS/CBO/FactCheck.org, and file their own findings in Canvas. Polls and promises are not results.
 
 ### Run of show
 
-- 0–5: Teacher opening / 2026 ads (5 minutes)
-- 5–7: Eight-question student worksheet (2 minutes)
+- 0–3: Brief teacher intro (3 minutes)
 - Notes slide: Why do campaigns run ads?
-- 7–15: Two intro clips (8 minutes)
+- 3–20: Watch together / back to back (17 minutes)
 - Notes slide: How do campaign messages work?
 - Notes slide: Which information counts as evidence?
-- 15–18: Model the checking question (3 minutes)
+- 20–22: Your turn / release (2 minutes)
+- 22–28: On your own / Questions 1–3 (6 minutes)
 - Notes slide: Questions 4–6: examine the ads
-- 18–36: Student-led advertisement lab (18 minutes)
+- 28–39: Student-led advertisement lab (11 minutes)
 - Notes slide: Question 7: check the same law
-- 36–45: Read the evidence (9 minutes)
+- 39–45: Read the evidence (6 minutes)
 - Notes slide: Question 8: know the evidence limit
 - 45–55: Complete and submit (10 minutes)
 - Lunch: Lunch break (0 minutes)
@@ -896,7 +896,7 @@ Begin with a short teacher explanation of persuasion and show three current 2026
 
 ### Phase models and teaching decisions
 
-**Teacher opening / 2026 ads**
+**Brief teacher intro**
 
 Model: A message can select a number or image that draws attention to one concern. I need its source and context before accepting the conclusion.
 
@@ -906,7 +906,17 @@ Reteach: If most students think a number settles the issue, ask what it counts, 
 
 Cut: Use the private prediction without an open political debate. Protect the source-and-context question.
 
-**Eight-question student worksheet**
+**Watch together / back to back**
+
+Model: A campaign site can establish what a candidate promises. A relevant independent record is needed to check whether a factual claim is supported.
+
+Look for: Students identify a source that answers the exact question, rather than treating any second website as confirmation.
+
+Reteach: If most students choose two copies of the same message, trace both back to the original. Contrast repeating a claim with checking a relevant record.
+
+Cut: Drop the FactCheck.org ad examples first, then trim Modern Political Campaigns. Keep WFYI last: it sets up the checking work.
+
+**Your turn / release**
 
 Model: First notice how a message persuades. Then check one exact factual claim against evidence. Finally say what remains uncertain.
 
@@ -916,17 +926,7 @@ Reteach: If most students say the goal is to pick the better candidate, restate:
 
 Cut: Read the three-part checking routine rather than every target aloud. Protect the difference between claim and proof.
 
-**Two intro clips**
-
-Model: A campaign site can establish what a candidate promises. A relevant independent record is needed to check whether a factual claim is supported.
-
-Look for: Students identify a source that answers the exact question, rather than treating any second website as confirmation.
-
-Reteach: If most students choose two copies of the same message, trace both back to the original. Contrast repeating a claim with checking a relevant record.
-
-Cut: Keep one key idea from each video; avoid turning both into a long lecture.
-
-**Model the checking question**
+**On your own / Questions 1–3**
 
 Model: Campaign promise; Poll estimate; Official result; Claim needing checking; Claim needing checking. An estimate from a sample is not a certified election result.
 
@@ -1037,6 +1037,14 @@ Write this down: Polls and promises are not certified results.
   Watch for: Which source could you use to check a campaign claim?
   Pause: Stop at the assigned endpoint. Ask: Which source could you use to check a campaign claim? Use the core takeaways to check the answer before continuing.
   Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
+- [Campaigns spend big to sway voters with increasingly personal attack ads](https://youtu.be/OZgOi26wo4I) · Full not verified · Assigned the full clip · 2026-10-26
+  Watch for: Where is the money going, and how are the attacks getting more personal?
+  Pause: Play straight through, back to back with the other clips. No writing yet; students answer on their own after the last video.
+  Dated 2026 news report. Claims inside quoted ads are what campaigns say, not verified facts.
+- [How political ads influence voters](https://youtu.be/Ih29cdeEjW4) · Full not verified · Assigned the full clip · 2026-10-27
+  Watch for: What do ads do to get a voter to remember one message?
+  Pause: Play straight through, back to back with the other clips. No writing yet; students answer on their own after the last video.
+  Dated 2026 news report. Claims inside quoted ads are what campaigns say, not verified facts.
 - [Recognizing Election Mis/Disinformation: Simple Civics](https://www.pbs.org/video/recognizing-election-misdisinformation-hn47gs/) · Full 3:05 · Assigned the full clip · 2023-10-26 · optional
   Watch for: What should you check before sharing an election claim?
   Pause: Stop at the assigned endpoint. Ask: What should you check before sharing an election claim? Use the core takeaways to check the answer before continuing.
