@@ -13,7 +13,6 @@ module.exports={
  },
  4:{
   hook:{image:image('i-voted'),description:'Campaigns spend millions so one message sticks. Today: how they do it, then you check two real 2026 ads yourself.'},
-  'watch-1':{cards:[{title:'1. Modern Political Campaigns',text:'How do campaigns use images, messages, and emotions?'},{title:'2. PBS NewsHour',text:'Where is the money going, and how are attacks getting more personal?'},{title:'3. CBS Detroit',text:'What do ads do to make one message stick?'},{title:'4. WFYI / PBS Simple Civics',text:'Which sources can confirm a campaign claim?'}]},
   investigate:{cards:[{title:'The claim',text:'What exactly is being asserted?'},{title:'The receipt',text:'Which independent record could test it?'},{title:'The gap',text:'What context is missing?'}]},
   'watch-2':{description:'Students work independently on Questions 4–6 using the two original 2026 ads.',action:{url:'../midterms/block-04.html#chapter-3',label:'Open student ad investigation'}},
   apply:{cards:[{title:'Rural health fund',text:'New funding over five years.'},{title:'Medicaid',text:'Projected spending change over ten years.'},{title:'Limits',text:'Specific closures are not established.'}]},

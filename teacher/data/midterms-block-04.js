@@ -85,27 +85,32 @@
       "screen": {
         "eyebrow": "Topic 4 / Watch together / back to back",
         "title": "How campaigns shape a message",
-        "description": "1. Modern Political Campaigns (YouTube) · 2. Campaigns spend big to sway voters with increasingly personal attack ads (PBS NewsHour, Oct. 26, 2026) · 3. How political ads influence voters (CBS Detroit, Oct. 27, 2026) · 4. How Do You Research Candidates? (WFYI / PBS Simple Civics). No writing yet.",
-        "action": {
-          "url": "https://www.youtube.com/watch?v=muJ7w0uKI20",
-          "label": "Play video 1: Modern Political Campaigns"
-        },
-        "cards": [
+        "description": "Play these one after another. No writing yet; questions start after the last video.",
+        "action": null,
+        "links": [
           {
-            "title": "1. Modern Political Campaigns",
-            "text": "How do campaigns use images, messages, and emotions?"
+            "title": "Modern Political Campaigns",
+            "url": "https://www.youtube.com/watch?v=muJ7w0uKI20",
+            "source": "YouTube",
+            "length": "teacher selects an excerpt"
           },
           {
-            "title": "2. PBS NewsHour",
-            "text": "Where is the money going, and how are attacks getting more personal?"
+            "title": "Campaigns spend big to sway voters with increasingly personal attack ads",
+            "url": "https://youtu.be/OZgOi26wo4I",
+            "source": "PBS NewsHour, Oct. 26, 2026",
+            "length": "check length before class"
           },
           {
-            "title": "3. CBS Detroit",
-            "text": "What do ads do to make one message stick?"
+            "title": "How political ads influence voters",
+            "url": "https://youtu.be/Ih29cdeEjW4",
+            "source": "CBS Detroit, Oct. 27, 2026",
+            "length": "check length before class"
           },
           {
-            "title": "4. WFYI / PBS Simple Civics",
-            "text": "Which sources can confirm a campaign claim?"
+            "title": "How Do You Research Candidates?",
+            "url": "https://www.pbs.org/video/how-do-you-research-candidates-vqol2j/",
+            "source": "WFYI / PBS Simple Civics",
+            "length": "2:55"
           }
         ]
       },

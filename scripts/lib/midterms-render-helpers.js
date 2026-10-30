@@ -34,8 +34,8 @@ module.exports=function({E,ext,list}){
     direction[4]=action(base+'#chapter-2','Open Question 1');
     const video=rows.find(r=>r[0]==='watch-1');
     video[1]='Watch together / back to back';video[2]='How campaigns shape a message';
-    video[3]=t.classClips.map((c,i)=>(i+1)+'. '+c.title+' ('+c.source+')').join(' · ')+'. No writing yet.';
-    video[4]=action(t.classClips[0].url,'Play video 1: '+t.classClips[0].title);
+    video[3]='Play these one after another. No writing yet; questions start after the last video.';
+    video[4]=null;
     const model=rows.find(r=>r[0]==='investigate');
     model[1]='On your own / Questions 1–3';model[2]='Ad claim ≠ independent proof';
     model[3]='Read the two short boxes and answer Questions 1 to 3 using what you saw in the videos.';
@@ -63,6 +63,7 @@ module.exports=function({E,ext,list}){
    const intel={land:t.teacher.land,ask:id==='recap'?t.recap.prompt:id==='hook'?t.hook:id==='apply'?t.questions[1].text:id==='file'?t.questions[2].text:id==='watch-1'?t.videos[0].prompt:label+' — what evidence supports your explanation?',listenFor:p.lookFor,protect:id==='file'?'Protect the last five minutes for Gather, Canvas paste, and submission confirmation.':'Protect the required practice, evidence, and private explanation; keep unit work before lunch.',cut:p.cut,move:p.move,model:p.model,story:t.teacher.story,avoid:t.teacher.avoid,reteach:p.reteach};
    const screen={eyebrow:`Topic ${t.n} / ${label}`,title,description,action:act};if(id==='direction')screen.bullets=t.selfPaced?t.selfPaced.steps:t.learningTargets.map(x=>x.target);if(id==='watch-1')screen.cards=t.terms.map(([title,text])=>({title,text}));
    if(t.n>=3){const visuals=require('./midterms-projector-visuals')[t.n][id];if(visuals)Object.assign(screen,visuals);}
+   if(id==='watch-1'&&t.classClips){delete screen.cards;screen.links=t.classClips.map(c=>({title:c.title,url:c.url,source:c.source,length:c.length}));}
    return {id,label,kind:id==='watch-1'||id==='recap'?'watch':'lesson',time:`${start}–${cursor}`,start,minutes,screen,intel};});
   // Note-taking slides sit between the activity slides they explain. They carry no
   // minutes of their own (copying time comes out of the 55-minute block), so every
