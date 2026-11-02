@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-02",
   lead: {
-    category: "World / International",
-    headline: "Man guilty of stealing cash from farm owned by South African president",
-    dek: "The case, part of the \"Farmgate\" scandal, has left President Cyril Ramaphosa mired in an impeachment saga.",
-    source: "BBC News",
+    category: "U.S. / National",
+    headline: "El-Sayed brushes off Stevens’ support of Rogers: 'Go vote'",
+    dek: "Stevens' endorsement of Rogers came on the day she was scheduled to appear with El-Sayed in a show of party unity.",
+    source: "NewsNation",
     published: "November 2, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ee6f/live/1399f160-d6fa-11f1-b983-c357054e4d1e.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss"
+    url: "https://www.newsnationnow.com/politics/2026-midterm-elections/abdul-el-sayed-responds-haley-stevens/",
+    image: "",
+    imageCredit: "",
+    imageCreditUrl: ""
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Copilot in deadly Florida jet crash identified in reports as 20-year-old",
-      dek: "In air traffic audio, a crew member can be heard shouting: \"We are going to crash into the ground!\"",
+      category: "World / Security",
+      headline: "Russian bombing kills 26 people at Ukraine aid centre, Kyiv says",
+      dek: "Officials say at least nine 3,000kg aerial bombs hit a southern Ukrainian village in what the president called an \"utterly horrific\" attack.",
       source: "BBC News",
       published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm369yy7lw73o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss"
     },
     {
       category: "Economy",
@@ -31,19 +31,19 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "U.S. / National",
-      headline: "What Florida jet audio and flight data tells us about its final moments",
-      dek: "A private jet crashed in Florida on Sunday, killing all nine people on board, according to US authorities. BBC Verify has used air traffic control audio and flight tracking data to reconstruct the final moments before the plane crashed.",
+      headline: "US midterms campaign 'shattering' spending records to be most expensive ever",
+      dek: "The 2026 campaign is projected to cost nearly $12bn - BBC Verify looks into where all that money has come from.",
       source: "BBC News",
       published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/videos/c52e9lgxjz82o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cqkgk64z7p58o?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "World / Security",
-      headline: "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says",
-      dek: "Local officials say 27 people had been missing after at least nine 3,000kg aerial bombs hit a village in southern Ukraine.",
+      category: "World / International",
+      headline: "Man guilty of stealing cash from farm owned by South African president",
+      dek: "The case, part of the \"Farmgate\" scandal, has left President Cyril Ramaphosa mired in an impeachment saga.",
       source: "BBC News",
       published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss"
     }
   ]
 };
