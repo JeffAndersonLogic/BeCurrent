@@ -1105,9 +1105,9 @@ Reteach: Underline only the checkable part, then name a document that could test
 
 ## Election Day: Election Day: What Can We Know Today?
 
-Tuesday, November 3, 2026. A viewing day beside the five topics, not a topic. Students keep a paper viewing log for Topic 5, and submit one Canvas assignment, Reading a Real Ballot.
+Tuesday, November 3, 2026. A viewing day beside the five topics, not a topic. Two short clips, then live coverage. One Canvas assignment: Reading a Real Ballot.
 
-Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.
+Watch two short clips and live Election Day coverage, learn how a vote becomes a result, and sort what the coverage can and cannot tell us while the polls are still open.
 
 Question: The polls are still open while we watch. What can the coverage tell us today, and what can nobody know yet?
 
@@ -1120,12 +1120,12 @@ Question: The polls are still open while we watch. What can the coverage tell us
 ### Success criteria
 
 - I can put polls open, polls close, unofficial count, news call, and certification in the right order.
-- I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.
-- I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.
+- I can name the kind of statement for things I hear in the coverage, and spot a prediction.
+- I can explain why a race call and an early lead are not the official result.
 
 ### Teacher story
 
-The class watches live coverage while every polling place in the country is still open, so the coverage cannot know any winners and neither can we. That is the lesson: students learn to hear the difference between a fact about voting, a report from a polling place, a voter survey, a prediction, and a claim that needs checking. The log they keep becomes the starting point for Topic 5 on Thursday.
+The class watches live coverage while every polling place in the country is still open, so the coverage cannot know any winners and neither can we. That is the lesson: students learn to hear the difference between a fact about voting, a report from a polling place, a voter survey, a prediction, and a claim that needs checking. Topic 5 on Thursday opens the results.
 
 ### Choosing the coverage
 
@@ -1133,13 +1133,13 @@ Choose straight news coverage before class (a national network’s daytime elect
 
 ### Running it
 
-Pause the coverage about every ten minutes. Think aloud as you sort one statement into its kind on the board, then give students a minute to log their own. Read two or three logs aloud with names removed. No student reports out.
+Pause the coverage about every ten minutes. Think aloud as you sort one statement into its kind on the board. Nothing is written down; students sort silently in their heads. No student reports out.
 
 After lunch: CNN 10 if an episode is posted, then return to the coverage. There is no Desk filing today; the coverage is today’s news. The ballot assignment is today’s one Canvas submission.
 
-If there is no live coverage: If no live coverage is airing, use the two Topic 5 clips (how race calls work, and how voting machines are checked) and have students log statements from those instead.
+If there is no live coverage: If a live stream is not airing election coverage, switch to the other stream, or replay the two opening clips and sort the statements in those.
 
-Listen for: Students who log a prediction as a fact, or who think an early lead is a result. Correct by asking: has a single vote been counted yet?
+Listen for: Students who treat a prediction as a fact, or who think an early lead is a result. Correct by asking: has a single vote been counted yet?
 
 Avoid: Do not ask students who they or their families support. No prefilled winners, no predictions from the teacher, and no student presenting.
 
@@ -1147,12 +1147,21 @@ Avoid: Do not ask students who they or their families support. No prefilled winn
 
 While the polls are open, election offices do not report vote counts, and news organizations do not call a state’s races until its polls have closed. Anything during class that sounds like a 2026 winner is a prediction, an opinion, or a mistake.
 
-### Closing questions
+### Clips
 
-1. Name one thing the coverage established today. How do you know it is true?
-   Start here: The coverage established that ____. I know because ____ (who reported it, and how they knew).
-2. Name one thing nobody can know yet. What would settle it, and when?
-   Start here: Nobody can know ____ yet. It will be settled when ____.
+**Start here: two short clips**
+
+- [Which states could give an early indication of Election Day result trends?](https://youtu.be/5-nIBAzdzWw) · NewsNation · 4:23
+  Watch for: Which states does the reporter say to watch first? Is each thing he says a fact about voting or a prediction?
+- [Inside the Associated Press’s process for calling election races](https://youtu.be/6P5gYWJ1MGI) · PBS NewsHour
+  Watch for: What does the Associated Press need to see before it calls a race? Is a call the official result?
+
+**Watch live coverage**
+
+- [ABC News Live: 24/7 news, context and analysis](https://youtu.be/KQhNZQ_Uag8) · ABC News
+  Watch for: Listen for the five kinds of statement. Which things you hear are predictions?
+- [Breaking News and Top Stories on CBS News 24/7](https://www.youtube.com/watch?v=74WjpIH4jeE) · CBS News
+  Watch for: Listen for the five kinds of statement. Which things you hear are reports from polling places?
 
 ### Today's assignment: Reading a Real Ballot
 

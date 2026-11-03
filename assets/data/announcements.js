@@ -1085,25 +1085,25 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Civic structures"
         },
         {
-          "text": "I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.",
+          "text": "I can name the kind of statement for things I hear in the coverage, and spot a prediction.",
           "label": "Sourcing"
         },
         {
-          "text": "I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.",
+          "text": "I can explain why a race call and an early lead are not the official result.",
           "label": "Evidence"
         }
       ],
       "homework": "Finish WP5 - Reading a Real Ballot in Canvas. Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.",
       "homeworkDue": "the start of class on Thursday, November 5",
-      "note": "Election Day. The polls are open while we watch, so nobody knows any winners yet. Today's one Canvas submission is Reading a Real Ballot. Your viewing log stays on paper.",
+      "note": "Election Day. The polls are open while we watch, so nobody knows any winners yet. Today's one Canvas submission is Reading a Real Ballot.",
       "doNow": "The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?",
       "agenda": [
-        "Open the Election Day guide on the Midterms page, or take a paper copy.",
+        "Open the Election Day guide on the Midterms page.",
         "Read the rule and the steps from casting a ballot to a certified result.",
-        "Watch live Election Day coverage. At each pause, log one thing you heard and its kind.",
+        "Together: two short clips on which states to watch first and how the Associated Press calls a race.",
+        "Watch live Election Day coverage. Sort what you hear into its kind.",
         "Today's assignment: open Reading a Real Ballot and look through the real sample ballot for one Zionsville precinct.",
-        "Answer the questions on your own. Gather All My Work, paste into Canvas, and submit.",
-        "Keep your paper log. You will use it on Thursday in Topic 5."
+        "Answer the questions on your own. Gather All My Work, paste into Canvas, and submit."
       ]
     },
     {

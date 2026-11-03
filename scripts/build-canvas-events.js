@@ -457,8 +457,7 @@ ${rubric}
   ];
   const banner = (ASSIGNMENTS[code] && ASSIGNMENTS[code].banner) || day.topic;
   return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(plain(banner))}`,
-    esc(plain(a.title))), rows)}
-<p>Keep your paper viewing log from today's coverage. You will use it on Thursday in Topic 5.</p>`;
+    esc(plain(a.title))), rows)}`;
 }
 
 function renderAssignments(unit) {

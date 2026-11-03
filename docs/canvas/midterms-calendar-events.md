@@ -358,7 +358,7 @@ Every link below points at the live GitHub Pages build:
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.</p>
+                <p>Watch two short clips and live Election Day coverage, learn how a vote becomes a result, and sort what the coverage can and cannot tell us while the polls are still open.</p>
             </td>
         </tr>
         <tr>
@@ -380,8 +380,8 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
                     <li>I can put polls open, polls close, unofficial count, news call, and certification in the right order.</li>
-                    <li>I can log at least four things the coverage said, each with a time, an outlet, and the kind of statement it is.</li>
-                    <li>I can name one thing the coverage established today and one thing that will have to wait, and say what would settle it.</li>
+                    <li>I can name the kind of statement for things I hear in the coverage, and spot a prediction.</li>
+                    <li>I can explain why a race call and an early lead are not the official result.</li>
                 </ol>
             </td>
         </tr>
@@ -402,7 +402,6 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>[INSERT ASSIGNMENT LINK]</p>
                 <p>Open the Reading a Real Ballot page, answer every question, then use <strong>Gather All My Work</strong> to copy the assignment, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
-                <p>Keep your paper viewing log: you will use it on Thursday in Topic 5.</p>
                 <p><strong>Due:</strong> the start of class on Thursday, November 5.</p>
             </td>
         </tr>

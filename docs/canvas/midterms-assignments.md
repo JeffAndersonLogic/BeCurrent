@@ -497,7 +497,6 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
     </tbody>
 </table>
-<p>Keep your paper viewing log from today's coverage. You will use it on Thursday in Topic 5.</p>
 ```
 
 ---

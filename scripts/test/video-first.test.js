@@ -79,14 +79,15 @@ for(const t of unit.topics){
  if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));assert.strictEqual(t.questions.filter(q=>!q.optional).length,1);assert.strictEqual((page.match(/data-optional="true"/g)||[]).length,8);assert(!page.includes('election-commission/election-results/'));assert(page.includes('Six short entries'));}
  assert(!['fetch(','XMLHttpRequest','<iframe'].some(x=>page.includes(x)));
 }
-// Election Day (Nov 3) is a viewing day, not a sixth topic: a paper log, linked from
-// the unit page, with no text box to strand work, no script, and no 2026 winner.
+// Election Day (Nov 3) is a viewing day, not a sixth topic: two opening clips and two live
+// streams, linked from the unit page, with no text box to strand work, no script, no embed,
+// and no 2026 winner. The paper log and closing questions were removed (Jeff, 2026-11-03).
 const ed=unit.days.find(d=>d.code==='ED');assert(ed,'Election Day is in unit.days');
 const edPage=read('midterms/'+ed.page);
-const edProblems=p=>[!index.includes('href="'+ed.page+'"')&&'not linked from the unit page',/<textarea|<input|<script/i.test(p)&&'has a text box or script',['fetch(','XMLHttpRequest','<iframe'].some(x=>p.includes(x))&&'reaches the network',/\b(won|wins|projected winner|declared the winner)\b/i.test(p)&&'reports a winner',/\bAP\b/.test(p)&&'uses AP framing',(p.match(/<tbody>[\s\S]*?<\/tbody>/)||[''])[0].split('<tr>').length-1!==ed.logRows&&'log has the wrong number of rows'].filter(Boolean);
+const edProblems=p=>[!index.includes('href="'+ed.page+'"')&&'not linked from the unit page',/<textarea|<input|<script/i.test(p)&&'has a text box or script',['fetch(','XMLHttpRequest','<iframe'].some(x=>p.includes(x))&&'reaches the network',/\b(won|wins|projected winner|declared the winner)\b/i.test(p)&&'reports a winner',/\bAP\b/.test(p)&&'uses AP framing',[...ed.intro.clips,...ed.live.clips].some(c=>!p.includes('href="'+c.url+'" target="_blank" rel="noopener noreferrer"'))&&'a clip link is missing',/ed-log|Before you leave/.test(p)&&'the viewing log is back'].filter(Boolean);
 assert.deepStrictEqual(edProblems(edPage),[]);
 // Negative controls: each check above can fail.
-for(const [bad,why] of [[edPage.replace('<tbody>','<tbody><textarea></textarea>'),'has a text box or script'],[edPage.replace('<h1>','<h1>Smith won '),'reports a winner'],[edPage.replace('<h1>','<h1>AP '),'uses AP framing'],[edPage.replace('<tbody><tr>','<tbody>'),'log has the wrong number of rows']])assert(edProblems(bad).includes(why),'negative control should fail: '+why);
+for(const [bad,why] of [[edPage.replace('<h1>','<h1><textarea></textarea>'),'has a text box or script'],[edPage.replace('<h1>','<h1>Smith won '),'reports a winner'],[edPage.replace('<h1>','<h1>AP '),'uses AP framing'],[edPage.replace('href="'+ed.live.clips[0].url+'"','href="#"'),'a clip link is missing'],[edPage.replace('<h1>','<h1><table class="ed-log"></table>'),'the viewing log is back']])assert(edProblems(bad).includes(why),'negative control should fail: '+why);
 // Reading a Real Ballot: Election Day's one Canvas submission. Every question is a
 // data-slot, so Gather All My Work carries it with the shared record footer.
 {const a=ed.assignment;assert(a,'Election Day carries its ballot assignment');
