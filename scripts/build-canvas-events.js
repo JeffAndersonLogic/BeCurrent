@@ -75,7 +75,9 @@ const ASSIGNMENTS = {
   WP4: { name: 'WP4 - Election Messages', points: 5 },
   // Renamed 2026-11-03 (Jeff): the Election Day ballot assignment took the Midterms 5
   // slot, so Topic 5's results assignment is now Midterms 6, taught November 5.
-  WP5: { name: 'WP6 - Results and Impact', points: 5 },
+  // `banner` replaces the 'Topic N' label in the assignment's Canvas header when the
+  // Canvas number differs from the website's topic number.
+  WP5: { name: 'WP6 - Results and Impact', points: 5, banner: 'Midterms 6' },
   // Election Day's one submission. The day itself is not a topic; its assignment is
   // `assignment` on the day object (scripts/lib/midterms-ballot.js).
   WPED: { name: 'WP5 - Reading a Real Ballot', points: 5 },
@@ -361,7 +363,8 @@ ${rubric}
       rows.splice(1, 0, cleanRow('AFTER NOVEMBER 3',
         '                <p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>'));
     }
-    return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; Topic ${topic.n}`,
+    const banner = (ASSIGNMENTS[code] && ASSIGNMENTS[code].banner) || `Topic ${topic.n}`;
+    return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(banner)}`,
       esc(plain(topic.title))), rows)}
 <p>After lunch: CNN10 and daily reporting through The Desk.</p>`;
   }

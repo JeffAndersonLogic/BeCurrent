@@ -518,7 +518,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         <tr>
             <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
                 <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
-                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Topic 5</p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Midterms 6</p>
                 <h2 style="margin: 2px 0 0 0; color: #172124;">Election Night: What Happens Next?</h2>
             </td>
         </tr>
