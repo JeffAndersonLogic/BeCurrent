@@ -14,36 +14,36 @@ window.BECURRENT_DAILY_NEWS = {
   },
   wire: [
     {
-      category: "U.S. / Democracy",
-      headline: "Live Updates: Midterm voters go to the polls on Election Day",
-      dek: "The battle for control is playing out mostly in states and districts President Donald Trump previously won by wide margins.",
-      source: "PBS News",
-      published: "November 3, 2026",
-      url: "https://www.pbs.org/newshour/politics/live-updates-midterm-voters-go-to-the-polls-on-election-day"
-    },
-    {
-      category: "Technology",
-      headline: "How former Yahoo CEO Marissa Mayer sees AI assistants fitting into busy women's lives",
-      dek: "NPR's Juana Summers talks with former Yahoo CEO Marissa Mayer about AI assistants and lightening the load of emotional labor.",
-      source: "NPR",
-      published: "November 2, 2026",
-      url: "https://www.npr.org/2026/11/02/nx-s1-6022451/how-former-yahoo-ceo-marissa-mayer-sees-ai-assistants-fitting-into-busy-womens-lives"
-    },
-    {
-      category: "World / International",
-      headline: "Control of Congress is at stake today. And, judge to consider motion in Clancy case",
-      dek: "Election Day is here, and voters are heading to the polls in an election that may change control of Congress. And, a judge is considering whether to dismiss Lindsay Clancy's murder case.",
-      source: "NPR",
-      published: "November 3, 2026",
-      url: "https://www.npr.org/2026/11/03/g-s1-151445/up-first-newsletter-midterms-election-day-iran-war-lindsay-clancy"
-    },
-    {
-      category: "U.S. / Democracy",
-      headline: "Americans cast ballots as polls open across the country — live updates",
+      category: "U.S. / Government",
+      headline: "Americans vote in battle for Senate and House control— live updates",
       dek: "All 435 House seats and 35 Senate seats are on the ballot, while 36 states will be electing governors.",
       source: "CBS News",
       published: "November 3, 2026",
       url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
+    },
+    {
+      category: "Economy",
+      headline: "When caring for aging family members becomes cost prohibitive",
+      dek: "AARP reports family caregivers are spending 60% more than they were five years ago. Journalist Paula Span discusses the rising costs of caregiving and senior living, and the options available to us.",
+      source: "NPR",
+      published: "November 3, 2026",
+      url: "https://www.npr.org/2026/11/03/nx-s1-6026479/when-caring-for-aging-family-members-becomes-cost-prohibitive"
+    },
+    {
+      category: "World / Security",
+      headline: "Poland launches major security operation along border with Russia",
+      dek: "Poland",
+      source: "CBS News",
+      published: "November 3, 2026",
+      url: "https://www.cbsnews.com/news/poland-russia-border-operation-kaliningrad-sabotage-provocation-nato/"
+    },
+    {
+      category: "U.S. / Democracy",
+      headline: "Voters decide key ballot measures on abortion rights, congressional redistricting and voter ID laws",
+      dek: "2026 ELECTION COVERAGE: Watch Live | Poll Closing Times | All Live Results | Live Updates | Live Fact Check WASHINGTON (AP) — A battle over abortion rights is playing out in several states Tuesday as voters decide 145 proposed laws and constitutional amendments, including some that could affect voti",
+      source: "PBS News",
+      published: "November 3, 2026",
+      url: "https://www.pbs.org/newshour/politics/voters-decide-key-ballot-measures-on-abortion-rights-congressional-redistricting-and-voter-id-laws"
     }
   ]
 };
