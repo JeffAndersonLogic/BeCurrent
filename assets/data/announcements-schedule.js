@@ -114,7 +114,7 @@ window.BECURRENT_SCHEDULE={
   {date:'2026-11-03',topic:'WPED',
    note:'Election Day. The polls are open while we watch, so nobody knows any winners yet. Today is on paper: nothing to submit in Canvas.',
    doNow:'The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?',
-   agenda:['Open the Election Day guide on the Midterms page, or take a paper copy.','Read the rule and the steps from casting a ballot to a certified result.','Watch live Election Day coverage. At each pause, log one thing you heard and its kind.','Before you leave, answer the two questions at the bottom of your log.','Keep your log. You will use it on Thursday in Topic 5.'],
+   agenda:['Open the Election Day guide on the Midterms page, or take a paper copy.','Read the rule and the steps from casting a ballot to a certified result.','Watch live Election Day coverage. At each pause, log one thing you heard and its kind.','Before you leave, answer the two questions at the bottom of your log.','Keep your log. You will use it on Thursday in Topic 5.','After lunch: CNN 10 · Nov. 2: FBI: North Korea behind world\u2019s largest cryptocurrency heist.','After lunch: daily news and your News Log.'],
    homework:'Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.'}
 ,
 

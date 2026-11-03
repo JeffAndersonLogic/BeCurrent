@@ -1,49 +1,41 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-02",
+  reviewed: "2026-11-03",
   lead: {
-    category: "World / International",
-    headline: "Man guilty of stealing cash from farm owned by South African president",
-    dek: "The case, part of the \"Farmgate\" scandal, has left President Cyril Ramaphosa mired in an impeachment saga.",
+    category: "U.S. / Democracy",
+    headline: "Americans head to the polls for elections that could define Trump's closing chapter",
+    dek: "The midterms will shape Congress for the last years of his presidency, writes Sarah Smith, but they are also a test of what politics may look like without him.",
     source: "BBC News",
-    published: "November 2, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ee6f/live/1399f160-d6fa-11f1-b983-c357054e4d1e.jpg",
+    published: "November 3, 2026",
+    url: "https://www.bbc.co.uk/news/articles/cq2d6k4r5n9ro?at_medium=RSS&at_campaign=rss",
+    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/5c2d/live/2dcbeb40-d76a-11f1-93e1-3b657b665bcf.jpg",
     imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss"
+    imageCreditUrl: "https://www.bbc.co.uk/news/articles/cq2d6k4r5n9ro?at_medium=RSS&at_campaign=rss"
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Copilot in deadly Florida jet crash identified in reports as 20-year-old",
-      dek: "In air traffic audio, a crew member can be heard shouting: \"We are going to crash into the ground!\"",
+      category: "U.S. / Democracy",
+      headline: "Supreme Court rejects Trump's request to stop California counting disputed votes",
+      dek: "The ruling, which comes on the eve of the midterm elections, essentially ends the Trump administration's bid to disqualify the ballots in the state.",
       source: "BBC News",
-      published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm369yy7lw73o?at_medium=RSS&at_campaign=rss"
+      published: "November 3, 2026",
+      url: "https://www.bbc.co.uk/news/articles/cm5ynekkn5qko?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "Economy",
-      headline: "Trump to remove Rwanda and South Africa from US trade deal",
-      dek: "The move comes barely a week after Rwanda's defence ministry was hit with sanctions by the US Treasury.",
+      category: "U.S. / Democracy",
+      headline: "US midterms campaign 'shattering' spending records to be most expensive ever",
+      dek: "The 2026 campaign is projected to cost nearly $12bn - BBC Verify looks into where all that money has come from.",
       source: "BBC News",
       published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c9j346xg0mkvo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cqkgk64z7p58o?at_medium=RSS&at_campaign=rss"
     },
     {
-      category: "U.S. / National",
-      headline: "What Florida jet audio and flight data tells us about its final moments",
-      dek: "A private jet crashed in Florida on Sunday, killing all nine people on board, according to US authorities. BBC Verify has used air traffic control audio and flight tracking data to reconstruct the final moments before the plane crashed.",
+      category: "U.S. / Democracy",
+      headline: "A Paralympian vs a former TV news anchor - and other US Senate races to watch",
+      dek: "All eyes are on a handful of Senate races that will decide control of the prized upper chamber. Here's a quick guide.",
       source: "BBC News",
       published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/videos/c52e9lgxjz82o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      category: "World / Security",
-      headline: "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says",
-      dek: "Local officials say 27 people had been missing after at least nine 3,000kg aerial bombs hit a village in southern Ukraine.",
-      source: "BBC News",
-      published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss"
+      url: "https://www.bbc.co.uk/news/articles/cqy7ljkprvjko?at_medium=RSS&at_campaign=rss"
     }
   ]
 };

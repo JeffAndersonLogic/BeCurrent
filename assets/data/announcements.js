@@ -1101,7 +1101,9 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Read the rule and the steps from casting a ballot to a certified result.",
         "Watch live Election Day coverage. At each pause, log one thing you heard and its kind.",
         "Before you leave, answer the two questions at the bottom of your log.",
-        "Keep your log. You will use it on Thursday in Topic 5."
+        "Keep your log. You will use it on Thursday in Topic 5.",
+        "After lunch: CNN 10 · Nov. 2: FBI: North Korea behind world’s largest cryptocurrency heist.",
+        "After lunch: daily news and your News Log."
       ]
     },
     {
