@@ -112,7 +112,7 @@ const CALENDAR = {
   WP2: { date: '2026-10-22', due: '2026-10-26', event: 'CE - Midterms 2 - The Battle for Congress' },
   WP3: { date: '2026-10-26', due: '2026-10-28', event: 'CE - Midterms 3 - The Power to Stop a President' },
   WP4: { date: '2026-10-28', due: '2026-10-30', event: 'CE - Midterms 4 - The Fight for Your Vote' },
-  WPED: { date: '2026-11-03', due: '2026-11-05', event: 'CE - Midterms 5 - Election Day' },
+  WPED: { date: '2026-11-03', due: '2026-11-05', event: 'CE - Midterms 5 - Election Day', banner: 'Midterms 5' },
   // `banner` replaces the 'Topic N' label in the event's Canvas header (Jeff, 2026-11-03).
   WP5: { date: '2026-11-05', due: '2026-11-09', event: 'CE - Midterms 6 - Election Results', banner: 'Midterms 6' }
 };
