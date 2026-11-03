@@ -104,7 +104,8 @@ for(const [bad,why] of [[edPage.replace('<tbody>','<tbody><textarea></textarea>'
  assert.deepStrictEqual(ballotProblems(bp,edPage),[]);
  for(const [bad,day,why] of [[bp,edPage.replace('href="'+a.page+'"','href="#"'),'not linked from the Election Day page'],[bp.replace(/data-slot="ballot-warning"/,'data-slot="ballot-pages"'),edPage,'slots do not match the questions'],[bp.replace('id="gather-work"','id="x"'),edPage,'no gather route'],[bp.replace('<h1>','<h1>AP '),edPage,'uses AP framing'],[bp.split(a.ballot.images[0].file).join('missing.webp'),edPage,'a ballot page image is missing']])assert(ballotProblems(bad,day).includes(why),'negative control should fail: '+why);
  const md=read('docs/canvas/midterms-assignments.md'),html=read('docs/canvas/midterms-assignments.html');
- assert(md.includes('WP5 - Reading a Real Ballot')&&md.includes('WP6 - Results and Impact')&&md.includes('Who Has the Power? &middot; Midterms 6')&&!md.includes('Who Has the Power? &middot; Topic 5')&&md.includes('/midterms/'+a.page),'the Canvas assignment is generated');
+ assert(md.includes('WP5 - Reading a Real Ballot')&&md.includes('WP6 - Results and Impact')&&md.includes('Who Has the Power? &middot; Midterms 6')&&!md.includes('Who Has the Power? &middot; Topic 5')&&md.includes('Who Has the Power? &middot; Midterms 5')&&!md.includes('Who Has the Power? &middot; Election Day')&&md.includes('/midterms/'+a.page),'the Canvas assignment is generated');
+ {const ev=read('docs/canvas/midterms-calendar-events.md'),wp=ev.slice(ev.indexOf('## CE - Midterms 6'));assert(wp.includes('Who Has the Power? &middot; Midterms 6')&&!wp.includes('&middot; Topic 5'),'the Midterms 6 event header');}
  assert(html.includes('id="wped"')&&html.includes('Copy the assignment HTML'),'the Canvas assignment copy page carries it');
 }
 const js=read('assets/js/video-first.js');new vm.Script(js);

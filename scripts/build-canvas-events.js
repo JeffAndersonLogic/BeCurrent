@@ -80,7 +80,7 @@ const ASSIGNMENTS = {
   WP5: { name: 'WP6 - Results and Impact', points: 5, banner: 'Midterms 6' },
   // Election Day's one submission. The day itself is not a topic; its assignment is
   // `assignment` on the day object (scripts/lib/midterms-ballot.js).
-  WPED: { name: 'WP5 - Reading a Real Ballot', points: 5 },
+  WPED: { name: 'WP5 - Reading a Real Ballot', points: 5, banner: 'Midterms 5' },
   SM3: { name: 'SM3 - Inside the Algorithm', points: 20 },
   SM4: { name: 'SM4 - Effects and Your Footprint', points: 20 },
   SM5: { name: 'SM5 - How a Lie Travels', points: 20 },
@@ -113,7 +113,8 @@ const CALENDAR = {
   WP3: { date: '2026-10-26', due: '2026-10-28', event: 'CE - Midterms 3 - The Power to Stop a President' },
   WP4: { date: '2026-10-28', due: '2026-10-30', event: 'CE - Midterms 4 - The Fight for Your Vote' },
   WPED: { date: '2026-11-03', due: '2026-11-05', event: 'CE - Midterms 5 - Election Day' },
-  WP5: { date: '2026-11-05', due: '2026-11-09', event: 'CE - Midterms 6 - Election Results' }
+  // `banner` replaces the 'Topic N' label in the event's Canvas header (Jeff, 2026-11-03).
+  WP5: { date: '2026-11-05', due: '2026-11-09', event: 'CE - Midterms 6 - Election Results', banner: 'Midterms 6' }
 };
 
 // A unit's scheduled days that are not topics (`days` in the content module, like
@@ -299,7 +300,7 @@ function eventTable(unit, topic, code) {
   ];
 
   if (isClean(unit)) {
-    return cleanTable(cleanBanner(`${esc(plain(m.unit))} &middot; ${esc(plain(topic.topic))}`,
+    return cleanTable(cleanBanner(`${esc(plain(m.unit))} &middot; ${esc(plain((CALENDAR[code] && CALENDAR[code].banner) || topic.topic))}`,
       esc(plain(topic.title))), rows);
   }
 
@@ -454,7 +455,8 @@ ${rubric}
                 </ul>
                 <p>${esc(plain(a.privacy))}</p>`)
   ];
-  return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(plain(day.topic))}`,
+  const banner = (ASSIGNMENTS[code] && ASSIGNMENTS[code].banner) || day.topic;
+  return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(plain(banner))}`,
     esc(plain(a.title))), rows)}
 <p>Keep your paper viewing log from today's coverage. You will use it on Thursday in Topic 5.</p>`;
 }
