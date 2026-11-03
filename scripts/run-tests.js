@@ -50,6 +50,7 @@ const SUITES = {
     ['scripts/test/desk.test.js', 'the Desk: dated sheet, reload, weekly gather, parser round trip'],
     ['scripts/test/desk-mode.test.js', 'Lead Mode: scheduled UI reduction and three-record Canvas filing'],
     ['scripts/test/video-first-browser.test.js', 'midterms: lesson flow, target layout, autosave, and Canvas gathering'],
+    ['scripts/test/ballot-browser.test.js', 'midterms Election Day: Reading a Real Ballot saves, gathers and parses'],
     ['scripts/test/control-room-browser.test.js', 'teacher Control Room: synchronized projector, timer and saved notes']
   ]
 };

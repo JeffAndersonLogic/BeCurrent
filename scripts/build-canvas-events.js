@@ -74,6 +74,9 @@ const ASSIGNMENTS = {
   WP3: { name: 'WP3 - Checks and Governing', points: 5 },
   WP4: { name: 'WP4 - Election Messages', points: 5 },
   WP5: { name: 'WP5 - Results and Impact', points: 5 },
+  // Election Day's one submission. The day itself is not a topic; its assignment is
+  // `assignment` on the day object (scripts/lib/midterms-ballot.js).
+  WPED: { name: 'WPED - Reading a Real Ballot', points: 5 },
   SM3: { name: 'SM3 - Inside the Algorithm', points: 20 },
   SM4: { name: 'SM4 - Effects and Your Footprint', points: 20 },
   SM5: { name: 'SM5 - How a Lie Travels', points: 20 },
@@ -105,7 +108,7 @@ const CALENDAR = {
   WP2: { date: '2026-10-22', due: '2026-10-26', event: 'CE - Midterms 2 - The Battle for Congress' },
   WP3: { date: '2026-10-26', due: '2026-10-28', event: 'CE - Midterms 3 - The Power to Stop a President' },
   WP4: { date: '2026-10-28', due: '2026-10-30', event: 'CE - Midterms 4 - The Fight for Your Vote' },
-  WPED: { date: '2026-11-03', event: 'CE - Midterms 5 - Election Day' },
+  WPED: { date: '2026-11-03', due: '2026-11-05', event: 'CE - Midterms 5 - Election Day' },
   WP5: { date: '2026-11-05', due: '2026-11-09', event: 'CE - Midterms 6 - Election Results' }
 };
 
@@ -261,6 +264,7 @@ function eventTable(unit, topic, code) {
     links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">The Brief for this topic</a></p>`);
   } else if (topic.day) {
     links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">${esc(plain(topic.canvasLink || topic.title))}</a></p>`);
+    if (topic.assignment) links.push(`                <p><a class="inline_disabled" href="${SITE}/${m.unitKey}/${topic.assignment.page}" target="_blank" rel="noopener">${esc(plain(topic.assignment.title))}, today's assignment</a></p>`);
   } else if (hasReverseHistory) {
     links.push(`                <p><a class="inline_disabled" href="${artifactUrl(unit, topic)}" target="_blank" rel="noopener">${videoFirst ? 'The civics investigation' : 'The Reverse History investigation'} for this topic</a></p>`);
   }
@@ -269,11 +273,13 @@ function eventTable(unit, topic, code) {
   // Canvas at all, and saying so plainly is the point: it stops a paper day
   // being chased as missing work.
   const gatherLabel = videoFirst ? 'Gather All My Work' : hasReverseHistory ? 'Gather This Topic' : 'Gather All My Work';
-  const artifactName = videoFirst ? 'civics investigation' : hasReverseHistory ? 'Reverse History page' : 'Brief';
-  const responseName = hasReverseHistory ? 'filing' : 'question';
+  const artifactName = topic.day && topic.assignment ? plain(topic.assignment.title) + ' page'
+    : videoFirst ? 'civics investigation' : hasReverseHistory ? 'Reverse History page' : 'Brief';
+  const responseName = hasReverseHistory && !topic.day ? 'filing' : 'question';
   const assignmentCell = assignment
     ? `                <p>[INSERT ASSIGNMENT LINK]</p>
-                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong>${videoFirst ? ' to copy the investigation, with the manual-copy box as a backup' : ' and <strong>Copy to Clipboard</strong> at the end of it'}. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>${CALENDAR[code] && CALENDAR[code].due ? `
+                <p>Open the ${artifactName}, answer every ${responseName}, then use <strong>${gatherLabel}</strong>${videoFirst ? ` to copy the ${topic.day ? 'assignment' : 'investigation'}, with the manual-copy box as a backup` : ' and <strong>Copy to Clipboard</strong> at the end of it'}. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>${topic.day && topic.canvasNote ? `
+                <p>${esc(plain(topic.canvasNote))}</p>` : ''}${CALENDAR[code] && CALENDAR[code].due ? `
                 <p><strong>Due:</strong> the start of class on ${longDate(CALENDAR[code].due)}.</p>` : ''}`
     : topic.day
     ? `                <p><strong>Nothing to submit.</strong> ${esc(plain(topic.canvasNote || 'Today is done on paper in class.'))}</p>`
@@ -310,6 +316,7 @@ ${rows.join('\n')}
  * nothing. So the paste is spelled out rather than assumed.
  */
 function assignmentBody(unit, topic, code) {
+  if (topic.day && topic.assignment) return dayAssignmentBody(unit, topic, code);
   if (isClean(unit)) {
     const pageUrl = artifactUrl(unit, topic);
     const due = CALENDAR[code] && CALENDAR[code].due;
@@ -404,10 +411,53 @@ ${criteria}
 <p><a class="inline_disabled" href="${unitUrl}" target="_blank" rel="noopener">The whole ${esc(objectName(m.unit))} unit, if you missed a topic</a></p>`;
 }
 
+/**
+ * A scheduled day's own assignment (Election Day: Reading a Real Ballot), in the same
+ * branded table as the topics' assignments. Every question and criterion is read out of
+ * the day's `assignment` object, the same one the student page is built from.
+ */
+function dayAssignmentBody(unit, day, code) {
+  const a = day.assignment;
+  if (ASSIGNMENTS[code] && ASSIGNMENTS[code].points !== a.points) {
+    throw new Error(`${code}: Canvas points (${ASSIGNMENTS[code].points}) and the assignment's points (${a.points}) disagree`);
+  }
+  const pageUrl = `${SITE}/${unit.meta.unitKey}/${a.page}`;
+  const due = CALENDAR[code] && CALENDAR[code].due;
+  const total = a.parts.reduce((n, p) => n + p.questions.length, 0);
+  const parts = a.parts.map(p => `                    <li><strong>${esc(plain(p.title))}</strong> (${p.questions.length} question${p.questions.length === 1 ? '' : 's'}). ${esc(plain(p.intro))}</li>`).join('\n');
+  const criteria = a.successCriteria
+    .map(c => `                    <li>${esc(plain(c.criteria))}</li>`).join('\n');
+  const rubric = a.rubric
+    .map(r => `                    <li><strong>${esc(r.label)}</strong>: ${esc(r.description)}</li>`).join('\n');
+  const rows = [
+    cleanRow('OVERVIEW', `                <p>${esc(plain(a.overview))}</p>`),
+    cleanRow('STEP 1: Open', `                <p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener"><strong>Open ${esc(plain(a.title))} on BeCurrent</strong></a></p>
+                <p>The real ${esc(plain(a.ballot.precinct))} sample ballot is on the page, all ${a.ballot.pages} pages. Everything happens on the website. There is nothing to download.</p>`),
+    cleanRow('STEP 2: Answer', `                <p>Work down the page on your own. ${total} short questions in ${a.parts.length} parts:</p>
+                <ol>
+${parts}
+                </ol>
+                <p>A word or short phrase is enough for Part 1. One or two sentences is enough everywhere else. Sentence starters, read-aloud support, voice typing, and agreed paper accommodations are available.</p>`),
+    cleanRow('STEP 3: Submit', `                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>${due ? `
+                <p>Aim to submit before you leave today. <strong>Due: the start of class on ${longDate(due)}.</strong></p>` : `
+                <p>Submit before you leave today.</p>`}`),
+    cleanRow('SUCCESS CRITERIA', `                <ol>
+${criteria}
+                </ol>`),
+    cleanRow(`SCORING: ${a.points} points`, `                <ul>
+${rubric}
+                </ul>
+                <p>${esc(plain(a.privacy))}</p>`)
+  ];
+  return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(plain(day.topic))}`,
+    esc(plain(a.title))), rows)}
+<p>Keep your paper viewing log from today's coverage. You will use it on Thursday in Topic 5.</p>`;
+}
+
 function renderAssignments(unit) {
   const m = unit.meta;
   const code = String(m.code || '').toUpperCase();
-  const topics = (unit.topics || []).filter(t => ASSIGNMENTS[code + t.n] && hasOnlineArtifact(t));
+  const topics = withDays(unit).filter(t => ASSIGNMENTS[code + t.n] && hasOnlineArtifact(t));
   const out = [];
 
   out.push(`# ${objectName(m.unit)} Assignments, Paste-Ready`);
@@ -829,99 +879,10 @@ function renderUnit(unit) {
   return out.join('\n').replace(/\n{3,}/g, '\n\n').replace(/\s+$/, '') + '\n';
 }
 
-/**
- * The HTML flavour of the calendar events.
- *
- * The same document, in a page that can sit open next to Canvas: each event
- * renders as a preview of what you are about to paste, with the raw markup in a
- * textarea underneath and a button that puts it on the clipboard.
- *
- * It calls the SAME eventTable() the markdown does, so the code fence and the copy
- * button cannot hand a teacher two different events. That is the whole reason this
- * lives inside this generator rather than beside it; two builders of one table is
- * the failure this repo keeps paying for elsewhere.
- *
- * The textarea is not a fallback, it is the guarantee. navigator.clipboard needs a
- * secure context and this file will be opened from disk as often as from a URL, so
- * the button is the convenience and selecting the field is the path that always
- * works. Canvas's HTML editor wants plain text, which is exactly what a textarea
- * hands over.
- *
- * Self-contained on purpose: no stylesheet link, no webfont, no third-party script.
- * It has to keep working as a file on a desktop or a classroom machine that has
- * never seen this repo, so the palette is inlined as literals rather than read from
- * becurrent-brand.css, the same trade the capture wrappers make.
- */
-function renderUnitHtml(unit) {
-  const m = unit.meta;
-  const code = String(m.code || '').toUpperCase();
-  const topics = withDays(unit);
-  const topicCount = (unit.topics || []).length;
-  const unitName = objectName(m.unit);
-
-  const sections = topics.map(t => {
-    const c = code + t.n;
-    const a = ASSIGNMENTS[c];
-    const eventTitle = eventTitleFor(c, t);
-    const cal = CALENDAR[c];
-    const table = eventTable(unit, t, c);
-    const withheld = (t.withholdTitles || []).length;
-
-    return `
-<section class="event" id="${c.toLowerCase()}">
-  <div class="event-head">
-    <span class="event-num">${esc(plain(t.topic))}</span>
-    <h2>${esc(eventTitle)}</h2>
-    ${t.subtitle ? `<p class="event-sub">${esc(plain(t.subtitle))}</p>` : ''}
-  </div>
-
-  <dl class="meta">${cal ? `
-    <dt>Class date</dt><dd>${esc(longDate(cal.date))}</dd>` : ''}
-    <dt>Event title</dt><dd><code>${esc(eventTitle)}</code></dd>
-    <dt>Assignment to link</dt><dd>${a
-      ? `<code>${esc(a.name)}</code> <span class="muted">&middot; ${a.points} points${cal ? ` &middot; due ${esc(longDate(cal.due))}, start of class` : ''}</span>`
-      : `<span class="muted">none, this ${t.day ? 'day' : 'topic'} is done on paper</span>`}</dd>
-  </dl>
-${withheld ? `
-  <p class="warn"><strong>Do not name the film anywhere in Canvas before this topic runs.</strong>
-    The event title, the module header and the assignment name all stay vague on purpose.
-    A student who looks the title up in advance reads what they are supposed to conclude
-    and arrives having concluded it.</p>` : ''}
-  <div class="actions">
-    <button type="button" class="btn" data-copy="raw-${c.toLowerCase()}">Copy the HTML for ${esc(plain(t.topic))}</button>
-    <button type="button" class="btn quiet" data-copy="title-${c.toLowerCase()}">Copy the event title</button>
-    <span class="status" id="status-${c.toLowerCase()}" role="status"></span>
-  </div>
-
-  <input type="text" class="offscreen" id="title-${c.toLowerCase()}" readonly value="${esc(eventTitle)}">
-
-  <details open>
-    <summary>What it will look like in Canvas</summary>
-    <div class="preview">
-${table}
-    </div>
-  </details>
-
-  <details>
-    <summary>The raw HTML, to select by hand</summary>
-    <label class="offscreen" for="raw-${c.toLowerCase()}">Raw HTML for ${esc(plain(t.topic))}</label>
-    <textarea id="raw-${c.toLowerCase()}" class="raw" readonly spellcheck="false" wrap="off">${esc(table)}</textarea>
-  </details>
-</section>`;
-  }).join('\n');
-
-  const jump = topics.map(t => {
-    const c = code + t.n;
-    return `      <a href="#${c.toLowerCase()}">${esc(plain(t.topic))}</a>`;
-  }).join('\n');
-
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(unitName)} Canvas Events</title>
-<style>
+// The page shell both copy tools share (calendar events and assignments): BeCurrent's
+// palette inlined as literals, and the two-path clipboard script. One copy of each, so
+// the two pages cannot drift into two different looks or two different copy bugs.
+const CANVAS_PAGE_STYLE = `<style>
   /* GENERATED by scripts/build-canvas-events.js. Do not hand-edit.
      BeCurrent's palette, inlined as literals because this page has to work as a
      standalone file with no access to assets/css/becurrent-brand.css. Keep in step
@@ -1018,58 +979,10 @@ ${table}
     details{display:block}
     summary,textarea.raw{display:none}
   }
-</style>
-</head>
-<body>
+</style>`;
 
-<header class="masthead">
-  <div class="wrap">
-    <h1>${esc(unitName)}, Canvas Calendar Events</h1>
-    <p>BeCurrent &middot; ${topicCount} topic${topicCount === 1 ? '' : 's'} &middot; paste-ready</p>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <div class="card">
-    <h2>How to paste one of these</h2>
-    <ol>
-      <li>Canvas Calendar, click the day, <strong>Edit</strong>, then <strong>More Options</strong>.</li>
-      <li>Title the event exactly as given on the topic below.</li>
-      <li>In the Rich Content Editor, click the <code>&lt;/&gt;</code> icon to open the HTML editor.
-        <strong>Never paste into the visual editor.</strong> Pasting rendered HTML there injects
-        wrapper <code>&lt;div&gt;</code>s and inline font declarations that collapse the table.</li>
-      <li>Press <strong>Copy the HTML</strong> below, then paste into that HTML editor.</li>
-      <li>Switch back to the visual editor, delete the <code>[INSERT ASSIGNMENT LINK]</code>
-        placeholder, and insert the real assignment from the right-hand course-links panel,
-        <strong>Assignments</strong>, click the assignment. Do not hand-type that link; see
-        Section 5 of <code>CANVAS-BUILD-GUIDE.md</code> for why.</li>
-      <li>Save.</li>
-    </ol>
-  </div>
-
-  <div class="card">
-    <h2>This file is generated</h2>
-    <p>OVERVIEW, LEARNING TARGETS and SUCCESS CRITERIA are lifted verbatim from
-      <code>scripts/lib/unit-content/${esc(m.unitKey)}.js</code>. Edit a target there and rerun
-      <code>node scripts/build-canvas-events.js</code>. Never edit a target in Canvas, and never
-      in this file: both are copies, and nothing can tell you when a copy has gone stale.</p>
-    <p>The markdown twin is <code>docs/canvas/${esc(m.unitKey)}-calendar-events.md</code>. It
-      carries the same tables, built by the same function, so the two cannot disagree.</p>
-  </div>
-
-  <nav class="jump" aria-label="Jump to a topic">
-${jump}
-  </nav>
-${sections}
-
-  <footer class="note">
-    Generated by <code>scripts/build-canvas-events.js</code> from
-    <code>scripts/lib/unit-content/${esc(m.unitKey)}.js</code>.
-  </footer>
-</div>
-
-<script>
+function copyScript(titleWhat, bodyWhat) {
+  return `<script>
 (function () {
   'use strict';
 
@@ -1132,10 +1045,275 @@ ${sections}
 
     var isTitle = target.indexOf('title-') === 0;
     copyFrom(field, target.replace(/^(raw|title)-/, ''),
-      isTitle ? 'The event title' : 'The topic HTML');
+      isTitle ? '${titleWhat}' : '${bodyWhat}');
   });
 }());
-</${''}script>
+</${''}script>`;
+}
+
+/**
+ * The HTML flavour of the calendar events.
+ *
+ * The same document, in a page that can sit open next to Canvas: each event
+ * renders as a preview of what you are about to paste, with the raw markup in a
+ * textarea underneath and a button that puts it on the clipboard.
+ *
+ * It calls the SAME eventTable() the markdown does, so the code fence and the copy
+ * button cannot hand a teacher two different events. That is the whole reason this
+ * lives inside this generator rather than beside it; two builders of one table is
+ * the failure this repo keeps paying for elsewhere.
+ *
+ * The textarea is not a fallback, it is the guarantee. navigator.clipboard needs a
+ * secure context and this file will be opened from disk as often as from a URL, so
+ * the button is the convenience and selecting the field is the path that always
+ * works. Canvas's HTML editor wants plain text, which is exactly what a textarea
+ * hands over.
+ *
+ * Self-contained on purpose: no stylesheet link, no webfont, no third-party script.
+ * It has to keep working as a file on a desktop or a classroom machine that has
+ * never seen this repo, so the palette is inlined as literals rather than read from
+ * becurrent-brand.css, the same trade the capture wrappers make.
+ */
+function renderUnitHtml(unit) {
+  const m = unit.meta;
+  const code = String(m.code || '').toUpperCase();
+  const topics = withDays(unit);
+  const topicCount = (unit.topics || []).length;
+  const unitName = objectName(m.unit);
+
+  const sections = topics.map(t => {
+    const c = code + t.n;
+    const a = ASSIGNMENTS[c];
+    const eventTitle = eventTitleFor(c, t);
+    const cal = CALENDAR[c];
+    const table = eventTable(unit, t, c);
+    const withheld = (t.withholdTitles || []).length;
+
+    return `
+<section class="event" id="${c.toLowerCase()}">
+  <div class="event-head">
+    <span class="event-num">${esc(plain(t.topic))}</span>
+    <h2>${esc(eventTitle)}</h2>
+    ${t.subtitle ? `<p class="event-sub">${esc(plain(t.subtitle))}</p>` : ''}
+  </div>
+
+  <dl class="meta">${cal ? `
+    <dt>Class date</dt><dd>${esc(longDate(cal.date))}</dd>` : ''}
+    <dt>Event title</dt><dd><code>${esc(eventTitle)}</code></dd>
+    <dt>Assignment to link</dt><dd>${a
+      ? `<code>${esc(a.name)}</code> <span class="muted">&middot; ${a.points} points${cal ? ` &middot; due ${esc(longDate(cal.due))}, start of class` : ''}</span>`
+      : `<span class="muted">none, this ${t.day ? 'day' : 'topic'} is done on paper</span>`}</dd>
+  </dl>
+${withheld ? `
+  <p class="warn"><strong>Do not name the film anywhere in Canvas before this topic runs.</strong>
+    The event title, the module header and the assignment name all stay vague on purpose.
+    A student who looks the title up in advance reads what they are supposed to conclude
+    and arrives having concluded it.</p>` : ''}
+  <div class="actions">
+    <button type="button" class="btn" data-copy="raw-${c.toLowerCase()}">Copy the HTML for ${esc(plain(t.topic))}</button>
+    <button type="button" class="btn quiet" data-copy="title-${c.toLowerCase()}">Copy the event title</button>
+    <span class="status" id="status-${c.toLowerCase()}" role="status"></span>
+  </div>
+
+  <input type="text" class="offscreen" id="title-${c.toLowerCase()}" readonly value="${esc(eventTitle)}">
+
+  <details open>
+    <summary>What it will look like in Canvas</summary>
+    <div class="preview">
+${table}
+    </div>
+  </details>
+
+  <details>
+    <summary>The raw HTML, to select by hand</summary>
+    <label class="offscreen" for="raw-${c.toLowerCase()}">Raw HTML for ${esc(plain(t.topic))}</label>
+    <textarea id="raw-${c.toLowerCase()}" class="raw" readonly spellcheck="false" wrap="off">${esc(table)}</textarea>
+  </details>
+</section>`;
+  }).join('\n');
+
+  const jump = topics.map(t => {
+    const c = code + t.n;
+    return `      <a href="#${c.toLowerCase()}">${esc(plain(t.topic))}</a>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(unitName)} Canvas Events</title>
+${CANVAS_PAGE_STYLE}
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <h1>${esc(unitName)}, Canvas Calendar Events</h1>
+    <p>BeCurrent &middot; ${topicCount} topic${topicCount === 1 ? '' : 's'} &middot; paste-ready</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>How to paste one of these</h2>
+    <ol>
+      <li>Canvas Calendar, click the day, <strong>Edit</strong>, then <strong>More Options</strong>.</li>
+      <li>Title the event exactly as given on the topic below.</li>
+      <li>In the Rich Content Editor, click the <code>&lt;/&gt;</code> icon to open the HTML editor.
+        <strong>Never paste into the visual editor.</strong> Pasting rendered HTML there injects
+        wrapper <code>&lt;div&gt;</code>s and inline font declarations that collapse the table.</li>
+      <li>Press <strong>Copy the HTML</strong> below, then paste into that HTML editor.</li>
+      <li>Switch back to the visual editor, delete the <code>[INSERT ASSIGNMENT LINK]</code>
+        placeholder, and insert the real assignment from the right-hand course-links panel,
+        <strong>Assignments</strong>, click the assignment. Do not hand-type that link; see
+        Section 5 of <code>CANVAS-BUILD-GUIDE.md</code> for why.</li>
+      <li>Save.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>This file is generated</h2>
+    <p>OVERVIEW, LEARNING TARGETS and SUCCESS CRITERIA are lifted verbatim from
+      <code>scripts/lib/unit-content/${esc(m.unitKey)}.js</code>. Edit a target there and rerun
+      <code>node scripts/build-canvas-events.js</code>. Never edit a target in Canvas, and never
+      in this file: both are copies, and nothing can tell you when a copy has gone stale.</p>
+    <p>The markdown twin is <code>docs/canvas/${esc(m.unitKey)}-calendar-events.md</code>. It
+      carries the same tables, built by the same function, so the two cannot disagree.</p>
+  </div>
+
+  <nav class="jump" aria-label="Jump to a topic">
+${jump}
+  </nav>
+${sections}
+
+  <footer class="note">
+    Generated by <code>scripts/build-canvas-events.js</code> from
+    <code>scripts/lib/unit-content/${esc(m.unitKey)}.js</code>.
+  </footer>
+</div>
+
+${copyScript('The event title', 'The topic HTML')}
+</body>
+</html>
+`;
+}
+
+/**
+ * The HTML flavour of the assignments, for a clean (video-first) unit.
+ *
+ * The same page shell as the calendar events: a branded preview of each assignment,
+ * a copy button, and the raw markup in a textarea for selecting by hand. It calls the
+ * SAME assignmentBody() the markdown twin prints, so the two cannot hand a teacher
+ * different assignments.
+ */
+function renderAssignmentsHtml(unit) {
+  const m = unit.meta;
+  const code = String(m.code || '').toUpperCase();
+  const list = withDays(unit).filter(t => ASSIGNMENTS[code + t.n] && hasOnlineArtifact(t));
+  const unitName = objectName(m.unit);
+
+  const sections = list.map(t => {
+    const c = code + t.n;
+    const a = ASSIGNMENTS[c];
+    const cal = CALENDAR[c];
+    const body = assignmentBody(unit, t, c);
+    const id = c.toLowerCase();
+    return `
+<section class="event" id="${id}">
+  <div class="event-head">
+    <span class="event-num">${esc(plain(t.topic))}</span>
+    <h2>${esc(a.name)}</h2>
+    <p class="event-sub">${esc(plain(t.assignment ? t.assignment.title : t.title))}</p>
+  </div>
+
+  <dl class="meta">
+    <dt>Assignment name</dt><dd><code>${esc(a.name)}</code></dd>
+    <dt>Submission type</dt><dd>Online, <strong>Text Entry</strong> &middot; unlimited attempts &middot; anonymous grading off</dd>
+    <dt>Points</dt><dd>${a.points}</dd>${cal && cal.due ? `
+    <dt>Due</dt><dd>${esc(longDate(cal.due))}, start of class</dd>` : ''}${cal ? `
+    <dt>Calendar event</dt><dd><code>${esc(eventTitleFor(c, t))}</code></dd>` : ''}
+  </dl>
+
+  <div class="actions">
+    <button type="button" class="btn" data-copy="raw-${id}">Copy the assignment HTML</button>
+    <button type="button" class="btn quiet" data-copy="title-${id}">Copy the assignment name</button>
+    <span class="status" id="status-${id}" role="status"></span>
+  </div>
+
+  <input type="text" class="offscreen" id="title-${id}" readonly value="${esc(a.name)}">
+
+  <details open>
+    <summary>What it will look like in Canvas</summary>
+    <div class="preview">
+${body}
+    </div>
+  </details>
+
+  <details>
+    <summary>The raw HTML, to select by hand</summary>
+    <label class="offscreen" for="raw-${id}">Raw HTML for ${esc(a.name)}</label>
+    <textarea id="raw-${id}" class="raw" readonly spellcheck="false" wrap="off">${esc(body)}</textarea>
+  </details>
+</section>`;
+  }).join('\n');
+
+  const jump = list.map(t => `      <a href="#${(code + t.n).toLowerCase()}">${esc(plain(t.topic))}</a>`).join('\n');
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(unitName)} Canvas Assignments</title>
+${CANVAS_PAGE_STYLE}
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <h1>${esc(unitName)}, Canvas Assignments</h1>
+    <p>BeCurrent &middot; ${list.length} assignment${list.length === 1 ? '' : 's'} &middot; paste-ready</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>How to paste one of these</h2>
+    <ol>
+      <li>In Canvas, create an assignment with the <strong>exact name</strong> shown, character for character. It must match PowerSchool.</li>
+      <li>Set Submission type to <strong>Online, Text Entry</strong>, attempts to unlimited, and leave anonymous grading off.</li>
+      <li>In the Rich Content Editor, click the <code>&lt;/&gt;</code> icon to open the HTML editor.
+        <strong>Never paste into the visual editor.</strong></li>
+      <li>Press <strong>Copy the assignment HTML</strong> below, then paste into that HTML editor.</li>
+      <li>Set the points and the due date shown, then save and publish.</li>
+      <li>Open the matching calendar event and replace <code>[INSERT ASSIGNMENT LINK]</code> with this assignment from the course-links panel.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>This file is generated</h2>
+    <p>Every question, criterion and point value is read out of
+      <code>scripts/lib/unit-content/${esc(m.unitKey)}.js</code> and the pages it builds, by
+      <code>node scripts/build-canvas-events.js</code>. Never edit an assignment in Canvas or
+      in this file. The markdown twin is <code>docs/canvas/${esc(m.unitKey)}-assignments.md</code>,
+      built by the same function.</p>
+  </div>
+
+  <nav class="jump" aria-label="Jump to an assignment">
+${jump}
+  </nav>
+${sections}
+
+  <footer class="note">
+    Generated by <code>scripts/build-canvas-events.js</code> from
+    <code>scripts/lib/unit-content/${esc(m.unitKey)}.js</code>.
+  </footer>
+</div>
+
+${copyScript('The assignment name', 'The assignment HTML')}
 </body>
 </html>
 `;
@@ -1221,6 +1399,7 @@ files.forEach(file => {
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.html`), renderUnitHtml(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-assignments.md`), renderAssignments(unit), unit);
   if (isClean(unit)) {
+    emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-assignments.html`), renderAssignmentsHtml(unit), unit);
     emit(path.join('teacher', 'data', `${unit.meta.unitKey}-canvas-kit.js`), renderCanvasKit(unit), unit);
   }
 });

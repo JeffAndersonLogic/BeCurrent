@@ -35,7 +35,7 @@ Every link below points at the live GitHub Pages build:
 | Thursday, October 22 | `CE - Midterms 2 - The Battle for Congress` | `WP2 - The Battle for Congress` | Monday, October 26 |
 | Monday, October 26 | `CE - Midterms 3 - The Power to Stop a President` | `WP3 - Checks and Governing` | Wednesday, October 28 |
 | Wednesday, October 28 | `CE - Midterms 4 - The Fight for Your Vote` | `WP4 - Election Messages` | Friday, October 30 |
-| Tuesday, November 3 | `CE - Midterms 5 - Election Day` | none, a paper day |  |
+| Tuesday, November 3 | `CE - Midterms 5 - Election Day` | `WPED - Reading a Real Ballot` | Thursday, November 5 |
 | Thursday, November 5 | `CE - Midterms 6 - Election Results` | `WP5 - Results and Impact` | Monday, November 9 |
 
 ---
@@ -340,7 +340,7 @@ Every link below points at the live GitHub Pages build:
 
 **Class date:** Tuesday, November 3  
 **Event title:** `CE - Midterms 5 - Election Day`  
-**Assignment to link:** _none, this day is done on paper_  
+**Assignment to link:** `WPED - Reading a Real Ballot`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Election Day  
 
 ```html
@@ -392,6 +392,7 @@ Every link below points at the live GitHub Pages build:
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/index.html" target="_blank" rel="noopener">Who Has the Power?, the unit page</a></p>
                 <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/election-day.html" target="_blank" rel="noopener">The Election Day viewing guide</a></p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/reading-a-real-ballot.html" target="_blank" rel="noopener">Reading a Real Ballot, today's assignment</a></p>
             </td>
         </tr>
         <tr>
@@ -399,7 +400,10 @@ Every link below points at the live GitHub Pages build:
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">ASSIGNMENT</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p><strong>Nothing to submit.</strong> Today is on paper. Keep your viewing log: you will use it on Thursday in Topic 5.</p>
+                <p>[INSERT ASSIGNMENT LINK]</p>
+                <p>Open the Reading a Real Ballot page, answer every question, then use <strong>Gather All My Work</strong> to copy the assignment, with the manual-copy box as a backup. Paste that into the submission box and submit. That paste is the only way this work reaches me.</p>
+                <p>Keep your paper viewing log: you will use it on Thursday in Topic 5.</p>
+                <p><strong>Due:</strong> the start of class on Thursday, November 5.</p>
             </td>
         </tr>
     </tbody>

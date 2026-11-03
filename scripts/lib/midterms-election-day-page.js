@@ -4,6 +4,7 @@
 // text boxes and no script: the log is paper, so nothing can be stranded in a browser.
 module.exports=function(C){
  const {E,head,mast,targets,ext,figure}=C;
+ const B=require('./midterms-ballot-page')(C);
  const longDate='Tuesday, November 3, 2026';
  function page(d,{unitTitle,next}){
   const steps=`<ol class="ed-steps">${d.steps.map(([a,b])=>`<li><strong>${E(a)}</strong><span>${E(b)}</span></li>`).join('')}</ol>`;
@@ -15,7 +16,7 @@ module.exports=function(C){
   const sources=`<div class="source-grid">${d.sources.map(s=>`<article><h3>${ext(s.url,s.title)}</h3><p>${E(s.note)}</p></article>`).join('')}</div>`;
   return head(d.title)+`<body class="election-day" data-lesson="${E(d.key)}"><a class="skip" href="#main">Skip to the guide</a>${mast()}<main id="main"><section class="hero compact"><div class="hero-inner"><div><p class="eyebrow">${E(unitTitle)} / Election Day / ${longDate}</p><h1>${E(d.title)}</h1><p class="deck">${E(d.overview)}</p></div>${figure(d.hero,'hero-photo',{lazy:false})}</div></section><div class="wrap">
   <section class="lesson-direction"><p class="eyebrow">Today’s question</p><h2>${E(d.question)}</h2><details><summary>Learning targets and success criteria</summary>${targets(d)}</details></section>
-  <section class="required-route"><h3 class="box-title">Before you watch: one rule</h3><p>${E(d.bigIdea)}</p><p class="mini">Today is on paper. There is nothing to submit in Canvas. Keep your log: you will use it on Thursday.</p></section>
+  <section class="required-route"><h3 class="box-title">Before you watch: one rule</h3><p>${E(d.bigIdea)}</p><p class="mini">${d.assignment?'The viewing log is on paper. Keep it: you will use it on Thursday. Today’s one Canvas submission is the ballot assignment below.':'Today is on paper. There is nothing to submit in Canvas. Keep your log: you will use it on Thursday.'}</p></section>${d.assignment?B.dayCard(d.assignment):''}
   <section><h2>How a vote becomes a result</h2><p>Every step below happens in this order. Today we are watching the first two.</p>${steps}</section>
   <section><h2>Words you will hear</h2>${cards(d.terms)}</section>
   <section><h2>Five kinds of statement</h2><p>Everything the coverage says fits one of these. Sorting them is today’s job. Use the number in your log.</p>${kinds}</section>
@@ -29,6 +30,6 @@ module.exports=function(C){
  // The unit page card, slotted between Topic 4 and Topic 5.
  function card(d){return `<li class="topic-card election-day-card"><span class="chapter-num">Nov 3</span>${figure(d.hero,'topic-thumb',{caption:false})}<div class="copy"><h3>${E(d.title)}</h3><p>${E(d.overview)}</p><a class="cta" href="${E(d.page)}">Open the Election Day guide →</a><details><summary>Learning targets and success criteria</summary>${targets(d)}</details></div><span class="pill live">Election Day</span></li>`;}
  // The teaching guide section. Teacher-only text lives here and nowhere a student reads.
- function guide(d){const t=d.teacher;return `## Election Day: ${d.title}\n\n${longDate}. A viewing day beside the five topics, not a topic. No Canvas assignment; students keep a paper viewing log for Topic 5.\n\n${d.overview}\n\nQuestion: ${d.question}\n\n### Learning targets\n\n${d.learningTargets.map(x=>'- '+x.target).join('\n')}\n\n### Success criteria\n\n${d.successCriteria.map(x=>'- '+x.criteria).join('\n')}\n\n### Teacher story\n\n${t.story}\n\n### Choosing the coverage\n\n${t.coverage}\n\n### Running it\n\n${t.pauses}\n\n${t.afterLunch}\n\nIf there is no live coverage: ${t.fallback}\n\nListen for: ${t.listenFor}\n\nAvoid: ${t.avoid}\n\n### The rule students carry in\n\n${d.bigIdea}\n\n### Closing questions\n\n${d.closing.map((q,i)=>`${i+1}. ${q.text}\n   Start here: ${q.startHere}`).join('\n')}\n\n`;}
- return {page,card,guide};
+ function guide(d){const t=d.teacher;return `## Election Day: ${d.title}\n\n${longDate}. A viewing day beside the five topics, not a topic. Students keep a paper viewing log for Topic 5${d.assignment?', and submit one Canvas assignment, '+d.assignment.title:'; no Canvas assignment'}.\n\n${d.overview}\n\nQuestion: ${d.question}\n\n### Learning targets\n\n${d.learningTargets.map(x=>'- '+x.target).join('\n')}\n\n### Success criteria\n\n${d.successCriteria.map(x=>'- '+x.criteria).join('\n')}\n\n### Teacher story\n\n${t.story}\n\n### Choosing the coverage\n\n${t.coverage}\n\n### Running it\n\n${t.pauses}\n\n${t.afterLunch}\n\nIf there is no live coverage: ${t.fallback}\n\nListen for: ${t.listenFor}\n\nAvoid: ${t.avoid}\n\n### The rule students carry in\n\n${d.bigIdea}\n\n### Closing questions\n\n${d.closing.map((q,i)=>`${i+1}. ${q.text}\n   Start here: ${q.startHere}`).join('\n')}\n\n${d.assignment?B.guide(d.assignment):''}`;}
+ return {page,card,guide,ballotPage:B.page};
 };

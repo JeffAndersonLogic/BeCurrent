@@ -11,7 +11,9 @@ module.exports={
  reviewed:'2026-10-19',
  // Canvas calendar event wording. The event title itself lives in build-canvas-events.js.
  canvasLink:'The Election Day viewing guide',
- canvasNote:'Today is on paper. Keep your viewing log: you will use it on Thursday in Topic 5.',
+ canvasNote:'Keep your paper viewing log: you will use it on Thursday in Topic 5.',
+ // Today's one Canvas submission. Its own page, content and Canvas assignment: midterms-ballot.js.
+ assignment:require('./midterms-ballot'),
  title:'Election Day: What Can We Know Today?',
  subtitle:'Watching live coverage while the polls are open',
  overview:'Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.',
@@ -75,7 +77,7 @@ module.exports={
   coverage:'Choose straight news coverage before class (a national network’s daytime election coverage, PBS, C-SPAN, or an Indianapolis station) and check that it is airing. Avoid opinion panels as the main feed. If a commentator predicts a winner, use it: it is a clean example of a prediction.',
   pauses:'Pause the coverage about every ten minutes. Think aloud as you sort one statement into its kind on the board, then give students a minute to log their own. Read two or three logs aloud with names removed. No student reports out.',
   fallback:'If no live coverage is airing, use the two Topic 5 clips (how race calls work, and how voting machines are checked) and have students log statements from those instead.',
-  afterLunch:'After lunch: CNN 10 if an episode is posted, then return to the coverage. There is no Desk filing today; the coverage is today’s news.',
+  afterLunch:'After lunch: CNN 10 if an episode is posted, then return to the coverage. There is no Desk filing today; the coverage is today’s news. The ballot assignment is today’s one Canvas submission.',
   listenFor:'Students who log a prediction as a fact, or who think an early lead is a result. Correct by asking: has a single vote been counted yet?',
   avoid:'Do not ask students who they or their families support. No prefilled winners, no predictions from the teacher, and no student presenting.'
  }

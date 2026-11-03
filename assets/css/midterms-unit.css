@@ -223,3 +223,6 @@ body[data-topic-number="4"] .student-chapter>.evidence-card{margin:16px 0 20px}
 .today-videos{margin:1rem 0;padding:1rem 1.2rem;border:2px solid #111;background:#fff}
 .today-videos h2{margin:.2rem 0 .4rem;font-size:1.25rem}
 .today-videos .screen-links{margin:.6rem 0 .2rem}
+/* Reading a Real Ballot (Election Day assignment): the eight ballot pages, then the questions. */
+.ballot-viewer{margin:28px 0}.ballot-pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0}.ballot-page{margin:0;border:1px solid #c8ceca;background:#fff;padding:8px}.ballot-page img{display:block;width:100%;height:auto}.ballot-page figcaption{font-size:.85rem;padding-top:8px}.ballot-part{margin:32px 0;padding-top:8px;border-top:2px solid #922d20}.ballot-question select.lookup-fact{max-width:790px}.ballot-callout .action-btn{margin-top:4px}
+@media(max-width:650px){.ballot-pages{grid-template-columns:1fr}}

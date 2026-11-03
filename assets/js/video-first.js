@@ -119,7 +119,8 @@
     slots.filter(el=>!optional(el)||el.value.trim()).forEach(el=>{
       records.push({ord:String(ord++).padStart(2,'0'),id:el.dataset.slot,label:el.dataset.label||el.dataset.slot,prompt:el.dataset.prompt||'',text:el.value||'',confidence:''});
     });
-    const heading='BeCurrent | Who Has the Power? | Topic '+(body.dataset.topicNumber||'1');
+    // A day that is not a topic (Election Day) names itself; every topic keeps the default.
+    const heading=body.dataset.gatherHeading||('BeCurrent | Who Has the Power? | Topic '+(body.dataset.topicNumber||'1'));
     const title=body.dataset.topicTitle||'The Election Nobody Understands';
     const head='<h1>'+bcEsc(heading)+'</h1><p>'+bcEsc(title)+'</p>';
     const items=records.map(r=>'<h2>'+bcEsc(r.label)+'</h2><p>Prompt: '+bcEsc(r.prompt)+'</p><p>My response:</p>'+bcParagraphsHtml(r.text,'')).join('');

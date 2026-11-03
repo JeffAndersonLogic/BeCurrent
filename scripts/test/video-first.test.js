@@ -87,6 +87,26 @@ const edProblems=p=>[!index.includes('href="'+ed.page+'"')&&'not linked from the
 assert.deepStrictEqual(edProblems(edPage),[]);
 // Negative controls: each check above can fail.
 for(const [bad,why] of [[edPage.replace('<tbody>','<tbody><textarea></textarea>'),'has a text box or script'],[edPage.replace('<h1>','<h1>Smith won '),'reports a winner'],[edPage.replace('<h1>','<h1>AP '),'uses AP framing'],[edPage.replace('<tbody><tr>','<tbody>'),'log has the wrong number of rows']])assert(edProblems(bad).includes(why),'negative control should fail: '+why);
+// Reading a Real Ballot: Election Day's one Canvas submission. Every question is a
+// data-slot, so Gather All My Work carries it with the shared record footer.
+{const a=ed.assignment;assert(a,'Election Day carries its ballot assignment');
+ const bp=read('midterms/'+a.page),qs=a.parts.flatMap(p=>p.questions);
+ const ballotProblems=(p,day)=>{const slots=[...p.matchAll(/data-slot="([^"]+)"/g)].map(m=>m[1]);return [
+  !day.includes('href="'+a.page+'"')&&'not linked from the Election Day page',
+  (slots.length!==qs.length||new Set(slots).size!==slots.length||qs.some(q=>!slots.includes(q.id)))&&'slots do not match the questions',
+  !(p.includes('id="gather-work"')&&p.includes('id="copy-preview"')&&p.includes('video-first-record.js')&&p.includes('video-first.js'))&&'no gather route',
+  !p.includes('id="student-flow"')&&'no student flow',
+  ['fetch(','XMLHttpRequest','<iframe'].some(x=>p.includes(x))&&'reaches the network',
+  /\bAP\b/.test(p)&&'uses AP framing',
+  a.ballot.images.some(im=>!p.includes(im.file)||!fs.existsSync(path.join(ROOT,'assets/images/midterms/ballot',im.file)))&&'a ballot page image is missing',
+  !fs.existsSync(path.join(ROOT,'assets/docs',path.basename(a.ballot.pdf)))&&'the ballot PDF is missing'
+ ].filter(Boolean);};
+ assert.deepStrictEqual(ballotProblems(bp,edPage),[]);
+ for(const [bad,day,why] of [[bp,edPage.replace('href="'+a.page+'"','href="#"'),'not linked from the Election Day page'],[bp.replace(/data-slot="ballot-warning"/,'data-slot="ballot-pages"'),edPage,'slots do not match the questions'],[bp.replace('id="gather-work"','id="x"'),edPage,'no gather route'],[bp.replace('<h1>','<h1>AP '),edPage,'uses AP framing'],[bp.split(a.ballot.images[0].file).join('missing.webp'),edPage,'a ballot page image is missing']])assert(ballotProblems(bad,day).includes(why),'negative control should fail: '+why);
+ const md=read('docs/canvas/midterms-assignments.md'),html=read('docs/canvas/midterms-assignments.html');
+ assert(md.includes('WPED - Reading a Real Ballot')&&md.includes('/midterms/'+a.page),'the Canvas assignment is generated');
+ assert(html.includes('id="wped"')&&html.includes('Copy the assignment HTML'),'the Canvas assignment copy page carries it');
+}
 const js=read('assets/js/video-first.js');new vm.Script(js);
 assert(js.includes('bcRecordManifest(')&&js.includes('bcRecordFooterHtml('));
 assert(!js.includes('fetch(')&&!js.includes('XMLHttpRequest'));

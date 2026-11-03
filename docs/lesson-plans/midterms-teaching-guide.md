@@ -1105,7 +1105,7 @@ Reteach: Underline only the checkable part, then name a document that could test
 
 ## Election Day: Election Day: What Can We Know Today?
 
-Tuesday, November 3, 2026. A viewing day beside the five topics, not a topic. No Canvas assignment; students keep a paper viewing log for Topic 5.
+Tuesday, November 3, 2026. A viewing day beside the five topics, not a topic. Students keep a paper viewing log for Topic 5, and submit one Canvas assignment, Reading a Real Ballot.
 
 Watch live Election Day coverage, learn how a vote becomes a result, and log what the coverage can and cannot tell us while the polls are still open. Keep your log for Thursday.
 
@@ -1135,7 +1135,7 @@ Choose straight news coverage before class (a national network’s daytime elect
 
 Pause the coverage about every ten minutes. Think aloud as you sort one statement into its kind on the board, then give students a minute to log their own. Read two or three logs aloud with names removed. No student reports out.
 
-After lunch: CNN 10 if an episode is posted, then return to the coverage. There is no Desk filing today; the coverage is today’s news.
+After lunch: CNN 10 if an episode is posted, then return to the coverage. There is no Desk filing today; the coverage is today’s news. The ballot assignment is today’s one Canvas submission.
 
 If there is no live coverage: If no live coverage is airing, use the two Topic 5 clips (how race calls work, and how voting machines are checked) and have students log statements from those instead.
 
@@ -1153,6 +1153,52 @@ While the polls are open, election offices do not report vote counts, and news o
    Start here: The coverage established that ____. I know because ____ (who reported it, and how they knew).
 2. Name one thing nobody can know yet. What would settle it, and when?
    Start here: Nobody can know ____ yet. It will be settled when ____.
+
+### Today's assignment: Reading a Real Ballot
+
+Read the real sample ballot for one Zionsville precinct, find the facts printed on it, think about what it asks voters to decide, and plan how you would check a question before voting. Then gather your answers into Canvas.
+
+Student page: `midterms/reading-a-real-ballot.html`. 22 questions in 4 parts, gathered into the Canvas Text Entry `WPED - Reading a Real Ballot` (5 points).
+
+Open the ballot page on the projector and scroll through the eight pages once so students see a whole real ballot. Then release students to work down the page on their own while the coverage runs or between coverage pauses. Protect the last five minutes for Gather All My Work and the Canvas paste.
+
+The answer key is in the teacher document, not in this public repository.
+
+Avoid: Do not ask students how they or their families would vote on any race or question. Score accuracy and reasoning, never a position.
+
+**Part 1: Ballot scavenger hunt**
+
+- How many pages long is this ballot?
+- What is the very first thing a voter is asked to decide (page 1)? Is it a person or a question?
+- Voting "straight party" means picking one party and voting for all of its candidates at once. Name all four parties you can choose.
+- Straight-party voting does NOT count for two kinds of offices. What are they?
+- Who are the two candidates for U.S. Representative, District 4? Write each name and party.
+- Look at the federal races. Is there a race for U.S. Senate or President on this ballot?
+- Public Question #3 is about Zionsville Community Schools. If it passes, how much would the yearly property tax bill go up on a $600,000 home?
+- The same question says when the school corporation last held a property tax referendum. What year was it, and did it pass?
+- Find two races where only ONE candidate is running. Write the office for each.
+- Find the Judicial Retention section on the last page. What two choices does the voter have for each judge?
+- Find a candidate in the school board section who has NO political party printed under their name. Write the name.
+- What warning is printed in the top left corner of page 1?
+
+**Part 2: Think about it**
+
+- Many county offices on this ballot (sheriff, surveyor, assessor, prosecutor) have only one candidate. Give one reason that might happen.
+- Everyone is talking about control of Congress tonight. Which race on this ballot helps decide that? Why does one House seat matter?
+- Public Question #3 prints an exact dollar amount for a $600,000 home. Why do you think the law requires the ballot to show a real price?
+- Most of this ballot is about county and state offices, not national ones. Pick one local office and explain how it could affect your life more than Congress does.
+
+**Part 3: Before you decide**
+
+- Choose one public question.
+- In your own words, what is this question asking voters to decide?
+- Write two things you would want to know before you voted on it.
+- Where would you look to find a trustworthy answer? Name one source and why you would trust it.
+
+**Exit question**
+
+- What is one thing on this ballot that surprised you?
+- How sure do you feel about reading a ballot now?
 
 ## Topic 5: Election Night: What Happens Next?
 

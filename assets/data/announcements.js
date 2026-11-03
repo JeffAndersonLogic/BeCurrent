@@ -1093,15 +1093,17 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Evidence"
         }
       ],
-      "homework": "Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.",
-      "note": "Election Day. The polls are open while we watch, so nobody knows any winners yet. Today is on paper: nothing to submit in Canvas.",
+      "homework": "Finish WPED - Reading a Real Ballot in Canvas. Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.",
+      "homeworkDue": "the start of class on Thursday, November 5",
+      "note": "Election Day. The polls are open while we watch, so nobody knows any winners yet. Today's one Canvas submission is Reading a Real Ballot. Your viewing log stays on paper.",
       "doNow": "The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?",
       "agenda": [
         "Open the Election Day guide on the Midterms page, or take a paper copy.",
         "Read the rule and the steps from casting a ballot to a certified result.",
         "Watch live Election Day coverage. At each pause, log one thing you heard and its kind.",
-        "Before you leave, answer the two questions at the bottom of your log.",
-        "Keep your log. You will use it on Thursday in Topic 5."
+        "Today's assignment: open Reading a Real Ballot and look through the real sample ballot for one Zionsville precinct.",
+        "Answer the questions on your own. Gather All My Work, paste into Canvas, and submit.",
+        "Keep your paper log. You will use it on Thursday in Topic 5."
       ]
     },
     {

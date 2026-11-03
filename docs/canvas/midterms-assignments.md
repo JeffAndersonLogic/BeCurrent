@@ -409,6 +409,99 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
+## WPED - Reading a Real Ballot
+
+**Assignment name, Canvas and PowerSchool, character for character:** `WPED - Reading a Real Ballot`  
+**Points:** 5  
+**Calendar event it belongs to:** `CE - Midterms 5 - Election Day`  
+**Taught:** Tuesday, November 3  
+**Due date in Canvas:** Thursday, November 5, set to the start time of your class period  
+
+Paste the block below through the RCE **`</>`** HTML editor, never the visual one.
+
+```html
+<table style="border-collapse: collapse; width: 100%; border: 1px solid #d4dad6;" cellpadding="12">
+    <tbody>
+        <tr>
+            <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
+                <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
+                <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Election Day</p>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">Reading a Real Ballot</h2>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Read the real sample ballot for one Zionsville precinct, find the facts printed on it, think about what it asks voters to decide, and plan how you would check a question before voting. Then gather your answers into Canvas.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/reading-a-real-ballot.html" target="_blank" rel="noopener"><strong>Open Reading a Real Ballot on BeCurrent</strong></a></p>
+                <p>The real Eagle 01 sample ballot is on the page, all 8 pages. Everything happens on the website. There is nothing to download.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Answer</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Work down the page on your own. 22 short questions in 4 parts:</p>
+                <ol>
+                    <li><strong>Part 1: Ballot scavenger hunt</strong> (12 questions). Every answer is printed somewhere on the ballot. A word or short phrase is enough.</li>
+                    <li><strong>Part 2: Think about it</strong> (4 questions). Answer in one or two sentences.</li>
+                    <li><strong>Part 3: Before you decide</strong> (4 questions). A voter only sees a few lines of text on the ballot. Good voters find out more before they vote. Choose one public question and answer about it.</li>
+                    <li><strong>Exit question</strong> (2 questions). Last one. Then gather your work.</li>
+                </ol>
+                <p>A word or short phrase is enough for Part 1. One or two sentences is enough everywhere else. Sentence starters, read-aloud support, voice typing, and agreed paper accommodations are available.</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 3: Submit</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>
+                <p>Aim to submit before you leave today. <strong>Due: the start of class on Thursday, November 5.</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SUCCESS CRITERIA</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ol>
+                    <li>I can find the offices, candidates, and public questions printed on a real ballot.</li>
+                    <li>I can explain why a ballot is mostly local and state offices, and why that matters.</li>
+                    <li>I can name what I would need to know before voting on a public question, and a trustworthy place to find it.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">SCORING: 5 points</h3>
+            </td>
+            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
+                <ul>
+                    <li><strong>Finds the facts</strong>: Part 1 answers match what is printed on the ballot.</li>
+                    <li><strong>Explains the ballot</strong>: Part 2 answers give a reason tied to the ballot, not a party preference.</li>
+                    <li><strong>Plans a check</strong>: Part 3 names real questions and a trustworthy source for one public question.</li>
+                </ul>
+                <p>Your answers are private. You never have to say how you or your family would vote, and nobody is asked to share with the class. Political preferences are not scored.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Keep your paper viewing log from today's coverage. You will use it on Thursday in Topic 5.</p>
+```
+
+---
+
 ## WP5 - Results and Impact
 
 **Assignment name, Canvas and PowerSchool, character for character:** `WP5 - Results and Impact`  

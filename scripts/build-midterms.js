@@ -15,7 +15,7 @@ const list=items=>`<ul>${items.map(x=>`<li>${E(x)}</li>`).join('')}</ul>`;
 const H=require('./lib/midterms-render-helpers')({E,ext,list});
 function studentRenderer(){return require('./lib/midterms-student')({E,head,mast,targets,video,reading,background,response,practice,simulator,notebook,filing,links,topics,meta,nn,list,ext,figure:H.figure});}
 const {PLACEMENT}=require('./lib/midterms-images');
-const ED=require('./lib/midterms-election-day-page')({E,head,mast,targets,ext,figure:H.figure}),eday=(unit.days||[])[0];
+const ED=require('./lib/midterms-election-day-page')({E,head,mast,targets,ext,list,figure:H.figure}),eday=(unit.days||[])[0];
 function head(title,teacher=false){return `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${E(title)} | BeCurrent</title><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/css/${teacher?'teacher-control-room':'video-first'}.css?v=20261019r3"><link rel="stylesheet" href="../assets/css/midterms-unit.css?v=20261030-polls"></head>`;}
 function mast(teacher=false){return teacher?`<header class="shellbar"><div class="inner"><a class="wordmark" href="../index.html">BeCurrent</a><span class="descriptor">Teaching OS / Midterms 2026</span><nav><a href="index.html">Teacher hub</a><a href="midterms.html">Unit OS</a><a href="../midterms/index.html">Student unit</a></nav></div></header>`:`<header class="mast"><div class="mast-inner"><a class="brand brand-logo" href="../index.html"><img src="../assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="1786" height="266"></a><nav class="mast-nav" aria-label="Course navigation"><a href="index.html">Unit overview</a><a href="../daily/index.html">The Desk</a><a href="../announcements.html">Today</a></nav></div></header>`;}
 function targets(t){return `<div class="split target-pair"><section><h3>Learning targets</h3>${list(t.learningTargets.map(x=>x.target))}</section><section><h3>Success criteria</h3>${list(t.successCriteria.map(x=>x.criteria))}</section></div>`;}
@@ -55,5 +55,6 @@ for(const t of topics){
  emit('teacher/'+os(t),cockpit(t));emit('teacher/'+projector(t),projection(t));
 }
 if(eday)emit('midterms/'+eday.page,ED.page(eday,{unitTitle:meta.unit,next:topics[4]}));
+if(eday&&eday.assignment)emit('midterms/'+eday.assignment.page,ED.ballotPage(eday.assignment,{unitTitle:meta.unit,day:eday}));
 emit('docs/lesson-plans/midterms-teaching-guide.md',guide());
 if(CHECK&&changed.length){console.error('Midterms generated files drifted:\n'+changed.join('\n'));process.exitCode=1;}else console.log((CHECK?'PASS: Midterms unit, five lessons, and teaching OS reproduce.':'Midterms generated: '+changed.length+' files.'));
