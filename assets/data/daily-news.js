@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-03",
   lead: {
-    category: "World / Security",
-    headline: "For Ukraine's Kherson region, a short ceasefire meant a momentary return to normal life",
-    dek: "In Kherson city, usually seething with Russian drones, friends met at cafes, families were out together and shoppers stocked up. \"The city seems alive,\" said one resident, \"just like it used to be.\"",
-    source: "NPR",
+    category: "U.S. / Democracy",
+    headline: "Supreme Court seems likely to favor Catholic schools in pre-K fight",
+    dek: "The Supreme Court is weighing a case involving Catholic preschools",
+    source: "CBS News",
     published: "November 3, 2026",
-    url: "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson",
-    image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4500x2531+0+234/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F64%2Ff0%2F0adc6b7e4d569f8d03e0096fc60b%2Funtitled-1350936.jpg",
-    imageCredit: "Image: NPR",
-    imageCreditUrl: "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson"
+    url: "https://www.cbsnews.com/news/supreme-court-st-mary-catholic-parish-v-roy-colorado-preschool/",
+    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/10/16/561f62b9-5cd4-4f0d-926c-8c2b10d9d09f/thumbnail/1200x630/9a33eda0c28344a60b86ba695d2bef31/scotus-upk-case-6pkg-frame-473.jpg",
+    imageCredit: "Image: CBS News",
+    imageCreditUrl: "https://www.cbsnews.com/news/supreme-court-st-mary-catholic-parish-v-roy-colorado-preschool/"
   },
   wire: [
     {
-      category: "U.S. / Government",
-      headline: "Americans vote in battle for Senate and House control— live updates",
-      dek: "All 435 House seats and 35 Senate seats are on the ballot, while 36 states will be electing governors.",
-      source: "CBS News",
+      category: "World / Security",
+      headline: "For Ukraine's Kherson region, a short ceasefire meant a momentary return to normal life",
+      dek: "In Kherson city, usually seething with Russian drones, friends met at cafes, families were out together and shoppers stocked up. \"The city seems alive,\" said one resident, \"just like it used to be.\"",
+      source: "NPR",
       published: "November 3, 2026",
-      url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
+      url: "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson"
     },
     {
       category: "Economy",
@@ -31,19 +31,19 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "World / Security",
-      headline: "Poland launches major security operation along border with Russia",
-      dek: "Poland",
+      headline: "Iran dismisses U.S. response to peace proposal as \"not convincing\"",
+      dek: "Trump said on eve of U.S. elections that a deal with Iran \"could happen,\" but after new U.S. strikes, Tehran called America",
       source: "CBS News",
       published: "November 3, 2026",
-      url: "https://www.cbsnews.com/news/poland-russia-border-operation-kaliningrad-sabotage-provocation-nato/"
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-negotiations-midterms/"
     },
     {
-      category: "U.S. / Democracy",
-      headline: "Voters decide key ballot measures on abortion rights, congressional redistricting and voter ID laws",
-      dek: "2026 ELECTION COVERAGE: Watch Live | Poll Closing Times | All Live Results | Live Updates | Live Fact Check WASHINGTON (AP) — A battle over abortion rights is playing out in several states Tuesday as voters decide 145 proposed laws and constitutional amendments, including some that could affect voti",
-      source: "PBS News",
+      category: "U.S. / Government",
+      headline: "Americans vote in battle for Senate and House control— live updates",
+      dek: "Control of Congress and the fate of President Trump",
+      source: "CBS News",
       published: "November 3, 2026",
-      url: "https://www.pbs.org/newshour/politics/voters-decide-key-ballot-measures-on-abortion-rights-congressional-redistricting-and-voter-id-laws"
+      url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
     }
   ]
 };
