@@ -1104,6 +1104,38 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Watch live Election Day coverage. Sort what you hear into its kind.",
         "Today's assignment: open Reading a Real Ballot and look through the real sample ballot for one Zionsville precinct.",
         "Answer the questions on your own. Gather All My Work, paste into Canvas, and submit."
+      ],
+      "slides": [
+        {
+          "kicker": "Watch together",
+          "title": "Start here: two short clips",
+          "bullets": [
+            "NewsNation: Which states could give an early indication of Election Day result trends?",
+            "PBS NewsHour: Inside the Associated Press’s process for calling election races",
+            "Watch for: Is each thing you hear a fact about voting or a prediction? Is a race call the official result?",
+            "The links are on the Election Day guide on the Midterms page."
+          ]
+        },
+        {
+          "kicker": "Live coverage",
+          "title": "Watch live coverage",
+          "bullets": [
+            "ABC News Live",
+            "CBS News 24/7",
+            "Sort what you hear: how voting works, from a polling place, voter survey, prediction or opinion, claim to check.",
+            "The polls are still open. Anything that sounds like a winner is a prediction."
+          ]
+        },
+        {
+          "kicker": "Today’s assignment",
+          "title": "Reading a Real Ballot",
+          "bullets": [
+            "Open the Election Day guide, then Reading a Real Ballot.",
+            "Look through the real sample ballot for one Zionsville precinct.",
+            "Answer the questions on your own. Your answers are private.",
+            "Gather All My Work, paste into Canvas, and submit WP5 - Reading a Real Ballot."
+          ]
+        }
       ]
     },
     {
