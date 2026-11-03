@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-02",
+  reviewed: "2026-11-03",
   lead: {
-    category: "World / International",
-    headline: "Man guilty of stealing cash from farm owned by South African president",
-    dek: "The case, part of the \"Farmgate\" scandal, has left President Cyril Ramaphosa mired in an impeachment saga.",
-    source: "BBC News",
-    published: "November 2, 2026",
-    url: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss",
-    image: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ee6f/live/1399f160-d6fa-11f1-b983-c357054e4d1e.jpg",
-    imageCredit: "Image: BBC News",
-    imageCreditUrl: "https://www.bbc.co.uk/news/articles/c9vgrvpk4l6eo?at_medium=RSS&at_campaign=rss"
+    category: "World / Security",
+    headline: "For Ukraine's Kherson region, a short ceasefire meant a momentary return to normal life",
+    dek: "In Kherson city, usually seething with Russian drones, friends met at cafes, families were out together and shoppers stocked up. \"The city seems alive,\" said one resident, \"just like it used to be.\"",
+    source: "NPR",
+    published: "November 3, 2026",
+    url: "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson",
+    image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4500x2531+0+234/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F64%2Ff0%2F0adc6b7e4d569f8d03e0096fc60b%2Funtitled-1350936.jpg",
+    imageCredit: "Image: NPR",
+    imageCreditUrl: "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson"
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "Copilot in deadly Florida jet crash identified in reports as 20-year-old",
-      dek: "In air traffic audio, a crew member can be heard shouting: \"We are going to crash into the ground!\"",
-      source: "BBC News",
-      published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cm369yy7lw73o?at_medium=RSS&at_campaign=rss"
+      category: "U.S. / Democracy",
+      headline: "Live Updates: Midterm voters go to the polls on Election Day",
+      dek: "The battle for control is playing out mostly in states and districts President Donald Trump previously won by wide margins.",
+      source: "PBS News",
+      published: "November 3, 2026",
+      url: "https://www.pbs.org/newshour/politics/live-updates-midterm-voters-go-to-the-polls-on-election-day"
     },
     {
-      category: "Economy",
-      headline: "Trump to remove Rwanda and South Africa from US trade deal",
-      dek: "The move comes barely a week after Rwanda's defence ministry was hit with sanctions by the US Treasury.",
-      source: "BBC News",
+      category: "Technology",
+      headline: "How former Yahoo CEO Marissa Mayer sees AI assistants fitting into busy women's lives",
+      dek: "NPR's Juana Summers talks with former Yahoo CEO Marissa Mayer about AI assistants and lightening the load of emotional labor.",
+      source: "NPR",
       published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/c9j346xg0mkvo?at_medium=RSS&at_campaign=rss"
+      url: "https://www.npr.org/2026/11/02/nx-s1-6022451/how-former-yahoo-ceo-marissa-mayer-sees-ai-assistants-fitting-into-busy-womens-lives"
     },
     {
-      category: "U.S. / National",
-      headline: "What Florida jet audio and flight data tells us about its final moments",
-      dek: "A private jet crashed in Florida on Sunday, killing all nine people on board, according to US authorities. BBC Verify has used air traffic control audio and flight tracking data to reconstruct the final moments before the plane crashed.",
-      source: "BBC News",
-      published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/videos/c52e9lgxjz82o?at_medium=RSS&at_campaign=rss"
+      category: "World / International",
+      headline: "Control of Congress is at stake today. And, judge to consider motion in Clancy case",
+      dek: "Election Day is here, and voters are heading to the polls in an election that may change control of Congress. And, a judge is considering whether to dismiss Lindsay Clancy's murder case.",
+      source: "NPR",
+      published: "November 3, 2026",
+      url: "https://www.npr.org/2026/11/03/g-s1-151445/up-first-newsletter-midterms-election-day-iran-war-lindsay-clancy"
     },
     {
-      category: "World / Security",
-      headline: "Russian bombing kills 24 people at Ukraine aid centre, Kyiv says",
-      dek: "Local officials say 27 people had been missing after at least nine 3,000kg aerial bombs hit a village in southern Ukraine.",
-      source: "BBC News",
-      published: "November 2, 2026",
-      url: "https://www.bbc.co.uk/news/articles/cjy56dndlyz0o?at_medium=RSS&at_campaign=rss"
+      category: "U.S. / Democracy",
+      headline: "Americans cast ballots as polls open across the country — live updates",
+      dek: "All 435 House seats and 35 Senate seats are on the ballot, while 36 states will be electing governors.",
+      source: "CBS News",
+      published: "November 3, 2026",
+      url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
     }
   ]
 };

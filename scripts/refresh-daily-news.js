@@ -6,23 +6,35 @@ const path = require('path');
 
 const OUT = path.join(__dirname, '..', 'assets', 'data', 'daily-news.js');
 const TZ = 'America/Indiana/Indianapolis';
+// Only outlets students can open on school Chromebooks (Jeff, 2026-11-03: BBC is
+// blocked there, so it is no longer a source). Every story the refresher publishes
+// must come from one of these domains.
+// `gdelt: true` means the outlet has no usable public RSS, so its stories are found
+// through the GDELT index and then read from the publisher's own page.
 const SOURCES = [
-  { domain: 'apnews.com', name: 'Associated Press', priority: 4 },
-  { domain: 'reuters.com', name: 'Reuters', priority: 4 },
-  { domain: 'bbc.com', name: 'BBC News', priority: 3 },
-  { domain: 'bbc.co.uk', name: 'BBC News', priority: 3 },
-  { domain: 'newsnationnow.com', name: 'NewsNation', priority: 2 }
+  { domain: 'apnews.com', name: 'Associated Press', priority: 4, gdelt: true },
+  { domain: 'npr.org', name: 'NPR', priority: 4 },
+  { domain: 'pbs.org', name: 'PBS News', priority: 4 },
+  { domain: 'cbsnews.com', name: 'CBS News', priority: 4 }
 ];
 
-// Each feed represents a useful classroom news beat; avoid general UK
-// front-page feeds that mix domestic celebrity and match reports with news.
+// Each feed represents a useful classroom news beat. Section feeds rather than
+// front pages, which mix sports and entertainment in with the news.
 const FEEDS = [
-  { url: 'https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 4, beat: 'U.S. / National' },
-  { url: 'https://feeds.bbci.co.uk/news/world/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 4, beat: 'World / International' },
-  { url: 'https://feeds.bbci.co.uk/news/business/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3, beat: 'Economy' },
-  { url: 'https://feeds.bbci.co.uk/news/technology/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3, beat: 'Technology' },
-  { url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', domain: 'bbc.com', name: 'BBC News', priority: 3, beat: 'Science / Environment' },
-  { url: 'https://www.newsnationnow.com/feed/', domain: 'newsnationnow.com', name: 'NewsNation', priority: 4, beat: 'U.S. / National' }
+  { url: 'https://feeds.npr.org/1003/rss.xml', domain: 'npr.org', name: 'NPR', priority: 4, beat: 'U.S. / National' },
+  { url: 'https://feeds.npr.org/1004/rss.xml', domain: 'npr.org', name: 'NPR', priority: 4, beat: 'World / International' },
+  { url: 'https://feeds.npr.org/1006/rss.xml', domain: 'npr.org', name: 'NPR', priority: 3, beat: 'Economy' },
+  { url: 'https://feeds.npr.org/1019/rss.xml', domain: 'npr.org', name: 'NPR', priority: 3, beat: 'Technology' },
+  { url: 'https://feeds.npr.org/1007/rss.xml', domain: 'npr.org', name: 'NPR', priority: 3, beat: 'Science / Environment' },
+  { url: 'https://www.pbs.org/newshour/feeds/rss/politics', domain: 'pbs.org', name: 'PBS News', priority: 4, beat: 'U.S. / National' },
+  { url: 'https://www.pbs.org/newshour/feeds/rss/world', domain: 'pbs.org', name: 'PBS News', priority: 4, beat: 'World / International' },
+  { url: 'https://www.pbs.org/newshour/feeds/rss/economy', domain: 'pbs.org', name: 'PBS News', priority: 3, beat: 'Economy' },
+  { url: 'https://www.pbs.org/newshour/feeds/rss/science', domain: 'pbs.org', name: 'PBS News', priority: 3, beat: 'Science / Environment' },
+  { url: 'https://www.cbsnews.com/latest/rss/us', domain: 'cbsnews.com', name: 'CBS News', priority: 4, beat: 'U.S. / National' },
+  { url: 'https://www.cbsnews.com/latest/rss/world', domain: 'cbsnews.com', name: 'CBS News', priority: 4, beat: 'World / International' },
+  { url: 'https://www.cbsnews.com/latest/rss/moneywatch', domain: 'cbsnews.com', name: 'CBS News', priority: 3, beat: 'Economy' },
+  { url: 'https://www.cbsnews.com/latest/rss/technology', domain: 'cbsnews.com', name: 'CBS News', priority: 3, beat: 'Technology' },
+  { url: 'https://www.cbsnews.com/latest/rss/science', domain: 'cbsnews.com', name: 'CBS News', priority: 3, beat: 'Science / Environment' }
 ];
 const MAX_AGE_HOURS = 60;
 
@@ -30,7 +42,8 @@ const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|cele
 function acceptableArticle(title, url) {
   try {
     const pathname = new URL(url).pathname;
-    return !EXCLUDE.test(title) && !/\/(?:sport|football|formula1|cricket|tennis)\//i.test(pathname);
+    // /video/ pages are show segments and advice clips, not news reports (CBS, 2026-11-03).
+    return !EXCLUDE.test(title) && !/\/(?:sport|sports|football|formula1|cricket|tennis|video)\//i.test(pathname);
   } catch (_) { return false; }
 }
 const FALLBACK_IMAGES = {
@@ -97,9 +110,7 @@ function similar(a, b) {
 function validUrl(url, expectedDomain) {
   try {
     const u = new URL(url);
-    const domains = expectedDomain === 'bbc.com' || expectedDomain === 'bbc.co.uk'
-      ? ['bbc.com', 'bbc.co.uk'] : [expectedDomain];
-    return u.protocol === 'https:' && domains.some(d => u.hostname === d || u.hostname.endsWith('.' + d));
+    return u.protocol === 'https:' && (u.hostname === expectedDomain || u.hostname.endsWith('.' + expectedDomain));
   } catch {
     return false;
   }
@@ -113,7 +124,8 @@ async function fetchPage(url, accept) {
     try {
       const res = await fetch(url, {
         signal: controller.signal, redirect: 'follow',
-        headers: { 'user-agent': 'BeCurrent educational news refresher', accept: accept || '*/*' }
+        // NPR refuses a non-browser user agent with HTTP 403; this one is accepted by all four outlets.
+        headers: { 'user-agent': 'Mozilla/5.0 (compatible; BeCurrent classroom news refresher)', accept: accept || '*/*' }
       });
       if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + url);
       return res;
@@ -148,8 +160,10 @@ function rssTag(item, name) {
 function safePhotoUrl(value) {
   try {
     const url = new URL(stripMarkup(value));
-    const domains = ['bbc.co.uk', 'bbc.com', 'bbci.co.uk', 'bbci.com',
-      'apnews.com', 'reuters.com', 'newsnationnow.com', 'wikimedia.org', 'wp.com'];
+    // The outlets' own photo hosts. PBS serves from one CloudFront host; only that
+    // exact host is trusted, never cloudfront.net as a whole.
+    const domains = ['apnews.com', 'npr.org', 'npr.brightspotcdn.com', 'pbs.org',
+      'd3i6fh83elv35t.cloudfront.net', 'cbsnews.com', 'cbsnewsstatic.com', 'wikimedia.org'];
     return url.protocol === 'https:' &&
       domains.some(domain => url.hostname === domain || url.hostname.endsWith('.' + domain))
       ? url.href : '';
@@ -324,7 +338,7 @@ function jsString(value) {
 }
 
 async function main() {
-  const jobs = [...FEEDS.map(discoverFeed), ...SOURCES.map(discover)];
+  const jobs = [...FEEDS.map(discoverFeed), ...SOURCES.filter(s => s.gdelt).map(discover)];
   const results = await Promise.allSettled(jobs);
   const gathered = [];
   results.forEach((r, i) => {
@@ -342,8 +356,8 @@ async function main() {
     return (b.source.priority * 10 - (Date.now() - db) / 14400000) -
            (a.source.priority * 10 - (Date.now() - da) / 14400000);
   });
-  // Round-robin by outlet + feed beat. A flood of BBC or AP headlines
-  // must not crowd U.S., world, science and NewsNation out of verification.
+  // Round-robin by outlet + feed beat. A flood of headlines from one outlet
+  // must not crowd the other outlets or beats out of verification.
   const groups = new Map();
   for (const item of ranked) {
     const key = item.source.name + ':' + (item.source.beat || 'index');
@@ -426,4 +440,4 @@ async function main() {
 if (require.main === module) {
   main().catch(err => { console.error(err.stack || err.message); process.exitCode = 1; });
 }
-module.exports = { validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, storyCategory, acceptableArticle, localDate, safePhotoUrl, publisherPhoto, feedPhoto };
+module.exports = { SOURCES, FEEDS, validUrl, recent, parseSeenDate, discoverFeed, publisherDate, choose, category, storyCategory, acceptableArticle, localDate, safePhotoUrl, publisherPhoto, feedPhoto };

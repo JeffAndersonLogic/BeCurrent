@@ -174,7 +174,8 @@ _Wires, broadcasters and publications for U.S. and world reporting._
 - [CNN](https://www.cnn.com): U.S. national and international reporting.
 - [Fox News](https://www.foxnews.com): U.S. national and international reporting.
 - [NewsNation](https://www.newsnationnow.com): U.S. national reporting.
-- [BBC News](https://www.bbc.com/news): U.K. public broadcaster with global coverage.
+- [PBS News](https://www.pbs.org/newshour/): U.S. public television reporting.
+- [CBS News](https://www.cbsnews.com): U.S. national and international reporting.
 - [Newsweek](https://www.newsweek.com): U.S. news magazine.
 - [Bloomberg](https://www.bloomberg.com): Business, markets and economic reporting.
 - [Forbes](https://www.forbes.com): Business coverage; check whether a piece is staff reporting or a contributor article.

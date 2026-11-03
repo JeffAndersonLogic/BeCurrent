@@ -33,8 +33,9 @@
     function trustedPhoto(value){
       try {
         const url=new URL(String(value||''));
-        const domains=['wikimedia.org','bbci.co.uk','bbci.com','bbc.co.uk','bbc.com',
-          'reuters.com','apnews.com','newsnationnow.com','wp.com'];
+        // Keep in step with safePhotoUrl() in scripts/refresh-daily-news.js.
+        const domains=['wikimedia.org','apnews.com','npr.org','npr.brightspotcdn.com','pbs.org',
+          'd3i6fh83elv35t.cloudfront.net','cbsnews.com','cbsnewsstatic.com'];
         if(url.protocol!=='https:'||!/^(?:[^.]+\.)*[^.]+\.[^.]+$/.test(url.hostname))return '';
         if(!domains.some(domain=>url.hostname===domain||url.hostname.endsWith('.'+domain)))return '';
         if(/World_Map_Blank\.svg/i.test(url.pathname))return '';

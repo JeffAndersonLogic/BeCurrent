@@ -83,7 +83,7 @@ const DESK = {
   story: {
     intro: 'The Lead and Your Pick. Source facts are lookups; the writing stays short.',
     facts: [
-      { id: 'outlet', label: 'Outlet', ask: 'Who reported it?', placeholder: 'Reuters, Times Sentinel, BBC News…' },
+      { id: 'outlet', label: 'Outlet', ask: 'Who reported it?', placeholder: 'Associated Press, Times Sentinel, NPR…' },
       { id: 'date', label: 'Published', ask: 'When was it published?', placeholder: 'Month day, year' },
       { id: 'link', label: 'Link', ask: 'Paste the link so you can find it again.', placeholder: 'https://…' }
     ],
@@ -141,7 +141,8 @@ const DESK = {
         { name: 'CNN', url: 'https://www.cnn.com', note: 'U.S. national and international reporting.' },
         { name: 'Fox News', url: 'https://www.foxnews.com', note: 'U.S. national and international reporting.' },
         { name: 'NewsNation', url: 'https://www.newsnationnow.com', note: 'U.S. national reporting.' },
-        { name: 'BBC News', url: 'https://www.bbc.com/news', note: 'U.K. public broadcaster with global coverage.' },
+        { name: 'PBS News', url: 'https://www.pbs.org/newshour/', note: 'U.S. public television reporting.' },
+        { name: 'CBS News', url: 'https://www.cbsnews.com', note: 'U.S. national and international reporting.' },
         { name: 'Newsweek', url: 'https://www.newsweek.com', note: 'U.S. news magazine.' },
         { name: 'Bloomberg', url: 'https://www.bloomberg.com', note: 'Business, markets and economic reporting.' },
         { name: 'Forbes', url: 'https://www.forbes.com', note: 'Business coverage; check whether a piece is staff reporting or a contributor article.' },
