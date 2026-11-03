@@ -1093,7 +1093,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Evidence"
         }
       ],
-      "homework": "Finish WPED - Reading a Real Ballot in Canvas. Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.",
+      "homework": "Finish WP5 - Reading a Real Ballot in Canvas. Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.",
       "homeworkDue": "the start of class on Thursday, November 5",
       "note": "Election Day. The polls are open while we watch, so nobody knows any winners yet. Today's one Canvas submission is Reading a Real Ballot. Your viewing log stays on paper.",
       "doNow": "The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?",
@@ -1139,7 +1139,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Argument"
         }
       ],
-      "homework": "Finish WP5 - Results and Impact in Canvas.",
+      "homework": "Finish WP6 - Results and Impact in Canvas.",
       "homeworkDue": "the start of class on Monday, November 9",
       "doNow": "An early leader, a projected winner, and a certified winner: are these the same? Write your answer.",
       "agenda": [

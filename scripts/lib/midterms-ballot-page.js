@@ -37,6 +37,6 @@ module.exports=function(C){
  // The card on the Election Day page, so the day's one submission is not missed.
  function dayCard(a){return `<section class="required-route ballot-callout"><h3 class="box-title">Today’s assignment: ${E(a.title)}</h3><p>${E(a.overview)}</p><p><a class="action-btn" href="${E(a.page)}">Open ${E(a.title)} →</a></p></section>`;}
  // The teaching guide section. Teacher-only text lives here.
- function guide(a){const n=a.parts.reduce((s,p)=>s+p.questions.length,0);return `### Today's assignment: ${a.title}\n\n${a.overview}\n\nStudent page: \`midterms/${a.page}\`. ${n} questions in ${a.parts.length} parts, gathered into the Canvas Text Entry \`WPED - Reading a Real Ballot\` (${a.points} points).\n\n${a.teacher.run}\n\n${a.teacher.key}\n\nAvoid: ${a.teacher.avoid}\n\n${a.parts.map(p=>`**${p.title}**\n\n${p.questions.map(q=>'- '+q.text).join('\n')}`).join('\n\n')}\n\n`;}
+ function guide(a){const n=a.parts.reduce((s,p)=>s+p.questions.length,0);return `### Today's assignment: ${a.title}\n\n${a.overview}\n\nStudent page: \`midterms/${a.page}\`. ${n} questions in ${a.parts.length} parts, gathered into the Canvas Text Entry \`WP5 - Reading a Real Ballot\` (${a.points} points).\n\n${a.teacher.run}\n\n${a.teacher.key}\n\nAvoid: ${a.teacher.avoid}\n\n${a.parts.map(p=>`**${p.title}**\n\n${p.questions.map(q=>'- '+q.text).join('\n')}`).join('\n\n')}\n\n`;}
  return {page,dayCard,guide};
 };

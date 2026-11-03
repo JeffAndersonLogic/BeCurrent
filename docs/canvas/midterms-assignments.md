@@ -409,9 +409,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
-## WPED - Reading a Real Ballot
+## WP5 - Reading a Real Ballot
 
-**Assignment name, Canvas and PowerSchool, character for character:** `WPED - Reading a Real Ballot`  
+**Assignment name, Canvas and PowerSchool, character for character:** `WP5 - Reading a Real Ballot`  
 **Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 5 - Election Day`  
 **Taught:** Tuesday, November 3  
@@ -502,9 +502,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
 
 ---
 
-## WP5 - Results and Impact
+## WP6 - Results and Impact
 
-**Assignment name, Canvas and PowerSchool, character for character:** `WP5 - Results and Impact`  
+**Assignment name, Canvas and PowerSchool, character for character:** `WP6 - Results and Impact`  
 **Points:** 5  
 **Calendar event it belongs to:** `CE - Midterms 6 - Election Results`  
 **Taught:** Thursday, November 5  

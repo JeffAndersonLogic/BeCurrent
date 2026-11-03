@@ -116,7 +116,7 @@ window.BECURRENT_SCHEDULE={
    note:'Election Day. The polls are open while we watch, so nobody knows any winners yet. Today\'s one Canvas submission is Reading a Real Ballot. Your viewing log stays on paper.',
    doNow:'The polls close at 6 p.m. Can anyone know who won the House while we are in class? Why or why not?',
    agenda:['Open the Election Day guide on the Midterms page, or take a paper copy.','Read the rule and the steps from casting a ballot to a certified result.','Watch live Election Day coverage. At each pause, log one thing you heard and its kind.','Today\'s assignment: open Reading a Real Ballot and look through the real sample ballot for one Zionsville precinct.','Answer the questions on your own. Gather All My Work, paste into Canvas, and submit.','Keep your paper log. You will use it on Thursday in Topic 5.'],
-   homework:'Finish WPED - Reading a Real Ballot in Canvas. Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.',homeworkDue:'the start of class on Thursday, November 5'}
+   homework:'Finish WP5 - Reading a Real Ballot in Canvas. Optional: if you watch results tonight, write down the time, the source, and whether each result is a count, a call, or still unresolved.',homeworkDue:'the start of class on Thursday, November 5'}
 ,
 
   {date:'2026-10-20',topic:'WP1',topicTitle:'Who Has the Power? | The Election Nobody Understands',
@@ -160,7 +160,7 @@ window.BECURRENT_SCHEDULE={
   {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Night: What Happens Next?',
    doNow:'An early leader, a projected winner, and a certified winner: are these the same? Write your answer.',
    agenda:['Opening question: is a projected winner the same as a certified one?','Watch, then sort each example by reporting stage.','Build a dated results notebook from named sources.','Trace what the results could change, and what is still unresolved.','Explain the results and their impact, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
-   homework:'Finish WP5 - Results and Impact in Canvas.',homeworkDue:'the start of class on Monday, November 9'}
+   homework:'Finish WP6 - Results and Impact in Canvas.',homeworkDue:'the start of class on Monday, November 9'}
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]
 };

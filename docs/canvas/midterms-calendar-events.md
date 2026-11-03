@@ -35,8 +35,8 @@ Every link below points at the live GitHub Pages build:
 | Thursday, October 22 | `CE - Midterms 2 - The Battle for Congress` | `WP2 - The Battle for Congress` | Monday, October 26 |
 | Monday, October 26 | `CE - Midterms 3 - The Power to Stop a President` | `WP3 - Checks and Governing` | Wednesday, October 28 |
 | Wednesday, October 28 | `CE - Midterms 4 - The Fight for Your Vote` | `WP4 - Election Messages` | Friday, October 30 |
-| Tuesday, November 3 | `CE - Midterms 5 - Election Day` | `WPED - Reading a Real Ballot` | Thursday, November 5 |
-| Thursday, November 5 | `CE - Midterms 6 - Election Results` | `WP5 - Results and Impact` | Monday, November 9 |
+| Tuesday, November 3 | `CE - Midterms 5 - Election Day` | `WP5 - Reading a Real Ballot` | Thursday, November 5 |
+| Thursday, November 5 | `CE - Midterms 6 - Election Results` | `WP6 - Results and Impact` | Monday, November 9 |
 
 ---
 
@@ -340,7 +340,7 @@ Every link below points at the live GitHub Pages build:
 
 **Class date:** Tuesday, November 3  
 **Event title:** `CE - Midterms 5 - Election Day`  
-**Assignment to link:** `WPED - Reading a Real Ballot`  
+**Assignment to link:** `WP5 - Reading a Real Ballot`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Election Day  
 
 ```html
@@ -416,7 +416,7 @@ Every link below points at the live GitHub Pages build:
 
 **Class date:** Thursday, November 5  
 **Event title:** `CE - Midterms 6 - Election Results`  
-**Assignment to link:** `WP5 - Results and Impact`  
+**Assignment to link:** `WP6 - Results and Impact`  
 **Source:** `scripts/lib/unit-content/midterms.js`, Topic 5  
 
 ```html

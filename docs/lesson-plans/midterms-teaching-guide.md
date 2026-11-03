@@ -1158,7 +1158,7 @@ While the polls are open, election offices do not report vote counts, and news o
 
 Read the real sample ballot for one Zionsville precinct, find the facts printed on it, think about what it asks voters to decide, and plan how you would check a question before voting. Then gather your answers into Canvas.
 
-Student page: `midterms/reading-a-real-ballot.html`. 22 questions in 4 parts, gathered into the Canvas Text Entry `WPED - Reading a Real Ballot` (5 points).
+Student page: `midterms/reading-a-real-ballot.html`. 22 questions in 4 parts, gathered into the Canvas Text Entry `WP5 - Reading a Real Ballot` (5 points).
 
 Open the ballot page on the projector and scroll through the eight pages once so students see a whole real ballot. Then release students to work down the page on their own while the coverage runs or between coverage pauses. Protect the last five minutes for Gather All My Work and the Canvas paste.
 

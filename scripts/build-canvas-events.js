@@ -73,10 +73,12 @@ const ASSIGNMENTS = {
   WP2: { name: 'WP2 - The Battle for Congress', points: 5 },
   WP3: { name: 'WP3 - Checks and Governing', points: 5 },
   WP4: { name: 'WP4 - Election Messages', points: 5 },
-  WP5: { name: 'WP5 - Results and Impact', points: 5 },
+  // Renamed 2026-11-03 (Jeff): the Election Day ballot assignment took the Midterms 5
+  // slot, so Topic 5's results assignment is now Midterms 6, taught November 5.
+  WP5: { name: 'WP6 - Results and Impact', points: 5 },
   // Election Day's one submission. The day itself is not a topic; its assignment is
   // `assignment` on the day object (scripts/lib/midterms-ballot.js).
-  WPED: { name: 'WPED - Reading a Real Ballot', points: 5 },
+  WPED: { name: 'WP5 - Reading a Real Ballot', points: 5 },
   SM3: { name: 'SM3 - Inside the Algorithm', points: 20 },
   SM4: { name: 'SM4 - Effects and Your Footprint', points: 20 },
   SM5: { name: 'SM5 - How a Lie Travels', points: 20 },
