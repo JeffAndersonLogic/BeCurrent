@@ -165,8 +165,17 @@ window.BECURRENT_SCHEDULE={
 ,
 
   {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Night: What Happens Next?',
+   // Jeff, 2026-11-03: the Election Results day. No result is written here: the class
+   // checks named sources live, and an unresolved race is a valid finding.
+   homeAnnouncement:'Today: Midterms 6, Election Results. Check the results from named sources, then submit WP6 - Results and Impact in Canvas.',
+   note:'Election Results. We check what has been counted, called and certified, from named sources, at a recorded time. If a race is still too close to call, that is the finding.',
    doNow:'An early leader, a projected winner, and a certified winner: are these the same? Write your answer.',
-   agenda:['Opening question: is a projected winner the same as a certified one?','Watch, then sort each example by reporting stage.','Build a dated results notebook from named sources.','Trace what the results could change, and what is still unresolved.','Explain the results and their impact, then file your work in Canvas.','After lunch: CNN 10, then daily news and your News Log.'],
+   agenda:['Open Midterms 6: Election Night, What Happens Next? on the Midterms page.','Watch how the Associated Press calls a race, then sort each example by reporting stage: count, call, or certified.','Run the election desk: check the House, the Senate and Indiana\u2019s Fourth District. Write down the source, the stage and the time you checked.','Write the impact: what the results could change, and what still limits it.','Explain the results and their impact. Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.','After lunch: CNN 10, then daily news and your News Log.'],
+   slides:[
+    {kicker:'Call, count, or certified?',title:'Three different things',bullets:['Unofficial count: partial totals posted by election offices. Early leads can shrink or flip.','Race call: a news organization\u2019s conclusion about the winner. It is not the official result.','Certified result: checked and made official by election officials, days or weeks later.','Too close to call is a normal finding, not a problem.']},
+    {kicker:'The election desk',title:'Check three races',bullets:['House control: we check it together.','Senate control: we check it together.','Indiana\u2019s Fourth District: you check it.','For each one, write the finding, the stage, the source and the time you checked.']},
+    {kicker:'Today\u2019s assignment',title:'WP6 - Results and Impact',bullets:['Use your results notebook and two named sources.','Explain what the results could change, and one limit on that change.','Keep anything unresolved as unresolved.','Gather All My Work, paste into Canvas, and submit.']}
+   ],
    homework:'Finish WP6 - Results and Impact in Canvas.',homeworkDue:'the start of class on Monday, November 9'}
  ],
  assessments:[{date:'2026-08-28',title:'Social Media Unit Exam',type:'Test'},{date:'2026-10-02',title:'Iran at War Unit Exam',type:'Test'}],reminders:[{title:'Fall break: October 12–16',detail:'No regular classes next week.',until:'2026-10-09'}]

@@ -1173,14 +1173,47 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "homework": "Finish WP6 - Results and Impact in Canvas.",
       "homeworkDue": "the start of class on Monday, November 9",
+      "note": "Election Results. We check what has been counted, called and certified, from named sources, at a recorded time. If a race is still too close to call, that is the finding.",
       "doNow": "An early leader, a projected winner, and a certified winner: are these the same? Write your answer.",
       "agenda": [
-        "Opening question: is a projected winner the same as a certified one?",
-        "Watch, then sort each example by reporting stage.",
-        "Build a dated results notebook from named sources.",
-        "Trace what the results could change, and what is still unresolved.",
-        "Explain the results and their impact, then file your work in Canvas.",
+        "Open Midterms 6: Election Night, What Happens Next? on the Midterms page.",
+        "Watch how the Associated Press calls a race, then sort each example by reporting stage: count, call, or certified.",
+        "Run the election desk: check the House, the Senate and Indiana’s Fourth District. Write down the source, the stage and the time you checked.",
+        "Write the impact: what the results could change, and what still limits it.",
+        "Explain the results and their impact. Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.",
         "After lunch: CNN 10, then daily news and your News Log."
+      ],
+      "slides": [
+        {
+          "kicker": "Call, count, or certified?",
+          "title": "Three different things",
+          "bullets": [
+            "Unofficial count: partial totals posted by election offices. Early leads can shrink or flip.",
+            "Race call: a news organization’s conclusion about the winner. It is not the official result.",
+            "Certified result: checked and made official by election officials, days or weeks later.",
+            "Too close to call is a normal finding, not a problem."
+          ]
+        },
+        {
+          "kicker": "The election desk",
+          "title": "Check three races",
+          "bullets": [
+            "House control: we check it together.",
+            "Senate control: we check it together.",
+            "Indiana’s Fourth District: you check it.",
+            "For each one, write the finding, the stage, the source and the time you checked."
+          ]
+        },
+        {
+          "kicker": "Today’s assignment",
+          "title": "WP6 - Results and Impact",
+          "bullets": [
+            "Use your results notebook and two named sources.",
+            "Explain what the results could change, and one limit on that change.",
+            "Keep anything unresolved as unresolved.",
+            "Gather All My Work, paste into Canvas, and submit."
+          ]
+        }
       ]
     }
   ],
