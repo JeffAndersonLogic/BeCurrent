@@ -3,47 +3,47 @@ window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-04",
   lead: {
     category: "U.S. / Democracy",
-    headline: "Midterm fallout begins after Democrats win control of Congress",
-    dek: "The impact of Democrats",
+    headline: "Dow surges 1,500 points after Democrats take control of Congress",
+    dek: "The prospect of political gridlock in Washington, D.C., will limit lawmakers",
     source: "CBS News",
     published: "November 4, 2026",
-    url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/",
-    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/11/04/aab2faa6-9e5b-45e7-8988-22c1ff601f3d/thumbnail/1200x630g2/d56e3f9d8fbd290c6725f0280e144f70/ap26308594251394.jpg",
+    url: "https://www.cbsnews.com/news/stock-market-soar-democrats-take-control-of-congress/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2020/03/13/c46f66e3-4071-46d5-beda-11c48b506b53/thumbnail/1200x630/fc6138ad06131f845fae976bedda162f/rts35udd.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
+    imageCreditUrl: "https://www.cbsnews.com/news/stock-market-soar-democrats-take-control-of-congress/"
   },
   wire: [
     {
       category: "World / Security",
-      headline: "Vance blames Iran war for GOP midterm losses",
-      dek: "Vice President JD Vance seemingly sought to distance himself from election results seen as a referendum on President Donald Trump that featured big Republican losses across the country.",
-      source: "PBS News",
-      published: "November 4, 2026",
-      url: "https://www.pbs.org/newshour/politics/vance-blames-iran-war-for-gop-midterm-losses"
-    },
-    {
-      category: "Technology",
-      headline: "Review: The Legend of Zelda: Ocarina of Time remake is superb, streamlined and safe",
-      dek: "Nintendo's new Ocarina of Time remake enshrines its place in the gaming canon for generations to come. But despite its stupendous production values, the game left me feeling oddly bereft.",
-      source: "NPR",
-      published: "November 4, 2026",
-      url: "https://www.npr.org/2026/11/04/nx-s1-6026597/review-legend-of-zelda-ocarina-of-time-remake-switch-2"
-    },
-    {
-      category: "U.S. / Government",
-      headline: "Mississippi Senate race is toss-up, with margin of under 100 votes",
-      dek: "The Senate race in deep-red Mississippi remains unresolved Wednesday morning, as Democrat Scott Colom has mounted a surprisingly competitive challenge to incumbent Sen. Cindy Hyde-Smith.",
+      headline: "Ukraine says \"insane attack\" on aid center may have killed 70",
+      dek: "Ukraine",
       source: "CBS News",
       published: "November 4, 2026",
-      url: "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/"
+      url: "https://www.cbsnews.com/news/ukraine-russia-war-zelenskyy-aid-center-attack-death-toll/"
+    },
+    {
+      category: "Economy",
+      headline: "French blood banks hit by cyberattack days after European freezer hacks",
+      dek: "The cyberattack on several French blood banks comes after supermarkets across Europe reported their fridges​ and freezers​ were remotely taken over by hackers.",
+      source: "CBS News",
+      published: "November 4, 2026",
+      url: "https://www.cbsnews.com/news/cyberattack-france-blood-bank/"
     },
     {
       category: "U.S. / Democracy",
-      headline: "Iran says U.S. election results show Americans reject the war",
-      dek: "As the war Trump launched with Israel against Iran drags into month nine, he acknowledges its role in the GOP",
+      headline: "Mike Johnson will step aside as top House Republican next Congress",
+      dek: "After Tuesday's bruising defeat for Republicans, House Speaker Mike Johnson will not stay on as minority leader come January.",
+      source: "NPR",
+      published: "November 4, 2026",
+      url: "https://www.npr.org/2026/11/04/g-s1-151854/2026-midterms-mike-johnson-speaker"
+    },
+    {
+      category: "U.S. / Government",
+      headline: "Trump touts White House ballroom after GOP midterm losses",
+      dek: "After the GOP",
       source: "CBS News",
       published: "November 4, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
+      url: "https://www.cbsnews.com/news/trump-2026-midterms-republicans-white-house-ballroom/"
     }
   ]
 };
