@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-03",
+  reviewed: "2026-11-04",
   lead: {
     category: "U.S. / Democracy",
-    headline: "Supreme Court seems likely to favor Catholic schools in pre-K fight",
-    dek: "The Supreme Court is weighing a case involving Catholic preschools",
+    headline: "Midterm fallout begins after Democrats win control of Congress",
+    dek: "The impact of Democrats",
     source: "CBS News",
-    published: "November 3, 2026",
-    url: "https://www.cbsnews.com/news/supreme-court-st-mary-catholic-parish-v-roy-colorado-preschool/",
-    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/10/16/561f62b9-5cd4-4f0d-926c-8c2b10d9d09f/thumbnail/1200x630/9a33eda0c28344a60b86ba695d2bef31/scotus-upk-case-6pkg-frame-473.jpg",
+    published: "November 4, 2026",
+    url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/",
+    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/11/04/aab2faa6-9e5b-45e7-8988-22c1ff601f3d/thumbnail/1200x630g2/d56e3f9d8fbd290c6725f0280e144f70/ap26308594251394.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/supreme-court-st-mary-catholic-parish-v-roy-colorado-preschool/"
+    imageCreditUrl: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
   },
   wire: [
     {
       category: "World / Security",
-      headline: "For Ukraine's Kherson region, a short ceasefire meant a momentary return to normal life",
-      dek: "In Kherson city, usually seething with Russian drones, friends met at cafes, families were out together and shoppers stocked up. \"The city seems alive,\" said one resident, \"just like it used to be.\"",
-      source: "NPR",
-      published: "November 3, 2026",
-      url: "https://www.npr.org/2026/11/03/g-s1-151238/ukraine-russia-ceasefire-oleshky-kherson"
+      headline: "Vance blames Iran war for GOP midterm losses",
+      dek: "Vice President JD Vance seemingly sought to distance himself from election results seen as a referendum on President Donald Trump that featured big Republican losses across the country.",
+      source: "PBS News",
+      published: "November 4, 2026",
+      url: "https://www.pbs.org/newshour/politics/vance-blames-iran-war-for-gop-midterm-losses"
     },
     {
-      category: "Economy",
-      headline: "When caring for aging family members becomes cost prohibitive",
-      dek: "AARP reports family caregivers are spending 60% more than they were five years ago. Journalist Paula Span discusses the rising costs of caregiving and senior living, and the options available to us.",
+      category: "Technology",
+      headline: "Review: The Legend of Zelda: Ocarina of Time remake is superb, streamlined and safe",
+      dek: "Nintendo's new Ocarina of Time remake enshrines its place in the gaming canon for generations to come. But despite its stupendous production values, the game left me feeling oddly bereft.",
       source: "NPR",
-      published: "November 3, 2026",
-      url: "https://www.npr.org/2026/11/03/nx-s1-6026479/when-caring-for-aging-family-members-becomes-cost-prohibitive"
-    },
-    {
-      category: "World / Security",
-      headline: "Iran dismisses U.S. response to peace proposal as \"not convincing\"",
-      dek: "Trump said on eve of U.S. elections that a deal with Iran \"could happen,\" but after new U.S. strikes, Tehran called America",
-      source: "CBS News",
-      published: "November 3, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-negotiations-midterms/"
+      published: "November 4, 2026",
+      url: "https://www.npr.org/2026/11/04/nx-s1-6026597/review-legend-of-zelda-ocarina-of-time-remake-switch-2"
     },
     {
       category: "U.S. / Government",
-      headline: "Americans vote in battle for Senate and House control— live updates",
-      dek: "Control of Congress and the fate of President Trump",
+      headline: "Mississippi Senate race is toss-up, with margin of under 100 votes",
+      dek: "The Senate race in deep-red Mississippi remains unresolved Wednesday morning, as Democrat Scott Colom has mounted a surprisingly competitive challenge to incumbent Sen. Cindy Hyde-Smith.",
       source: "CBS News",
-      published: "November 3, 2026",
-      url: "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
+      published: "November 4, 2026",
+      url: "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/"
+    },
+    {
+      category: "U.S. / Democracy",
+      headline: "Iran says U.S. election results show Americans reject the war",
+      dek: "As the war Trump launched with Israel against Iran drags into month nine, he acknowledges its role in the GOP",
+      source: "CBS News",
+      published: "November 4, 2026",
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
     }
   ]
 };
