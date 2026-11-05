@@ -1181,7 +1181,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Run the election desk: check the House, the Senate and Indiana’s Fourth District. Write down the source, the stage and the time you checked.",
         "Write the impact: what the results could change, and what still limits it.",
         "Explain the results and their impact. Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.",
-        "After lunch: CNN 10, then daily news and your News Log."
+        "After lunch: CNN 10 · Nov. 4: These drones used to track sharks. Now they’re searching for koalas.",
+        "After lunch: daily news and your News Log."
       ],
       "slides": [
         {
