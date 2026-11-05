@@ -1,4 +1,4 @@
-# AI Unit: Story Outlines for Topics 1 to 3
+# AI Unit: Story Outlines for Topics 1 to 4
 
 **Status:** Draft for Jeff's review. Nothing here is on the website yet.
 **Drafted:** 2026-11-05
@@ -9,8 +9,8 @@
 | Mon 11/9 | AI1: What AI Actually Is |
 | Wed 11/11 | AI2: When AI Gets It Wrong |
 | Fri 11/13 | AI3: What AI Changes, and Who Pays |
-| Tue 11/17 | AI4: Who Makes the Rules? (outline waits on the school AI policy question) |
-| Thu 11/19 | Unit Assessment (Canvas, kept off the public site) |
+| Tue 11/17 | AI4: Who Makes the Rules? |
+| Thu 11/19 | Unit Assessment: 25 multiple choice (Canvas, kept off the public site) |
 | Mon 11/23 | The Desk |
 
 **Unit question:** AI is already making decisions that affect your life. Which decisions should
@@ -210,11 +210,99 @@ physical cost, and one of the biggest examples in the country is being built in 
 
 ---
 
+## Topic 4: Who Makes the Rules?
+**Subtitle:** What should the rule say?
+**Skill focus:** Framing and Generalizing from Evidence
+**What students leave knowing:** AI rules come from four places: you, your school, the
+companies, and governments. Those rules are still being written, including at our own school,
+and students can reason about what a good rule should say.
+
+### The story, in five beats
+1. **Four rule-makers.** You (what you choose to type and trust), your school, the companies
+   that build the tools, and governments. This echoes the Social Media unit's last topic, *Who
+   Gets to Decide?*, with a new technology.
+2. **Indiana already has an AI rule, and it connects to Topic 2.** Since 2024, an Indiana
+   campaign ad that uses AI to fake a candidate's words or actions must carry a label: *"Elements
+   of this media have been digitally altered or artificially generated."* The law requires a
+   label instead of a ban, partly because of free-speech concerns. That is a tradeoff students
+   can weigh.
+3. **States versus Washington.** States have passed a great many AI laws (109 in the first half
+   of 2026 alone). In December 2025 the president signed an executive order calling for one
+   national approach and set up a Justice Department team to challenge state AI laws in court.
+   But an executive order cannot erase a state law by itself; that takes Congress or the courts,
+   and Congress has not passed a national AI law. This is the federalism question from Midterms
+   Topic 1, applied to a new issue: should AI rules be the same in all 50 states?
+4. **Companies make rules too.** Chatbots have minimum ages, topics they refuse, and rules about
+   who can see your chats. MagicSchool lets the teacher read student chats; that is a rule
+   students have lived with all unit.
+5. **Your school is still deciding.** About 40 states, Indiana included, have given schools
+   guidance on AI, but guidance is advice, not a rule. Zionsville has not written a student AI
+   rule yet. So the last question of the unit is theirs: *What should the rule say?*
+
+### The day
+- **Do Now:** Is using AI on homework cheating? *Always, sometimes, or never*, plus one reason.
+  (Private.)
+- **Who Made This Rule? sort (6 cards):** You / School / Company / Government. Indiana's AI ad
+  label; a chatbot's minimum age; MagicSchool letting the teacher read chats; a made-up class
+  rule, "No AI on this essay" (labeled made up); Boone County's data center pause (callback to
+  Topic 3); choosing never to type private information into a chatbot.
+- **MagicSchool:** Ask the chatbot, "Should students be allowed to use AI on homework?" Did it
+  take a side? Whose point of view did it leave out? (Framing, using the tool itself as the
+  source.)
+- **Write the Rule (made-up scenarios, labeled made up):** For each, decide *Allowed / Allowed
+  with conditions / Not allowed*, and why:
+  1. Using AI to brainstorm ideas for an essay, versus using it to write the essay.
+  2. Asking AI to quiz you before a test.
+  3. A student makes a fake AI video of the principal announcing a snow day and posts it.
+  
+  Then write the one-sentence AI rule you would give ZCHS.
+- **Last 10 minutes:** Open the study guide for Thursday's exam.
+- **Key terms:** regulation, federal and state, disclosure (label), terms of service, policy
+
+### Draft questions (8)
+1. Name the four kinds of rule-makers for AI. Which one affects you most on a normal day?
+2. Indiana requires a label on AI-faked campaign ads instead of banning them. Give one reason
+   lawmakers might choose a label, and one weakness of that choice.
+3. Should AI rules be the same in all 50 states? Give one reason for each side, then choose.
+4. Why can't a president's executive order, by itself, cancel a state's AI law?
+5. From MagicSchool: did the chatbot take a side on homework? What did its answer leave out?
+6. Pick one Write the Rule scenario. Explain your decision.
+7. The fake snow-day video: who should deal with it, the school, the law, or the app it was
+   posted on? Why?
+8. **Checkpoint (the unit question):** AI is already making decisions that affect your life.
+   Which decisions should a person still make, and who should set the rules? Use one example
+   from any topic in the unit. (Your view is not graded; your reasoning and evidence are.)
+
+### Sources
+- Verified: White House, *Ensuring a National Policy Framework for Artificial Intelligence*
+  (December 11, 2025); Indiana House Enrolled Act 1133 (2024), the AI campaign-ad disclaimer law;
+  Indiana Department of Education, Digital Learning page linking its AI guidance.
+- To confirm in the sources step: where Congress and the court challenges stand as of the week
+  of November 16 (the latest reporting found was from September 2026); the count of states with
+  school AI guidance (Playlab, September 2026, about 40 plus Puerto Rico); the state AI law count
+  (TechPolicy.Press, mid-2026); chatbot minimum-age terms; MagicSchool's teacher-visibility
+  setting.
+
+---
+
+## Unit Assessment (Thursday 11/19)
+- **Format:** 25 multiple choice in Canvas, like the Social Media and Iran exams.
+- **Balance:** 6 questions each from Topics 1 to 3, and 7 from Topic 4 (including the unit
+  question as a reasoning item).
+- **Kept off the website.** The exam and its key are delivered as a separate document to paste
+  into Canvas. The study guide goes on the site and covers the same terms and ideas.
+
+---
+
 ## Decisions
 - **2026-11-05, Jeff:** Topic 3's Lebanon data center story stays as outlined (benefits and
   costs side by side, opinions not graded).
 - **2026-11-05, Jeff:** No "Real or AI?" image game in Topic 2.
 
+- **2026-11-05, Jeff:** Zionsville has no student AI policy. Topic 4 is framed as "What should
+  the rule say?"
+- **2026-11-05, Jeff:** The exam is 25 multiple choice.
+
 ## Still open
-1. The school's AI policy, if one exists (the starting point for Topic 4).
-2. The exam length (or an old exam to copy the format from).
+- Jeff's approval of all four outlines. Then: find and check the videos and sources, build the
+  pages on a test branch, write the study guide and the exam document.
