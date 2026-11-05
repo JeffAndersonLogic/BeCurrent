@@ -5,14 +5,14 @@ const ROOT=path.resolve(__dirname,'../..'),read=p=>fs.readFileSync(path.join(ROO
 const topics=require('../lib/unit-content/midterms').topics;
 const build=child.spawnSync(process.execPath,['scripts/build-midterms.js','--check'],{cwd:ROOT,encoding:'utf8'});
 assert.strictEqual(build.status,0,build.stdout+build.stderr);
-// Midterms 6 (Topic 5) was rebuilt on 2026-11-05 as a single results lesson. CNN 10
-// opens its day, so after lunch is The Desk alone. The 55-minute unit block, the
+// Midterms 6 (Topic 5) was rebuilt on 2026-11-05 as a single results lesson. After
+// lunch keeps the standing CNN 10 then The Desk. The 55-minute unit block, the
 // ten filing minutes, the cue fields and the timeline still hold.
 function analysisProblems(lesson){
  const lunch=lesson.phases.findIndex(p=>p.kind==='break'),before=lesson.phases.slice(0,lunch);let cursor=0;
  return [lunch<1&&'no lunch break',
   before.reduce((a,p)=>a+p.minutes,0)!==55&&'the unit block is not 55 minutes',
-  JSON.stringify(lesson.phases.slice(lunch+1).map(p=>p.id))!=='["desk"]'&&'after lunch is not The Desk alone',
+  JSON.stringify(lesson.phases.slice(lunch+1).map(p=>p.id))!=='["cnn10","desk"]'&&'after lunch is not CNN 10 then The Desk',
   lesson.totalMinutes!==lesson.phases.reduce((a,p)=>a+p.minutes,0)&&'totalMinutes does not match the phases',
   lesson.phases[0].id!=='watch'&&'the day does not open with the videos',
   !(lesson.phases.find(p=>p.id==='file')?.minutes>=10)&&'filing has under ten minutes',
@@ -22,7 +22,7 @@ function analysisProblems(lesson){
  ].filter(Boolean);}
 {const good=require('../../teacher/data/midterms-block-05');assert.deepStrictEqual(analysisProblems(good),[]);
  const clone=()=>JSON.parse(JSON.stringify(good));
- for(const [mut,why] of [[l=>{l.phases.find(p=>p.id==='file').minutes=5;},'filing has under ten minutes'],[l=>{l.phases.push({...l.phases.at(-1),id:'cnn10'});},'after lunch is not The Desk alone'],[l=>{l.phases[1].intel.reteach='Try again.';},'a reteach cue is malformed'],[l=>{l.phases.reverse();},'the day does not open with the videos']]){const l=clone();mut(l);assert(analysisProblems(l).includes(why),'negative control should fail: '+why);}}
+ for(const [mut,why] of [[l=>{l.phases.find(p=>p.id==='file').minutes=5;},'filing has under ten minutes'],[l=>{l.phases=l.phases.filter(p=>p.id!=='cnn10');},'after lunch is not CNN 10 then The Desk'],[l=>{l.phases[1].intel.reteach='Try again.';},'a reteach cue is malformed'],[l=>{l.phases.reverse();},'the day does not open with the videos']]){const l=clone();mut(l);assert(analysisProblems(l).includes(why),'negative control should fail: '+why);}}
 for(const t of topics){
  const n=String(t.n).padStart(2,'0'),lesson=require('../../teacher/data/midterms-block-'+n);
  if(t.analysis)assert.deepStrictEqual(analysisProblems(lesson),[],'Topic '+t.n+' (rebuilt as Midterms 6)');

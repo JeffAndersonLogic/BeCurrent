@@ -1213,7 +1213,7 @@ Avoid: Do not ask students how they or their families would vote on any race or 
 
 Thursday, November 5, 2026. Rebuilt on the day (Jeff, 2026-11-05). Student page: `midterms/block-05.html`. 16 questions in 3 parts, gathered into the Canvas Text Entry `WP6 - Results and Impact` (5 points).
 
-Watch CNN 10 and three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.
+Watch three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.
 
 Question: Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?
 
@@ -1235,9 +1235,9 @@ Tuesday the class watched the votes come in; today they find out what happened a
 
 ### Running it
 
-CNN 10 opens the day, then the two analysis clips back to back. Release students to read the article on their own screens (read-aloud and voice typing are fine), answer Parts 1 and 2, then use the results links for Part 3. Protect the last ten minutes to finish, then Gather All My Work and the Canvas paste.
+Play the three clips back to back: CBS Mornings, then MS NOW, then ABC News. Release students to read the article on their own screens (read-aloud and voice typing are fine), answer Parts 1 and 2, then use the results links for Part 3. Protect the last ten minutes to finish, then Gather All My Work and the Canvas paste.
 
-The two YouTube clips’ run times were not checked automatically. Preview them before class and trim if needed. CNN 10 opens the day today, so after lunch go straight to The Desk.
+The YouTube clips’ run times were not checked automatically. Preview them before class and trim if needed. CNN 10 starts the after-lunch half, then The Desk.
 
 Avoid: Do not ask students how they or their families voted or feel about the result. The MS NOW clip is a host’s analysis with a point of view: name that out loud as a sourcing lesson, not as a side. Score accuracy and reasoning, never a position. Results this week are unofficial until certified.
 
@@ -1245,12 +1245,10 @@ Grading: Parts 1 and 2 have no single answer key: look for the article’s facts
 
 ### Clips
 
-- [CNN 10: today’s episode](https://www.cnn10.com/) · CNN 10 · News
-  Watch for: Listen for the election story. What is one result the show reports, and how does it say it knows?
-- [‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains](https://www.youtube.com/watch?v=qScvB287kSU) · MS NOW · Analysis by a TV host
-  Watch for: Rachel Maddow is a host who shares her own point of view. Listen for the difference between a fact (a number or a result) and her opinion about what it means.
 - [A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections](https://www.youtube.com/watch?v=KoW4tC_xoYg) · CBS Mornings · News report
   Watch for: Listen for one reason the reporters give for why voters chose Democrats. You will check that reason against the article.
+- [‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains](https://www.youtube.com/watch?v=qScvB287kSU) · MS NOW · Analysis by a TV host
+  Watch for: Rachel Maddow is a host who shares her own point of view. Listen for the difference between a fact (a number or a result) and her opinion about what it means.
 - [All eyes on the undecided Senate races in Alaska and Mississippi](https://www.youtube.com/watch?v=AW1a3Sz2KZ8) · ABC News · News report
   Watch for: Two Senate races are still too close to call. Which states are they, and why can nobody say who won yet?
 

@@ -29,15 +29,16 @@ const {topics}=require('../lib/unit-content/midterms');
   assert((await projection.locator('body').innerText()).includes('The Lead. Your Pick.'));
  }
  // Midterms 6 (Topic 5), rebuilt 2026-11-05: videos first, then reading, questions,
- // results and filing; after lunch is The Desk alone because CNN 10 opened the day.
+ // results and filing; after lunch is CNN 10, then The Desk.
  {await teacher.goto(root+'/teacher/midterms-topic-05-os.html');await projection.goto(root+'/teacher/midterms-topic-05-projector.html');
   const phases=await teacher.evaluate(()=>window.BECURRENT_CONTROL_LESSON.phases),ids=phases.map(p=>p.id);
-  assert.deepStrictEqual(ids,['watch','read','why','local','file','lunch','desk']);
+  assert.deepStrictEqual(ids,['watch','read','why','local','file','lunch','cnn10','desk']);
   assert.strictEqual(await teacher.locator('[data-phase-index]').count(),ids.length);assert.strictEqual(await teacher.textContent('#scene-title'),phases[0].screen.title);
   assert(await teacher.textContent('#intel-model'));assert.strictEqual(await projection.locator('#intel-model').count(),0);
   await teacher.locator('[data-phase-index="3"]').click();await projection.waitForFunction(()=>document.getElementById('projector-phase').textContent.startsWith('04'));
   assert(String(await projection.getAttribute('#projector-action','href')).includes('block-05.html#part-local'));
-  await teacher.locator('[data-phase-index="6"]').click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('/daily/'));}
+  await teacher.locator('[data-phase-index="6"]').click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('cnn.com/cnn10'));
+  await teacher.locator('[data-phase-index="7"]').click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('/daily/'));}
  // The new analysis section deep-links, syncs, and presents real comparison tables.
  await teacher.goto(root+'/teacher/midterms-topic-03-os.html');
  await projection.goto(root+'/teacher/midterms-topic-03-projector.html#scenario-three-outcomes');

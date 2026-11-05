@@ -1177,22 +1177,21 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "doNow": "What is one thing you have heard about Tuesday’s election results? Where did you hear it?",
       "agenda": [
         "Open Midterms 6: Election Results, What Happened and Why? on the Midterms page.",
-        "Watch together: CNN 10, then reports on Tuesday night from MS NOW, CBS Mornings and ABC News.",
+        "Watch together: three reports on Tuesday night, from CBS Mornings, MS NOW and ABC News.",
         "Read the article on the page: why voters chose Democrats, and a warning for the winners.",
         "Answer Questions 1 to 10 about the article in your own words.",
         "Part 3: find who won on Zionsville’s ballot, from the school referendum to Indiana’s Fourth District. Write the source for each.",
         "Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.",
-        "After lunch: daily news and your News Log on The Desk."
+        "After lunch: CNN 10, then daily news and your News Log on The Desk."
       ],
       "slides": [
         {
           "kicker": "Watch together",
           "title": "Tuesday night, explained",
           "bullets": [
-            "1. CNN 10: today’s episode",
+            "1. CBS Mornings: Democrats win control of the House and Senate",
             "2. MS NOW: Rachel Maddow on the scale of Democratic gains (a host’s analysis)",
-            "3. CBS Mornings: Democrats win control of the House and Senate",
-            "4. ABC News: the Senate races in Alaska and Mississippi still too close to call",
+            "3. ABC News: the Senate races in Alaska and Mississippi still too close to call",
             "Listen for: which parts are facts, and which parts are someone’s opinion about what the facts mean?"
           ]
         },

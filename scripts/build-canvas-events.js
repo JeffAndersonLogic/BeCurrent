@@ -502,7 +502,7 @@ ${rubric}
   const banner = (ASSIGNMENTS[code] && ASSIGNMENTS[code].banner) || `Topic ${topic.n}`;
   return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(banner)}`,
     esc(plain(topic.title))), rows)}
-<p>After lunch: daily reporting through The Desk.</p>`;
+<p>After lunch: CNN10 and daily reporting through The Desk.</p>`;
 }
 
 function renderAssignments(unit) {

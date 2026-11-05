@@ -5,44 +5,38 @@
   "unit": "Who Has the Power?",
   "title": "Election Results: What Happened and Why?",
   "question": "Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?",
-  "totalMinutes": 70,
+  "totalMinutes": 80,
   "unitMinutes": 55,
-  "newsMinutes": 15,
+  "newsMinutes": 25,
   "storageKey": "bc-current-control-midterms-05",
   "phases": [
     {
       "id": "watch",
-      "label": "Watch together / four videos",
+      "label": "Watch together / three videos",
       "kind": "watch",
       "time": "0–18",
       "start": 0,
       "minutes": 18,
       "screen": {
-        "eyebrow": "Midterms 6 / Watch together / four videos",
+        "eyebrow": "Midterms 6 / Watch together / three videos",
         "title": "Tuesday night, explained",
-        "description": "Play the four videos back to back. No writing yet; students listen for each Watch for question.",
+        "description": "Play the three videos back to back. No writing yet; students listen for each Watch for question.",
         "action": {
-          "url": "https://www.cnn10.com/",
-          "label": "Start with video 1: CNN 10"
+          "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
+          "label": "Start with video 1: CBS Mornings"
         },
         "links": [
           {
-            "title": "CNN 10: today’s episode",
-            "url": "https://www.cnn10.com/",
-            "source": "CNN 10",
-            "length": "News"
+            "title": "A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections",
+            "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
+            "source": "CBS Mornings",
+            "length": "News report"
           },
           {
             "title": "‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains",
             "url": "https://www.youtube.com/watch?v=qScvB287kSU",
             "source": "MS NOW",
             "length": "Analysis by a TV host"
-          },
-          {
-            "title": "A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections",
-            "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
-            "source": "CBS Mornings",
-            "length": "News report"
           },
           {
             "title": "All eyes on the undecided Senate races in Alaska and Mississippi",
@@ -57,8 +51,8 @@
         "ask": "Listen for one reason the reporters give for why voters chose Democrats. You will check that reason against the article.",
         "listenFor": "Students separating a reported result from a host’s opinion about it.",
         "protect": "Keep unit work before lunch.",
-        "cut": "Play CNN 10, the CBS report and the ABC report.",
-        "move": "Play the four clips back to back. No writing yet.",
+        "cut": "Play the CBS report and the ABC report.",
+        "move": "Play the three clips back to back. No writing yet.",
         "model": "“CBS reports Democrats won both chambers. Maddow says this means ____: that part is her opinion.”",
         "story": "Tuesday the class watched the votes come in; today they find out what happened and why. The clips give the headline, the article gives the reasons from a survey of real voters, and Part 3 brings it home to the races on Zionsville’s own ballot. The through line is sourcing: a TV host’s analysis, a news report, a voter poll and an official county results file are four different kinds of evidence.",
         "avoid": "Do not ask students how they or their families voted or feel about the result. The MS NOW clip is a host’s analysis with a point of view: name that out loud as a sourcing lesson, not as a side. Score accuracy and reasoning, never a position. Results this week are unofficial until certified.",
@@ -225,11 +219,39 @@
       }
     },
     {
+      "id": "cnn10",
+      "label": "After lunch / CNN10",
+      "kind": "news",
+      "time": "After lunch · 10 min",
+      "start": 55,
+      "minutes": 10,
+      "screen": {
+        "eyebrow": "After lunch / CNN10",
+        "title": "Now, the wider world.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
+        "action": {
+          "url": "https://www.cnn.com/cnn10",
+          "label": "Open CNN10"
+        }
+      },
+      "intel": {
+        "land": "Identify a concrete event and a supported consequence.",
+        "ask": "What happened, and which fact explains why it matters?",
+        "listenFor": "A specific event, named source, and consequence.",
+        "protect": "Keep this news block after lunch.",
+        "cut": "Use one teacher-led example; skip extended discussion.",
+        "move": "Watch the latest school-day CNN10, then move to The Desk.",
+        "model": "[Named source] reports [specific event]. It matters because [supported consequence].",
+        "avoid": "Do not confuse a browser draft with a submitted Canvas entry.",
+        "reteach": "Model one concise event-and-significance sentence and have students use a different supported fact."
+      }
+    },
+    {
       "id": "desk",
       "label": "After lunch / daily news",
       "kind": "news",
       "time": "After lunch · 15 min",
-      "start": 55,
+      "start": 65,
       "minutes": 15,
       "screen": {
         "eyebrow": "After lunch / daily news",

@@ -344,7 +344,7 @@ _Why voters chose what they did, and what happened here at home_
 
 ### Overview
 
-Watch CNN 10 and three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.
+Watch three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.
 
 ### Learning targets
 

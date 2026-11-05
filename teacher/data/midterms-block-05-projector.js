@@ -5,44 +5,38 @@ window.BECURRENT_PROJECTOR_LESSON = {
   "unit": "Who Has the Power?",
   "title": "Election Results: What Happened and Why?",
   "question": "Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?",
-  "totalMinutes": 70,
+  "totalMinutes": 80,
   "unitMinutes": 55,
-  "newsMinutes": 15,
+  "newsMinutes": 25,
   "storageKey": "bc-current-control-midterms-05",
   "phases": [
     {
       "id": "watch",
-      "label": "Watch together / four videos",
+      "label": "Watch together / three videos",
       "kind": "watch",
       "time": "0–18",
       "start": 0,
       "minutes": 18,
       "screen": {
-        "eyebrow": "Midterms 6 / Watch together / four videos",
+        "eyebrow": "Midterms 6 / Watch together / three videos",
         "title": "Tuesday night, explained",
-        "description": "Play the four videos back to back. No writing yet; students listen for each Watch for question.",
+        "description": "Play the three videos back to back. No writing yet; students listen for each Watch for question.",
         "action": {
-          "url": "https://www.cnn10.com/",
-          "label": "Start with video 1: CNN 10"
+          "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
+          "label": "Start with video 1: CBS Mornings"
         },
         "links": [
           {
-            "title": "CNN 10: today’s episode",
-            "url": "https://www.cnn10.com/",
-            "source": "CNN 10",
-            "length": "News"
+            "title": "A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections",
+            "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
+            "source": "CBS Mornings",
+            "length": "News report"
           },
           {
             "title": "‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains",
             "url": "https://www.youtube.com/watch?v=qScvB287kSU",
             "source": "MS NOW",
             "length": "Analysis by a TV host"
-          },
-          {
-            "title": "A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections",
-            "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
-            "source": "CBS Mornings",
-            "length": "News report"
           },
           {
             "title": "All eyes on the undecided Senate races in Alaska and Mississippi",
@@ -154,11 +148,28 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
+      "id": "cnn10",
+      "label": "After lunch / CNN10",
+      "kind": "news",
+      "time": "After lunch · 10 min",
+      "start": 55,
+      "minutes": 10,
+      "screen": {
+        "eyebrow": "After lunch / CNN10",
+        "title": "Now, the wider world.",
+        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
+        "action": {
+          "url": "https://www.cnn.com/cnn10",
+          "label": "Open CNN10"
+        }
+      }
+    },
+    {
       "id": "desk",
       "label": "After lunch / daily news",
       "kind": "news",
       "time": "After lunch · 15 min",
-      "start": 55,
+      "start": 65,
       "minutes": 15,
       "screen": {
         "eyebrow": "After lunch / daily news",

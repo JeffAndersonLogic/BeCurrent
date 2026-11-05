@@ -1,8 +1,8 @@
 'use strict';
 // Midterms 6, Election Results: What Happened and Why? Taught Thursday, November 5, 2026.
 //
-// Jeff, 2026-11-05: today's plan was scrapped and rebuilt. Four clips open the day
-// (CNN 10, two analyses of Tuesday night, then ABC News on the races still undecided), students read a plain-language version
+// Jeff, 2026-11-05: today's plan was scrapped and rebuilt. Three clips open the day
+// (CBS Mornings, MS NOW, then ABC News on the races still undecided; CNN 10 starts the after-lunch half), students read a plain-language version
 // of a PBS NewsHour / Associated Press article about why voters chose Democrats, answer
 // ten questions on it, then look up the results on Zionsville's own ballot. Every
 // answer is a data-slot, so Gather All My Work carries it into the Canvas Text Entry
@@ -32,7 +32,7 @@ const lesson={
  reviewed,
  title:'Election Results: What Happened and Why?',
  subtitle:'Why voters chose what they did, and what happened here at home',
- overview:'Watch CNN 10 and three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.',
+ overview:'Watch three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.',
  question:'Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?',
  hook:'What is one thing you have heard about Tuesday’s election results? Where did you hear it?',
  points:5,
@@ -48,10 +48,9 @@ const lesson={
  ],
  // Watch together, in this order. Links open in a new tab, never embedded.
  clips:[
-  {title:'CNN 10: today’s episode',url:'https://www.cnn10.com/',source:'CNN 10',kind:'News',prompt:'Listen for the election story. What is one result the show reports, and how does it say it knows?'},
-  {title:'‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains',url:'https://www.youtube.com/watch?v=qScvB287kSU',source:'MS NOW',kind:'Analysis by a TV host',prompt:'Rachel Maddow is a host who shares her own point of view. Listen for the difference between a fact (a number or a result) and her opinion about what it means.'},
   {title:'A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections',url:'https://www.youtube.com/watch?v=KoW4tC_xoYg',source:'CBS Mornings',kind:'News report',prompt:'Listen for one reason the reporters give for why voters chose Democrats. You will check that reason against the article.'},
-  // Jeff, 2026-11-05: added to the opening videos.
+  {title:'‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains',url:'https://www.youtube.com/watch?v=qScvB287kSU',source:'MS NOW',kind:'Analysis by a TV host',prompt:'Rachel Maddow is a host who shares her own point of view. Listen for the difference between a fact (a number or a result) and her opinion about what it means.'},
+  // Jeff, 2026-11-05: added to the opening videos, third.
   {title:'All eyes on the undecided Senate races in Alaska and Mississippi',url:'https://www.youtube.com/watch?v=AW1a3Sz2KZ8',source:'ABC News',kind:'News report',prompt:'Two Senate races are still too close to call. Which states are they, and why can nobody say who won yet?'}
  ],
  // The plain-language version. Our words; the article's numbers, attributed.
@@ -138,11 +137,11 @@ const lesson={
   land:'Election results tell us what happened; a voter survey helps explain why; official results files tell us what happened here.',
   avoid:'Do not ask students how they or their families voted or feel about the result. The MS NOW clip is a host’s analysis with a point of view: name that out loud as a sourcing lesson, not as a side. Score accuracy and reasoning, never a position. Results this week are unofficial until certified.',
   answer:'Parts 1 and 2 have no single answer key: look for the article’s facts in the student’s own words plus a because. Part 3 answers come from the Boone County results file and the state results site; check them against the county file before grading.',
-  run:'CNN 10 opens the day, then the two analysis clips back to back. Release students to read the article on their own screens (read-aloud and voice typing are fine), answer Parts 1 and 2, then use the results links for Part 3. Protect the last ten minutes to finish, then Gather All My Work and the Canvas paste.',
-  clipNote:'The two YouTube clips’ run times were not checked automatically. Preview them before class and trim if needed. CNN 10 opens the day today, so after lunch go straight to The Desk.',
+  run:'Play the three clips back to back: CBS Mornings, then MS NOW, then ABC News. Release students to read the article on their own screens (read-aloud and voice typing are fine), answer Parts 1 and 2, then use the results links for Part 3. Protect the last ten minutes to finish, then Gather All My Work and the Canvas paste.',
+  clipNote:'The YouTube clips’ run times were not checked automatically. Preview them before class and trim if needed. CNN 10 starts the after-lunch half, then The Desk.',
   timing:{watch:18,read:7,why:12,local:8,file:10},
   phases:{
-   watch:{model:'“CBS reports Democrats won both chambers. Maddow says this means ____: that part is her opinion.”',lookFor:'Students separating a reported result from a host’s opinion about it.',cut:'Play CNN 10, the CBS report and the ABC report.',move:'Play the four clips back to back. No writing yet.',reteach:'If most students mix up fact and opinion, pause once and ask: is that a number, or what someone thinks the number means?'},
+   watch:{model:'“CBS reports Democrats won both chambers. Maddow says this means ____: that part is her opinion.”',lookFor:'Students separating a reported result from a host’s opinion about it.',cut:'Play the CBS report and the ABC report.',move:'Play the three clips back to back. No writing yet.',reteach:'If most students mix up fact and opinion, pause once and ask: is that a number, or what someone thinks the number means?'},
    read:{model:'Section 1 says about 6 in 10 voters were “very concerned” about food costs.',lookFor:'Students reading all five sections before starting the questions.',cut:'Read Sections 1, 3 and 5 aloud together, then release.',move:'Students read the five short sections on their own screens. Read aloud for anyone who needs it.',reteach:'If most students skim past the numbers, ask for one number from the section and what it measures.'},
    why:{model:'Prices hurt the president’s party because voters blame whoever is in charge when life gets more expensive.',lookFor:'A fact from the article plus a because.',cut:'Require Questions 1, 2, 4, 8 and 10; the rest are welcome.',move:'Circulate. Push for “why”, not just “what”.',reteach:'If most students only restate facts, give the frame: The article says ____. This matters because ____.'},
    local:{model:'Model one lookup on the projector: open the county file, Ctrl+F “Public Question”, and read the YES and NO lines aloud without answering any student question.',lookFor:'A result plus a named source for each answer.',cut:'Require Questions 11, 14 and 16.',move:'Students use the result links. Remind them results are unofficial.',reteach:'If most students cannot find a race, show how to search the PDF for its name with Ctrl+F.'},

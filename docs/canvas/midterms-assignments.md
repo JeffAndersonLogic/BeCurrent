@@ -526,7 +526,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Watch CNN 10 and three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.</p>
+                <p>Watch three reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.</p>
             </td>
         </tr>
         <tr>
@@ -588,5 +588,5 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
         </tr>
     </tbody>
 </table>
-<p>After lunch: daily reporting through The Desk.</p>
+<p>After lunch: CNN10 and daily reporting through The Desk.</p>
 ```
