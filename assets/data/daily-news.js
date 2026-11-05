@@ -14,12 +14,12 @@ window.BECURRENT_DAILY_NEWS = {
   },
   wire: [
     {
-      category: "World / International",
-      headline: "Hoax bomb threats affect at least 20 European flights within hours",
-      dek: "At least 20 flights in Europe deal with bomb threats, adding to what one expert calls an unusual level of hoaxes in a short time period, suggesting",
+      category: "World / Security",
+      headline: "Oil prices rebound slightly as Iran claims new attacks on ships",
+      dek: "Oil rebounds slightly as ships continue coming under attack in the Persian Gulf after prices plunged following President Trump",
       source: "CBS News",
       published: "November 5, 2026",
-      url: "https://www.cbsnews.com/news/europe-flights-airlines-hoax-bomb-threats/"
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
     },
     {
       category: "Economy",
@@ -30,20 +30,20 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.npr.org/2026/11/05/nx-s1-6029365/gas-diesel-price-congress-midterms"
     },
     {
-      category: "U.S. / National",
-      headline: "Democrats win House majority with Trump approval at historic low",
-      dek: "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
+      category: "U.S. / Democracy",
+      headline: "Dow posts biggest gain of the year after Democrats sweep Congress",
+      dek: "The Dow soared nearly 1,600 points, as Wall Street analysts predicted that political gridlock would limit Congress",
       source: "CBS News",
-      published: "November 5, 2026",
-      url: "https://www.cbsnews.com/live-updates/house-election-results-2026/"
+      published: "November 4, 2026",
+      url: "https://www.cbsnews.com/news/stock-market-soar-democrats-take-control-of-congress/"
     },
     {
       category: "U.S. / National",
-      headline: "Trump's lawyers to argue appeal in \"hush money\" case",
-      dek: "President Trump was convicted in 2024 of 34 felonies tied to a 2016",
+      headline: "McDonald's plans to cook up new affordable menu bundles",
+      dek: "McDonald",
       source: "CBS News",
       published: "November 5, 2026",
-      url: "https://www.cbsnews.com/news/trump-hush-money-conviction-appeal/"
+      url: "https://www.cbsnews.com/news/mcdonalds-value-menu-cheaper-items-sales/"
     }
   ]
 };
