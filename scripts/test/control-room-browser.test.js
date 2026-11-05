@@ -5,6 +5,7 @@ const {topics}=require('../lib/unit-content/midterms');
 (async()=>{const {browser,server,root}=await open(),context=await browser.newContext({viewport:{width:1365,height:900}}),teacher=await context.newPage(),projection=await context.newPage(),errors=[];
  teacher.setDefaultTimeout(7000);projection.setDefaultTimeout(7000);teacher.on('pageerror',e=>errors.push(e.message));projection.on('pageerror',e=>errors.push(e.message));
  try{for(const t of topics){
+  if(t.analysis)continue; // Midterms 6, rebuilt 2026-11-05: checked on its own below.
   const n=String(t.n).padStart(2,'0'),os=t.n===1?'midterms-run-of-show.html':'midterms-topic-'+n+'-os.html',project=t.n===1?'midterms-projector.html':'midterms-topic-'+n+'-projector.html';
   await teacher.goto(root+'/teacher/'+os);await projection.goto(root+'/teacher/'+project);
   // Slides are found by id, not position: note-taking slides sit between the activities.
@@ -27,6 +28,16 @@ const {topics}=require('../lib/unit-content/midterms');
   await teacher.locator(`[data-phase-index="${at('desk')}"]`).click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('/daily/'));
   assert((await projection.locator('body').innerText()).includes('The Lead. Your Pick.'));
  }
+ // Midterms 6 (Topic 5), rebuilt 2026-11-05: videos first, then reading, questions,
+ // results and filing; after lunch is The Desk alone because CNN 10 opened the day.
+ {await teacher.goto(root+'/teacher/midterms-topic-05-os.html');await projection.goto(root+'/teacher/midterms-topic-05-projector.html');
+  const phases=await teacher.evaluate(()=>window.BECURRENT_CONTROL_LESSON.phases),ids=phases.map(p=>p.id);
+  assert.deepStrictEqual(ids,['watch','read','why','local','file','lunch','desk']);
+  assert.strictEqual(await teacher.locator('[data-phase-index]').count(),ids.length);assert.strictEqual(await teacher.textContent('#scene-title'),phases[0].screen.title);
+  assert(await teacher.textContent('#intel-model'));assert.strictEqual(await projection.locator('#intel-model').count(),0);
+  await teacher.locator('[data-phase-index="3"]').click();await projection.waitForFunction(()=>document.getElementById('projector-phase').textContent.startsWith('04'));
+  assert(String(await projection.getAttribute('#projector-action','href')).includes('block-05.html#part-local'));
+  await teacher.locator('[data-phase-index="6"]').click();await projection.waitForFunction(()=>document.getElementById('projector-action').href.includes('/daily/'));}
  // The new analysis section deep-links, syncs, and presents real comparison tables.
  await teacher.goto(root+'/teacher/midterms-topic-03-os.html');
  await projection.goto(root+'/teacher/midterms-topic-03-projector.html#scenario-three-outcomes');

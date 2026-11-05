@@ -9,6 +9,7 @@ const {topics}=require('../lib/unit-content/midterms');
  await page.addInitScript(()=>localStorage.setItem('bcv2-video-first-view','teacher'));
  try{
  for(const t of topics){
+  if(t.analysis)continue; // Midterms 6, rebuilt 2026-11-05: driven on its own below.
   await page.goto(root+'/midterms/'+t.page);
   // Each topic owns a distinct saved record; a new topic starts with empty writing.
   assert(await page.isVisible('#student-flow'));assert.strictEqual(await page.inputValue('#report-response'),'');
@@ -118,7 +119,8 @@ const {topics}=require('../lib/unit-content/midterms');
  assert.strictEqual(await introChapter.locator('.clip-card').count(),2);
  assert.strictEqual(await page.locator('#chapter-2 .clip-card,#chapter-3 .clip-card').count(),0);
  assert.strictEqual(await page.locator('[data-slot]').count(),8);
- for(const n of [3,5]){
+ // Topic 3's bill lab. (Topic 5's election-desk cards went with the 2026-11-05 rebuild.)
+ for(const n of [3]){
   await page.goto(root+'/midterms/block-0'+n+'.html');
   const card=page.locator('.decision-card summary').first();
   await card.focus();await page.keyboard.press('Enter');
@@ -142,6 +144,28 @@ const {topics}=require('../lib/unit-content/midterms');
  // The investigation is readable even before its enhancement script runs.
  const nojs=await browser.newContext({javaScriptEnabled:false});const plainPage=await nojs.newPage();await plainPage.goto(root+'/midterms/block-01.html');
  for(const chapter of await plainPage.locator('[data-student-chapter]').all())assert(await chapter.isVisible());await nojs.close();
+ // Midterms 6 (Topic 5), rebuilt 2026-11-05: every answer saves, survives a reload,
+ // gathers, and parses back through the real parser in both clipboard flavours.
+ {const t=topics.find(x=>x.analysis),qs=t.analysis.parts.flatMap(p=>p.questions);
+  await page.goto(root+'/midterms/'+t.page);
+  assert(await page.isVisible('#student-flow'));
+  const ids=await page.locator('[data-slot]').evaluateAll(els=>els.map(e=>e.id));
+  assert.deepStrictEqual(ids,qs.map(q=>q.id),'one saved box per question, in order');
+  for(const id of ids)assert.strictEqual(await page.inputValue('#'+id),'','a new lesson starts empty');
+  await page.click('#gather-work');
+  await page.waitForFunction(()=>document.getElementById('copy-status').textContent.includes('missing'));
+  for(const id of ids)await page.fill('#'+id,'Midterms 6 '+id+' answer, because the source says so.');
+  await page.reload();assert((await page.inputValue('#wp6-advice')).includes('wp6-advice'),'typing survives a reload');
+  await page.evaluate(()=>{window.__copiedHtml=''});await page.click('#gather-work');
+  const plain=await page.inputValue('#copy-preview');assert(plain.includes('Midterms 6\n'+t.title));assert(plain.includes('topic='+t.analysis.key));
+  const parsed=CORE.parseSubmission(plain,'studenttest_1_2_text.txt');assert(parsed.hasManifest);assert.strictEqual(parsed.responses.length,qs.length);assert.deepStrictEqual(parsed.exceptions,[]);
+  await page.waitForFunction(()=>window.__copiedHtml&&window.__copiedHtml.includes('wp6-matters answer'));
+  const htmlParsed=CORE.parseSubmission(CORE.htmlToText('<html><body>'+await page.evaluate(()=>window.__copiedHtml)+'</body></html>'),'studenttest_1_2_text.html');
+  assert.strictEqual(htmlParsed.responses.length,qs.length);assert.deepStrictEqual(htmlParsed.exceptions,[]);
+  await page.fill('#wp6-reasons','Revised after gathering.');await page.click('#gather-work');
+  const fresh=CORE.parseSubmission(await page.inputValue('#copy-preview'),'studenttest_1_2_text.txt');assert.deepStrictEqual(fresh.exceptions,[]);assert((await page.inputValue('#copy-preview')).includes('Revised after gathering.'));
+  for(const c of t.analysis.clips)assert.strictEqual(await page.locator(`a[href="${c.url}"][target="_blank"]`).count(),1,'clip opens in a new tab: '+c.url);
+  await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Midterms 6 overflows on a phone');await page.setViewportSize({width:1365,height:900});}
  assert.deepStrictEqual(errors,[]);console.log('PASS: five continuous lessons, no student presentation controls, named draft/missing states, item-specific feedback, fresh manual copy after edits, legacy planning preserved, saved work, results notebook, Canvas round trips, desktop/mobile target layout, no-JS reading.');
  }finally{await context.close();await browser.close();server.close()}
 })().catch(e=>{console.error(e.stack||e);process.exit(1)});

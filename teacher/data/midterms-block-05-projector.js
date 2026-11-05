@@ -12,15 +12,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
   "phases": [
     {
       "id": "watch",
-      "label": "Watch together / three videos",
+      "label": "Watch together / four videos",
       "kind": "watch",
       "time": "0–18",
       "start": 0,
       "minutes": 18,
       "screen": {
-        "eyebrow": "Midterms 6 / Watch together / three videos",
+        "eyebrow": "Midterms 6 / Watch together / four videos",
         "title": "Tuesday night, explained",
-        "description": "Play the three videos back to back. No writing yet; students listen for each Watch for question.",
+        "description": "Play the four videos back to back. No writing yet; students listen for each Watch for question.",
         "action": {
           "url": "https://www.cnn10.com/",
           "label": "Start with video 1: CNN 10"
@@ -42,6 +42,12 @@ window.BECURRENT_PROJECTOR_LESSON = {
             "title": "A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections",
             "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
             "source": "CBS Mornings",
+            "length": "News report"
+          },
+          {
+            "title": "All eyes on the undecided Senate races in Alaska and Mississippi",
+            "url": "https://www.youtube.com/watch?v=AW1a3Sz2KZ8",
+            "source": "ABC News",
             "length": "News report"
           }
         ]

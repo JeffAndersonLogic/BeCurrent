@@ -12,15 +12,15 @@
   "phases": [
     {
       "id": "watch",
-      "label": "Watch together / three videos",
+      "label": "Watch together / four videos",
       "kind": "watch",
       "time": "0–18",
       "start": 0,
       "minutes": 18,
       "screen": {
-        "eyebrow": "Midterms 6 / Watch together / three videos",
+        "eyebrow": "Midterms 6 / Watch together / four videos",
         "title": "Tuesday night, explained",
-        "description": "Play the three videos back to back. No writing yet; students listen for each Watch for question.",
+        "description": "Play the four videos back to back. No writing yet; students listen for each Watch for question.",
         "action": {
           "url": "https://www.cnn10.com/",
           "label": "Start with video 1: CNN 10"
@@ -43,6 +43,12 @@
             "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
             "source": "CBS Mornings",
             "length": "News report"
+          },
+          {
+            "title": "All eyes on the undecided Senate races in Alaska and Mississippi",
+            "url": "https://www.youtube.com/watch?v=AW1a3Sz2KZ8",
+            "source": "ABC News",
+            "length": "News report"
           }
         ]
       },
@@ -51,8 +57,8 @@
         "ask": "Listen for one reason the reporters give for why voters chose Democrats. You will check that reason against the article.",
         "listenFor": "Students separating a reported result from a host’s opinion about it.",
         "protect": "Keep unit work before lunch.",
-        "cut": "Play CNN 10 and one analysis clip.",
-        "move": "Play the three clips back to back. No writing yet.",
+        "cut": "Play CNN 10, the CBS report and the ABC report.",
+        "move": "Play the four clips back to back. No writing yet.",
         "model": "“CBS reports Democrats won both chambers. Maddow says this means ____: that part is her opinion.”",
         "story": "Tuesday the class watched the votes come in; today they find out what happened and why. The clips give the headline, the article gives the reasons from a survey of real voters, and Part 3 brings it home to the races on Zionsville’s own ballot. The through line is sourcing: a TV host’s analysis, a news report, a voter poll and an official county results file are four different kinds of evidence.",
         "avoid": "Do not ask students how they or their families voted or feel about the result. The MS NOW clip is a host’s analysis with a point of view: name that out loud as a sourcing lesson, not as a side. Score accuracy and reasoning, never a position. Results this week are unofficial until certified.",
