@@ -15,11 +15,11 @@ window.BECURRENT_DAILY_NEWS = {
   wire: [
     {
       category: "World / International",
-      headline: "World leaders who sparred with Trump express mix of relief, caution at GOP election rout",
-      dek: "British Prime Minister Andy Burnham expressed hope the election results would focus minds in Washington and other capitals on ending the Iran war, which has sent fuel prices soaring — a major source of frustration for voters.",
-      source: "PBS News",
-      published: "November 4, 2026",
-      url: "https://www.pbs.org/newshour/world/world-leaders-who-sparred-with-trump-express-mix-of-relief-caution-at-gop-election-rout"
+      headline: "Hoax bomb threats affect at least 20 European flights within hours",
+      dek: "At least 20 flights in Europe deal with bomb threats, adding to what one expert calls an unusual level of hoaxes in a short time period, suggesting",
+      source: "CBS News",
+      published: "November 5, 2026",
+      url: "https://www.cbsnews.com/news/europe-flights-airlines-hoax-bomb-threats/"
     },
     {
       category: "Economy",
@@ -31,19 +31,19 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "U.S. / National",
+      headline: "Democrats win House majority with Trump approval at historic low",
+      dek: "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
+      source: "CBS News",
+      published: "November 5, 2026",
+      url: "https://www.cbsnews.com/live-updates/house-election-results-2026/"
+    },
+    {
+      category: "U.S. / National",
       headline: "Trump's lawyers to argue appeal in \"hush money\" case",
       dek: "President Trump was convicted in 2024 of 34 felonies tied to a 2016",
       source: "CBS News",
       published: "November 5, 2026",
       url: "https://www.cbsnews.com/news/trump-hush-money-conviction-appeal/"
-    },
-    {
-      category: "World / International",
-      headline: "Hoax bomb threats affect at least 20 European flights within hours",
-      dek: "At least 20 flights in Europe deal with bomb threats, adding to what one expert calls an unusual level of hoaxes in a short time period, suggesting",
-      source: "CBS News",
-      published: "November 5, 2026",
-      url: "https://www.cbsnews.com/news/europe-flights-airlines-hoax-bomb-threats/"
     }
   ]
 };
