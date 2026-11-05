@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-05",
   lead: {
-    category: "U.S. / Democracy",
-    headline: "Midterm voters rebuke Trump, handing Democrats both chambers of Congress",
-    dek: "Voters delivered a sweeping rebuke of President Trump and his party in the midterms, handing Democrats major victories and dramatically reshaping the balance of power in Washington. Trump now enters a lame duck phase of his second term, promising both to use his veto power, and also to work across t",
-    source: "PBS News",
-    published: "November 4, 2026",
-    url: "https://www.pbs.org/newshour/show/midterm-voters-rebuke-trump-handing-democrats-both-chambers-of-congress",
-    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/shift-1024x683.jpg",
-    imageCredit: "Image: PBS News",
-    imageCreditUrl: "https://www.pbs.org/newshour/show/midterm-voters-rebuke-trump-handing-democrats-both-chambers-of-congress"
+    category: "World / Security",
+    headline: "Oil prices rebound slightly as Iran claims new attacks on ships",
+    dek: "Oil rebounds slightly as ships continue coming under attack in the Persian Gulf after prices plunged following President Trump",
+    source: "CBS News",
+    published: "November 5, 2026",
+    url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/05/365928ef-6306-4d5e-a1af-d30458e6d47c/thumbnail/1200x630/184b7d2311ea1b632b63bf39384d2bba/ship-oman-persian-gulf-2299514328.jpg",
+    imageCredit: "Image: CBS News",
+    imageCreditUrl: "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
   },
   wire: [
     {
-      category: "World / Security",
-      headline: "Oil prices rebound slightly as Iran claims new attacks on ships",
-      dek: "Oil rebounds slightly as ships continue coming under attack in the Persian Gulf after prices plunged following President Trump",
+      category: "U.S. / National",
+      headline: "Gluesenkamp Perez wins competitive Washington race",
+      dek: "The congresswoman beat Republican state Sen. John Braun in a district President Trump has won three times.",
       source: "CBS News",
       published: "November 5, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/"
+      url: "https://www.cbsnews.com/news/washington-3rd-district-results-marie-gluesenkamp-perez-john-braun/"
     },
     {
-      category: "Economy",
-      headline: "Does the blue wave mean lower gasoline and diesel prices soon? Don't hold your breath",
-      dek: "A new Democratic majority in Congress could pressure the president to end the war in Iran. But it will be harder for them to directly affect fuel prices, which are tied to a complex international oil market.",
-      source: "NPR",
+      category: "Technology",
+      headline: "Stocks crater as midterms spur investor exodus from tech and AI",
+      dek: "Tech-heavy Nasdaq plunges nearly 1,300 points as Wall Street weighs the impact of Democratic wins on the AI sector.",
+      source: "CBS News",
       published: "November 5, 2026",
-      url: "https://www.npr.org/2026/11/05/nx-s1-6029365/gas-diesel-price-congress-midterms"
+      url: "https://www.cbsnews.com/news/stocks-midterm-elections-tech-companies-ai-data-centers/"
     },
     {
       category: "U.S. / Democracy",
-      headline: "Dow posts biggest gain of the year after Democrats sweep Congress",
-      dek: "The Dow soared nearly 1,600 points, as Wall Street analysts predicted that political gridlock would limit Congress",
-      source: "CBS News",
-      published: "November 4, 2026",
-      url: "https://www.cbsnews.com/news/stock-market-soar-democrats-take-control-of-congress/"
-    },
-    {
-      category: "U.S. / National",
-      headline: "McDonald's plans to cook up new affordable menu bundles",
-      dek: "McDonald",
+      headline: "All the House districts that flipped in the midterm elections",
+      dek: "Democrats won control of the House on Tuesday by flipping more than two dozen Republican-held seats, picking up perennial swing districts and seats that were once considered deep red.",
       source: "CBS News",
       published: "November 5, 2026",
-      url: "https://www.cbsnews.com/news/mcdonalds-value-menu-cheaper-items-sales/"
+      url: "https://www.cbsnews.com/news/house-districts-flipped-2026-midterm-elections/"
+    },
+    {
+      category: "World / International",
+      headline: "Mexican judge accused by U.S. of taking bribes in major drug case",
+      dek: "Luiz Ben&iacute;tez Alc&aacute;ntara is accused of releasing Andrew Clark from custody after accepting $2 million in bribe payments.",
+      source: "CBS News",
+      published: "November 5, 2026",
+      url: "https://www.cbsnews.com/news/mexican-judge-arrested-accused-us-bribes-drug-case-ryan-wedding/"
     }
   ]
 };
