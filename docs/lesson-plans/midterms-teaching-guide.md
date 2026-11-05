@@ -1254,25 +1254,25 @@ Grading: Parts 1 and 2 have no single answer key: look for the article’s facts
 
 ### The article
 
-[How Trump and Republicans lost the 2026 midterm elections, according to the Associated Press voter poll](https://www.pbs.org/newshour/politics/how-trump-and-republicans-lost-the-2026-midterm-elections-according-to-ap-voter-poll), Josh Boak, Hyojin Yoo and Humera Lodhi, Associated Press, PBS NewsHour, November 4, 2026. The student page carries a plain-language summary in our own words with the poll's numbers, not the article's text.
+[How Trump and Republicans lost the 2026 midterm elections, according to the Associated Press voter poll](https://www.pbs.org/newshour/politics/how-trump-and-republicans-lost-the-2026-midterm-elections-according-to-ap-voter-poll), Josh Boak, Hyojin Yoo and Humera Lodhi, Associated Press, PBS NewsHour, November 4, 2026. The student page links to the full article and carries no summary of it (removed 2026-11-05: a summary gave away the answers). Print it from pbs.org for the paper route.
 
 ### Questions
 
 **Part 1: Why did Democrats win?**
 
-1. Section 1 to 4. Name two reasons the article gives for why Republicans lost. Use your own words.
+1. Look across the whole article. Name two reasons the article gives for why Republicans lost. Use your own words.
    Start here: One reason is ____. Another reason is ____.
-2. Section 1. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?
+2. Look in the part about rising prices. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?
    Start here: Prices hurt the president’s party because voters ____.
-3. Section 1. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?
+3. Look in the part about rising prices. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?
    Start here: It tells me that prices ____ because ____.
-4. Section 1. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?
+4. Look in the part about rising prices and the president’s policies. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?
    Start here: Voters chose a Democrat for Congress because ____.
-5. Section 2. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?
+5. Look in the part about corruption. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?
    Start here: Corruption is ____. A voter might care because ____.
-6. Section 3. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?
+6. Look in the part about Congress. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?
    Start here: To check the president means ____. It is surprising because ____.
-7. Section 4. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?
+7. Look in the part about weak candidates. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?
    Start here: In ____, voters thought ____. This hurt Republicans because ____.
 
 **Part 2: A warning for the winners**

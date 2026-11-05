@@ -95,7 +95,7 @@ for(const t of unit.topics){
   !(p.includes('id="gather-work"')&&p.includes('id="copy-preview"')&&p.includes('video-first-record.js')&&p.includes('video-first.js')&&p.includes('id="student-flow"'))&&'no gather route',
   a.clips.some(c=>!ext(p,c.url))&&'a clip link is missing',
   !ext(p,a.article.url)&&'the full article is not linked',
-  !p.includes('written for our class')&&'the summary is not labeled as ours',
+  /article-section|About the poll|in plain language/.test(p+pp)&&'an article summary is back (it gave away the answers)',
   a.results.sources.some(x=>!ext(p,x.url))&&'a result source is missing',
   ['fetch(','XMLHttpRequest','<iframe'].some(x=>p.includes(x))&&'reaches the network',
   /\bAP\b/.test(p)&&'uses AP framing',
@@ -103,10 +103,15 @@ for(const t of unit.topics){
   (pp.includes('<textarea')||qs.some(q=>!pp.includes(q.text.replace(/&/g,'&amp;').replace(/"/g,'&quot;'))))&&'the paper version does not match'
  ].filter(Boolean);};
  assert.deepStrictEqual(resultsProblems(page,paper),[]);
- for(const [bad,pp,why] of [[page.replace('data-slot="wp6-advice"','data-slot="wp6-reasons"'),paper,'slots do not match the questions'],[page.replace('id="gather-work"','id="x"'),paper,'no gather route'],[page.split('href="'+a.clips[1].url+'"').join('href="#"'),paper,'a clip link is missing'],[page.replace('<h1>','<h1>AP '),paper,'uses AP framing'],[page.replace('<h1>','<h1><iframe></iframe>'),paper,'reaches the network'],[page,paper+'<textarea></textarea>','the paper version does not match']])assert(resultsProblems(bad,pp).includes(why),'negative control should fail: '+why);
+ for(const [bad,pp,why] of [[page.replace('data-slot="wp6-advice"','data-slot="wp6-reasons"'),paper,'slots do not match the questions'],[page.replace('id="gather-work"','id="x"'),paper,'no gather route'],[page.split('href="'+a.clips[1].url+'"').join('href="#"'),paper,'a clip link is missing'],[page.replace('<h1>','<h1>AP '),paper,'uses AP framing'],[page.replace('<h1>','<h1><iframe></iframe>'),paper,'reaches the network'],[page,paper+'<textarea></textarea>','the paper version does not match'],[page.replace('<h1>','<h1><section class="article-section"></section>'),paper,'an article summary is back (it gave away the answers)']])assert(resultsProblems(bad,pp).includes(why),'negative control should fail: '+why);
  assert.strictEqual(t.points,5);
  const md=read('docs/canvas/midterms-assignments.md');
  assert(md.includes('WP6 - Results and Impact')&&md.includes(t.title.replace(/:/g,':'))&&a.parts.every(p=>md.includes(p.title)),'the Canvas assignment lists the rebuilt parts');}
+// No reading sits behind a drop-down on any Midterms student page or printable (Jeff,
+// 2026-11-05). Answer reveals (Pause and check, REVEAL) and optional extras may still fold.
+{const readingDropdowns=p=>(p.match(/<details\b[^>]*>\s*<summary>\s*(?:Read the Background|Reading route|READ \/)/gi)||[]).length;
+ for(const f of fs.readdirSync(path.join(ROOT,'midterms')).filter(f=>f.endsWith('.html')))assert.strictEqual(readingDropdowns(read('midterms/'+f)),0,'a reading is folded in a drop-down: midterms/'+f);
+ assert.strictEqual(readingDropdowns('<details class="x"><summary>Read the Background: test</summary></details>'),1,'negative control should fail: a folded reading');}
 // Election Day (Nov 3) is a viewing day, not a sixth topic: two opening clips and two live
 // streams, linked from the unit page, with no text box to strand work, no script, no embed,
 // and no 2026 winner. The paper log and closing questions were removed (Jeff, 2026-11-03).

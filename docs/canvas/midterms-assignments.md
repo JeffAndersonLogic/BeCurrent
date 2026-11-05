@@ -545,8 +545,8 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <p>Watch the videos together, read the article, then work down the page on your own. 16 questions in 3 parts:</p>
                 <ol>
-                    <li><strong>Part 1: Why did Democrats win?</strong> (7 questions). Use the article above. Answer in one or two sentences, in your own words. Each question tells you which section to look in.</li>
-                    <li><strong>Part 2: A warning for the winners</strong> (3 questions). Use Section 5 of the article. One or two sentences each.</li>
+                    <li><strong>Part 1: Why did Democrats win?</strong> (7 questions). Use the PBS NewsHour article. Answer in one or two sentences, in your own words. Each question tells you which part of the article to look in.</li>
+                    <li><strong>Part 2: A warning for the winners</strong> (3 questions). Look in the part of the article about swing voters and how they see the Democratic Party. One or two sentences each.</li>
                     <li><strong>Part 3: What happened here at home?</strong> (6 questions). On Tuesday you read the real ballot for one Zionsville precinct. Now find out how those races turned out. Use the result links below and write the source for each answer. A short phrase is enough.</li>
                 </ol>
                 <p>One or two sentences is enough for Parts 1 and 2. A short phrase and a source is enough for most of Part 3. Sentence starters, read-aloud support, voice typing, and agreed paper accommodations are available.</p>

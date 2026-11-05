@@ -15,11 +15,11 @@ window.BECURRENT_DAILY_NEWS = {
   wire: [
     {
       category: "World / International",
-      headline: "Russell Brand found guilty of rape and sexual assault",
-      dek: "Actor and comedian Russell Brand was accused of three counts of rape, three counts of sexual assault and one charge of attempted indecent assault.",
-      source: "CBS News",
-      published: "November 5, 2026",
-      url: "https://www.cbsnews.com/news/russell-brand-found-guilty-rape-sexual-assault-verdict/"
+      headline: "World leaders who sparred with Trump express mix of relief, caution at GOP election rout",
+      dek: "British Prime Minister Andy Burnham expressed hope the election results would focus minds in Washington and other capitals on ending the Iran war, which has sent fuel prices soaring — a major source of frustration for voters.",
+      source: "PBS News",
+      published: "November 4, 2026",
+      url: "https://www.pbs.org/newshour/world/world-leaders-who-sparred-with-trump-express-mix-of-relief-caution-at-gop-election-rout"
     },
     {
       category: "Economy",

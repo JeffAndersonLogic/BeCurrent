@@ -69,30 +69,28 @@
       "screen": {
         "eyebrow": "Midterms 6 / Read on your own",
         "title": "Why did voters choose Democrats?",
-        "description": "Students read the five short sections of the article on their own screens.",
+        "description": "Students read the full article on PBS NewsHour on their own screens.",
         "action": {
           "url": "../midterms/block-05.html#the-article",
           "label": "Open the article"
         },
         "bullets": [
-          "Section 1: Rising prices hurt the party in power",
-          "Section 2: Corruption was a big worry",
-          "Section 3: Voters want Congress to push back",
-          "Section 4: Some Republican candidates were weak",
-          "Section 5: A warning for the winners"
+          "Open the full article on PBS NewsHour.",
+          "Read all of it before starting the questions.",
+          "Each question says which part of the article to look in."
         ]
       },
       "intel": {
         "land": "Election results tell us what happened; a voter survey helps explain why; official results files tell us what happened here.",
         "ask": "Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?",
-        "listenFor": "Students reading all five sections before starting the questions.",
+        "listenFor": "Students reading the whole article before starting the questions.",
         "protect": "Keep unit work before lunch.",
-        "cut": "Read Sections 1, 3 and 5 aloud together, then release.",
-        "move": "Students read the five short sections on their own screens. Read aloud for anyone who needs it.",
-        "model": "Section 1 says about 6 in 10 voters were “very concerned” about food costs.",
+        "cut": "Read the parts on prices, Congress and swing voters aloud together, then release.",
+        "move": "Students read the full article on PBS NewsHour on their own screens. Read aloud for anyone who needs it; print it from pbs.org for the paper route.",
+        "model": "The article says about 6 in 10 voters were “very concerned” about food costs.",
         "story": "Tuesday the class watched the votes come in; today they find out what happened and why. The clips give the headline, the article gives the reasons from a survey of real voters, and Part 3 brings it home to the races on Zionsville’s own ballot. The through line is sourcing: a TV host’s analysis, a news report, a voter poll and an official county results file are four different kinds of evidence.",
         "avoid": "Do not ask students how they or their families voted or feel about the result. The MS NOW clip is a host’s analysis with a point of view: name that out loud as a sourcing lesson, not as a side. Score accuracy and reasoning, never a position. Results this week are unofficial until certified.",
-        "reteach": "If most students skim past the numbers, ask for one number from the section and what it measures."
+        "reteach": "If most students skim past the numbers, ask for one number from the article and what it measures."
       }
     },
     {

@@ -38,7 +38,9 @@ const FEEDS = [
 ];
 const MAX_AGE_HOURS = 60;
 
-const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe|formula one|formula 1|premier league|football club|man city|manchester united|sprint pole|verstappen|grand prix|lethal injection|failed execution|execution attempt|death row)\b/i;
+const EXCLUDE = /\b(nfl|nba|mlb|nhl|wnba|playoff|box score|fantasy football|celebrity|box office|movie review|film review|red carpet|horoscope|recipe|formula one|formula 1|premier league|football club|man city|manchester united|sprint pole|verstappen|grand prix|lethal injection|failed execution|execution attempt|death row|rape|raped|sexual assault|sexually assaulted|sexual abuse|sex abuse|molest\w*|child abuse)\b/i;
+// Sexual-violence stories are kept off a 9th to 12th grade homepage (Jeff, 2026-11-05,
+// after a celebrity rape verdict was auto-selected for the Four Stories to Know).
 function acceptableArticle(title, url) {
   try {
     const pathname = new URL(url).pathname;

@@ -226,3 +226,7 @@ body[data-topic-number="4"] .student-chapter>.evidence-card{margin:16px 0 20px}
 /* Reading a Real Ballot (Election Day assignment): the eight ballot pages, then the questions. */
 .ballot-viewer{margin:28px 0}.ballot-pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0}.ballot-page{margin:0;border:1px solid #c8ceca;background:#fff;padding:8px}.ballot-page img{display:block;width:100%;height:auto}.ballot-page figcaption{font-size:.85rem;padding-top:8px}.ballot-part{margin:32px 0;padding-top:8px;border-top:2px solid #922d20}.ballot-question select.lookup-fact{max-width:790px}.ballot-callout .action-btn{margin-top:4px}
 @media(max-width:650px){.ballot-pages{grid-template-columns:1fr}}
+
+/* Always-open readings (2026-11-05): Topic 1 to 3 background readings and clip reading routes, styled like Topic 4's. */
+.reading-open{display:block;background:#f5f3ed;border:1px solid #d7d0c2;border-left:4px solid #315c75;border-radius:8px;padding:18px 20px;margin:18px 0 24px;max-width:100%;line-height:1.65}.reading-open>.eyebrow{color:#1b3a5c;letter-spacing:.1em;font-weight:800;margin:0 0 10px}.reading-open p:last-child,.reading-open ul:last-child{margin-bottom:0}
+@media(max-width:700px){.reading-open{padding:14px}}@media print{.reading-open{break-inside:avoid;background:#fff;border-color:#999}}

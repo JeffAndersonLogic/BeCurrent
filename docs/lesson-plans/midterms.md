@@ -375,19 +375,19 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 ### The filings
 
-1. **.** Section 1 to 4. Name two reasons the article gives for why Republicans lost. Use your own words.
+1. **.** Look across the whole article. Name two reasons the article gives for why Republicans lost. Use your own words.
    - START HERE: One reason is ____. Another reason is ____.
-2. **.** Section 1. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?
+2. **.** Look in the part about rising prices. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?
    - START HERE: Prices hurt the president’s party because voters ____.
-3. **.** Section 1. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?
+3. **.** Look in the part about rising prices. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?
    - START HERE: It tells me that prices ____ because ____.
-4. **.** Section 1. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?
+4. **.** Look in the part about rising prices and the president’s policies. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?
    - START HERE: Voters chose a Democrat for Congress because ____.
-5. **.** Section 2. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?
+5. **.** Look in the part about corruption. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?
    - START HERE: Corruption is ____. A voter might care because ____.
-6. **.** Section 3. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?
+6. **.** Look in the part about Congress. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?
    - START HERE: To check the president means ____. It is surprising because ____.
-7. **.** Section 4. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?
+7. **.** Look in the part about weak candidates. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?
    - START HERE: In ____, voters thought ____. This hurt Republicans because ____.
 8. **.** Only about half of voters had a good opinion of the Democratic Party, and some people who voted for Democrats still disliked it. How can someone vote for a party they do not like?
    - START HERE: Someone might vote for a party they do not like because ____.

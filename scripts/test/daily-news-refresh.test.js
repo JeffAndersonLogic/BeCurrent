@@ -137,6 +137,12 @@ async function main() {
       published: yesterday, seen: yesterday }
   ]);
   assert.match(significant[0].title, /Nobel Peace Prize/);
+  assert.equal(news.acceptableArticle('Russell Brand found guilty of rape and sexual assault',
+    'https://www.cbsnews.com/news/russell-brand-found-guilty-rape-sexual-assault-verdict/'), false, 'sexual-violence stories stay off the homepage');
+  assert.equal(news.acceptableArticle('Russell Brand convicted of rape and sexual assault',
+    'https://www.pbs.org/newshour/world/russell-brand-convicted-of-rape-and-sexual-assault'), false);
+  assert.equal(news.acceptableArticle('Senate passes bill on the Grapevine water rights compact',
+    'https://www.npr.org/2026/11/05/water-rights'), true, 'the filter matches whole words, not letters inside other words');
   assert.equal(news.acceptableArticle('Verstappen on sprint pole after qualifying',
     'https://www.cbsnews.com/sport/formula1/example'), false);
   assert.throws(() => news.choose(items.map(s => ({

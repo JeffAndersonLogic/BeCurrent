@@ -57,17 +57,15 @@ window.BECURRENT_PROJECTOR_LESSON = {
       "screen": {
         "eyebrow": "Midterms 6 / Read on your own",
         "title": "Why did voters choose Democrats?",
-        "description": "Students read the five short sections of the article on their own screens.",
+        "description": "Students read the full article on PBS NewsHour on their own screens.",
         "action": {
           "url": "../midterms/block-05.html#the-article",
           "label": "Open the article"
         },
         "bullets": [
-          "Section 1: Rising prices hurt the party in power",
-          "Section 2: Corruption was a big worry",
-          "Section 3: Voters want Congress to push back",
-          "Section 4: Some Republican candidates were weak",
-          "Section 5: A warning for the winners"
+          "Open the full article on PBS NewsHour.",
+          "Read all of it before starting the questions.",
+          "Each question says which part of the article to look in."
         ]
       }
     },

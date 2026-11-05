@@ -9,10 +9,10 @@
 // WP6 - Results and Impact with the shared record footer, the same route as every
 // other Midterms lesson.
 //
-// THE ARTICLE IS NOT COPIED. It is copyrighted Associated Press reporting and this site
-// is public, so the page carries a summary written for this class in our own words, the
-// poll's numbers attributed to it, and a link to the full article. Only single words the
-// article itself puts in quotation marks ("crucial", "needed change") are quoted.
+// THE ARTICLE IS NOT COPIED OR SUMMARIZED. It is copyrighted Associated Press reporting and
+// this site is public, so the page links to it. A plain-language summary was on the page
+// until Jeff removed it the same day (2026-11-05): it gave away the answers. Students read
+// the full article on PBS NewsHour; each question names the part of the article to look in.
 //
 // NO WINNER IS TYPED HERE for any Boone County or Indiana race. Finding them is the
 // assignment, and the answers live in the sources linked below. The national outcome
@@ -60,44 +60,19 @@ const lesson={
   byline:'Josh Boak, Hyojin Yoo and Humera Lodhi, Associated Press',
   date:'November 4, 2026',
   url:'https://www.pbs.org/newshour/politics/how-trump-and-republicans-lost-the-2026-midterm-elections-according-to-ap-voter-poll',
-  about:'The article is built on the Associated Press Voter Poll, a survey of people who voted in the midterms in all 50 states. It was taken in the two weeks before Election Day and on the day itself. A poll like this asks real voters why they voted the way they did, so it can explain a result instead of guessing at it.',
-  outcome:'According to the article, Democrats won control of both the House and the Senate on Tuesday. The article asks why.',
-  sections:[
-   {n:1,heading:'Rising prices hurt the party in power',paragraphs:[
-    'Many voters felt prices going up at the grocery store, at the gas pump, and on their power bills. About 6 in 10 voters said they were “very concerned” about the cost of food.',
-    'Voters blamed the president. About two-thirds said President Trump’s policies, such as tariffs (taxes on goods from other countries), had made the economy worse, and about 8 in 10 of those voters chose the Democrat for the U.S. House. Voters also pointed to the war in Iran and to promises to lower prices that had not come true. About two-thirds said the president does not have the right priorities.',
-    'This showed up even in Texas, a state Republicans usually win. About 2 in 10 Texas voters said rising prices had caused them “severe” hardship, and about three-quarters of those voters backed the Democrat for Senate, James Talarico.'
-   ]},
-   {n:2,heading:'Corruption was a big worry',paragraphs:[
-    'Corruption means using a government job to help yourself or your friends instead of the public. More than half of voters said corruption was “crucial” to their vote for Congress. That was a little more than the share who said the same about the cost of living.',
-    'The article points to examples voters may have had in mind, such as the president making more than $1 billion last year from cryptocurrency.'
-   ]},
-   {n:3,heading:'Voters want Congress to push back',paragraphs:[
-    'In Topic 3 you learned that Congress can check the president: it writes the laws, controls the money, and can investigate. About 7 in 10 voters said Congress is not doing enough to check the president. That included about 4 in 10 Republicans, people from the president’s own party.'
-   ]},
-   {n:4,heading:'Some Republican candidates were weak',paragraphs:[
-    'In the spring primaries, President Trump backed candidates who were loyal to him. In some states that choice backfired.',
-    'In Texas, he backed Ken Paxton over Senator John Cornyn in the Republican primary. About two-thirds of Texas Senate voters said Paxton did not have the character to be a senator.',
-    'In North Carolina, about 6 in 10 voters said the Republican, Michael Whatley, was “too supportive” of the president. Voters chose Democrat Roy Cooper, a former governor of the state.'
-   ]},
-   {n:5,heading:'A warning for the winners',paragraphs:[
-    'Winning does not mean voters love the Democratic Party. Only about half of voters had a good opinion of it (for Republicans, about 4 in 10). About 2 in 10 people who voted for Democrats still had a bad opinion of the party.',
-    'About 2 in 10 voters said neither party was better on the economy, health care, taxes or immigration. The article says Democrats’ lead on the economy is small.',
-    'In Maine, voters who wanted “needed change” chose the Democrat, Troy Jackson, over Republican Senator Susan Collins. Many voters were voting for change, not for a party they were excited about.'
-   ]}
-  ]
+  howToRead:'Open the full article on PBS NewsHour and read all of it before you start. Every answer in Parts 1 and 2 is in the article. Each question tells you which part to look in.'
  },
  parts:[
-  {id:'why',title:'Part 1: Why did Democrats win?',intro:'Use the article above. Answer in one or two sentences, in your own words. Each question tells you which section to look in.',questions:[
-   q('wp6-reasons','Section 1 to 4. Name two reasons the article gives for why Republicans lost. Use your own words.','One reason is ____. Another reason is ____.',{length:'One or two sentences.'}),
-   q('wp6-groceries','Section 1. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?','Prices hurt the president’s party because voters ____.',{length:'One or two sentences.'}),
-   q('wp6-texas','Section 1. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?','It tells me that prices ____ because ____.',{length:'One or two sentences.'}),
-   q('wp6-not-on-ballot','Section 1. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?','Voters chose a Democrat for Congress because ____.',{length:'One or two sentences.'}),
-   q('wp6-corruption','Section 2. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?','Corruption is ____. A voter might care because ____.',{length:'One or two sentences.'}),
-   q('wp6-checks','Section 3. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?','To check the president means ____. It is surprising because ____.',{length:'One or two sentences.'}),
-   q('wp6-candidate','Section 4. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?','In ____, voters thought ____. This hurt Republicans because ____.',{length:'One or two sentences.'})
+  {id:'why',title:'Part 1: Why did Democrats win?',intro:'Use the PBS NewsHour article. Answer in one or two sentences, in your own words. Each question tells you which part of the article to look in.',questions:[
+   q('wp6-reasons','Look across the whole article. Name two reasons the article gives for why Republicans lost. Use your own words.','One reason is ____. Another reason is ____.',{length:'One or two sentences.'}),
+   q('wp6-groceries','Look in the part about rising prices. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?','Prices hurt the president’s party because voters ____.',{length:'One or two sentences.'}),
+   q('wp6-texas','Look in the part about rising prices. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?','It tells me that prices ____ because ____.',{length:'One or two sentences.'}),
+   q('wp6-not-on-ballot','Look in the part about rising prices and the president’s policies. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?','Voters chose a Democrat for Congress because ____.',{length:'One or two sentences.'}),
+   q('wp6-corruption','Look in the part about corruption. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?','Corruption is ____. A voter might care because ____.',{length:'One or two sentences.'}),
+   q('wp6-checks','Look in the part about Congress. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?','To check the president means ____. It is surprising because ____.',{length:'One or two sentences.'}),
+   q('wp6-candidate','Look in the part about weak candidates. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?','In ____, voters thought ____. This hurt Republicans because ____.',{length:'One or two sentences.'})
   ]},
-  {id:'warning',title:'Part 2: A warning for the winners',intro:'Use Section 5 of the article. One or two sentences each.',questions:[
+  {id:'warning',title:'Part 2: A warning for the winners',intro:'Look in the part of the article about swing voters and how they see the Democratic Party. One or two sentences each.',questions:[
    q('wp6-dislike','Only about half of voters had a good opinion of the Democratic Party, and some people who voted for Democrats still disliked it. How can someone vote for a party they do not like?','Someone might vote for a party they do not like because ____.',{length:'One or two sentences.'}),
    q('wp6-neither','About 2 in 10 voters said neither party was better on the economy, and the article says Democrats’ lead on the economy is small. Why should that worry Democrats before the next election?','It should worry Democrats because ____.',{length:'One or two sentences.'}),
    q('wp6-advice','Pretend you are giving advice to Democratic leaders in Congress. Using the article, write one warning they should take seriously over the next two years, and explain why.','My warning is ____. They should take it seriously because the article shows ____.',{length:'Two or three sentences.'})
@@ -142,7 +117,7 @@ const lesson={
   timing:{watch:18,read:7,why:12,local:8,file:10},
   phases:{
    watch:{model:'“CBS reports Democrats won both chambers. Maddow says this means ____: that part is her opinion.”',lookFor:'Students separating a reported result from a host’s opinion about it.',cut:'Play the CBS report and the ABC report.',move:'Play the three clips back to back. No writing yet.',reteach:'If most students mix up fact and opinion, pause once and ask: is that a number, or what someone thinks the number means?'},
-   read:{model:'Section 1 says about 6 in 10 voters were “very concerned” about food costs.',lookFor:'Students reading all five sections before starting the questions.',cut:'Read Sections 1, 3 and 5 aloud together, then release.',move:'Students read the five short sections on their own screens. Read aloud for anyone who needs it.',reteach:'If most students skim past the numbers, ask for one number from the section and what it measures.'},
+   read:{model:'The article says about 6 in 10 voters were “very concerned” about food costs.',lookFor:'Students reading the whole article before starting the questions.',cut:'Read the parts on prices, Congress and swing voters aloud together, then release.',move:'Students read the full article on PBS NewsHour on their own screens. Read aloud for anyone who needs it; print it from pbs.org for the paper route.',reteach:'If most students skim past the numbers, ask for one number from the article and what it measures.'},
    why:{model:'Prices hurt the president’s party because voters blame whoever is in charge when life gets more expensive.',lookFor:'A fact from the article plus a because.',cut:'Require Questions 1, 2, 4, 8 and 10; the rest are welcome.',move:'Circulate. Push for “why”, not just “what”.',reteach:'If most students only restate facts, give the frame: The article says ____. This matters because ____.'},
    local:{model:'Model one lookup on the projector: open the county file, Ctrl+F “Public Question”, and read the YES and NO lines aloud without answering any student question.',lookFor:'A result plus a named source for each answer.',cut:'Require Questions 11, 14 and 16.',move:'Students use the result links. Remind them results are unofficial.',reteach:'If most students cannot find a race, show how to search the PDF for its name with Ctrl+F.'},
    file:{model:'The Canvas submission screen confirms filing.',lookFor:'Canvas confirmation for each student.',cut:'Never cut filing.',move:'Finish any open question, then Gather All My Work, paste into Canvas, submit, and check the confirmation.',reteach:'If most students cannot copy, use the manual-copy box and select all.'}
