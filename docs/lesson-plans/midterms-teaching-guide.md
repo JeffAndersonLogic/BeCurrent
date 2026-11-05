@@ -1209,215 +1209,106 @@ Avoid: Do not ask students how they or their families would vote on any race or 
 - What is one thing on this ballot that surprised you?
 - How sure do you feel about reading a ballot now?
 
-## Topic 5: Election Night: What Happens Next?
+## Midterms 6: Election Results: What Happened and Why?
 
-Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.
+Thursday, November 5, 2026. Rebuilt on the day (Jeff, 2026-11-05). Student page: `midterms/block-05.html`. 16 questions in 3 parts, gathered into the Canvas Text Entry `WP6 - Results and Impact` (5 points).
 
-Question: How did the 2026 midterm elections change who has power, and what could that mean for the country?
+Watch CNN 10 and two reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.
+
+Question: Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?
 
 ### Learning targets
 
-- I can distinguish a projection, unofficial count, and certified result.
-- I can connect the 2026 outcome to a governing consequence and a limit.
-- I can support an explanation with two sources and a fair alternative interpretation of the governing impact.
+- I can use facts from a news article to explain why an election turned out the way it did.
+- I can explain how voters’ worries about prices, corruption, and checks on power affected their votes.
+- I can find local and state election results in official sources and say where each one came from.
 
 ### Success criteria
 
-- I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.
-- I can explain two possible governing effects and one outcome that is not guaranteed.
-- I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.
+- I can answer questions about the article using its numbers and examples in my own words.
+- I can explain why something happened in the election, not just what happened.
+- I can name the winner of a Boone County or Indiana race and the source where I found it.
 
 ### Teacher story
 
-This is the payoff. Open the results and make a dated record of what is known. A race can remain unresolved; that is part of the lesson. The 2020 video explains race calling, not 2026 winners. Connect verified outcomes to chamber leadership, committees, oversight, and lawmaking. Distinguish what happened from what might happen. The final explanation includes a fair competing interpretation and uncertainty.
+Tuesday the class watched the votes come in; today they find out what happened and why. The clips give the headline, the article gives the reasons from a survey of real voters, and Part 3 brings it home to the races on Zionsville’s own ballot. The through line is sourcing: a TV host’s analysis, a news report, a voter poll and an official county results file are four different kinds of evidence.
 
-### Run of show
+### Running it
 
-- 0–3: Opening question (3 minutes)
-- 3–5: Today’s direction (2 minutes)
-- Notes slide: Why might some results not be final yet?
-- 5–13: Watch / explain (8 minutes)
-- Notes slide: The four stages of election reporting
-- 13–18: Guided practice (5 minutes)
-- Notes slide: How do separate races decide control of a chamber?
-- 18–33: Results investigation (15 minutes)
-- Notes slide: When do results start changing government?
-- Notes slide: What can a change in control affect?
-- 33–43: Apply the idea (10 minutes)
-- Notes slide: Build an explanation that can survive an update
-- 43–55: Explain / Canvas (12 minutes)
-- Lunch: Lunch break (0 minutes)
-- After lunch · 10 min: After lunch / CNN10 (10 minutes)
-- After lunch · 15 min: After lunch / daily news (15 minutes)
+CNN 10 opens the day, then the two analysis clips back to back. Release students to read the article on their own screens (read-aloud and voice typing are fine), answer Parts 1 and 2, then use the results links for Part 3. Protect the last ten minutes to finish, then Gather All My Work and the Canvas paste.
 
-### Phase models and teaching decisions
+The two YouTube clips’ run times were not checked automatically. Preview them before class and trim if needed. CNN 10 opens the day today, so after lunch go straight to The Desk.
 
-**Opening question**
+Avoid: Do not ask students how they or their families voted or feel about the result. The MS NOW clip is a host’s analysis with a point of view: name that out loud as a sourcing lesson, not as a side. Score accuracy and reasoning, never a position. Results this week are unofficial until certified.
 
-Model: No. An early lead reports part of the count. A news race call and official certification are different reporting stages.
-
-Look for: Students ask which source and stage support a result rather than treating every displayed leader as a final winner.
-
-Reteach: If most students call all three final, label three examples “partial count,” “news call,” and “official sign-off.” Keep any actual unresolved outcome unresolved.
-
-Cut: Skip predictions about which party will win. Protect source and reporting-stage labels.
-
-**Today’s direction**
-
-Model: We will record what the sources establish, connect it to two possible effects and a limit, and explain what remains uncertain.
-
-Look for: Students know they can reuse their notebook and short evidence bullets in the final synthesis rather than write three separate essays.
-
-Reteach: If most students think every race must be settled, show the unresolved option and a conditional “If control is __, then __ could follow” frame.
-
-Cut: Do not read the full rubric aloud. Protect the five-sentence synthesis purpose and the source/stage requirement.
-
-**Watch / explain**
-
-Model: A news organization calls a race using counted votes and analysis. That is not the official certification by election authorities.
-
-Look for: Students distinguish the reporting organization’s conclusion from an official sign-off and recognize that the 2020 video does not report 2026 winners.
-
-Reteach: If most students treat a news call as certification, ask who issued it. Place the news organization and election authority under different stage labels.
-
-Cut: Play the 6:19 race-calling report once. Skip a replay; use the matched reading aloud if blocked. Protect the source-and-stage check.
-
-**Guided practice**
-
-Model: Poll / forecast; Unofficial count; News race call; Certified result; Unofficial count. These are constructed examples, not actual 2026 findings.
-
-Look for: Students classify and correct reporting stages. They do not need to have filled the results notebook during this practice phase.
-
-Reteach: If most students confuse count and call, underline the issuer: an election office posts totals; a news organization concludes who won. Then retry those two items.
-
-Cut: Read all five items aloud in one shared pass and allow private selections; omit extra explanations of already-correct items. Protect correction of the stage distinction.
-
-**Results investigation**
-
-Model: As of [actual check time], [named source] reports [finding] at [stage]. [Second named source] establishes [finding or a different stage]. [Race or control] remains unresolved if the evidence does not settle it. Fill brackets only from the current records.
-
-Look for: The six-entry notebook covers House control, Senate control, and the Indiana example with findings, stages, sources, baseline, and check time. Any unresolved outcome stays unresolved.
-
-Reteach: If most students cannot navigate the sources, model one notebook row from the prepared packet and point to its timestamp and stage. Students then complete the other rows with the same routine.
-
-Cut: Make the voting-machine clip optional and skip it in the 55-minute core path. Use the prepared source extracts rather than open-web searching. Protect dated evidence and honest uncertainty.
-
-**Apply the idea**
-
-Model: If the verified outcome changes a chamber’s majority, leaders and committee priorities could change. Oversight could also change. This does not guarantee a promised law. Another reasonable interpretation may emphasize accountability while a second emphasizes delay.
-
-Look for: Planning identifies two institutional effects, one limit, and a fair alternative interpretation of impact. It does not dispute established vote totals merely to manufacture balance.
-
-Reteach: If most students write only a party reaction, offer four mechanism words: leadership, committees, oversight, lawmaking. Choose two and explain what each could change.
-
-Cut: Application is optional planning, not a separate required paragraph. Reuse the notebook and bullet notes. Protect preparation of the two effects, limit, alternative impact, and uncertainty for the final response.
-
-**Explain / Canvas**
-
-Model: 1. As of [time], [source 1] establishes [outcome/stage], while [source 2] establishes [corroboration or unresolved point]. 2. Because / if [outcome], [leadership or committee effect] could follow. 3. [Second effect] could also follow, but [limit]. 4. Another reasonable view emphasizes [alternative governing impact]. 5. We still do not know [genuine uncertainty]; [later evidence or decision] could clarify it. Use current sourced facts in every bracket.
-
-Look for: One concise synthesis reuses notes and identifies two sources, two effects, one limit, a fair alternative impact, and genuine uncertainty. Confirm the final response and notebook travel with Gather All My Work and are submitted in Canvas.
-
-Reteach: If most students stall, point to the notebook for sentence 1 and the optional planning for sentences 2–4. Let them dictate or use bullets covering the same ideas; do not demand a new essay.
-
-Cut: Omit optional planning cleanup, extra race research, and Push further. Protect seven minutes to synthesize and the final five minutes to gather, paste, and submit.
-
-### Notes slides
-
-Projected for students to copy. They carry no minutes of their own; copying time comes out of the 55-minute block.
-
-**Why might some results not be final yet?**
-
-- Reporting develops as ballots are counted and officials check the totals.
-- A close race can stay unresolved after other races are called.
-- Record when you checked and which source you used.
-- If a later update changes a finding, explain what new information appeared.
-
-Write this down: Name the uncertainty. Never fill the gap with a guess.
-
-**The four stages of election reporting**
-
-- Poll or forecast: estimates opinion before voting ends.
-- Unofficial count: ballots counted so far. It can change as more are added.
-- News race call: a news organization’s conclusion from counted votes and analysis.
-- Certified result: the official sign-off by election authorities after the canvass.
-
-Write this down: Keep the source and the stage attached to every result.
-
-**How do separate races decide control of a chamber?**
-
-- Control depends on who wins enough seats, not on one dramatic race.
-- House and Senate outcomes can differ.
-- Name your baseline: the outgoing Congress or a previous election. Do not mix them.
-- Some races may still be unresolved when we meet.
-
-Write this down: A claim about chamber control needs evidence about enough seats.
-
-**When do results start changing government?**
-
-- Winning on Election Day and starting a term are different moments.
-- Newly elected members ordinarily begin their terms on January 3, 2027.
-- Until then, the outgoing Congress still has responsibilities.
-- Once the new members organize, leadership and committees can change.
-
-Write this down: Election Day does not instantly replace Congress.
-
-**What can a change in control affect?**
-
-- Who leads each chamber and its committees.
-- Which issues get priority.
-- Oversight of the executive branch.
-- It does not automatically turn campaign promises into laws.
-
-Write this down: If control is still unresolved, explain it as a condition: “If ___ controls ___, then ___ could ___.”
-
-**Build an explanation that can survive an update**
-
-- Start with the sourced outcome and its reporting stage.
-- Connect it to two possible governing effects and one limit.
-- Give another reasonable interpretation using the same results.
-- Finish with an uncertainty or your next check.
-
-Write this down: Use “has” for an established outcome and “could” for a possible effect.
-
-### Topic rubric (5 points)
-
-- Accurate results: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.
-- Effects and limit: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.
-- Two-source reasoning: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.
-- Another reasonable impact: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.
-- Remaining uncertainty: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.
+Grading: Parts 1 and 2 have no single answer key: look for the article’s facts in the student’s own words plus a because. Part 3 answers come from the Boone County results file and the state results site; check them against the county file before grading.
 
 ### Clips
 
-- [How the Associated Press uses facts and math to call election results](https://www.pbs.org/video/calling-the-race-1604354239/) · Full 6:19 · Assigned 0:00–6:19 · 2020-11-02
-  Watch for: How is a race call different from a prediction or official certification?
-  Pause: Stop at the assigned endpoint. Ask: How is a race call different from a prediction or official certification? Use the core takeaways to check the answer before continuing.
-  Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
-- [How Do Voting Machines Work? Simple Civics](https://www.pbs.org/video/how-do-voting-machines-work-ikrecu/) · Full 2:07 · Assigned the full clip · 2022-10-28 · optional
-  Watch for: What role do officials and records play in checking a count?
-  Pause: Stop at the assigned endpoint. Ask: What role do officials and records play in checking a count? Use the core takeaways to check the answer before continuing.
-  Evergreen explanation. Names, amounts, and earlier election examples in this clip are dated examples, not 2026 results.
+- [CNN 10: today’s episode](https://www.cnn10.com/) · CNN 10 · News
+  Watch for: Listen for the election story. What is one result the show reports, and how does it say it knows?
+- [‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains](https://www.youtube.com/watch?v=qScvB287kSU) · MS NOW · Analysis by a TV host
+  Watch for: Rachel Maddow is a host who shares her own point of view. Listen for the difference between a fact (a number or a result) and her opinion about what it means.
+- [A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections](https://www.youtube.com/watch?v=KoW4tC_xoYg) · CBS Mornings · News report
+  Watch for: Listen for one reason the reporters give for why voters chose Democrats. You will check that reason against the article.
+
+### The article
+
+[How Trump and Republicans lost the 2026 midterm elections, according to the Associated Press voter poll](https://www.pbs.org/newshour/politics/how-trump-and-republicans-lost-the-2026-midterm-elections-according-to-ap-voter-poll), Josh Boak, Hyojin Yoo and Humera Lodhi, Associated Press, PBS NewsHour, November 4, 2026. The student page carries a plain-language summary in our own words with the poll's numbers, not the article's text.
 
 ### Questions
 
-1. Optional planning: Optional source-planning note: what do the two sources establish, and what remains unresolved? Your results notebook already supplies this evidence.
-   Start here: Source 1 establishes ____. Source 2 reports ____. As of ____, ____ remains unresolved / is certified.
-   Push further: Explain how update times and reporting stages can produce different-looking pages.
-2. Optional planning: Optional impact-planning note: identify two possible governing effects and one limit. Reuse these ideas in your final explanation.
-   Start here: Because / if ____ controls ____, ____ could change. Another effect is ____. This does not guarantee ____.
-   Push further: Separate January leadership changes from policies requiring later action.
-3. Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.
-   Start here: As of ____, sources ____ and ____ establish ____. Because / if ____ controls ____, ____ could change. A second effect is ____, but ____ is not guaranteed. Someone could interpret this impact as ____ because ____. We still need to check ____.
-   Push further: Explain what new evidence could change your conclusion. A concise paragraph or five clear sentences is enough.
+**Part 1: Why did Democrats win?**
 
-### Teacher evidence and reteaching
+1. Section 1 to 4. Name two reasons the article gives for why Republicans lost. Use your own words.
+   Start here: One reason is ____. Another reason is ____.
+2. Section 1. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?
+   Start here: Prices hurt the president’s party because voters ____.
+3. Section 1. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?
+   Start here: It tells me that prices ____ because ____.
+4. Section 1. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?
+   Start here: Voters chose a Democrat for Congress because ____.
+5. Section 2. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?
+   Start here: Corruption is ____. A voter might care because ____.
+6. Section 3. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?
+   Start here: To check the president means ____. It is surprising because ____.
+7. Section 4. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?
+   Start here: In ____, voters thought ____. This hurt Republicans because ____.
 
-Poll / forecast; Unofficial count; News race call; Certified result; Unofficial count. Final answers depend on sourced 2026 evidence, not a fixed party answer key.
+**Part 2: A warning for the winners**
 
-Misconception: No prefilled winners. Presidential Electoral College maps do not establish congressional control; news calls are not certification.
+8. Only about half of voters had a good opinion of the Democratic Party, and some people who voted for Democrats still disliked it. How can someone vote for a party they do not like?
+   Start here: Someone might vote for a party they do not like because ____.
+9. About 2 in 10 voters said neither party was better on the economy, and the article says Democrats’ lead on the economy is small. Why should that worry Democrats before the next election?
+   Start here: It should worry Democrats because ____.
+10. Pretend you are giving advice to Democratic leaders in Congress. Using the article, write one warning they should take seriously over the next two years, and explain why.
+   Start here: My warning is ____. They should take it seriously because the article shows ____.
 
-Reteach: Label each source: prediction, count, call, or certified. Use because / could / does not guarantee.
+**Part 3: What happened here at home?**
 
-Prepare current House, Senate, and Indiana results after November 3. Record source, check time, status, baseline, and unresolved races. Use two sources. No outcomes are prefilled.
+11. Public Question #3 asked whether to raise property taxes to fund Zionsville Community Schools. Did it pass or fail? Write the YES and NO percentages for Boone County.
+   Start here: It passed / failed. YES ____%, NO ____%. Source: ____.
+12. Pick one of the three Zionsville school board races (At Large, Eagle Township or Union Township). Who won, and what share of the vote did they get?
+   Start here: In the ____ race, ____ won with ____%. Source: ____.
+13. Pick one Boone County race that had two candidates: County Commissioner District 1, County Council District 1, or Circuit Court Clerk. Who won?
+   Start here: In the ____ race, ____ won. Source: ____.
+14. Who won the race for U.S. Representative, Indiana District 4, which includes Zionsville? Boone County is only part of District 4, so use the state results site or the Associated Press for the whole district.
+   Start here: ____ won. Source: ____.
+15. Pick one statewide race: Secretary of State, State Comptroller, or Treasurer of State. Who won across Indiana? Did Boone County vote the same way as the whole state?
+   Start here: ____ won statewide. Boone County voted the same way / differently. Sources: ____ and ____.
+16. Pick one local or state result you found. Explain one way it could affect students at Zionsville schools or people who live in Boone County.
+   Start here: The ____ result could affect ____ because ____.
+
+### Result sources (Part 3)
+
+- [Boone County Clerk: 2026 General Election results](https://boonecounty.in.gov/wp-content/uploads/2026/11/26-General-Summary-Results-Final.pdf): Every race on a Boone County ballot, with the county’s vote totals and percentages. Start here for Questions 11, 12, 13 and 15.
+- [Boone County Clerk: election results page](https://boonecounty.in.gov/offices/clerk/election-results-history/): If the link above moves, the county lists its results here.
+- [Indiana Election Results: the state’s official results site](https://enr.indianavoters.in.gov/site/index.html): Choose the November 3, 2026 general election. Use it for statewide totals (Question 15) and the whole of District 4 (Question 14).
+- [Associated Press: 2026 election results](https://apnews.com/projects/elections-2026/): News organization results and race calls for Indiana and the whole country. A race call is not the official result.
+
+### Rubric (5 points)
+
+- Uses the article: Parts 1 and 2 use the article’s numbers and examples, in your own words.
+- Explains why: Answers give a reason (because, so, which led to), not only a fact.
+- Finds the results: Part 3 names the results and the source for each one, and keeps unofficial results labeled as unofficial.
 

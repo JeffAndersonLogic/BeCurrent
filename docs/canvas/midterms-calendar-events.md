@@ -425,7 +425,7 @@ Every link below points at the live GitHub Pages build:
             <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
                 <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
                 <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Midterms 6</p>
-                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Night: What Happens Next?</h2>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Results: What Happened and Why?</h2>
             </td>
         </tr>
         <tr>
@@ -433,7 +433,7 @@ Every link below points at the live GitHub Pages build:
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.</p>
+                <p>Watch CNN 10 and two reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.</p>
             </td>
         </tr>
         <tr>
@@ -442,9 +442,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
-                    <li>I can distinguish a projection, unofficial count, and certified result.</li>
-                    <li>I can connect the 2026 outcome to a governing consequence and a limit.</li>
-                    <li>I can support an explanation with two sources and a fair alternative interpretation of the governing impact.</li>
+                    <li>I can use facts from a news article to explain why an election turned out the way it did.</li>
+                    <li>I can explain how voters’ worries about prices, corruption, and checks on power affected their votes.</li>
+                    <li>I can find local and state election results in official sources and say where each one came from.</li>
                 </ol>
             </td>
         </tr>
@@ -454,9 +454,9 @@ Every link below points at the live GitHub Pages build:
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
-                    <li>I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.</li>
-                    <li>I can explain two possible governing effects and one outcome that is not guaranteed.</li>
-                    <li>I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.</li>
+                    <li>I can answer questions about the article using its numbers and examples in my own words.</li>
+                    <li>I can explain why something happened in the election, not just what happened.</li>
+                    <li>I can name the winner of a Boone County or Indiana race and the source where I found it.</li>
                 </ol>
             </td>
         </tr>

@@ -32,6 +32,7 @@ function bannerProblems(page,n){const want=BANNERS[n]||[],chapters=page.split('d
  for(const [bad,n,why] of [[p2.replace(/<div class="chapter-banner" data-banner="committee">/,'<div>'),2,'chapters do not open'],[p2.replace(/(data-banner="seat"><svg[^>]*?) aria-hidden="true"/,'$1'),2,'chapters do not open'],[read('midterms/block-01.html').replace('data-student-chapter','data-student-chapter><div class="chapter-banner"'),1,'banner on a topic']])
   assert(bannerProblems(bad,n).some(x=>x.startsWith(why)),'negative control should fail: '+why);}
 for(const t of unit.topics){
+ if(t.analysis)continue; // Midterms 6, rebuilt 2026-11-05: checked on its own below.
  const page=read('midterms/'+t.page);
  assert.deepStrictEqual(bannerProblems(page,t.n),[],'Topic '+t.n);
  assert(page.includes('data-lesson="'+t.key+'"'));assert(index.includes('href="'+t.page+'"'));
@@ -79,6 +80,33 @@ for(const t of unit.topics){
  if(t.n===5){assert(page.includes('data-evidence='));assert(page.includes('No winners are prefilled'));assert.strictEqual(t.questions.filter(q=>!q.optional).length,1);assert.strictEqual((page.match(/data-optional="true"/g)||[]).length,8);assert(!page.includes('election-commission/election-results/'));assert(page.includes('Six short entries'));}
  assert(!['fetch(','XMLHttpRequest','<iframe'].some(x=>page.includes(x)));
 }
+// Midterms 6 (Topic 5), rebuilt 2026-11-05: three clips, a plain-language version of a
+// PBS NewsHour / Associated Press article, ten questions on it, then six on the Boone
+// County and Indiana results. Every question is a data-slot, so Gather All My Work
+// carries it to Canvas; the clips and sources are new-tab links; no network, no embed.
+{const t=unit.topics.find(x=>x.analysis);assert(t&&t.n===5,'Topic 5 carries the rebuilt results lesson');
+ const a=t.analysis,qs=a.parts.flatMap(p=>p.questions),page=read('midterms/'+t.page),paper=read('midterms/print-topic-05.html');
+ const ext=(p,url)=>p.includes('href="'+url+'" target="_blank" rel="noopener noreferrer"');
+ const resultsProblems=(p,pp)=>{const slots=[...p.matchAll(/data-slot="([^"]+)"/g)].map(m=>m[1]);return [
+  !index.includes('href="'+t.page+'"')&&'not linked from the unit page',
+  !p.includes('data-lesson="'+a.key+'"')&&'wrong storage key',
+  (slots.length!==qs.length||new Set(slots).size!==slots.length||qs.some(q=>!slots.includes(q.id)))&&'slots do not match the questions',
+  a.parts.filter(x=>x.id!=='local').reduce((n,x)=>n+x.questions.length,0)!==10&&'the article does not have ten questions',
+  !(p.includes('id="gather-work"')&&p.includes('id="copy-preview"')&&p.includes('video-first-record.js')&&p.includes('video-first.js')&&p.includes('id="student-flow"'))&&'no gather route',
+  a.clips.some(c=>!ext(p,c.url))&&'a clip link is missing',
+  !ext(p,a.article.url)&&'the full article is not linked',
+  !p.includes('written for our class')&&'the summary is not labeled as ours',
+  a.results.sources.some(x=>!ext(p,x.url))&&'a result source is missing',
+  ['fetch(','XMLHttpRequest','<iframe'].some(x=>p.includes(x))&&'reaches the network',
+  /\bAP\b/.test(p)&&'uses AP framing',
+  [...t.learningTargets.map(x=>x.target),...t.successCriteria.map(x=>x.criteria)].some(x=>!p.includes(x.replace(/&/g,'&amp;').replace(/’/g,'’')))&&'a target or criterion is missing',
+  (pp.includes('<textarea')||qs.some(q=>!pp.includes(q.text.replace(/&/g,'&amp;').replace(/"/g,'&quot;'))))&&'the paper version does not match'
+ ].filter(Boolean);};
+ assert.deepStrictEqual(resultsProblems(page,paper),[]);
+ for(const [bad,pp,why] of [[page.replace('data-slot="wp6-advice"','data-slot="wp6-reasons"'),paper,'slots do not match the questions'],[page.replace('id="gather-work"','id="x"'),paper,'no gather route'],[page.split('href="'+a.clips[1].url+'"').join('href="#"'),paper,'a clip link is missing'],[page.replace('<h1>','<h1>AP '),paper,'uses AP framing'],[page.replace('<h1>','<h1><iframe></iframe>'),paper,'reaches the network'],[page,paper+'<textarea></textarea>','the paper version does not match']])assert(resultsProblems(bad,pp).includes(why),'negative control should fail: '+why);
+ assert.strictEqual(t.points,5);
+ const md=read('docs/canvas/midterms-assignments.md');
+ assert(md.includes('WP6 - Results and Impact')&&md.includes(t.title.replace(/:/g,':'))&&a.parts.every(p=>md.includes(p.title)),'the Canvas assignment lists the rebuilt parts');}
 // Election Day (Nov 3) is a viewing day, not a sixth topic: two opening clips and two live
 // streams, linked from the unit page, with no text box to strand work, no script, no embed,
 // and no 2026 winner. The paper log and closing questions were removed (Jeff, 2026-11-03).

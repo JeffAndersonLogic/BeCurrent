@@ -32,7 +32,7 @@ version of the argument against them.
 | Topic 2 | The Battle for Congress | Civics investigation | 3 |
 | Topic 3 | The Power to Stop a President | Civics investigation | 3 |
 | Topic 4 | The Fight for Your Vote | Civics investigation | 3 |
-| Topic 5 | Election Night: What Happens Next? | Civics investigation | 3 |
+| Topic 5 | Election Results: What Happened and Why? | Civics investigation | 3 |
 
 The first four topics establish civics and evidence skills before Election Day.
 The fifth returns after November 3 to interpret sourced results and their possible impact.
@@ -331,9 +331,9 @@ The civics investigation’s Gather All My Work panel: five-item practice and ei
 
 ---
 
-## Topic 5. Election Night: What Happens Next?
+## Topic 5. Election Results: What Happened and Why?
 
-_The 2026 results and their governing impact_
+_Why voters chose what they did, and what happened here at home_
 
 | | |
 |---|---|
@@ -344,19 +344,19 @@ _The 2026 results and their governing impact_
 
 ### Overview
 
-Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.
+Watch CNN 10 and two reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.
 
 ### Learning targets
 
-1. **Results literacy.** I can distinguish a projection, unofficial count, and certified result.
-2. **Cause and effect.** I can connect the 2026 outcome to a governing consequence and a limit.
-3. **Argument.** I can support an explanation with two sources and a fair alternative interpretation of the governing impact.
+1. **Evidence.** I can use facts from a news article to explain why an election turned out the way it did.
+2. **Cause and effect.** I can explain how voters’ worries about prices, corruption, and checks on power affected their votes.
+3. **Sourcing.** I can find local and state election results in official sources and say where each one came from.
 
 ### Success criteria
 
-1. **Results literacy.** I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.
-2. **Cause and effect.** I can explain two possible governing effects and one outcome that is not guaranteed.
-3. **Argument.** I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.
+1. **Evidence.** I can answer questions about the article using its numbers and examples in my own words.
+2. **Cause and effect.** I can explain why something happened in the election, not just what happened.
+3. **Sourcing.** I can name the winner of a Boone County or Indiana race and the source where I found it.
 
 ### What happens in class
 
@@ -375,16 +375,39 @@ Before lunch: follow the guided civics investigation, use the assigned clip wind
 
 ### The filings
 
-1. **Evidence.** Optional source-planning note: what do the two sources establish, and what remains unresolved? Your results notebook already supplies this evidence.
-   - START HERE: Source 1 establishes ____. Source 2 reports ____. As of ____, ____ remains unresolved / is certified.
-   - PUSH FURTHER: Explain how update times and reporting stages can produce different-looking pages.
-2. **Cause and effect.** Optional impact-planning note: identify two possible governing effects and one limit. Reuse these ideas in your final explanation.
-   - START HERE: Because / if ____ controls ____, ____ could change. Another effect is ____. This does not guarantee ____.
-   - PUSH FURTHER: Separate January leadership changes from policies requiring later action.
-3. **Final explanation.** Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.
-   - START HERE: As of ____, sources ____ and ____ establish ____. Because / if ____ controls ____, ____ could change. A second effect is ____, but ____ is not guaranteed. Someone could interpret this impact as ____ because ____. We still need to check ____.
-   - PUSH FURTHER: Explain what new evidence could change your conclusion. A concise paragraph or five clear sentences is enough.
+1. **.** Section 1 to 4. Name two reasons the article gives for why Republicans lost. Use your own words.
+   - START HERE: One reason is ____. Another reason is ____.
+2. **.** Section 1. About 6 in 10 voters were “very concerned” about grocery costs. Why would worry about prices at the store hurt the president’s party?
+   - START HERE: Prices hurt the president’s party because voters ____.
+3. **.** Section 1. Texas usually votes Republican, but Texans hit hardest by rising prices mostly backed the Democrat for Senate. What does that tell you about how much prices mattered this year?
+   - START HERE: It tells me that prices ____ because ____.
+4. **.** Section 1. The president was not on Tuesday’s ballot. So why did so many voters who disliked his policies vote for a Democrat for Congress?
+   - START HERE: Voters chose a Democrat for Congress because ____.
+5. **.** Section 2. More than half of voters said corruption was “crucial” to their vote, a little more than said that about prices. In your own words, what is corruption, and why might a voter care about it as much as prices?
+   - START HERE: Corruption is ____. A voter might care because ____.
+6. **.** Section 3. About 7 in 10 voters said Congress is not doing enough to check the president, including about 4 in 10 Republicans. What does it mean to check the president, and why is it surprising that some Republicans agreed?
+   - START HERE: To check the president means ____. It is surprising because ____.
+7. **.** Section 4. Pick Texas or North Carolina. What did voters think was wrong with the Republican candidate there, and how did backing that candidate hurt Republicans?
+   - START HERE: In ____, voters thought ____. This hurt Republicans because ____.
+8. **.** Only about half of voters had a good opinion of the Democratic Party, and some people who voted for Democrats still disliked it. How can someone vote for a party they do not like?
+   - START HERE: Someone might vote for a party they do not like because ____.
+9. **.** About 2 in 10 voters said neither party was better on the economy, and the article says Democrats’ lead on the economy is small. Why should that worry Democrats before the next election?
+   - START HERE: It should worry Democrats because ____.
+10. **.** Pretend you are giving advice to Democratic leaders in Congress. Using the article, write one warning they should take seriously over the next two years, and explain why.
+   - START HERE: My warning is ____. They should take it seriously because the article shows ____.
+11. **.** Public Question #3 asked whether to raise property taxes to fund Zionsville Community Schools. Did it pass or fail? Write the YES and NO percentages for Boone County.
+   - START HERE: It passed / failed. YES ____%, NO ____%. Source: ____.
+12. **.** Pick one of the three Zionsville school board races (At Large, Eagle Township or Union Township). Who won, and what share of the vote did they get?
+   - START HERE: In the ____ race, ____ won with ____%. Source: ____.
+13. **.** Pick one Boone County race that had two candidates: County Commissioner District 1, County Council District 1, or Circuit Court Clerk. Who won?
+   - START HERE: In the ____ race, ____ won. Source: ____.
+14. **.** Who won the race for U.S. Representative, Indiana District 4, which includes Zionsville? Boone County is only part of District 4, so use the state results site or the Associated Press for the whole district.
+   - START HERE: ____ won. Source: ____.
+15. **.** Pick one statewide race: Secretary of State, State Comptroller, or Treasurer of State. Who won across Indiana? Did Boone County vote the same way as the whole state?
+   - START HERE: ____ won statewide. Boone County voted the same way / differently. Sources: ____ and ____.
+16. **.** Pick one local or state result you found. Explain one way it could affect students at Zionsville schools or people who live in Boone County.
+   - START HERE: The ____ result could affect ____ because ____.
 
 ### Where the work goes
 
-The civics investigation’s Gather All My Work panel: five-item practice and three short responses, plus the dated results notebook. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.
+The civics investigation’s Gather All My Work panel: five-item practice and three short responses. Copy and paste into Canvas Text Entry before lunch. Drafts save only in the current browser.

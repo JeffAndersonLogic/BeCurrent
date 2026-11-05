@@ -188,6 +188,9 @@ for(const t of topics){t.flow=lessonReadings[t.n];t.status='ready';t.inClass='Be
 require('../midterms-revision')({meta,topics,sources,clips});
 require('../midterms-engagement')({meta,topics,clips});
 require('../midterms-independent')({meta,topics});
+// Jeff, 2026-11-05: Midterms 6 (Topic 5) was rebuilt as Election Results: What
+// Happened and Why? It runs last so nothing above writes over it.
+require('../midterms-results-day').apply(topics[4]);
 topics[2].presentationSlides=require('../midterms-scenarios');
 // Election Day is a scheduled viewing day beside the five topics, not a sixth topic.
 const days=[require('../midterms-election-day')];

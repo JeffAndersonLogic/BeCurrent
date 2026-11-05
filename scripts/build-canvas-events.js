@@ -322,6 +322,7 @@ ${rows.join('\n')}
  */
 function assignmentBody(unit, topic, code) {
   if (topic.day && topic.assignment) return dayAssignmentBody(unit, topic, code);
+  if (topic.analysis) return analysisAssignmentBody(unit, topic, code);
   if (isClean(unit)) {
     const pageUrl = artifactUrl(unit, topic);
     const due = CALENDAR[code] && CALENDAR[code].due;
@@ -458,6 +459,50 @@ ${rubric}
   const banner = (ASSIGNMENTS[code] && ASSIGNMENTS[code].banner) || day.topic;
   return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(plain(banner))}`,
     esc(plain(a.title))), rows)}`;
+}
+
+/**
+ * Midterms 6 (Topic 5), rebuilt 2026-11-05 as Election Results: What Happened and Why?
+ * The same branded table as the ballot assignment, read out of topic.analysis, the
+ * object the student page is built from, so the two cannot describe different work.
+ */
+function analysisAssignmentBody(unit, topic, code) {
+  const a = topic.analysis;
+  if (ASSIGNMENTS[code] && ASSIGNMENTS[code].points !== topic.points) {
+    throw new Error(`${code}: Canvas points (${ASSIGNMENTS[code].points}) and the topic's points (${topic.points}) disagree`);
+  }
+  const pageUrl = artifactUrl(unit, topic);
+  const due = CALENDAR[code] && CALENDAR[code].due;
+  const total = a.parts.reduce((n, p) => n + p.questions.length, 0);
+  const parts = a.parts.map(p => `                    <li><strong>${esc(plain(p.title))}</strong> (${p.questions.length} question${p.questions.length === 1 ? '' : 's'}). ${esc(plain(p.intro))}</li>`).join('\n');
+  const criteria = topic.successCriteria
+    .map(c => `                    <li>${esc(plain(c.criteria))}</li>`).join('\n');
+  const rubric = topic.rubric
+    .map(r => `                    <li><strong>${esc(r.label)}</strong>: ${esc(r.description)}</li>`).join('\n');
+  const rows = [
+    cleanRow('OVERVIEW', `                <p>${esc(plain(topic.overview))}</p>`),
+    cleanRow('STEP 1: Open', `                <p><a class="inline_disabled" href="${pageUrl}" target="_blank" rel="noopener"><strong>Open ${esc(plain(topic.title))} on BeCurrent</strong></a></p>
+                <p>The videos, the article and the result links are all on the page. Everything happens on the website. There is nothing to download.</p>`),
+    cleanRow('STEP 2: Answer', `                <p>Watch the videos together, read the article, then work down the page on your own. ${total} questions in ${a.parts.length} parts:</p>
+                <ol>
+${parts}
+                </ol>
+                <p>One or two sentences is enough for Parts 1 and 2. A short phrase and a source is enough for most of Part 3. Sentence starters, read-aloud support, voice typing, and agreed paper accommodations are available.</p>`),
+    cleanRow('STEP 3: Submit', `                <p>Choose <strong>Gather All My Work</strong>. Paste into this Canvas Text Entry and submit. If copying is blocked, use the manual-copy box. Saving a draft on BeCurrent is not submission.</p>${due ? `
+                <p>Aim to submit before lunch. <strong>Due: the start of class on ${longDate(due)}.</strong></p>` : `
+                <p>Submit before lunch.</p>`}`),
+    cleanRow('SUCCESS CRITERIA', `                <ol>
+${criteria}
+                </ol>`),
+    cleanRow(`SCORING: ${topic.points} points`, `                <ul>
+${rubric}
+                </ul>
+                <p>${esc(plain(a.privacy))}</p>`)
+  ];
+  const banner = (ASSIGNMENTS[code] && ASSIGNMENTS[code].banner) || `Topic ${topic.n}`;
+  return `${cleanTable(cleanBanner(`${esc(plain(unit.meta.unit))} &middot; ${esc(banner)}`,
+    esc(plain(topic.title))), rows)}
+<p>After lunch: daily reporting through The Desk.</p>`;
 }
 
 function renderAssignments(unit) {

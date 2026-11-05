@@ -1140,78 +1140,88 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-11-05",
-      "topic": "Who Has the Power? | Election Night: What Happens Next?",
+      "topic": "Who Has the Power? | Election Results: What Happened and Why?",
       "unit": "Who Has the Power?",
-      "subtitle": "The 2026 results and their governing impact",
+      "subtitle": "Why voters chose what they did, and what happened here at home",
       "learningTargets": [
         {
-          "text": "I can distinguish a projection, unofficial count, and certified result.",
-          "label": "Results literacy"
+          "text": "I can use facts from a news article to explain why an election turned out the way it did.",
+          "label": "Evidence"
         },
         {
-          "text": "I can connect the 2026 outcome to a governing consequence and a limit.",
+          "text": "I can explain how voters’ worries about prices, corruption, and checks on power affected their votes.",
           "label": "Cause and effect"
         },
         {
-          "text": "I can support an explanation with two sources and a fair alternative interpretation of the governing impact.",
-          "label": "Argument"
+          "text": "I can find local and state election results in official sources and say where each one came from.",
+          "label": "Sourcing"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.",
-          "label": "Results literacy"
+          "text": "I can answer questions about the article using its numbers and examples in my own words.",
+          "label": "Evidence"
         },
         {
-          "text": "I can explain two possible governing effects and one outcome that is not guaranteed.",
+          "text": "I can explain why something happened in the election, not just what happened.",
           "label": "Cause and effect"
         },
         {
-          "text": "I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.",
-          "label": "Argument"
+          "text": "I can name the winner of a Boone County or Indiana race and the source where I found it.",
+          "label": "Sourcing"
         }
       ],
       "homework": "Finish WP6 - Results and Impact in Canvas.",
       "homeworkDue": "the start of class on Monday, November 9",
-      "note": "Election Results. We check what has been counted, called and certified, from named sources, at a recorded time. If a race is still too close to call, that is the finding.",
-      "doNow": "An early leader, a projected winner, and a certified winner: are these the same? Write your answer.",
+      "note": "Election Results. We watch three reports on Tuesday night, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot.",
+      "doNow": "What is one thing you have heard about Tuesday’s election results? Where did you hear it?",
       "agenda": [
-        "Open Midterms 6: Election Night, What Happens Next? on the Midterms page.",
-        "Watch how the Associated Press calls a race, then sort each example by reporting stage: count, call, or certified.",
-        "Run the election desk: check the House, the Senate and Indiana’s Fourth District. Write down the source, the stage and the time you checked.",
-        "Write the impact: what the results could change, and what still limits it.",
-        "Explain the results and their impact. Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.",
-        "After lunch: CNN 10, then daily news and your News Log."
+        "Open Midterms 6: Election Results, What Happened and Why? on the Midterms page.",
+        "Watch together: CNN 10, then two reports on Tuesday night from MS NOW and CBS Mornings.",
+        "Read the article on the page: why voters chose Democrats, and a warning for the winners.",
+        "Answer Questions 1 to 10 about the article in your own words.",
+        "Part 3: find who won on Zionsville’s ballot, from the school referendum to Indiana’s Fourth District. Write the source for each.",
+        "Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.",
+        "After lunch: daily news and your News Log on The Desk."
       ],
       "slides": [
         {
-          "kicker": "Call, count, or certified?",
-          "title": "Three different things",
+          "kicker": "Watch together",
+          "title": "Tuesday night, explained",
           "bullets": [
-            "Unofficial count: partial totals posted by election offices. Early leads can shrink or flip.",
-            "Race call: a news organization’s conclusion about the winner. It is not the official result.",
-            "Certified result: checked and made official by election officials, days or weeks later.",
-            "Too close to call is a normal finding, not a problem."
+            "1. CNN 10: today’s episode",
+            "2. MS NOW: Rachel Maddow on the scale of Democratic gains (a host’s analysis)",
+            "3. CBS Mornings: Democrats win control of the House and Senate",
+            "Listen for: which parts are facts, and which parts are someone’s opinion about what the facts mean?"
           ]
         },
         {
-          "kicker": "The election desk",
-          "title": "Check three races",
+          "kicker": "Read and explain",
+          "title": "Why did voters choose Democrats?",
           "bullets": [
-            "House control: we check it together.",
-            "Senate control: we check it together.",
-            "Indiana’s Fourth District: you check it.",
-            "For each one, write the finding, the stage, the source and the time you checked."
+            "A survey of voters in all 50 states asked why they voted the way they did.",
+            "Prices, corruption, and wanting Congress to check the president all mattered.",
+            "A warning: many voters still do not like either party.",
+            "Questions 1 to 10: use the article’s facts, in your own words, with a because."
+          ]
+        },
+        {
+          "kicker": "Here at home",
+          "title": "Who won on our ballot?",
+          "bullets": [
+            "Zionsville schools: Public Question #3 and the school board.",
+            "Boone County: commissioner, council, and clerk.",
+            "Indiana: the Fourth District and one statewide race.",
+            "Use the result links on the page. Write the source. Results are unofficial until certified."
           ]
         },
         {
           "kicker": "Today’s assignment",
           "title": "WP6 - Results and Impact",
           "bullets": [
-            "Use your results notebook and two named sources.",
-            "Explain what the results could change, and one limit on that change.",
-            "Keep anything unresolved as unresolved.",
-            "Gather All My Work, paste into Canvas, and submit."
+            "16 questions in three parts, all on the Midterms 6 page.",
+            "Gather All My Work, paste into Canvas, and submit.",
+            "Your answers are private. Political opinions are not scored."
           ]
         }
       ]

@@ -3,310 +3,133 @@ window.BECURRENT_PROJECTOR_LESSON = {
   "schema": 2,
   "key": "midterms-block-05",
   "unit": "Who Has the Power?",
-  "title": "Election Night: What Happens Next?",
-  "question": "How did the 2026 midterm elections change who has power, and what could that mean for the country?",
-  "totalMinutes": 80,
+  "title": "Election Results: What Happened and Why?",
+  "question": "Why did the 2026 midterms turn out the way they did, and what did voters decide here at home?",
+  "totalMinutes": 70,
   "unitMinutes": 55,
-  "newsMinutes": 25,
+  "newsMinutes": 15,
   "storageKey": "bc-current-control-midterms-05",
   "phases": [
     {
-      "id": "hook",
-      "label": "Opening question",
-      "kind": "lesson",
-      "time": "0–3",
+      "id": "watch",
+      "label": "Watch together / three videos",
+      "kind": "watch",
+      "time": "0–18",
       "start": 0,
-      "minutes": 3,
+      "minutes": 18,
       "screen": {
-        "eyebrow": "Topic 5 / Opening question",
-        "title": "An early leader, a projected winner, and a certified winner: are these the same?",
-        "description": "Your desk rule: source, stage, check time.",
-        "action": null,
-        "image": {
-          "src": "../assets/images/midterms/indiana-statehouse-night.webp",
-          "alt": "The Indiana Statehouse in Indianapolis, lit at night, with trees on either side of its front steps.",
-          "caption": "The Indiana Statehouse in Indianapolis. A news race call is not the official result: state election officials count, canvass and certify the vote.",
-          "credit": "Carol M. Highsmith, Library of Congress, public domain",
-          "source": "https://www.loc.gov/item/2016632124/"
-        }
-      }
-    },
-    {
-      "id": "direction",
-      "label": "Today’s direction",
-      "kind": "lesson",
-      "time": "3–5",
-      "start": 3,
-      "minutes": 2,
-      "screen": {
-        "eyebrow": "Topic 5 / Today’s direction",
-        "title": "The 2026 results and their governing impact",
-        "description": "Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.",
+        "eyebrow": "Midterms 6 / Watch together / three videos",
+        "title": "Tuesday night, explained",
+        "description": "Play the three videos back to back. No writing yet; students listen for each Watch for question.",
         "action": {
-          "url": "../midterms/block-05.html#student-flow",
-          "label": "See today’s required work"
+          "url": "https://www.cnn10.com/",
+          "label": "Start with video 1: CNN 10"
         },
-        "bullets": [
-          "I can distinguish a projection, unofficial count, and certified result.",
-          "I can connect the 2026 outcome to a governing consequence and a limit.",
-          "I can support an explanation with two sources and a fair alternative interpretation of the governing impact."
+        "links": [
+          {
+            "title": "CNN 10: today’s episode",
+            "url": "https://www.cnn10.com/",
+            "source": "CNN 10",
+            "length": "News"
+          },
+          {
+            "title": "‘Rewrote the map’: Maddow tallies the stunning scale of Democratic gains",
+            "url": "https://www.youtube.com/watch?v=qScvB287kSU",
+            "source": "MS NOW",
+            "length": "Analysis by a TV host"
+          },
+          {
+            "title": "A blue tsunami carries Democrats to House, Senate control in 2026 midterm elections",
+            "url": "https://www.youtube.com/watch?v=KoW4tC_xoYg",
+            "source": "CBS Mornings",
+            "length": "News report"
+          }
         ]
       }
     },
     {
-      "id": "notes-1",
-      "label": "Notes 1 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 5,
-      "minutes": 0,
+      "id": "read",
+      "label": "Read on your own",
+      "kind": "lesson",
+      "time": "18–25",
+      "start": 18,
+      "minutes": 7,
       "screen": {
-        "eyebrow": "Topic 5 / Notes 1 of 6",
-        "title": "Why might some results not be final yet?",
-        "description": "",
+        "eyebrow": "Midterms 6 / Read on your own",
+        "title": "Why did voters choose Democrats?",
+        "description": "Students read the five short sections of the article on their own screens.",
+        "action": {
+          "url": "../midterms/block-05.html#the-article",
+          "label": "Open the article"
+        },
         "bullets": [
-          "Reporting develops as ballots are counted and officials check the totals.",
-          "A close race can stay unresolved after other races are called.",
-          "Record when you checked and which source you used.",
-          "If a later update changes a finding, explain what new information appeared."
-        ],
-        "write": "Name the uncertainty. Never fill the gap with a guess."
+          "Section 1: Rising prices hurt the party in power",
+          "Section 2: Corruption was a big worry",
+          "Section 3: Voters want Congress to push back",
+          "Section 4: Some Republican candidates were weak",
+          "Section 5: A warning for the winners"
+        ]
       }
     },
     {
-      "id": "watch-1",
-      "label": "Watch / explain",
-      "kind": "watch",
-      "time": "5–13",
-      "start": 5,
+      "id": "why",
+      "label": "Parts 1 and 2 / Questions 1–10",
+      "kind": "lesson",
+      "time": "25–37",
+      "start": 25,
+      "minutes": 12,
+      "screen": {
+        "eyebrow": "Midterms 6 / Parts 1 and 2 / Questions 1–10",
+        "title": "Explain why it happened",
+        "description": "Answer in your own words, with a because. Each question names the section to look in.",
+        "action": {
+          "url": "../midterms/block-05.html#part-why",
+          "label": "Open Question 1"
+        },
+        "bullets": [
+          "I can use facts from a news article to explain why an election turned out the way it did.",
+          "I can explain how voters’ worries about prices, corruption, and checks on power affected their votes.",
+          "I can find local and state election results in official sources and say where each one came from."
+        ]
+      }
+    },
+    {
+      "id": "local",
+      "label": "Part 3 / Questions 11–16",
+      "kind": "lesson",
+      "time": "37–45",
+      "start": 37,
       "minutes": 8,
       "screen": {
-        "eyebrow": "Topic 5 / Watch / explain",
-        "title": "How the Associated Press uses facts and math to call election results",
-        "description": "Watch 0:00 to 6:19. How is a race call different from a prediction or official certification?",
+        "eyebrow": "Midterms 6 / Part 3 / Questions 11–16",
+        "title": "What happened here at home?",
+        "description": "Use the result links to find who won on Zionsville’s ballot. Write the source for each answer.",
         "action": {
-          "url": "https://www.pbs.org/video/calling-the-race-1604354239/",
-          "label": "Play the clip"
+          "url": "../midterms/block-05.html#part-local",
+          "label": "Open Part 3"
         },
-        "cards": [
-          {
-            "title": "Race call",
-            "text": "A news organization’s conclusion about a winner based on its analysis."
-          },
-          {
-            "title": "Canvass",
-            "text": "Official work checking and compiling vote totals."
-          },
-          {
-            "title": "Certification",
-            "text": "Official sign-off on results under the relevant rules."
-          }
+        "bullets": [
+          "Zionsville schools: Public Question #3 and the school board",
+          "Boone County: commissioner, council, clerk",
+          "Indiana: District 4 and one statewide race",
+          "Results this week are unofficial until certified."
         ]
-      }
-    },
-    {
-      "id": "notes-2",
-      "label": "Notes 2 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 13,
-      "minutes": 0,
-      "screen": {
-        "eyebrow": "Topic 5 / Notes 2 of 6",
-        "title": "The four stages of election reporting",
-        "description": "",
-        "bullets": [
-          "Poll or forecast: estimates opinion before voting ends.",
-          "Unofficial count: ballots counted so far. It can change as more are added.",
-          "News race call: a news organization’s conclusion from counted votes and analysis.",
-          "Certified result: the official sign-off by election authorities after the canvass."
-        ],
-        "write": "Keep the source and the stage attached to every result."
-      }
-    },
-    {
-      "id": "investigate",
-      "label": "Guided practice",
-      "kind": "lesson",
-      "time": "13–18",
-      "start": 13,
-      "minutes": 5,
-      "screen": {
-        "eyebrow": "Topic 5 / Guided practice",
-        "title": "Which reporting stage?",
-        "description": "Open Chapter 2. Sort the five statements, read each explanation, and fix any mistakes.",
-        "action": {
-          "url": "../midterms/block-05.html#chapter-2",
-          "label": "Open practice and feedback"
-        },
-        "cards": [
-          {
-            "title": "Count",
-            "text": "Partial totals may change."
-          },
-          {
-            "title": "Call",
-            "text": "Attribute the news outlet’s conclusion."
-          },
-          {
-            "title": "Certified",
-            "text": "Official sign-off for that race."
-          }
-        ]
-      }
-    },
-    {
-      "id": "notes-3",
-      "label": "Notes 3 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 18,
-      "minutes": 0,
-      "screen": {
-        "eyebrow": "Topic 5 / Notes 3 of 6",
-        "title": "How do separate races decide control of a chamber?",
-        "description": "",
-        "bullets": [
-          "Control depends on who wins enough seats, not on one dramatic race.",
-          "House and Senate outcomes can differ.",
-          "Name your baseline: the outgoing Congress or a previous election. Do not mix them.",
-          "Some races may still be unresolved when we meet."
-        ],
-        "write": "A claim about chamber control needs evidence about enough seats."
-      }
-    },
-    {
-      "id": "watch-2",
-      "label": "Results investigation",
-      "kind": "lesson",
-      "time": "18–33",
-      "start": 18,
-      "minutes": 15,
-      "screen": {
-        "eyebrow": "Topic 5 / Results investigation",
-        "title": "Build a dated results notebook",
-        "description": "Run the results desk. Keep unresolved outcomes open.",
-        "action": {
-          "url": "../midterms/block-05.html#chapter-3",
-          "label": "Open the results packet"
-        },
-        "cards": [
-          {
-            "title": "House",
-            "text": "Model the evidence check."
-          },
-          {
-            "title": "Senate",
-            "text": "Check together."
-          },
-          {
-            "title": "Indiana",
-            "text": "Verify the district race."
-          }
-        ]
-      }
-    },
-    {
-      "id": "notes-4",
-      "label": "Notes 4 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 33,
-      "minutes": 0,
-      "screen": {
-        "eyebrow": "Topic 5 / Notes 4 of 6",
-        "title": "When do results start changing government?",
-        "description": "",
-        "bullets": [
-          "Winning on Election Day and starting a term are different moments.",
-          "Newly elected members ordinarily begin their terms on January 3, 2027.",
-          "Until then, the outgoing Congress still has responsibilities.",
-          "Once the new members organize, leadership and committees can change."
-        ],
-        "write": "Election Day does not instantly replace Congress."
-      }
-    },
-    {
-      "id": "notes-5",
-      "label": "Notes 5 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 33,
-      "minutes": 0,
-      "screen": {
-        "eyebrow": "Topic 5 / Notes 5 of 6",
-        "title": "What can a change in control affect?",
-        "description": "",
-        "bullets": [
-          "Who leads each chamber and its committees.",
-          "Which issues get priority.",
-          "Oversight of the executive branch.",
-          "It does not automatically turn campaign promises into laws."
-        ],
-        "write": "If control is still unresolved, explain it as a condition: “If ___ controls ___, then ___ could ___.”"
-      }
-    },
-    {
-      "id": "apply",
-      "label": "Apply the idea",
-      "kind": "lesson",
-      "time": "33–43",
-      "start": 33,
-      "minutes": 10,
-      "screen": {
-        "eyebrow": "Topic 5 / Apply the idea",
-        "title": "Write the impact, keep the limits",
-        "description": "Use your verified results. Explain who gains, retains, or has not yet secured control. Consider both accountability and governing effectiveness.",
-        "action": {
-          "url": "../midterms/block-05.html#chapter-4",
-          "label": "Open application"
-        },
-        "cards": [
-          {
-            "title": "What happened?",
-            "text": "Use dated, attributed results."
-          },
-          {
-            "title": "What could follow?",
-            "text": "Explain a governing effect and limit."
-          }
-        ]
-      }
-    },
-    {
-      "id": "notes-6",
-      "label": "Notes 6 of 6",
-      "kind": "notes",
-      "time": "Notes",
-      "start": 43,
-      "minutes": 0,
-      "screen": {
-        "eyebrow": "Topic 5 / Notes 6 of 6",
-        "title": "Build an explanation that can survive an update",
-        "description": "",
-        "bullets": [
-          "Start with the sourced outcome and its reporting stage.",
-          "Connect it to two possible governing effects and one limit.",
-          "Give another reasonable interpretation using the same results.",
-          "Finish with an uncertainty or your next check."
-        ],
-        "write": "Use “has” for an established outcome and “could” for a possible effect."
       }
     },
     {
       "id": "file",
-      "label": "Explain / Canvas",
+      "label": "Gather / Canvas",
       "kind": "lesson",
-      "time": "43–55",
-      "start": 43,
-      "minutes": 12,
+      "time": "45–55",
+      "start": 45,
+      "minutes": 10,
       "screen": {
-        "eyebrow": "Topic 5 / Explain / Canvas",
-        "title": "File your analysis",
-        "description": "Established result. Possible impact. Honest uncertainty.",
+        "eyebrow": "Midterms 6 / Gather / Canvas",
+        "title": "WP6 - Results and Impact",
+        "description": "Finish any open question. Then Gather All My Work, paste into Canvas, submit, and check the confirmation.",
         "action": {
-          "url": "../midterms/block-05.html#chapter-5",
-          "label": "Explain, gather, and submit"
+          "url": "../midterms/block-05.html#gather-work",
+          "label": "Gather and submit"
         }
       }
     },
@@ -325,28 +148,11 @@ window.BECURRENT_PROJECTOR_LESSON = {
       }
     },
     {
-      "id": "cnn10",
-      "label": "After lunch / CNN10",
-      "kind": "news",
-      "time": "After lunch · 10 min",
-      "start": 55,
-      "minutes": 10,
-      "screen": {
-        "eyebrow": "After lunch / CNN10",
-        "title": "Now, the wider world.",
-        "description": "Watch the latest school-day episode. Identify one event and why it matters.",
-        "action": {
-          "url": "https://www.cnn.com/cnn10",
-          "label": "Open CNN10"
-        }
-      }
-    },
-    {
       "id": "desk",
       "label": "After lunch / daily news",
       "kind": "news",
       "time": "After lunch · 15 min",
-      "start": 65,
+      "start": 55,
       "minutes": 15,
       "screen": {
         "eyebrow": "After lunch / daily news",

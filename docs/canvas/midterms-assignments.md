@@ -518,7 +518,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             <td colspan="2" style="background-color: #eceeec; border-bottom: 3px solid #ce1400; padding: 18px 20px;">
                 <p style="margin: 0;"><img src="https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png" alt="BeCurrent" width="240" height="36"></p>
                 <p style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; color: #922d20;">Who Has the Power? &middot; Midterms 6</p>
-                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Night: What Happens Next?</h2>
+                <h2 style="margin: 2px 0 0 0; color: #172124;">Election Results: What Happened and Why?</h2>
             </td>
         </tr>
         <tr>
@@ -526,15 +526,7 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">OVERVIEW</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Return after November 3 to record sourced 2026 results, identify unresolved races, and explain their possible governing effects. Separate established outcomes from predictions.</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">AFTER NOVEMBER 3</h3>
-            </td>
-            <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Complete after November 3, using sourced 2026 outcomes. Keep unresolved races unresolved; do not invent winners.</p>
+                <p>Watch CNN 10 and two reports on Tuesday night’s results, read what a survey of voters says about why Democrats won, then look up who won on Zionsville’s own ballot. Gather your answers into Canvas.</p>
             </td>
         </tr>
         <tr>
@@ -542,20 +534,22 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
                 <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 1: Open</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-05.html" target="_blank" rel="noopener"><strong>Open Topic 5 on BeCurrent</strong></a></p>
-                <p>Everything happens on the website. There is nothing to download.</p>
+                <p><a class="inline_disabled" href="https://jeffandersonlogic.github.io/BeCurrent/midterms/block-05.html" target="_blank" rel="noopener"><strong>Open Election Results: What Happened and Why? on BeCurrent</strong></a></p>
+                <p>The videos, the article and the result links are all on the page. Everything happens on the website. There is nothing to download.</p>
             </td>
         </tr>
         <tr>
             <td style="width: 22%; vertical-align: top; background-color: #f6f7f4; border-bottom: 1px solid #d4dad6; border-left: 4px solid #ce1400; padding: 14px 16px;">
-                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Investigate</h3>
+                <h3 style="margin: 0; font-size: 14px; color: #922d20;">STEP 2: Answer</h3>
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
-                <p>Use the assigned clip windows and prepared evidence cards. Complete the five-item practice and correct your choices. Complete the guided results notebook and one final explanation. Earlier source/application notes are optional planning.</p>
+                <p>Watch the videos together, read the article, then work down the page on your own. 16 questions in 3 parts:</p>
                 <ol>
-                    <li>Explain the 2026 results as of your check time. Use two identified sources, two possible governing effects and a limit, another reasonable interpretation of the governing impact, and one uncertainty. Keep unresolved outcomes conditional.</li>
+                    <li><strong>Part 1: Why did Democrats win?</strong> (7 questions). Use the article above. Answer in one or two sentences, in your own words. Each question tells you which section to look in.</li>
+                    <li><strong>Part 2: A warning for the winners</strong> (3 questions). Use Section 5 of the article. One or two sentences each.</li>
+                    <li><strong>Part 3: What happened here at home?</strong> (6 questions). On Tuesday you read the real ballot for one Zionsville precinct. Now find out how those races turned out. Use the result links below and write the source for each answer. A short phrase is enough.</li>
                 </ol>
-                <p>Start here frames, read-aloud support, voice typing, and agreed paper accommodations are available. Background dropdowns and Push further are optional. Political preferences are not scored.</p>
+                <p>One or two sentences is enough for Parts 1 and 2. A short phrase and a source is enough for most of Part 3. Sentence starters, read-aloud support, voice typing, and agreed paper accommodations are available.</p>
             </td>
         </tr>
         <tr>
@@ -573,9 +567,9 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ol>
-                    <li>I can record House, Senate, and one Indiana result or unresolved race with sources, reporting stage, and a check date.</li>
-                    <li>I can explain two possible governing effects and one outcome that is not guaranteed.</li>
-                    <li>I can use two identified sources, give another reasonable interpretation of the governing impact, and state an uncertainty.</li>
+                    <li>I can answer questions about the article using its numbers and examples in my own words.</li>
+                    <li>I can explain why something happened in the election, not just what happened.</li>
+                    <li>I can name the winner of a Boone County or Indiana race and the source where I found it.</li>
                 </ol>
             </td>
         </tr>
@@ -585,15 +579,14 @@ Paste the block below through the RCE **`</>`** HTML editor, never the visual on
             </td>
             <td style="vertical-align: top; border-bottom: 1px solid #d4dad6; padding: 14px 18px; color: #172124;">
                 <ul>
-                    <li><strong>Accurate results</strong>: Accurately record House control, Senate control, and one Indiana congressional race as of a stated check time. Attach sources and reporting stages; an honestly unresolved finding can earn full credit.</li>
-                    <li><strong>Effects and limit</strong>: Explain two possible governing effects through leadership, committees, oversight, or lawmaking, plus one change the result does not guarantee. Use conditional language when needed.</li>
-                    <li><strong>Two-source reasoning</strong>: Identify two sources and explain what each establishes. Distinguish official counts or certification from news race calls and avoid treating repeated reporting as separate proof.</li>
-                    <li><strong>Another reasonable impact</strong>: Explain a fair alternative interpretation of the governing impact, such as accountability versus delay. Do not give a false alternative to an established factual result.</li>
-                    <li><strong>Remaining uncertainty</strong>: Name an unresolved result, future policy question, or other genuine uncertainty and explain what additional evidence or event would clarify it.</li>
+                    <li><strong>Uses the article</strong>: Parts 1 and 2 use the article’s numbers and examples, in your own words.</li>
+                    <li><strong>Explains why</strong>: Answers give a reason (because, so, which led to), not only a fact.</li>
+                    <li><strong>Finds the results</strong>: Part 3 names the results and the source for each one, and keeps unofficial results labeled as unofficial.</li>
                 </ul>
+                <p>Your answers are private. You never have to say how you or your family voted, and nobody is asked to share with the class. Political opinions are not scored; using the evidence is.</p>
             </td>
         </tr>
     </tbody>
 </table>
-<p>After lunch: CNN10 and daily reporting through The Desk.</p>
+<p>After lunch: daily reporting through The Desk.</p>
 ```

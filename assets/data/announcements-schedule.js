@@ -164,17 +164,20 @@ window.BECURRENT_SCHEDULE={
    homework:'Finish WP4 - Election Messages in Canvas.',homeworkDue:'the start of class on Tuesday, November 3'}
 ,
 
-  {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Night: What Happens Next?',
-   // Jeff, 2026-11-03: the Election Results day. No result is written here: the class
-   // checks named sources live, and an unresolved race is a valid finding.
-   homeAnnouncement:'Today: Midterms 6, Election Results. Check the results from named sources, then submit WP6 - Results and Impact in Canvas.',
-   note:'Election Results. We check what has been counted, called and certified, from named sources, at a recorded time. If a race is still too close to call, that is the finding.',
-   doNow:'An early leader, a projected winner, and a certified winner: are these the same? Write your answer.',
-   agenda:['Open Midterms 6: Election Night, What Happens Next? on the Midterms page.','Watch how the Associated Press calls a race, then sort each example by reporting stage: count, call, or certified.','Run the election desk: check the House, the Senate and Indiana\u2019s Fourth District. Write down the source, the stage and the time you checked.','Write the impact: what the results could change, and what still limits it.','Explain the results and their impact. Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.','After lunch: CNN 10, then daily news and your News Log.'],
+  {date:'2026-11-05',topic:'WP5',topicTitle:'Who Has the Power? | Election Results: What Happened and Why?',
+   // Jeff, 2026-11-05: today's plan was rebuilt. Three clips, a plain-language version of
+   // a PBS NewsHour / Associated Press article on why voters chose Democrats, ten questions
+   // on it, then the results on Zionsville's own ballot. No local winner is written here:
+   // the class finds them in the Boone County and Indiana results.
+   homeAnnouncement:'Today: Midterms 6, Election Results. Why did voters choose what they did, and who won here at home? Submit WP6 - Results and Impact in Canvas.',
+   note:'Election Results. We watch three reports on Tuesday night, read what a survey of voters says about why Democrats won, then look up who won on Zionsville\u2019s own ballot.',
+   doNow:'What is one thing you have heard about Tuesday\u2019s election results? Where did you hear it?',
+   agenda:['Open Midterms 6: Election Results, What Happened and Why? on the Midterms page.','Watch together: CNN 10, then two reports on Tuesday night from MS NOW and CBS Mornings.','Read the article on the page: why voters chose Democrats, and a warning for the winners.','Answer Questions 1 to 10 about the article in your own words.','Part 3: find who won on Zionsville\u2019s ballot, from the school referendum to Indiana\u2019s Fourth District. Write the source for each.','Gather All My Work, paste into Canvas, and submit WP6 - Results and Impact.','After lunch: daily news and your News Log on The Desk.'],
    slides:[
-    {kicker:'Call, count, or certified?',title:'Three different things',bullets:['Unofficial count: partial totals posted by election offices. Early leads can shrink or flip.','Race call: a news organization\u2019s conclusion about the winner. It is not the official result.','Certified result: checked and made official by election officials, days or weeks later.','Too close to call is a normal finding, not a problem.']},
-    {kicker:'The election desk',title:'Check three races',bullets:['House control: we check it together.','Senate control: we check it together.','Indiana\u2019s Fourth District: you check it.','For each one, write the finding, the stage, the source and the time you checked.']},
-    {kicker:'Today\u2019s assignment',title:'WP6 - Results and Impact',bullets:['Use your results notebook and two named sources.','Explain what the results could change, and one limit on that change.','Keep anything unresolved as unresolved.','Gather All My Work, paste into Canvas, and submit.']}
+    {kicker:'Watch together',title:'Tuesday night, explained',bullets:['1. CNN 10: today\u2019s episode','2. MS NOW: Rachel Maddow on the scale of Democratic gains (a host\u2019s analysis)','3. CBS Mornings: Democrats win control of the House and Senate','Listen for: which parts are facts, and which parts are someone\u2019s opinion about what the facts mean?']},
+    {kicker:'Read and explain',title:'Why did voters choose Democrats?',bullets:['A survey of voters in all 50 states asked why they voted the way they did.','Prices, corruption, and wanting Congress to check the president all mattered.','A warning: many voters still do not like either party.','Questions 1 to 10: use the article\u2019s facts, in your own words, with a because.']},
+    {kicker:'Here at home',title:'Who won on our ballot?',bullets:['Zionsville schools: Public Question #3 and the school board.','Boone County: commissioner, council, and clerk.','Indiana: the Fourth District and one statewide race.','Use the result links on the page. Write the source. Results are unofficial until certified.']},
+    {kicker:'Today\u2019s assignment',title:'WP6 - Results and Impact',bullets:['16 questions in three parts, all on the Midterms 6 page.','Gather All My Work, paste into Canvas, and submit.','Your answers are private. Political opinions are not scored.']}
    ],
    homework:'Finish WP6 - Results and Impact in Canvas.',homeworkDue:'the start of class on Monday, November 9'}
  ],
