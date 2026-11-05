@@ -210,12 +210,11 @@ physical cost, and one of the biggest examples in the country is being built in 
 
 ---
 
-## Decisions for Jeff
-1. **Topic 3's local story.** The Lebanon data center is a real local debate, and some
-   students' families may work on it or oppose it. The outline keeps it balanced (benefits and
-   costs side by side, opinions not graded). Is that the right level, or would you rather keep
-   the local angle lighter?
-2. **A "Real or AI?" image hook for Topic 2.** It would be engaging, but every image has to be
-   honestly sourced, and AI images with a verified origin are hard to find. Options: skip it, or
-   you make two or three images yourself in MagicSchool and we label them as yours.
-3. **Still open from before:** the school's AI policy (for Topic 4) and the exam length.
+## Decisions
+- **2026-11-05, Jeff:** Topic 3's Lebanon data center story stays as outlined (benefits and
+  costs side by side, opinions not graded).
+- **2026-11-05, Jeff:** No "Real or AI?" image game in Topic 2.
+
+## Still open
+1. The school's AI policy, if one exists (the starting point for Topic 4).
+2. The exam length (or an old exam to copy the format from).
