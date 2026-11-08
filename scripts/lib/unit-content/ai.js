@@ -8,6 +8,7 @@ module.exports = {
     "course": "CURRENT EVENTS",
     "reviewed": "2026-11-08",
     "design": "Signal Lab / Midnight Ember",
+    "renderer": "ai-investigation",
     "overview": "Four investigations about where AI answers come from, how to verify them, what AI changes, and who should make the rules.",
     "terminalQuestion": "AI is already making decisions that affect your life. Which decisions should a person still make, and who gets to set the rules?",
     "openingFilm": {
