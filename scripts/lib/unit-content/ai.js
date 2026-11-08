@@ -16,10 +16,10 @@ module.exports = {
       "publisher": "PBS NOVA",
       "date": "2024-03-27",
       "fullRuntime": "53:30",
-      "assigned": "00:00-16:21",
+      "assigned": "00:00-53:30 (full documentary)",
       "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
       "alternate": "https://www.pbs.org/video/ai-revolution-umwwlt/",
-      "note": "Opening 16:21 only. The documentary dates to 2024; check claims about current products before treating them as current."
+      "note": "Watch the entire 53:30 documentary in class on Monday, November 9. Its examples are from 2024; distinguish evergreen explanations from current product claims."
     },
     "schedule": [
       [
@@ -47,8 +47,9 @@ module.exports = {
         "The Desk"
       ]
     ],
-    "studentFlow": "Short class opening; independent reading and headphones; eight short private responses with Start here and Push further; Gather All My Work to Canvas before lunch; CNN 10 and News Log after lunch.",
-    "privacy": "Never type your full name, address, or anything private. Your teacher can read this chat."
+    "studentFlow": "November 9 is a full-film introduction with a lightweight viewing guide, no eight-question Canvas worksheet. November 11-17 use independent investigations with eight short private responses, Gather All My Work, and Canvas submissions. CNN 10 / News Log remain after lunch.",
+    "privacy": "Never type your full name, address, or anything private. Your teacher can read this chat.",
+    "dayOneFormat": "FULL FILM 53:30. Screen start immediately; do not assign eight additional responses or a Canvas filing before lunch. Four short viewing cues, optional exit thought."
   },
   "topics": [
     {
@@ -60,8 +61,8 @@ module.exports = {
       "subtitle": "A very good guesser",
       "skill": "Generalizing from Evidence",
       "question": "How can a computer sound like it understands you?",
-      "hook": "I used AI to help build parts of this unit. How would you find out whether everything on this page is accurate?",
-      "overview": "Begin with part of a NOVA documentary. Then become a language model for a few minutes, classify everyday systems, and test how a chatbot chooses an answer.",
+      "hook": "I used AI to help build parts of this unit. As you watch, what would convince you that an AI-generated answer is accurate?",
+      "overview": "Start the unit with the entire 53-minute NOVA documentary A.I. Revolution. Use four brief viewing cues to notice how AI learns, helps people, can make mistakes, and raises questions about responsibility. Detailed investigations begin next class.",
       "learningTargets": [
         {
           "skill": "Explanation",
@@ -138,8 +139,8 @@ module.exports = {
         "date": "2024-03-27",
         "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
         "alt": "https://www.pbs.org/video/ai-revolution-umwwlt/",
-        "assigned": "00:00 to 16:21",
-        "prompt": "What did the computer learn from? What did people still decide?",
+        "assigned": "Full film / 00:00-53:30",
+        "prompt": "Where does AI learn patterns? What can it help people do? What can go wrong? Who should remain responsible?",
         "captions": "Check captions and playback before class."
       },
       "sort": {
@@ -245,7 +246,26 @@ module.exports = {
           "url": "https://www.pewresearch.org/internet/2026/02/24/how-teens-use-and-view-ai/",
           "note": "Survey about teen experiences and perceptions, February 2026."
         }
-      ]
+      ],
+      "viewingGuide": [
+        {
+          "label": "How AI works",
+          "prompt": "Find one example of a system learning from data rather than simply following a fixed rule."
+        },
+        {
+          "label": "What AI can do",
+          "prompt": "Notice one useful possibility in science, medicine, daily life, or work."
+        },
+        {
+          "label": "What could go wrong",
+          "prompt": "Notice one mistake, unfair outcome, or misleading use of AI."
+        },
+        {
+          "label": "Who decides",
+          "prompt": "Who should be responsible when a machine makes an important recommendation?"
+        }
+      ],
+      "dayOneNote": "The four viewing cues are optional jot notes, not four graded questions. No eight-question worksheet or MagicSchool activity is due during the 53:30 showing. Concepts recur in Topics 2-4 and the study guide."
     },
     {
       "n": 2,
