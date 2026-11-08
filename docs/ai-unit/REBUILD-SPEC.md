@@ -1,4 +1,15 @@
 # The Machine in the Room | AI Unit Rebuild Specification
+
+## NOVEMBER 8 UPDATE — APPROVED FILM-FIRST OPENING
+Jeff selected Midnight Ember, then explicitly chose the **entire PBS NOVA A.I. Revolution documentary** for Monday, November 9, 2026.
+- Verified official film runtime: 53 minutes 30 seconds (March 27, 2024). Official YouTube: https://www.youtube.com/watch?v=-sB12gk9ESA ; official PBS: https://www.pbs.org/video/ai-revolution-umwwlt/
+- Day 1 is a full-film lesson, NOT a 16-minute excerpt. The first film begins immediately in the ~55-minute before-lunch block. Four optional observation cues; no required eight-question worksheet, MagicSchool experiment, or Canvas Text Entry submission that morning.
+- AI1 concepts are introduced through the complete film and reinforced in the following investigations and study guide. Do not pretend there is time for an eight-answer exercise after a 53:30 movie.
+- The original eight-question AI1 bank remains canonical for optional future review only, not a graded November 9 task.
+- Student-facing Midnight Ember home, AI1 page, teacher run of show, projector, and Canvas calendar copy must all say FULL DOCUMENTARY. No source of truth may retain the first-16-minutes plan.
+- Preserve Nov 11 AI2, Nov 13 AI3, Nov 17 AI4, Nov 19 25-item Canvas assessment, Nov 23 Desk. On Nov 11–17 eight private responses per lesson, verified shared Canvas record; News Log after lunch.
+- Check school playback, source URL, audio, captions, and any video preroll before students arrive. The documentary is historical to 2024; distinguish dated claims from November 2026 capabilities.
+
 Status: DESIGN RESTART / NOT PUBLICATION-APPROVED
 Reviewed: 2026-11-08
 Code: AI
