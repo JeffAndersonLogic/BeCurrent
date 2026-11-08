@@ -1,47 +1,63 @@
 #!/usr/bin/env node
 'use strict';
-// AI unit contract: the full NOVA film replaces AI1's eight-answer worksheet.
-// All generated pages must match the canonical Midnight Ember source.
-const assert=require('assert');
-const fs=require('fs');
-const path=require('path');
+const assert=require('assert'),fs=require('fs'),path=require('path');
 const ROOT=path.resolve(__dirname,'../..');
 const unit=require('../lib/unit-content/ai');
 const render=require('../lib/ai-renderer');
-const generated=render(unit);
+const pages=render(unit);
 assert.strictEqual(unit.meta.code,'AI');
 assert.strictEqual(unit.meta.renderer,'ai-investigation');
 assert.strictEqual(unit.topics.length,4);
 assert.strictEqual(unit.meta.openingFilm.fullRuntime,'53:30');
 assert.match(unit.meta.openingFilm.assigned,/full documentary/i);
+assert.strictEqual(unit.days[0].code,'OPEN');
+assert.deepStrictEqual(unit.topics.map(t=>t.date),['2026-11-11','2026-11-13','2026-11-17','2026-11-19']);
+assert.strictEqual(unit.meta.assessment.date,'2026-11-23');
+assert.strictEqual(unit.topics[0].substituteDay,true);
 assert.strictEqual(unit.topics[0].viewingGuide.length,4);
-for(const [filename,text] of Object.entries(generated)){
-  const actual=fs.readFileSync(path.join(ROOT,filename),'utf8');
-  assert.strictEqual(actual,text,filename+' must be generated from ai-renderer.js and ai.js');
+assert.strictEqual(unit.topics[0].subPlan.directions.length>=6,true);
+for(const [filename,content] of Object.entries(pages)){
+ const full=path.join(ROOT,filename);
+ assert(fs.existsSync(full),filename+' should exist');
+ assert.strictEqual(fs.readFileSync(full,'utf8'),content,filename+' must reproduce from canonical source');
 }
-const film=generated['ai/block-01.html'];
+const film=pages['ai/opening-film.html'];
 assert.match(film,/53 MINUTES 30 SECONDS/i);
 assert.match(film,/00:00–53:30/);
-assert.match(film,/four viewing cues/i);
+assert.match(film,/Four viewing cues/i);
 assert.doesNotMatch(film,/data-slot=/);
 assert.doesNotMatch(film,/id="gather-work"/);
-assert.doesNotMatch(film,/video-first-record.js/);
-const calendar=generated['docs/canvas/ai-unit-calendar.html'];
-assert.match(calendar,/NO Canvas assignment on full film day/i);
-for(let i=2;i<=4;i++){
-  const page=generated['ai/block-0'+i+'.html'];
-  const slots=[...page.matchAll(/data-slot="ai-q\d"/g)];
-  assert.strictEqual(slots.length,8,'AI'+i+' must present eight private prompts');
-  assert.match(page,/video-first-record.js/);
-  assert.match(page,/id="gather-work"/);
-  assert.match(page,/id="copy-preview"/);
-  assert.match(page,/ai-midnight-ember.css/);
-  assert.doesNotMatch(page,/magicschool\.ai\//i,'MagicSchool join link cannot appear in public page');
+assert.doesNotMatch(film,/video-first-record\.js/);
+const ai1=pages['ai/block-01.html'];
+assert.match(ai1,/Everything you need is on this page/);
+assert.match(ai1,/TEACHER AT CONFERENCE/);
+assert.match(ai1,/print-topic-01\.html/);
+assert.doesNotMatch(ai1,/Full film \/ 00:00-53:30/);
+assert.match(pages['teacher/ai-topic-01-os.html'],/Substitute instructions/);
+assert.match(pages['teacher/ai-film-os.html'],/53:30/);
+assert.match(pages['teacher/ai-film-projector.html'],/A\.I\. Revolution/);
+const calendar=pages['docs/canvas/ai-unit-calendar.html'];
+assert.match(calendar,/NO Canvas assignment on Nov 9/);
+assert.match(calendar,/2026-11-11/);
+assert.match(calendar,/SUBSTITUTE/);
+assert.match(calendar,/November 23/);
+for(let i=1;i<=4;i++){
+ const html=pages['ai/block-0'+i+'.html'];
+ assert.strictEqual([...html.matchAll(/data-slot="ai-q\d"/g)].length,8,'AI'+i+' should offer eight required answers');
+ assert.match(html,/video-first-record\.js/);
+ assert.match(html,/id="gather-work"/);
+ assert.match(html,/id="copy-preview"/);
+ assert.match(html,/ai-midnight-ember\.css/);
+ assert.doesNotMatch(html,/magicschool\.ai\//i,'no private MagicSchool room URL in public source');
 }
-assert.match(generated['ai/index.html'],/entire 53-minute, 30-second documentary/);
-assert.match(generated['teacher/ai-topic-01-os.html'],/no eight-question worksheet/i);
-assert.match(generated['teacher/ai-topic-01-projector.html'],/full documentary/i);
 const shared=fs.readFileSync(path.join(ROOT,'assets/js/video-first.js'),'utf8');
 assert.match(shared,/bcRecordManifest\(/);
 assert.match(shared,/body\.dataset\.sortSlot\|\|'chamber-sort'/);
-console.log('PASS: AI film-day, three eight-question investigations, public safety and source reproducibility.');
+const teaching=fs.readFileSync(path.join(ROOT,'teacher/teaching-os-manifest.js'),'utf8');
+assert.match(teaching,/"code":"AIOPEN"/);
+assert.match(teaching,/"code":"AI1"/);
+const schedule=fs.readFileSync(path.join(ROOT,'assets/data/announcements-schedule.js'),'utf8');
+assert.match(schedule,/date:'2026-11-11',topic:'AI1'/);
+assert.match(schedule,/date:'2026-11-23',topicTitle:'The Machine in the Room \| AI Unit Assessment'/);
+assert.match(schedule,/date:'2026-11-09',topic:'AIOPEN'/);
+console.log('PASS: NOVA 53:30 film day, independent Nov 11 AI1, four Canvas investigators, shifted calendar, no student-data leak, generated artifacts.');
