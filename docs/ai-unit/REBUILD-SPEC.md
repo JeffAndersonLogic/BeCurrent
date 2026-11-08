@@ -21,6 +21,12 @@ Use the existing BeCurrent Midterms system as the content/interaction reference:
 - Student pages contain no answer keys, no hidden teacher solutions, no privileged teacher notes. Public GitHub Pages URLs are NOT access-controlled; if teacher materials must actually be restricted, place them in role-restricted Canvas/private storage rather than claiming a hidden website button is secure.
 - Website, teachers' materials, announcements and Canvas text all derive from one canonical unit data source. Keep live main unchanged until the branch passes tests.
 
+## Opening hook: the class itself is evidence
+The teacher can open AI1 with a truthful, high-interest disclosure: "I used AI to help design parts of this unit. Why should you trust what appears on this page?" Make the response private, not a class debate. Return to that same dilemma during AI2 (verification), AI3 (whose work changed), and AI4 (what rule should govern using AI in class). Do not imply that AI independently researched, verified, or approved the curriculum; human oversight is the point.
+
+## Time and cognitive-load budget
+Before-lunch investigation should fit the actual Midterms bell schedule. Draft a 55-minute required route: 4-minute story, 7-minute concrete opener, 15-minute core evidence (including a brief clip), 17-minute responses distributed across chapters, 7-minute applied practice, 5-minute Canvas filing. Reallocate rather than adding when a chapter runs long. Optional deeper reading and extra clips may not block essential comprehension. Eight responses should be short (many 1–2 sentences), with differentiation and paper accommodations. Keep CNN 10 and News Log after lunch.
+
 ## Unit argument
 Question: "AI is already making decisions that affect your life. Which decisions should a person still make, and who gets to set the rules?"
 Conceptual spine:
