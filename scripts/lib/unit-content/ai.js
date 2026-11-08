@@ -24,45 +24,65 @@ module.exports = {
     "schedule": [
       [
         "2026-11-09",
-        "AI1"
+        "AIOPEN"
       ],
       [
         "2026-11-11",
-        "AI2"
+        "AI1"
       ],
       [
         "2026-11-13",
-        "AI3"
+        "AI2"
       ],
       [
         "2026-11-17",
-        "AI4"
+        "AI3"
       ],
       [
         "2026-11-19",
-        "Assessment in Canvas only"
+        "AI4"
       ],
       [
         "2026-11-23",
-        "The Desk"
+        "Assessment in Canvas only"
+      ],
+      [
+        "2026-11-25 through 2026-11-27",
+        "Thanksgiving break, no school"
+      ],
+      [
+        "2026-11-30",
+        "The Desk / tentative pending class rotation check"
       ]
     ],
-    "studentFlow": "November 9 is a full-film introduction with a lightweight viewing guide, no eight-question Canvas worksheet. November 11-17 use independent investigations with eight short private responses, Gather All My Work, and Canvas submissions. CNN 10 / News Log remain after lunch.",
+    "studentFlow": "Nov 9: entire NOVA documentary, four optional viewing cues and no Canvas assignment. Nov 11: fully independent AI1 on substitute/conference day, eight questions and shared Canvas Gather; no teacher presentation or required live MagicSchool. Nov 13, 17, 19: AI2-AI4 eight-answer investigations. Nov 23: Canvas-only assessment. Nov 25-27: no school. Next class after break: The Desk. CNN 10 / News Log stay after lunch.",
     "privacy": "Never type your full name, address, or anything private. Your teacher can read this chat.",
-    "dayOneFormat": "FULL FILM 53:30. Screen start immediately; do not assign eight additional responses or a Canvas filing before lunch. Four short viewing cues, optional exit thought."
+    "dayOneFormat": "FILM ONLY on 2026-11-09, entire 53:30 NOVA A.I. Revolution. AI1 is the following class, 2026-11-11, completed independently while teacher attends a conference.",
+    "assessment": {
+      "date": "2026-11-23",
+      "location": "Canvas only",
+      "questions": 25,
+      "distribution": {
+        "AI1": 6,
+        "AI2": 6,
+        "AI3": 6,
+        "AI4": 7
+      },
+      "notes": "Secure assessment and key must not be hosted publicly."
+    }
   },
   "topics": [
     {
       "n": 1,
       "key": "ai-t01",
       "page": "block-01.html",
-      "date": "2026-11-09",
+      "date": "2026-11-11",
       "title": "What AI Actually Is",
       "subtitle": "A very good guesser",
       "skill": "Generalizing from Evidence",
       "question": "How can a computer sound like it understands you?",
-      "hook": "I used AI to help build parts of this unit. As you watch, what would convince you that an AI-generated answer is accurate?",
-      "overview": "Start the unit with the entire 53-minute NOVA documentary A.I. Revolution. Use four brief viewing cues to notice how AI learns, helps people, can make mistakes, and raises questions about responsibility. Detailed investigations begin next class.",
+      "hook": "Your teacher is at a conference today. You can complete this investigation on your own using the explanations and examples on this page. Start at Chapter 1, work in order, and submit eight answers to Canvas before lunch.",
+      "overview": "Independent follow-up to Monday's NOVA documentary. Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking. No teacher presentation is required.",
       "learningTargets": [
         {
           "skill": "Explanation",
@@ -93,44 +113,45 @@ module.exports = {
       ],
       "chapters": [
         {
-          "title": "The question hiding in your phone",
+          "title": "Start here: What did the film show?",
           "paragraphs": [
-            "Your phone can guess a word, rank a video, recognize a face, and send suspicious messages to a spam folder. Some of those tasks use machine learning. Some everyday features simply follow rules. The name on an app cannot tell you exactly how it works.",
-            "Artificial intelligence (AI) is a broad family of computer methods used to perform tasks such as recognizing patterns, making predictions, generating language, or planning. Not every program is AI. Not every AI program is a chatbot."
+            "On Monday you watched NOVA's A.I. Revolution. If you missed it, you can still do today's lesson. Artificial intelligence is a broad category of computer methods used for recognizing patterns, making predictions, generating language, and other tasks. Not all AI works the same way.",
+            "Think about an everyday example: a video feed may predict what you want to watch, while a microwave timer simply counts down. A computer can use AI in one part of a product and ordinary instructions in another."
           ],
-          "activity": "After the teacher's opening, write one private prediction: what do you think AI actually learns?"
+          "activity": "Read the background, think privately about your own examples, and answer Question 1. Continue to the next chapter without waiting for the substitute."
         },
         {
-          "title": "Watch the documentary: Where did AI come from?",
+          "title": "Be the Model: Predict the next word",
           "paragraphs": [
-            "Watch the assigned opening of PBS NOVA's 2024 A.I. Revolution, from 00:00 through 16:21. Notice how the film moves from the history of AI to systems that learn from examples.",
-            "This documentary predates recent products. Treat the film as an explanation of ideas, not a report on what every AI tool can do in November 2026."
+            "Before using any chatbot, finish these starters in your own notes: Peanut butter and ___; The capital of France is ___; Once upon a ___; My favorite food is ___; The best movie ever is ___. You may write them on paper.",
+            "A strong pattern may make some answers easy to predict. A factual answer, such as a capital city, can be checked. A personal favorite does not have one universally correct answer. A plausible completion does not prove the computer understands the question."
           ],
-          "activity": "Watch for: What did machines learn from, and what were humans still responsible for?"
+          "activity": "Complete the five starters privately, then answer Questions 2 and 3."
         },
         {
-          "title": "Become the predictor",
+          "title": "Patterns learned from examples",
           "paragraphs": [
-            "First, finish five starters on paper: Peanut butter and ___; The capital of France is ___; Once upon a ___; My favorite food is ___; The best movie ever is ___. Do this before opening a chatbot.",
-            "Some completions follow a strong pattern. Others are facts that can be checked. Others are preferences with no single right answer. Predictability and truth are different questions."
+            "A basic calculator follows mathematical rules. A modern spam filter can learn from examples of messages marked spam and not spam. These are different ways of deciding what happens next.",
+            "Training data are examples used to help develop many machine-learning systems. A pattern is something that regularly appears. An AI tool may use both learned models and fixed programming, so classify by how a feature typically works, not just by its product name."
           ],
-          "activity": "Compare the predictable starter with the one that depends most on the person."
+          "activity": "Try the eight-card AI/not-AI sort, read the feedback, and answer Questions 4 and 5."
         },
         {
-          "title": "AI or just a computer program?",
+          "title": "Chatbot or printed sample: Compare the replies",
           "paragraphs": [
-            "A calculator typically follows fixed instructions; a learned spam filter detects patterns across email examples. Some products mix both approaches. A phone feature may be AI in one implementation and rule-based in another.",
-            "Training data are examples used to develop many machine-learning systems. A pattern is a regularity among examples. A prediction is an estimate of an outcome or response."
+            "A modern language model generates a response from patterns and context; some systems can also use tools, search, or reason through multi-step problems. A convincing sentence can still be inaccurate, incomplete, or just one of many possible answers.",
+            "If your Canvas assignment contains the BeCurrent MagicSchool link, you may ask it to complete the five starters from Chapter 2. If the room is unavailable, use these clearly illustrative sample replies instead: jelly; Paris; time; pizza; it depends on the person. The samples are not a record of MagicSchool's actual output.",
+            "A useful output still deserves checking when it claims to be factual. For schoolwork, a student remains responsible for reviewing the final work."
           ],
-          "activity": "Sort eight technologies into likely AI, likely rule-based, or depends."
+          "activity": "Compare either the chatbot or the printed sample to your predictions. Answer Questions 6 and 7. No live chatbot access is required."
         },
         {
-          "title": "Ask the chatbot, then check",
+          "title": "Checkpoint: When should we trust the machine?",
           "paragraphs": [
-            "If your teacher assigned a MagicSchool room, its join link is in Canvas, never on this website. Give the chatbot the same five starters and compare responses. If the room is unavailable, use these illustrative sample completions: jelly; Paris; time; pizza; it depends.",
-            "A modern large language model generates a reply in pieces based on patterns and instructions. It can do sophisticated tasks, sometimes using tools and live searches. Fluency is not independent evidence that the reply is true."
+            "Calling a chatbot a 'very good guesser' helps explain why it produces plausible words. But it is not a full scientific description of modern AI, which can perform complex tasks and sometimes access outside tools.",
+            "Today's big idea: useful predictions and confident-sounding answers are not automatically true. Next class we will look at what happens when people fail to verify AI-generated claims."
           ],
-          "activity": "Return to your first prediction. What has changed?"
+          "activity": "Answer Question 8, review all answers, then Gather All My Work and submit to Canvas."
         }
       ],
       "clip": {
@@ -139,7 +160,7 @@ module.exports = {
         "date": "2024-03-27",
         "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
         "alt": "https://www.pbs.org/video/ai-revolution-umwwlt/",
-        "assigned": "Full film / 00:00-53:30",
+        "assigned": "Full film shown the previous class on November 9; do not rewatch during independent lesson",
         "prompt": "Where does AI learn patterns? What can it help people do? What can go wrong? Who should remain responsible?",
         "captions": "Check captions and playback before class."
       },
@@ -200,16 +221,6 @@ module.exports = {
           "pushFurther": "Can one product combine both?"
         },
         {
-          "text": "Choose one AI feature. What examples might it have learned from?",
-          "startHere": "Start with videos, words, faces, or email.",
-          "pushFurther": "Which kinds of examples might be missing?"
-        },
-        {
-          "text": "Which technology could depend on its implementation? Explain.",
-          "startHere": "Choose autocorrect or a different mixed system.",
-          "pushFurther": "Explain how a feature could change as technology improves."
-        },
-        {
           "text": "Which sentence starter was easiest to predict? Why?",
           "startHere": "Use the paper exercise.",
           "pushFurther": "Explain why many people might choose the same word."
@@ -218,6 +229,16 @@ module.exports = {
           "text": "Which starter had no one correct answer? What makes it different?",
           "startHere": "Choose a personal-preference starter.",
           "pushFurther": "Contrast a preference with a checkable fact."
+        },
+        {
+          "text": "Choose one AI feature. What examples might it have learned from?",
+          "startHere": "Start with videos, words, faces, or email.",
+          "pushFurther": "Which kinds of examples might be missing?"
+        },
+        {
+          "text": "Which technology could depend on its implementation? Explain.",
+          "startHere": "Choose autocorrect or a different mixed system.",
+          "pushFurther": "Explain how a feature could change as technology improves."
         },
         {
           "text": "What happened when you compared a chatbot response or printed sample with your prediction?",
@@ -249,29 +270,68 @@ module.exports = {
       ],
       "viewingGuide": [
         {
-          "label": "How AI works",
-          "prompt": "Find one example of a system learning from data rather than simply following a fixed rule."
+          "label": "How AI learns",
+          "prompt": "Notice an example of a system learning from data."
         },
         {
-          "label": "What AI can do",
-          "prompt": "Notice one useful possibility in science, medicine, daily life, or work."
+          "label": "Where AI helps",
+          "prompt": "Notice a useful example in health, science, or daily life."
         },
         {
-          "label": "What could go wrong",
-          "prompt": "Notice one mistake, unfair outcome, or misleading use of AI."
+          "label": "What can go wrong",
+          "prompt": "Notice a risk, a mistaken output, or an AI-generated fake."
         },
         {
           "label": "Who decides",
-          "prompt": "Who should be responsible when a machine makes an important recommendation?"
+          "prompt": "What responsibilities should people keep?"
         }
       ],
-      "dayOneNote": "The four viewing cues are optional jot notes, not four graded questions. No eight-question worksheet or MagicSchool activity is due during the 53:30 showing. Concepts recur in Topics 2-4 and the study guide."
+      "dayOneNote": "The four viewing cues are optional jot notes, not four graded questions. No eight-question worksheet or MagicSchool activity is due during the 53:30 showing. Concepts recur in Topics 2-4 and the study guide.",
+      "selfPaced": true,
+      "substituteDay": true,
+      "offlineSupport": "Every task has a reading and printed example. MagicSchool is optional, never a dependency. If an activity is unavailable, follow the page's printed fallback and complete the same questions.",
+      "subPlan": {
+        "teacherAbsent": true,
+        "notice": "Your teacher is attending a conference today. Follow the page from top to bottom; the substitute does not need to teach AI or explain any new terminology.",
+        "directions": [
+          "Open the BeCurrent AI unit and choose AI1: What AI Actually Is (November 11).",
+          "Read each Chapter's background text before attempting the question underneath it. Printed information on this page is enough.",
+          "Complete Be the Model predictions on paper or in your own notes; do not share them aloud.",
+          "Complete the eight-step AI/not-AI practice sort, check feedback, and revise your choices.",
+          "If the MagicSchool room appears in Canvas, you may compare its outputs with the printed sample; if not, use only the printed sample. Never type personal information.",
+          "Write all eight answers in the text boxes and choose Gather All My Work; paste into today's Canvas Text Entry assignment and submit before lunch.",
+          "After lunch continue the normal CNN 10 and News Log routine as directed by your substitute."
+        ],
+        "timed": [
+          {
+            "minutes": "0–5",
+            "action": "Open BeCurrent AI1; read the opening and instructions."
+          },
+          {
+            "minutes": "5–17",
+            "action": "Chapters 1–2: read context, do paper prediction and early questions."
+          },
+          {
+            "minutes": "17–32",
+            "action": "Chapter 3: learned patterns, everyday-tool sort and corrections."
+          },
+          {
+            "minutes": "32–47",
+            "action": "Chapters 4–5: optional chatbot or printed sample; remaining answers and checkpoint."
+          },
+          {
+            "minutes": "47–55",
+            "action": "Check eight answers, Gather All My Work, paste into Canvas, submit and confirm."
+          }
+        ],
+        "technicalFallback": "If video, MagicSchool, or external sites do not load, continue with the background readings and printed examples. If the BeCurrent page itself is unavailable, use the printable AI1 worksheet and the teacher-approved paper submission route."
+      }
     },
     {
       "n": 2,
       "key": "ai-t02",
       "page": "block-02.html",
-      "date": "2026-11-11",
+      "date": "2026-11-13",
       "title": "When AI Gets It Wrong",
       "subtitle": "Sounding sure is not being right",
       "skill": "Sourcing and Corroboration",
@@ -452,7 +512,7 @@ module.exports = {
       "n": 3,
       "key": "ai-t03",
       "page": "block-03.html",
-      "date": "2026-11-13",
+      "date": "2026-11-17",
       "title": "What AI Changes, and Who Pays",
       "subtitle": "Jobs, power lines, and Lebanon",
       "skill": "Causation and Framing",
@@ -648,7 +708,7 @@ module.exports = {
       "n": 4,
       "key": "ai-t04",
       "page": "block-04.html",
-      "date": "2026-11-17",
+      "date": "2026-11-19",
       "title": "Who Makes the Rules?",
       "subtitle": "What should the rule actually say?",
       "skill": "Framing and Generalizing from Evidence",
@@ -826,6 +886,33 @@ module.exports = {
           "note": "Existing academic-integrity rules; dedicated AI policy status to confirm."
         }
       ]
+    }
+  ],
+  "days": [
+    {
+      "code": "OPEN",
+      "topic": "Opening Film",
+      "title": "NOVA: A.I. Revolution",
+      "subtitle": "Full-documentary introduction to artificial intelligence",
+      "date": "2026-11-09",
+      "page": "opening-film.html",
+      "learningTargets": [
+        {
+          "skill": "Background knowledge",
+          "target": "I can recognize major possibilities and challenges of artificial intelligence introduced in the documentary."
+        },
+        {
+          "skill": "Inquiry",
+          "target": "I can identify questions about how AI works and who is responsible for its use."
+        }
+      ],
+      "successCriteria": [
+        {
+          "skill": "Observation",
+          "criteria": "I can notice one AI example and one question to investigate in the unit."
+        }
+      ],
+      "overview": "Watch the complete PBS NOVA documentary A.I. Revolution (53:30). Four optional viewing cues; no additional graded worksheet."
     }
   ]
 };
