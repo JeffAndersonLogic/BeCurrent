@@ -1,5 +1,18 @@
 # The Machine in the Room | AI Unit Rebuild Specification
 
+## FINAL SCHEDULE REVISION — NOVEMBER 8, 2026
+**Teacher decision:** the NOVA film occupies all of Monday, November 9. Push the *four instructional topics* one class meeting later. Wednesday, November 11 is a teacher conference absence and AI1 must be wholly independent with the substitute.
+- **Nov 9:** PBS NOVA A.I. Revolution (complete 53:30), four optional viewing cues; no graded worksheet or Canvas assignment.
+- **Nov 11:** AI1 What AI Actually Is, **fully independent**, no teacher lecture, no required video replay or live MagicSchool; five self-guided chapters, printed examples, eight private responses, practice sort, optional paper fallback, Gather All My Work into Canvas.
+- **Nov 13:** AI2 When AI Gets It Wrong.
+- **Nov 17:** AI3 What AI Changes, and Who Pays.
+- **Nov 19:** AI4 Who Makes the Rules?
+- **Nov 23:** 25-question exam in Canvas only.
+- **Nov 25–27:** ZCS Thanksgiving break, no school (verified against the district calendar).
+- **Next class after break:** The Desk. Nov 30 is a tentative placeholder pending the school's Green/Silver rotation.
+Canonical student paths: ai/opening-film.html (film), ai/block-01.html (independent AI1), ai/block-02..04.html (subsequent investigations), ai/print-topic-01.html (offline fallback). Distinct teacher film OS and AI1 substitute OS. No assessment item or confidential key on publicly served pages.
+
+
 ## NOVEMBER 8 UPDATE — APPROVED FILM-FIRST OPENING
 Jeff selected Midnight Ember, then explicitly chose the **entire PBS NOVA A.I. Revolution documentary** for Monday, November 9, 2026.
 - Verified official film runtime: 53 minutes 30 seconds (March 27, 2024). Official YouTube: https://www.youtube.com/watch?v=-sB12gk9ESA ; official PBS: https://www.pbs.org/video/ai-revolution-umwwlt/
@@ -14,7 +27,7 @@ Status: DESIGN RESTART / NOT PUBLICATION-APPROVED
 Reviewed: 2026-11-08
 Code: AI
 Working branch: ai-unit-draft-20261108
-Unit dates: AI1 Nov 9, AI2 Nov 11, AI3 Nov 13, AI4 Nov 17, Canvas exam Nov 19, Desk Nov 23.
+Unit dates (current): film Nov 9, AI1 Nov 11, AI2 Nov 13, AI3 Nov 17, AI4 Nov 19, Canvas exam Nov 23, Desk after Thanksgiving.
 
 ## Decision record: why the first implementation was rejected
 The standalone ai-drafts/topic-01.html is a disposable prototype, not a lesson to publish. It duplicates CSS, invents an independent Gather/Copy routine, does not emit the canonical #BHV/#BHR record footer, lacks the shared parser round-trip, has no real practice-sort interaction, no researched clip, no teacher OS, no accessible paper route, and no browser verification. Never merge it to main as a student lesson.
