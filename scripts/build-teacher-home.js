@@ -53,7 +53,7 @@ topics.forEach(t => {
 units.sort((a, b) => (b.last || '').localeCompare(a.last || '') || a.unit.localeCompare(b.unit));
 
 const canvasDocs = fs.readdirSync(path.join(ROOT, 'docs', 'canvas'))
-  .filter(f => /-calendar-events\.html$/.test(f)).sort();
+  .filter(f => /-calendar-events\.html$/.test(f) || f === 'ai-unit-calendar.html').sort();
 
 const arrow = '→';
 function row(t) {
@@ -122,7 +122,7 @@ ${units.map(unitBlock).join('\n')}
 <div class="th-section-head"><div><p class="eyebrow">Teacher utility</p><h2 id="canvas-title">Canvas paste pages</h2></div><p>Generated from the same content as the site. Open beside Canvas and use the copy buttons.</p></div>
 <div class="tool-grid">
 ${canvasDocs.map(f => {
-    const key = f.replace(/-calendar-events\.html$/, '');
+    const key = f === 'ai-unit-calendar.html' ? 'ai' : f.replace(/-calendar-events\.html$/, '');
     const u = units.find(x => x.unitPage === `${key}/index.html`);
     return `<a class="tool" href="../docs/canvas/${E(f)}" target="_blank" rel="noopener noreferrer"><span class="tool-kicker">Calendar events</span><strong>${E(u ? u.unit : key)}</strong><span>Event tables with copy buttons; assignments are in the matching document in the repository.</span></a>`;
   }).join('\n')}
