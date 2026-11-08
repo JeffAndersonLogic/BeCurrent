@@ -38,6 +38,7 @@ const SUITES = {
     ['scripts/test/weeks-reproducible.test.js', 'generated weeks match their content modules'],
     ['scripts/test/iran-unit.test.js', 'Iran: eight topics, 30 filings, gather/record contract'],
     ['scripts/test/video-first.test.js', 'midterms: continuous student lessons and Canvas record integrity'],
+    ['scripts/test/ai-unit.test.js', 'AI: full NOVA film day, Midnight Ember pages, eight-question investigations'],
     ['scripts/test/control-room.test.js', 'teacher Control Room: lesson timing, public projector, hub integrity'],
     ['scripts/test/video-block.test.js', 'video path through a brief, both states'],
     ['scripts/test/canvas-paragraphs.test.js', 'Canvas blank-line round trip, both course sentinels'],
