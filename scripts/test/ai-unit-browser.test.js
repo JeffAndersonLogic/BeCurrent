@@ -20,7 +20,7 @@ const unit=require('../lib/unit-content/ai');
   await page.goto(root+'/ai/block-01.html');
   assert(await page.isVisible('#student-flow'),'substitute lesson loads');
   assert((await page.textContent('main')).includes('Everything you need is on this page.'));
-  assert((await page.textContent('main')).includes('Your teacher is at a conference'));
+  assert((await page.textContent('main')).includes('Your teacher is attending a conference'));
   assert.strictEqual(await page.locator('[data-slot]').count(),8);
   assert.strictEqual(await page.locator('[data-sort]').count(),8);
   assert.strictEqual(await page.locator('[data-student-chapter]').count(),5);
