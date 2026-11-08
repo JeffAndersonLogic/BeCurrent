@@ -25,6 +25,11 @@ function entriesFor(unit) {
       e.teacher = `teacher/${midterms.os(t)}`;
       e.projector = `teacher/${midterms.projector(t)}`;
       e.hub = midterms.hub;
+    } else if (m.renderer === 'ai-investigation') {
+      e.student = `${m.unitKey}/${t.page}`;
+      e.teacher = `teacher/ai-topic-${nn(t.n)}-os.html`;
+      e.projector = `teacher/ai-topic-${nn(t.n)}-projector.html`;
+      e.hub = 'teacher/ai-unit-os.html';
     } else if (m.renderer === 'reverse-history') {
       e.student = `${m.unitKey}/${t.page}`;
       e.teacher = iran.day(t.n);
