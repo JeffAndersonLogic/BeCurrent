@@ -46,7 +46,7 @@ function entriesFor(unit) {
   // Non-topic class days, such as the Midterms Election Day guide.
   (unit.days || []).forEach(d => {
     out.push(Object.assign({ code: code + d.code, topic: plain(d.topic), title: plain(d.title),
-      student: `${m.unitKey}/${d.page}`, hub: m.renderer === 'video-first' ? midterms.hub : undefined }, base));
+      student: `${m.unitKey}/${d.page}`, hub: m.renderer === 'video-first' ? midterms.hub : m.renderer === 'ai-investigation' ? 'teacher/ai-unit-os.html' : undefined, ...(m.renderer === 'ai-investigation' ? { teacher: 'teacher/ai-film-os.html', projector:'teacher/ai-film-projector.html' } : {}) }, base));
   });
   return out;
 }
