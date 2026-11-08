@@ -1446,6 +1446,17 @@ if (!files.length) {
 
 files.forEach(file => {
   const unit = require(path.join(CONTENT_DIR, file));
+  // AI has a bespoke Midnight Ember Canvas calendar and assignment copy generated
+  // by scripts/build-ai.js. The generic brief/worksheet renderer must not
+  // overwrite that substitute-day-specific guidance or invent an AI1 film
+  // assignment. The dedicated AI generator owns its --check drift contract.
+  if (unit.meta.renderer === 'ai-investigation') {
+    const aiDoc = path.join(ROOT, 'docs', 'canvas', 'ai-unit-calendar.html');
+    if (!fs.existsSync(aiDoc)) {
+      throw new Error('AI Canvas calendar copy missing: run npm run build:ai');
+    }
+    return;
+  }
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.md`), renderUnit(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-calendar-events.html`), renderUnitHtml(unit), unit);
   emit(path.join('docs', 'canvas', `${unit.meta.unitKey}-assignments.md`), renderAssignments(unit), unit);
