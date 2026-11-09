@@ -7,6 +7,8 @@ const unit=require('../lib/unit-content/ai');
 (async()=>{
  const {browser,server,root}=await open();
  const context=await browser.newContext({viewport:{width:1365,height:900}});
+ // Canvas snippets link the published PNG; serve its checked-in bytes for offline browser testing.
+ await context.route('https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png',route=>route.fulfill({path:require('path').join(__dirname,'../../assets/images/brand/becurrent-wordmark-ink.png'),contentType:'image/png'}));
  const page=await context.newPage(),errors=[];
  page.setDefaultTimeout(8000);
  page.on('pageerror',e=>errors.push(e.message));
@@ -59,6 +61,7 @@ const unit=require('../lib/unit-content/ai');
   }
   await page.goto(root+'/docs/canvas/ai-unit-calendar.html');
   assert.strictEqual(await page.locator('[data-copy]').count(),23,'12 events and 11 assignment/assessment descriptions; none for video day');
+  for(const html of await page.locator('textarea').evaluateAll(els=>els.map(e=>e.value)))assert.match(html,/becurrent-wordmark-ink\.png/, 'every copied event and assignment carries BeCurrent branding');
   await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.__copiedCode=text}}}));
   await page.locator('#day-2026-11-09 summary').click();
   await page.locator('[data-copy="event-0"]').click();
