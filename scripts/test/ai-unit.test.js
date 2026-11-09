@@ -37,7 +37,7 @@ assert.match(pages['teacher/ai-topic-01-os.html'],/Substitute instructions/);
 assert.match(pages['teacher/ai-film-os.html'],/53:30/);
 assert.match(pages['teacher/ai-film-projector.html'],/A\.I\. Revolution/);
 const calendar=pages['docs/canvas/ai-unit-calendar.html'];
-assert.match(calendar,/NO Canvas assignment on Nov 9/);
+assert.match(calendar,/No AI1 Canvas assignment on Nov 9/);
 assert.match(calendar,/2026-11-11/);
 assert.match(calendar,/SUBSTITUTE/);
 assert.match(calendar,/November 23/);
