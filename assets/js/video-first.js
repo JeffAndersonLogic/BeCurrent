@@ -114,7 +114,7 @@
     const records=[];
     let ord=1;
     const sortPrompt=body.dataset.sortPrompt||'Sort each statement about Congress into House, Senate, or Both.';
-    if(sorts.length)records.push({ord:String(ord++).padStart(2,'0'),id:'chamber-sort',label:body.dataset.sortLabel||'Congress: House and Senate sort',prompt:sortPrompt,text:sorts.some(el=>el.value)?sortText():'',confidence:''});
+    if(sorts.length)records.push({ord:String(ord++).padStart(2,'0'),id:body.dataset.sortSlot||'chamber-sort',label:body.dataset.sortLabel||'Congress: House and Senate sort',prompt:sortPrompt,text:sorts.some(el=>el.value)?sortText():'',confidence:''});
     if(evidence.length)records.push({ord:String(ord++).padStart(2,'0'),id:'results-notebook',label:'2026 results notebook',prompt:'Record sourced outcomes, stages, check time, baseline, and uncertainty.',text:evidence.some(el=>el.value.trim())?evidence.filter(el=>!optional(el)||el.value.trim()).map(el=>el.dataset.evidence+': '+(el.value.trim()||'(not recorded)')).join('\n'):'',confidence:''});
     slots.filter(el=>!optional(el)||el.value.trim()).forEach(el=>{
       records.push({ord:String(ord++).padStart(2,'0'),id:el.dataset.slot,label:el.dataset.label||el.dataset.slot,prompt:el.dataset.prompt||'',text:el.value||'',confidence:''});

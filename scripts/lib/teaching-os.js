@@ -25,6 +25,11 @@ function entriesFor(unit) {
       e.teacher = `teacher/${midterms.os(t)}`;
       e.projector = `teacher/${midterms.projector(t)}`;
       e.hub = midterms.hub;
+    } else if (m.renderer === 'ai-investigation') {
+      e.student = `${m.unitKey}/${t.page}`;
+      e.teacher = `teacher/ai-topic-${nn(t.n)}-os.html`;
+      e.projector = `teacher/ai-topic-${nn(t.n)}-projector.html`;
+      e.hub = 'teacher/ai-unit-os.html';
     } else if (m.renderer === 'reverse-history') {
       e.student = `${m.unitKey}/${t.page}`;
       e.teacher = iran.day(t.n);
@@ -41,7 +46,7 @@ function entriesFor(unit) {
   // Non-topic class days, such as the Midterms Election Day guide.
   (unit.days || []).forEach(d => {
     out.push(Object.assign({ code: code + d.code, topic: plain(d.topic), title: plain(d.title),
-      student: `${m.unitKey}/${d.page}`, hub: m.renderer === 'video-first' ? midterms.hub : undefined }, base));
+      student: `${m.unitKey}/${d.page}`, hub: m.renderer === 'video-first' ? midterms.hub : m.renderer === 'ai-investigation' ? 'teacher/ai-unit-os.html' : undefined, ...(m.renderer === 'ai-investigation' ? { teacher: 'teacher/ai-film-os.html', projector:'teacher/ai-film-projector.html' } : {}) }, base));
   });
   return out;
 }

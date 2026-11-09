@@ -1225,6 +1225,242 @@ window.BECURRENT_ANNOUNCEMENTS = {
           ]
         }
       ]
+    },
+    {
+      "date": "2026-11-09",
+      "topic": "The Machine in the Room | Opening Film",
+      "unit": "The Machine in the Room",
+      "subtitle": "Full-documentary introduction to artificial intelligence",
+      "learningTargets": [
+        {
+          "text": "I can recognize major possibilities and challenges of artificial intelligence introduced in the documentary.",
+          "label": "Background knowledge"
+        },
+        {
+          "text": "I can identify questions about how AI works and who is responsible for its use.",
+          "label": "Inquiry"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can notice one AI example and one question to investigate in the unit.",
+          "label": "Observation"
+        }
+      ],
+      "homework": "No film-day assignment. Be ready to investigate how AI works on Wednesday.",
+      "note": "Full documentary day: watch all 53 minutes 30 seconds of PBS NOVA A.I. Revolution. No AI1 Canvas worksheet today.",
+      "doNow": "What is something AI can do that still needs a person to check?",
+      "agenda": [
+        "Opening question, then start NOVA A.I. Revolution immediately.",
+        "Watch the complete 53:30 film together.",
+        "Four optional viewing cues: how AI learns, where it helps, what can go wrong, and who decides.",
+        "No graded writing task on film day. After lunch: CNN 10 and News Log.",
+        "Wednesday AI1 is fully independent while your teacher attends a conference."
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "topic": "The Machine in the Room | AI1: What AI Actually Is",
+      "unit": "The Machine in the Room",
+      "subtitle": "A very good guesser",
+      "learningTargets": [
+        {
+          "text": "I can explain patterns, training examples, and prediction in plain language.",
+          "label": "Explanation"
+        },
+        {
+          "text": "I can tell when a tool likely uses AI and when the answer depends on its implementation.",
+          "label": "Classification"
+        },
+        {
+          "text": "I can explain why a convincing sentence might still be incorrect.",
+          "label": "Evidence"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can use a familiar example to explain learned patterns.",
+          "label": "Explanation"
+        },
+        {
+          "text": "I can classify everyday tools and explain one borderline case.",
+          "label": "Classification"
+        },
+        {
+          "text": "I can support a claim about chatbots with a result from the experiment.",
+          "label": "Evidence"
+        }
+      ],
+      "homework": "Submit AI1 - What AI Actually Is via Canvas Text Entry.",
+      "homeworkDue": "by the end of the before-lunch class block",
+      "note": "SUBSTITUTE DAY. Your teacher is attending a conference. Students work independently using the chapter instructions, sample outputs and optional paper fallback.",
+      "doNow": "Open Canvas and click AI1 - What AI Actually Is. Start at Chapter 1; all instructions are on the lesson page.",
+      "agenda": [
+        "Read the five chapters independently; no live instruction or group presenting.",
+        "Complete Be the Model predictions privately.",
+        "Sort eight technologies as AI, rules or depends; check feedback.",
+        "Use printed chatbot examples if MagicSchool is unavailable.",
+        "Answer eight private questions, Gather All My Work, paste and submit in Canvas before lunch.",
+        "After lunch: CNN 10 and the News Log with the substitute."
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "topic": "When AI Gets It Wrong",
+      "unit": "The Machine in the Room",
+      "subtitle": "Sounding sure is not being right",
+      "learningTargets": [
+        {
+          "text": "I can identify the source of a claim.",
+          "label": "Sourcing"
+        },
+        {
+          "text": "I can test an AI-generated claim against independent evidence.",
+          "label": "Corroboration"
+        },
+        {
+          "text": "I can distinguish model error, bias, and deliberate deception.",
+          "label": "Distinction"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can name a real reference and report its finding.",
+          "label": "Sourcing"
+        },
+        {
+          "text": "I can document the result of checking one claim.",
+          "label": "Corroboration"
+        },
+        {
+          "text": "I can explain why three AI failures have different causes.",
+          "label": "Distinction"
+        }
+      ],
+      "homework": "Submit AI2 - When AI Gets It Wrong in Canvas.",
+      "note": "When AI gets it wrong: fake court citations, biased training patterns and a deceptive robocall.",
+      "doNow": "Why is a confident answer not automatically reliable?",
+      "agenda": [
+        "Begin with the claim: a lawyer cited nonexistent cases.",
+        "Distinguish hallucination, bias, and deliberate deepfake deception.",
+        "Practice checking an AI claim against a named independent source.",
+        "Answer eight questions. Gather and submit in Canvas before lunch.",
+        "After lunch: CNN 10 and the News Log."
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "topic": "What AI Changes, and Who Pays",
+      "unit": "The Machine in the Room",
+      "subtitle": "Jobs, power lines, and Lebanon",
+      "learningTargets": [
+        {
+          "text": "I can trace AI activity through computers and local infrastructure.",
+          "label": "Causation"
+        },
+        {
+          "text": "I can distinguish company promises from measured outcomes.",
+          "label": "Evidence"
+        },
+        {
+          "text": "I can explain why different sources emphasize different facts.",
+          "label": "Framing"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can explain one task-level change and one real-world infrastructure consequence.",
+          "label": "Causation"
+        },
+        {
+          "text": "I can accurately describe Stanford and Yale research without overstating it.",
+          "label": "Evidence"
+        },
+        {
+          "text": "I can identify a tradeoff with a named source and an uncertainty.",
+          "label": "Framing"
+        }
+      ],
+      "homework": "Submit AI3 - What AI Changes and Who Pays in Canvas.",
+      "note": "Boone County connection: data center jobs, electricity, water claims and local decisions.",
+      "doNow": "If you ask an AI chatbot a question, why might that affect a construction site in Lebanon?",
+      "agenda": [
+        "Separate jobs from the tasks that make up jobs.",
+        "Compare Stanford and Yale research without overstating either.",
+        "Trace AI use to physical data centers in Lebanon, Indiana.",
+        "Compare the company announcement and local concerns.",
+        "Answer eight questions, Gather and submit in Canvas before lunch.",
+        "After lunch: CNN 10 and the News Log."
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "topic": "Who Makes the Rules?",
+      "unit": "The Machine in the Room",
+      "subtitle": "What should the rule actually say?",
+      "learningTargets": [
+        {
+          "text": "I can identify who makes rules in different settings.",
+          "label": "Policy"
+        },
+        {
+          "text": "I can explain why state and national rules sometimes conflict.",
+          "label": "Federalism"
+        },
+        {
+          "text": "I can defend an AI-use rule with evidence from the unit.",
+          "label": "Argument"
+        }
+      ],
+      "successCriteria": [
+        {
+          "text": "I can choose a realistic rule-maker for one scenario.",
+          "label": "Policy"
+        },
+        {
+          "text": "I can explain a limit of executive orders and a reason for national or state rules.",
+          "label": "Federalism"
+        },
+        {
+          "text": "I can write an enforceable one-sentence policy and defend it.",
+          "label": "Argument"
+        }
+      ],
+      "homework": "Review the website study guide for the AI unit assessment on Monday, November 23.",
+      "note": "Last investigation before the Monday exam. Decide who should set the rules and what those rules should say.",
+      "doNow": "Should a student be allowed to use AI to brainstorm a paper? How about to write the entire paper?",
+      "agenda": [
+        "Compare individual, school, company and government authority.",
+        "Examine Indiana election-media disclosure and the federalism debate.",
+        "Test three clearly fictional school AI scenarios.",
+        "Write and defend one clear AI-use policy.",
+        "Answer eight questions and submit the complete Canvas record.",
+        "Use the AI study guide for Monday, Nov 23."
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "topic": "The Machine in the Room | AI Unit Assessment",
+      "homework": "No new AI investigation. Thanksgiving break November 25–27.",
+      "note": "25 multiple-choice questions inside Canvas only. Six questions from AI1, AI2 and AI3; seven from AI4.",
+      "agenda": [
+        "Open the AI Unit Assessment in Canvas.",
+        "Read each question and evaluate what the evidence actually supports.",
+        "Finish and submit the 25-question assessment.",
+        "After lunch: CNN 10 and News Log.",
+        "Thanksgiving break November 25–27. The Desk resumes at the next class meeting."
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "topic": "The Desk | After Thanksgiving",
+      "homework": "Follow the normal Desk submission route.",
+      "note": "TENTATIVE next Current Events meeting after Thanksgiving; verify Green/Silver rotation before publishing.",
+      "agenda": [
+        "Resume The Desk and normal News Log routine.",
+        "Read the shared Lead and choose Your Pick.",
+        "Explain why the stories deserve attention."
+      ]
     }
   ],
   "assessments": [
@@ -1236,6 +1472,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
     {
       "date": "2026-10-02",
       "title": "Iran at War Unit Exam",
+      "type": "Test"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "The Machine in the Room | AI Unit Assessment",
       "type": "Test"
     }
   ],

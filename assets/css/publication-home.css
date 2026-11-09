@@ -129,3 +129,13 @@ body.teacher-on .teacher-only{display:block}
 .publication-home .wrap{max-width:1216px}
 /* Today's class announcement shares the existing horizontally scrolling wire. */
 .home-wire .home-class-notice{color:var(--vf-ink);font-weight:700;border-right:1px solid var(--vf-rule);padding-right:26px}
+
+
+/* AI unit front-door feature: Signal Lab Midnight Ember, November 2026. */
+.ai-feature-photo{background:#111523}
+.ai-feature-art{aspect-ratio:16/10;line-height:1.14;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,4vw,45px);color:#f4ede2;background:radial-gradient(ellipse at 80% 22%,#4b2d51 0%,#201e34 46%,#0d111e 100%);border:1px solid #8b6a7b;min-height:245px}
+.ai-feature-art strong{font-family:system-ui,-apple-system,sans-serif;display:block;font-size:clamp(25px,3.4vw,51px);line-height:1.05;letter-spacing:-.06em}
+.ai-feature-art em{font-style:normal;color:#f4ad67}
+.ai-art-mini,.ai-art-foot{font:750 clamp(9px,1vw,12px)/1.4 system-ui,sans-serif;letter-spacing:.16em}
+.ai-art-foot{color:#d8b6bd}
+@media(max-width:650px){.ai-feature-art{aspect-ratio:auto;min-height:270px}.ai-feature-art strong{font-size:clamp(34px,8vw,48px)}}
