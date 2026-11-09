@@ -45,9 +45,9 @@
   </div>
 </div>
 
-<script src="assets/data/announcements-schedule.js?v=20261109-calendar"></script>
-<script src="assets/data/announcements.js"></script>
-<script src="assets/data/daily-news.js?v=20261109-calendar"></script>
+<script src="assets/data/announcements-schedule.js?v=20261109-news-labels"></script>
+<script src="assets/data/announcements.js?v=20261109-news-labels"></script>
+<script src="assets/data/daily-news.js?v=20261109-news-labels"></script>
 <script src="assets/js/section-photos.js?v=20261020"></script>
 <script>
 (function () {
@@ -76,6 +76,9 @@
       if (Object.prototype.hasOwnProperty.call(entry, key)) day[key] = entry[key];
     });
     if (typeof entry.topicTitle === 'string' && entry.topicTitle.trim()) day.topic = entry.topicTitle.trim();
+    // A standalone day can clear a cached unit header as well as supply its own title.
+    if (typeof entry.unitTitle === 'string') day.unit = entry.unitTitle.trim();
+    if (typeof entry.subtitle === 'string') day.subtitle = entry.subtitle.trim();
     return day;
   }).filter(Boolean);
   GENERATED_DAYS.forEach(function (d) { if (d && d.date && !scheduledDates[d.date]) DAYS.push(d); });

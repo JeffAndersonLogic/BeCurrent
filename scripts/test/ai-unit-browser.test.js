@@ -69,8 +69,14 @@ const unit=require('../lib/unit-content/ai');
   assert.match(await page.evaluate(()=>window.__copiedCode),/No written work today/);
   assert(!(await page.evaluate(()=>window.__copiedCode)).includes('&lt;h2&gt;'),'copies HTML markup, not escaped preview');
   await page.goto(root+'/announcements.html?date=2026-11-09');
+  assert.strictEqual(await page.textContent('.title-topic'),'Video - 60 Minutes Interview with President Trump');
+  assert.strictEqual(await page.locator('.title-unit').count(),0,'standalone video day has no inherited AI unit header');
+  assert.doesNotMatch(await page.locator('#stage').innerText(),/CE - |The Machine in the Room/i);
   assert.strictEqual(await page.locator('.desk-slide-v2').count(),0,'no writing routine on interview day');
   assert.strictEqual(await page.locator('a[href*="m2aC8lAOQbg"]').count(),1,'board has direct interview link');
+  await page.goto(root+'/index.html');
+  assert.match(await page.textContent('[data-class-announcement]'),/Video - 60 Minutes Interview with President Trump/);
+  assert.doesNotMatch(await page.textContent('[data-class-announcement]'),/CE - |The Machine in the Room/i);
   assert.deepStrictEqual(errors,[]);
   console.log('PASS: 60 Minutes video day + independent AI1, offline worksheet, autosave, sort feedback, shared Canvas parser, mobile layout and no JS errors.');
  }finally{await context.close();await browser.close();server.close()}

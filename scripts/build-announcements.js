@@ -197,11 +197,13 @@ function buildDays(schedule, index) {
 
     const day = { date: entry.date.trim() };
 
-    const title = has(entry.topicTitle) ? entry.topicTitle.trim()
-      : (source ? source.title : '');
+    const title = (has(entry.topicTitle) ? entry.topicTitle.trim()
+      : (source ? source.title : '')).replace(/^CE\s*-\s*/, '');
     if (has(title)) day.topic = title;
-    if (source && has(source.group)) day.unit = source.group;
-    if (source && has(source.subtitle)) day.subtitle = source.subtitle;
+    const unitTitle = typeof entry.unitTitle === 'string' ? entry.unitTitle.trim() : (source ? source.group : '');
+    const subtitle = typeof entry.subtitle === 'string' ? entry.subtitle.trim() : (source ? source.subtitle : '');
+    if (has(unitTitle)) day.unit = unitTitle;
+    if (has(subtitle)) day.subtitle = subtitle;
 
     const targets = entry.learningTargets ? override(entry.learningTargets)
       : (source ? source.learningTargets : []);

@@ -11,6 +11,8 @@ const schedulePath='assets/data/announcements-schedule.js';
 const scheduleSource=fs.readFileSync(path.join(ROOT,schedulePath),'utf8');
 const sandbox={window:{}};vm.runInNewContext(scheduleSource,sandbox);
 const schedule=sandbox.window.BECURRENT_SCHEDULE;
+const calendar=require('./lib/semester-calendar');
+schedule.assessments=schedule.assessments.filter(a=>a.date<'2026-11-09').concat(calendar.events.filter(e=>e.kind.endsWith('exam')).map(e=>({date:e.date,title:calendar.displayTitle(e),type:e.kind==='final-exam'?'Final exam':'Test'})));
 schedule.days=schedule.days.filter(d=>d.date<'2026-11-09').concat(require('./lib/semester-calendar').boardDays(unit)).sort((a,b)=>a.date.localeCompare(b.date));
 const scheduleTail=scheduleSource.slice(scheduleSource.indexOf("if(typeof document"));
 const files=render(unit);

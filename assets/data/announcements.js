@@ -1228,25 +1228,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-11-09",
-      "topic": "CE - Video Day - 60 Minutes Interview",
-      "unit": "The Machine in the Room",
-      "subtitle": "Interview before lunch; CNN 10 after lunch; no written work",
-      "learningTargets": [
-        {
-          "text": "I can distinguish an interviewee’s claim from a verified fact.",
-          "label": "Source awareness"
-        },
-        {
-          "text": "I can recognize connections between the interview and our current-events investigations.",
-          "label": "Connections"
-        }
-      ],
-      "successCriteria": [
-        {
-          "text": "I can notice when a speaker offers a fact, claim or opinion while I listen.",
-          "label": "Observation"
-        }
-      ],
+      "topic": "Video - 60 Minutes Interview with President Trump",
       "homework": "No written work or Canvas submission today.",
       "note": "Before lunch: Extended Interview: President Trump on 60 Minutes. After lunch: CNN 10. No written work or Canvas submission today.",
       "agenda": [
@@ -1270,8 +1252,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-11-11",
-      "topic": "CE - The Desk 111126",
-      "homework": "Submit CE - The Desk 111126 in Canvas. Check that your 2026-11-11 entry is included.",
+      "topic": "The Desk 111126",
+      "homework": "Submit The Desk 111126 in Canvas. Check that your 2026-11-11 entry is included.",
       "homeworkDue": "the end of class today",
       "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
       "agenda": [
@@ -1279,13 +1261,13 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Read the shared Lead and record its source, date, link, summary and significance.",
         "Choose and read Your Pick; record its source details and summarize the event.",
         "Explain which story deserves more attention using specific evidence.",
-        "Gather My Log, copy the complete log, paste into CE - The Desk 111126 in Canvas, and submit."
+        "Gather My Log, copy the complete log, paste into The Desk 111126 in Canvas, and submit."
       ]
     },
     {
       "date": "2026-11-13",
-      "topic": "CE - The Desk 111326",
-      "homework": "Submit CE - The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
+      "topic": "The Desk 111326",
+      "homework": "Submit The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
       "homeworkDue": "the end of class today",
       "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
       "agenda": [
@@ -1293,12 +1275,12 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Read the shared Lead and record its source, date, link, summary and significance.",
         "Choose and read Your Pick; record its source details and summarize the event.",
         "Explain which story deserves more attention using specific evidence.",
-        "Gather My Log, copy the complete log, paste into CE - The Desk 111326 in Canvas, and submit."
+        "Gather My Log, copy the complete log, paste into The Desk 111326 in Canvas, and submit."
       ]
     },
     {
       "date": "2026-11-17",
-      "topic": "CE - AI1 - What Exactly AI Is",
+      "topic": "AI1 - What Exactly AI Is",
       "unit": "The Machine in the Room",
       "subtitle": "A very good guesser",
       "learningTargets": [
@@ -1329,11 +1311,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Evidence"
         }
       ],
-      "homework": "Finish and submit CE - AI1 - What Exactly AI Is in Canvas.",
+      "homework": "Finish and submit AI1 - What Exactly AI Is in Canvas.",
       "note": "Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking.",
       "doNow": "How can a computer sound like it understands you?",
       "agenda": [
-        "Open CE - AI1 - What Exactly AI Is and follow the five chapters in order.",
+        "Open AI1 - What Exactly AI Is and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
@@ -1342,7 +1324,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-11-19",
-      "topic": "CE - AI2 - When AI Gets it Wrong",
+      "topic": "AI2 - When AI Gets it Wrong",
       "unit": "The Machine in the Room",
       "subtitle": "Sounding sure is not being right",
       "learningTargets": [
@@ -1373,11 +1355,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Distinction"
         }
       ],
-      "homework": "Finish and submit CE - AI2 - When AI Gets it Wrong in Canvas.",
+      "homework": "Finish and submit AI2 - When AI Gets it Wrong in Canvas.",
       "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
       "doNow": "Who should check a convincing answer?",
       "agenda": [
-        "Open CE - AI2 - When AI Gets it Wrong and follow the five chapters in order.",
+        "Open AI2 - When AI Gets it Wrong and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
@@ -1386,8 +1368,8 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-11-23",
-      "topic": "CE - The Desk 112326",
-      "homework": "Submit CE - The Desk 112326 in Canvas. Check that your 2026-11-23 entry is included.",
+      "topic": "The Desk 112326",
+      "homework": "Submit The Desk 112326 in Canvas. Check that your 2026-11-23 entry is included.",
       "homeworkDue": "the end of class today",
       "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
       "agenda": [
@@ -1395,12 +1377,12 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Read the shared Lead and record its source, date, link, summary and significance.",
         "Choose and read Your Pick; record its source details and summarize the event.",
         "Explain which story deserves more attention using specific evidence.",
-        "Gather My Log, copy the complete log, paste into CE - The Desk 112326 in Canvas, and submit."
+        "Gather My Log, copy the complete log, paste into The Desk 112326 in Canvas, and submit."
       ]
     },
     {
       "date": "2026-11-30",
-      "topic": "CE - AI3 - What AI Changes",
+      "topic": "AI3 - What AI Changes",
       "unit": "The Machine in the Room",
       "subtitle": "Jobs, power lines, and Lebanon",
       "learningTargets": [
@@ -1431,11 +1413,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Framing"
         }
       ],
-      "homework": "Finish and submit CE - AI3 - What AI Changes in Canvas.",
+      "homework": "Finish and submit AI3 - What AI Changes in Canvas.",
       "note": "Break a job into tasks, compare what Stanford and Yale actually found, then investigate Meta's data center project right here in Boone County.",
       "doNow": "Who benefits from AI, and who absorbs its costs?",
       "agenda": [
-        "Open CE - AI3 - What AI Changes and follow the five chapters in order.",
+        "Open AI3 - What AI Changes and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
@@ -1444,7 +1426,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-12-02",
-      "topic": "CE - AI4 - Who Makes the Rules?",
+      "topic": "AI4 - Who Makes the Rules?",
       "unit": "The Machine in the Room",
       "subtitle": "What should the rule actually say?",
       "learningTargets": [
@@ -1475,11 +1457,11 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Argument"
         }
       ],
-      "homework": "Finish and submit CE - AI4 - Who Makes the Rules? in Canvas.",
+      "homework": "Finish and submit AI4 - Who Makes the Rules? in Canvas.",
       "note": "Investigate individual, school, company, and government rules. Review a real Indiana disclosure law. Decide when AI should be allowed, restricted, or checked.",
       "doNow": "Which decisions should a person still make, and who gets to set the rules?",
       "agenda": [
-        "Open CE - AI4 - Who Makes the Rules? and follow the five chapters in order.",
+        "Open AI4 - Who Makes the Rules? and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
@@ -1488,7 +1470,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-12-04",
-      "topic": "CE - AI5 - Study Guide Work Day",
+      "topic": "AI5 - Study Guide Work Day",
       "homework": "Finish studying AI1–AI4 for December 8.",
       "note": "AI5 is a study-guide work day; there is no fifth new investigation. AI Unit Exam: Tuesday, December 8.",
       "agenda": [
@@ -1500,7 +1482,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-12-08",
-      "topic": "CE - AI Unit Exam",
+      "topic": "AI Unit Exam",
       "homework": "No additional AI assignment.",
       "note": "AI unit assessment in Canvas. Review materials remain on BeCurrent; questions and answers stay in Canvas.",
       "agenda": [
@@ -1511,7 +1493,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-12-10",
-      "topic": "CE - Final Exam Study Guide Work Day",
+      "topic": "Final Exam Study Guide Work Day",
       "homework": "Finish your final exam study guide and study for December 16.",
       "note": "Traditional semester final exam on Wednesday, December 16. No final project.",
       "agenda": [
@@ -1523,7 +1505,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-12-16",
-      "topic": "CE - Final Exam",
+      "topic": "Final Exam",
       "homework": "No final project.",
       "note": "Traditional semester final exam today. No final project.",
       "agenda": [
@@ -1546,12 +1528,12 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-12-08",
-      "title": "CE - AI Unit Exam",
+      "title": "AI Unit Exam",
       "type": "Test"
     },
     {
       "date": "2026-12-16",
-      "title": "CE - Final Exam",
+      "title": "Final Exam",
       "type": "Final exam"
     }
   ],

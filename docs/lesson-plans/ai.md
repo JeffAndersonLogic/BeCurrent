@@ -36,7 +36,7 @@ Student page: `ai/block-01.html`. Print route: `ai/print-topic-01.html`. Teacher
 
 The substitute does NOT need to teach, show the documentary again, or administer MagicSchool. Students follow the page and submit eight short answers using the shared Gather All My Work Canvas record. If the site fails, use the printed reading and response sheet.
 
-1. Open CE - AI1 - What Exactly AI Is on November 17.
+1. Open AI1 - What Exactly AI Is on November 17.
 2. Read each Chapter's background text before attempting the question underneath it. Printed information on this page is enough.
 3. Complete Be the Model predictions on paper or in your own notes; do not share them aloud.
 4. Complete the eight-step AI/not-AI practice sort, check feedback, and revise your choices.

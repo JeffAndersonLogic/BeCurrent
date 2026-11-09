@@ -883,7 +883,7 @@ section('The TODAY board');
     assert(frontDoor.includes('href="announcements.html"'), path.join(ROOT, 'index.html'),
       'nothing on the front door links announcements.html, so the board is orphaned');
 
-    assert(boardSrc.includes('src="assets/data/announcements.js"'), BOARD,
+    assert(/src="assets\/data\/announcements\.js(?:\?[^\"]*)?"/.test(boardSrc), BOARD,
       'the board does not load assets/data/announcements.js, so it can only render its empty state');
     assert(/BECURRENT_ANNOUNCEMENTS/.test(boardSrc), BOARD,
       'the board does not read window.BECURRENT_ANNOUNCEMENTS, which is what the builder writes');

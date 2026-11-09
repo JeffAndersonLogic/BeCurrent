@@ -1,5 +1,5 @@
 'use strict';
-// Canonical AI lesson content. Schedule and Canvas labels: semester-calendar.js.
+// Canonical AI lesson content. Canvas names and public labels: semester-calendar.js.
 module.exports = {
   "meta": {
     "unit": "The Machine in the Room",
@@ -22,51 +22,51 @@ module.exports = {
     "schedule": [
       [
         "2026-11-09",
-        "CE - Video Day - 60 Minutes Interview"
+        "Video - 60 Minutes Interview with President Trump"
       ],
       [
         "2026-11-11",
-        "CE - The Desk 111126"
+        "The Desk 111126"
       ],
       [
         "2026-11-13",
-        "CE - The Desk 111326"
+        "The Desk 111326"
       ],
       [
         "2026-11-17",
-        "CE - AI1 - What Exactly AI Is"
+        "AI1 - What Exactly AI Is"
       ],
       [
         "2026-11-19",
-        "CE - AI2 - When AI Gets it Wrong"
+        "AI2 - When AI Gets it Wrong"
       ],
       [
         "2026-11-23",
-        "CE - The Desk 112326"
+        "The Desk 112326"
       ],
       [
         "2026-11-30",
-        "CE - AI3 - What AI Changes"
+        "AI3 - What AI Changes"
       ],
       [
         "2026-12-02",
-        "CE - AI4 - Who Makes the Rules?"
+        "AI4 - Who Makes the Rules?"
       ],
       [
         "2026-12-04",
-        "CE - AI5 - Study Guide Work Day"
+        "AI5 - Study Guide Work Day"
       ],
       [
         "2026-12-08",
-        "CE - AI Unit Exam"
+        "AI Unit Exam"
       ],
       [
         "2026-12-10",
-        "CE - Final Exam Study Guide Work Day"
+        "Final Exam Study Guide Work Day"
       ],
       [
         "2026-12-16",
-        "CE - Final Exam"
+        "Final Exam"
       ]
     ],
     "studentFlow": "November 9: 60 Minutes interview before lunch, CNN 10 after lunch; no written work. November 11 and 13: The Desk. November 17 and 19: AI1 and AI2. November 23: The Desk. November 25–27: Thanksgiving break. November 30 and December 2: AI3 and AI4. December 4: AI5 study guide work day. December 8: AI Unit Exam. December 10: final exam study guide work day. December 16: traditional final exam, no project.",
@@ -308,7 +308,7 @@ module.exports = {
         "teacherAbsent": false,
         "notice": "Follow the five chapters in order. The background readings and printed examples provide what you need.",
         "directions": [
-          "Open CE - AI1 - What Exactly AI Is on November 17.",
+          "Open AI1 - What Exactly AI Is on November 17.",
           "Read each Chapter's background text before attempting the question underneath it. Printed information on this page is enough.",
           "Complete Be the Model predictions on paper or in your own notes; do not share them aloud.",
           "Complete the eight-step AI/not-AI practice sort, check feedback, and revise your choices.",

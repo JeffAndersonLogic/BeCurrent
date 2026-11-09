@@ -130,7 +130,7 @@
   }
 
   const fresh=document.createElement('script');
-  fresh.src='assets/data/daily-news.js?v=hour-'+hourKey();
+  fresh.src='assets/data/daily-news.js?v=20261109-news-labels-hour-'+hourKey();
   fresh.async=false;
   fresh.onload=render;
   fresh.onerror=render;

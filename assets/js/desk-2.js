@@ -12,7 +12,7 @@
   function loadSchedule(done){
     if(window.BECURRENT_SCHEDULE){done();return;}
     var script=document.createElement('script');
-    script.src='../assets/data/announcements-schedule.js?v=20260831-desk';
+    script.src='../assets/data/announcements-schedule.js?v=20261109-news-labels';
     script.async=false;
     script.onload=done;
     script.onerror=done;
@@ -21,7 +21,7 @@
 
   function loadNews(done){
     var script=document.createElement('script');
-    script.src='../assets/data/daily-news.js?v=hour-'+hourKey();
+    script.src='../assets/data/daily-news.js?v=20261109-news-labels-hour-'+hourKey();
     script.async=false;
     script.onload=done;
     script.onerror=done;
