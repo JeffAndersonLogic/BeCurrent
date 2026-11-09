@@ -3,14 +3,14 @@ window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-09",
   lead: {
     category: "U.S. / Democracy",
-    headline: "Supreme Court allows border wall construction in Big Bend region",
-    dek: "The Supreme Court agreed to lift a district court order that temporarily stopped construction of the border wall and other infrastructure in the Big Bend sector.",
-    source: "CBS News",
+    headline: "Supreme Court says border wall construction can continue in west Texas",
+    dek: "The Trump administration filed an emergency relief request with the high court earlier in October asking for the construction to continue while a lawsuit over the plan moves forward.",
+    source: "NPR",
     published: "November 9, 2026",
-    url: "https://www.cbsnews.com/news/supreme-court-trump-border-wall-big-bend/",
-    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/08/20/70d15ef3-844f-4d88-b506-85d06db6c3c8/thumbnail/1200x630/12bb7c361b249c8597b8ebebf0e51f03/dsc01583.jpg",
-    imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/supreme-court-trump-border-wall-big-bend/"
+    url: "https://www.npr.org/2026/11/09/nx-s1-6019424/border-wall-big-bend-texas-trump",
+    image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2500x1406+0+82/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F47%2Faa%2F8b772ccb4a99bfc5c6f7db6e8b01%2Fdsc-4950.jpg",
+    imageCredit: "Image: NPR",
+    imageCreditUrl: "https://www.npr.org/2026/11/09/nx-s1-6019424/border-wall-big-bend-texas-trump"
   },
   wire: [
     {
@@ -22,12 +22,12 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.npr.org/2026/11/09/g-s1-152627/up-first-newsletter-stephen-miller-trump-congress-nvidia-cop31"
     },
     {
-      category: "Technology",
-      headline: "Why a South Korean city is turning to a U.S. college to outsmart AI?",
-      dek: "Through civic participation and liberal education, South Korean educators hope to \"quietly stitch the fabric of our democracy…before it unravels beyond repair.\"",
+      category: "Economy",
+      headline: "Nvidia shares tumble as the company says it's investigating CEO Jensen Huang",
+      dek: "Nvidia's share price falls after the company begins an investigation into CEO Jensen Huang's alleged relationship with a woman accused of being a Chinese spy.",
       source: "NPR",
       published: "November 9, 2026",
-      url: "https://www.npr.org/2026/11/09/g-s1-151519/why-a-south-korean-city-is-turning-to-a-u-s-college-to-outsmart-ai"
+      url: "https://www.npr.org/2026/11/09/nx-s1-6034478/nvidia-shares-tumble-as-the-company-says-its-investigating-ceo-jensen-huang"
     },
     {
       category: "World / Diplomacy",
