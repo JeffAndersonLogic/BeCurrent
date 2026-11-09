@@ -1254,7 +1254,9 @@ window.BECURRENT_ANNOUNCEMENTS = {
         "Opening question, then start NOVA A.I. Revolution immediately.",
         "Watch the complete 53:30 film together.",
         "Four optional viewing cues: how AI learns, where it helps, what can go wrong, and who decides.",
-        "No graded writing task on film day. After lunch: CNN 10 and News Log.",
+        "No graded writing task on film day.",
+        "After lunch: CNN 10 · Nov. 5: The historic firsts of the 2026 Midterm Election.",
+        "After lunch: daily news and your News Log.",
         "Wednesday AI1 is fully independent while your teacher attends a conference."
       ]
     },
