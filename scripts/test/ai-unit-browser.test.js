@@ -10,6 +10,8 @@ const unit=require('../lib/unit-content/ai');
  // Canvas snippets link the published PNG; serve its checked-in bytes for offline browser testing.
  await context.route('https://jeffandersonlogic.github.io/BeCurrent/assets/images/brand/becurrent-wordmark-ink.png',route=>route.fulfill({path:require('path').join(__dirname,'../../assets/images/brand/becurrent-wordmark-ink.png'),contentType:'image/png'}));
  const page=await context.newPage(),errors=[];
+ // The interview board is a dated fixture; later CI runs must exercise November 9 too.
+ await page.clock.install({time:new Date('2026-11-09T15:00:00Z')});
  page.setDefaultTimeout(8000);
  page.on('pageerror',e=>errors.push(e.message));
  await page.addInitScript(()=>{Object.defineProperty(navigator,'clipboard',{configurable:true,value:{write:async items=>{window.__copiedHtml=await(await items[0].getType('text/html')).text()}}})});
