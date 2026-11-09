@@ -1228,39 +1228,77 @@ window.BECURRENT_ANNOUNCEMENTS = {
     },
     {
       "date": "2026-11-09",
-      "topic": "The Machine in the Room | Opening Film",
+      "topic": "CE - Video Day - 60 Minutes Interview",
       "unit": "The Machine in the Room",
-      "subtitle": "Full-documentary introduction to artificial intelligence",
+      "subtitle": "Interview before lunch; CNN 10 after lunch; no written work",
       "learningTargets": [
         {
-          "text": "I can recognize major possibilities and challenges of artificial intelligence introduced in the documentary.",
-          "label": "Background knowledge"
+          "text": "I can distinguish an interviewee’s claim from a verified fact.",
+          "label": "Source awareness"
         },
         {
-          "text": "I can identify questions about how AI works and who is responsible for its use.",
-          "label": "Inquiry"
+          "text": "I can recognize connections between the interview and our current-events investigations.",
+          "label": "Connections"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can notice one AI example and one question to investigate in the unit.",
+          "text": "I can notice when a speaker offers a fact, claim or opinion while I listen.",
           "label": "Observation"
         }
       ],
-      "homework": "No film-day assignment. Be ready to investigate how AI works on Wednesday.",
-      "note": "Full documentary day: watch all 53 minutes 30 seconds of PBS NOVA A.I. Revolution. No AI1 Canvas worksheet today.",
-      "doNow": "What is something AI can do that still needs a person to check?",
+      "homework": "No written work or Canvas submission today.",
+      "note": "Before lunch: Extended Interview: President Trump on 60 Minutes. After lunch: CNN 10. No written work or Canvas submission today.",
       "agenda": [
-        "Opening question, then start NOVA A.I. Revolution immediately.",
-        "Watch the complete 53:30 film together.",
-        "Four optional viewing cues: how AI learns, where it helps, what can go wrong, and who decides.",
-        "No graded writing task on film day. After lunch: CNN 10 and News Log.",
-        "Wednesday AI1 is fully independent while your teacher attends a conference."
+        "Before lunch: watch Extended Interview: President Trump on 60 Minutes.",
+        "After lunch: watch CNN 10.",
+        "No written work today. No News Log entry or Canvas submission."
+      ],
+      "slides": [
+        {
+          "url": "https://www.youtube.com/watch?v=m2aC8lAOQbg",
+          "linkLabel": "Open the 60 Minutes interview",
+          "kicker": "Before lunch",
+          "title": "Watch the 60 Minutes interview",
+          "bullets": [
+            "Extended Interview: President Trump on 60 Minutes",
+            "After lunch: CNN 10.",
+            "No written work or Canvas submission today."
+          ]
+        }
       ]
     },
     {
       "date": "2026-11-11",
-      "topic": "The Machine in the Room | AI1: What AI Actually Is",
+      "topic": "CE - The Desk 111126",
+      "homework": "Submit CE - The Desk 111126 in Canvas. Check that your 2026-11-11 entry is included.",
+      "homeworkDue": "the end of class today",
+      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
+      "agenda": [
+        "Watch CNN 10 and open The Desk.",
+        "Read the shared Lead and record its source, date, link, summary and significance.",
+        "Choose and read Your Pick; record its source details and summarize the event.",
+        "Explain which story deserves more attention using specific evidence.",
+        "Gather My Log, copy the complete log, paste into CE - The Desk 111126 in Canvas, and submit."
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "topic": "CE - The Desk 111326",
+      "homework": "Submit CE - The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
+      "homeworkDue": "the end of class today",
+      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
+      "agenda": [
+        "Watch CNN 10 and open The Desk.",
+        "Read the shared Lead and record its source, date, link, summary and significance.",
+        "Choose and read Your Pick; record its source details and summarize the event.",
+        "Explain which story deserves more attention using specific evidence.",
+        "Gather My Log, copy the complete log, paste into CE - The Desk 111326 in Canvas, and submit."
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "topic": "CE - AI1 - What Exactly AI Is",
       "unit": "The Machine in the Room",
       "subtitle": "A very good guesser",
       "learningTargets": [
@@ -1291,22 +1329,20 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Evidence"
         }
       ],
-      "homework": "Submit AI1 - What AI Actually Is via Canvas Text Entry.",
-      "homeworkDue": "by the end of the before-lunch class block",
-      "note": "SUBSTITUTE DAY. Your teacher is attending a conference. Students work independently using the chapter instructions, sample outputs and optional paper fallback.",
-      "doNow": "Open Canvas and click AI1 - What AI Actually Is. Start at Chapter 1; all instructions are on the lesson page.",
+      "homework": "Finish and submit CE - AI1 - What Exactly AI Is in Canvas.",
+      "note": "Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking.",
+      "doNow": "How can a computer sound like it understands you?",
       "agenda": [
-        "Read the five chapters independently; no live instruction or group presenting.",
-        "Complete Be the Model predictions privately.",
-        "Sort eight technologies as AI, rules or depends; check feedback.",
-        "Use printed chatbot examples if MagicSchool is unavailable.",
-        "Answer eight private questions, Gather All My Work, paste and submit in Canvas before lunch.",
-        "After lunch: CNN 10 and the News Log with the substitute."
+        "Open CE - AI1 - What Exactly AI Is and follow the five chapters in order.",
+        "Read the background and complete the practice sort.",
+        "Answer all eight private questions, then Gather All My Work.",
+        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "After lunch: CNN 10 and the News Log."
       ]
     },
     {
-      "date": "2026-11-13",
-      "topic": "When AI Gets It Wrong",
+      "date": "2026-11-19",
+      "topic": "CE - AI2 - When AI Gets it Wrong",
       "unit": "The Machine in the Room",
       "subtitle": "Sounding sure is not being right",
       "learningTargets": [
@@ -1337,20 +1373,34 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Distinction"
         }
       ],
-      "homework": "Submit AI2 - When AI Gets It Wrong in Canvas.",
-      "note": "When AI gets it wrong: fake court citations, biased training patterns and a deceptive robocall.",
-      "doNow": "Why is a confident answer not automatically reliable?",
+      "homework": "Finish and submit CE - AI2 - When AI Gets it Wrong in Canvas.",
+      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "doNow": "Who should check a convincing answer?",
       "agenda": [
-        "Begin with the claim: a lawyer cited nonexistent cases.",
-        "Distinguish hallucination, bias, and deliberate deepfake deception.",
-        "Practice checking an AI claim against a named independent source.",
-        "Answer eight questions. Gather and submit in Canvas before lunch.",
+        "Open CE - AI2 - When AI Gets it Wrong and follow the five chapters in order.",
+        "Read the background and complete the practice sort.",
+        "Answer all eight private questions, then Gather All My Work.",
+        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."
       ]
     },
     {
-      "date": "2026-11-17",
-      "topic": "What AI Changes, and Who Pays",
+      "date": "2026-11-23",
+      "topic": "CE - The Desk 112326",
+      "homework": "Submit CE - The Desk 112326 in Canvas. Check that your 2026-11-23 entry is included.",
+      "homeworkDue": "the end of class today",
+      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
+      "agenda": [
+        "Watch CNN 10 and open The Desk.",
+        "Read the shared Lead and record its source, date, link, summary and significance.",
+        "Choose and read Your Pick; record its source details and summarize the event.",
+        "Explain which story deserves more attention using specific evidence.",
+        "Gather My Log, copy the complete log, paste into CE - The Desk 112326 in Canvas, and submit."
+      ]
+    },
+    {
+      "date": "2026-11-30",
+      "topic": "CE - AI3 - What AI Changes",
       "unit": "The Machine in the Room",
       "subtitle": "Jobs, power lines, and Lebanon",
       "learningTargets": [
@@ -1381,21 +1431,20 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Framing"
         }
       ],
-      "homework": "Submit AI3 - What AI Changes and Who Pays in Canvas.",
-      "note": "Boone County connection: data center jobs, electricity, water claims and local decisions.",
-      "doNow": "If you ask an AI chatbot a question, why might that affect a construction site in Lebanon?",
+      "homework": "Finish and submit CE - AI3 - What AI Changes in Canvas.",
+      "note": "Break a job into tasks, compare what Stanford and Yale actually found, then investigate Meta's data center project right here in Boone County.",
+      "doNow": "Who benefits from AI, and who absorbs its costs?",
       "agenda": [
-        "Separate jobs from the tasks that make up jobs.",
-        "Compare Stanford and Yale research without overstating either.",
-        "Trace AI use to physical data centers in Lebanon, Indiana.",
-        "Compare the company announcement and local concerns.",
-        "Answer eight questions, Gather and submit in Canvas before lunch.",
+        "Open CE - AI3 - What AI Changes and follow the five chapters in order.",
+        "Read the background and complete the practice sort.",
+        "Answer all eight private questions, then Gather All My Work.",
+        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."
       ]
     },
     {
-      "date": "2026-11-19",
-      "topic": "Who Makes the Rules?",
+      "date": "2026-12-02",
+      "topic": "CE - AI4 - Who Makes the Rules?",
       "unit": "The Machine in the Room",
       "subtitle": "What should the rule actually say?",
       "learningTargets": [
@@ -1426,40 +1475,61 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Argument"
         }
       ],
-      "homework": "Review the website study guide for the AI unit assessment on Monday, November 23.",
-      "note": "Last investigation before the Monday exam. Decide who should set the rules and what those rules should say.",
-      "doNow": "Should a student be allowed to use AI to brainstorm a paper? How about to write the entire paper?",
+      "homework": "Finish and submit CE - AI4 - Who Makes the Rules? in Canvas.",
+      "note": "Investigate individual, school, company, and government rules. Review a real Indiana disclosure law. Decide when AI should be allowed, restricted, or checked.",
+      "doNow": "Which decisions should a person still make, and who gets to set the rules?",
       "agenda": [
-        "Compare individual, school, company and government authority.",
-        "Examine Indiana election-media disclosure and the federalism debate.",
-        "Test three clearly fictional school AI scenarios.",
-        "Write and defend one clear AI-use policy.",
-        "Answer eight questions and submit the complete Canvas record.",
-        "Use the AI study guide for Monday, Nov 23."
+        "Open CE - AI4 - Who Makes the Rules? and follow the five chapters in order.",
+        "Read the background and complete the practice sort.",
+        "Answer all eight private questions, then Gather All My Work.",
+        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "After lunch: CNN 10 and the News Log."
       ]
     },
     {
-      "date": "2026-11-23",
-      "topic": "The Machine in the Room | AI Unit Assessment",
-      "homework": "No new AI investigation. Thanksgiving break November 25–27.",
-      "note": "25 multiple-choice questions inside Canvas only. Six questions from AI1, AI2 and AI3; seven from AI4.",
+      "date": "2026-12-04",
+      "topic": "CE - AI5 - Study Guide Work Day",
+      "homework": "Finish studying AI1–AI4 for December 8.",
+      "note": "AI5 is a study-guide work day; there is no fifth new investigation. AI Unit Exam: Tuesday, December 8.",
       "agenda": [
-        "Open the AI Unit Assessment in Canvas.",
-        "Read each question and evaluate what the evidence actually supports.",
-        "Finish and submit the 25-question assessment.",
-        "After lunch: CNN 10 and News Log.",
-        "Thanksgiving break November 25–27. The Desk resumes at the next class meeting."
+        "Open the AI study guide.",
+        "Review AI1 through AI4: concepts, evidence, source checks and policy reasoning.",
+        "Check weak areas against the linked lessons and ask targeted questions.",
+        "Prepare for the AI Unit Exam on December 8."
       ]
     },
     {
-      "date": "2026-11-30",
-      "topic": "The Desk | After Thanksgiving",
-      "homework": "Follow the normal Desk submission route.",
-      "note": "TENTATIVE next Current Events meeting after Thanksgiving; verify Green/Silver rotation before publishing.",
+      "date": "2026-12-08",
+      "topic": "CE - AI Unit Exam",
+      "homework": "No additional AI assignment.",
+      "note": "AI unit assessment in Canvas. Review materials remain on BeCurrent; questions and answers stay in Canvas.",
       "agenda": [
-        "Resume The Desk and normal News Log routine.",
-        "Read the shared Lead and choose Your Pick.",
-        "Explain why the stories deserve attention."
+        "Open Canvas when instructed.",
+        "Complete and submit the AI Unit Exam.",
+        "Check your submission confirmation."
+      ]
+    },
+    {
+      "date": "2026-12-10",
+      "topic": "CE - Final Exam Study Guide Work Day",
+      "homework": "Finish your final exam study guide and study for December 16.",
+      "note": "Traditional semester final exam on Wednesday, December 16. No final project.",
+      "agenda": [
+        "Open the semester final exam study guide.",
+        "Review News Literacy, Social Media, Iran at War, Midterms and Artificial Intelligence.",
+        "Practice explaining claims, evidence, cause and effect, source limits and competing perspectives.",
+        "Identify weak areas and ask questions before December 16."
+      ]
+    },
+    {
+      "date": "2026-12-16",
+      "topic": "CE - Final Exam",
+      "homework": "No final project.",
+      "note": "Traditional semester final exam today. No final project.",
+      "agenda": [
+        "Follow the teacher’s final exam directions.",
+        "Complete the traditional semester final exam.",
+        "Check that your exam is turned in before leaving."
       ]
     }
   ],
@@ -1475,16 +1545,31 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "type": "Test"
     },
     {
-      "date": "2026-11-23",
-      "title": "The Machine in the Room | AI Unit Assessment",
+      "date": "2026-12-08",
+      "title": "CE - AI Unit Exam",
       "type": "Test"
+    },
+    {
+      "date": "2026-12-16",
+      "title": "CE - Final Exam",
+      "type": "Final exam"
     }
   ],
   "reminders": [
     {
-      "title": "Fall break: October 12–16",
-      "detail": "No regular classes next week.",
-      "until": "2026-10-09"
+      "title": "Thanksgiving break: November 25–27",
+      "detail": "No school.",
+      "until": "2026-11-27"
+    },
+    {
+      "title": "Traditional final exam: December 16",
+      "detail": "Final review December 10. No final project.",
+      "until": "2026-12-16"
+    },
+    {
+      "title": "Winter break: December 21–25",
+      "detail": "Dates shown on Canvas.",
+      "until": "2026-12-25"
     }
   ],
   "desk": {

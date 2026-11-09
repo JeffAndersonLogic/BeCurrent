@@ -45,9 +45,9 @@
   </div>
 </div>
 
-<script src="assets/data/announcements-schedule.js?v=20261028-desk"></script>
+<script src="assets/data/announcements-schedule.js?v=20261109-calendar"></script>
 <script src="assets/data/announcements.js"></script>
-<script src="assets/data/daily-news.js?v=20261028-desk"></script>
+<script src="assets/data/daily-news.js?v=20261109-calendar"></script>
 <script src="assets/js/section-photos.js?v=20261020"></script>
 <script>
 (function () {
@@ -214,11 +214,15 @@
         });
         s.appendChild(ul);
       }
-      return s;
-    }).filter(Boolean);
-  }
+        if (has(x.url) && /^https?:\/\//.test(x.url)) {
+          var watch = el('a','board-button',x.linkLabel || 'Open resource');
+          watch.href=x.url; watch.target='_blank'; watch.rel='noopener noreferrer'; s.appendChild(watch);
+        }
+        return s;
+      }).filter(Boolean);
+    }
 
-  function deskSlide(day) {
+    function deskSlide(day) {
     // The Desk is opt-in. A date must explicitly carry deskMode:'full' or
     // deskMode:'lead' in announcements-schedule.js or it never enters the rotation.
     if (!day || (day.deskMode !== 'full' && day.deskMode !== 'lead')) return null;

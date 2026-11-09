@@ -124,7 +124,7 @@ ${units.map(unitBlock).join('\n')}
 ${canvasDocs.map(f => {
     const key = f === 'ai-unit-calendar.html' ? 'ai' : f.replace(/-calendar-events\.html$/, '');
     const u = units.find(x => x.unitPage === `${key}/index.html`);
-    return `<a class="tool" href="../docs/canvas/${E(f)}" target="_blank" rel="noopener noreferrer"><span class="tool-kicker">Calendar events</span><strong>${E(u ? u.unit : key)}</strong><span>Event tables with copy buttons; assignments are in the matching document in the repository.</span></a>`;
+    return `<a class="tool" href="../docs/canvas/${E(f)}" target="_blank" rel="noopener noreferrer"><span class="tool-kicker">Calendar events</span><strong>${E(u ? u.unit : key)}</strong><span>Event tables with copy buttons; ${key==='ai'?'assignment HTML is included on this page.':'assignments are in the matching document in the repository.'}</span></a>`;
   }).join('\n')}
 </div>
 </section>

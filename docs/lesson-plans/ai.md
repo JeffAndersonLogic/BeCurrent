@@ -21,14 +21,14 @@
 
 Watch the ENTIRE documentary. Student page: `ai/opening-film.html`. Teacher page: `teacher/ai-film-os.html`.
 
-Full episode: [A.I. Revolution](https://www.youtube.com/watch?v=-sB12gk9ESA). Alternate: https://www.pbs.org/video/ai-revolution-umwwlt/.
-Duration: 53:30. Documentary produced 2024-03-27. Do not present 2024 demonstrations as a November 2026 update.
+Full episode: [Extended Interview: President Trump on 60 Minutes](https://www.youtube.com/watch?v=m2aC8lAOQbg). Alternate: undefined.
+Duration: undefined. Documentary produced 2026-11-08. Do not present 2024 demonstrations as a November 2026 update.
 
 **Four optional viewing cues (not graded):**
-- **How AI learns**: Notice an example of a system learning from data.
-- **Where AI helps**: Notice a useful example in health, science, or daily life.
-- **What can go wrong**: Notice a risk, a mistaken output, or an AI-generated fake.
-- **Who decides**: What responsibilities should people keep?
+- **Source**: Who is speaking, and who is asking the questions?
+- **Claim**: Which statements would need independent evidence?
+- **Connection**: How does the interview connect to the midterms, Iran, Ukraine, or AI?
+- **Perspective**: What is the difference between a reported fact and a speaker’s opinion?
 
 ## Wednesday substitute (AI1)
 
@@ -36,7 +36,7 @@ Student page: `ai/block-01.html`. Print route: `ai/print-topic-01.html`. Teacher
 
 The substitute does NOT need to teach, show the documentary again, or administer MagicSchool. Students follow the page and submit eight short answers using the shared Gather All My Work Canvas record. If the site fails, use the printed reading and response sheet.
 
-1. Open the BeCurrent AI unit and choose AI1: What AI Actually Is (November 11).
+1. Open CE - AI1 - What Exactly AI Is on November 17.
 2. Read each Chapter's background text before attempting the question underneath it. Printed information on this page is enough.
 3. Complete Be the Model predictions on paper or in your own notes; do not share them aloud.
 4. Complete the eight-step AI/not-AI practice sort, check feedback, and revise your choices.
@@ -53,11 +53,11 @@ The substitute does NOT need to teach, show the documentary again, or administer
 
 ## Four investigations
 
-### AI1 — What AI Actually Is (2026-11-11)
+### AI1 — What Exactly AI Is (2026-11-17)
 
 **Skill:** Generalizing from Evidence. **Question:** How can a computer sound like it understands you?.
 
-Independent follow-up to Monday's NOVA documentary. Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking. No teacher presentation is required.
+Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking.
 
 **Learning targets**
 - I can explain patterns, training examples, and prediction in plain language.
@@ -70,7 +70,7 @@ Independent follow-up to Monday's NOVA documentary. Explain how AI learns, try t
 - I can support a claim about chatbots with a result from the experiment.
 
 **Chapters**
-- 1. Start here: What did the film show?: Read the background, think privately about your own examples, and answer Question 1. Continue to the next chapter without waiting for the substitute.
+- 1. Start here: What did the film show?: Read the background, think about your own examples, and answer Question 1. Continue through the chapters in order.
 - 2. Be the Model: Predict the next word: Complete the five starters privately, then answer Questions 2 and 3.
 - 3. Patterns learned from examples: Try the eight-card AI/not-AI sort, read the feedback, and answer Questions 4 and 5.
 - 4. Chatbot or printed sample: Compare the replies: Compare either the chatbot or the printed sample to your predictions. Answer Questions 6 and 7. No live chatbot access is required.
@@ -104,7 +104,7 @@ Independent follow-up to Monday's NOVA documentary. Explain how AI learns, try t
 
 **Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
 
-### AI2 — When AI Gets It Wrong (2026-11-13)
+### AI2 — When AI Gets it Wrong (2026-11-19)
 
 **Skill:** Sourcing and Corroboration. **Question:** Who should check a convincing answer?.
 
@@ -155,7 +155,7 @@ Study invented legal evidence, unfair learned patterns, and an AI-cloned politic
 
 **Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
 
-### AI3 — What AI Changes, and Who Pays (2026-11-17)
+### AI3 — What AI Changes (2026-11-30)
 
 **Skill:** Causation and Framing. **Question:** Who benefits from AI, and who absorbs its costs?.
 
@@ -206,7 +206,7 @@ Break a job into tasks, compare what Stanford and Yale actually found, then inve
 
 **Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
 
-### AI4 — Who Makes the Rules? (2026-11-19)
+### AI4 — Who Makes the Rules? (2026-12-02)
 
 **Skill:** Framing and Generalizing from Evidence. **Question:** Which decisions should a person still make, and who gets to set the rules?.
 

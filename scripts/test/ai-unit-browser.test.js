@@ -14,13 +14,13 @@ const unit=require('../lib/unit-content/ai');
  try{
   await page.goto(root+'/ai/opening-film.html');
   assert(await page.isVisible('h1'));
-  assert.match(await page.textContent('main'),/53 MINUTES 30 SECONDS/i);
+  assert.match(await page.textContent('main'),/60 Minutes/i);
   assert.strictEqual(await page.locator('[data-slot],#gather-work').count(),0,'film day is a real film, not extra worksheet');
   assert((await page.locator('a[href*="youtube.com/watch"]').count())>=1,'official film link present');
   await page.goto(root+'/ai/block-01.html');
   assert(await page.isVisible('#student-flow'),'substitute lesson loads');
-  assert((await page.textContent('main')).includes('Everything you need is on this page.'));
-  assert((await page.textContent('main')).includes('Your teacher is attending a conference'));
+  assert((await page.textContent('main')).includes('What Exactly AI Is'));
+  assert(!(await page.textContent('main')).includes('Your teacher is attending a conference'));
   assert.strictEqual(await page.locator('[data-slot]').count(),8);
   assert.strictEqual(await page.locator('[data-sort]').count(),8);
   assert.strictEqual(await page.locator('[data-student-chapter]').count(),5);
@@ -57,7 +57,18 @@ const unit=require('../lib/unit-content/ai');
     assert.strictEqual(await page.locator('[data-slot]').count(),8,'AI'+n+' must have eight required answers');
     assert(await page.isVisible('#gather-work'));
   }
+  await page.goto(root+'/docs/canvas/ai-unit-calendar.html');
+  assert.strictEqual(await page.locator('[data-copy]').count(),23,'12 events and 11 assignment/assessment descriptions; none for video day');
+  await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.__copiedCode=text}}}));
+  await page.locator('#day-2026-11-09 summary').click();
+  await page.locator('[data-copy="event-0"]').click();
+  assert.match(await page.evaluate(()=>window.__copiedCode),/m2aC8lAOQbg/);
+  assert.match(await page.evaluate(()=>window.__copiedCode),/No written work today/);
+  assert(!(await page.evaluate(()=>window.__copiedCode)).includes('&lt;h2&gt;'),'copies HTML markup, not escaped preview');
+  await page.goto(root+'/announcements.html?date=2026-11-09');
+  assert.strictEqual(await page.locator('.desk-slide-v2').count(),0,'no writing routine on interview day');
+  assert.strictEqual(await page.locator('a[href*="m2aC8lAOQbg"]').count(),1,'board has direct interview link');
   assert.deepStrictEqual(errors,[]);
-  console.log('PASS: full NOVA film day + independent AI1, offline worksheet, autosave, sort feedback, shared Canvas parser, mobile layout and no JS errors.');
+  console.log('PASS: 60 Minutes video day + independent AI1, offline worksheet, autosave, sort feedback, shared Canvas parser, mobile layout and no JS errors.');
  }finally{await context.close();await browser.close();server.close()}
 })().catch(e=>{console.error(e.stack||e);process.exit(1)});

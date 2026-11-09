@@ -1,33 +1,25 @@
-# The Machine in the Room | AI Unit Rebuild Specification
+# The Machine in the Room | Current Semester Plan
 
-## FINAL SCHEDULE REVISION — NOVEMBER 8, 2026
-**Teacher decision:** the NOVA film occupies all of Monday, November 9. Push the *four instructional topics* one class meeting later. Wednesday, November 11 is a teacher conference absence and AI1 must be wholly independent with the substitute.
-- **Nov 9:** PBS NOVA A.I. Revolution (complete 53:30), four optional viewing cues; no graded worksheet or Canvas assignment.
-- **Nov 11:** AI1 What AI Actually Is, **fully independent**, no teacher lecture, no required video replay or live MagicSchool; five self-guided chapters, printed examples, eight private responses, practice sort, optional paper fallback, Gather All My Work into Canvas.
-- **Nov 13:** AI2 When AI Gets It Wrong.
-- **Nov 17:** AI3 What AI Changes, and Who Pays.
-- **Nov 19:** AI4 Who Makes the Rules?
-- **Nov 23:** 25-question exam in Canvas only.
-- **Nov 25–27:** ZCS Thanksgiving break, no school (verified against the district calendar).
-- **Next class after break:** The Desk. Nov 30 is a tentative placeholder pending the school's Green/Silver rotation.
-Canonical student paths: ai/opening-film.html (film), ai/block-01.html (independent AI1), ai/block-02..04.html (subsequent investigations), ai/print-topic-01.html (offline fallback). Distinct teacher film OS and AI1 substitute OS. No assessment item or confidential key on publicly served pages.
+Updated November 9, 2026 from Jeff’s Canvas screenshots and interview link. This schedule replaces all earlier NOVA, conference-day AI1 and November exam plans.
 
+- **2026-11-09:** CE - Video Day - 60 Minutes Interview
+- **2026-11-11:** CE - The Desk 111126
+- **2026-11-13:** CE - The Desk 111326
+- **2026-11-17:** CE - AI1 - What Exactly AI Is
+- **2026-11-19:** CE - AI2 - When AI Gets it Wrong
+- **2026-11-23:** CE - The Desk 112326
+- **2026-11-30:** CE - AI3 - What AI Changes
+- **2026-12-02:** CE - AI4 - Who Makes the Rules?
+- **2026-12-04:** CE - AI5 - Study Guide Work Day
+- **2026-12-08:** CE - AI Unit Exam
+- **2026-12-10:** CE - Final Exam Study Guide Work Day
+- **2026-12-16:** CE - Final Exam
 
-## NOVEMBER 8 UPDATE — APPROVED FILM-FIRST OPENING
-Jeff selected Midnight Ember, then explicitly chose the **entire PBS NOVA A.I. Revolution documentary** for Monday, November 9, 2026.
-- Verified official film runtime: 53 minutes 30 seconds (March 27, 2024). Official YouTube: https://www.youtube.com/watch?v=-sB12gk9ESA ; official PBS: https://www.pbs.org/video/ai-revolution-umwwlt/
-- Day 1 is a full-film lesson, NOT a 16-minute excerpt. The first film begins immediately in the ~55-minute before-lunch block. Four optional observation cues; no required eight-question worksheet, MagicSchool experiment, or Canvas Text Entry submission that morning.
-- AI1 concepts are introduced through the complete film and reinforced in the following investigations and study guide. Do not pretend there is time for an eight-answer exercise after a 53:30 movie.
-- The original eight-question AI1 bank remains canonical for optional future review only, not a graded November 9 task.
-- Student-facing Midnight Ember home, AI1 page, teacher run of show, projector, and Canvas calendar copy must all say FULL DOCUMENTARY. No source of truth may retain the first-16-minutes plan.
-- Preserve Nov 11 AI2, Nov 13 AI3, Nov 17 AI4, Nov 19 25-item Canvas assessment, Nov 23 Desk. On Nov 11–17 eight private responses per lesson, verified shared Canvas record; News Log after lunch.
-- Check school playback, source URL, audio, captions, and any video preroll before students arrive. The documentary is historical to 2024; distinguish dated claims from November 2026 capabilities.
+November 9: [60 Minutes interview](https://www.youtube.com/watch?v=m2aC8lAOQbg) before lunch; CNN 10 after lunch. No written work, News Log or Canvas submission. AI5 is review of AI1–AI4. AI Unit Exam December 8; traditional semester final December 16, no project. Thanksgiving break November 25–27. Winter break shown December 21–25.
 
-Status: DESIGN RESTART / NOT PUBLICATION-APPROVED
-Reviewed: 2026-11-08
-Code: AI
-Working branch: ai-unit-draft-20261108
-Unit dates (current): film Nov 9, AI1 Nov 11, AI2 Nov 13, AI3 Nov 17, AI4 Nov 19, Canvas exam Nov 23, Desk after Thanksgiving.
+November 23’s Desk label is 112326, corrected from 112426 in that calendar cell. Truncated titles are expanded from the lesson names.
+
+Schedule and event labels: `scripts/lib/semester-calendar.js`. Lessons: `scripts/lib/unit-content/ai.js`. Build with `node scripts/build-ai.js`, then rebuild announcements, lesson plans and teacher home. The Canvas pack includes separate event and assignment HTML, previews and copy buttons at `docs/canvas/ai-unit-calendar.html`.
 
 ## Decision record: why the first implementation was rejected
 The standalone ai-drafts/topic-01.html is a disposable prototype, not a lesson to publish. It duplicates CSS, invents an independent Gather/Copy routine, does not emit the canonical #BHV/#BHR record footer, lacks the shared parser round-trip, has no real practice-sort interaction, no researched clip, no teacher OS, no accessible paper route, and no browser verification. Never merge it to main as a student lesson.
@@ -61,7 +53,7 @@ Conceptual spine:
 
 Students should finish with a usable, evidenced decision rule rather than a blanket position for or against AI.
 
-## AI1 | What AI Actually Is | Nov 9
+## AI1 | What Exactly AI Is | November 17
 Skill: Generalizing from Evidence. Exit: many AI systems learn from examples, but AI is a broad field; language models generate plausible text, which may or may not be true.
 Chapters:
 1. Already in your pocket: feed, spam, suggestions, translation (different kinds of tools).
@@ -82,7 +74,7 @@ Eight questions (one response each):
 No need to force an AI hallucination on the first day.
 Sources: https://www.pewresearch.org/internet/2026/02/24/how-teens-use-and-view-ai/ ; https://code.org/en-US/curriculum/how-artificial-intelligence-works
 
-## AI2 | When AI Gets It Wrong | Nov 11
+## AI2 | When AI Gets it Wrong | November 19
 Skill: Sourcing / Corroboration. Essential intellectual correction: hallucination, systematic bias, and malicious impersonation are THREE DIFFERENT failure modes, with different actors and responsibilities.
 Chapters:
 1. Smooth words are not proof: recall from AI1.
@@ -94,7 +86,7 @@ Chapters:
 Eight answers: define hallucination; distinguish from deliberate fake; responsibility in lawyers case; source+finding from lab; explain one mechanism of bias; effect of cloned voice on voting information; why different legal outcomes can coexist; write a three-step corroboration rule.
 Do not use a "Real or AI?" image-identification game.
 
-## AI3 | What AI Changes, and Who Pays | Nov 13
+## AI3 | What AI Changes | November 30
 Skill: Causation and Framing.
 Chapters:
 1. Jobs are task bundles: task-level sort for a job students choose, including meaningful human responsibilities.
@@ -108,7 +100,7 @@ Eight answers: why tasks before jobs; human-required task; assess chatbot output
 Sources: https://digitaleconomy.stanford.edu/news/canariesaug26/ ; https://interactives.budgetlab.yale.edu/tools/ai-labor-market-tracker/?tab=current-update ; https://datacenters.atmeta.com/2026/02/hello-lebanon/ ; https://boonecounty.in.gov/2026/06/15/19190/ ; https://www.youarecurrent.com/2026/06/15/boone-county-installs-one-year-data-center-moratorium/
 Local images must be properly licensed or linked as credited source visuals, no unlicensed copies.
 
-## AI4 | Who Makes the Rules? | Nov 17
+## AI4 | Who Makes the Rules? | December 2
 Skill: Framing and Generalizing from Evidence. Four decision layers: individual choices, classroom/district expectations, company rules, and governments (state/federal).
 Chapters:
 1. Who chooses? Return to unit question with students' first answer.
@@ -120,7 +112,7 @@ Chapters:
 Eight answers: 4 sources of rules; disclosure benefit and limitation; federalism both sides with evidence; executive orders' limits; chatbot's perspective limitations; apply one scenario; who acts on fake snow-day video; final evidenced unit question.
 No claims about exact current school AI policy without school confirmation.
 
-## Assessment, November 19 (Canvas only)
+## Assessment, December 8 (Canvas only)
 25 multiple-choice questions: 6 from AI1, 6 AI2, 6 AI3, 7 AI4. Favor applied source reading, causal reasoning, distinguishing claims/projections, and selecting a defensible rule. No actual exam items, correct answers, or MagicSchool join code in public web assets. Website study guide covers terms, evidence, how to reason, and sample practice in fresh contexts; no exam leakage.
 
 ## Integration and verification gates
