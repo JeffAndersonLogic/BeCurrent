@@ -2,48 +2,48 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-10",
   lead: {
-    category: "World / Diplomacy",
-    headline: "COP31 climate summit begins after disastrous year of extreme weather",
-    dek: "orld leaders, delegates and climate activists on Monday kicked off talks in Turkey on curbing climate change, which in the last year has led to rising temperatures and deadly heat waves in Europe and beyond.",
-    source: "PBS News",
-    published: "November 9, 2026",
-    url: "https://www.pbs.org/newshour/science/cop31-climate-summit-begins-after-disastrous-year-of-extreme-weather",
-    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/09/2026-09-05T070547Z_1182138771_RC2SCNAG9VLQ_RTRMADP_3_NEPAL-FLOODS-1024x664.jpg",
-    imageCredit: "Image: PBS News",
-    imageCreditUrl: "https://www.pbs.org/newshour/science/cop31-climate-summit-begins-after-disastrous-year-of-extreme-weather"
+    category: "U.S. / National",
+    headline: "Matthew Farwell convicted of killing Sandra Birchmore, unborn child",
+    dek: "A jury has found former Stoughton, Massachusetts, police officer Matthew Farwell guilty of killing Sandra Birchmore and her unborn child.",
+    source: "CBS News",
+    published: "November 10, 2026",
+    url: "https://www.cbsnews.com/news/matthew-farwell-trial-jury-verdict-sandra-birchmore/",
+    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/10/01/89e04996-b5c0-456b-a16b-47f0b6c59127/thumbnail/1200x630/4c847072f31be8dc09bf9e61242e7dda/split-pic-template-86.jpg",
+    imageCredit: "Image: CBS News",
+    imageCreditUrl: "https://www.cbsnews.com/news/matthew-farwell-trial-jury-verdict-sandra-birchmore/"
   },
   wire: [
     {
-      category: "U.S. / National",
-      headline: "First snow of season expected in Northeast amid cold snap in eastern U.S.",
-      dek: "Parts of the Northeast could see their first snowfall of the season later this week, as a cold snap spreads over the eastern half of the U.S.",
-      source: "CBS News",
+      category: "World / International",
+      headline: "Genocide suspect deported by U.S. will stand trial in Rwanda",
+      dek: "Jean Léonard Teganya arrived in the East African nation on Monday, and Rwandan prosecutors said they will put him on trial for alleged genocide and crimes against humanity.",
+      source: "PBS News",
       published: "November 10, 2026",
-      url: "https://www.cbsnews.com/news/first-snowfall-season-expected-northeast-this-week-cold-snap-eastern-us/"
+      url: "https://www.pbs.org/newshour/world/genocide-suspect-deported-by-u-s-will-stand-trial-in-rwanda"
     },
     {
-      category: "Economy",
-      headline: "Gas prices dip below $4 but inflation remains stubbornly high",
-      dek: "Gasoline prices fell below $4 a gallon Tuesday for the first time in three months — but the overall cost of living remains stubbornly high.",
-      source: "NPR",
+      category: "Technology",
+      headline: "Study: Data center energy costs hit lower income households hardest",
+      dek: "A new study found that lower-income, rural households bore a disproportionate share of the financial burdens associated with AI data centers and the energy they use.",
+      source: "CBS News",
       published: "November 10, 2026",
-      url: "https://www.npr.org/2026/11/10/nx-s1-6034518/inflation-consumer-prices-economy-gas-prices"
+      url: "https://www.cbsnews.com/news/rising-energy-costs-ai-data-centers-lower-income-rural-households-study/"
     },
     {
       category: "World / Security",
-      headline: "France says Iran behind costly grocery store refrigeration hacks",
-      dek: "The Paris prosecutor",
+      headline: "Rubio says U.S. has \"no need\" to restart combat operations in Iran",
+      dek: "Rubio said he saw no need to resume major combat operations against Iran because economic sanctions were working so effectively.",
       source: "CBS News",
       published: "November 10, 2026",
-      url: "https://www.cbsnews.com/news/france-iran-behind-refrigerator-freezer-hack-cyberattack/"
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-deal-negotiations/"
     },
     {
-      category: "U.S. / National",
-      headline: "Why is Hegseth facing impeachment? Inside the 8 articles",
-      dek: "The impeachment resolution focuses on Defense Secretary Pete Hegseth",
-      source: "CBS News",
+      category: "World / Security",
+      headline: "Oil shock from Iran war led to drop in carbon pollution, scientists say",
+      dek: "Emissions of heat-trapping carbon dioxide from the burning of fossil fuels decreased slightly this year due to the Iran war. I",
+      source: "PBS News",
       published: "November 10, 2026",
-      url: "https://www.cbsnews.com/news/pete-hegseth-impeachment-articles/"
+      url: "https://www.pbs.org/newshour/science/oil-shock-from-iran-war-led-to-drop-in-carbon-pollution-scientists-say"
     }
   ]
 };
