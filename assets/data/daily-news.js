@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-11",
   lead: {
-    category: "U.S. / National",
-    headline: "Baby found \"clinging to life\" after being buried in crate for 24 hours",
-    dek: "An infant was found alive after apparently being buried in a dog crate for about 24 hours, authorities in South Carolina said.",
+    category: "U.S. / Government",
+    headline: "Mississippi Senate race leans Democratic as Colom's lead grows",
+    dek: "The Senate race in deep-red Mississippi remains unresolved, as Democrat Scott Colom has mounted a surprisingly competitive challenge to incumbent Sen. Cindy Hyde-Smith.",
     source: "CBS News",
     published: "November 11, 2026",
-    url: "https://www.cbsnews.com/news/baby-found-alive-buried-dog-crate-24-hours-south-carolina/",
-    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/11/f0bf97e3-c6d7-4e1a-bcb5-f84159624ec4/thumbnail/1200x630g2/65151656797bb23524731e8fbf2e8fd6/missing-baby-south-carolina.png",
+    url: "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/04/fcb281c4-4540-4310-a779-29fcb2008eff/thumbnail/1200x630g2/e523bab69f2674145699bd6d8f50cab5/colom-hyde-smith.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/baby-found-alive-buried-dog-crate-24-hours-south-carolina/"
+    imageCreditUrl: "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/"
   },
   wire: [
     {
       category: "World / Security",
-      headline: "Iran vows not to give up \"a single particle\" of nuclear material",
-      dek: "President Trump has repeatedly cited Iran",
+      headline: "The U.S. officials who have been targeted or threatened by Iran",
+      dek: "Treasury Secretary Scott Bessent is the latest U.S. official to be threatened or targeted by Iran, but he is far from the first.",
       source: "CBS News",
       published: "November 11, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
+      url: "https://www.cbsnews.com/news/us-officials-targeted-by-iran/"
     },
     {
       category: "Economy",
@@ -30,12 +30,12 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.cbsnews.com/news/jensen-huang-affair-nvidia-ceo-dilemma/"
     },
     {
-      category: "U.S. / National",
-      headline: "Veterans groups keep focus on traumatic brain injuries",
-      dek: "Dozens of service members have suffered TBIs during the current conflict with Iran, and hundreds of thousands of veterans have been diagnosed during the Global War on Terrorism.",
+      category: "World / Security",
+      headline: "Iran vows not to give up \"a single particle\" of nuclear material",
+      dek: "President Trump has repeatedly cited Iran",
       source: "CBS News",
       published: "November 11, 2026",
-      url: "https://www.cbsnews.com/news/veterans-traumatic-brain-injuries-wounded-warriors-project/"
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
     },
     {
       category: "World / International",
