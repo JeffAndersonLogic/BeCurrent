@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-10",
+  reviewed: "2026-11-11",
   lead: {
     category: "U.S. / National",
-    headline: "Matthew Farwell convicted of killing Sandra Birchmore, unborn child",
-    dek: "A jury has found former Stoughton, Massachusetts, police officer Matthew Farwell guilty of killing Sandra Birchmore and her unborn child.",
+    headline: "Baby found \"clinging to life\" after being buried in crate for 24 hours",
+    dek: "An infant was found alive after apparently being buried in a dog crate for about 24 hours, authorities in South Carolina said.",
     source: "CBS News",
-    published: "November 10, 2026",
-    url: "https://www.cbsnews.com/news/matthew-farwell-trial-jury-verdict-sandra-birchmore/",
-    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/10/01/89e04996-b5c0-456b-a16b-47f0b6c59127/thumbnail/1200x630/4c847072f31be8dc09bf9e61242e7dda/split-pic-template-86.jpg",
+    published: "November 11, 2026",
+    url: "https://www.cbsnews.com/news/baby-found-alive-buried-dog-crate-24-hours-south-carolina/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/11/f0bf97e3-c6d7-4e1a-bcb5-f84159624ec4/thumbnail/1200x630g2/65151656797bb23524731e8fbf2e8fd6/missing-baby-south-carolina.png",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/matthew-farwell-trial-jury-verdict-sandra-birchmore/"
+    imageCreditUrl: "https://www.cbsnews.com/news/baby-found-alive-buried-dog-crate-24-hours-south-carolina/"
   },
   wire: [
     {
+      category: "World / Security",
+      headline: "Iran vows not to give up \"a single particle\" of nuclear material",
+      dek: "President Trump has repeatedly cited Iran",
+      source: "CBS News",
+      published: "November 11, 2026",
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
+    },
+    {
+      category: "Economy",
+      headline: "Nvidia's trillion-dollar bind: Can it afford to lose Jensen Huang?",
+      dek: "Other CEOs have been ousted over undisclosed relationships, but Nvidia",
+      source: "CBS News",
+      published: "November 10, 2026",
+      url: "https://www.cbsnews.com/news/jensen-huang-affair-nvidia-ceo-dilemma/"
+    },
+    {
+      category: "U.S. / National",
+      headline: "Veterans groups keep focus on traumatic brain injuries",
+      dek: "Dozens of service members have suffered TBIs during the current conflict with Iran, and hundreds of thousands of veterans have been diagnosed during the Global War on Terrorism.",
+      source: "CBS News",
+      published: "November 11, 2026",
+      url: "https://www.cbsnews.com/news/veterans-traumatic-brain-injuries-wounded-warriors-project/"
+    },
+    {
       category: "World / International",
-      headline: "Genocide suspect deported by U.S. will stand trial in Rwanda",
-      dek: "Jean Léonard Teganya arrived in the East African nation on Monday, and Rwandan prosecutors said they will put him on trial for alleged genocide and crimes against humanity.",
-      source: "PBS News",
-      published: "November 10, 2026",
-      url: "https://www.pbs.org/newshour/world/genocide-suspect-deported-by-u-s-will-stand-trial-in-rwanda"
-    },
-    {
-      category: "Technology",
-      headline: "Study: Data center energy costs hit lower income households hardest",
-      dek: "A new study found that lower-income, rural households bore a disproportionate share of the financial burdens associated with AI data centers and the energy they use.",
-      source: "CBS News",
-      published: "November 10, 2026",
-      url: "https://www.cbsnews.com/news/rising-energy-costs-ai-data-centers-lower-income-rural-households-study/"
-    },
-    {
-      category: "World / Security",
-      headline: "Rubio says U.S. has \"no need\" to restart combat operations in Iran",
-      dek: "Rubio said he saw no need to resume major combat operations against Iran because economic sanctions were working so effectively.",
-      source: "CBS News",
-      published: "November 10, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-deal-negotiations/"
-    },
-    {
-      category: "World / Security",
-      headline: "Oil shock from Iran war led to drop in carbon pollution, scientists say",
-      dek: "Emissions of heat-trapping carbon dioxide from the burning of fossil fuels decreased slightly this year due to the Iran war. I",
-      source: "PBS News",
-      published: "November 10, 2026",
-      url: "https://www.pbs.org/newshour/science/oil-shock-from-iran-war-led-to-drop-in-carbon-pollution-scientists-say"
+      headline: "Greetings from Senegal, where breakdancers are competing in the Youth Olympics",
+      dek: "Senegal's breakdancers have been practicing for their country's historic hosting of the Youth Olympic Games this month. It's the first time Africa is hosting an Olympic event.",
+      source: "NPR",
+      published: "November 11, 2026",
+      url: "https://www.npr.org/2026/11/11/g-s1-150228/senegal-youth-olympic-games-breakdancing"
     }
   ]
 };
