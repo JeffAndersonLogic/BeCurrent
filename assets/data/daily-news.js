@@ -2,24 +2,24 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-12",
   lead: {
-    category: "U.S. / Democracy",
-    headline: "GOP lawmakers negotiating for Huang to appear before Congress",
-    dek: "Republicans on Capitol Hill are negotiating for now-resigned Nvidia CEO Jensen Huang​ to appear before Congress.",
+    category: "U.S. / National",
+    headline: "1 killed, 4 injured in shooting in D.C.; suspect is dead",
+    dek: "Residents have been asked to avoid the area of 15th and P Street in Washington, D.C., as police respond to the incident.",
     source: "CBS News",
     published: "November 12, 2026",
-    url: "https://www.cbsnews.com/news/jensen-huang-nvidia-congress-testify/",
-    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/11/12/4a9d4509-ccb0-4434-9e07-d9ad21458052/thumbnail/1200x630/28977ef1f2d952a45c6696a4dc8d333b/ap26316456399217.jpg",
+    url: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/",
+    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/12/5c7ce122-6c6f-4798-a6fb-90a0b6b1e41c/thumbnail/1200x630g8/a2724f5121a846ba99fd510dac362fb9/gettyimages-2304771269.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/jensen-huang-nvidia-congress-testify/"
+    imageCreditUrl: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/"
   },
   wire: [
     {
-      category: "World / Security",
-      headline: "Trump says \"we don't need a deal with Iran\"",
-      dek: "President Trump says the war with Iran has been won and \"we don",
+      category: "World / International",
+      headline: "Pope declares Peru his \"homeland\" in final leg of South America trip",
+      dek: "Pope Leo declared Peru his",
       source: "CBS News",
       published: "November 12, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
+      url: "https://www.cbsnews.com/news/pope-leo-peru-homeland-south-america-trip/"
     },
     {
       category: "Technology",
@@ -31,19 +31,19 @@ window.BECURRENT_DAILY_NEWS = {
     },
     {
       category: "U.S. / National",
-      headline: "Iconic NBC Sports announcer Dan Hicks dies at 64",
-      dek: "Dan Hicks was the voice of golf, Olympic swimming and Notre Dame football during a 35-year career at NBC Sports.",
+      headline: "Who will succeed Jensen Huang at Nvidia? Analysts weigh in.",
+      dek: "Analysts say the board will be on the hunt for someone who has the technological know-how to lead the world",
       source: "CBS News",
       published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/dan-hicks-dies-nbc-sports-announcer-dead-age-64-wife-hannah-storm/"
+      url: "https://www.cbsnews.com/news/jensen-huang-next-nvidia-ceo-candidates/"
     },
     {
-      category: "U.S. / National",
-      headline: "1 killed, 4 injured in shooting in D.C.; suspect is dead",
-      dek: "Residents have been asked to avoid the area of 15th and P Street in Washington, D.C., as police respond to the incident.",
+      category: "World / Security",
+      headline: "Trump says \"we don't need a deal with Iran\"",
+      dek: "President Trump says the war with Iran has been won and \"we don",
       source: "CBS News",
       published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/"
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
     }
   ]
 };
