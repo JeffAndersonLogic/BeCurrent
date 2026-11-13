@@ -596,20 +596,24 @@ window.BECURRENT_SCHEDULE={
     },
     {
       "date": "2026-11-13",
-      "topicTitle": "The Desk 111326",
-      "homeAnnouncement": "Today: The Desk 111326. Read the Lead, choose Your Pick, and submit your gathered News Log.",
+      "topicTitle": "The Desk 111326 + Midterms - After the Vote",
+      "homeAnnouncement": "Today: two assignments, The Desk 111326 and Midterms - After the Vote. Submit both in Canvas.",
       "showLead": true,
       "deskMode": "full",
       "deskWorkflow": "gather",
-      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
+      "note": "Two Canvas assignments today: The Desk 111326 and Midterms - After the Vote.",
       "agenda": [
         "Watch CNN 10 and open The Desk.",
         "Read the shared Lead and record its source, date, link, summary and significance.",
         "Choose and read Your Pick; record its source details and summarize the event.",
         "Explain which story deserves more attention using specific evidence.",
-        "Gather My Log, copy the complete log, paste into The Desk 111326 in Canvas, and submit."
+        "Gather My Log, copy the complete log, paste into The Desk 111326 in Canvas, and submit.",
+        "Read the two Midterms articles from The Week. Answer the four questions in the Text Entry box of Midterms - After the Vote in Canvas, and submit."
       ],
-      "homework": "Submit The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
+      "homework": [
+        "Submit The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
+        "Submit Midterms - After the Vote in Canvas."
+      ],
       "homeworkDue": "the end of class today"
     },
     {
