@@ -1,16 +1,16 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-12",
+  reviewed: "2026-11-13",
   lead: {
-    category: "U.S. / National",
-    headline: "1 killed, 4 injured in shooting in D.C.; suspect is dead",
-    dek: "Residents have been asked to avoid the area of 15th and P Street in Washington, D.C., as police respond to the incident.",
-    source: "CBS News",
+    category: "Technology",
+    headline: "Microsoft facing setback to restoring service amid hours-long, widespread outage",
+    dek: "A widespread outage hit Outlook and other Microsoft apps on Thursday, and the disruptions also affected many companies and some government operations.",
+    source: "Associated Press",
     published: "November 12, 2026",
-    url: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/",
-    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/12/5c7ce122-6c6f-4798-a6fb-90a0b6b1e41c/thumbnail/1200x630g8/a2724f5121a846ba99fd510dac362fb9/gettyimages-2304771269.jpg",
-    imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/"
+    url: "https://apnews.com/article/microsoft-outage-outlook-email-365-status-down-d92547a821930290db2964388016979a",
+    image: "",
+    imageCredit: "",
+    imageCreditUrl: ""
   },
   wire: [
     {
