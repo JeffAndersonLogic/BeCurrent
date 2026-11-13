@@ -1,49 +1,41 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-12",
+  reviewed: "2026-11-13",
   lead: {
-    category: "U.S. / National",
-    headline: "1 killed, 4 injured in shooting in D.C.; suspect is dead",
-    dek: "Residents have been asked to avoid the area of 15th and P Street in Washington, D.C., as police respond to the incident.",
-    source: "CBS News",
+    category: "U.S. / Democracy",
+    headline: "How Scott Colom won his longshot bid to flip Mississippi's Senate seat",
+    dek: "In Mississippi, Democrat Scott Colom won his longshot bid to oust incumbent Republican Sen. Cindy Hyde-Smith. Colom's victory is a stunning reversal in the deeply conservative state that hasn't been represented by a Black senator since the Reconstruction era following the Civil War.",
+    source: "PBS News",
     published: "November 12, 2026",
-    url: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/",
-    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/12/5c7ce122-6c6f-4798-a6fb-90a0b6b1e41c/thumbnail/1200x630g8/a2724f5121a846ba99fd510dac362fb9/gettyimages-2304771269.jpg",
-    imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/"
+    url: "https://www.pbs.org/newshour/show/how-scott-colom-won-his-longshot-bid-to-flip-mississippis-senate-seat",
+    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/majorvictory-1024x683.jpg",
+    imageCredit: "Image: PBS News",
+    imageCreditUrl: "https://www.pbs.org/newshour/show/how-scott-colom-won-his-longshot-bid-to-flip-mississippis-senate-seat"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "Pope declares Peru his \"homeland\" in final leg of South America trip",
-      dek: "Pope Leo declared Peru his",
+      category: "Technology",
+      headline: "Nvidia CEO Jensen Huang resigns in wake of affair with woman suspected of spying for China",
+      dek: "Nvidia CEO Jensen Huang has resigned effective immediately, the company's board of directors announced Thursday.",
       source: "CBS News",
       published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/pope-leo-peru-homeland-south-america-trip/"
+      url: "https://www.cbsnews.com/news/nvidia-ceo-jensen-huang-resigns/"
+    },
+    {
+      category: "Science / Environment",
+      headline: "What to know as \"super El Niño\" conditions take shape",
+      dek: "Here's what to know about El Niño, the powerful climate pattern impacting weather across the globe.",
+      source: "CBS News",
+      published: "November 12, 2026",
+      url: "https://www.cbsnews.com/news/el-nino-effects-weather-worldwide/"
     },
     {
       category: "Technology",
-      headline: "While many Americans resist, China embraces AI data center boom",
-      dek: "Far from the opposition American tech giants face, it",
+      headline: "Anthropic, OpenAI and other AI developers can't control their own tech, new lawsuit alleges",
+      dek: "Companies including Anthropic, Meta and OpenAI are knowingly building technology that poses catastrophic risks to humanity, nonprofit groups claim in a lawsuit.",
       source: "CBS News",
       published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/china-ai-data-center-boom-as-us-tech-firms-face-resistance/"
-    },
-    {
-      category: "U.S. / National",
-      headline: "Who will succeed Jensen Huang at Nvidia? Analysts weigh in.",
-      dek: "Analysts say the board will be on the hunt for someone who has the technological know-how to lead the world",
-      source: "CBS News",
-      published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/jensen-huang-next-nvidia-ceo-candidates/"
-    },
-    {
-      category: "World / Security",
-      headline: "Trump says \"we don't need a deal with Iran\"",
-      dek: "President Trump says the war with Iran has been won and \"we don",
-      source: "CBS News",
-      published: "November 12, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
+      url: "https://www.cbsnews.com/news/advocacy-groups-sue-ai-companies/"
     }
   ]
 };
