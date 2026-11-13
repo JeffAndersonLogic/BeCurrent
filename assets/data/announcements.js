@@ -1269,13 +1269,39 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "topic": "The Desk 111326",
       "homework": "Submit The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
       "homeworkDue": "the end of class today",
-      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
+      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment. Also today: two articles from The Week, “Midterms: Explaining the GOP’s crushing defeat” and “Trump and Democrats brace for battle”, each with questions in Canvas.",
       "agenda": [
         "Watch CNN 10 and open The Desk.",
         "Read the shared Lead and record its source, date, link, summary and significance.",
         "Choose and read Your Pick; record its source details and summarize the event.",
         "Explain which story deserves more attention using specific evidence.",
-        "Gather My Log, copy the complete log, paste into The Desk 111326 in Canvas, and submit."
+        "Gather My Log, copy the complete log, paste into The Desk 111326 in Canvas, and submit.",
+        "Read The Week: “Midterms: Explaining the GOP’s crushing defeat”. Answer its questions in Canvas.",
+        "Read The Week: “Trump and Democrats brace for battle”. Answer its questions in Canvas."
+      ],
+      "slides": [
+        {
+          "url": "https://usmagazine.theweek.com/midterms-explaining-the-gops-crushing-defeat/content.html",
+          "linkLabel": "Open the article in The Week",
+          "kicker": "Also today · The Week · Article 1 of 2",
+          "title": "Midterms: Explaining the GOP’s crushing defeat",
+          "bullets": [
+            "From The Week, November 20, 2026 issue. Log in with your class subscription.",
+            "Several writers each explain why Republicans lost. Watch for who is making each claim.",
+            "Answer the questions for this article in Canvas."
+          ]
+        },
+        {
+          "url": "https://usmagazine.theweek.com/trump-and-democrats-brace-for-battle/content.html",
+          "linkLabel": "Open the article in The Week",
+          "kicker": "Also today · The Week · Article 2 of 2",
+          "title": "Trump and Democrats brace for battle",
+          "bullets": [
+            "From The Week, November 20, 2026 issue. Log in with your class subscription.",
+            "First “What happened,” then “What the columnists said.” Keep the facts apart from the opinions.",
+            "Answer the questions for this article in Canvas."
+          ]
+        }
       ]
     },
     {

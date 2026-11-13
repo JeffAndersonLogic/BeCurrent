@@ -3,7 +3,12 @@
 const events = [
  {date:'2026-11-09',code:'AIOPEN',title:'CE - Video Day - 60 Minutes Interview',kind:'video',page:'ai/opening-film.html',summary:'Before lunch: Extended Interview: President Trump on 60 Minutes. After lunch: CNN 10. No written work or Canvas submission today.'},
  {date:'2026-11-11',title:'CE - The Desk 111126',kind:'desk',page:'daily/index.html'},
- {date:'2026-11-13',title:'CE - The Desk 111326',kind:'desk',page:'daily/index.html'},
+ // Jeff, November 13: two articles from The Week, each with its own Canvas questions. assignmentUrl
+ // stays empty until Jeff supplies the real Canvas link; the calendar event shows a placeholder until then.
+ {date:'2026-11-13',title:'CE - The Desk 111326',kind:'desk',page:'daily/index.html',readings:[
+  {source:'The Week',issue:'November 20, 2026 issue',title:'Midterms: Explaining the GOP’s crushing defeat',url:'https://usmagazine.theweek.com/midterms-explaining-the-gops-crushing-defeat/content.html',guide:'Several writers each explain why Republicans lost. Watch for who is making each claim.',assignmentUrl:''},
+  {source:'The Week',issue:'November 20, 2026 issue',title:'Trump and Democrats brace for battle',url:'https://usmagazine.theweek.com/trump-and-democrats-brace-for-battle/content.html',guide:'First “What happened,” then “What the columnists said.” Keep the facts apart from the opinions.',assignmentUrl:''}
+ ]},
  {date:'2026-11-17',code:'AI1',title:'CE - AI1 - What Exactly AI Is',kind:'lesson',page:'ai/block-01.html'},
  {date:'2026-11-19',code:'AI2',title:'CE - AI2 - When AI Gets it Wrong',kind:'lesson',page:'ai/block-02.html'},
  {date:'2026-11-23',title:'CE - The Desk 112326',kind:'desk',page:'daily/index.html'},
@@ -24,6 +29,13 @@ function boardDays(unit){return events.map(e=>{
  if(e.code&&e.kind!=='video')day.topic=e.code;
  if(e.kind==='video')Object.assign(day,{note:e.summary,agenda:['Before lunch: watch '+video.title+'.','After lunch: watch CNN 10.','No written work today. No News Log entry or Canvas submission.'],homeAnnouncement:day.homeAnnouncement+'60 Minutes before lunch; CNN 10 after lunch. No written work today.',homework:'No written work or Canvas submission today.',slides:[{url:video.url,linkLabel:'Open the 60 Minutes interview',kicker:'Before lunch',title:'Watch the 60 Minutes interview',bullets:['Extended Interview: President Trump on 60 Minutes','After lunch: CNN 10.','No written work or Canvas submission today.']} ]});
  if(e.kind==='desk')Object.assign(day,{deskMode:'full',deskWorkflow:'gather',showLead:true,note:'The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.',agenda:['Watch CNN 10 and open The Desk.','Read the shared Lead and record its source, date, link, summary and significance.','Choose and read Your Pick; record its source details and summarize the event.','Explain which story deserves more attention using specific evidence.','Gather My Log, copy the complete log, paste into '+title+' in Canvas, and submit.'],homework:'Submit '+title+' in Canvas. Check that your '+e.date+' entry is included.',homeworkDue:'the end of class today',homeAnnouncement:day.homeAnnouncement+'Read the Lead, choose Your Pick, and submit your gathered News Log.'});
+ if(e.kind==='desk'&&e.readings&&e.readings.length){
+  const rs=e.readings,src=rs[0].source,q=r=>'“'+r.title+'”',two=rs.length>1,n=['one','two','three','four'][rs.length-1]||String(rs.length);
+  day.note+=' Also today: '+(two?n+' articles from '+src+', ':src+', ')+rs.map(q).join(' and ')+(two?', each with questions in Canvas.':', with questions in a separate Canvas assignment.');
+  day.homeAnnouncement+=two?' Then read '+n+' articles from '+src+' and answer their questions in Canvas.':' Then read the article from '+src+' and answer its questions in Canvas.';
+  day.agenda=day.agenda.concat(rs.map(r=>'Read '+r.source+': '+q(r)+'. Answer its questions in Canvas.'));
+  day.slides=rs.map((r,i)=>({url:r.url,linkLabel:'Open the article in '+r.source,kicker:'Also today · '+r.source+(two?' · Article '+(i+1)+' of '+rs.length:''),title:r.title,bullets:['From '+r.source+', '+r.issue+'. Log in with your class subscription.',r.guide,'Answer the questions for this article in Canvas.'].filter(Boolean)}));
+ }
  if(e.kind==='lesson'){
   const t=unit.topics.find(t=>'AI'+t.n===e.code);
   Object.assign(day,{note:t.overview,doNow:t.question,agenda:['Open '+title+' and follow the five chapters in order.','Read the background and complete the practice sort.','Answer all eight private questions, then Gather All My Work.','Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.','After lunch: CNN 10 and the News Log.'],homework:'Finish and submit '+title+' in Canvas.',homeAnnouncement:day.homeAnnouncement+'Complete eight responses and submit the gathered record in Canvas.'});

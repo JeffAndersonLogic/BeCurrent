@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-12",
+  reviewed: "2026-11-13",
   lead: {
-    category: "U.S. / National",
-    headline: "1 killed, 4 injured in shooting in D.C.; suspect is dead",
-    dek: "Residents have been asked to avoid the area of 15th and P Street in Washington, D.C., as police respond to the incident.",
-    source: "CBS News",
-    published: "November 12, 2026",
-    url: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/",
-    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/12/5c7ce122-6c6f-4798-a6fb-90a0b6b1e41c/thumbnail/1200x630g8/a2724f5121a846ba99fd510dac362fb9/gettyimages-2304771269.jpg",
-    imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/"
+    category: "U.S. / Government",
+    headline: "Van Hollen to challenge Schumer for Senate Democratic leader",
+    dek: "Democratic Sen. Chris Van Hollen of Maryland said Thursday that he will run for Senate Majority Leader in the next Congress, setting up a challenge to Democratic Leader Chuck Schumer after the party swept to power in the midterm elections.",
+    source: "PBS News",
+    published: "November 13, 2026",
+    url: "https://www.pbs.org/newshour/politics/van-hollen-to-challenge-schumer-for-senate-democratic-leader",
+    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/2026-07-25T215016Z_508406674_RC25LMA7ASZ0_RTRMADP_3_USA-ELECTION-MICHIGAN-1024x641.jpg",
+    imageCredit: "Image: PBS News",
+    imageCreditUrl: "https://www.pbs.org/newshour/politics/van-hollen-to-challenge-schumer-for-senate-democratic-leader"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "Pope declares Peru his \"homeland\" in final leg of South America trip",
-      dek: "Pope Leo declared Peru his",
+      category: "World / Security",
+      headline: "Critics say Lutnick failed to cut off diversion of Nvidia chips to China",
+      dek: "Commerce Secretary Howard Lutnick is under fire from critics asking whether his ties to Chinese companies and friendship with ex-Nvidia CEO Jensen Huang contributed to a lack of oversight over Nvidia AI chip sales.",
       source: "CBS News",
-      published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/pope-leo-peru-homeland-south-america-trip/"
+      published: "November 13, 2026",
+      url: "https://www.cbsnews.com/news/lutnick-nvidia-ai-chips-china/"
     },
     {
       category: "Technology",
-      headline: "While many Americans resist, China embraces AI data center boom",
-      dek: "Far from the opposition American tech giants face, it",
-      source: "CBS News",
-      published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/china-ai-data-center-boom-as-us-tech-firms-face-resistance/"
+      headline: "Colette Kress becomes Nvidia's interim CEO after Jensen Huang resigns",
+      dek: "Nvidia's CEO Jensen Huang is out, and the company's chief financial officer Colette Kress is taking over as interim CEO. She'll have to guide the company through an exceptionally challenging time.",
+      source: "NPR",
+      published: "November 13, 2026",
+      url: "https://www.npr.org/2026/11/13/nx-s1-6038889/colette-kress-becomes-nvidias-interim-ceo-after-jensen-huang-resigns"
     },
     {
       category: "U.S. / National",
-      headline: "Who will succeed Jensen Huang at Nvidia? Analysts weigh in.",
-      dek: "Analysts say the board will be on the hunt for someone who has the technological know-how to lead the world",
+      headline: "Microsoft seeing \"continued recovery\" amid major worldwide outage",
+      dek: "A Microsoft outage involving services like Outlook and Teams has dragged on for hours and impacted many users, companies and some government operations.",
       source: "CBS News",
-      published: "November 12, 2026",
-      url: "https://www.cbsnews.com/news/jensen-huang-next-nvidia-ceo-candidates/"
+      published: "November 13, 2026",
+      url: "https://www.cbsnews.com/news/microsoft-battling-major-outage/"
     },
     {
-      category: "World / Security",
-      headline: "Trump says \"we don't need a deal with Iran\"",
-      dek: "President Trump says the war with Iran has been won and \"we don",
+      category: "U.S. / National",
+      headline: "1 killed, 5 injured in shooting in D.C.; suspect is dead",
+      dek: "The suspect, identified as a 55-year-old doctor, was found dead in his apartment from a self-inflicted gunshot wound, police said.",
       source: "CBS News",
-      published: "November 12, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/"
+      published: "November 13, 2026",
+      url: "https://www.cbsnews.com/news/washington-dc-shooting-gym-vida/"
     }
   ]
 };
