@@ -62,7 +62,9 @@ const unit=require('../lib/unit-content/ai');
     assert(await page.isVisible('#gather-work'));
   }
   await page.goto(root+'/docs/canvas/ai-unit-calendar.html');
-  assert.strictEqual(await page.locator('[data-copy]').count(),23,'12 events and 11 assignment/assessment descriptions; none for video day');
+  {const ev=require('../lib/semester-calendar').events;
+  const want=ev.length+ev.filter(e=>e.kind!=='video').length+ev.filter(e=>e.also).length;
+  assert.strictEqual(await page.locator('[data-copy]').count(),want,ev.length+' events, one assignment/assessment description per non-video day, plus one per second assignment');}
   for(const html of await page.locator('textarea').evaluateAll(els=>els.map(e=>e.value)))assert.match(html,/becurrent-wordmark-ink\.png/, 'every copied event and assignment carries BeCurrent branding');
   await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.__copiedCode=text}}}));
   await page.locator('#day-2026-11-09 summary').click();
