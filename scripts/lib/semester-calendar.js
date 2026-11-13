@@ -3,7 +3,7 @@
 const events = [
  {date:'2026-11-09',code:'AIOPEN',title:'CE - Video Day - 60 Minutes Interview',kind:'video',page:'ai/opening-film.html',summary:'Before lunch: Extended Interview: President Trump on 60 Minutes. After lunch: CNN 10. No written work or Canvas submission today.'},
  {date:'2026-11-11',title:'CE - The Desk 111126',kind:'desk',page:'daily/index.html'},
- {date:'2026-11-13',title:'CE - The Desk 111326',kind:'desk',page:'daily/index.html',also:{title:'Midterms - After the Vote',points:5,html:'scripts/lib/assignments/midterms-after-the-vote.html',agenda:'Read the two Midterms articles from The Week. Answer the four questions in the Text Entry box of Midterms - After the Vote in Canvas, and submit.'}},
+ {date:'2026-11-13',title:'CE - The Desk 111326',kind:'desk',page:'daily/index.html',also:{title:'Midterms - After the Vote',points:5,html:'scripts/lib/assignments/midterms-after-the-vote.html',agenda:'Read the two Midterms articles from The Week. Answer all eight questions, four per article, in the Text Entry box of Midterms - After the Vote in Canvas, and submit.'}},
  {date:'2026-11-17',code:'AI1',title:'CE - AI1 - What Exactly AI Is',kind:'lesson',page:'ai/block-01.html'},
  {date:'2026-11-19',code:'AI2',title:'CE - AI2 - When AI Gets it Wrong',kind:'lesson',page:'ai/block-02.html'},
  {date:'2026-11-23',title:'CE - The Desk 112326',kind:'desk',page:'daily/index.html'},

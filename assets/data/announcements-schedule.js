@@ -608,7 +608,7 @@ window.BECURRENT_SCHEDULE={
         "Choose and read Your Pick; record its source details and summarize the event.",
         "Explain which story deserves more attention using specific evidence.",
         "Gather My Log, copy the complete log, paste into The Desk 111326 in Canvas, and submit.",
-        "Read the two Midterms articles from The Week. Answer the four questions in the Text Entry box of Midterms - After the Vote in Canvas, and submit."
+        "Read the two Midterms articles from The Week. Answer all eight questions, four per article, in the Text Entry box of Midterms - After the Vote in Canvas, and submit."
       ],
       "homework": [
         "Submit The Desk 111326 in Canvas. Check that your 2026-11-13 entry is included.",
