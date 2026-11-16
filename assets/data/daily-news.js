@@ -2,15 +2,15 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-16",
   lead: {
-    category: "U.S. / National",
-    headline: "High court rejects challenge to Maryland gun ban in sensitive places",
-    dek: "The Supreme Court left in place a lower court decision that upheld the measure banning guns in sensitive places.",
-    source: "CBS News",
+    category: "U.S. / Democracy",
+    headline: "Read the full White House memo requiring agencies to get approval before testifying in front of Congress",
+    dek: "In a new memorandum obtained by PBS News on Monday, White House counsel Will Scharf is directing all federal agencies and executive departments to get approval from White House legal and legislative affairs offices before agreeing to testify before congressional committees.",
+    source: "PBS News",
     published: "November 16, 2026",
-    url: "https://www.cbsnews.com/news/supreme-court-maryland-gun-laws-sensitive-places/",
-    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/10/06/eb8f5239-86c0-44df-807c-6dbb11056d00/thumbnail/1200x630g2/afbd872ee6a85de5e876d80d0e70093f/gettyimages-2298696665.jpg",
-    imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/supreme-court-maryland-gun-laws-sensitive-places/"
+    url: "https://www.pbs.org/newshour/politics/read-the-full-white-house-memo-requiring-agencies-to-get-approval-before-testifying-in-front-of-congress",
+    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/2026-11-12T223821Z_1683665840_RC2GMOAFWGQT_RTRMADP_3_USA-TRUMP-LAWYERS-1024x683.jpg",
+    imageCredit: "Image: PBS News",
+    imageCreditUrl: "https://www.pbs.org/newshour/politics/read-the-full-white-house-memo-requiring-agencies-to-get-approval-before-testifying-in-front-of-congress"
   },
   wire: [
     {
@@ -30,12 +30,12 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.cbsnews.com/news/banks-online-service-outages-jpmorgan-chase-bank-of-america-wells-fargo/"
     },
     {
-      category: "World / Security",
-      headline: "Third U.S. aircraft carrier in Middle East as Trump keeps options open in Iran war",
-      dek: "A third American aircraft carrier has arrived in the Middle East. A U.S. official speaking on the condition of anonymity on Monday confirmed the USS Theodore Roosevelt’s arrival in the region.",
+      category: "U.S. / National",
+      headline: "WATCH: 'You never notice broken windows, obviously,' Trump tells Black reporter",
+      dek: "President Donald Trump berated NBC News White House correspondent Yamiche Alcindor on Monday after she asked him to respond to critics who say he was too focused on construction projects in the nation’s capital instead of issues with the country’s airline systems, which came to a halt Friday in a ra",
       source: "PBS News",
       published: "November 16, 2026",
-      url: "https://www.pbs.org/newshour/world/third-u-s-aircraft-carrier-in-middle-east-as-trump-keeps-options-open-in-iran-war"
+      url: "https://www.pbs.org/newshour/politics/watch-you-never-notice-broken-windows-obviously-trump-tells-black-reporter"
     },
     {
       category: "U.S. / National",
