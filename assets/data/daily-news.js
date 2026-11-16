@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-13",
+  reviewed: "2026-11-16",
   lead: {
-    category: "U.S. / Democracy",
-    headline: "Supreme Court will consider Trump's executive order suspending asylum access at the southern border",
-    dek: "The Trump administration wants to overturn lower court decisions that found the executive order banning asylum applications is illegal. Federal law gives people the right to seek asylum if they fear persecution in their home countries, no matter how they arrived in the U.S.",
-    source: "PBS News",
-    published: "November 13, 2026",
-    url: "https://www.pbs.org/newshour/politics/supreme-court-will-consider-trumps-executive-order-suspending-asylum-access-at-the-southern-border",
-    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/2026-11-04T152931Z_132207333_RC22HOAGNLS8_RTRMADP_3_USA-COURT-1024x683.jpg",
-    imageCredit: "Image: PBS News",
-    imageCreditUrl: "https://www.pbs.org/newshour/politics/supreme-court-will-consider-trumps-executive-order-suspending-asylum-access-at-the-southern-border"
+    category: "U.S. / National",
+    headline: "High court rejects challenge to Maryland gun ban in sensitive places",
+    dek: "The Supreme Court left in place a lower court decision that upheld the measure banning guns in sensitive places.",
+    source: "CBS News",
+    published: "November 16, 2026",
+    url: "https://www.cbsnews.com/news/supreme-court-maryland-gun-laws-sensitive-places/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/10/06/eb8f5239-86c0-44df-807c-6dbb11056d00/thumbnail/1200x630g2/afbd872ee6a85de5e876d80d0e70093f/gettyimages-2298696665.jpg",
+    imageCredit: "Image: CBS News",
+    imageCreditUrl: "https://www.cbsnews.com/news/supreme-court-maryland-gun-laws-sensitive-places/"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "UK police launch sex offense investigation into children's author and TV personality David Walliams",
-      dek: "The Metropolitan Police said it had received a number of allegations of past abuse following the joint investigation this week by ITV News and the Guardian newspaper.",
-      source: "PBS News",
-      published: "November 13, 2026",
-      url: "https://www.pbs.org/newshour/world/uk-police-launch-sex-offense-investigation-into-childrens-author-and-tv-personality-david-walliams"
-    },
-    {
-      category: "Technology",
-      headline: "Nvidia's interim CEO inherits risky AI bets and a legal mess",
-      dek: "AI expert Gary Marcus breaks down what's at stake for Nvidia and the mess its new CEO has inherited.",
-      source: "NPR",
-      published: "November 13, 2026",
-      url: "https://www.npr.org/2026/11/13/nx-s1-6038868/nvidia-interim-ceo-colette-kress-ai-bets-investigation-lutnick"
-    },
-    {
-      category: "U.S. / National",
-      headline: "TSA agent finds live snakes in luggage at California airport",
-      dek: "X-ray images of the luggage showed what appeared to be a rope but turned out to be two live snakes concealed in a pillowcase.",
+      category: "World / Security",
+      headline: "Iran rules out nuclear site inspections until war ends",
+      dek: "Iran says it will not let U.N. inspectors return to assess damaged nuclear sites until the war with the U.S. is",
       source: "CBS News",
-      published: "November 13, 2026",
-      url: "https://www.cbsnews.com/news/tsa-finds-live-snakes-luggage-california-ontario-airport/"
+      published: "November 16, 2026",
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-oil-strait-of-hormuz/"
+    },
+    {
+      category: "Economy",
+      headline: "Major U.S. banks report widespread service outages",
+      dek: "Customers at Bank of America, JPMorgan Chase and other major financial institutions are reporting difficulty accessing their accounts.",
+      source: "CBS News",
+      published: "November 16, 2026",
+      url: "https://www.cbsnews.com/news/banks-online-service-outages-jpmorgan-chase-bank-of-america-wells-fargo/"
     },
     {
       category: "World / Security",
-      headline: "U.N. watchdog agency pushes for access to key Iran nuclear site",
-      dek: "As Trump signals he may let the Iran war fester, the U.N. nuclear agency is",
+      headline: "Third U.S. aircraft carrier in Middle East as Trump keeps options open in Iran war",
+      dek: "A third American aircraft carrier has arrived in the Middle East. A U.S. official speaking on the condition of anonymity on Monday confirmed the USS Theodore Roosevelt’s arrival in the region.",
+      source: "PBS News",
+      published: "November 16, 2026",
+      url: "https://www.pbs.org/newshour/world/third-u-s-aircraft-carrier-in-middle-east-as-trump-keeps-options-open-in-iran-war"
+    },
+    {
+      category: "U.S. / National",
+      headline: "Tennessee names new corrections chief after botched executions",
+      dek: "Josh Smith has been appointed to lead the Department of Corrections in Tennessee following the botched execution of Christa Pike last month.",
       source: "CBS News",
-      published: "November 13, 2026",
-      url: "https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/"
+      published: "November 16, 2026",
+      url: "https://www.cbsnews.com/news/josh-smith-tennessee-corrections-chief-executions/"
     }
   ]
 };
