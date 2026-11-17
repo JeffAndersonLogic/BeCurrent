@@ -6,97 +6,99 @@ module.exports = {
     "unitKey": "ai",
     "code": "AI",
     "course": "CURRENT EVENTS",
-    "reviewed": "2026-11-09",
+    "reviewed": "2026-11-17",
     "design": "Signal Lab / Midnight Ember",
     "renderer": "ai-investigation",
-    "overview": "Four investigations about where AI answers come from, how to verify them, what AI changes, and who should make the rules.",
+    "overview": "One complete NOVA documentary followed by four evidence-based investigations and a study-guide work day. Understand how AI works, verify its claims, evaluate tradeoffs and decide who makes the rules.",
     "terminalQuestion": "AI is already making decisions that affect your life. Which decisions should a person still make, and who gets to set the rules?",
     "openingFilm": {
-      "title": "Extended Interview: President Trump on 60 Minutes",
-      "source": "60 Minutes",
-      "date": "2026-11-08",
-      "url": "https://www.youtube.com/watch?v=m2aC8lAOQbg",
-      "assigned": "Full interview before lunch on November 9",
-      "note": "After lunch: CNN 10. No written work, News Log or Canvas submission today."
+      "title": "A.I. Revolution | Full Documentary | NOVA | PBS",
+      "source": "NOVA PBS Official",
+      "date": "2024-03-27",
+      "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
+      "alternate": "https://www.pbs.org/video/ai-revolution-umwwlt/",
+      "fullRuntime": "53:30",
+      "assigned": "Watch the entire 53 minute 30 second NOVA documentary before lunch on Tuesday November 17, 2026.",
+      "note": "After lunch: CNN10. No homework, News Log, written work, or Canvas submission on November 17. Watch the film from 00:00 to the end, not from a timestamp."
     },
     "schedule": [
       [
         "2026-11-09",
-        "Video - 60 Minutes Interview with President Trump"
+        "CE - Video Day - 60 Minutes Interview"
       ],
       [
         "2026-11-11",
-        "The Desk 111126"
+        "CE - The Desk 111126"
       ],
       [
         "2026-11-13",
-        "The Desk 111326"
+        "CE - The Desk 111326"
       ],
       [
         "2026-11-17",
-        "AI1 - What Exactly AI Is"
+        "CE - AI1 - Intro to AI (Nova Video)"
       ],
       [
         "2026-11-19",
-        "AI2 - When AI Gets it Wrong"
+        "CE - AI2 - What Exactly AI Is"
       ],
       [
         "2026-11-23",
-        "The Desk 112326"
+        "CE - AI3 - When AI Gets it Wrong"
       ],
       [
         "2026-11-30",
-        "AI3 - What AI Changes"
+        "CE - AI4 - What AI Changes"
       ],
       [
         "2026-12-02",
-        "AI4 - Who Makes the Rules?"
+        "CE - AI5 - Who Makes the Rules?"
       ],
       [
         "2026-12-04",
-        "AI5 - Study Guide Work Day"
+        "CE - AI6 - Study Guide Work Day"
       ],
       [
         "2026-12-08",
-        "AI Unit Exam"
+        "CE - AI Unit Exam"
       ],
       [
         "2026-12-10",
-        "Final Exam Study Guide Work Day"
+        "CE - Final Exam Study Guide Work Day"
       ],
       [
         "2026-12-16",
-        "Final Exam"
+        "CE - Final Exam"
       ]
     ],
-    "studentFlow": "November 9: 60 Minutes interview before lunch, CNN 10 after lunch; no written work. November 11 and 13: The Desk. November 17 and 19: AI1 and AI2. November 23: The Desk. November 25–27: Thanksgiving break. November 30 and December 2: AI3 and AI4. December 4: AI5 study guide work day. December 8: AI Unit Exam. December 10: final exam study guide work day. December 16: traditional final exam, no project.",
+    "studentFlow": "Nov 9: 60 Minutes video day (past). Nov 11 and 13: The Desk (past). Nov 17: CE - AI1 Intro to AI, full NOVA documentary before lunch; CNN10 after, no homework or written submission. Nov 19 AI2; Nov 23 AI3; Nov 30 AI4; Dec 2 AI5: independent evidence investigations with eight short private responses and Gather All My Work in Canvas. Dec 4 AI6: study guide work day. Dec 8: Canvas-only AI Unit Exam. Dec 10 final exam study guide; Dec 16 traditional final exam.",
     "privacy": "Never type your full name, address, or anything private. Your teacher can read this chat.",
-    "dayOneFormat": "November 9: 60 Minutes interview before lunch, CNN 10 after lunch. No written work.",
+    "dayOneFormat": "November 17: complete PBS NOVA A.I. Revolution (53:30) before lunch, CNN10 after lunch. No written work or homework.",
     "assessment": {
       "date": "2026-12-08",
       "location": "Canvas only",
       "questions": 25,
       "distribution": {
-        "AI1": 6,
         "AI2": 6,
         "AI3": 6,
-        "AI4": 7
+        "AI4": 6,
+        "AI5": 7
       },
-      "notes": "Secure assessment and key must not be hosted publicly."
+      "notes": "Questions and answer key in Canvas only. AI1 is the opening NOVA film; AI6 is a study guide work day."
     }
   },
   "topics": [
     {
-      "n": 1,
-      "key": "ai-t01",
-      "page": "block-01.html",
-      "date": "2026-11-17",
+      "n": 2,
+      "key": "ai-t02",
+      "page": "block-02.html",
+      "date": "2026-11-19",
       "title": "What Exactly AI Is",
       "subtitle": "A very good guesser",
       "skill": "Generalizing from Evidence",
       "question": "How can a computer sound like it understands you?",
-      "hook": "How can a computer sound like it understands you? Follow the five chapters, try the examples, and submit eight answers to Canvas before lunch.",
-      "overview": "Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking.",
+      "hook": "What did NOVA show about how AI learns? Use the five chapters and practical examples to explain what makes AI different from an ordinary fixed-rule program.",
+      "overview": "Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.",
       "learningTargets": [
         {
           "skill": "Explanation",
@@ -127,9 +129,9 @@ module.exports = {
       ],
       "chapters": [
         {
-          "title": "Start here: What did the film show?",
+          "title": "From the NOVA documentary to your own examples",
           "paragraphs": [
-            "Artificial intelligence is a broad category of computer methods used for recognizing patterns, making predictions, generating language, and other tasks. Not all AI works the same way. Think about the AI discussion in the November 9 interview: which claims would need independent checking?",
+            "On November 17 we watched PBS NOVA's A.I. Revolution. Artificial intelligence is a broad category of computer methods used for recognizing patterns, making predictions, generating language, and other tasks. Not all AI works the same way. The documentary showed why humans should evaluate what a machine produces.",
             "Think about an everyday example: a video feed may predict what you want to watch, while a microwave timer simply counts down. A computer can use AI in one part of a product and ordinary instructions in another."
           ],
           "activity": "Read the background, think about your own examples, and answer Question 1. Continue through the chapters in order."
@@ -169,12 +171,12 @@ module.exports = {
         }
       ],
       "clip": {
-        "title": "A.I. Revolution | opening chapters",
+        "title": "A.I. Revolution — Full NOVA Documentary (previous class)",
         "source": "PBS NOVA",
         "date": "2024-03-27",
         "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
         "alt": "https://www.pbs.org/video/ai-revolution-umwwlt/",
-        "assigned": "Optional background documentary; no replay required during AI1",
+        "assigned": "Optional review of the complete film shown on AI1 November 17. No replay required during AI2.",
         "prompt": "Where does AI learn patterns? What can it help people do? What can go wrong? Who should remain responsible?",
         "captions": "Check captions and playback before class."
       },
@@ -305,47 +307,23 @@ module.exports = {
       "substituteDay": false,
       "offlineSupport": "Every task has a reading and printed example. MagicSchool is optional, never a dependency. If an activity is unavailable, follow the page's printed fallback and complete the same questions.",
       "subPlan": {
-        "teacherAbsent": false,
-        "notice": "Follow the five chapters in order. The background readings and printed examples provide what you need.",
         "directions": [
-          "Open AI1 - What Exactly AI Is on November 17.",
-          "Read each Chapter's background text before attempting the question underneath it. Printed information on this page is enough.",
-          "Complete Be the Model predictions on paper or in your own notes; do not share them aloud.",
-          "Complete the eight-step AI/not-AI practice sort, check feedback, and revise your choices.",
-          "If the MagicSchool room appears in Canvas, you may compare its outputs with the printed sample; if not, use only the printed sample. Never type personal information.",
-          "Write all eight answers in the text boxes and choose Gather All My Work; paste into today's Canvas Text Entry assignment and submit before lunch.",
-          "After lunch continue the normal CNN 10 and News Log routine as directed by your substitute."
+          "Read the five numbered chapters.",
+          "Try the short prediction activity independently.",
+          "Complete the practice sort and use the printed sample if MagicSchool is unavailable.",
+          "Write all eight private responses and choose Gather All My Work.",
+          "Submit the copied record to the AI2 Text Entry assignment in Canvas."
         ],
-        "timed": [
-          {
-            "minutes": "0–5",
-            "action": "Open BeCurrent AI1; read the opening and instructions."
-          },
-          {
-            "minutes": "5–17",
-            "action": "Chapters 1–2: read context, do paper prediction and early questions."
-          },
-          {
-            "minutes": "17–32",
-            "action": "Chapter 3: learned patterns, everyday-tool sort and corrections."
-          },
-          {
-            "minutes": "32–47",
-            "action": "Chapters 4–5: optional chatbot or printed sample; remaining answers and checkpoint."
-          },
-          {
-            "minutes": "47–55",
-            "action": "Check eight answers, Gather All My Work, paste into Canvas, submit and confirm."
-          }
-        ],
-        "technicalFallback": "If video, MagicSchool, or external sites do not load, continue with the background readings and printed examples. If the BeCurrent page itself is unavailable, use the printable AI1 worksheet and the teacher-approved paper submission route."
+        "timed": [],
+        "notice": "This lesson can be completed independently; no live chatbot is required.",
+        "technicalFallback": "Use the readings and printed examples. If the website is unavailable, ask for the printed AI2 activity."
       }
     },
     {
-      "n": 2,
-      "key": "ai-t02",
-      "page": "block-02.html",
-      "date": "2026-11-19",
+      "n": 3,
+      "key": "ai-t03",
+      "page": "block-03.html",
+      "date": "2026-11-23",
       "title": "When AI Gets it Wrong",
       "subtitle": "Sounding sure is not being right",
       "skill": "Sourcing and Corroboration",
@@ -520,12 +498,13 @@ module.exports = {
           "url": "https://www.nhpr.org/nh-news/2025-06-13/political-operative-fake-biden-robocalls-nh-primary-found-not-guilty",
           "note": "June 2025 criminal verdict."
         }
-      ]
+      ],
+      "substituteDay": false
     },
     {
-      "n": 3,
-      "key": "ai-t03",
-      "page": "block-03.html",
+      "n": 4,
+      "key": "ai-t04",
+      "page": "block-04.html",
       "date": "2026-11-30",
       "title": "What AI Changes",
       "subtitle": "Jobs, power lines, and Lebanon",
@@ -716,12 +695,13 @@ module.exports = {
           "url": "https://www.cbsnews.com/news/data-centers-60-minutes-transcript/",
           "note": "September 2026 national reporting on local disputes."
         }
-      ]
+      ],
+      "substituteDay": false
     },
     {
-      "n": 4,
-      "key": "ai-t04",
-      "page": "block-04.html",
+      "n": 5,
+      "key": "ai-t05",
+      "page": "block-05.html",
       "date": "2026-12-02",
       "title": "Who Makes the Rules?",
       "subtitle": "What should the rule actually say?",
@@ -899,34 +879,53 @@ module.exports = {
           "url": "https://www.zcs.k12.in.us/high-school-handbook/student-rights-hs",
           "note": "Existing academic-integrity rules; dedicated AI policy status to confirm."
         }
-      ]
+      ],
+      "substituteDay": false
     }
   ],
   "days": [
     {
-      "code": "OPEN",
-      "topic": "Video Day - 60 Minutes",
-      "title": "Extended Interview: President Trump on 60 Minutes",
-      "subtitle": "Interview before lunch; CNN 10 after lunch; no written work",
-      "date": "2026-11-09",
+      "code": "1",
+      "topic": "AI1 — Intro to AI (NOVA Video)",
+      "title": "Intro to AI (NOVA Video)",
+      "subtitle": "Full NOVA A.I. Revolution documentary before lunch; CNN10 after lunch; no homework",
+      "date": "2026-11-17",
       "page": "opening-film.html",
       "learningTargets": [
         {
-          "skill": "Source awareness",
-          "target": "I can distinguish an interviewee’s claim from a verified fact."
+          "skill": "Background knowledge",
+          "target": "I can recognize how AI learns patterns and how it may affect human choices."
         },
         {
-          "skill": "Connections",
-          "target": "I can recognize connections between the interview and our current-events investigations."
+          "skill": "Sourcing",
+          "target": "I can distinguish examples and ideas in a 2024 documentary from current 2026 developments."
         }
       ],
       "successCriteria": [
         {
           "skill": "Observation",
-          "criteria": "I can notice when a speaker offers a fact, claim or opinion while I listen."
+          "criteria": "I can notice a benefit, a risk, and a human responsibility while watching."
         }
       ],
-      "overview": "November 9: 60 Minutes interview before lunch, CNN 10 after lunch. No written work."
+      "overview": "Watch the complete PBS NOVA A.I. Revolution documentary (53:30) before lunch. CNN10 after lunch. No homework or written work.",
+      "viewingGuide": [
+        {
+          "label": "How it works",
+          "prompt": "Where do AI systems get patterns or examples?"
+        },
+        {
+          "label": "A possibility",
+          "prompt": "How can AI help with medicine, science or daily life?"
+        },
+        {
+          "label": "A risk",
+          "prompt": "How might AI make a mistake or create a convincing fake?"
+        },
+        {
+          "label": "Human responsibility",
+          "prompt": "Who should check AI outputs and make important decisions?"
+        }
+      ]
     }
   ]
 };
