@@ -926,6 +926,31 @@ module.exports = {
           "prompt": "Who should check AI outputs and make important decisions?"
         }
       ]
+    },
+    {
+      "code": "6",
+      "topic": "AI6 — Study Guide Work Day",
+      "title": "Study Guide Work Day",
+      "subtitle": "AI1 documentary and AI2–AI5 exam review",
+      "date": "2026-12-04",
+      "page": "study-guide.html",
+      "learningTargets": [
+        {
+          "skill": "Review",
+          "target": "I can explain the AI unit's major ideas with evidence from the film and four investigations."
+        },
+        {
+          "skill": "Self-assessment",
+          "target": "I can identify gaps in my understanding before the December 8 exam."
+        }
+      ],
+      "successCriteria": [
+        {
+          "skill": "Preparation",
+          "criteria": "I can explain learned patterns, AI mistakes, employment tradeoffs, and AI rule-making without relying on memorized phrases."
+        }
+      ],
+      "overview": "Use the AI study guide and earlier lesson sources to prepare for the December 8 Canvas exam. No new investigation."
     }
   ]
 };
