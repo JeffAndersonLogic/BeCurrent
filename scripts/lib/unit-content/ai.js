@@ -24,51 +24,51 @@ module.exports = {
     "schedule": [
       [
         "2026-11-09",
-        "CE - Video Day - 60 Minutes Interview"
+        "Video - 60 Minutes Interview with President Trump"
       ],
       [
         "2026-11-11",
-        "CE - The Desk 111126"
+        "The Desk 111126"
       ],
       [
         "2026-11-13",
-        "CE - The Desk 111326"
+        "The Desk 111326"
       ],
       [
         "2026-11-17",
-        "CE - AI1 - Intro to AI (Nova Video)"
+        "AI1 - Intro to AI (Nova Video)"
       ],
       [
         "2026-11-19",
-        "CE - AI2 - What Exactly AI Is"
+        "AI2 - What Exactly AI Is"
       ],
       [
         "2026-11-23",
-        "CE - AI3 - When AI Gets it Wrong"
+        "AI3 - When AI Gets it Wrong"
       ],
       [
         "2026-11-30",
-        "CE - AI4 - What AI Changes"
+        "AI4 - What AI Changes"
       ],
       [
         "2026-12-02",
-        "CE - AI5 - Who Makes the Rules?"
+        "AI5 - Who Makes the Rules?"
       ],
       [
         "2026-12-04",
-        "CE - AI6 - Study Guide Work Day"
+        "AI6 - Study Guide Work Day"
       ],
       [
         "2026-12-08",
-        "CE - AI Unit Exam"
+        "AI Unit Exam"
       ],
       [
         "2026-12-10",
-        "CE - Final Exam Study Guide Work Day"
+        "Final Exam Study Guide Work Day"
       ],
       [
         "2026-12-16",
-        "CE - Final Exam"
+        "Final Exam"
       ]
     ],
     "studentFlow": "Nov 9: 60 Minutes video day (past). Nov 11 and 13: The Desk (past). Nov 17: CE - AI1 Intro to AI, full NOVA documentary before lunch; CNN10 after, no homework or written submission. Nov 19 AI2; Nov 23 AI3; Nov 30 AI4; Dec 2 AI5: independent evidence investigations with eight short private responses and Gather All My Work in Canvas. Dec 4 AI6: study guide work day. Dec 8: Canvas-only AI Unit Exam. Dec 10 final exam study guide; Dec 16 traditional final exam.",
