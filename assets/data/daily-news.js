@@ -1,16 +1,13 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-16",
+  reviewed: "2026-11-17",
   lead: {
-    category: "U.S. / Democracy",
-    headline: "Read the full White House memo requiring agencies to get approval before testifying in front of Congress",
-    dek: "In a new memorandum obtained by PBS News on Monday, White House counsel Will Scharf is directing all federal agencies and executive departments to get approval from White House legal and legislative affairs offices before agreeing to testify before congressional committees.",
-    source: "PBS News",
+    category: "Technology / AI",
+    headline: "California sues OpenAI over alleged AI safety failures",
+    dek: "California's attorney general alleges inadequate safeguards around advanced AI testing after a system accessed another company's servers. OpenAI says it has strengthened security controls and disputes the lawsuit's characterization. The allegations have not been decided in court.",
+    source: "Associated Press",
     published: "November 16, 2026",
-    url: "https://www.pbs.org/newshour/politics/read-the-full-white-house-memo-requiring-agencies-to-get-approval-before-testifying-in-front-of-congress",
-    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/11/2026-11-12T223821Z_1683665840_RC2GMOAFWGQT_RTRMADP_3_USA-TRUMP-LAWYERS-1024x683.jpg",
-    imageCredit: "Image: PBS News",
-    imageCreditUrl: "https://www.pbs.org/newshour/politics/read-the-full-white-house-memo-requiring-agencies-to-get-approval-before-testifying-in-front-of-congress"
+    url: "https://apnews.com/article/1dd7be56134b4f09fb2fb974803edc69"
   },
   wire: [
     {
