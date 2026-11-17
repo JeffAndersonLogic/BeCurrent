@@ -50,6 +50,7 @@ topics.forEach(t => {
   u.topics.push(t);
   if ((lastSeen[t.code] || '') > u.last) u.last = lastSeen[t.code];
 });
+units.forEach(u => { if (u.unit === 'The Machine in the Room') u.topics.sort((a,b) => a.code.localeCompare(b.code, undefined, {numeric:true})); });
 units.sort((a, b) => (b.last || '').localeCompare(a.last || '') || a.unit.localeCompare(b.unit));
 
 const canvasDocs = fs.readdirSync(path.join(ROOT, 'docs', 'canvas'))

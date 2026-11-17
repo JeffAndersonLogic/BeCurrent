@@ -6,58 +6,41 @@
 
 > AI is already making decisions that affect your life. Which decisions should a person still make, and who gets to set the rules?
 
-## Design and timeline
+## November–December schedule
 
 - Visual design: Signal Lab / Midnight Ember
-- Monday Nov 9: full PBS NOVA *A.I. Revolution* documentary, 53 minutes 30 seconds; no graded worksheet or Canvas submission.
-- Wednesday Nov 11: AI1 *What AI Actually Is* — independent student investigation while teacher attends a conference.
-- Friday Nov 13: AI2 *When AI Gets It Wrong*.
-- Tuesday Nov 17: AI3 *What AI Changes, and Who Pays*.
-- Thursday Nov 19: AI4 *Who Makes the Rules?*.
-- Monday Nov 23: Canvas-only 25-question assessment.
-- November 25–27: Thanksgiving break; next Desk day after break (Nov 30 tentative pending class rotation).
+- Tuesday Nov 17: AI1, complete PBS NOVA *A.I. Revolution* (53:30) before lunch; CNN10 after lunch; no written work or homework.
+- 2026-11-19: AI2 — What Exactly AI Is (eight private responses and Canvas Text Entry).
+- 2026-11-23: AI3 — When AI Gets it Wrong (eight private responses and Canvas Text Entry).
+- 2026-11-30: AI4 — What AI Changes (eight private responses and Canvas Text Entry).
+- 2026-12-02: AI5 — Who Makes the Rules? (eight private responses and Canvas Text Entry).
+- December 4: AI6 Study Guide Work Day (review the AI1 film and AI2–AI5 lessons).
+- December 8: Canvas-only 25-question AI Unit Exam.
+- December 10: Semester final review; December 16: traditional semester final.
 
-## Opening film (Nov 9)
+## Opening film / AI1 (Nov 17)
 
-Watch the ENTIRE documentary. Student page: `ai/opening-film.html`. Teacher page: `teacher/ai-film-os.html`.
+Student page: `ai/opening-film.html`. Teacher page: `teacher/ai-film-os.html`.
 
-Full episode: [Extended Interview: President Trump on 60 Minutes](https://www.youtube.com/watch?v=m2aC8lAOQbg). Alternate: undefined.
-Duration: undefined. Documentary produced 2026-11-08. Do not present 2024 demonstrations as a November 2026 update.
+Watch the entire NOVA documentary, not an excerpt. [A.I. Revolution | Full Documentary | NOVA | PBS](https://www.youtube.com/watch?v=-sB12gk9ESA). Alternate: https://www.pbs.org/video/ai-revolution-umwwlt/.
+Runtime: 53:30. Produced 2024-03-27. Historical 2024 examples are not 2026 product updates.
+No graded worksheet, Canvas submission, News Log, or homework today.
 
-**Four optional viewing cues (not graded):**
-- **Source**: Who is speaking, and who is asking the questions?
-- **Claim**: Which statements would need independent evidence?
-- **Connection**: How does the interview connect to the midterms, Iran, Ukraine, or AI?
-- **Perspective**: What is the difference between a reported fact and a speaker’s opinion?
+**Optional viewing cues, not written prompts:**
+- **How it works**: Where do AI systems get patterns or examples?
+- **A possibility**: How can AI help with medicine, science or daily life?
+- **A risk**: How might AI make a mistake or create a convincing fake?
+- **Human responsibility**: Who should check AI outputs and make important decisions?
 
-## Wednesday substitute (AI1)
+## Follow-up learning (AI2–AI5)
 
-Student page: `ai/block-01.html`. Print route: `ai/print-topic-01.html`. Teacher OS: `teacher/ai-topic-01-os.html`.
+These four investigations reuse the Midnight Ember chapters, practice sorts, background readings, guided responses and existing shared Gather All My Work Canvas record. They are not new replacement activities.
 
-The substitute does NOT need to teach, show the documentary again, or administer MagicSchool. Students follow the page and submit eight short answers using the shared Gather All My Work Canvas record. If the site fails, use the printed reading and response sheet.
-
-1. Open AI1 - What Exactly AI Is on November 17.
-2. Read each Chapter's background text before attempting the question underneath it. Printed information on this page is enough.
-3. Complete Be the Model predictions on paper or in your own notes; do not share them aloud.
-4. Complete the eight-step AI/not-AI practice sort, check feedback, and revise your choices.
-5. If the MagicSchool room appears in Canvas, you may compare its outputs with the printed sample; if not, use only the printed sample. Never type personal information.
-6. Write all eight answers in the text boxes and choose Gather All My Work; paste into today's Canvas Text Entry assignment and submit before lunch.
-7. After lunch continue the normal CNN 10 and News Log routine as directed by your substitute.
-
-**55-minute pacing:**
-- 0–5: Open BeCurrent AI1; read the opening and instructions.
-- 5–17: Chapters 1–2: read context, do paper prediction and early questions.
-- 17–32: Chapter 3: learned patterns, everyday-tool sort and corrections.
-- 32–47: Chapters 4–5: optional chatbot or printed sample; remaining answers and checkpoint.
-- 47–55: Check eight answers, Gather All My Work, paste into Canvas, submit and confirm.
-
-## Four investigations
-
-### AI1 — What Exactly AI Is (2026-11-17)
+### AI2 — What Exactly AI Is (2026-11-19)
 
 **Skill:** Generalizing from Evidence. **Question:** How can a computer sound like it understands you?.
 
-Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking.
+Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.
 
 **Learning targets**
 - I can explain patterns, training examples, and prediction in plain language.
@@ -70,7 +53,7 @@ Explain how AI learns, try the Be the Model prediction exercise, sort everyday t
 - I can support a claim about chatbots with a result from the experiment.
 
 **Chapters**
-- 1. Start here: What did the film show?: Read the background, think about your own examples, and answer Question 1. Continue through the chapters in order.
+- 1. From the NOVA documentary to your own examples: Read the background, think about your own examples, and answer Question 1. Continue through the chapters in order.
 - 2. Be the Model: Predict the next word: Complete the five starters privately, then answer Questions 2 and 3.
 - 3. Patterns learned from examples: Try the eight-card AI/not-AI sort, read the feedback, and answer Questions 4 and 5.
 - 4. Chatbot or printed sample: Compare the replies: Compare either the chatbot or the printed sample to your predictions. Answer Questions 6 and 7. No live chatbot access is required.
@@ -102,9 +85,9 @@ Explain how AI learns, try the Be the Model prediction exercise, sort everyday t
    - START HERE: Use one example from today.
    - PUSH FURTHER: Describe one ability the analogy leaves out.
 
-**Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
+**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 
-### AI2 — When AI Gets it Wrong (2026-11-19)
+### AI3 — When AI Gets it Wrong (2026-11-23)
 
 **Skill:** Sourcing and Corroboration. **Question:** Who should check a convincing answer?.
 
@@ -153,9 +136,9 @@ Study invented legal evidence, unfair learned patterns, and an AI-cloned politic
    - START HERE: Claim -> independent source -> judgment.
    - PUSH FURTHER: What would you do if independent sources disagree?
 
-**Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
+**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 
-### AI3 — What AI Changes (2026-11-30)
+### AI4 — What AI Changes (2026-11-30)
 
 **Skill:** Causation and Framing. **Question:** Who benefits from AI, and who absorbs its costs?.
 
@@ -204,9 +187,9 @@ Break a job into tasks, compare what Stanford and Yale actually found, then inve
    - START HERE: Explain your view with a source.
    - PUSH FURTHER: What evidence could change your judgment?
 
-**Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
+**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 
-### AI4 — Who Makes the Rules? (2026-12-02)
+### AI5 — Who Makes the Rules? (2026-12-02)
 
 **Skill:** Framing and Generalizing from Evidence. **Question:** Which decisions should a person still make, and who gets to set the rules?.
 
@@ -255,12 +238,12 @@ Investigate individual, school, company, and government rules. Review a real Ind
    - START HERE: Support your rule with two examples.
    - PUSH FURTHER: Test the rule against a realistic exception.
 
-**Submission:** eight short responses plus the practice classification, copied via Gather All My Work into Canvas Text Entry. Student answers are private and not stored on GitHub.
+**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 
-## Assessment and safeguarding
+## Assessment and privacy
 
-The 25-question Canvas exam is on Nov 23: six questions each from AI1–AI3, seven from AI4. All actual items and answer keys must stay outside the public GitHub Pages repository.
+Canvas AI Unit Exam: December 8, 25 questions: AI2 (6), AI3 (6), AI4 (6), AI5 (7). AI1 is the documentary and AI6 the review session. Questions and answer keys belong in Canvas only.
 
-MagicSchool general-purpose join link belongs ONLY in Canvas. Exact student privacy reminder: Never type your full name, address, or anything private. Your teacher can read this chat.
+MagicSchool join links belong ONLY in Canvas. Student privacy reminder: Never type your full name, address, or anything private. Your teacher can read this chat.
 
 Students are evaluated on evidence and reasoning, not on their opinions about artificial intelligence.
