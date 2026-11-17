@@ -620,7 +620,7 @@ window.BECURRENT_SCHEDULE={
       "date": "2026-11-17",
       "topicTitle": "AI1 - Intro to AI (Nova Video)",
       "homeAnnouncement": "Today: AI1 - Intro to AI (Nova Video). Full NOVA A.I. Revolution before lunch; CNN10 after lunch. No homework.",
-      "showLead": false,
+      "showLead": true,
       "unitTitle": "",
       "subtitle": "",
       "note": "Before lunch: watch the complete 53:30 NOVA A.I. Revolution documentary. After lunch: CNN10. No homework, written work, News Log or Canvas submission.",
