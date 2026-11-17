@@ -558,10 +558,10 @@ window.BECURRENT_SCHEDULE={
       "note": "Before lunch: Extended Interview: President Trump on 60 Minutes. After lunch: CNN 10. No written work or Canvas submission today.",
       "agenda": [
         "Before lunch: watch Extended Interview: President Trump on 60 Minutes.",
-        "After lunch: watch CNN 10.",
-        "No written work today. No News Log entry or Canvas submission."
+        "After lunch: watch CNN10.",
+        "No written work, homework, News Log entry or Canvas submission today."
       ],
-      "homework": "No written work or Canvas submission today.",
+      "homework": "No homework or Canvas submission today.",
       "slides": [
         {
           "url": "https://www.youtube.com/watch?v=m2aC8lAOQbg",
@@ -570,8 +570,8 @@ window.BECURRENT_SCHEDULE={
           "title": "Watch the 60 Minutes interview",
           "bullets": [
             "Extended Interview: President Trump on 60 Minutes",
-            "After lunch: CNN 10.",
-            "No written work or Canvas submission today."
+            "After lunch: CNN10.",
+            "No homework or written submission."
           ]
         }
       ]
@@ -618,103 +618,114 @@ window.BECURRENT_SCHEDULE={
     },
     {
       "date": "2026-11-17",
-      "topicTitle": "AI1 - What Exactly AI Is",
-      "homeAnnouncement": "Today: AI1 - What Exactly AI Is. Complete eight responses and submit the gathered record in Canvas.",
+      "topicTitle": "AI1 - Intro to AI (Nova Video)",
+      "homeAnnouncement": "Today: AI1 - Intro to AI (Nova Video). Full NOVA A.I. Revolution before lunch; CNN10 after lunch. No homework.",
       "showLead": false,
-      "topic": "AI1",
-      "note": "Explain how AI learns, try the Be the Model prediction exercise, sort everyday tools, and judge when a chatbot output needs human checking.",
-      "doNow": "How can a computer sound like it understands you?",
+      "unitTitle": "",
+      "subtitle": "",
+      "note": "Before lunch: watch the complete 53:30 NOVA A.I. Revolution documentary. After lunch: CNN10. No homework, written work, News Log or Canvas submission.",
       "agenda": [
-        "Open AI1 - What Exactly AI Is and follow the five chapters in order.",
-        "Read the background and complete the practice sort.",
-        "Answer all eight private questions, then Gather All My Work.",
-        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
-        "After lunch: CNN 10 and the News Log."
+        "Before lunch: watch the full 53:30 NOVA A.I. Revolution documentary.",
+        "After lunch: watch CNN10.",
+        "No written work, homework, News Log entry or Canvas submission today."
       ],
-      "homework": "Finish and submit AI1 - What Exactly AI Is in Canvas."
+      "homework": "No homework or Canvas submission today.",
+      "slides": [
+        {
+          "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
+          "linkLabel": "Watch the full NOVA documentary",
+          "kicker": "Before lunch",
+          "title": "A.I. Revolution — Full NOVA Documentary",
+          "bullets": [
+            "Watch all 53 minutes 30 seconds.",
+            "After lunch: CNN10.",
+            "No homework or written submission."
+          ]
+        }
+      ]
     },
     {
       "date": "2026-11-19",
-      "topicTitle": "AI2 - When AI Gets it Wrong",
-      "homeAnnouncement": "Today: AI2 - When AI Gets it Wrong. Complete eight responses and submit the gathered record in Canvas.",
+      "topicTitle": "AI2 - What Exactly AI Is",
+      "homeAnnouncement": "Today: AI2 - What Exactly AI Is. Complete eight responses and submit the gathered record in Canvas.",
       "showLead": false,
       "topic": "AI2",
-      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
-      "doNow": "Who should check a convincing answer?",
+      "note": "Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.",
+      "doNow": "How can a computer sound like it understands you?",
       "agenda": [
-        "Open AI2 - When AI Gets it Wrong and follow the five chapters in order.",
+        "Open AI2 - What Exactly AI Is and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."
       ],
-      "homework": "Finish and submit AI2 - When AI Gets it Wrong in Canvas."
+      "homework": "Finish and submit AI2 - What Exactly AI Is in Canvas."
     },
     {
       "date": "2026-11-23",
-      "topicTitle": "The Desk 112326",
-      "homeAnnouncement": "Today: The Desk 112326. Read the Lead, choose Your Pick, and submit your gathered News Log.",
-      "showLead": true,
-      "deskMode": "full",
-      "deskWorkflow": "gather",
-      "note": "The Desk: shared Lead, Your Pick, and an evidence-based significance judgment.",
+      "topicTitle": "AI3 - When AI Gets it Wrong",
+      "homeAnnouncement": "Today: AI3 - When AI Gets it Wrong. Complete eight responses and submit the gathered record in Canvas.",
+      "showLead": false,
+      "topic": "AI3",
+      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "doNow": "Who should check a convincing answer?",
       "agenda": [
-        "Watch CNN 10 and open The Desk.",
-        "Read the shared Lead and record its source, date, link, summary and significance.",
-        "Choose and read Your Pick; record its source details and summarize the event.",
-        "Explain which story deserves more attention using specific evidence.",
-        "Gather My Log, copy the complete log, paste into The Desk 112326 in Canvas, and submit."
+        "Open AI3 - When AI Gets it Wrong and follow the five chapters in order.",
+        "Read the background and complete the practice sort.",
+        "Answer all eight private questions, then Gather All My Work.",
+        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "After lunch: CNN 10 and the News Log."
       ],
-      "homework": "Submit The Desk 112326 in Canvas. Check that your 2026-11-23 entry is included.",
-      "homeworkDue": "the end of class today"
+      "homework": "Finish and submit AI3 - When AI Gets it Wrong in Canvas."
     },
     {
       "date": "2026-11-30",
-      "topicTitle": "AI3 - What AI Changes",
-      "homeAnnouncement": "Today: AI3 - What AI Changes. Complete eight responses and submit the gathered record in Canvas.",
+      "topicTitle": "AI4 - What AI Changes",
+      "homeAnnouncement": "Today: AI4 - What AI Changes. Complete eight responses and submit the gathered record in Canvas.",
       "showLead": false,
-      "topic": "AI3",
+      "topic": "AI4",
       "note": "Break a job into tasks, compare what Stanford and Yale actually found, then investigate Meta's data center project right here in Boone County.",
       "doNow": "Who benefits from AI, and who absorbs its costs?",
       "agenda": [
-        "Open AI3 - What AI Changes and follow the five chapters in order.",
+        "Open AI4 - What AI Changes and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."
       ],
-      "homework": "Finish and submit AI3 - What AI Changes in Canvas."
+      "homework": "Finish and submit AI4 - What AI Changes in Canvas."
     },
     {
       "date": "2026-12-02",
-      "topicTitle": "AI4 - Who Makes the Rules?",
-      "homeAnnouncement": "Today: AI4 - Who Makes the Rules?. Complete eight responses and submit the gathered record in Canvas.",
+      "topicTitle": "AI5 - Who Makes the Rules?",
+      "homeAnnouncement": "Today: AI5 - Who Makes the Rules?. Complete eight responses and submit the gathered record in Canvas.",
       "showLead": false,
-      "topic": "AI4",
+      "topic": "AI5",
       "note": "Investigate individual, school, company, and government rules. Review a real Indiana disclosure law. Decide when AI should be allowed, restricted, or checked.",
       "doNow": "Which decisions should a person still make, and who gets to set the rules?",
       "agenda": [
-        "Open AI4 - Who Makes the Rules? and follow the five chapters in order.",
+        "Open AI5 - Who Makes the Rules? and follow the five chapters in order.",
         "Read the background and complete the practice sort.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."
       ],
-      "homework": "Finish and submit AI4 - Who Makes the Rules? in Canvas."
+      "homework": "Finish and submit AI5 - Who Makes the Rules? in Canvas."
     },
     {
       "date": "2026-12-04",
-      "topicTitle": "AI5 - Study Guide Work Day",
-      "homeAnnouncement": "Today: AI5 - Study Guide Work Day. Review AI1–AI4 for the December 8 unit exam.",
+      "topicTitle": "AI6 - Study Guide Work Day",
+      "homeAnnouncement": "Today: AI6 - Study Guide Work Day. Review the AI unit for the December 8 exam.",
       "showLead": false,
-      "note": "AI5 is a study-guide work day; there is no fifth new investigation. AI Unit Exam: Tuesday, December 8.",
+      "topic": "AI6",
+      "note": "AI6 is the study-guide work day; review AI2–AI5 and the opening NOVA film for the December 8 exam.",
       "agenda": [
         "Open the AI study guide.",
-        "Review AI1 through AI4: concepts, evidence, source checks and policy reasoning.",
-        "Check weak areas against the linked lessons and ask targeted questions.",
-        "Prepare for the AI Unit Exam on December 8."
+        "Review AI2–AI5: how AI works, errors and verification, local impacts, and rule-making.",
+        "Connect the full NOVA film from AI1 to the four investigations.",
+        "Check weak areas and prepare for the AI Unit Exam on December 8."
       ],
-      "homework": "Finish studying AI1–AI4 for December 8."
+      "homework": "Finish studying AI2–AI5 and the NOVA introduction for December 8."
     },
     {
       "date": "2026-12-08",
