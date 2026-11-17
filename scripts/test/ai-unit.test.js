@@ -76,6 +76,15 @@ assert.strictEqual(future.find(d=>d.date==='2026-11-17').topicTitle,'AI1 - Intro
 assert.strictEqual(future.find(d=>d.date==='2026-11-23').topicTitle,'AI3 - When AI Gets it Wrong');
 assert.strictEqual(future.find(d=>d.date==='2026-12-04').topicTitle,'AI6 - Study Guide Work Day');
 assert.strictEqual(future.find(d=>d.date==='2026-11-17').deskMode,undefined);
+assert.strictEqual(future.find(d=>d.date==='2026-11-17').showLead,true,'Nov17 NOVA board must show updated lead');
+const newsSrc=fs.readFileSync(path.join(ROOT,'assets/data/daily-news.js'),'utf8');
+const newsEnv={window:{}};vm.runInNewContext(newsSrc,newsEnv);
+const news=newsEnv.window.BECURRENT_DAILY_NEWS;
+assert.strictEqual(news.reviewed,'2026-11-17');
+assert.match(news.lead.headline,/California sues OpenAI over alleged AI safety failures/);
+assert.match(news.lead.dek,/alleges|allegations/);
+assert.match(news.lead.dek,/OpenAI says/);
+assert.match(news.lead.url,/^https:\/\/apnews\.com\/article\//);
 assert.doesNotMatch(JSON.stringify(future),/CE - /);
 assert.match(pages['finals/study-guide.html'],/traditional final exam on Wednesday, December 16/i);
 console.log('PASS: AI1 full NOVA on Nov 17, CNN10/no homework, four renumbered Canvas investigations, AI6 review, Dec 8 exam and generated pages.');
