@@ -679,16 +679,28 @@ window.BECURRENT_SCHEDULE={
       "homeAnnouncement": "Today: AI3 - When AI Gets it Wrong. Complete eight responses and submit the gathered record in Canvas.",
       "showLead": false,
       "topic": "AI3",
-      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "note": "Hunt for AI hallucinations in a MagicSchool chatbot, built around an interest you choose. Ask it for a quote, a number, sources and recent news, check every answer outside the chat, and compare what you find with three real cases: invented court citations, a biased hiring tool and a fake political robocall.",
       "doNow": "Who should check a convincing answer?",
       "agenda": [
-        "Open AI3 - When AI Gets it Wrong and follow the five chapters in order.",
-        "Read the background and complete the practice sort.",
-        "Answer all eight private questions, then Gather All My Work.",
-        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "Listen to the opener: the lawyers who trusted a chatbot.",
+        "Open AI3 - When AI Gets it Wrong beside the BeCurrent MagicSchool room linked in Canvas, with a second tab open for checking.",
+        "Play Hallucination Hunt on your own, Rounds 1 to 5, built around an interest you choose: ask for a quote, a number, sources and recent news, and check every answer outside the chat.",
+        "Read the three real cases on the page: invented court cases, a biased hiring tool and a fake robocall.",
+        "Answer all eight private questions, then Gather All My Work and submit in Canvas. If you run out of time, finish before next class.",
+        "Finished early: type BONUS in the chat for a bonus quest.",
         "After lunch: CNN 10 and the News Log."
       ],
-      "homework": "Finish and submit AI3 - When AI Gets it Wrong in Canvas."
+      "homework": "Finish and submit AI3 - When AI Gets it Wrong in Canvas.",
+      "feature": {
+        "kicker": "Today's AI lab",
+        "headline": "Catch the machine making things up.",
+        "line": "Hunt for hallucinations in a chatbot built for this class, then check every answer yourself.",
+        "logoLabel": "Built with",
+        "logo": "assets/images/partners/magicschool-logo.png",
+        "logoAlt": "MagicSchool",
+        "logoWidth": 792,
+        "logoHeight": 96
+      }
     },
     {
       "date": "2026-11-30",

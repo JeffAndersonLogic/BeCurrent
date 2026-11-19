@@ -327,7 +327,8 @@ module.exports = {
           "Type in the message box and send. The chatbot answers in the conversation above it, and it remembers what you have already said.",
           "You are in charge. Ask it to say things in fewer words, explain it more simply, or give an example.",
           "Lost? Type HELP or \"What should I do now?\". The chatbot will tell you your next step."
-        ]
+        ],
+        "setupNote": "The instructions never say which Round 3 question is the trap, so whether the bot catches it is a real result."
       },
       "boardFeature": {
         "kicker": "Today's AI lab",
@@ -338,7 +339,9 @@ module.exports = {
         "logoAlt": "MagicSchool",
         "logoWidth": 792,
         "logoHeight": 96
-      }
+      },
+      "closingNote": "It sets up AI3.",
+      "canvasFallback": "If MagicSchool will not open, tell your teacher; the AI2 page has a printed route for every round."
     },
     {
       "n": 3,
@@ -349,153 +352,125 @@ module.exports = {
       "subtitle": "Sounding sure is not being right",
       "skill": "Sourcing and Corroboration",
       "question": "Who should check a convincing answer?",
-      "hook": "If an AI invents a court case, who is responsible when somebody files it with a judge?",
-      "overview": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "hook": "In 2023, lawyers handed a judge court cases that a chatbot had made up, and nobody checked. Today you go hunting for the same kind of mistake: get a MagicSchool chatbot talking about something you know well, then check every claim it makes outside the chat.",
+      "overview": "Hunt for AI hallucinations in a MagicSchool chatbot, built around an interest you choose. Ask it for a quote, a number, sources and recent news, check every answer outside the chat, and compare what you find with three real cases: invented court citations, a biased hiring tool and a fake political robocall.",
       "learningTargets": [
         {
           "skill": "Sourcing",
-          "target": "I can identify the source of a claim."
+          "target": "I can find a reliable source outside a chatbot and use it to check an AI claim."
         },
         {
           "skill": "Corroboration",
-          "target": "I can test an AI-generated claim against independent evidence."
+          "target": "I can decide whether an AI claim is confirmed, wrong, or cannot be confirmed."
         },
         {
           "skill": "Distinction",
-          "target": "I can distinguish model error, bias, and deliberate deception."
+          "target": "I can tell a hallucination apart from bias and from a deliberate fake."
         }
       ],
       "successCriteria": [
         {
           "skill": "Sourcing",
-          "criteria": "I can name a real reference and report its finding."
+          "criteria": "I can name the outside source I used and say what it showed."
         },
         {
           "skill": "Corroboration",
-          "criteria": "I can document the result of checking one claim."
+          "criteria": "I can give a verdict on at least three chatbot answers about my interest and back each one with a source."
         },
         {
           "skill": "Distinction",
-          "criteria": "I can explain why three AI failures have different causes."
+          "criteria": "I can explain why the fake court cases, the hiring tool and the fake robocall are three different kinds of failure."
         }
       ],
       "chapters": [
         {
-          "title": "The confident answer problem",
+          "title": "Before you open MagicSchool: Sounding sure is not being right",
           "paragraphs": [
-            "Language models can produce a polished answer even when some details are false. An invented or unsupported detail presented as fact is often called an AI hallucination. That differs from someone intentionally using AI to deceive.",
-            "A claim is not automatically reliable because it is fluent or detailed. Your job is to identify what evidence would confirm it."
+            "Last class you learned that a chatbot builds an answer by predicting likely words. That is also how it can write a polished answer with details that are false. An invented or unsupported detail stated as fact is often called an AI hallucination. That is different from a person using AI on purpose to fool people.",
+            "Today you go hunting for hallucinations. In MagicSchool, the chatbot asks what you are into. Then, over five rounds, you ask it for a quote, a number, some sources and recent news about your interest. After every answer, you leave the chat and check it.",
+            "Every answer gets a verdict. CONFIRMED: a reliable source outside the chat says the same thing. WRONG: a reliable source says something different, or the thing does not exist. CAN'T CONFIRM: you looked and could not find it either way. If the chatbot says it is not sure, that is useful information, not a loss.",
+            "Good places to check: a government, university, museum, library or encyclopedia site, a real news outlet, or the official site for your interest, like a league, team or band. Asking the chatbot again does not count, and neither does a second chatbot. Search for a title or quote yourself instead of clicking a link the chatbot gives you. The rules from AI2 still apply: help, not hand-in, and no personal information."
           ],
-          "activity": "Review the same learning question from AI1: What made an answer sound trustworthy?"
+          "activity": "Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Hallucination Hunt, and type READY. Keep this page and a second tab for checking open beside the chat."
         },
         {
-          "title": "The lawyers who failed to verify",
+          "title": "Rounds 1 and 2: The quote hunt and the number hunt",
           "paragraphs": [
-            "In a 2023 federal case, attorneys submitted legal research citing decisions that did not exist. A judge sanctioned the lawyers and law firm. The key lesson is professional responsibility: a generated citation does not become real because it appears in a legal brief.",
-            "A legal source can be checked in the actual court record. A fabricated case citation is not evidence."
+            "Round 1: ask the chatbot for a real quotation from a well-known person in your interest: the exact words, who said them, and when. Then search for the quote outside the chat. A real quote usually leads back to an interview, a speech, a book or a news story. A made-up quote often leads nowhere, or to a different person.",
+            "Round 2: ask for one specific number: a record, a date, a price, a score, or the year something started. Check it on an official or reference site. A number that is close but not right still counts as WRONG.",
+            "While you play, watch how sure the chatbot sounds. Does it sound any less confident on the answers that turn out to be wrong?",
+            "If MagicSchool will not open for you, tell your teacher. Here is a made-up example of a catch, not real chatbot output: a chatbot gives a quote and says it came from a 2015 interview, but a search finds the same words in a book by a different person. Verdict: WRONG."
           ],
-          "activity": "Look at the case source: what were the attorneys responsible for checking?"
+          "activity": "Play Rounds 1 and 2. Check each answer outside the chat and give it a verdict. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat."
         },
         {
-          "title": "Bias is a different failure",
+          "title": "Round 3: The source hunt, and the lawyers who did not check",
           "paragraphs": [
-            "Reuters reported in 2018 that Amazon tested an experimental hiring system that disadvantaged some references to women, reflecting patterns from training data. It was an internal experiment, not a current hiring system.",
-            "Bias can enter through the selected examples, design goals, labels, and decisions about how output is used. An inaccurate answer and an unfair pattern are not the same problem."
+            "Round 3: ask the chatbot for two or three books, articles or websites where you could learn more about your interest, with titles and authors. Then check whether each one really exists and is about what the chatbot said.",
+            "This is exactly the check some lawyers skipped. In a 2023 federal case, attorneys handed the court legal research that cited court decisions that did not exist. The research came from ChatGPT. A judge sanctioned the lawyers and their law firm.",
+            "The lesson is about responsibility. A citation the chatbot invented does not become real because it appears in a legal paper, and the person who files it is the one who answers for it. A made-up source is not evidence, no matter how real its title sounds."
           ],
-          "activity": "Where might unfairness enter: examples, design, or human use?"
+          "activity": "Play Round 3 and check every source outside the chat. When the chatbot tells you to pause, answer Questions 4 and 5 here, then type NEXT."
         },
         {
-          "title": "The fake voice that reached voters",
+          "title": "Round 4: The news hunt, and two failures that are not hallucinations",
           "paragraphs": [
-            "Before New Hampshire's 2024 presidential primary, voters received calls with an AI-imitation of President Biden's voice discouraging voting. The FCC imposed a $6 million fine related to unlawful spoofing. A jury later acquitted the consultant in a separate criminal case.",
-            "An administrative fine and a criminal verdict apply different laws and legal standards. A not-guilty verdict alone does not show the law is powerless or that a recording was authentic."
+            "Round 4: ask the chatbot what has happened recently in your interest, then check a real news outlet. A chatbot learns from text collected up to a certain date, so it can be out of date, or fill the gap with a guess. For news, a news outlet beats a chatbot.",
+            "Not every AI failure is a made-up fact. Reuters reported in 2018 that Amazon tested an experimental hiring system that marked down some résumés that mentioned women, because it learned from past hiring patterns. It was an internal experiment, not a hiring system in use today. That is bias: the answer is not invented, but the pattern is unfair.",
+            "Before New Hampshire's 2024 presidential primary, voters got phone calls with an AI copy of President Biden's voice telling them not to vote. That is a deliberate fake: a person used AI on purpose to fool people. The FCC fined the political consultant behind the calls $6 million. A jury later found him not guilty in a separate criminal trial. A government fine and a criminal verdict use different laws and different standards, so both can be true at once."
           ],
-          "activity": "Why could a fake voice undermine confidence even after it is uncovered?"
+          "activity": "Play Round 4 and check one news claim with a real outlet. Read about the hiring tool and the fake robocall. When the chatbot tells you to pause, answer Questions 6 and 7, then type NEXT."
         },
         {
-          "title": "Your three-step verification habit",
+          "title": "Round 5 and checkpoint: The scoreboard and your rule",
           "paragraphs": [
-            "When the claim matters, first isolate the exact assertion, then find a credible independent source, then decide what is confirmed and what remains uncertain. A repeated answer on multiple AI sites is not independent corroboration.",
-            "Use MagicSchool only if assigned in Canvas. Printed example if unavailable: 'An AI invented a quotation; a verified original text did not contain it.' Label the example as illustrative, not a historical report."
+            "Round 5: the chatbot shows the scoreboard, then asks which of its answers you would have trusted without checking. Ask it, \"How sure were you?\" Did its confidence match what you found?",
+            "A checking habit you can use anywhere: pick out the exact claim, find a reliable source outside the chatbot, then decide what is confirmed and what is still uncertain. The same answer from two chatbots is not two sources.",
+            "Finished early? Go back to the chat and type BONUS. Wording Trap: ask a question built on something untrue and see whether the chatbot plays along. Fix It: ask the chatbot to correct an answer you caught, then check the correction too. Bonus quests are not graded; they are for you."
           ],
-          "activity": "Complete an evidence check using an original source linked below."
+          "activity": "Finish Round 5, answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas. Then try a bonus quest."
         }
       ],
-      "clip": {
-        "title": "A.I. Revolution | The Danger of AI Fakes",
-        "source": "PBS NOVA",
-        "date": "2024-03-27",
-        "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
-        "alt": "https://www.pbs.org/video/ai-revolution-umwwlt/",
-        "assigned": "37:20 to approximately 41:30 (teacher preview required)",
-        "prompt": "How could an altered image or voice be made believable, and how could you check it?",
-        "captions": "Reading route is available in the five chapters."
-      },
-      "sort": {
-        "prompt": "Match each example to the type of risk.",
-        "options": [
-          "Hallucination",
-          "Bias",
-          "Deliberate deepfake"
-        ],
-        "items": [
-          [
-            "Invented court citation",
-            "Hallucination",
-            "The generated authority was nonexistent."
-          ],
-          [
-            "Hiring pattern disfavors some applicants",
-            "Bias",
-            "Historical data and design can create unfair patterns."
-          ],
-          [
-            "Imitated election robocall voice",
-            "Deliberate deepfake",
-            "The synthetic voice was deployed to deceive listeners."
-          ]
-        ]
-      },
       "questions": [
         {
-          "text": "Define an AI hallucination in everyday words.",
-          "startHere": "Think: invented or unsupported fact.",
-          "pushFurther": "How is it different from uncertainty?"
+          "text": "Round 1: What quote did the chatbot give you, and what was your verdict: CONFIRMED, WRONG, or CAN'T CONFIRM? Name the source you checked.",
+          "startHere": "Write the quote, the person it named, your verdict, and where you looked.",
+          "pushFurther": "If you found the quote, did the chatbot get the person, the date and the exact words right?"
         },
         {
-          "text": "Why does plausible language not guarantee a factual answer?",
-          "startHere": "Connect AI1 to the lawyer example.",
-          "pushFurther": "What independent record is decisive?"
+          "text": "Round 2: What number did the chatbot give you, and what did you find when you checked it outside the chat?",
+          "startHere": "Write its number, the number your source gave, and the source.",
+          "pushFurther": "Why does a number that is close but not right still count as wrong?"
         },
         {
-          "text": "In the invented-cases incident, what should the lawyers have done?",
-          "startHere": "Name a verification step.",
-          "pushFurther": "Who remains accountable when AI is used?"
+          "text": "Did the chatbot sound any less sure on the answers that turned out wrong or could not be confirmed? What does that tell you?",
+          "startHere": "Compare how it worded one answer you confirmed and one you caught or could not confirm.",
+          "pushFurther": "Connect this to AI2: why would a system that predicts likely words sound confident either way?"
         },
         {
-          "text": "Choose one claim in today's evidence. What source supports or challenges it?",
-          "startHere": "Name the source and finding.",
-          "pushFurther": "What remains unconfirmed?"
+          "text": "Round 3: Did the sources the chatbot suggested really exist and say what it claimed? How did you check?",
+          "startHere": "For each source, write: real or not found, and where you searched.",
+          "pushFurther": "Why is a made-up source with a real-sounding title more dangerous than an obviously wrong answer?"
         },
         {
-          "text": "How can training examples produce unfair outcomes?",
-          "startHere": "Use the experimental hiring system.",
-          "pushFurther": "Consider data and human design choices."
+          "text": "In 2023, lawyers filed court cases that a chatbot made up. What should they have done, and who was responsible?",
+          "startHere": "Name one checking step, like your Round 3 search.",
+          "pushFurther": "Does using AI change who is accountable for the work?"
         },
         {
-          "text": "Why was the fake Biden robocall dangerous even though it was discovered?",
-          "startHere": "Think about voters' access to accurate information.",
-          "pushFurther": "Can a correction reach everyone who heard the fake?"
+          "text": "Round 4: What did the chatbot say about recent news in your interest, and what did a real news outlet say? Why might a chatbot be behind on the news?",
+          "startHere": "Name the outlet and one thing it reported.",
+          "pushFurther": "Did the chatbot warn you its information might be out of date?"
         },
         {
-          "text": "Why can a government fine and a criminal acquittal coexist?",
-          "startHere": "Different proceedings ask different questions.",
-          "pushFurther": "What does each outcome establish and not establish?"
+          "text": "The Amazon hiring tool and the fake Biden robocall were not hallucinations. Pick one and explain what kind of failure it was instead.",
+          "startHere": "Use the word bias or the word deliberate.",
+          "pushFurther": "Could checking facts, like you did today, have caught it? Why or why not?"
         },
         {
-          "text": "CHECKPOINT: Write a three-step rule for checking an AI claim.",
-          "startHere": "Claim -> independent source -> judgment.",
-          "pushFurther": "What would you do if independent sources disagree?"
+          "text": "CHECKPOINT: Write your three-step rule for checking an AI claim. Then use one result from your hunt to show why the rule matters.",
+          "startHere": "Claim, then outside source, then verdict. Add your best catch or your best confirm.",
+          "pushFurther": "What would you do if two reliable sources disagree?"
         }
       ],
       "sources": [
@@ -520,7 +495,76 @@ module.exports = {
           "note": "June 2025 criminal verdict."
         }
       ],
-      "substituteDay": false
+      "selfPaced": true,
+      "substituteDay": false,
+      "offlineSupport": "The hunt runs in the BeCurrent MagicSchool room linked in Canvas, and students check answers in a second tab. If a student cannot open MagicSchool, the teacher runs the hunt on the projector and the student checks the answers on their own device; the same eight questions are answered either way.",
+      "chapterLabels": [
+        "THE HOOK",
+        "ROUNDS 1–2",
+        "ROUND 3",
+        "ROUND 4",
+        "THE JUDGMENT"
+      ],
+      "navLabels": [
+        "Start",
+        "Rounds 1–2",
+        "Round 3",
+        "Round 4",
+        "Decide"
+      ],
+      "agenda": [
+        "Listen to the opener: the lawyers who trusted a chatbot.",
+        "Open AI3 - When AI Gets it Wrong beside the BeCurrent MagicSchool room linked in Canvas, with a second tab open for checking.",
+        "Play Hallucination Hunt on your own, Rounds 1 to 5, built around an interest you choose: ask for a quote, a number, sources and recent news, and check every answer outside the chat.",
+        "Read the three real cases on the page: invented court cases, a biased hiring tool and a fake robocall.",
+        "Answer all eight private questions, then Gather All My Work and submit in Canvas. If you run out of time, finish before next class.",
+        "Finished early: type BONUS in the chat for a bonus quest.",
+        "After lunch: CNN 10 and the News Log."
+      ],
+      "canvasSteps": [
+        "Open the AI3 page on BeCurrent and the BeCurrent MagicSchool room side by side, plus a second tab for checking.",
+        "In MagicSchool, choose Hallucination Hunt and type READY. Pick an interest you know well and play all five rounds on your own.",
+        "Check every chatbot answer with a reliable source outside the chat. Asking the chatbot again does not count.",
+        "When the chatbot sends you back, answer the numbered questions on the AI3 page. Nothing you type in the chat is your submission.",
+        "Choose Gather All My Work, copy the complete record, paste it into this assignment, submit, and verify confirmation. If you run out of time in class, finish before next class. If you revise, gather and submit again."
+      ],
+      "canvasFallback": "If MagicSchool will not open, tell your teacher; the hunt can run on the projector while you check the answers yourself.",
+      "teacherTiming": "0–5 min: your opener (below), ending with a one-minute demo of getting into the room on the projector. 5–9 min: Pick Your Turf and the Hunter's Rules in the chat. 9–25 min: Rounds 1–2, then Questions 1–3. Walk the room here: this is where students need help finding a reliable source, and where they try to \"check\" by asking the bot again. 25–37 min: Round 3 and the lawyer reading, then Questions 4–5. 37–47 min: Round 4 and the hiring-tool and robocall readings, then Questions 6–7. 47–55 min: Round 5, Question 8 and Gather All My Work. Students who do not finish submit to Canvas before next class (the board's homework line already says so). Fast finishers type BONUS. If there is no time for the closing think-aloud, open AI4 with it.",
+      "opener": [
+        "Last class you found out a chatbot builds its answers by predicting likely words. Today: what happens when those likely words are wrong.",
+        "In 2023, lawyers in a federal case handed a judge legal research full of court cases that did not exist. A chatbot had made them up, and nobody checked. The judge sanctioned them.",
+        "An invented detail stated as fact is called a hallucination. Today you go hunting for them, about something you know a lot about.",
+        "You ask the bot for a quote, a number, some sources and recent news, and you check every answer outside the chat: confirmed, wrong, or can't confirm. Asking the bot again does not count.",
+        "Getting in, on the projector: open today's AI3 assignment in Canvas, follow the MagicSchool link, open Hallucination Hunt, and type READY. Keep a second tab open for checking. HELP works at any time.",
+        "When the bot sends you back, write on the BeCurrent page. The chat is not your submission; the Canvas paste is."
+      ],
+      "closingQuestion": "When someone uses an AI answer that turns out to be wrong, who is responsible: the company that built it, the AI, or the person who used it?",
+      "closingNote": "It previews the question AI5 asks about who makes the rules.",
+      "chatbot": {
+        "name": "Hallucination Hunt (AI3)",
+        "description": "Catch the machine making things up. Ask a chatbot for quotes, numbers, sources and news about what you are into, then check every answer yourself.",
+        "welcome": "Welcome to Hallucination Hunt! I'm the machine, and today you're the fact-checker. I'll answer your questions about something you know well, and your job is to check every answer outside this chat. Catch me getting something wrong and you score. Open a second tab for checking, then type READY to start.",
+        "instructions": "You are the host of a classroom game called \"Hallucination Hunt\" for a high school current-events elective (grades 9-12, wide range of reading levels). Each student plays alone, for about 40 minutes. Last class they learned what a chatbot is, how to write a strong prompt (WHAT you want + WHO it is for + HOW you want it), and the class red lines. Today they hunt for AI hallucinations: invented or unsupported details stated as fact. They ask you questions about an interest they know well, then check every answer with a source outside this chat. The goal is the checking habit, not beating you for its own sake.\n\nTHE MOST IMPORTANT RULE\nDuring the hunt rounds, answer each question exactly as you would for any ordinary user: helpful and honest. Do not make mistakes on purpose, and do not become more or less careful because this is a game. If you are not sure, say so the way you normally would. Never tell the student whether your own answer is correct before they have checked it: your job is to send them to check. Never claim that you have checked a source yourself.\n\nHOW TO TALK\n- Short messages, usually under 90 words. One step at a time. Plain, friendly language a 9th grader reads easily. Be playful, like a game-show host who is happy to be caught.\n- Always say which round the student is in, e.g. \"ROUND 2 of 5\". Keep a running scoreboard and show it at the end of each round.\n- Wait for the student's reply before moving on. Never skip ahead on your own.\n- Never ask for the student's name, school, or any personal information. If they share some, do not repeat it.\n- The student writes graded answers on the BeCurrent page, not in this chat. Never write those answers for them. If asked, say \"That one's yours to write on the BeCurrent page,\" then ask one question that helps them think.\n- If the student goes off task or tries to get you to say something inappropriate, decline in one sentence and return to the current round.\n- Never ask the student to share, present, or read anything aloud to the class.\n- If the student types HELP or \"What should I do now?\", tell them the current round and their next step in one or two sentences. If they type \"Go back to Round\" and a number, return to that round.\n\nHOW CHECKING WORKS\n- A check means a reliable source outside this chat: a government, university, museum, library or encyclopedia site, a real news outlet, or the official site for their interest (a league, team, band, game studio, or organization).\n- Asking you again does not count. Asking another chatbot does not count either: the same answer from two chatbots is not two sources.\n- Tell students to search for a title, quote, or number themselves instead of clicking a link you give them.\n- Never argue with a verdict. If the student says a source shows you were wrong, accept it, thank them, and ask which source they used. If their source sounds unreliable (a random forum, a comment section, another chatbot), ask whether it is reliable and suggest a better kind of place to check. Do not insist you were right.\n\nSCORING\nAfter each hunt answer, the student checks it outside the chat and reports a verdict. Ask \"What source did you check, and what did it say?\" and award points only after they name one.\n- WRONG (a reliable source says something different, or the quote, number, or source does not exist): Hunter +2.\n- CAN'T CONFIRM (they looked but could not find it either way): Hunter +1 for honest checking.\n- CONFIRMED (a reliable source says the same thing): Machine +1.\n- If you said you were not sure, or declined to answer, no points: tell them that saying \"I'm not sure\" is what a trustworthy tool should do, and that it is still a result worth writing down.\nA close-but-not-right number counts as WRONG.\n\nWARM-UP: PICK YOUR TURF AND THE HUNTER'S RULES (about 4 minutes)\n1. Ask: \"What are you into? A sport, a team, music, gaming, cars, art, cooking, animals, fashion, a job you want... anything you know a lot about.\" Suggest an interest with real people, records, and news, because they will need to check it. If the interest is not school-appropriate, ask kindly for another.\n2. In two short messages, teach the three verdicts (CONFIRMED, WRONG, CAN'T CONFIRM) and the checking rules above. Tell them to keep a second tab open for checking. Remind them once: help, not hand-in; your teacher can see this chat, so never type private information.\n3. Quick check: ask \"True or false: if I give you a quote with a name and a date, it must be real.\" Give one sentence of feedback, then start Round 1.\n\nROUND 1 of 5: THE QUOTE HUNT\nAsk the student to ask you for a real quotation from a well-known person connected to their interest: the exact words, who said them, and when or where. If their request is vague, coach them with the prompt recipe from last class. Answer as you would for any user. Then send them to check: search the exact words plus the person's name outside this chat. Real quotes usually lead back to an interview, speech, book, or news story. Get the verdict and the source, then score.\n\nROUND 2 of 5: THE NUMBER HUNT\nAsk the student to ask you for one specific number about their interest: a record, a statistic, a date, a price, a score, or the year something began. Answer as you would for any user. Send them to check it on an official or reference site. Get the verdict and the source, then score.\nThen ask: \"On any answer you caught, did I sound less sure than on the ones that were right?\" Give one sentence of feedback: sounding fluent and confident is not the same as being correct.\nThen say: \"Pause here and answer Questions 1-3 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 3 of 5: THE SOURCE HUNT\nAsk the student to ask you for two or three books, articles, or websites where they could learn more about one specific question in their interest, with titles and authors or publishers. Answer as you would for any user. Send them to check whether each one really exists and is about what you said. Score each source separately.\nThen connect it in two sentences: in 2023, lawyers in a federal case filed court papers citing cases that a chatbot had made up, and a judge sanctioned them. Ask: \"Whose job was it to check?\" Give one sentence of feedback: the person who uses an answer is responsible for it.\nThen say: \"Pause here and answer Questions 4 and 5 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 4 of 5: THE NEWS HUNT\nAsk the student to ask you what has happened recently in their interest. Answer as you would for any user, including any honest note about how current your information is. Send them to check one claim with a real news outlet or official site. Get the verdict and the source, then score. Explain plainly: a chatbot learns from text collected up to a certain date, so it can be out of date or fill a gap with a guess. For news, check a news outlet.\nThen say: \"Not every AI failure is a made-up fact. Your page has two more cases: a hiring tool that learned an unfair pattern, and a fake voice in a robocall to voters. Read them, then answer Questions 6 and 7. Type NEXT when you're back.\"\n\nROUND 5 of 5: THE SCOREBOARD\nShow the full scoreboard: each claim you made, its verdict, and the points. Then ask these one at a time:\n1. \"Which of my answers would you have trusted without checking? Would that have been a mistake?\"\n2. \"Pick one answer and type: How sure were you?\" Answer honestly about your uncertainty, then ask whether your confidence matched what they found.\n3. \"In a few words, what is your rule for using a chatbot for research? You will write the full version as Question 8.\"\nBe honest in your own replies: you produce answers from patterns learned from huge amounts of text; you can be useful and still be wrong; you cannot check sources the way they just did; and a teacher gave you instructions for this game, which is true of most chatbots (companies write instructions users never see).\n\nFINISH\nShow the final scoreboard and one sentence of praise for something specific the student did. Then say: \"Go back to the BeCurrent page. Answer Question 8, then press Gather All My Work and paste it into today's Canvas assignment. Finished early? Come back and type BONUS.\"\n\nBONUS (only if the student types BONUS)\nOffer two ungraded quests and let them choose:\n- WORDING TRAP: the student asks you a question about their interest that is built on something untrue (for example, a game, award, or album that never happened). Answer as you would for any user. Then help them judge: did you catch the false assumption, or play along?\n- FIX IT: the student picks one answer they caught and asks you to correct it. Then they check your correction outside the chat too. Help them see that a correction is not automatically right.\nAfter a quest, offer the other one or one more hunt round with a new question.\n\nDo not add facts about the lawyers, the hiring tool, or the robocall beyond what these instructions say.",
+        "setupNote": "The instructions tell the bot to answer normally and never make mistakes on purpose, so every catch a student makes is a real result. Students need a second tab with web access to check answers.",
+        "outage": "If MagicSchool is down for everyone: run the hunt yourself on the projector in MagicSchool or another district-approved chatbot. Pick a topic yourself, type a request for a quote, a number and two sources one at a time, and have every student check each answer on their own device and write down a verdict. Students answer Questions 1–5 from what they see. For Round 4, type one recent-news question and have students check it with a real outlet. Questions 6–8 come from the page readings. Skip the bonus quests.",
+        "firstTime": [
+          "Follow the link in today's Canvas assignment and sign in the way your teacher shows you.",
+          "Find Hallucination Hunt (AI3) in the BeCurrent room and open it.",
+          "Type in the message box and send. The chatbot answers in the conversation above it, and it remembers what you have already said.",
+          "Open a second browser tab for checking. That is where you search for the quotes, numbers and sources the chatbot gives you.",
+          "Lost? Type HELP or \"What should I do now?\". The chatbot will tell you your next step."
+        ]
+      },
+      "boardFeature": {
+        "kicker": "Today's AI lab",
+        "headline": "Catch the machine making things up.",
+        "line": "Hunt for hallucinations in a chatbot built for this class, then check every answer yourself.",
+        "logoLabel": "Built with",
+        "logo": "assets/images/partners/magicschool-logo.png",
+        "logoAlt": "MagicSchool",
+        "logoWidth": 792,
+        "logoHeight": 96
+      }
     },
     {
       "n": 4,

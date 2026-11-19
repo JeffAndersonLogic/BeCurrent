@@ -255,7 +255,7 @@ function renderAiPlan(unit){
       "**Success criteria**",...t.successCriteria.map(x=>"- "+p(x.criteria)),"",
       "**Chapters**",...t.chapters.map((c,i)=>"- "+(i+1)+". "+p(c.title)+": "+p(c.activity)),"",
       "**Eight answer prompts**",...t.questions.map((q,i)=>(i+1)+". "+p(q.text)+"\n   - START HERE: "+p(q.startHere)+"\n   - PUSH FURTHER: "+p(q.pushFurther)),"",
-      "**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.","");
+      ...(t.chatbot?["**MagicSchool:** "+p(t.chatbot.name)+", in the BeCurrent room linked from Canvas. The chat is not collected.",""]:[]),"**Submission:** eight short responses"+(t.sort?" plus practice classification":"")+", copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.","");
   }
   o.push("## Assessment and privacy","",
     "Canvas AI Unit Exam: December 8, 25 questions: AI2 (6), AI3 (6), AI4 (6), AI5 (7). AI1 is the documentary and AI6 the review session. Questions and answer keys belong in Canvas only.","",

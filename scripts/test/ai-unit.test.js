@@ -87,4 +87,10 @@ assert.match(news.lead.url,/^https:\/\/(www\.)?(apnews\.com|npr\.org|pbs\.org|cb
 assert.strictEqual(future.find(d=>d.date==='2026-11-19').showLead,true,'Nov19 AI2 board shows the news slide');
 assert.doesNotMatch(JSON.stringify(future),/CE - /);
 assert.match(pages['finals/study-guide.html'],/traditional final exam on Wednesday, December 16/i);
+// AI3 runs as the MagicSchool Hallucination Hunt: no practice sort, setup copy for the teacher.
+const ai3=unit.topics[1];
+assert(ai3.chatbot&&!ai3.sort&&!ai3.clip,'AI3 is the MagicSchool hunt with no sort or clip');
+assert.match(pages['ai/block-03.html'],/Hallucination Hunt \(AI3\)/);
+assert.doesNotMatch(pages['ai/block-03.html'],/data-sort=/);
+assert.match(pages['teacher/ai-topic-03-os.html'],/MagicSchool chatbot setup/);
 console.log('PASS: AI1 full NOVA on Nov 17, CNN10/no homework, four renumbered Canvas investigations, AI6 review, Dec 8 exam and generated pages.');

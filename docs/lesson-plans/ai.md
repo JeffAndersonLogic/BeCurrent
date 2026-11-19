@@ -85,58 +85,62 @@ Learn what AI is, how to prompt it, and where the red lines are, then take on a 
    - START HERE: Use your score, a Round 3 answer, or the source you checked.
    - PUSH FURTHER: Describe one ability the 'guesser' description leaves out.
 
-**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
+**MagicSchool:** Can You Outsmart the Machine? (AI2), in the BeCurrent room linked from Canvas. The chat is not collected.
+
+**Submission:** eight short responses, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 
 ### AI3 — When AI Gets it Wrong (2026-11-23)
 
 **Skill:** Sourcing and Corroboration. **Question:** Who should check a convincing answer?.
 
-Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.
+Hunt for AI hallucinations in a MagicSchool chatbot, built around an interest you choose. Ask it for a quote, a number, sources and recent news, check every answer outside the chat, and compare what you find with three real cases: invented court citations, a biased hiring tool and a fake political robocall.
 
 **Learning targets**
-- I can identify the source of a claim.
-- I can test an AI-generated claim against independent evidence.
-- I can distinguish model error, bias, and deliberate deception.
+- I can find a reliable source outside a chatbot and use it to check an AI claim.
+- I can decide whether an AI claim is confirmed, wrong, or cannot be confirmed.
+- I can tell a hallucination apart from bias and from a deliberate fake.
 
 **Success criteria**
-- I can name a real reference and report its finding.
-- I can document the result of checking one claim.
-- I can explain why three AI failures have different causes.
+- I can name the outside source I used and say what it showed.
+- I can give a verdict on at least three chatbot answers about my interest and back each one with a source.
+- I can explain why the fake court cases, the hiring tool and the fake robocall are three different kinds of failure.
 
 **Chapters**
-- 1. The confident answer problem: Review the same learning question from AI1: What made an answer sound trustworthy?
-- 2. The lawyers who failed to verify: Look at the case source: what were the attorneys responsible for checking?
-- 3. Bias is a different failure: Where might unfairness enter: examples, design, or human use?
-- 4. The fake voice that reached voters: Why could a fake voice undermine confidence even after it is uncovered?
-- 5. Your three-step verification habit: Complete an evidence check using an original source linked below.
+- 1. Before you open MagicSchool: Sounding sure is not being right: Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Hallucination Hunt, and type READY. Keep this page and a second tab for checking open beside the chat.
+- 2. Rounds 1 and 2: The quote hunt and the number hunt: Play Rounds 1 and 2. Check each answer outside the chat and give it a verdict. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat.
+- 3. Round 3: The source hunt, and the lawyers who did not check: Play Round 3 and check every source outside the chat. When the chatbot tells you to pause, answer Questions 4 and 5 here, then type NEXT.
+- 4. Round 4: The news hunt, and two failures that are not hallucinations: Play Round 4 and check one news claim with a real outlet. Read about the hiring tool and the fake robocall. When the chatbot tells you to pause, answer Questions 6 and 7, then type NEXT.
+- 5. Round 5 and checkpoint: The scoreboard and your rule: Finish Round 5, answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas. Then try a bonus quest.
 
 **Eight answer prompts**
-1. Define an AI hallucination in everyday words.
-   - START HERE: Think: invented or unsupported fact.
-   - PUSH FURTHER: How is it different from uncertainty?
-2. Why does plausible language not guarantee a factual answer?
-   - START HERE: Connect AI1 to the lawyer example.
-   - PUSH FURTHER: What independent record is decisive?
-3. In the invented-cases incident, what should the lawyers have done?
-   - START HERE: Name a verification step.
-   - PUSH FURTHER: Who remains accountable when AI is used?
-4. Choose one claim in today's evidence. What source supports or challenges it?
-   - START HERE: Name the source and finding.
-   - PUSH FURTHER: What remains unconfirmed?
-5. How can training examples produce unfair outcomes?
-   - START HERE: Use the experimental hiring system.
-   - PUSH FURTHER: Consider data and human design choices.
-6. Why was the fake Biden robocall dangerous even though it was discovered?
-   - START HERE: Think about voters' access to accurate information.
-   - PUSH FURTHER: Can a correction reach everyone who heard the fake?
-7. Why can a government fine and a criminal acquittal coexist?
-   - START HERE: Different proceedings ask different questions.
-   - PUSH FURTHER: What does each outcome establish and not establish?
-8. CHECKPOINT: Write a three-step rule for checking an AI claim.
-   - START HERE: Claim -> independent source -> judgment.
-   - PUSH FURTHER: What would you do if independent sources disagree?
+1. Round 1: What quote did the chatbot give you, and what was your verdict: CONFIRMED, WRONG, or CAN'T CONFIRM? Name the source you checked.
+   - START HERE: Write the quote, the person it named, your verdict, and where you looked.
+   - PUSH FURTHER: If you found the quote, did the chatbot get the person, the date and the exact words right?
+2. Round 2: What number did the chatbot give you, and what did you find when you checked it outside the chat?
+   - START HERE: Write its number, the number your source gave, and the source.
+   - PUSH FURTHER: Why does a number that is close but not right still count as wrong?
+3. Did the chatbot sound any less sure on the answers that turned out wrong or could not be confirmed? What does that tell you?
+   - START HERE: Compare how it worded one answer you confirmed and one you caught or could not confirm.
+   - PUSH FURTHER: Connect this to AI2: why would a system that predicts likely words sound confident either way?
+4. Round 3: Did the sources the chatbot suggested really exist and say what it claimed? How did you check?
+   - START HERE: For each source, write: real or not found, and where you searched.
+   - PUSH FURTHER: Why is a made-up source with a real-sounding title more dangerous than an obviously wrong answer?
+5. In 2023, lawyers filed court cases that a chatbot made up. What should they have done, and who was responsible?
+   - START HERE: Name one checking step, like your Round 3 search.
+   - PUSH FURTHER: Does using AI change who is accountable for the work?
+6. Round 4: What did the chatbot say about recent news in your interest, and what did a real news outlet say? Why might a chatbot be behind on the news?
+   - START HERE: Name the outlet and one thing it reported.
+   - PUSH FURTHER: Did the chatbot warn you its information might be out of date?
+7. The Amazon hiring tool and the fake Biden robocall were not hallucinations. Pick one and explain what kind of failure it was instead.
+   - START HERE: Use the word bias or the word deliberate.
+   - PUSH FURTHER: Could checking facts, like you did today, have caught it? Why or why not?
+8. CHECKPOINT: Write your three-step rule for checking an AI claim. Then use one result from your hunt to show why the rule matters.
+   - START HERE: Claim, then outside source, then verdict. Add your best catch or your best confirm.
+   - PUSH FURTHER: What would you do if two reliable sources disagree?
 
-**Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
+**MagicSchool:** Hallucination Hunt (AI3), in the BeCurrent room linked from Canvas. The chat is not collected.
+
+**Submission:** eight short responses, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 
 ### AI4 — What AI Changes (2026-11-30)
 

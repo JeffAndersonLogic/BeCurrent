@@ -1359,40 +1359,42 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "Sounding sure is not being right",
       "learningTargets": [
         {
-          "text": "I can identify the source of a claim.",
+          "text": "I can find a reliable source outside a chatbot and use it to check an AI claim.",
           "label": "Sourcing"
         },
         {
-          "text": "I can test an AI-generated claim against independent evidence.",
+          "text": "I can decide whether an AI claim is confirmed, wrong, or cannot be confirmed.",
           "label": "Corroboration"
         },
         {
-          "text": "I can distinguish model error, bias, and deliberate deception.",
+          "text": "I can tell a hallucination apart from bias and from a deliberate fake.",
           "label": "Distinction"
         }
       ],
       "successCriteria": [
         {
-          "text": "I can name a real reference and report its finding.",
+          "text": "I can name the outside source I used and say what it showed.",
           "label": "Sourcing"
         },
         {
-          "text": "I can document the result of checking one claim.",
+          "text": "I can give a verdict on at least three chatbot answers about my interest and back each one with a source.",
           "label": "Corroboration"
         },
         {
-          "text": "I can explain why three AI failures have different causes.",
+          "text": "I can explain why the fake court cases, the hiring tool and the fake robocall are three different kinds of failure.",
           "label": "Distinction"
         }
       ],
       "homework": "Finish and submit AI3 - When AI Gets it Wrong in Canvas.",
-      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "note": "Hunt for AI hallucinations in a MagicSchool chatbot, built around an interest you choose. Ask it for a quote, a number, sources and recent news, check every answer outside the chat, and compare what you find with three real cases: invented court citations, a biased hiring tool and a fake political robocall.",
       "doNow": "Who should check a convincing answer?",
       "agenda": [
-        "Open AI3 - When AI Gets it Wrong and follow the five chapters in order.",
-        "Read the background and complete the practice sort.",
-        "Answer all eight private questions, then Gather All My Work.",
-        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "Listen to the opener: the lawyers who trusted a chatbot.",
+        "Open AI3 - When AI Gets it Wrong beside the BeCurrent MagicSchool room linked in Canvas, with a second tab open for checking.",
+        "Play Hallucination Hunt on your own, Rounds 1 to 5, built around an interest you choose: ask for a quote, a number, sources and recent news, and check every answer outside the chat.",
+        "Read the three real cases on the page: invented court cases, a biased hiring tool and a fake robocall.",
+        "Answer all eight private questions, then Gather All My Work and submit in Canvas. If you run out of time, finish before next class.",
+        "Finished early: type BONUS in the chat for a bonus quest.",
         "After lunch: CNN 10 and the News Log."
       ]
     },
