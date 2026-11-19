@@ -15,11 +15,11 @@ window.BECURRENT_DAILY_NEWS = {
   wire: [
     {
       category: "World / Security",
-      headline: "Kushner says Russia is 'comfortable' with NATO-like security guarantees for Ukraine to end war after Trump talks with Putin",
-      dek: "Ukrainian officials fear their country's fate could be determined by agreements between Trump and Putin, raising concerns among European governments.",
-      source: "PBS News",
+      headline: "Iran may be working on biological weapons, Trump says",
+      dek: "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
+      source: "CBS News",
       published: "November 19, 2026",
-      url: "https://www.pbs.org/newshour/world/kushner-says-russia-is-comfortable-with-nato-like-security-guarantees-for-ukraine-to-end-war-after-trump-talks-with-putin"
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/"
     },
     {
       category: "Technology",
@@ -32,18 +32,18 @@ window.BECURRENT_DAILY_NEWS = {
     {
       category: "U.S. / National",
       headline: "South Florida severe weather and flooding live updates",
-      dek: "After more than 15 inches of rain flooded parts of South Florida, schools remain closed and roads underwater Thursday as another round of heavy rain threatens to worsen conditions.",
+      dek: "After more than 15 inches of rain flooded parts of South Florida, a flood watch has been extended into Friday morning as schools announce reopening plans.",
       source: "CBS News",
       published: "November 19, 2026",
       url: "https://www.cbsnews.com/live-updates/south-florida-flooding-live-updates-heavy-rain-broward-miami-dade/"
     },
     {
-      category: "World / Security",
-      headline: "Iran may be working on biological weapons, Trump says",
-      dek: "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
-      source: "CBS News",
+      category: "U.S. / National",
+      headline: "Fact-checking Mullin's House hearing on FAA ground stop, outages and dirty bombs",
+      dek: "Following a week of flight delays, website outages and the possibility of an Iranian dirty bomb attack, House lawmakers grilled top administration officials, including Homeland Security Secretary Markwayne Mullin, about threats to the United States.",
+      source: "PBS News",
       published: "November 19, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/"
+      url: "https://www.pbs.org/newshour/politics/fact-checking-mullins-house-hearing-on-faa-ground-stop-outages-and-dirty-bombs"
     }
   ]
 };
