@@ -1,46 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-17",
+  reviewed: "2026-11-19",
   lead: {
-    category: "Technology / AI",
-    headline: "California sues OpenAI over alleged AI safety failures",
-    dek: "California's attorney general alleges inadequate safeguards around advanced AI testing after a system accessed another company's servers. OpenAI says it has strengthened security controls and disputes the lawsuit's characterization. The allegations have not been decided in court.",
-    source: "Associated Press",
-    published: "November 16, 2026",
-    url: "https://apnews.com/article/1dd7be56134b4f09fb2fb974803edc69"
+    category: "World / International",
+    headline: "Trump, Xi and Putin meet as global alliances hang in the balance",
+    dek: "President Trump, China's Xi Jinping and Russia's Vladimir Putin have gathered in Shenzhen, China, for a historic trilateral meeting, with Ukraine, Iran and nuclear disarmament on the agenda.",
+    source: "NPR",
+    published: "November 19, 2026",
+    url: "https://www.npr.org/2026/11/18/nx-s1-6040432/trump-xi-and-putin-shenzhen-china-russia-usa",
+    image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4147x2333+0+0/resize/1400/quality/85/format/webp/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2F42%2F55%2Fab53a66d41cea788e3772c0daf20%2Fap26323327946792.jpg",
+    imageCredit: "Image: NPR",
+    imageCreditUrl: "https://www.npr.org/2026/11/18/nx-s1-6040432/trump-xi-and-putin-shenzhen-china-russia-usa"
   },
   wire: [
     {
+      category: "World / International",
+      headline: "Top U.N. court rules Myanmar committed genocide against the Rohingya",
+      dek: "The International Court of Justice found that Myanmar security forces \"acted with genocidal intent\" against the Rohingya during the 2017 military operations in the northern Rakhine State.",
+      source: "NPR",
+      published: "November 19, 2026",
+      url: "https://www.npr.org/2026/11/19/g-s1-154340/un-court-myanmar-genocide-rohingya"
+    },
+    {
       category: "World / Security",
-      headline: "Iran rules out nuclear site inspections until war ends",
-      dek: "Iran says it will not let U.N. inspectors return to assess damaged nuclear sites until the war with the U.S. is",
-      source: "CBS News",
-      published: "November 16, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-oil-strait-of-hormuz/"
-    },
-    {
-      category: "Economy",
-      headline: "Major U.S. banks report widespread service outages",
-      dek: "Customers at Bank of America, JPMorgan Chase and other major financial institutions are reporting difficulty accessing their accounts.",
-      source: "CBS News",
-      published: "November 16, 2026",
-      url: "https://www.cbsnews.com/news/banks-online-service-outages-jpmorgan-chase-bank-of-america-wells-fargo/"
-    },
-    {
-      category: "U.S. / National",
-      headline: "WATCH: 'You never notice broken windows, obviously,' Trump tells Black reporter",
-      dek: "President Donald Trump berated NBC News White House correspondent Yamiche Alcindor on Monday after she asked him to respond to critics who say he was too focused on construction projects in the nation’s capital instead of issues with the country’s airline systems, which came to a halt Friday in a ra",
+      headline: "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain",
+      dek: "Iran said that its recent attacks — including those on other U.S. facilities in Bahrain on Sunday and Friday — were in response to U.S. drone surveillance operations and an attack on Iranian communications towers.",
       source: "PBS News",
-      published: "November 16, 2026",
-      url: "https://www.pbs.org/newshour/politics/watch-you-never-notice-broken-windows-obviously-trump-tells-black-reporter"
+      published: "November 18, 2026",
+      url: "https://www.pbs.org/newshour/world/iran-widens-gulf-attacks-by-targeting-u-s-air-base-in-kuwait-and-sites-in-bahrain"
     },
     {
       category: "U.S. / National",
-      headline: "Tennessee names new corrections chief after botched executions",
-      dek: "Josh Smith has been appointed to lead the Department of Corrections in Tennessee following the botched execution of Christa Pike last month.",
+      headline: "South Florida severe weather and flooding live updates",
+      dek: "After more than 15 inches of rain flooded parts of South Florida, schools remain closed and roads underwater Thursday as another round of heavy rain threatens to worsen conditions.",
       source: "CBS News",
-      published: "November 16, 2026",
-      url: "https://www.cbsnews.com/news/josh-smith-tennessee-corrections-chief-executions/"
+      published: "November 19, 2026",
+      url: "https://www.cbsnews.com/live-updates/south-florida-flooding-live-updates-heavy-rain-broward-miami-dade/"
+    },
+    {
+      category: "Science / Environment",
+      headline: "Voyager 1 is now a light-day from Earth. Here's what to know about NASA's longest-running mission",
+      dek: "It's the little space probe that could: Nearly 50 years after it was launched, NASA's Voyager 1 on Wednesday became the first human-made object to travel one light-day — or 16 billion miles — away from Earth.",
+      source: "PBS News",
+      published: "November 18, 2026",
+      url: "https://www.pbs.org/newshour/science/voyager-1-is-now-a-light-day-from-earth-heres-what-to-know-about-nasas-longest-running-mission"
     }
   ]
 };

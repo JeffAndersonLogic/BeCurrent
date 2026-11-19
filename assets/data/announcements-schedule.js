@@ -648,7 +648,7 @@ window.BECURRENT_SCHEDULE={
       "date": "2026-11-19",
       "topicTitle": "AI2 - What Exactly AI Is",
       "homeAnnouncement": "Today: AI2 - What Exactly AI Is. Complete eight responses and submit the gathered record in Canvas.",
-      "showLead": false,
+      "showLead": true,
       "topic": "AI2",
       "note": "Learn what AI is, how to prompt it, and where the red lines are, then take on a MagicSchool chatbot in a five-round challenge, Can You Outsmart the Machine?, built around an interest you choose. Predict it, trap it with questions you write, check one answer outside the chatbot, and decide which answers deserve your trust.",
       "doNow": "How can a computer sound like it understands you?",

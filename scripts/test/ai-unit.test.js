@@ -80,11 +80,11 @@ assert.strictEqual(future.find(d=>d.date==='2026-11-17').showLead,true,'Nov17 NO
 const newsSrc=fs.readFileSync(path.join(ROOT,'assets/data/daily-news.js'),'utf8');
 const newsEnv={window:{}};vm.runInNewContext(newsSrc,newsEnv);
 const news=newsEnv.window.BECURRENT_DAILY_NEWS;
-assert.strictEqual(news.reviewed,'2026-11-17');
-assert.match(news.lead.headline,/California sues OpenAI over alleged AI safety failures/);
-assert.match(news.lead.dek,/alleges|allegations/);
-assert.match(news.lead.dek,/OpenAI says/);
-assert.match(news.lead.url,/^https:\/\/apnews\.com\/article\//);
+// The Lead changes with the news; check its shape, not one day's headline.
+assert(/^\d{4}-\d{2}-\d{2}$/.test(news.reviewed)&&news.reviewed>='2026-11-17','daily news reviewed date is current');
+assert(news.lead.headline&&news.lead.dek,'Lead has a headline and a summary');
+assert.match(news.lead.url,/^https:\/\/(www\.)?(apnews\.com|npr\.org|pbs\.org|cbsnews\.com)\//,'Lead comes from an approved outlet');
+assert.strictEqual(future.find(d=>d.date==='2026-11-19').showLead,true,'Nov19 AI2 board shows the news slide');
 assert.doesNotMatch(JSON.stringify(future),/CE - /);
 assert.match(pages['finals/study-guide.html'],/traditional final exam on Wednesday, December 16/i);
 console.log('PASS: AI1 full NOVA on Nov 17, CNN10/no homework, four renumbered Canvas investigations, AI6 review, Dec 8 exam and generated pages.');

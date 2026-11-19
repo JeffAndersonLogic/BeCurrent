@@ -73,7 +73,7 @@ ${sourceShelves}
 </main>
 <footer class="desk-footer"><div class="desk-footer-inner"><span><img src="../assets/images/brand/becurrent-wordmark-ink.svg" alt="BeCurrent" width="1786" height="266"> · The Desk</span><span>Know the Lead. Choose Your Pick. Decide what deserves attention. · <a href="../index.html">Back to Home</a></span></div></footer>
 </div>
-<script src="../assets/data/daily-news.js?v=20261117-ai-headline"></script>
+<script src="../assets/data/daily-news.js?v=20261119-news"></script>
 <script>window.BECURRENT_DESK_CONFIG=${cfgJson};</script>
 <!-- Desk capture contract: var PREFIX = "becurrent-desk-"; var TODAY = dayKeyOf(new Date()); var ANCHOR_MONDAY = window.BECURRENT_DESK_CONFIG.anchorMonday; function cycleStart() { return ANCHOR_MONDAY; } function daysBetweenUTC(a, b) { return Date.UTC(a) - Date.UTC(b); } -->
 <script src="../assets/js/desk-confidence-contract.js"></script>

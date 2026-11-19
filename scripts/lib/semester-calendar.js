@@ -21,7 +21,7 @@ const nova={title:'A.I. Revolution | Full Documentary | NOVA | PBS',source:'NOVA
 function displayTitle(event){return event.code==='AIOPEN'?'Video - 60 Minutes Interview with President Trump':event.title.replace(/^CE\s*-\s*/, '');}
 function boardDays(unit){return events.map(e=>{
  const title=displayTitle(e);
- const day={date:e.date,topicTitle:title,homeAnnouncement:'Today: '+title+'. ',showLead:e.code==='AI1',...(e.kind==='video'?{unitTitle:'',subtitle:''}:{})};
+ const day={date:e.date,topicTitle:title,homeAnnouncement:'Today: '+title+'. ',showLead:e.code==='AI1'||e.code==='AI2',...(e.kind==='video'?{unitTitle:'',subtitle:''}:{})};
  if(e.code&&e.kind!=='video')day.topic=e.code;
  if(e.kind==='video'){
   const v=e.code==='AI1'?nova:video;
