@@ -73,9 +73,15 @@ const calendar=require('../lib/semester-calendar');
   await page.goto(root+'/announcements.html?date=2026-11-17');
   assert.strictEqual(await page.textContent('.title-topic'),'AI1 - Intro to AI (Nova Video)');
   assert.strictEqual(await page.locator('.lead-slide').count(),1,'NOVA board must include an actual lead headline slide');
-  assert.match(await page.textContent('.lead-headline'),/California sues OpenAI over alleged AI safety failures/);
-  assert.match(await page.textContent('.lead-dek'),/OpenAI says/);
-  assert.strictEqual(await page.locator('.lead-link').getAttribute('href'),'https://apnews.com/article/1dd7be56134b4f09fb2fb974803edc69');
+  // The Lead changes with the news: the slide must show whatever daily-news.js currently carries.
+  const newsEnv={window:{}};require('vm').runInNewContext(require('fs').readFileSync(require('path').join(__dirname,'../../assets/data/daily-news.js'),'utf8'),newsEnv);
+  const lead=newsEnv.window.BECURRENT_DAILY_NEWS.lead;
+  assert.strictEqual((await page.textContent('.lead-headline')).trim(),lead.headline);
+  assert((await page.textContent('.lead-dek')).trim().length>0,'lead slide carries a summary');
+  assert.strictEqual(await page.locator('.lead-link').getAttribute('href'),lead.url);
+  await page.goto(root+'/announcements.html?date=2026-11-19');
+  assert.strictEqual(await page.locator('.lead-slide').count(),1,'Nov 19 AI2 board shows the news slide');
+  await page.goto(root+'/announcements.html?date=2026-11-17');
   assert.doesNotMatch(await page.locator('#stage').innerText(),/CE - |60 Minutes Interview with President Trump/);
   assert.strictEqual(await page.locator('.desk-slide-v2').count(),0,'no Desk submission on film day');
   assert((await page.locator('a[href*="-sB12gk9ESA"]').count())>=1,'board links NOVA');
