@@ -2,32 +2,32 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-19",
   lead: {
-    category: "World / International",
-    headline: "Trump, Xi and Putin meet as global alliances hang in the balance",
-    dek: "President Trump, China's Xi Jinping and Russia's Vladimir Putin have gathered in Shenzhen, China, for a historic trilateral meeting, with Ukraine, Iran and nuclear disarmament on the agenda.",
-    source: "NPR",
-    published: "November 19, 2026",
-    url: "https://www.npr.org/2026/11/18/nx-s1-6040432/trump-xi-and-putin-shenzhen-china-russia-usa",
-    image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4147x2333+0+0/resize/1400/quality/85/format/webp/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2F42%2F55%2Fab53a66d41cea788e3772c0daf20%2Fap26323327946792.jpg",
-    imageCredit: "Image: NPR",
-    imageCreditUrl: "https://www.npr.org/2026/11/18/nx-s1-6040432/trump-xi-and-putin-shenzhen-china-russia-usa"
+    category: "U.S. / Democracy",
+    headline: "Ex-Nvidia CEO agrees to testify to Congress amid affair probe",
+    dek: "The former Nvidia chief will appear for public and closed-door hearings after Republicans threatened to subpoena him.",
+    source: "CBS News",
+    published: "November 17, 2026",
+    url: "https://www.cbsnews.com/news/house-republicans-nvidia-jensen-huang-testimony/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/14/7a9fc865-d93b-47c3-8b6b-21ff6af51b4d/thumbnail/1200x630g2/7cb8e3ed6a93ad9370418bb7cdfdce6a/gettyimages-2297228289.jpg",
+    imageCredit: "Image: CBS News",
+    imageCreditUrl: "https://www.cbsnews.com/news/house-republicans-nvidia-jensen-huang-testimony/"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "Top U.N. court rules Myanmar committed genocide against the Rohingya",
-      dek: "The International Court of Justice found that Myanmar security forces \"acted with genocidal intent\" against the Rohingya during the 2017 military operations in the northern Rakhine State.",
-      source: "NPR",
+      category: "World / Security",
+      headline: "Kushner says Russia is 'comfortable' with NATO-like security guarantees for Ukraine to end war after Trump talks with Putin",
+      dek: "Ukrainian officials fear their country's fate could be determined by agreements between Trump and Putin, raising concerns among European governments.",
+      source: "PBS News",
       published: "November 19, 2026",
-      url: "https://www.npr.org/2026/11/19/g-s1-154340/un-court-myanmar-genocide-rohingya"
+      url: "https://www.pbs.org/newshour/world/kushner-says-russia-is-comfortable-with-nato-like-security-guarantees-for-ukraine-to-end-war-after-trump-talks-with-putin"
     },
     {
-      category: "World / Security",
-      headline: "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain",
-      dek: "Iran said that its recent attacks — including those on other U.S. facilities in Bahrain on Sunday and Friday — were in response to U.S. drone surveillance operations and an attack on Iranian communications towers.",
-      source: "PBS News",
-      published: "November 18, 2026",
-      url: "https://www.pbs.org/newshour/world/iran-widens-gulf-attacks-by-targeting-u-s-air-base-in-kuwait-and-sites-in-bahrain"
+      category: "Technology",
+      headline: "Anthropic raises more than $100B in IPO. And, Dems nominate Jeffries for House speaker",
+      dek: "Despite growing concern over a possible AI bubble, Anthropic had a record-breaking initial public offering. And, Hakeem Jeffries could become the first Black Speaker of the House.",
+      source: "NPR",
+      published: "November 19, 2026",
+      url: "https://www.npr.org/2026/11/19/g-s1-154344/up-first-newsletter-house-democrats-trump-xi-putin-anthropic"
     },
     {
       category: "U.S. / National",
@@ -38,12 +38,12 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.cbsnews.com/live-updates/south-florida-flooding-live-updates-heavy-rain-broward-miami-dade/"
     },
     {
-      category: "Science / Environment",
-      headline: "Voyager 1 is now a light-day from Earth. Here's what to know about NASA's longest-running mission",
-      dek: "It's the little space probe that could: Nearly 50 years after it was launched, NASA's Voyager 1 on Wednesday became the first human-made object to travel one light-day — or 16 billion miles — away from Earth.",
-      source: "PBS News",
-      published: "November 18, 2026",
-      url: "https://www.pbs.org/newshour/science/voyager-1-is-now-a-light-day-from-earth-heres-what-to-know-about-nasas-longest-running-mission"
+      category: "World / Security",
+      headline: "Iran may be working on biological weapons, Trump says",
+      dek: "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
+      source: "CBS News",
+      published: "November 19, 2026",
+      url: "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/"
     }
   ]
 };
