@@ -315,6 +315,36 @@ module.exports = {
         "When the bot sends you back, write on the BeCurrent page. The chat is not your submission; the Canvas paste is."
       ],
       "closingQuestion": "If AI can give you an answer that sounds completely believable, how do you know when to trust it?",
+      "wrapUp": {
+        "title": "Wrap-up",
+        "prompt": "Pick one question. Think it through, or jot your answer in your notes.",
+        "groups": [
+          {
+            "label": "Quick check",
+            "questions": [
+              "How often did you guess the machine's next word? What does that say about its answers?",
+              "Finish it: \"The chatbot is good at ___ but not at ___.\"",
+              "Which red line is easiest to break by accident?"
+            ]
+          },
+          {
+            "label": "Go deeper",
+            "questions": [
+              "Which answer sounded sure but shouldn't have? What would a careful answer sound like?",
+              "Why doesn't asking the chatbot again count as checking it?",
+              "Was the bot easier to catch on a topic you know well? What does that mean for topics you don't?",
+              "When is a good guess good enough, and when isn't it?"
+            ]
+          },
+          {
+            "label": "Next time: AI3",
+            "questions": [
+              "A chatbot is wrong and someone uses the answer anyway. Who is responsible?",
+              "What changes when someone uses AI to fool people on purpose?"
+            ]
+          }
+        ]
+      },
       "chatbot": {
         "name": "Can You Outsmart the Machine? (AI2)",
         "description": "Learn how to use AI well, then take it on in a five-round challenge built around what you are into: predict it, stump it, trap it, and decide when it deserves your trust.",
