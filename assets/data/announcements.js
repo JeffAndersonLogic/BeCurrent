@@ -1317,7 +1317,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
           "label": "Explanation"
         },
         {
-          "text": "I can tell when a tool likely uses AI and when the answer depends on its implementation.",
+          "text": "I can tell a checkable fact from an opinion and from a question built on a false assumption.",
           "label": "Classification"
         },
         {
@@ -1327,24 +1327,25 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "successCriteria": [
         {
-          "text": "I can use a familiar example to explain learned patterns.",
+          "text": "I can use my own prediction results to explain how a chatbot builds an answer.",
           "label": "Explanation"
         },
         {
-          "text": "I can classify everyday tools and explain one borderline case.",
+          "text": "I can label the chatbot's answers as fact, opinion, or false assumption, and check one fact outside the chatbot.",
           "label": "Classification"
         },
         {
-          "text": "I can support a claim about chatbots with a result from the experiment.",
+          "text": "I can support a claim about chatbots with a result from my own experiment.",
           "label": "Evidence"
         }
       ],
       "homework": "Finish and submit AI2 - What Exactly AI Is in Canvas.",
-      "note": "Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.",
+      "note": "Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Machine? Predict how it finishes sentences, test it with three tricky questions, check one answer outside the chatbot, and decide which of its answers deserve your trust.",
       "doNow": "How can a computer sound like it understands you?",
       "agenda": [
-        "Open AI2 - What Exactly AI Is and follow the five chapters in order.",
-        "Read the background and complete the practice sort.",
+        "Listen to the opener: how a chatbot builds an answer.",
+        "Open AI2 - What Exactly AI Is beside the BeCurrent MagicSchool room linked in Canvas.",
+        "Play Can You Outsmart the Machine? on your own, Rounds 1 to 4, answering the questions here whenever the chatbot sends you back.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."

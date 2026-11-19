@@ -40,50 +40,50 @@ These four investigations reuse the Midnight Ember chapters, practice sorts, bac
 
 **Skill:** Generalizing from Evidence. **Question:** How can a computer sound like it understands you?.
 
-Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.
+Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Machine? Predict how it finishes sentences, test it with three tricky questions, check one answer outside the chatbot, and decide which of its answers deserve your trust.
 
 **Learning targets**
 - I can explain patterns, training examples, and prediction in plain language.
-- I can tell when a tool likely uses AI and when the answer depends on its implementation.
+- I can tell a checkable fact from an opinion and from a question built on a false assumption.
 - I can explain why a convincing sentence might still be incorrect.
 
 **Success criteria**
-- I can use a familiar example to explain learned patterns.
-- I can classify everyday tools and explain one borderline case.
-- I can support a claim about chatbots with a result from the experiment.
+- I can use my own prediction results to explain how a chatbot builds an answer.
+- I can label the chatbot's answers as fact, opinion, or false assumption, and check one fact outside the chatbot.
+- I can support a claim about chatbots with a result from my own experiment.
 
 **Chapters**
-- 1. From the NOVA documentary to your own examples: Read the background, think about your own examples, and answer Question 1. Continue through the chapters in order.
-- 2. Be the Model: Predict the next word: Complete the five starters privately, then answer Questions 2 and 3.
-- 3. Patterns learned from examples: Try the eight-card AI/not-AI sort, read the feedback, and answer Questions 4 and 5.
-- 4. Chatbot or printed sample: Compare the replies: Compare either the chatbot or the printed sample to your predictions. Answer Questions 6 and 7. No live chatbot access is required.
-- 5. Checkpoint: When should we trust the machine?: Answer Question 8, review all answers, then Gather All My Work and submit to Canvas.
+- 1. Before you open MagicSchool: How a chatbot answers: Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Can You Outsmart the Machine?, and type READY. Keep this page open beside the chat.
+- 2. Rounds 1 and 2: Think like the machine, then meet your competition: Play Rounds 1 and 2. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat.
+- 3. Round 3: The confidence trap: Play Round 3. Check at least one answer with a source outside the chatbot. When the chatbot tells you to pause, answer Questions 4–6 here, then type NEXT.
+- 4. Round 4: You be the judge: Finish Round 4 in the chat, then answer Question 7 here.
+- 5. Checkpoint: When should we trust the machine?: Answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas before lunch.
 
 **Eight answer prompts**
-1. What is one difference between a learned pattern and a fixed rule?
-   - START HERE: Compare a spam filter with a basic calculator.
-   - PUSH FURTHER: Can one product combine both?
-2. Which sentence starter was easiest to predict? Why?
-   - START HERE: Use the paper exercise.
-   - PUSH FURTHER: Explain why many people might choose the same word.
-3. Which starter had no one correct answer? What makes it different?
-   - START HERE: Choose a personal-preference starter.
-   - PUSH FURTHER: Contrast a preference with a checkable fact.
-4. Choose one AI feature. What examples might it have learned from?
-   - START HERE: Start with videos, words, faces, or email.
-   - PUSH FURTHER: Which kinds of examples might be missing?
-5. Which technology could depend on its implementation? Explain.
-   - START HERE: Choose autocorrect or a different mixed system.
-   - PUSH FURTHER: Explain how a feature could change as technology improves.
-6. What happened when you compared a chatbot response or printed sample with your prediction?
-   - START HERE: Name a starter and the two completions.
-   - PUSH FURTHER: Did a plausible completion prove it was correct?
-7. Give one useful and one risky use of AI for schoolwork.
-   - START HERE: Think studying versus submitting unverified writing.
+1. What was your score out of 5 in Round 2? Which starter was easiest to predict, and why?
+   - START HERE: Give your score and name one starter you matched.
+   - PUSH FURTHER: Why might millions of people's writing make one word the likely next word?
+2. Which starter had one checkable answer, and which had no single correct answer? What makes them different?
+   - START HERE: Compare 'The capital of France is...' with 'The best movie ever is...'.
+   - PUSH FURTHER: Did the chatbot treat the opinion differently from the fact?
+3. Based on Rounds 1 and 2, what is the chatbot doing when it finishes a sentence?
+   - START HERE: Use the word 'pattern' in your answer.
+   - PUSH FURTHER: How is that different from a calculator following fixed rules?
+4. How did the chatbot answer the fact question in Round 3, and how did you check it outside the chatbot?
+   - START HERE: Name the source you used and what it said.
+   - PUSH FURTHER: Why does a source outside the chatbot count for more than asking the chatbot again?
+5. How did the chatbot handle the question about the greatest movie ever made?
+   - START HERE: Describe its answer: one movie, several, or 'it depends'?
+   - PUSH FURTHER: Why might a chatbot sound sure about something that is really an opinion?
+6. Which Round 3 question had a hidden problem? Did the chatbot catch it or play along?
+   - START HERE: Name the question and say what was wrong with it.
+   - PUSH FURTHER: What could happen if a chatbot played along with a false assumption?
+7. Based on today, give one useful and one risky use of AI for schoolwork.
+   - START HERE: Think studying versus submitting unchecked writing.
    - PUSH FURTHER: Who is responsible for checking the final work?
-8. CHECKPOINT: When is 'a very good guesser' a helpful description of a chatbot, and where does it fall short?
-   - START HERE: Use one example from today.
-   - PUSH FURTHER: Describe one ability the analogy leaves out.
+8. CHECKPOINT: Is 'a very good guesser' a fair description of the chatbot you tested? Use one result from your experiment where it fits and one where it falls short.
+   - START HERE: Use your score, a Round 3 answer, or the source you checked.
+   - PUSH FURTHER: Describe one ability the 'guesser' description leaves out.
 
 **Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 

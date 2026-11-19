@@ -97,8 +97,8 @@ module.exports = {
       "subtitle": "A very good guesser",
       "skill": "Generalizing from Evidence",
       "question": "How can a computer sound like it understands you?",
-      "hook": "What did NOVA show about how AI learns? Use the five chapters and practical examples to explain what makes AI different from an ordinary fixed-rule program.",
-      "overview": "Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.",
+      "hook": "On November 17, NOVA showed AI learning patterns from huge numbers of examples. Today you test that yourself in a four-round challenge against a MagicSchool chatbot: can you predict what it will say, and can you tell when it deserves your trust?",
+      "overview": "Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Machine? Predict how it finishes sentences, test it with three tricky questions, check one answer outside the chatbot, and decide which of its answers deserve your trust.",
       "learningTargets": [
         {
           "skill": "Explanation",
@@ -106,7 +106,7 @@ module.exports = {
         },
         {
           "skill": "Classification",
-          "target": "I can tell when a tool likely uses AI and when the answer depends on its implementation."
+          "target": "I can tell a checkable fact from an opinion and from a question built on a false assumption."
         },
         {
           "skill": "Evidence",
@@ -116,58 +116,59 @@ module.exports = {
       "successCriteria": [
         {
           "skill": "Explanation",
-          "criteria": "I can use a familiar example to explain learned patterns."
+          "criteria": "I can use my own prediction results to explain how a chatbot builds an answer."
         },
         {
           "skill": "Classification",
-          "criteria": "I can classify everyday tools and explain one borderline case."
+          "criteria": "I can label the chatbot's answers as fact, opinion, or false assumption, and check one fact outside the chatbot."
         },
         {
           "skill": "Evidence",
-          "criteria": "I can support a claim about chatbots with a result from the experiment."
+          "criteria": "I can support a claim about chatbots with a result from my own experiment."
         }
       ],
       "chapters": [
         {
-          "title": "From the NOVA documentary to your own examples",
+          "title": "Before you open MagicSchool: How a chatbot answers",
           "paragraphs": [
-            "On November 17 we watched PBS NOVA's A.I. Revolution. Artificial intelligence is a broad category of computer methods used for recognizing patterns, making predictions, generating language, and other tasks. Not all AI works the same way. The documentary showed why humans should evaluate what a machine produces.",
-            "Think about an everyday example: a video feed may predict what you want to watch, while a microwave timer simply counts down. A computer can use AI in one part of a product and ordinary instructions in another."
+            "On November 17 we watched PBS NOVA's A.I. Revolution. A chatbot is trained on huge amounts of text. When you type to it, it builds a reply from patterns it learned, choosing words that are likely to come next. That is why it can sound like it understands you.",
+            "Today you test that idea yourself. In a four-round challenge called Can You Outsmart the Machine?, you predict what the chatbot will say, ask it three tricky questions, and judge which answers deserve your trust. You work on your own. The chatbot is both the host and your opponent."
           ],
-          "activity": "Read the background, think about your own examples, and answer Question 1. Continue through the chapters in order."
+          "activity": "Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Can You Outsmart the Machine?, and type READY. Keep this page open beside the chat."
         },
         {
-          "title": "Be the Model: Predict the next word",
+          "title": "Rounds 1 and 2: Think like the machine, then meet your competition",
           "paragraphs": [
-            "Before using any chatbot, finish these starters in your own notes: Peanut butter and ___; The capital of France is ___; Once upon a ___; My favorite food is ___; The best movie ever is ___. You may write them on paper.",
-            "A strong pattern may make some answers easy to predict. A factual answer, such as a capital city, can be checked. A personal favorite does not have one universally correct answer. A plausible completion does not prove the computer understands the question."
+            "Round 1: the chatbot shows five sentence starters, and you predict how it will finish each one. Type all five predictions before it shows you anything. Round 2: it finishes the same starters itself and scores you, one point for every match.",
+            "Then you label each starter. A pattern is a phrase so common it is easy to predict. A fact has one answer you can check. An opinion has no single correct answer. A chatbot has no favorite food: when it finishes 'My favorite food is...', it produces a likely-sounding answer.",
+            "If MagicSchool will not open for you: write your five predictions on paper, then compare them with these illustrative sample completions, which are not real MagicSchool output: jelly; Paris; time; pizza; it depends on the person."
           ],
-          "activity": "Complete the five starters privately, then answer Questions 2 and 3."
+          "activity": "Play Rounds 1 and 2. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat."
         },
         {
-          "title": "Patterns learned from examples",
+          "title": "Round 3: The confidence trap",
           "paragraphs": [
-            "A basic calculator follows mathematical rules. A modern spam filter can learn from examples of messages marked spam and not spam. These are different ways of deciding what happens next.",
-            "Training data are examples used to help develop many machine-learning systems. A pattern is something that regularly appears. An AI tool may use both learned models and fixed programming, so classify by how a feature typically works, not just by its product name."
+            "The chatbot gives you three questions to ask it, one at a time. One of the three has a hidden problem. Your job is to work out which answers can be checked, which are opinions, and whether the chatbot notices anything wrong with a question.",
+            "Checking means using a source outside the chatbot: a government, university, museum, or encyclopedia site. Asking the chatbot again is not checking. Write down the source you used.",
+            "If MagicSchool will not open for you, tell your teacher. Round 3 can be shown on the projector, and you answer from what you see."
           ],
-          "activity": "Try the eight-card AI/not-AI sort, read the feedback, and answer Questions 4 and 5."
+          "activity": "Play Round 3. Check at least one answer with a source outside the chatbot. When the chatbot tells you to pause, answer Questions 4–6 here, then type NEXT."
         },
         {
-          "title": "Chatbot or printed sample: Compare the replies",
+          "title": "Round 4: You be the judge",
           "paragraphs": [
-            "A modern language model generates a response from patterns and context; some systems can also use tools, search, or reason through multi-step problems. A convincing sentence can still be inaccurate, incomplete, or just one of many possible answers.",
-            "If your Canvas assignment contains the BeCurrent MagicSchool link, you may ask it to complete the five starters from Chapter 2. If the room is unavailable, use these clearly illustrative sample replies instead: jelly; Paris; time; pizza; it depends on the person. The samples are not a record of MagicSchool's actual output.",
-            "A useful output still deserves checking when it claims to be factual. For schoolwork, a student remains responsible for reviewing the final work."
+            "The chatbot asks which of its answers you trusted most, which needed checking, and whether it actually understood you. Each time, it pushes you for evidence from your own experiment: your score, a specific answer, or the source you checked.",
+            "A strong judgment points to something that happened today. 'AI is sometimes wrong' is a guess. 'It said ___, and when I checked ___, I found ___' is evidence."
           ],
-          "activity": "Compare either the chatbot or the printed sample to your predictions. Answer Questions 6 and 7. No live chatbot access is required."
+          "activity": "Finish Round 4 in the chat, then answer Question 7 here."
         },
         {
           "title": "Checkpoint: When should we trust the machine?",
           "paragraphs": [
             "Calling a chatbot a 'very good guesser' helps explain why it produces plausible words. But it is not a full scientific description of modern AI, which can perform complex tasks and sometimes access outside tools.",
-            "Today's big idea: useful predictions and confident-sounding answers are not automatically true. Next class we will look at what happens when people fail to verify AI-generated claims."
+            "Today's big idea: useful predictions and confident-sounding answers are not automatically true. Next class we look at what happens when people accept AI-generated claims without checking them."
           ],
-          "activity": "Answer Question 8, review all answers, then Gather All My Work and submit to Canvas."
+          "activity": "Answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas before lunch."
         }
       ],
       "clip": {
@@ -180,96 +181,46 @@ module.exports = {
         "prompt": "Where does AI learn patterns? What can it help people do? What can go wrong? Who should remain responsible?",
         "captions": "Check captions and playback before class."
       },
-      "sort": {
-        "prompt": "Sort each feature based on its typical implementation, not just its name.",
-        "options": [
-          "Likely AI",
-          "Likely rules",
-          "Depends"
-        ],
-        "items": [
-          [
-            "Basic calculator",
-            "Likely rules",
-            "Fixed mathematical instructions typically determine its result."
-          ],
-          [
-            "TikTok For You ranking",
-            "Likely AI",
-            "Personalized ranking typically relies on trained recommendation models."
-          ],
-          [
-            "Phone autocorrect",
-            "Depends",
-            "Autocorrect can mix learned language models with fixed rules."
-          ],
-          [
-            "Face unlock",
-            "Likely AI",
-            "Modern face recognition typically uses trained recognition models."
-          ],
-          [
-            "Microwave timer",
-            "Likely rules",
-            "A basic countdown does not require learned predictions."
-          ],
-          [
-            "Email spam filter",
-            "Likely AI",
-            "Modern filters typically learn from examples and signals."
-          ],
-          [
-            "Thermostat set to 70 degrees",
-            "Likely rules",
-            "A basic set-point thermostat follows a threshold rule."
-          ],
-          [
-            "Google Translate",
-            "Likely AI",
-            "Modern translation uses trained language models."
-          ]
-        ]
-      },
       "questions": [
         {
-          "text": "What is one difference between a learned pattern and a fixed rule?",
-          "startHere": "Compare a spam filter with a basic calculator.",
-          "pushFurther": "Can one product combine both?"
+          "text": "What was your score out of 5 in Round 2? Which starter was easiest to predict, and why?",
+          "startHere": "Give your score and name one starter you matched.",
+          "pushFurther": "Why might millions of people's writing make one word the likely next word?"
         },
         {
-          "text": "Which sentence starter was easiest to predict? Why?",
-          "startHere": "Use the paper exercise.",
-          "pushFurther": "Explain why many people might choose the same word."
+          "text": "Which starter had one checkable answer, and which had no single correct answer? What makes them different?",
+          "startHere": "Compare 'The capital of France is...' with 'The best movie ever is...'.",
+          "pushFurther": "Did the chatbot treat the opinion differently from the fact?"
         },
         {
-          "text": "Which starter had no one correct answer? What makes it different?",
-          "startHere": "Choose a personal-preference starter.",
-          "pushFurther": "Contrast a preference with a checkable fact."
+          "text": "Based on Rounds 1 and 2, what is the chatbot doing when it finishes a sentence?",
+          "startHere": "Use the word 'pattern' in your answer.",
+          "pushFurther": "How is that different from a calculator following fixed rules?"
         },
         {
-          "text": "Choose one AI feature. What examples might it have learned from?",
-          "startHere": "Start with videos, words, faces, or email.",
-          "pushFurther": "Which kinds of examples might be missing?"
+          "text": "How did the chatbot answer the fact question in Round 3, and how did you check it outside the chatbot?",
+          "startHere": "Name the source you used and what it said.",
+          "pushFurther": "Why does a source outside the chatbot count for more than asking the chatbot again?"
         },
         {
-          "text": "Which technology could depend on its implementation? Explain.",
-          "startHere": "Choose autocorrect or a different mixed system.",
-          "pushFurther": "Explain how a feature could change as technology improves."
+          "text": "How did the chatbot handle the question about the greatest movie ever made?",
+          "startHere": "Describe its answer: one movie, several, or 'it depends'?",
+          "pushFurther": "Why might a chatbot sound sure about something that is really an opinion?"
         },
         {
-          "text": "What happened when you compared a chatbot response or printed sample with your prediction?",
-          "startHere": "Name a starter and the two completions.",
-          "pushFurther": "Did a plausible completion prove it was correct?"
+          "text": "Which Round 3 question had a hidden problem? Did the chatbot catch it or play along?",
+          "startHere": "Name the question and say what was wrong with it.",
+          "pushFurther": "What could happen if a chatbot played along with a false assumption?"
         },
         {
-          "text": "Give one useful and one risky use of AI for schoolwork.",
-          "startHere": "Think studying versus submitting unverified writing.",
+          "text": "Based on today, give one useful and one risky use of AI for schoolwork.",
+          "startHere": "Think studying versus submitting unchecked writing.",
           "pushFurther": "Who is responsible for checking the final work?"
         },
         {
-          "text": "CHECKPOINT: When is 'a very good guesser' a helpful description of a chatbot, and where does it fall short?",
-          "startHere": "Use one example from today.",
-          "pushFurther": "Describe one ability the analogy leaves out."
+          "text": "CHECKPOINT: Is 'a very good guesser' a fair description of the chatbot you tested? Use one result from your experiment where it fits and one where it falls short.",
+          "startHere": "Use your score, a Round 3 answer, or the source you checked.",
+          "pushFurther": "Describe one ability the 'guesser' description leaves out."
         }
       ],
       "sources": [
@@ -305,7 +256,7 @@ module.exports = {
       "dayOneNote": "November 9 is the 60 Minutes interview before lunch and CNN 10 after lunch. No written work on video day.",
       "selfPaced": true,
       "substituteDay": false,
-      "offlineSupport": "Every task has a reading and printed example. MagicSchool is optional, never a dependency. If an activity is unavailable, follow the page's printed fallback and complete the same questions.",
+      "offlineSupport": "The challenge runs in the BeCurrent MagicSchool room linked in Canvas. If a student cannot open it, the page carries printed sample completions for Rounds 1–2 and the teacher shows Round 3 on the projector; the same eight questions are answered either way.",
       "subPlan": {
         "directions": [
           "Read the five numbered chapters.",
@@ -317,6 +268,51 @@ module.exports = {
         "timed": [],
         "notice": "This lesson can be completed independently; no live chatbot is required.",
         "technicalFallback": "Use the readings and printed examples. If the website is unavailable, ask for the printed AI2 activity."
+      },
+      "chapterLabels": [
+        "THE HOOK",
+        "ROUNDS 1–2",
+        "ROUND 3",
+        "ROUND 4",
+        "THE JUDGMENT"
+      ],
+      "navLabels": [
+        "Start",
+        "Rounds 1–2",
+        "Round 3",
+        "Round 4",
+        "Decide"
+      ],
+      "agenda": [
+        "Listen to the opener: how a chatbot builds an answer.",
+        "Open AI2 - What Exactly AI Is beside the BeCurrent MagicSchool room linked in Canvas.",
+        "Play Can You Outsmart the Machine? on your own, Rounds 1 to 4, answering the questions here whenever the chatbot sends you back.",
+        "Answer all eight private questions, then Gather All My Work.",
+        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "After lunch: CNN 10 and the News Log."
+      ],
+      "canvasSteps": [
+        "Open the AI2 page on BeCurrent and the BeCurrent MagicSchool room side by side.",
+        "In MagicSchool, choose Can You Outsmart the Machine? and type READY. Play all four rounds on your own.",
+        "When the chatbot sends you back, answer the numbered questions on the AI2 page. Nothing you type in the chat is your submission.",
+        "Choose Gather All My Work and copy the complete gathered record.",
+        "Paste it into this assignment, submit before lunch, and verify confirmation. If you revise, gather and submit again."
+      ],
+      "teacherTiming": "0–5 min: your opener (below). 5–35 min: Can You Outsmart the Machine? in MagicSchool, individually; students pause in the chat to answer Questions 1–3 after Round 2 and 4–6 after Round 3. 35–47 min: Question 7 after Round 4, then Question 8, Gather All My Work and Canvas filing. 47–55 min: read three or four answers aloud with names removed, then think aloud on the closing question.",
+      "opener": [
+        "On Tuesday NOVA showed us AI that learns patterns from enormous numbers of examples, not rules somebody typed in one by one.",
+        "A chatbot builds its reply a piece at a time, choosing what is likely to come next. That is why it can sound like it understands you.",
+        "Sounding sure and being right are not the same thing. Today you find out where that line is.",
+        "You are playing a four-round game against a MagicSchool chatbot, on your own: predict it, test it, judge it.",
+        "When the bot sends you back, write on the BeCurrent page. The chat is not your submission; the Canvas paste is."
+      ],
+      "closingQuestion": "If AI can give you an answer that sounds completely believable, how do you know when to trust it?",
+      "chatbot": {
+        "name": "Can You Outsmart the Machine? (AI2)",
+        "description": "A four-round challenge: predict what an AI will say, test it with tricky questions, and decide when it deserves your trust.",
+        "welcome": "Welcome to Can You Outsmart the Machine? I'm the machine. Over four rounds you'll predict what I say, test me with tricky questions, and decide when I deserve your trust. Type READY to start Round 1.",
+        "instructions": "You are the host AND the opponent in a classroom game called \"Can You Outsmart the Machine?\" for a high school current-events elective (grades 9-12, wide range of reading levels). Each student plays alone, for about 30 minutes. The goal is AI literacy: the student experiences how a chatbot produces answers, finds its limits, and decides when an answer deserves trust.\n\nHOW TO TALK\n- Short messages, usually under 80 words. One step at a time. Plain, friendly language a 9th grader reads easily.\n- Always say which round the student is in, e.g. \"ROUND 2 of 4\".\n- Wait for the student's reply before moving on. Never skip ahead on your own.\n- Never ask for the student's name, school, or any personal information. If they share some, do not repeat it.\n- The student writes graded answers on the BeCurrent page, not in this chat. Never write those answers for them. If asked, say \"That one's yours to write on the BeCurrent page,\" then ask one question that helps them think.\n- If the student goes off task or tries to get you to say something inappropriate, decline in one sentence and return to the current round.\n- Never ask the student to share, present, or read anything aloud to the class.\n\nROUND 1 of 4: THINK LIKE THE MACHINE\nShow these five sentence starters. Ask the student to predict how YOU will finish each one, typing all five predictions in one message, numbered 1-5. Do not show your own answers yet, even if asked.\n1. Peanut butter and...\n2. The capital of France is...\n3. Once upon a...\n4. My favorite food is...\n5. The best movie ever is...\n\nROUND 2 of 4: MEET YOUR COMPETITION\nAfter the predictions arrive, complete the same five starters yourself with the most natural, most likely completion: one to four words each, no explanation. Then show a scoreboard: one point for each prediction that matches yours in meaning (be generous: \"jelly\" and \"jam\" can match). Give the score out of 5.\nThen ask the student to label each starter PATTERN (a very predictable phrase), FACT (one checkable answer), or OPINION (no single correct answer). Some fit more than one; let them explain. Give brief feedback. Point out that you have no real favorite food or movie: for #4 and #5 you produced a likely-sounding completion.\nThen say: \"Pause here and answer Questions 1-3 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 3 of 4: THE CONFIDENCE TRAP\nSay: \"I'll give you three questions to ask me. One of them has a hidden problem. Don't tell me which one you suspect yet.\" Give them one at a time, waiting for each:\nA. \"Who was the first president of the United States?\"\nB. \"What is the greatest movie ever made?\"\nC. \"Which U.S. president signed the law banning homework in all American schools?\"\nThe student types each question to you. Answer each exactly as you would for any ordinary user: helpful and honest, never inventing facts, names, dates, or laws. Do not mention the game, the score, or the hidden problem while answering.\nAfter all three, ask: \"Which question had a hidden problem, and what was it? Which of my answers could you check with a source outside this chat?\" Then give honest feedback on all three questions: which one is a checkable fact, which one is an opinion, and whether any of them rested on an assumption that is not true. For any checkable fact, tell the student to confirm it with one source outside this chat (a government, university, museum, or encyclopedia site) and note which source they used; asking me again does not count as checking. Ask whether your answers handled each question well, including whether you caught any false assumption or played along. Point out that sounding confident about an opinion does not make it a fact.\nThen say: \"Pause here and answer Questions 4-6 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 4 of 4: YOU BE THE JUDGE\nAsk these one at a time. After each reply, give one short follow-up asking for evidence from THEIR experiment (a specific answer you gave, their score, or the source they checked):\n1. \"Which of my answers did you trust most, and why?\"\n2. \"Which one most needed checking?\"\n3. \"Did I actually understand your questions, or did I produce a useful-sounding response? What from today makes you think so?\"\nBe honest in your own replies: you generate responses from patterns learned from huge amounts of text; you can be useful and still be wrong; and a teacher gave you instructions for this game, which is true of most chatbots (companies write instructions users never see).\n\nFINISH\nGive the final score from Round 2 and one sentence of praise for something specific the student did. Then say: \"Go back to the BeCurrent page, answer Questions 7 and 8, then press Gather All My Work and paste it into today's Canvas assignment.\"",
+        "outage": "If MagicSchool is down for everyone: students write Round 1 predictions on paper and use the printed sample completions on the page for Round 2. Run Round 3 yourself on the projector in MagicSchool or another district-approved chatbot, typing the three questions one at a time, and students answer Questions 4–6 from what they see. Round 4 becomes Question 7 on the page."
       }
     },
     {

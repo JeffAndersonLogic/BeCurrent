@@ -650,11 +650,12 @@ window.BECURRENT_SCHEDULE={
       "homeAnnouncement": "Today: AI2 - What Exactly AI Is. Complete eight responses and submit the gathered record in Canvas.",
       "showLead": false,
       "topic": "AI2",
-      "note": "Follow up on the full NOVA A.I. Revolution documentary shown November 17. Explain learned patterns, complete the Be the Model exercise, sort everyday tools, and decide when an AI answer should be checked.",
+      "note": "Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Machine? Predict how it finishes sentences, test it with three tricky questions, check one answer outside the chatbot, and decide which of its answers deserve your trust.",
       "doNow": "How can a computer sound like it understands you?",
       "agenda": [
-        "Open AI2 - What Exactly AI Is and follow the five chapters in order.",
-        "Read the background and complete the practice sort.",
+        "Listen to the opener: how a chatbot builds an answer.",
+        "Open AI2 - What Exactly AI Is beside the BeCurrent MagicSchool room linked in Canvas.",
+        "Play Can You Outsmart the Machine? on your own, Rounds 1 to 4, answering the questions here whenever the chatbot sends you back.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
         "After lunch: CNN 10 and the News Log."
