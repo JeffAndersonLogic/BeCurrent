@@ -1313,7 +1313,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       "subtitle": "A very good guesser",
       "learningTargets": [
         {
-          "text": "I can explain patterns, training examples, and prediction in plain language.",
+          "text": "I can explain what a chatbot is, how it predicts, and how to prompt it well.",
           "label": "Explanation"
         },
         {
@@ -1327,7 +1327,7 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "successCriteria": [
         {
-          "text": "I can use my own prediction results to explain how a chatbot builds an answer.",
+          "text": "I can write a strong three-part prompt and use my own results to explain how a chatbot builds an answer.",
           "label": "Explanation"
         },
         {
@@ -1340,14 +1340,14 @@ window.BECURRENT_ANNOUNCEMENTS = {
         }
       ],
       "homework": "Finish and submit AI2 - What Exactly AI Is in Canvas.",
-      "note": "Take on a MagicSchool chatbot in a five-round challenge, Can You Outsmart the Machine?, built around an interest you choose. Predict how it finishes sentences, test it with tricky questions you write yourself, check one answer outside the chatbot, see how AI is used in your own world, and decide which answers deserve your trust.",
+      "note": "Learn what AI is, how to prompt it, and where the red lines are, then take on a MagicSchool chatbot in a five-round challenge, Can You Outsmart the Machine?, built around an interest you choose. Predict it, trap it with questions you write, check one answer outside the chatbot, and decide which answers deserve your trust.",
       "doNow": "How can a computer sound like it understands you?",
       "agenda": [
         "Listen to the opener: how a chatbot builds an answer.",
         "Open AI2 - What Exactly AI Is beside the BeCurrent MagicSchool room linked in Canvas.",
+        "In the chatbot, learn the controls and earn your AI Driver's License: what AI is, how to prompt, good habits, red lines.",
         "Play Can You Outsmart the Machine? on your own, Rounds 1 to 5, built around an interest you choose. Answer the questions here whenever the chatbot sends you back.",
-        "Answer all eight private questions, then Gather All My Work.",
-        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "Answer all eight private questions, then Gather All My Work and submit in Canvas. If you run out of time, finish before next class.",
         "Finished early: type BONUS in the chat for a bonus quest.",
         "After lunch: CNN 10 and the News Log."
       ]
