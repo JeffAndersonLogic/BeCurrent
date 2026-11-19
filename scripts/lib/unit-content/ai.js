@@ -328,6 +328,16 @@ module.exports = {
           "You are in charge. Ask it to say things in fewer words, explain it more simply, or give an example.",
           "Lost? Type HELP or \"What should I do now?\". The chatbot will tell you your next step."
         ]
+      },
+      "boardFeature": {
+        "kicker": "Today's AI lab",
+        "headline": "Learn AI by using AI.",
+        "line": "Earn your AI Driver's License, then try to outsmart a chatbot built for this class.",
+        "logoLabel": "Built with",
+        "logo": "assets/images/partners/magicschool-logo.png",
+        "logoAlt": "MagicSchool",
+        "logoWidth": 792,
+        "logoHeight": 96
       }
     },
     {

@@ -661,7 +661,17 @@ window.BECURRENT_SCHEDULE={
         "Finished early: type BONUS in the chat for a bonus quest.",
         "After lunch: CNN 10 and the News Log."
       ],
-      "homework": "Finish and submit AI2 - What Exactly AI Is in Canvas."
+      "homework": "Finish and submit AI2 - What Exactly AI Is in Canvas.",
+      "feature": {
+        "kicker": "Today's AI lab",
+        "headline": "Learn AI by using AI.",
+        "line": "Earn your AI Driver's License, then try to outsmart a chatbot built for this class.",
+        "logoLabel": "Built with",
+        "logo": "assets/images/partners/magicschool-logo.png",
+        "logoAlt": "MagicSchool",
+        "logoWidth": 792,
+        "logoHeight": 96
+      }
     },
     {
       "date": "2026-11-23",

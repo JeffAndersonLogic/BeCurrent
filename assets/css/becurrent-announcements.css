@@ -50,6 +50,13 @@ a{color:inherit}
 .title-topic{font:750 clamp(52px,7.4vw,112px)/1 var(--sans);letter-spacing:-.05em;margin:0;color:var(--ink);max-width:16ch;text-wrap:balance}
 .title-unit{margin-top:2vh;font:700 clamp(14px,1.3vw,20px)/1.2 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
 .title-subtitle{max-width:56ch;margin:1.4vh 0 0;font:400 clamp(19px,1.9vw,28px)/1.4 var(--sans);color:var(--soft)}
+.title-feature{margin-top:4vh;padding-top:3vh;border-top:3px solid var(--red);max-width:60ch}
+.title-feature-kicker{font:700 clamp(13px,1.1vw,17px)/1.2 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--red-deep);margin-bottom:1vh}
+.title-feature-headline{margin:0;font:750 clamp(28px,3.2vw,48px)/1.1 var(--sans);letter-spacing:-.03em;color:var(--ink)}
+.title-feature-line{margin:1.2vh 0 0;font:400 clamp(17px,1.6vw,24px)/1.4 var(--sans);color:var(--soft)}
+.title-feature-by{display:flex;align-items:center;gap:16px;margin-top:2.6vh}
+.title-feature-by-label{font:700 clamp(13px,1.1vw,17px)/1 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.title-feature-logo{display:block;width:min(26vw,340px);height:auto}
 
 /* Today's Lead: words on paper, the photograph beside them, never behind. */
 .lead-slide{display:none}

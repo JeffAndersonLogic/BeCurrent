@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Today | BeCurrent</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261020-photos">
+  <link rel="stylesheet" href="assets/css/becurrent-announcements.css?v=20261119-feature">
 </head>
 <body>
 <div class="board" id="board">
@@ -72,7 +72,7 @@
     if (!entry || !entry.date) return null;
     scheduledDates[entry.date] = true;
     var day = Object.assign({}, generatedByDate[entry.date] || {}, { date: entry.date });
-    ['homework','homeworkDue','note','doNow','agenda','slides','learningTargets','successCriteria','deskMode','showLead'].forEach(function (key) {
+    ['homework','homeworkDue','note','doNow','agenda','slides','learningTargets','successCriteria','deskMode','showLead','feature'].forEach(function (key) {
       if (Object.prototype.hasOwnProperty.call(entry, key)) day[key] = entry[key];
     });
     if (typeof entry.topicTitle === 'string' && entry.topicTitle.trim()) day.topic = entry.topicTitle.trim();
@@ -128,7 +128,24 @@
     inner.appendChild(el('div','title-date',formatDate(new Date())));
     inner.appendChild(el('h1','title-topic',day && has(day.topic) ? day.topic : 'Welcome to class'));
     if (day && has(day.unit)) inner.appendChild(el('div','title-unit',day.unit));
-    if (day && has(day.subtitle)) inner.appendChild(el('p','title-subtitle',day.subtitle));
+    if (day && has(day.subtitle) && !day.feature) inner.appendChild(el('p','title-subtitle',day.subtitle));
+    // A day can feature the tool its lesson runs on: its own words, the owner's own logo.
+    var f = day && day.feature;
+    if (f && has(f.headline)) {
+      var band = el('div','title-feature');
+      if (has(f.kicker)) band.appendChild(el('div','title-feature-kicker',f.kicker));
+      band.appendChild(el('p','title-feature-headline',f.headline));
+      if (has(f.line)) band.appendChild(el('p','title-feature-line',f.line));
+      if (has(f.logo)) {
+        var by = el('div','title-feature-by');
+        if (has(f.logoLabel)) by.appendChild(el('span','title-feature-by-label',f.logoLabel));
+        var mark = document.createElement('img');
+        mark.className = 'title-feature-logo'; mark.src = f.logo; mark.alt = f.logoAlt || '';
+        if (f.logoWidth) mark.width = f.logoWidth; if (f.logoHeight) mark.height = f.logoHeight;
+        by.appendChild(mark); band.appendChild(by);
+      }
+      inner.appendChild(band);
+    }
     s.appendChild(inner);
     return s;
   }
