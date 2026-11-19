@@ -57,6 +57,23 @@ a{color:inherit}
 .title-feature-by{display:flex;align-items:center;gap:16px;margin-top:2.6vh}
 .title-feature-by-label{font:700 clamp(13px,1.1vw,17px)/1 var(--label);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
 .title-feature-logo{display:block;width:min(26vw,340px);height:auto}
+/* A featured day on a wide screen: title left, feature right, everything sized by
+   height as well as width, because a classroom TV behind browser bars and display
+   scaling is often only ~550px tall. Narrow screens keep the stacked layout. */
+@media (min-width:901px){
+  .title-slide.has-feature .title-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:5vw;align-items:center;max-width:none;width:100%}
+  .title-slide.has-feature .title-inner>*{grid-column:1}
+  .title-slide.has-feature .title-feature{grid-column:2;grid-row:1 / span 4;align-self:center;margin:0;padding:0 0 0 3.2vw;border-top:0;border-left:4px solid var(--red)}
+  .title-slide.has-feature .title-logo{width:min(30vw,44vh,480px);margin-bottom:min(4vh,36px)}
+  .title-slide.has-feature .title-date{margin-bottom:min(1.4vh,14px)}
+  .title-slide.has-feature .title-topic{font-size:clamp(36px,min(5.6vw,11vh),104px)}
+  .title-slide.has-feature .title-unit{margin-top:min(2vh,18px)}
+  .title-slide.has-feature .title-feature-kicker{margin-bottom:min(1.4vh,12px)}
+  .title-slide.has-feature .title-feature-headline{font-size:clamp(26px,min(3.4vw,7vh),56px)}
+  .title-slide.has-feature .title-feature-line{font-size:clamp(16px,min(1.7vw,3.6vh),26px);margin-top:min(1.6vh,14px)}
+  .title-slide.has-feature .title-feature-by{margin-top:min(3.4vh,30px)}
+  .title-slide.has-feature .title-feature-logo{width:min(24vw,40vh,360px)}
+}
 
 /* Today's Lead: words on paper, the photograph beside them, never behind. */
 .lead-slide{display:none}
