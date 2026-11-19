@@ -40,7 +40,7 @@ These four investigations reuse the Midnight Ember chapters, practice sorts, bac
 
 **Skill:** Generalizing from Evidence. **Question:** How can a computer sound like it understands you?.
 
-Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Machine? Predict how it finishes sentences, test it with three tricky questions, check one answer outside the chatbot, and decide which of its answers deserve your trust.
+Take on a MagicSchool chatbot in a five-round challenge, Can You Outsmart the Machine?, built around an interest you choose. Predict how it finishes sentences, test it with tricky questions you write yourself, check one answer outside the chatbot, see how AI is used in your own world, and decide which answers deserve your trust.
 
 **Learning targets**
 - I can explain patterns, training examples, and prediction in plain language.
@@ -53,11 +53,11 @@ Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Ma
 - I can support a claim about chatbots with a result from my own experiment.
 
 **Chapters**
-- 1. Before you open MagicSchool: How a chatbot answers: Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Can You Outsmart the Machine?, and type READY. Keep this page open beside the chat.
-- 2. Rounds 1 and 2: Think like the machine, then meet your competition: Play Rounds 1 and 2. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat.
-- 3. Round 3: The confidence trap: Play Round 3. Check at least one answer with a source outside the chatbot. When the chatbot tells you to pause, answer Questions 4–6 here, then type NEXT.
-- 4. Round 4: You be the judge: Finish Round 4 in the chat, then answer Question 7 here.
-- 5. Checkpoint: When should we trust the machine?: Answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas before lunch.
+- 1. Before you open MagicSchool: How a chatbot answers: Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Can You Outsmart the Machine?, and type READY. Pick an interest you actually know a lot about. Keep this page open beside the chat.
+- 2. Rounds 1 and 2: Think like the machine, then try to stump it: Play Rounds 1 and 2, including Stump the Machine. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat.
+- 3. Round 3: The confidence trap, then build your own: Play Round 3 and build your own trap. Check at least one answer with a source outside the chatbot. When the chatbot tells you to pause, answer Questions 4–6 here, then type NEXT.
+- 4. Rounds 4 and 5: AI in your world, then you be the judge: Play Rounds 4 and 5 in the chat, then answer Question 7 here.
+- 5. Checkpoint: When should we trust the machine?: Answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas before lunch. Then try a bonus quest.
 
 **Eight answer prompts**
 1. What was your score out of 5 in Round 2? Which starter was easiest to predict, and why?
@@ -77,10 +77,10 @@ Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Ma
    - PUSH FURTHER: Why might a chatbot sound sure about something that is really an opinion?
 6. Which Round 3 question had a hidden problem? Did the chatbot catch it or play along?
    - START HERE: Name the question and say what was wrong with it.
-   - PUSH FURTHER: What could happen if a chatbot played along with a false assumption?
-7. Based on today, give one useful and one risky use of AI for schoolwork.
-   - START HERE: Think studying versus submitting unchecked writing.
-   - PUSH FURTHER: Who is responsible for checking the final work?
+   - PUSH FURTHER: Did the chatbot catch the false assumption in your own trap question too?
+7. Based on today, give one useful and one risky use of AI, in schoolwork or in the interest you chose.
+   - START HERE: Use the Round 4 example from your interest, or studying versus submitting unchecked writing.
+   - PUSH FURTHER: Who is responsible for checking the AI's work in that example?
 8. CHECKPOINT: Is 'a very good guesser' a fair description of the chatbot you tested? Use one result from your experiment where it fits and one where it falls short.
    - START HERE: Use your score, a Round 3 answer, or the source you checked.
    - PUSH FURTHER: Describe one ability the 'guesser' description leaves out.

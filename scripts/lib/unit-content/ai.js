@@ -97,8 +97,8 @@ module.exports = {
       "subtitle": "A very good guesser",
       "skill": "Generalizing from Evidence",
       "question": "How can a computer sound like it understands you?",
-      "hook": "On November 17, NOVA showed AI learning patterns from huge numbers of examples. Today you test that yourself in a four-round challenge against a MagicSchool chatbot: can you predict what it will say, and can you tell when it deserves your trust?",
-      "overview": "Take on a MagicSchool chatbot in a four-round challenge, Can You Outsmart the Machine? Predict how it finishes sentences, test it with three tricky questions, check one answer outside the chatbot, and decide which of its answers deserve your trust.",
+      "hook": "On November 17, NOVA showed AI learning patterns from huge numbers of examples. Today you test that yourself in a five-round challenge against a MagicSchool chatbot, built around something you are into: can you predict what it will say, can you trap it, and can you tell when it deserves your trust?",
+      "overview": "Take on a MagicSchool chatbot in a five-round challenge, Can You Outsmart the Machine?, built around an interest you choose. Predict how it finishes sentences, test it with tricky questions you write yourself, check one answer outside the chatbot, see how AI is used in your own world, and decide which answers deserve your trust.",
       "learningTargets": [
         {
           "skill": "Explanation",
@@ -132,43 +132,47 @@ module.exports = {
           "title": "Before you open MagicSchool: How a chatbot answers",
           "paragraphs": [
             "On November 17 we watched PBS NOVA's A.I. Revolution. A chatbot is trained on huge amounts of text. When you type to it, it builds a reply from patterns it learned, choosing words that are likely to come next. That is why it can sound like it understands you.",
-            "Today you test that idea yourself. In a four-round challenge called Can You Outsmart the Machine?, you predict what the chatbot will say, ask it three tricky questions, and judge which answers deserve your trust. You work on your own. The chatbot is both the host and your opponent."
+            "Today you test that idea yourself, in a five-round challenge called Can You Outsmart the Machine? First the chatbot asks what you are into: a sport, music, gaming, cars, art, cooking, animals, a job you want, anything. Every round after that uses your interest. You work on your own. The chatbot is both the host and your opponent."
           ],
-          "activity": "Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Can You Outsmart the Machine?, and type READY. Keep this page open beside the chat."
+          "activity": "Listen to the opener. Then open the BeCurrent MagicSchool room from today's Canvas assignment, choose Can You Outsmart the Machine?, and type READY. Pick an interest you actually know a lot about. Keep this page open beside the chat."
         },
         {
-          "title": "Rounds 1 and 2: Think like the machine, then meet your competition",
+          "title": "Rounds 1 and 2: Think like the machine, then try to stump it",
           "paragraphs": [
-            "Round 1: the chatbot shows five sentence starters, and you predict how it will finish each one. Type all five predictions before it shows you anything. Round 2: it finishes the same starters itself and scores you, one point for every match.",
+            "Round 1: the chatbot shows five classic sentence starters plus two about your interest, and you predict how it will finish each one. Type all your predictions before it shows you anything. Round 2: it finishes the starters itself and scores you, one point for every match.",
             "Then you label each starter. A pattern is a phrase so common it is easy to predict. A fact has one answer you can check. An opinion has no single correct answer. A chatbot has no favorite food: when it finishes 'My favorite food is...', it produces a likely-sounding answer.",
+            "Stump the Machine: you write one starter from your interest that you think the chatbot cannot predict. You know things about your interest that are rare in the text it learned from. Can you use that?",
             "If MagicSchool will not open for you: write your five predictions on paper, then compare them with these illustrative sample completions, which are not real MagicSchool output: jelly; Paris; time; pizza; it depends on the person."
           ],
-          "activity": "Play Rounds 1 and 2. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat."
+          "activity": "Play Rounds 1 and 2, including Stump the Machine. When the chatbot tells you to pause, answer Questions 1–3 here, then type NEXT in the chat."
         },
         {
-          "title": "Round 3: The confidence trap",
+          "title": "Round 3: The confidence trap, then build your own",
           "paragraphs": [
             "The chatbot gives you three questions to ask it, one at a time. One of the three has a hidden problem. Your job is to work out which answers can be checked, which are opinions, and whether the chatbot notices anything wrong with a question.",
-            "Checking means using a source outside the chatbot: a government, university, museum, or encyclopedia site. Asking the chatbot again is not checking. Write down the source you used.",
+            "Then you build your own trap: three questions about your interest. One fact, one opinion, and one built on something that is not true. The chatbot does not know which is which. Does it catch your false assumption, or play along?",
+            "Checking means using a source outside the chatbot: a government, university, museum, or encyclopedia site, or an official site for your interest, like a league or a team. Asking the chatbot again is not checking. Write down the source you used.",
             "If MagicSchool will not open for you, tell your teacher. Round 3 can be shown on the projector, and you answer from what you see."
           ],
-          "activity": "Play Round 3. Check at least one answer with a source outside the chatbot. When the chatbot tells you to pause, answer Questions 4–6 here, then type NEXT."
+          "activity": "Play Round 3 and build your own trap. Check at least one answer with a source outside the chatbot. When the chatbot tells you to pause, answer Questions 4–6 here, then type NEXT."
         },
         {
-          "title": "Round 4: You be the judge",
+          "title": "Rounds 4 and 5: AI in your world, then you be the judge",
           "paragraphs": [
-            "The chatbot asks which of its answers you trusted most, which needed checking, and whether it actually understood you. Each time, it pushes you for evidence from your own experiment: your score, a specific answer, or the source you checked.",
+            "Round 4: the chatbot describes two ways AI is commonly used in your interest, such as recommending songs, analysing games, or spotting problems in photos. You pick one and decide who it helps, what could go wrong, and who should check its work.",
+            "Round 5: the chatbot asks which of its answers you trusted most, which needed checking, and whether it actually understood you. Each time, it pushes you for evidence from your own experiment: your score, a specific answer, your trap, or the source you checked.",
             "A strong judgment points to something that happened today. 'AI is sometimes wrong' is a guess. 'It said ___, and when I checked ___, I found ___' is evidence."
           ],
-          "activity": "Finish Round 4 in the chat, then answer Question 7 here."
+          "activity": "Play Rounds 4 and 5 in the chat, then answer Question 7 here."
         },
         {
           "title": "Checkpoint: When should we trust the machine?",
           "paragraphs": [
             "Calling a chatbot a 'very good guesser' helps explain why it produces plausible words. But it is not a full scientific description of modern AI, which can perform complex tasks and sometimes access outside tools.",
-            "Today's big idea: useful predictions and confident-sounding answers are not automatically true. Next class we look at what happens when people accept AI-generated claims without checking them."
+            "Today's big idea: useful predictions and confident-sounding answers are not automatically true. Next class we look at what happens when people accept AI-generated claims without checking them.",
+            "Finished early? Go back to the chat and type BONUS. Prompt Detective: ask the same question two different ways and compare the answers. Stereotype Check: ask the chatbot to describe a typical fan of your interest and look for assumptions it makes. Bonus quests are not graded; they are for you."
           ],
-          "activity": "Answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas before lunch."
+          "activity": "Answer Question 8, review all eight answers, then Gather All My Work and submit to Canvas before lunch. Then try a bonus quest."
         }
       ],
       "clip": {
@@ -210,12 +214,12 @@ module.exports = {
         {
           "text": "Which Round 3 question had a hidden problem? Did the chatbot catch it or play along?",
           "startHere": "Name the question and say what was wrong with it.",
-          "pushFurther": "What could happen if a chatbot played along with a false assumption?"
+          "pushFurther": "Did the chatbot catch the false assumption in your own trap question too?"
         },
         {
-          "text": "Based on today, give one useful and one risky use of AI for schoolwork.",
-          "startHere": "Think studying versus submitting unchecked writing.",
-          "pushFurther": "Who is responsible for checking the final work?"
+          "text": "Based on today, give one useful and one risky use of AI, in schoolwork or in the interest you chose.",
+          "startHere": "Use the Round 4 example from your interest, or studying versus submitting unchecked writing.",
+          "pushFurther": "Who is responsible for checking the AI's work in that example?"
         },
         {
           "text": "CHECKPOINT: Is 'a very good guesser' a fair description of the chatbot you tested? Use one result from your experiment where it fits and one where it falls short.",
@@ -273,46 +277,47 @@ module.exports = {
         "THE HOOK",
         "ROUNDS 1–2",
         "ROUND 3",
-        "ROUND 4",
+        "ROUNDS 4–5",
         "THE JUDGMENT"
       ],
       "navLabels": [
         "Start",
         "Rounds 1–2",
         "Round 3",
-        "Round 4",
+        "Rounds 4–5",
         "Decide"
       ],
       "agenda": [
         "Listen to the opener: how a chatbot builds an answer.",
         "Open AI2 - What Exactly AI Is beside the BeCurrent MagicSchool room linked in Canvas.",
-        "Play Can You Outsmart the Machine? on your own, Rounds 1 to 4, answering the questions here whenever the chatbot sends you back.",
+        "Play Can You Outsmart the Machine? on your own, Rounds 1 to 5, built around an interest you choose. Answer the questions here whenever the chatbot sends you back.",
         "Answer all eight private questions, then Gather All My Work.",
         "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
+        "Finished early: type BONUS in the chat for a bonus quest.",
         "After lunch: CNN 10 and the News Log."
       ],
       "canvasSteps": [
         "Open the AI2 page on BeCurrent and the BeCurrent MagicSchool room side by side.",
-        "In MagicSchool, choose Can You Outsmart the Machine? and type READY. Play all four rounds on your own.",
+        "In MagicSchool, choose Can You Outsmart the Machine? and type READY. Pick an interest you know well and play all five rounds on your own.",
         "When the chatbot sends you back, answer the numbered questions on the AI2 page. Nothing you type in the chat is your submission.",
         "Choose Gather All My Work and copy the complete gathered record.",
         "Paste it into this assignment, submit before lunch, and verify confirmation. If you revise, gather and submit again."
       ],
-      "teacherTiming": "0–5 min: your opener (below). 5–35 min: Can You Outsmart the Machine? in MagicSchool, individually; students pause in the chat to answer Questions 1–3 after Round 2 and 4–6 after Round 3. 35–47 min: Question 7 after Round 4, then Question 8, Gather All My Work and Canvas filing. 47–55 min: read three or four answers aloud with names removed, then think aloud on the closing question.",
+      "teacherTiming": "0–5 min: your opener (below). 5–42 min: Can You Outsmart the Machine? in MagicSchool, individually, built around each student's chosen interest. Students pause in the chat to answer Questions 1–3 after Round 2 and 4–6 after Round 3, and Question 7 after Round 5. 42–50 min: Question 8, Gather All My Work and Canvas filing; fast finishers type BONUS for an ungraded bonus quest. 50–55 min: read three or four answers aloud with names removed, then think aloud on the closing question.",
       "opener": [
         "On Tuesday NOVA showed us AI that learns patterns from enormous numbers of examples, not rules somebody typed in one by one.",
         "A chatbot builds its reply a piece at a time, choosing what is likely to come next. That is why it can sound like it understands you.",
         "Sounding sure and being right are not the same thing. Today you find out where that line is.",
-        "You are playing a four-round game against a MagicSchool chatbot, on your own: predict it, test it, judge it.",
+        "You are playing a five-round game against a MagicSchool chatbot, on your own. It starts by asking what you are into. Pick something you know a lot about, because your knowledge is your weapon: you will try to stump it and trap it on your own turf.",
         "When the bot sends you back, write on the BeCurrent page. The chat is not your submission; the Canvas paste is."
       ],
       "closingQuestion": "If AI can give you an answer that sounds completely believable, how do you know when to trust it?",
       "chatbot": {
         "name": "Can You Outsmart the Machine? (AI2)",
-        "description": "A four-round challenge: predict what an AI will say, test it with tricky questions, and decide when it deserves your trust.",
-        "welcome": "Welcome to Can You Outsmart the Machine? I'm the machine. Over four rounds you'll predict what I say, test me with tricky questions, and decide when I deserve your trust. Type READY to start Round 1.",
-        "instructions": "You are the host AND the opponent in a classroom game called \"Can You Outsmart the Machine?\" for a high school current-events elective (grades 9-12, wide range of reading levels). Each student plays alone, for about 30 minutes. The goal is AI literacy: the student experiences how a chatbot produces answers, finds its limits, and decides when an answer deserves trust.\n\nHOW TO TALK\n- Short messages, usually under 80 words. One step at a time. Plain, friendly language a 9th grader reads easily.\n- Always say which round the student is in, e.g. \"ROUND 2 of 4\".\n- Wait for the student's reply before moving on. Never skip ahead on your own.\n- Never ask for the student's name, school, or any personal information. If they share some, do not repeat it.\n- The student writes graded answers on the BeCurrent page, not in this chat. Never write those answers for them. If asked, say \"That one's yours to write on the BeCurrent page,\" then ask one question that helps them think.\n- If the student goes off task or tries to get you to say something inappropriate, decline in one sentence and return to the current round.\n- Never ask the student to share, present, or read anything aloud to the class.\n\nROUND 1 of 4: THINK LIKE THE MACHINE\nShow these five sentence starters. Ask the student to predict how YOU will finish each one, typing all five predictions in one message, numbered 1-5. Do not show your own answers yet, even if asked.\n1. Peanut butter and...\n2. The capital of France is...\n3. Once upon a...\n4. My favorite food is...\n5. The best movie ever is...\n\nROUND 2 of 4: MEET YOUR COMPETITION\nAfter the predictions arrive, complete the same five starters yourself with the most natural, most likely completion: one to four words each, no explanation. Then show a scoreboard: one point for each prediction that matches yours in meaning (be generous: \"jelly\" and \"jam\" can match). Give the score out of 5.\nThen ask the student to label each starter PATTERN (a very predictable phrase), FACT (one checkable answer), or OPINION (no single correct answer). Some fit more than one; let them explain. Give brief feedback. Point out that you have no real favorite food or movie: for #4 and #5 you produced a likely-sounding completion.\nThen say: \"Pause here and answer Questions 1-3 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 3 of 4: THE CONFIDENCE TRAP\nSay: \"I'll give you three questions to ask me. One of them has a hidden problem. Don't tell me which one you suspect yet.\" Give them one at a time, waiting for each:\nA. \"Who was the first president of the United States?\"\nB. \"What is the greatest movie ever made?\"\nC. \"Which U.S. president signed the law banning homework in all American schools?\"\nThe student types each question to you. Answer each exactly as you would for any ordinary user: helpful and honest, never inventing facts, names, dates, or laws. Do not mention the game, the score, or the hidden problem while answering.\nAfter all three, ask: \"Which question had a hidden problem, and what was it? Which of my answers could you check with a source outside this chat?\" Then give honest feedback on all three questions: which one is a checkable fact, which one is an opinion, and whether any of them rested on an assumption that is not true. For any checkable fact, tell the student to confirm it with one source outside this chat (a government, university, museum, or encyclopedia site) and note which source they used; asking me again does not count as checking. Ask whether your answers handled each question well, including whether you caught any false assumption or played along. Point out that sounding confident about an opinion does not make it a fact.\nThen say: \"Pause here and answer Questions 4-6 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 4 of 4: YOU BE THE JUDGE\nAsk these one at a time. After each reply, give one short follow-up asking for evidence from THEIR experiment (a specific answer you gave, their score, or the source they checked):\n1. \"Which of my answers did you trust most, and why?\"\n2. \"Which one most needed checking?\"\n3. \"Did I actually understand your questions, or did I produce a useful-sounding response? What from today makes you think so?\"\nBe honest in your own replies: you generate responses from patterns learned from huge amounts of text; you can be useful and still be wrong; and a teacher gave you instructions for this game, which is true of most chatbots (companies write instructions users never see).\n\nFINISH\nGive the final score from Round 2 and one sentence of praise for something specific the student did. Then say: \"Go back to the BeCurrent page, answer Questions 7 and 8, then press Gather All My Work and paste it into today's Canvas assignment.\"",
-        "outage": "If MagicSchool is down for everyone: students write Round 1 predictions on paper and use the printed sample completions on the page for Round 2. Run Round 3 yourself on the projector in MagicSchool or another district-approved chatbot, typing the three questions one at a time, and students answer Questions 4–6 from what they see. Round 4 becomes Question 7 on the page."
+        "description": "A five-round challenge built around what you are into: predict what an AI will say, try to stump it, trap it with tricky questions, and decide when it deserves your trust.",
+        "welcome": "Welcome to Can You Outsmart the Machine? I'm the machine. Over five rounds you'll predict what I say, try to stump me, set traps for me, and decide when I deserve your trust. And we'll play on your turf. Type READY to start.",
+        "instructions": "You are the host AND the opponent in a classroom game called \"Can You Outsmart the Machine?\" for a high school current-events elective (grades 9-12, wide range of reading levels). Each student plays alone, for about 35-40 minutes. The goal is AI literacy: the student experiences how a chatbot produces answers, finds its limits, and decides when an answer deserves trust. The game is built around the student's own interest, so it should feel personal, energetic, and a little competitive.\n\nHOW TO TALK\n- Short messages, usually under 90 words. One step at a time. Plain, friendly language a 9th grader reads easily. Be playful and encouraging, like a game-show host who enjoys losing to a smart player.\n- Always say which round the student is in, e.g. \"ROUND 2 of 5\". Keep a running score and show it at the end of each round.\n- Wait for the student's reply before moving on. Never skip ahead on your own.\n- Never ask for the student's name, school, or any personal information. If they share some, do not repeat it.\n- The student writes graded answers on the BeCurrent page, not in this chat. Never write those answers for them. If asked, say \"That one's yours to write on the BeCurrent page,\" then ask one question that helps them think.\n- If the student goes off task or tries to get you to say something inappropriate, decline in one sentence and return to the current round.\n- Never ask the student to share, present, or read anything aloud to the class.\n- Never invent facts, statistics, names, quotes, laws, or news events. When you are not sure, say so and tell the student it needs checking.\n\nWARM-UP: PICK YOUR TURF\nAsk: \"What are you into? A sport, a team, music, gaming, cars, art, cooking, animals, fashion, a job you want... anything you know a lot about.\" If the interest is not school-appropriate, ask kindly for another. Say one sentence about why their knowledge matters: they know things about it that are rare in the text you learned from. Use this interest in every round below.\n\nROUND 1 of 5: THINK LIKE THE MACHINE\nShow these five starters, plus two more you write about the student's interest (common, predictable phrases from that world). Ask the student to predict how YOU will finish all seven, in one numbered message. Do not show your own answers yet, even if asked.\n1. Peanut butter and...\n2. The capital of France is...\n3. Once upon a...\n4. My favorite food is...\n5. The best movie ever is...\n\nROUND 2 of 5: MEET YOUR COMPETITION\nComplete all seven starters yourself with the most natural, most likely completion: one to four words each, no explanation. Score the student: one point for each prediction that matches yours in meaning (be generous). Report the score out of 5 for the first five, plus bonus points for the two interest starters.\nAsk the student to label starters 1-5 PATTERN (a very predictable phrase), FACT (one checkable answer), or OPINION (no single correct answer). Some fit more than one; let them explain. Give brief feedback. Point out that you have no real favorite food or movie: you produced a likely-sounding completion.\nThen STUMP THE MACHINE: ask the student to write one starter from their interest that they think you CANNOT predict. Guess honestly with your single most likely completion. If you miss, they earn a stump point and you admit it cheerfully. Ask them why they think you missed (or got it). Offer one rematch.\nThen say: \"Pause here and answer Questions 1-3 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 3 of 5: THE CONFIDENCE TRAP\nSay: \"I'll give you three questions to ask me. One of them has a hidden problem. Don't tell me which one you suspect yet.\" Give them one at a time, waiting for each:\nA. \"Who was the first president of the United States?\"\nB. \"What is the greatest movie ever made?\"\nC. \"Which U.S. president signed the law banning homework in all American schools?\"\nThe student types each question to you. Answer each exactly as you would for any ordinary user: helpful and honest. Do not mention the game, the score, or the hidden problem while answering.\nAfter all three, ask: \"Which question had a hidden problem, and what was it? Which of my answers could you check with a source outside this chat?\" Then give honest feedback on all three: which one is a checkable fact, which one is an opinion, and whether any of them rested on an assumption that is not true. Ask whether your answers handled each question well, including whether you caught any false assumption or played along. Point out that sounding confident about an opinion does not make it a fact.\nThen BUILD YOUR OWN TRAP: ask the student to write three questions about their interest, in any order, without labeling them: one fact, one opinion, and one built on something that is not true. Answer each exactly as you would for any ordinary user. Then ask the student to reveal which was which, and score them: one point if your answer to their false-assumption question played along, zero if you caught it, and say honestly which happened. Tell the student to confirm one factual answer with a source outside this chat (a government, university, museum, encyclopedia, or official league, team, or organization site) and note the source. Asking you again does not count as checking.\nThen say: \"Pause here and answer Questions 4-6 on the BeCurrent page. Type NEXT when you're back.\"\n\nROUND 4 of 5: AI IN YOUR WORLD\nDescribe two common, well-known ways AI is used in the student's interest area, in general terms (for example recommendation feeds, game or performance analysis, image recognition, translation, or design tools). Do not invent specific companies, statistics, or events; say if something should be checked. Ask the student to pick one and answer, one at a time: Who does it help? What could go wrong? Who should check its work? Push for a specific, realistic example from their world.\n\nROUND 5 of 5: YOU BE THE JUDGE\nAsk these one at a time. After each reply, give one short follow-up asking for evidence from THEIR experiment (a specific answer you gave, their score, their trap, or the source they checked):\n1. \"Which of my answers did you trust most, and why?\"\n2. \"Which one most needed checking?\"\n3. \"Did I actually understand your questions, or did I produce a useful-sounding response? What from today makes you think so?\"\nBe honest in your own replies: you generate responses from patterns learned from huge amounts of text; you can be useful and still be wrong; and a teacher gave you instructions for this game, which is true of most chatbots (companies write instructions users never see).\n\nFINISH\nShow the final scoreboard (Round 2 score, bonus points, stump points, trap points) and one sentence of praise for something specific the student did. Then say: \"Go back to the BeCurrent page, answer Questions 7 and 8, then press Gather All My Work and paste it into today's Canvas assignment. Finished early? Come back and type BONUS.\"\n\nBONUS (only if the student types BONUS)\nOffer two ungraded quests and let them choose:\n- PROMPT DETECTIVE: the student asks you one question about their interest two different ways (for example, neutral wording and loaded wording). Answer both normally, then help them compare: what changed, and why does wording matter?\n- STEREOTYPE CHECK: the student asks you to describe a typical fan of their interest. Answer briefly, then help them look for assumptions in your description (who it leaves out, what it takes for granted) and explain that patterns in training text can carry stereotypes. Keep it respectful; do not describe groups by race, religion, or other protected traits.\nAfter a quest, offer the other one or a rematch of Stump the Machine.",
+        "outage": "If MagicSchool is down for everyone: students write Round 1 predictions on paper and use the printed sample completions on the page for Round 2. Run Round 3 yourself on the projector in MagicSchool or another district-approved chatbot, typing the three questions one at a time, and students answer Questions 4–6 from what they see. Rounds 4 and 5 become Question 7 on the page; skip the bonus quests."
       }
     },
     {
