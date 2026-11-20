@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-19",
+  reviewed: "2026-11-20",
   lead: {
-    category: "U.S. / Democracy",
-    headline: "Ex-Nvidia CEO agrees to testify to Congress amid affair probe",
-    dek: "The former Nvidia chief will appear for public and closed-door hearings after Republicans threatened to subpoena him.",
+    category: "U.S. / National",
+    headline: "Watch Live: Trump holds news conference after meeting with Xi, Putin",
+    dek: "President Trump is holding a news conference at the White House after his trip to the Philippines and China. Follow live updates here.",
     source: "CBS News",
-    published: "November 17, 2026",
-    url: "https://www.cbsnews.com/news/house-republicans-nvidia-jensen-huang-testimony/",
-    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/14/7a9fc865-d93b-47c3-8b6b-21ff6af51b4d/thumbnail/1200x630g2/7cb8e3ed6a93ad9370418bb7cdfdce6a/gettyimages-2297228289.jpg",
+    published: "November 20, 2026",
+    url: "https://www.cbsnews.com/live-updates/trump-press-conference-live-stream-2026-11-20/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/20/6469a42d-555f-4e40-aabb-3995debe12e7/thumbnail/1200x630/ab452d42767857673e31cf3694f75409/2026-11-20t172732z-2021650949-rc2troag4yp7-rtrmadp-3-usa-trump.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/house-republicans-nvidia-jensen-huang-testimony/"
+    imageCreditUrl: "https://www.cbsnews.com/live-updates/trump-press-conference-live-stream-2026-11-20/"
   },
   wire: [
     {
       category: "World / Security",
-      headline: "Iran may be working on biological weapons, Trump says",
-      dek: "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
+      headline: "Russia missiles pummel Ukraine and hit NATO soil in Poland",
+      dek: "Missiles flew into Poland overnight as Russia hit Ukraine with",
       source: "CBS News",
-      published: "November 19, 2026",
-      url: "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/"
+      published: "November 20, 2026",
+      url: "https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/"
     },
     {
       category: "Technology",
-      headline: "Anthropic raises more than $100B in IPO. And, Dems nominate Jeffries for House speaker",
-      dek: "Despite growing concern over a possible AI bubble, Anthropic had a record-breaking initial public offering. And, Hakeem Jeffries could become the first Black Speaker of the House.",
-      source: "NPR",
-      published: "November 19, 2026",
-      url: "https://www.npr.org/2026/11/19/g-s1-154344/up-first-newsletter-house-democrats-trump-xi-putin-anthropic"
-    },
-    {
-      category: "U.S. / National",
-      headline: "South Florida severe weather and flooding live updates",
-      dek: "After more than 15 inches of rain flooded parts of South Florida, a flood watch has been extended into Friday morning as schools announce reopening plans.",
+      headline: "White House national cyber director leaving his post",
+      dek: "White House National Cyber Director Sean Cairncross will be leaving his position, a White House official told CBS News.",
       source: "CBS News",
-      published: "November 19, 2026",
-      url: "https://www.cbsnews.com/live-updates/south-florida-flooding-live-updates-heavy-rain-broward-miami-dade/"
+      published: "November 20, 2026",
+      url: "https://www.cbsnews.com/news/white-house-national-cyber-director-sean-cairncross-leaving/"
     },
     {
       category: "U.S. / National",
-      headline: "Fact-checking Mullin's House hearing on FAA ground stop, outages and dirty bombs",
-      dek: "Following a week of flight delays, website outages and the possibility of an Iranian dirty bomb attack, House lawmakers grilled top administration officials, including Homeland Security Secretary Markwayne Mullin, about threats to the United States.",
-      source: "PBS News",
-      published: "November 19, 2026",
-      url: "https://www.pbs.org/newshour/politics/fact-checking-mullins-house-hearing-on-faa-ground-stop-outages-and-dirty-bombs"
+      headline: "A second judge blocks Trump's arch, saying it's unlikely to succeed in court",
+      dek: "A federal judge in Virginia said she will issue a preliminary injunction against Trump's arch, going a step further than the D.C. federal judge who temporarily blocked construction earlier this week.",
+      source: "NPR",
+      published: "November 20, 2026",
+      url: "https://www.npr.org/2026/11/20/nx-s1-6048675/trump-arch-blocked-arlington"
+    },
+    {
+      category: "World / Security",
+      headline: "Trump insists he's \"not rushing to make any decisions on Iran\"",
+      dek: "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
+      source: "CBS News",
+      published: "November 20, 2026",
+      url: "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/"
     }
   ]
 };
