@@ -69,6 +69,17 @@ body.ai-site{margin:0;color:var(--ai-ivory);background:var(--ai-night);font:400 
 .ai-sources{background:#202637;border:1px solid #464a60;padding:20px 23px;margin:20px 0 44px}.ai-sources summary{font-weight:800;cursor:pointer}.ai-sources a{color:#ffd2a5}.ai-sources li{margin:10px 0}
 .ai-study{background:var(--ai-ivory);color:var(--ai-ink);padding:28px 33px;margin:25px 0}
 .ai-study a{color:#2e507e}
+/* Light reading/work surfaces keep their own text palette inside dark panels. */
+.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study{color-scheme:light;color:var(--ai-ink)}
+:is(.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study) :is(p,li,blockquote,small,label,summary,h2,h3,h4){color:var(--ai-ink)}
+:is(.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study) .ai-eyebrow{color:#793e28}
+.ai-site :is(.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study) a{color:#24496f;text-decoration:underline;text-underline-offset:.15em}
+.ai-site :is(.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study) a:visited{color:#513b70}
+.ai-site :is(.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study) a:hover{color:#172f49}
+:is(.ai-reading,.ai-response,.ai-sort,.ai-filing,.ai-study) :focus-visible{outline-color:#24496f}
+.ai-response textarea::placeholder{color:#596171;opacity:1}
+.ai-sort select,.ai-sort option{color:var(--ai-ink);background:#fff}
+.ai-site .ai-skip{color:var(--ai-ink)}
 .ai-footer{background:#141827;color:#bcbfd0;padding:29px 0;font-size:13px;border-top:1px solid #42425b}
 /* Projector wrap-up slide: a prompt over three columns of numbered questions. */
 [data-proj]:has(.ai-wrapup){padding:clamp(22px,4vh,44px) clamp(22px,3.5vw,48px)!important;min-height:0!important}.ai-wrapup h2{font-size:clamp(30px,min(4.2vw,7vh),60px);line-height:1.05;margin:0 0 6px}.ai-wrapup-prompt{font-size:clamp(17px,min(1.9vw,3.4vh),26px);margin:0 0 clamp(12px,2.5vh,26px);color:#ffd39d!important}
