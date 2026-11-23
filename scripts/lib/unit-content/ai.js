@@ -542,7 +542,7 @@ module.exports = {
         }
       ],
       "substituteDay": false,
-      "teacherTiming": "55-minute route: 0-2 introduce the mission; 2-22 teacher-selected videos (about 20 minutes); 22-48 independent MagicSchool investigation with three saving checkpoints; 48-55 practice sort, Gather All My Work and Canvas submission. Check source work at minute 35 and reach Q8 by minute 45. For 50 minutes: 0-1 launch, 1-21 videos, 21-43 investigation, 43-50 filing; announce RAPID at minute 35. Use the actual classroom clock. If video runs long, shorten the video opening rather than taking the filing window.",
+      "teacherTiming": "55-minute route: 0-1 introduce the mission; 1-about 25 show CIVIX first and the five selected reports (approximately 24 minutes budgeted; verify actual combined runtime); about 25-48 investigate in MagicSchool; 48-55 complete the practice sort, gather and submit in Canvas. Check source work around minute 35 and reach Q8 by minute 45. For 50 minutes, begin the chatbot in RAPID mode after the videos and start filing at minute 43. Protect the final seven minutes and use the actual classroom clock.",
       "magicSchool": {
         "name": "BeCurrent Bureau of Suspicious Answers",
         "starter": "START",
@@ -596,13 +596,22 @@ module.exports = {
         "Your decision"
       ],
       "canvasSteps": [
-        "Watch the five opening video reports on the BeCurrent AI3 page in the listed order: NBC News courtroom evidence; CBS News Biden robocall; Canadian HR Reporter Amazon hiring tool; BBC News politics and deepfakes; TODAY spotting AI-generated media. Then open the BeCurrent MagicSchool room linked in this assignment, choose BeCurrent Bureau of Suspicious Answers, and type START.",
+        "Watch the six opening video reports on the BeCurrent AI3 page in the listed order: CIVIX hallucinations and deepfakes; NBC News courtroom evidence; CBS News Biden robocall; Canadian HR Reporter Amazon hiring tool; BBC News politics and deepfakes; TODAY spotting AI-generated media. Then open the BeCurrent MagicSchool room linked in this assignment, choose BeCurrent Bureau of Suspicious Answers, and type START.",
         "Investigate independently, one question at a time. Use HELP for simpler explanations or RAPID when your teacher announces it. Your teacher can review the chat; leave private information out.",
         "Save your own answers in BeCurrent at three checkpoints: Q1-Q3, Q4-Q5, and Q6-Q8. Keep answers short; use bullets for Q4 and Q8. Q1-Q8 now appear in numerical order.",
         "For Q4 choose claim A or B, examine the short source passage, and open its original if possible. Explain the finding, why the source is appropriate, and one limit. State clearly if you used only the provided excerpt.",
         "Complete the three practice choices and correct them. Choose Gather All My Work, copy the complete record, paste into this Canvas Text Entry assignment, click Submit, and verify confirmation. If you revise, gather and submit again. The MagicSchool chat alone is not the submission."
       ],
       "openingVideos": [
+        {
+          "title": "CIVIX Explains AI: Hallucinations and Deepfakes",
+          "source": "CTRL-F: Digital Media Literacy / CIVIX",
+          "date": "2025-08-12",
+          "url": "https://www.youtube.com/watch?v=mkbKUJRmnK4",
+          "duration": "4:06",
+          "prompt": "How do hallucinations differ from deepfakes, and what can you do to check a convincing claim?",
+          "note": "Begin with this explanation of hallucinations, deepfakes, and verification, then watch the five reporting examples below."
+        },
         {
           "title": "AI is on trial as generated evidence finds its way into the courtroom",
           "source": "NBC News",
@@ -643,7 +652,54 @@ module.exports = {
           "prompt": "Which verification step would you use before sharing a convincing social-media video?",
           "note": "Treat visual clues as reasons to investigate; check provenance and independent evidence before reaching a conclusion."
         }
-      ]
+      ],
+      "agenda": [
+        "Before lunch: watch the six opening videos in order on AI3.",
+        "Open today's MagicSchool room from Canvas. Choose BeCurrent Bureau of Suspicious Answers and type START.",
+        "Work independently. Save your own answers in BeCurrent at Q1-Q3, Q4-Q5, and Q6-Q8.",
+        "Check the practice sort, Gather All My Work, and submit the complete record in Canvas before lunch.",
+        "After lunch: CNN 10 and News Log."
+      ],
+      "boardFeature": {
+        "kicker": "Today's MagicSchool investigation",
+        "headline": "The Bureau of Suspicious Answers",
+        "line": "Watch six videos. Investigate AI errors. Save your own answers at three checkpoints.",
+        "logoLabel": "Built with",
+        "logo": "assets/images/partners/magicschool-logo.png",
+        "logoAlt": "MagicSchool",
+        "logoWidth": 792,
+        "logoHeight": 96
+      },
+      "boardSlides": [
+        {
+          "kicker": "Before lunch / video opening",
+          "title": "Start with CIVIX, then five reports",
+          "bullets": [
+            "1. CIVIX: hallucinations and deepfakes (4:06)",
+            "2-3. NBC News courtroom evidence; CBS News fake Biden robocall",
+            "4. Canadian HR Reporter: Amazon's hiring experiment",
+            "5. BBC News: AI and deepfakes in politics",
+            "6. TODAY: spotting AI-generated social media"
+          ],
+          "url": "https://jeffandersonlogic.github.io/BeCurrent/ai/block-03.html#opening-videos",
+          "linkLabel": "Open the six-video sequence"
+        },
+        {
+          "kicker": "Independent work / MagicSchool",
+          "title": "Investigate. Save. Submit.",
+          "bullets": [
+            "Open the assigned chatbot from Canvas and type START.",
+            "Save Q1-Q3, then Q4-Q5, then Q6-Q8 in BeCurrent.",
+            "Gather All My Work and submit in Canvas before lunch."
+          ],
+          "url": "https://jeffandersonlogic.github.io/BeCurrent/ai/block-03.html#student-flow",
+          "linkLabel": "Open your AI3 answer page"
+        }
+      ],
+      "showLead": true,
+      "homeAnnouncement": "Today: AI3 - When AI Gets it Wrong. Watch six videos, investigate in MagicSchool, save at three checkpoints, and submit in Canvas before lunch. After lunch: CNN 10 and News Log.",
+      "boardHomework": "Submit all eight AI3 answers and the practice sort through Gather All My Work into Canvas before lunch.",
+      "boardHomeworkDue": "before lunch today"
     },
     {
       "n": 4,

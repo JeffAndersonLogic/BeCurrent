@@ -676,19 +676,56 @@ window.BECURRENT_SCHEDULE={
     {
       "date": "2026-11-23",
       "topicTitle": "AI3 - When AI Gets it Wrong",
-      "homeAnnouncement": "Today: AI3 - When AI Gets it Wrong. Complete eight responses and submit the gathered record in Canvas.",
-      "showLead": false,
+      "homeAnnouncement": "Today: AI3 - When AI Gets it Wrong. Watch six videos, investigate in MagicSchool, save at three checkpoints, and submit in Canvas before lunch. After lunch: CNN 10 and News Log.",
+      "showLead": true,
       "topic": "AI3",
       "note": "Watch the teacher-selected introduction, then investigate three AI cases independently in MagicSchool. Make decisions, check a real source, and save your own eight answers at three checkpoints.",
       "doNow": "Who should check a convincing answer?",
       "agenda": [
-        "Open AI3 - When AI Gets it Wrong and follow the five chapters in order.",
-        "Read the background and complete the practice sort.",
-        "Answer all eight private questions, then Gather All My Work.",
-        "Paste the complete record into the matching Canvas Text Entry assignment and submit before lunch.",
-        "After lunch: CNN 10 and the News Log."
+        "Before lunch: watch the six opening videos in order on AI3.",
+        "Open today's MagicSchool room from Canvas. Choose BeCurrent Bureau of Suspicious Answers and type START.",
+        "Work independently. Save your own answers in BeCurrent at Q1-Q3, Q4-Q5, and Q6-Q8.",
+        "Check the practice sort, Gather All My Work, and submit the complete record in Canvas before lunch.",
+        "After lunch: CNN 10 and News Log."
       ],
-      "homework": "Finish and submit AI3 - When AI Gets it Wrong in Canvas."
+      "homework": "Submit all eight AI3 answers and the practice sort through Gather All My Work into Canvas before lunch.",
+      "feature": {
+        "kicker": "Today's MagicSchool investigation",
+        "headline": "The Bureau of Suspicious Answers",
+        "line": "Watch six videos. Investigate AI errors. Save your own answers at three checkpoints.",
+        "logoLabel": "Built with",
+        "logo": "assets/images/partners/magicschool-logo.png",
+        "logoAlt": "MagicSchool",
+        "logoWidth": 792,
+        "logoHeight": 96
+      },
+      "slides": [
+        {
+          "kicker": "Before lunch / video opening",
+          "title": "Start with CIVIX, then five reports",
+          "bullets": [
+            "1. CIVIX: hallucinations and deepfakes (4:06)",
+            "2-3. NBC News courtroom evidence; CBS News fake Biden robocall",
+            "4. Canadian HR Reporter: Amazon's hiring experiment",
+            "5. BBC News: AI and deepfakes in politics",
+            "6. TODAY: spotting AI-generated social media"
+          ],
+          "url": "https://jeffandersonlogic.github.io/BeCurrent/ai/block-03.html#opening-videos",
+          "linkLabel": "Open the six-video sequence"
+        },
+        {
+          "kicker": "Independent work / MagicSchool",
+          "title": "Investigate. Save. Submit.",
+          "bullets": [
+            "Open the assigned chatbot from Canvas and type START.",
+            "Save Q1-Q3, then Q4-Q5, then Q6-Q8 in BeCurrent.",
+            "Gather All My Work and submit in Canvas before lunch."
+          ],
+          "url": "https://jeffandersonlogic.github.io/BeCurrent/ai/block-03.html#student-flow",
+          "linkLabel": "Open your AI3 answer page"
+        }
+      ],
+      "homeworkDue": "before lunch today"
     },
     {
       "date": "2026-11-30",
