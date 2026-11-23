@@ -8,6 +8,17 @@ const unit=require('../lib/unit-content/ai');
 const cal=require('../lib/semester-calendar');
 const render=require('../lib/ai-renderer');
 const pages=render(unit);
+// AI3 MagicSchool workflow: keep saved IDs while making the source check and transfer explicit.
+const ai3=pages['ai/block-03.html'];
+assert.deepStrictEqual([...ai3.matchAll(/data-slot="(ai-q\d)"/g)].map(x=>x[1]),Array.from({length:8},(_,i)=>'ai-q'+(i+1)));
+assert.strictEqual([...ai3.matchAll(/data-save-checkpoint=/g)].length,3);
+assert.match(ai3,/id="source-desk"/);
+assert.match(ai3,/id="source-a"/);
+assert.match(ai3,/id="source-b"/);
+assert.match(ai3,/provided excerpt only; original not opened/);
+assert.match(ai3,/official channel you would independently check/);
+assert.doesNotMatch(ai3,/37:20|OPTIONAL FILM EVIDENCE/);
+assert.match(pages['teacher/ai-topic-03-os.html'],/filing at minute 48/);
 assert.strictEqual(unit.meta.code,'AI');
 assert.strictEqual(unit.meta.renderer,'ai-investigation');
 assert.strictEqual(unit.topics.length,4);

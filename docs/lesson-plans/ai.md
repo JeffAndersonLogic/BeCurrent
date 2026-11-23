@@ -91,7 +91,7 @@ Learn what AI is, how to prompt it, and where the red lines are, then take on a 
 
 **Skill:** Sourcing and Corroboration. **Question:** Who should check a convincing answer?.
 
-Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.
+Watch the teacher-selected introduction, then investigate three AI cases independently in MagicSchool. Make decisions, check a real source, and save your own eight answers at three checkpoints.
 
 **Learning targets**
 - I can identify the source of a claim.
@@ -99,16 +99,16 @@ Study invented legal evidence, unfair learned patterns, and an AI-cloned politic
 - I can distinguish model error, bias, and deliberate deception.
 
 **Success criteria**
-- I can name a real reference and report its finding.
-- I can document the result of checking one claim.
-- I can explain why three AI failures have different causes.
+- I can identify who produced a source and explain what its evidence can and cannot establish.
+- I can report honestly whether I checked the original or used a provided excerpt.
+- I can distinguish three AI risks and apply a verification rule to an unfamiliar claim.
 
 **Chapters**
-- 1. The confident answer problem: Review the same learning question from AI1: What made an answer sound trustworthy?
-- 2. The lawyers who failed to verify: Look at the case source: what were the attorneys responsible for checking?
-- 3. Bias is a different failure: Where might unfairness enter: examples, design, or human use?
-- 4. The fake voice that reached voters: Why could a fake voice undermine confidence even after it is uncovered?
-- 5. Your three-step verification habit: Complete an evidence check using an original source linked below.
+- 1. The confident answer problem: Make your first decision in MagicSchool, then investigate why an answer can sound convincing without being supported.
+- 2. The lawyers who failed to verify: Decide what a professional should check before relying on generated evidence. Save Q1-Q3 together at Checkpoint 1.
+- 3. The source desk and the unfair shortlist: Choose claim A or B below for Q4. Then investigate the hiring example for Q5. Save Q4-Q5 together at Checkpoint 2.
+- 4. The fake voice that reached voters: Investigate the fake political voice and explain what the later verdict does and does not establish.
+- 5. Your three-step verification habit: Return to your first decision and apply your verification rule. Save Q6-Q8 at Checkpoint 3, then file in Canvas.
 
 **Eight answer prompts**
 1. Define an AI hallucination in everyday words.
@@ -120,21 +120,21 @@ Study invented legal evidence, unfair learned patterns, and an AI-cloned politic
 3. In the invented-cases incident, what should the lawyers have done?
    - START HERE: Name a verification step.
    - PUSH FURTHER: Who remains accountable when AI is used?
-4. Choose one claim in today's evidence. What source supports or challenges it?
-   - START HERE: Name the source and finding.
-   - PUSH FURTHER: What remains unconfirmed?
+4. Choose claim A or B. What does the source passage support or challenge, why is this source appropriate, and what does it leave unproven?
+   - START HERE: Use four short bullets: claim; source and finding; why this source; one limit. Say whether you opened the original or used only the provided excerpt.
+   - PUSH FURTHER: What additional evidence would settle something this passage cannot establish?
 5. How can training examples produce unfair outcomes?
    - START HERE: Use the experimental hiring system.
    - PUSH FURTHER: Consider data and human design choices.
 6. Why was the fake Biden robocall dangerous even though it was discovered?
    - START HERE: Think about voters' access to accurate information.
    - PUSH FURTHER: Can a correction reach everyone who heard the fake?
-7. Why can a government fine and a criminal acquittal coexist?
-   - START HERE: Different proceedings ask different questions.
-   - PUSH FURTHER: What does each outcome establish and not establish?
-8. CHECKPOINT: Write a three-step rule for checking an AI claim.
-   - START HERE: Claim -> independent source -> judgment.
-   - PUSH FURTHER: What would you do if independent sources disagree?
+7. Does the later not-guilty verdict prove the Biden recording was authentic? Explain.
+   - START HERE: An acquittal means not guilty in that criminal proceeding. Consider what it establishes about who recorded the message.
+   - PUSH FURTHER: How can different legal proceedings reach different outcomes without authenticating a recording?
+8. CHECKPOINT: Apply a three-step verification rule to the fictional school-closure recording. Name the claim, the official channel you would independently check, and your action if confirmation is unavailable. Explain whether your first decision changed.
+   - START HERE: Use four short bullets: exact claim; independent official channel; action if unconfirmed; whether and why your first decision changed.
+   - PUSH FURTHER: Why would a forwarded screenshot of an official page still need checking at the original page?
 
 **Submission:** eight short responses plus practice classification, copied through Gather All My Work into Canvas Text Entry. Student writing is not stored on GitHub.
 

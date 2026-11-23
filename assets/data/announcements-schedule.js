@@ -679,7 +679,7 @@ window.BECURRENT_SCHEDULE={
       "homeAnnouncement": "Today: AI3 - When AI Gets it Wrong. Complete eight responses and submit the gathered record in Canvas.",
       "showLead": false,
       "topic": "AI3",
-      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "note": "Watch the teacher-selected introduction, then investigate three AI cases independently in MagicSchool. Make decisions, check a real source, and save your own eight answers at three checkpoints.",
       "doNow": "Who should check a convincing answer?",
       "agenda": [
         "Open AI3 - When AI Gets it Wrong and follow the five chapters in order.",

@@ -379,8 +379,8 @@ module.exports = {
       "subtitle": "Sounding sure is not being right",
       "skill": "Sourcing and Corroboration",
       "question": "Who should check a convincing answer?",
-      "hook": "If an AI invents a court case, who is responsible when somebody files it with a judge?",
-      "overview": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "hook": "CONSTRUCTED CLASSROOM EXAMPLE - not a real event: A recording in a group chat sounds like a Zionsville school administrator announcing that school is closed tomorrow. There is no official link. Decide what you would do first; revisit your decision after the investigation.",
+      "overview": "Watch the teacher-selected introduction, then investigate three AI cases independently in MagicSchool. Make decisions, check a real source, and save your own eight answers at three checkpoints.",
       "learningTargets": [
         {
           "skill": "Sourcing",
@@ -398,15 +398,15 @@ module.exports = {
       "successCriteria": [
         {
           "skill": "Sourcing",
-          "criteria": "I can name a real reference and report its finding."
+          "criteria": "I can identify who produced a source and explain what its evidence can and cannot establish."
         },
         {
           "skill": "Corroboration",
-          "criteria": "I can document the result of checking one claim."
+          "criteria": "I can report honestly whether I checked the original or used a provided excerpt."
         },
         {
           "skill": "Distinction",
-          "criteria": "I can explain why three AI failures have different causes."
+          "criteria": "I can distinguish three AI risks and apply a verification rule to an unfamiliar claim."
         }
       ],
       "chapters": [
@@ -416,7 +416,7 @@ module.exports = {
             "Language models can produce a polished answer even when some details are false. An invented or unsupported detail presented as fact is often called an AI hallucination. That differs from someone intentionally using AI to deceive.",
             "A claim is not automatically reliable because it is fluent or detailed. Your job is to identify what evidence would confirm it."
           ],
-          "activity": "Review the same learning question from AI1: What made an answer sound trustworthy?"
+          "activity": "Make your first decision in MagicSchool, then investigate why an answer can sound convincing without being supported."
         },
         {
           "title": "The lawyers who failed to verify",
@@ -424,15 +424,15 @@ module.exports = {
             "In a 2023 federal case, attorneys submitted legal research citing decisions that did not exist. A judge sanctioned the lawyers and law firm. The key lesson is professional responsibility: a generated citation does not become real because it appears in a legal brief.",
             "A legal source can be checked in the actual court record. A fabricated case citation is not evidence."
           ],
-          "activity": "Look at the case source: what were the attorneys responsible for checking?"
+          "activity": "Decide what a professional should check before relying on generated evidence. Save Q1-Q3 together at Checkpoint 1."
         },
         {
-          "title": "Bias is a different failure",
+          "title": "The source desk and the unfair shortlist",
           "paragraphs": [
             "Reuters reported in 2018 that Amazon tested an experimental hiring system that disadvantaged some references to women, reflecting patterns from training data. It was an internal experiment, not a current hiring system.",
             "Bias can enter through the selected examples, design goals, labels, and decisions about how output is used. An inaccurate answer and an unfair pattern are not the same problem."
           ],
-          "activity": "Where might unfairness enter: examples, design, or human use?"
+          "activity": "Choose claim A or B below for Q4. Then investigate the hiring example for Q5. Save Q4-Q5 together at Checkpoint 2."
         },
         {
           "title": "The fake voice that reached voters",
@@ -440,27 +440,18 @@ module.exports = {
             "Before New Hampshire's 2024 presidential primary, voters received calls with an AI-imitation of President Biden's voice discouraging voting. The FCC imposed a $6 million fine related to unlawful spoofing. A jury later acquitted the consultant in a separate criminal case.",
             "An administrative fine and a criminal verdict apply different laws and legal standards. A not-guilty verdict alone does not show the law is powerless or that a recording was authentic."
           ],
-          "activity": "Why could a fake voice undermine confidence even after it is uncovered?"
+          "activity": "Investigate the fake political voice and explain what the later verdict does and does not establish."
         },
         {
           "title": "Your three-step verification habit",
           "paragraphs": [
-            "When the claim matters, first isolate the exact assertion, then find a credible independent source, then decide what is confirmed and what remains uncertain. A repeated answer on multiple AI sites is not independent corroboration.",
-            "Use MagicSchool only if assigned in Canvas. Printed example if unavailable: 'An AI invented a quotation; a verified original text did not contain it.' Label the example as illustrative, not a historical report."
+            "Return to the fictional school-closure recording from the opening. In your checkpoint answer, identify the exact claim, name an official channel you would access independently, and decide what you would do if confirmation were unavailable. Explain whether your first decision changed. This is a constructed classroom example, not a real school announcement.",
+            "The background notes are a backup if MagicSchool is unavailable. Do not treat an AI answer, a familiar voice, or several sites repeating the same claim as independent confirmation."
           ],
-          "activity": "Complete an evidence check using an original source linked below."
+          "activity": "Return to your first decision and apply your verification rule. Save Q6-Q8 at Checkpoint 3, then file in Canvas."
         }
       ],
-      "clip": {
-        "title": "A.I. Revolution | The Danger of AI Fakes",
-        "source": "PBS NOVA",
-        "date": "2024-03-27",
-        "url": "https://www.youtube.com/watch?v=-sB12gk9ESA",
-        "alt": "https://www.pbs.org/video/ai-revolution-umwwlt/",
-        "assigned": "37:20 to approximately 41:30 (teacher preview required)",
-        "prompt": "How could an altered image or voice be made believable, and how could you check it?",
-        "captions": "Reading route is available in the five chapters."
-      },
+      "clip": null,
       "sort": {
         "prompt": "Match each example to the type of risk.",
         "options": [
@@ -503,9 +494,9 @@ module.exports = {
           "pushFurther": "Who remains accountable when AI is used?"
         },
         {
-          "text": "Choose one claim in today's evidence. What source supports or challenges it?",
-          "startHere": "Name the source and finding.",
-          "pushFurther": "What remains unconfirmed?"
+          "text": "Choose claim A or B. What does the source passage support or challenge, why is this source appropriate, and what does it leave unproven?",
+          "startHere": "Use four short bullets: claim; source and finding; why this source; one limit. Say whether you opened the original or used only the provided excerpt.",
+          "pushFurther": "What additional evidence would settle something this passage cannot establish?"
         },
         {
           "text": "How can training examples produce unfair outcomes?",
@@ -518,14 +509,14 @@ module.exports = {
           "pushFurther": "Can a correction reach everyone who heard the fake?"
         },
         {
-          "text": "Why can a government fine and a criminal acquittal coexist?",
-          "startHere": "Different proceedings ask different questions.",
-          "pushFurther": "What does each outcome establish and not establish?"
+          "text": "Does the later not-guilty verdict prove the Biden recording was authentic? Explain.",
+          "startHere": "An acquittal means not guilty in that criminal proceeding. Consider what it establishes about who recorded the message.",
+          "pushFurther": "How can different legal proceedings reach different outcomes without authenticating a recording?"
         },
         {
-          "text": "CHECKPOINT: Write a three-step rule for checking an AI claim.",
-          "startHere": "Claim -> independent source -> judgment.",
-          "pushFurther": "What would you do if independent sources disagree?"
+          "text": "CHECKPOINT: Apply a three-step verification rule to the fictional school-closure recording. Name the claim, the official channel you would independently check, and your action if confirmation is unavailable. Explain whether your first decision changed.",
+          "startHere": "Use four short bullets: exact claim; independent official channel; action if unconfirmed; whether and why your first decision changed.",
+          "pushFurther": "Why would a forwarded screenshot of an official page still need checking at the original page?"
         }
       ],
       "sources": [
@@ -550,7 +541,67 @@ module.exports = {
           "note": "June 2025 criminal verdict."
         }
       ],
-      "substituteDay": false
+      "substituteDay": false,
+      "teacherTiming": "55-minute route: 0-2 introduce the mission; 2-22 teacher-selected videos (about 20 minutes); 22-48 independent MagicSchool investigation with three saving checkpoints; 48-55 practice sort, Gather All My Work and Canvas submission. Check source work at minute 35 and reach Q8 by minute 45. For 50 minutes: 0-1 launch, 1-21 videos, 21-43 investigation, 43-50 filing; announce RAPID at minute 35. Use the actual classroom clock. If video runs long, shorten the video opening rather than taking the filing window.",
+      "magicSchool": {
+        "name": "BeCurrent Bureau of Suspicious Answers",
+        "starter": "START",
+        "scenario": "CONSTRUCTED CLASSROOM EXAMPLE - not a real event: A recording in a group chat sounds like a Zionsville school administrator announcing that school is closed tomorrow. There is no official link. Decide what you would do first; revisit your decision after the investigation.",
+        "saveGroups": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7,
+            8
+          ]
+        ],
+        "sourceCards": [
+          {
+            "id": "a",
+            "claim": "The lawyers submitted nonexistent court decisions.",
+            "title": "Mata v. Avianca - Opinion and Order on Sanctions",
+            "author": "Judge P. Kevin Castel, U.S. District Court, Southern District of New York",
+            "date": "June 22, 2023",
+            "location": "Page 1, opening paragraph",
+            "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2022cv01461/575368/54",
+            "excerpt": "submitted non-existent judicial opinions with fake quotes and citations created by the artificial intelligence tool ChatGPT",
+            "vocabulary": "Judicial opinions are written court decisions. Sanctions are court-imposed penalties."
+          },
+          {
+            "id": "b",
+            "claim": "The judge said every use of AI assistance in legal research is forbidden.",
+            "title": "Mata v. Avianca - Opinion and Order on Sanctions",
+            "author": "Judge P. Kevin Castel, U.S. District Court, Southern District of New York",
+            "date": "June 22, 2023",
+            "location": "Page 1, opening paragraph",
+            "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2022cv01461/575368/54",
+            "excerpt": "there is nothing inherently improper about using a reliable artificial intelligence tool for assistance",
+            "vocabulary": "Inherently improper means wrong simply because of what it is. Attorneys are lawyers."
+          }
+        ]
+      },
+      "navLabels": [
+        "First decision",
+        "Courtroom",
+        "Source desk",
+        "Fake voice",
+        "Your decision"
+      ],
+      "canvasSteps": [
+        "Watch the teacher-selected introduction, then open the BeCurrent MagicSchool room linked in this assignment. Choose BeCurrent Bureau of Suspicious Answers and type START.",
+        "Investigate independently, one question at a time. Use HELP for simpler explanations or RAPID when your teacher announces it. Your teacher can review the chat; leave private information out.",
+        "Save your own answers in BeCurrent at three checkpoints: Q1-Q3, Q4-Q5, and Q6-Q8. Keep answers short; use bullets for Q4 and Q8. Q1-Q8 now appear in numerical order.",
+        "For Q4 choose claim A or B, examine the short source passage, and open its original if possible. Explain the finding, why the source is appropriate, and one limit. State clearly if you used only the provided excerpt.",
+        "Complete the three practice choices and correct them. Choose Gather All My Work, copy the complete record, paste into this Canvas Text Entry assignment, click Submit, and verify confirmation. If you revise, gather and submit again. The MagicSchool chat alone is not the submission."
+      ]
     },
     {
       "n": 4,

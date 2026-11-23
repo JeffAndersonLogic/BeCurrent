@@ -1373,20 +1373,20 @@ window.BECURRENT_ANNOUNCEMENTS = {
       ],
       "successCriteria": [
         {
-          "text": "I can name a real reference and report its finding.",
+          "text": "I can identify who produced a source and explain what its evidence can and cannot establish.",
           "label": "Sourcing"
         },
         {
-          "text": "I can document the result of checking one claim.",
+          "text": "I can report honestly whether I checked the original or used a provided excerpt.",
           "label": "Corroboration"
         },
         {
-          "text": "I can explain why three AI failures have different causes.",
+          "text": "I can distinguish three AI risks and apply a verification rule to an unfamiliar claim.",
           "label": "Distinction"
         }
       ],
       "homework": "Finish and submit AI3 - When AI Gets it Wrong in Canvas.",
-      "note": "Study invented legal evidence, unfair learned patterns, and an AI-cloned political voice. Then practice a verification routine you can use outside class.",
+      "note": "Watch the teacher-selected introduction, then investigate three AI cases independently in MagicSchool. Make decisions, check a real source, and save your own eight answers at three checkpoints.",
       "doNow": "Who should check a convincing answer?",
       "agenda": [
         "Open AI3 - When AI Gets it Wrong and follow the five chapters in order.",
