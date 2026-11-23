@@ -596,11 +596,53 @@ module.exports = {
         "Your decision"
       ],
       "canvasSteps": [
-        "Watch the teacher-selected introduction, then open the BeCurrent MagicSchool room linked in this assignment. Choose BeCurrent Bureau of Suspicious Answers and type START.",
+        "Watch the five opening video reports on the BeCurrent AI3 page in the listed order: NBC News courtroom evidence; CBS News Biden robocall; Canadian HR Reporter Amazon hiring tool; BBC News politics and deepfakes; TODAY spotting AI-generated media. Then open the BeCurrent MagicSchool room linked in this assignment, choose BeCurrent Bureau of Suspicious Answers, and type START.",
         "Investigate independently, one question at a time. Use HELP for simpler explanations or RAPID when your teacher announces it. Your teacher can review the chat; leave private information out.",
         "Save your own answers in BeCurrent at three checkpoints: Q1-Q3, Q4-Q5, and Q6-Q8. Keep answers short; use bullets for Q4 and Q8. Q1-Q8 now appear in numerical order.",
         "For Q4 choose claim A or B, examine the short source passage, and open its original if possible. Explain the finding, why the source is appropriate, and one limit. State clearly if you used only the provided excerpt.",
         "Complete the three practice choices and correct them. Choose Gather All My Work, copy the complete record, paste into this Canvas Text Entry assignment, click Submit, and verify confirmation. If you revise, gather and submit again. The MagicSchool chat alone is not the submission."
+      ],
+      "openingVideos": [
+        {
+          "title": "AI is on trial as generated evidence finds its way into the courtroom",
+          "source": "NBC News",
+          "date": "2025-11-19",
+          "url": "https://www.youtube.com/watch?v=7KqrfwGeCko",
+          "prompt": "Who should check AI-generated evidence before it is used in court?",
+          "note": "This report gives wider courtroom context. The lesson's 2023 invented-citation case is checked separately in the original court order."
+        },
+        {
+          "title": "Fake Biden robocall tells Democrats to skip New Hampshire primary",
+          "source": "CBS News",
+          "date": "2024-01-22",
+          "url": "https://www.youtube.com/watch?v=5VVgDQRIuBo",
+          "prompt": "Why could a familiar-sounding voice influence someone before they check the source?",
+          "note": "This January 2024 report predates the later fine and separate verdict discussed in the lesson."
+        },
+        {
+          "title": "Amazon scraps AI recruiting tool showing bias against women",
+          "source": "Canadian HR Reporter",
+          "date": "2018-10-29",
+          "url": "https://www.youtube.com/watch?v=QvRZuHQBTps",
+          "prompt": "How might training examples lead a recruiting system toward an unfair pattern?",
+          "note": "Historical example: an abandoned experimental recruiting tool, not a description of Amazon's current hiring system."
+        },
+        {
+          "title": "How AI and deepfakes are changing politics | BBC News",
+          "source": "BBC News",
+          "date": "2024-03-16",
+          "url": "https://www.youtube.com/watch?v=wxEpPin8MWw",
+          "prompt": "What would you need to know before trusting a political recording?",
+          "note": "Distinguish deceptive impersonation from disclosed uses of synthetic media."
+        },
+        {
+          "title": "How to Tell What's Real and What's AI-Generated on Social Media",
+          "source": "TODAY",
+          "url": "https://www.youtube.com/watch?v=MtEe3NJnqQs",
+          "duration": "8:38",
+          "prompt": "Which verification step would you use before sharing a convincing social-media video?",
+          "note": "Treat visual clues as reasons to investigate; check provenance and independent evidence before reaching a conclusion."
+        }
       ]
     },
     {
