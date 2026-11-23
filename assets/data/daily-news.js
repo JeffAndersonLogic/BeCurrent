@@ -2,15 +2,15 @@
 window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-23",
   lead: {
-    category: "U.S. / Government",
-    headline: "Federal appeals court gives President Donald Trump a path to erasing hush money conviction",
-    dek: "The decision moves the case to a federal court, where Trump could seek to have charges dismissed on immunity grounds.",
+    category: "U.S. / Democracy",
+    headline: "Huang's reinstatement at Nvidia sparks fury in Congress as lawmakers move forward with hearings",
+    dek: "Nvidia was already facing sharp scrutiny from Congress after Huang acknowledged a relationship with a Chinese businesswoman whom U.S. officials believed to be a spy. Putting Huang back in charge, after Trump said the board did “what we wanted them to do,” raised stark concerns over the administratio",
     source: "PBS News",
     published: "November 23, 2026",
-    url: "https://www.pbs.org/newshour/politics/federal-appeals-court-gives-president-donald-trump-a-path-to-erasing-hush-money-conviction",
-    image: "https://d3i6fh83elv35t.cloudfront.net/static/2026/10/2026-10-27T154607Z_1138047107_RC2RBOARVD14_RTRMADP_3_USA-TRUMP-TEXAS-1024x683.jpg",
+    url: "https://www.pbs.org/newshour/politics/huangs-reinstatement-at-nvidia-sparks-fury-in-congress-as-lawmakers-move-forward-with-hearings",
+    image: "https://d3i6fh83elv35t.cloudfront.net/static/2025/09/GettyImages-2233025969-1024x683.jpg",
     imageCredit: "Image: PBS News",
-    imageCreditUrl: "https://www.pbs.org/newshour/politics/federal-appeals-court-gives-president-donald-trump-a-path-to-erasing-hush-money-conviction"
+    imageCreditUrl: "https://www.pbs.org/newshour/politics/huangs-reinstatement-at-nvidia-sparks-fury-in-congress-as-lawmakers-move-forward-with-hearings"
   },
   wire: [
     {
@@ -22,28 +22,28 @@ window.BECURRENT_DAILY_NEWS = {
       url: "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/"
     },
     {
-      category: "Economy",
-      headline: "In West Bank, ambulance drivers say Israeli checkpoints are dangerous obstacles to work",
-      dek: "To reach hospitals in the occupied West Bank, Palestinian ambulance drivers navigate Israeli checkpoints and road closures. Rights groups say wait times have spiked and medics have been attacked.",
-      source: "NPR",
+      category: "Climate / Environment",
+      headline: "The collapse of UN climate talks over fossil fuels was years in the making",
+      dek: "While negotiations collapsed over one main point of contention — whether to include language about fossil fuels, the main driver of global warming — this fight over this has been building for many years.",
+      source: "PBS News",
       published: "November 23, 2026",
-      url: "https://www.npr.org/2026/11/23/nx-s1-6043661/in-west-bank-ambulance-drivers-say-israeli-checkpoints-are-dangerous-obstacles-to-work"
+      url: "https://www.pbs.org/newshour/world/the-collapse-of-un-climate-talks-over-fossil-fuels-was-years-in-the-making"
     },
     {
       category: "U.S. / National",
-      headline: "Nvidia CEO Jensen Huang resigns in wake of affair, spy scandal",
-      dek: "Nvidia CEO Jensen Huang has resigned effective immediately, the company",
+      headline: "Appeals court clears way for Army to detonate Iowa lead azide explosives",
+      dek: "A federal appeals court on Monday declined to block the Army from detonating explosives containing lead azide at a munitions plant in Iowa.",
       source: "CBS News",
       published: "November 23, 2026",
-      url: "https://www.cbsnews.com/news/nvidia-ceo-jensen-huang-resigns/"
+      url: "https://www.cbsnews.com/news/army-iowa-explosives-trump-appeals-court/"
     },
     {
       category: "U.S. / National",
-      headline: "How Huang's resignation and return unfolded at Nvidia",
-      dek: "Jensen Huang",
+      headline: "Huang's return at Nvidia puts spotlight on chipmaker's board",
+      dek: "Nvidia directors",
       source: "CBS News",
       published: "November 23, 2026",
-      url: "https://www.cbsnews.com/news/jensen-huang-nvidia-resignation-scandal-timeline/"
+      url: "https://www.cbsnews.com/news/nvidia-board-reinstates-ceo-jensen-huang/"
     }
   ]
 };
