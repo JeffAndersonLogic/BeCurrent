@@ -1,49 +1,41 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-20",
+  reviewed: "2026-11-23",
   lead: {
-    category: "World / Security",
-    headline: "Trump insists he's \"not rushing to make any decisions on Iran\"",
-    dek: "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
-    source: "CBS News",
-    published: "November 20, 2026",
-    url: "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
-    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/20/84723475-ec73-4863-a255-008f83fc184a/thumbnail/1200x630/8f096f163238efdd5f2e05dcbf7ad001/gettyimages-2304872718.jpg",
-    imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/"
+    category: "Technology",
+    headline: "Seniors embrace Tesla automated driving technology despite questions about safety",
+    dek: "Older drivers are using Tesla's automated driving technology to stay on the road longer. But safety experts warn the company may be over-selling what its cars can do.",
+    source: "NPR",
+    published: "November 23, 2026",
+    url: "https://www.npr.org/2026/11/23/nx-s1-6020559/senior-drivers-tesla-automated-driving-safety",
+    image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8192x4608+0+428/resize/1400/quality/85/format/webp/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2F00%2F3e%2Ff9f234fd46e396a3ec44248615aa%2F11-04-2026-jimena-peck-denver-editorial-photographer-0366-2026-11-olderdrivers.jpg",
+    imageCredit: "Image: NPR",
+    imageCreditUrl: "https://www.npr.org/2026/11/23/nx-s1-6020559/senior-drivers-tesla-automated-driving-safety"
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Detonation of unstable explosives in Iowa paused indefinitely by court",
-      dek: "The U.S. Army",
+      headline: "Let's talk turkey: Here's how Thanksgiving meal costs have changed this year",
+      dek: "Grocery costs have been on the rise, but food-price analysts say it's unclear if you'll spend more on the Thanksgiving meal this year. Some people are deciding not to host or are hosting fewer guests.",
+      source: "NPR",
+      published: "November 23, 2026",
+      url: "https://www.npr.org/2026/11/23/nx-s1-6044207/thanksgiving-meal-costs"
+    },
+    {
+      category: "Science / Environment",
+      headline: "U.N. COP31 climate conference ends with no agreement after fossil fuel debate reaches standstill",
+      dek: "COP31, the latest installment of the United Nations' annual climate conference, ended Sunday without a final agreement after days of contentious talks collapsed.",
       source: "CBS News",
-      published: "November 20, 2026",
-      url: "https://www.cbsnews.com/news/iowa-detonation-lead-azide-paused-indefinitely-court-order/"
+      published: "November 22, 2026",
+      url: "https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/"
     },
     {
       category: "Technology",
-      headline: "White House national cyber director leaving his post",
-      dek: "White House National Cyber Director Sean Cairncross will be leaving his position, a White House official told CBS News.",
-      source: "CBS News",
-      published: "November 20, 2026",
-      url: "https://www.cbsnews.com/news/white-house-national-cyber-director-sean-cairncross-leaving/"
-    },
-    {
-      category: "U.S. / National",
-      headline: "6 reasons stocks are falling, and what you should do about it",
-      dek: "The S&P 500 is on track for a seventh consecutive day of losses, marking its longest losing streak since February 2020. Here",
-      source: "CBS News",
-      published: "November 20, 2026",
-      url: "https://www.cbsnews.com/news/why-stocks-are-falling-ai-fears/"
-    },
-    {
-      category: "World / Security",
-      headline: "Russia missiles pummel Ukraine and hit NATO soil in Poland",
-      dek: "Missiles flew into Poland overnight as Russia hit Ukraine with",
-      source: "CBS News",
-      published: "November 20, 2026",
-      url: "https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/"
+      headline: "As AI detects flaws in computer systems, is it causing more tech outages and disruptions?",
+      dek: "AI rapidly identifies computer system vulnerabilities and companies are pressured to fix them. Experts say that might lead to unintended consequences, like tech outages.",
+      source: "PBS News",
+      published: "November 22, 2026",
+      url: "https://www.pbs.org/newshour/nation/as-ai-detects-flaws-in-computer-systems-is-it-causing-more-tech-outages-and-disruptions"
     }
   ]
 };
