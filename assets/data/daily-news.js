@@ -3,39 +3,39 @@ window.BECURRENT_DAILY_NEWS = {
   reviewed: "2026-11-25",
   lead: {
     category: "U.S. / National",
-    headline: "Vance says Nvidia's Huang isn't under investigation; doesn't need a pardon",
-    dek: "Vice President JD Vance said he was assured Nvidia CEO Jensen Huang isn",
+    headline: "Most Polymarket users lost money betting on the U.S. midterms",
+    dek: "More than half of Polymarket accounts lost money betting on the U.S. midterm elections, according to one analysis.",
     source: "CBS News",
     published: "November 25, 2026",
-    url: "https://www.cbsnews.com/news/vance-says-jensen-huang-doesnt-need-pardon/",
-    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/11/25/b28d231a-32f6-4351-8fd1-1610d9eed13d/thumbnail/1200x630/141c4d253028fef6d133a94a39bba725/ap26324632606980.jpg",
+    url: "https://www.cbsnews.com/news/prediction-markets-polymarket-kalshi-trader-losses/",
+    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/06/22/9f693f19-bdd1-4092-a0e8-b3aa6e2a11ff/thumbnail/1200x630/6cd9d462107b8b04bba0d19f30c20d4a/gettyimages-2265180258.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/news/vance-says-jensen-huang-doesnt-need-pardon/"
+    imageCreditUrl: "https://www.cbsnews.com/news/prediction-markets-polymarket-kalshi-trader-losses/"
   },
   wire: [
     {
-      category: "World / International",
-      headline: "\"Narco sub\" seized in Atlantic but no drugs found on board",
-      dek: "The operation was carried out in cooperation with the Colombian navy and the U.S. Joint Interagency Task Force South.",
+      category: "World / Security",
+      headline: "Leaked data shows 490,000 Russian forces have died in Ukraine war",
+      dek: "Russian government data obtained by pro-Ukraine hackers and analyzed by the BBC indicates that Russia has lost at least 490,334 soldiers during its war on Ukraine.",
       source: "CBS News",
       published: "November 25, 2026",
-      url: "https://www.cbsnews.com/news/narco-sub-intercepted-france-no-drugs-on-board/"
+      url: "https://www.cbsnews.com/news/russia-ukraine-war-russian-soldier-death-toll-data-leak/"
     },
     {
-      category: "Economy",
-      headline: "Why are investors freaking out even as the U.S. economy surges?",
-      dek: "The economy is sending mixed signals, with growth jumping while stocks gyrate. Here",
+      category: "Climate / Environment",
+      headline: "Macy's Thanksgiving Day Parade postponed due to storm",
+      dek: "For the first time in history, the Macy",
       source: "CBS News",
       published: "November 25, 2026",
-      url: "https://www.cbsnews.com/news/us-economy-stocks-ai-inflation/"
+      url: "https://www.cbsnews.com/news/macys-thanksgiving-day-parade-postponed/"
     },
     {
       category: "U.S. / National",
-      headline: "State Department reports downplay violence and corruption in countries that asylum seekers are fleeing",
-      dek: "The reports use cherry-picked data, careful phrasing and in some cases facts that don't stand up to scrutiny to create misleading depictions of countries that are in fact often plagued by violence, government corruption and police inaction.",
+      headline: "Melania Trump reunites her seventh group of Ukrainian and Russian children with their families",
+      dek: "First lady Melania Trump has helped return a seventh group of Ukrainian and Russian children to their families, bringing the total number of kids in these wartime reunifications to 43, the White House announced Wednesday.",
       source: "PBS News",
       published: "November 25, 2026",
-      url: "https://www.pbs.org/newshour/nation/state-department-reports-downplay-violence-and-corruption-in-countries-that-asylum-seekers-are-fleeing"
+      url: "https://www.pbs.org/newshour/world/melania-trump-reunites-her-seventh-group-of-ukrainian-and-russian-children-with-their-families"
     },
     {
       category: "World / International",
