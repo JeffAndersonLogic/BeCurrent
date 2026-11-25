@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-24",
+  reviewed: "2026-11-25",
   lead: {
     category: "U.S. / National",
-    headline: "States sue HUD over a rule that would end housing aid for mixed-status families",
-    dek: "HUD defends the rule, saying it prevents illegal immigrants from exploiting eligibility requirements.",
-    source: "PBS News",
-    published: "November 24, 2026",
-    url: "https://www.pbs.org/newshour/nation/states-sue-hud-over-a-rule-that-would-end-housing-aid-for-mixed-status-families",
-    image: "https://d3i6fh83elv35t.cloudfront.net/newshour/app/uploads/2015/06/GettyImages-473996890-1024x683.jpg",
-    imageCredit: "Image: PBS News",
-    imageCreditUrl: "https://www.pbs.org/newshour/nation/states-sue-hud-over-a-rule-that-would-end-housing-aid-for-mixed-status-families"
+    headline: "Vance says Nvidia's Huang isn't under investigation; doesn't need a pardon",
+    dek: "Vice President JD Vance said he was assured Nvidia CEO Jensen Huang isn",
+    source: "CBS News",
+    published: "November 25, 2026",
+    url: "https://www.cbsnews.com/news/vance-says-jensen-huang-doesnt-need-pardon/",
+    image: "https://assets2.cbsnewsstatic.com/hub/i/r/2026/11/25/b28d231a-32f6-4351-8fd1-1610d9eed13d/thumbnail/1200x630/141c4d253028fef6d133a94a39bba725/ap26324632606980.jpg",
+    imageCredit: "Image: CBS News",
+    imageCreditUrl: "https://www.cbsnews.com/news/vance-says-jensen-huang-doesnt-need-pardon/"
   },
   wire: [
     {
       category: "World / International",
-      headline: "Armed men take hostages at supermarket in Cartagena, Colombia",
-      dek: "Colombian President Abelardo de la Espriella said that the men were",
+      headline: "\"Narco sub\" seized in Atlantic but no drugs found on board",
+      dek: "The operation was carried out in cooperation with the Colombian navy and the U.S. Joint Interagency Task Force South.",
       source: "CBS News",
-      published: "November 24, 2026",
-      url: "https://www.cbsnews.com/news/cartagena-colombia-hostages-supermarket/"
+      published: "November 25, 2026",
+      url: "https://www.cbsnews.com/news/narco-sub-intercepted-france-no-drugs-on-board/"
     },
     {
-      category: "Technology",
-      headline: "U.S. jury finds Chinese tech giant Huawei guilty of conspiracy to steal trade secrets, bank fraud",
-      dek: "Huawei was also accused of doing business in countries under U.S. sanctions and making false statements to officials.",
-      source: "PBS News",
-      published: "November 24, 2026",
-      url: "https://www.pbs.org/newshour/nation/u-s-jury-finds-chinese-tech-giant-huawei-guilty-of-conspiracy-to-steal-trade-secrets-bank-fraud"
+      category: "Economy",
+      headline: "Why are investors freaking out even as the U.S. economy surges?",
+      dek: "The economy is sending mixed signals, with growth jumping while stocks gyrate. Here",
+      source: "CBS News",
+      published: "November 25, 2026",
+      url: "https://www.cbsnews.com/news/us-economy-stocks-ai-inflation/"
     },
     {
       category: "U.S. / National",
-      headline: "Shein to pay $100 million to settle claims it deceived customers",
-      dek: "The Singapore fast-fashion company misled millions of U.S. consumers about its products and policies, FTC alleges.",
-      source: "CBS News",
-      published: "November 24, 2026",
-      url: "https://www.cbsnews.com/news/shein-100-million-ftc-deceptive-practices-settlement/"
+      headline: "State Department reports downplay violence and corruption in countries that asylum seekers are fleeing",
+      dek: "The reports use cherry-picked data, careful phrasing and in some cases facts that don't stand up to scrutiny to create misleading depictions of countries that are in fact often plagued by violence, government corruption and police inaction.",
+      source: "PBS News",
+      published: "November 25, 2026",
+      url: "https://www.pbs.org/newshour/nation/state-department-reports-downplay-violence-and-corruption-in-countries-that-asylum-seekers-are-fleeing"
     },
     {
-      category: "World / Security",
-      headline: "Pentagon sharply criticizes Canada over modernizing military",
-      dek: "The Defense Department accused Ottawa of failing to make the tough decisions needed to modernize its military and meet NATO commitments.",
+      category: "World / International",
+      headline: "WATCH: Army offers update after detonating lead azide stockpile in Iowa",
+      dek: "Those in charge called it a success.",
       source: "PBS News",
-      published: "November 24, 2026",
-      url: "https://www.pbs.org/newshour/world/pentagon-sharply-criticizes-canada-over-modernizing-military"
+      published: "November 25, 2026",
+      url: "https://www.pbs.org/newshour/nation/watch-live-army-offers-update-after-detonating-lead-azide-stockpile-in-iowa"
     }
   ]
 };
