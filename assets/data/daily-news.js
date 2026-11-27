@@ -1,49 +1,49 @@
 /* BeCurrent daily news, publisher-verified refresh. Do not place student work here. */
 window.BECURRENT_DAILY_NEWS = {
-  reviewed: "2026-11-26",
+  reviewed: "2026-11-27",
   lead: {
     category: "World / Security",
-    headline: "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
-    dek: "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals.",
+    headline: "Trump says he's giving Iran \"a chance to be smart\"",
+    dek: "President Trump says victory over Iran will come \"whenever I want it,\" but he",
     source: "CBS News",
-    published: "November 26, 2026",
-    url: "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
-    image: "https://assets3.cbsnewsstatic.com/hub/i/r/2026/11/26/9d94126a-cf9a-44ed-9f77-30461774944e/thumbnail/1200x630g2/2cd022452cd8713f2d0b6637141738bf/2026-11-20t110959z-393580283-rc2kroah1egc-rtrmadp-3-iran-crisis.jpg",
+    published: "November 27, 2026",
+    url: "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
+    image: "https://assets1.cbsnewsstatic.com/hub/i/r/2026/11/27/32662d68-08d6-4a5c-a845-d156c0cf8be5/thumbnail/1200x630/a3b22376d97cec14c7994bd370228c59/gettyimages-2306499269.jpg",
     imageCredit: "Image: CBS News",
-    imageCreditUrl: "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/"
+    imageCreditUrl: "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/"
   },
   wire: [
     {
       category: "U.S. / National",
-      headline: "Trump heads to Arizona next week for a high-stakes expansion of TSMC's computer chip factories",
-      dek: "President Donald Trump, who has staked his economic policy on growth in the artificial intelligence sector, will travel to Arizona on Dec. 4 to speak at the groundbreaking for a new Taiwan Semiconductor Manufacturing Co. computer chip foundry, according to both the White House and the Taiwan-based c",
-      source: "PBS News",
-      published: "November 26, 2026",
-      url: "https://www.pbs.org/newshour/politics/trump-heads-to-arizona-next-week-for-a-high-stakes-expansion-of-tsmcs-computer-chip-factories"
+      headline: "Pregnant inmate escapes in prison SUV after stop at Whataburger",
+      dek: "Rebecca Taylor, who was not restrained because of her pregnancy, slid into the front seat of the transport vehicle and drove away.",
+      source: "CBS News",
+      published: "November 27, 2026",
+      url: "https://www.cbsnews.com/news/pregnant-prisoner-escapes-corrections-vehicle-new-mexico/"
     },
     {
-      category: "Technology",
-      headline: "Fake online stores may fool AI shopping bots on Black Friday",
-      dek: "AI bots are accidentally steering shoppers toward websites and online shops created by scammers using AI.",
+      category: "Climate / Environment",
+      headline: "Powerful Thanksgiving Day storm causes flooding, power outages",
+      dek: "The storm hammered sections of the East Coast with torrential rain, high winds and flooding, knocking out power to hundreds of thousands of customers.",
       source: "CBS News",
-      published: "November 26, 2026",
-      url: "https://www.cbsnews.com/news/black-friday-ai-shopping-agents-fake-online-stores/"
+      published: "November 27, 2026",
+      url: "https://www.cbsnews.com/news/thanksgiving-day-storm-northeast-midwest-flooding-power-outages/"
+    },
+    {
+      category: "World / International",
+      headline: "U.S. opens hotline for tips about cartels, angering Mexico",
+      dek: "President Claudia Sheinbaum blasted the DEA after it set up anonymous tip lines in the country, accusing American officials of interference.",
+      source: "CBS News",
+      published: "November 27, 2026",
+      url: "https://www.cbsnews.com/news/us-opens-hotline-tips-cartels-angering-mexico/"
     },
     {
       category: "World / Security",
-      headline: "Germany arrests 2 Iraqis allegedly tied to Iran-linked terror group",
-      dek: "German police arrested two Iraqi men alleged to be members of an Iran-linked terrorist organization​ that is said to have targeted U.S., Israeli and Jewish institutions in Europe.",
-      source: "CBS News",
-      published: "November 26, 2026",
-      url: "https://www.cbsnews.com/news/germany-arrests-iraqi-iran-linked-terror-suspects/"
-    },
-    {
-      category: "U.S. / National",
-      headline: "Trump calls GDP figures 'fake' and demands an investigation of Commerce Department",
-      dek: "President Donald Trump on Thursday accused his Commerce Department of purposely issuing incorrect economic growth figures before the midterm elections, and said he wants to launch an investigation.",
+      headline: "A Ukraine loan is in limbo after EU budget talks stall. Leaders will try again",
+      dek: "The spending package is small compared to national budgets — around 1% to 1.2% of gross national income — but it encapsulates the ambitions of the world’s biggest trading bloc and how it sees itself on the international stage.",
       source: "PBS News",
-      published: "November 26, 2026",
-      url: "https://www.pbs.org/newshour/politics/trump-calls-gdp-figures-fake-and-demands-an-investigation-of-commerce-department"
+      published: "November 27, 2026",
+      url: "https://www.pbs.org/newshour/world/a-ukraine-loan-is-in-limbo-after-eu-budget-talks-stall-leaders-will-try-again"
     }
   ]
 };
